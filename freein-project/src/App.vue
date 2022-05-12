@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-<FirstPage/>
-  <Footer/>
+ 
 
     <router-view/>
   </div>
 </template>
 <script>
-import Footer from '@/components/Footer.vue'
-import FirstPage from '@/components/FirstPageLayout.vue'
+
 
 export default ({
-  components: {
-    Footer,
-    FirstPage
-    }
+
 })
 </script>
 
