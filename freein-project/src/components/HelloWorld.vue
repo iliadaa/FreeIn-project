@@ -1,13 +1,11 @@
 <template>
- <p>DUMB HELLO :)</p>
+ 
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+
 }
 </script>
 
