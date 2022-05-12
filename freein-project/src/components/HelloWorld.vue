@@ -1,5 +1,5 @@
 <template>
-  <h1>Heloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo jaco</h1>
+ <p>DUMB HELLO :)</p>
 </template>
 
 <script>
