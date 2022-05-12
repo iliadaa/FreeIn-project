@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'animate.css';
-import 'mdb-vue-ui-kit/css/mdb.min.css';
+
 
 
 Vue.config.productionTip = false
