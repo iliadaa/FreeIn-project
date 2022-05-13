@@ -34,7 +34,13 @@
           style="margin-left: 15px; margin-top: -200px"
           class="fas fa-angle-double-right"
         ></i>
+    <div style="margin-top: 5px; font-weight: 100; margin-left: 350px; ">
+      
+      <h6 p>
+        Scopri come <a href="#"></a>
+        
       </h6>
+      <i class="fas fa-angle-double-right" style="margin-left: 15px; margin-top: -40px; color: white; font-size: 20px; "></i>
     </div>
   </div>
 </template>

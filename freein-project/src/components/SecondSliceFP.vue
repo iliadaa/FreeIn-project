@@ -7,7 +7,8 @@
         height: 100vh;
       "
     >
-      <Card1 />
+<<<<<<< HEAD
+  
     </div>
   </div>
 </template>
@@ -15,6 +16,12 @@
 import Card1 from "./Card1.vue";
 
 export default {
-  components: { Card1 },
+ 
 };
 </script>
+=======
+    
+    </div>
+  </div>
+</template>
+>>>>>>> 61deb0584d13ba973a635a46156ed0d256e1b76a

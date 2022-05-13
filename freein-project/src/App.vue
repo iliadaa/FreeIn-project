@@ -8,7 +8,7 @@
 @import "~@/../mdb/scss/index.free.scss";
 
 #app {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Exo 2, ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
