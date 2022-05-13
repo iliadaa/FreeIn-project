@@ -1,20 +1,28 @@
 <template>
   <div class="home">
-    <FirstPageLayout/>
+    
+
+ <FirstSliceFP/>
+ <SecondSliceFP/>
     <Footer/>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import FirstPageLayout from '@/components/FirstPageLayout.vue'
+import FirstSliceFP from '@/components/FirstSliceFP.vue'
 import Footer from '@/components/Footer.vue'
+import SecondSliceFP from '@/components/SecondSliceFP.vue'
+
 
 export default {
   name: 'HomeView',
   components: {
-    FirstPageLayout,
-    Footer
+    FirstSliceFP,
+    Footer,
+    SecondSliceFP
+    
   }
 }
 </script>
