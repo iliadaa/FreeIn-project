@@ -1,25 +1,31 @@
 <template>
-  <div class="card mb-3" style="max-width: 540px">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img
-          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
-          alt="Trendy Pants and Shoes"
-          class="img-fluid rounded-start"
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
+  <div class="StyleCard" style="max-width: 540px">
+       
+    <div
+      class="col-md-4"
+      style="margin-left: 140px; margin-top: -50px; display: block"
+    >
+ <!-- 
+   Need to put text up on images
+  -->
+      <img
+        src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
+        alt="Trendy Pants and Shoes"
+        class="img-fluid"
+        style="max-width: 400px; margin-top: 200px; margin-left: 200px"
+      />
+      
+      <img 
+        src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
+        alt="Trendy Pants and Shoes"
+        class="img-fluid"
+        style="max-width: 400px; margin-left: 600px; margin-top: -627px"
+      />
+      
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body"></div>
     </div>
   </div>
 </template>
@@ -27,6 +33,10 @@
 <script>
 export default {
   name: "Card1",
+  data: {
+    toogle: false,
+  },
+  methods: {},
 };
 </script>
 

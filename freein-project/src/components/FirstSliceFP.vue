@@ -33,8 +33,13 @@
 
     <div style="margin-top: 5px; font-weight: 100; margin-left: 350px">
       <div style="margin-top: -5px; font-weight: 100; margin-left: 150px">
-        <button @click="seeMore(this.toggle)">Scopri come >></button>
-      </div>
+        <!--
+          Need to fix this href
+          
+
+         -->
+         <a href="#/about" style="color: white">Scopri come >></a>
+              </div>
     </div>
   </div>
 </template>
@@ -42,17 +47,9 @@
 <script>
 export default {
   data: {
-    toggle: false
+    
   },
   methods: {
-
-  seeMore(toggle){
-    if(this.toggle==true){
-        router.push('/about')
-        console.log(this.toggle)
-    }
-    console.log("Errore" + this.toggle)
-  }
 
 }
 

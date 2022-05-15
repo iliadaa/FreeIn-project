@@ -4,24 +4,24 @@
       class="bg-image"
       style="
         background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');
-        height: 100vh;
+        height: 110vh;
       "
     >
-<<<<<<< HEAD
-  
+    <Card1/>
     </div>
   </div>
+
 </template>
 <script>
 import Card1 from "./Card1.vue";
 
 export default {
+  name: 'HomeView',
+  components: {
+    Card1
+    
+  },
+
  
 };
 </script>
-=======
-    
-    </div>
-  </div>
-</template>
->>>>>>> 61deb0584d13ba973a635a46156ed0d256e1b76a
