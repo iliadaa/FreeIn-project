@@ -4,9 +4,11 @@
       class="bg-image"
       style="
         background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');
-        height: 100vh;
+        height: 110vh;
       "
     >
+      <Card1 />
+
       <Card1 />
     </div>
   </div>
@@ -16,5 +18,10 @@ import Card1 from "@/components/Card1.vue";
 
 export default {
   components: { Card1 },
+
+  name: "HomeView",
+  components: {
+    Card1,
+  },
 };
 </script>
