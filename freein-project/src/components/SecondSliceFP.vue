@@ -8,6 +8,8 @@
       "
     >
       <Card1 />
+
+      <Card1 />
     </div>
   </div>
 </template>
