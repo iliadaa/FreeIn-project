@@ -18,7 +18,11 @@
           margin-top: -102px;
         "
       >
-        <img class="logo" src="logo.png" style="margin-top: 55px; margin-left: 20px" />
+        <img
+          class="logo"
+          src="logo.png"
+          style="margin-top: 55px; margin-left: 20px"
+        />
       </div>
 
       <h1 style="font-size: 70px; margin-top: -30px">Viaggia</h1>
@@ -28,34 +32,25 @@
     </div>
 
     <div style="margin-top: 5px; font-weight: 100; margin-left: 350px">
-      <h6>Scopri come</h6>
-      <i
-        style="margin-left: 15px; margin-top: -200px"
-        class="fas fa-angle-double-right"
-      ></i>
-      <div style="margin-top: 5px; font-weight: 100; margin-left: 350px">
-        <h6>Scopri come <a href="#"></a></h6>
-        <i
-          class="fas fa-angle-double-right"
-          style="margin-left: 15px; margin-top: -40px; color: white; font-size: 20px"
-        ></i>
-      </div>
-
       <div style="margin-top: -5px; font-weight: 100; margin-left: 150px">
         <!--
           Need to fix this href
           
 
          -->
-        <a href="#/about" style="color: white">Scopri come >></a>
-      </div>
+         <a href="#/about" style="color: white">Scopri come >></a>
+              </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data: {},
-  methods: {},
-};
+  data: {
+    
+  },
+  methods: {
+
+}}
+
 </script>

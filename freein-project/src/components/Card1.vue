@@ -1,7 +1,4 @@
 <template>
-  
-    
-  
 
   <div class="StyleCard" style="max-width: 540px">
        
