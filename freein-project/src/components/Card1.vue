@@ -1,24 +1,7 @@
 <template>
-  <div class="card" style="max-width: 540px">
-    <div class="row">
-      <div class="col-md-4">
-        <img
-          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
-          alt="Trendy Pants and Shoes"
-          class="img-fluid rounded-start"
-        />
-      </div>
-      <div class="col-md-4">
-        <img
-          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
-          alt="Trendy Pants and Shoes"
-          class="img-fluid rounded-start"
-        />
-      </div>
-    </div>
-
+  
     <div class="StyleCard" style="max-width: 540px">
-      <div class="col-md-4" style="margin-left: 140px; margin-top: -50px; display: block">
+      <div class="col-md-4" style="margin-left: 540px; margin-top: -50px; display: block; ">
         <!-- 
    Need to put text up on images
   -->
@@ -41,7 +24,7 @@
         <div class="card-body"></div>
       </div>
     </div>
-  </div>
+ 
 </template>
 
 <script>
