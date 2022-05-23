@@ -4,6 +4,7 @@
 
  <FirstSliceFP/>
  <SecondSliceFP/>
+ <Login/>
     <Footer/>
     
   </div>
@@ -14,6 +15,7 @@
 import FirstSliceFP from '@/components/FirstSliceFP.vue'
 import Footer from '@/components/Footer.vue'
 import SecondSliceFP from '@/components/SecondSliceFP.vue'
+import Login from "@/components/Login.vue";
 
 
 export default {
@@ -21,7 +23,9 @@ export default {
   components: {
     FirstSliceFP,
     Footer,
-    SecondSliceFP
+    SecondSliceFP,
+    Login
+   
     
   }
 }

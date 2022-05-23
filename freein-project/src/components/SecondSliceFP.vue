@@ -7,20 +7,22 @@
         height: 110vh;
       "
     >
-      <Card1 />
-
+    <Card1/>
+ 
     </div>
   </div>
 </template>
 <script>
 import Card1 from "@/components/Card1.vue";
 
+
 export default {
-  components: { Card1 },
+  components: { Card1,},
 
   name: "HomeView",
   components: {
     Card1,
+
   },
 };
 </script>
