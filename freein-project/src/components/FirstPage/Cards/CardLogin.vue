@@ -1,78 +1,231 @@
 <template>
-<div class="container">
-  <div class="card card-b">
-    <div class="card card-shadow1">
-      <p>ispira</p>
-      </div>
-    
-    
-  </div>
+  <div class="container">
+    <div class="card-group">
+      <div class="card card-b">
+        <div class="card-login">
+          <!-- vedi vecchio codice login ed usalo qui -->
+          <b-form @submit="onSubmit" v-if="show">
+            <b-input-group>
+              <input class="email" placeholder="Email" v-model="form.email" />
+            </b-input-group>
 
-  <div class="card card-r">
-    <div class="card card-shadow2">
-    <p>lasciati</p>
-    
-    <p style="margin-left:14px; margin-bottom:15px">ispirare</p>
+            <b-input-group>
+              <input
+                class="password"
+                placeholder="Password"
+                v-model="form.password"
+                type="password"
+                required=""
+                id="myInput"
+              />
+              <i
+                v-if="!hide"
+                class="far fa-solid fa-eye-slash"
+                @click="showPass"
+                style="margin-left: -30px; margin-top: 13px"
+              ></i>
+              <i
+                v-else
+                class="far fa-eye"
+                @click="showPass"
+                style="margin-left: -30px; margin-top: 13px"
+              ></i>
+            </b-input-group>
+            <p class="forgot-password">Forgot password?</p>
+            <b-button
+              class="login-btn"
+              @click="form.change = !form.change"
+              type="submit"
+              >LOG IN</b-button
+            >
+          </b-form>
+        </div>
+      </div>
+
+      <div class="card card-r">
+        <h2>Hello, Friend!</h2>
+        <p>Enter your personal details and start journey</p>
+        <p style="margin-bottom: 20px">with us</p>
+        <b-button class="sign-up">SIGN UP</b-button>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      form: {
+        email: "",
+        password: "",
+        change: false,
+      },
+      hide: false,
+      show: true,
+    };
+  },
+  methods: {
+    changePage(change) {
+      if (change == true) {
+        this.$router.push({
+          name: "AboutPage",
+        });
+      }
+    },
 
+    correctData(email, password, change) {
+      console.log(email + password);
+      if (email == "ciccio@gmail.com" && password == "01234") {
+        alert("Bravooo");
+        change == true;
+        this.changePage(change);
+      } else if (email == "CICCIO.@GMAIL.COM" && password == " 01234 ") {
+        alert("Bravooo");
+        change == true;
+        this.changePage(change);
+      } else {
+        change == false;
+      }
+    },
+    onSubmit(event) {
+      event.preventDefault();
+      this.correctData(this.form.email, this.form.password, this.form.change);
+    },
+    onReset(event) {
+      event.preventDefault();
+      // Reset our form values
+      this.form.email = "";
+      this.form.password = "";
+      // Trick to reset/clear native browser form validation state
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
+    },
+    showPass(hide) {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+        this.hide = false;
+      } else {
+        x.type = "password";
+        this.hide = true;
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-.container{
-margin-top: 100px;
-align-content: center;
-justify-content: center;
-display: flex;
+.container {
+  margin-top: 100px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
 }
 
-.card{
-height: 600px;
-width: 40%;
-background-color:white;
-justify-content: center;
-align-items: center;
+.card {
+  height: 600px;
+  width: 0%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-r{
-  background-color: #e6a13ae1;
+.card-r {
+  background-color: orange;
 }
 
-.card-b p{
-  color: #eb6349;
-  font-size: 100px; 
-}
-
-.card-r p{
+.card-r p {
   color: #442a63;
-  font-size: 100px;
-  margin-bottom: -70px;
+  font-size: 20px;
+  margin-bottom: -10px;
 }
 
-.card-shadow1{
-  box-shadow: 2px 2px 30px  rgba(25, 25, 25, 0.668);
-  width: 100%;
+.card-group {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  width: 70%;
   height: 100%;
 }
 
-.card-shadow2{
-  box-shadow: 2px 2px 30px  rgba(25, 25, 25, 0.668);
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
+.card-r p {
+  color: white;
+}
+
+.card-r h2 {
+  color: white;
+  margin-bottom: -5px;
+}
+
+.sign-up {
+  border-radius: 20px;
+  border-color: white;
+  background-color: orange;
+  color: white;
+  
+}
+
+.sign-up:hover {
+border-color: white;
+background-color: orange;
+
+}
+
+.card-login {
+  width: 75%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.014);
+}
+
+.email {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 20px;
+  width: 90%;
+  font-size: 25px;
+  box-shadow: 0px 0px 10px lightgrey;
+  background-color: lightgrey;
+  border-color: transparent;
+}
+
+.password {
+  margin-left: 20px;
+  width: 90%;
+  font-size: 25px;
+  box-shadow: 0px 0px 10px lightgrey;
+  background-color: lightgrey;
+  border-color: transparent;
+}
+
+.forgot-password{
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.login-btn {
+  margin-top: 20px;
+  margin-left: 125px;
+  border-radius: 30px;
+  font-size: 120%;
+  border-color: white;
+  background-color: orange;
+  color: white;
+}
+
+.login-btn:hover{
+background-color: orange;
+border-color: orange;
 }
 
 
 </style>
 
-
-
-
-   <!--    
+<!--    
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-input-group class="userName" prepend="@">
         <b-form-input
@@ -127,11 +280,11 @@ export default {
 
     correctData(email, password, change) {
       console.log(email + password);
-      if (email == "ciccio@gmail.com" && password == "01234") {
+      if (email == "mailto:ciccio@gmail.com" && password == "01234") {
         alert("Bravooo");
         change == true;
         this.changePage(change);
-      } else if (email == "ciccio.@gmail.com" && password == " 01234 ") {
+      } else if (email == "mailto:ciccio.@gmail.com" && password == " 01234 ") {
         alert("Bravooo");
         change == true;
         this.changePage(change);
@@ -174,4 +327,3 @@ export default {
 }
 </style>
 -->
-
