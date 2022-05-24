@@ -2,9 +2,10 @@
   <div class="home">
     
 
- <FirstSliceFP/>
+ <Slider/>
  <SecondSliceFP/>
- <Login/>
+ <CardLayout/>
+ <CardLogin/>
     <Footer/>
     
   </div>
@@ -12,19 +13,19 @@
 
 <script>
 // @ is an alias to /src
-import FirstSliceFP from '@/components/FirstSliceFP.vue'
-import Footer from '@/components/Footer.vue'
-import SecondSliceFP from '@/components/SecondSliceFP.vue'
-import Login from "@/components/Login.vue";
+import Slider from '../components/FirstPage/Slider.vue'
+import Footer from '../components/FirstPage/Footer.vue'
+import CardLayout from '../components/FirstPage/Cards/CardLayout.vue'
+import CardLogin from "../components/FirstPage/Cards/CardLogin.vue";
 
 
 export default {
   name: 'HomeView',
   components: {
-    FirstSliceFP,
+    Slider,
     Footer,
-    SecondSliceFP,
-    Login
+    CardLayout,
+    CardLogin
    
     
   }

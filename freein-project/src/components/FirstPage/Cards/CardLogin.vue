@@ -39,7 +39,7 @@ align-items: center;
 }
 
 .card-r{
-  background-color: #ea910ce1;
+  background-color: #e6a13ae1;
 }
 
 .card-b p{
