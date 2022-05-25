@@ -37,6 +37,7 @@
 .card-b p {
   color: #eb6349;
   font-size: 100px;
+
 }
 
 .card-r p {

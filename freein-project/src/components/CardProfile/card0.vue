@@ -3,55 +3,56 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>Card register</p>
+        <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
       <div class="card card-b">
-        <p>Card register</p>
+        <a href="#"><i class="fas fa-chevron-circle-right"></i></a>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
-
 <style scoped>
 .container {
-  margin-top: 100px;
-  align-content: center;
-  justify-content: center;
   display: flex;
-}
-
-.card {
-  height: 600px;
-  
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  margin-top: 50px; 
 }
-
-.card-b {
-  background-color: #eb6349;
+.card-group {
+  justify-content: center;
+  align-content: center;
+  box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
 }
-
+.card {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 600px;
+    border-radius: 20px;  
+}
 .card-a{
-  background-color: white;
+    background-color: #ea5b0c;
 }
 .card-a p {
-  color: #eb6349;
-  font-size: 100px;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 60px;
+  padding-top: 80px;
+}
+.card-b {
+  
+}
+.card-b i {
+  font-size: 45px;
+  color: #2d2e83;
 }
 
-.card-b p {
-  color: #442a63;
-  font-size: 100px;
-  margin-bottom: -70px;
-}
 
-.card-group {
-  align-content: center;
-  justify-content: center;
-  box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
-  width: 70%;
-  height: 100%;
-}
+
 </style>
