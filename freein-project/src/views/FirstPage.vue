@@ -1,35 +1,36 @@
 <template>
   <div class="home">
-    
-<Header/>
- <Slider/>
- 
- <CardLayout/>
- <CardLogin/>
-    <Footer/>
-    
+
+    <Slider />
+    <CardLayout/>
+    <CardLogin/>
+    <CardRegister/>
+    <Footer />
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Slider from '../components/FirstPage/Slider.vue'
-import Footer from '../components/FirstPage/Footer.vue'
-import CardLayout from '../components/FirstPage/Cards/CardLayout.vue'
+import Slider from "../components/FirstPage/Slider.vue";
+import Footer from "../components/FirstPage/Footer.vue";
+import CardLayout from "../components/FirstPage/Cards/CardLayout.vue";
 import CardLogin from "../components/FirstPage/Cards/CardLogin.vue";
-import Header from "../components/FirstPage/Header.vue"
+
+import CardRegister from "../components/FirstPage/Cards/CardRegister.vue"
 
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Slider,
     Footer,
     CardLayout,
-    CardLogin,
-    Header
-     
-    
-  }
-}
+
+
+    CardLogin,  
+    CardRegister,  
+  },
+};
+
 </script>
