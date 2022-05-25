@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>Scopri che viaggiatore sei in pochi passi</p>
+        <p>Scopri che <br> viaggiatore sei <br> in pochi passi</p>
       </div>
       <div class="card card-b">
         <a href="#"><i class="fas fa-chevron-circle-right"></i></a>
@@ -28,25 +28,21 @@
   border-radius: 20px;
 }
 .card {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 600px;
-    border-radius: 20px;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 600px;
+  border-radius: 20px;  
 }
 .card-a{
-    background-color: #ea5b0c;
+  background-color: #ea5b0c;
 }
 .card-a p {
   color: white;
   font-size: 45px;
   font-weight: bold;
   text-align: left;
-  padding-left: 60px;
-  padding-top: 80px;
-}
-.card-b {
-  
+  padding-top: 100px;
 }
 .card-b i {
   font-size: 45px;
