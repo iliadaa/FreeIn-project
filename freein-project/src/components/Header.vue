@@ -1,7 +1,7 @@
 <template>
   <b-navbar>
     <b-navbar-brand href="#"
-      ><img src="@/assets/logo.png" style="background-color: white"
+      ><img src="@/assets/logo.png"
     /></b-navbar-brand>
   </b-navbar>
 </template>
@@ -17,4 +17,7 @@ export default {
   padding-left: 10%;
   padding-bottom:2rem;
 }
+.navbar {
+  background-color: white;
+ }
 </style>
