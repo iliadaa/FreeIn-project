@@ -1,12 +1,6 @@
 <template>
  <slick ref="slick" :options="slickOptions">
-  <a href="http://placehold.it/320x120">
-        <img src="http://placehold.it/320x120" alt="">
-    </a>
-    
-  <a href="http://placehold.it/420x220">
-        <img src="http://placehold.it/420x220" alt="">
-    </a>
+  
 </slick>
 </template>
 
