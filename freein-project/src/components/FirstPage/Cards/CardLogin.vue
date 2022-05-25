@@ -8,7 +8,6 @@
             <b-input-group>
               <input class="email" placeholder="Email" v-model="form.email" />
             </b-input-group>
-
             <b-input-group>
               <input
                 class="password"
