@@ -1,35 +1,28 @@
 <template>
-  <slick ref="slick" :options="slickOptions"> </slick>
+  <VueSlickCarousel v-bind="settings">
+    <img src="@/assets/image 2.jpg" />
+    <img src="@/assets/image 3.jpg" />
+  </VueSlickCarousel>
 </template>
 
 <script>
-import Slick from "vue-slick";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
   name: "Slider",
-  components: { Slick },
-  return: {
-    slickOptions: {
-      slidesToShow: 3,
-      infinite: true,
-      adaptiveHeight: false,
-      arrows: true,
-      dots: true,
-      draggable: true,
-      edgeFriction: 0.3,
-      swipe: true,
-    },
-  },
-  methods: {
-    next() {
-      this.$refs.slick.next();
-    },
-    prev() {
-      this.$refs.slick.prev();
-    },
-    reInit() {
-      this.$refs.slick.reSlick();
-    },
+  components: { VueSlickCarousel },
+  data() {
+    return {
+      settings: {
+        arrows:false,
+        infinite: true,     
+        speed: 500,
+        slidesToShow: 1,
+        cssEase: "linear",
+      },
+    };
   },
 };
 </script>
