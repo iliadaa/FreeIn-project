@@ -1,7 +1,9 @@
 <template>
   <VueSlickCarousel v-bind="settings">
+    <img src="@/assets/eiffel.jpg">
     <img src="@/assets/image 2.jpg" />
     <img src="@/assets/image 3.jpg" />
+
   </VueSlickCarousel>
 </template>
 
@@ -26,4 +28,4 @@ export default {
   },
 };
 </script>
-<style></style>
+
