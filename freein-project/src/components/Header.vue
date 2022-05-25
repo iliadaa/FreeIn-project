@@ -12,10 +12,9 @@ export default {
 };
 </script>
 <style scoped>
-.navbar {
-  padding-bottom: 2.5rem;
-}
+
 .navbar-brand {
   padding-left: 10%;
+  padding-bottom:2rem;
 }
 </style>
