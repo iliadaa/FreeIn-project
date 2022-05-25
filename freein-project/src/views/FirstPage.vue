@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     
-
+<Header/>
  <Slider/>
- <SecondSliceFP/>
+ 
  <CardLayout/>
  <CardLogin/>
     <Footer/>
@@ -17,6 +17,7 @@ import Slider from '../components/FirstPage/Slider.vue'
 import Footer from '../components/FirstPage/Footer.vue'
 import CardLayout from '../components/FirstPage/Cards/CardLayout.vue'
 import CardLogin from "../components/FirstPage/Cards/CardLogin.vue";
+import Header from "../components/FirstPage/Header.vue"
 
 
 export default {
@@ -25,8 +26,9 @@ export default {
     Slider,
     Footer,
     CardLayout,
-    CardLogin
-   
+    CardLogin,
+    Header
+     
     
   }
 }
