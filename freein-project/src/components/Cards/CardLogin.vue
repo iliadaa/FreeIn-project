@@ -2,6 +2,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-b">
+        <h2>Returning User</h2>
         <div class="card-login">
           <!-- vedi vecchio codice login ed usalo qui -->
           <b-form @submit="onSubmit" v-if="show">
@@ -30,6 +31,7 @@
                 style="margin-left: -30px; margin-top: 13px"
               ></i>
             </b-input-group>
+            <!-- questo p class deve essere un a con style: text-decoration: none -->
             <p class="forgot-password">Forgot password?</p>
             <b-button
               class="login-btn"
@@ -39,6 +41,16 @@
             >
           </b-form>
         </div>
+        <div class="login-with-btn-hrefs">
+          <p>- or -</p>
+          <div class="href-buttons-rounded">
+          <a class="fab fa-facebook-f" href="#"></a>
+          <a class="fab fa-twitter"></a>
+          <a class="fab fa-google-plus-g"></a>
+          <a class="fab fa-microsoft"></a>
+          <a class="fab fa-linkedin" style="margin-right:20px"></a>
+          </div>
+        </div>
       </div>
 
       <div class="card card-r">
@@ -46,7 +58,6 @@
         <p>Enter your personal details and start journey</p>
         <p style="margin-bottom: 20px">with us</p>
         <b-button class="sign-up">SIGN UP</b-button>
-        
       </div>
     </div>
   </div>
@@ -85,6 +96,8 @@ export default {
         change == true;
         this.changePage(change);
       } else {
+        console.log(email + "Password:" + password)
+        alert("La password e/o la email è errata!")
         change == false;
       }
     },
@@ -135,12 +148,8 @@ export default {
 
 .card-r {
   background-color: orange;
-}
-
-.card-r p {
-  color: #442a63;
-  font-size: 20px;
-  margin-bottom: -10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-group {
@@ -152,13 +161,20 @@ export default {
   height: 100%;
 }
 
+.card-group h2{
+  color: gray;
+}
+
 .card-r p {
   color: white;
+  font-size: 20px;
+  margin-bottom: -10px;
 }
 
 .card-r h2 {
   color: white;
   margin-bottom: -5px;
+  margin-left: 25px;
 }
 
 .sign-up {
@@ -166,13 +182,11 @@ export default {
   border-color: white;
   background-color: orange;
   color: white;
-  
 }
 
 .sign-up:hover {
-border-color: white;
-background-color: orange;
-
+  border-color: white;
+  background-color: orange;
 }
 
 .card-login {
@@ -201,7 +215,7 @@ background-color: orange;
   border-color: transparent;
 }
 
-.forgot-password{
+.forgot-password {
   margin-left: 100px;
   margin-top: 50px;
   font-size: 20px;
@@ -209,17 +223,41 @@ background-color: orange;
 
 .login-btn {
   margin-top: 20px;
-  margin-left: 125px;
+  margin-left: 128px;
   border-radius: 30px;
   font-size: 120%;
   border-color: white;
   background-color: orange;
   color: white;
+  align-items: center;
 }
 
-.login-btn:hover{
-background-color: orange;
-border-color: orange;
+.login-btn:hover {
+  background-color: orange;
+  border-color: orange;
+}
+
+.href-buttons-rounded a{
+  margin-left: 20px;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  color: grey;
+  border-color: black;
+  display: inline-flex;
+  border-radius: 50% ;
+  text-decoration: none;
+  border: grey;
+}
+
+.href-buttons-rounded a:hover{
+ box-shadow: 0px 0px 10px lightgrey;
+}
+
+.login-with-btn-hrefs p{
+    text-align: center;
 }
 
 
