@@ -57,7 +57,7 @@
         <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
         <p>Enter your personal details and start journey</p>
         <p style="margin-bottom: 20px">with us</p>
-        <b-button class="sign-up">SIGN UP</b-button>
+        <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@ export default {
     changePage(change) {
       if (change == true) {
         this.$router.push({
-          name: "AboutPage",
+          name: "Test",
         });
       }
     },
