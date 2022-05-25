@@ -120,10 +120,10 @@ export default {
       var x = document.getElementById("myInput");
       if (x.type === "password") {
         x.type = "text";
-        this.hide = false;
+        this.hide = true;
       } else {
         x.type = "password";
-        this.hide = true;
+        this.hide = false;
       }
     },
   },
