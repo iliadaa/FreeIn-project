@@ -3,11 +3,12 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>Scopri che <br> viaggiatore sei <br> in pochi passi</p>
+        <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
       </div>
       <div class="card card-b">
+          <p>si no forse</p>
         <div class="arrow">
-          <a href="#" class="fas fa-angle-right"></a>
+            <a href="#" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -41,12 +42,22 @@
 }
 .card-a p {
   color: white;
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 40px;
   text-align: left;
   padding-top: 100px;
 }
-
+.card-b p {
+  font-size: 30px;
+  color: #ea5b0c;
+  word-spacing: 80px;
+}
+.arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}
 .card-b a {
   justify-content: center;
   align-items: center;
@@ -59,7 +70,5 @@
   color: white;
   background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
 }
-
-
 
 </style>

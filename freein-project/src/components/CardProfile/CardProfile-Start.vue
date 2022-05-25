@@ -1,6 +1,6 @@
 <template>
 <div>
-    ciao
+    ciao sono la card Profile start
 </div>
 </template>
     
