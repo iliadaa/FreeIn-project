@@ -42,10 +42,11 @@
       </div>
 
       <div class="card card-r">
-        <h2>Hello, Friend!</h2>
+        <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
         <p>Enter your personal details and start journey</p>
         <p style="margin-bottom: 20px">with us</p>
         <b-button class="sign-up">SIGN UP</b-button>
+        
       </div>
     </div>
   </div>

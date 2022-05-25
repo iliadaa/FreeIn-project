@@ -2,11 +2,12 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-b">
-        
+        <p>ispira</p>
       </div>
 
       <div class="card card-r">
-
+        <p>lasciati</p>
+        <p style="margin-left: 14px; margin-bottom: 15px">ispirare</p>
       </div>
     </div>
   </div>

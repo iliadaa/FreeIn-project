@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-b">
-        <p>ciao pippo</p>
+        <p>Card register</p>
       </div>
 
       <div class="card card-r">

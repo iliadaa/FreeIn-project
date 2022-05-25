@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <Slider />
-    <CardLayout />
-    <CardLogin />
+    <CardLayout/>
+    <CardLogin/>
+    <CardRegister/>
     <Footer />
   </div>
 </template>
@@ -13,6 +14,7 @@ import Slider from "../components/FirstPage/Slider.vue";
 import Footer from "../components/FirstPage/Footer.vue";
 import CardLayout from "../components/FirstPage/Cards/CardLayout.vue";
 import CardLogin from "../components/FirstPage/Cards/CardLogin.vue";
+import CardRegister from "../components/FirstPage/Cards/CardRegister.vue"
 
 export default {
   name: "HomeView",
@@ -20,7 +22,8 @@ export default {
     Slider,
     Footer,
     CardLayout,
-    CardLogin,
+    CardLogin,  
+    CardRegister,  
   },
 };
 </script>
