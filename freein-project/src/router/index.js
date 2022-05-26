@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import FirstPage from '../views/FirstPage.vue'
 import AboutView from '../views/AboutView.vue'
 import Test from '../views/Test.vue'
+import BusinessPage from "../views/BusinessPage.vue"
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: Test
+  },
+  {
+    path:'/businesspage',
+    name:'BusinessPage',
+    component:BusinessPage
   }
 ]
 
