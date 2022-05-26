@@ -3,16 +3,15 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
+        <p>"Vegano o<br> Hamburger?"</p>
       </div>
       <div class="card card-b">
-        <div class="answer1">
-          <p>si</p>
-          <p>no</p>
-          <p>forse</p>
-        </div>
+          <div class="answer1">
+              <p>Vegano</p> 
+              <p>Hamburger</p>
+          </div>
         <div class="arrow">
-            <a href="" class="fas fa-angle-right"></a>
+          <a href="#" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -46,9 +45,9 @@
 }
 .card-a p {
   color: white;
+  font-style: italic;
   font-size: 40px;
   text-align: left;
-  padding-top: 100px;
   margin-left: 20%;
 }
 .answer1 {
@@ -68,7 +67,7 @@
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a {
+.arrow a  {
   justify-content: center;
   align-items: center;
   display: inline-flex;

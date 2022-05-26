@@ -3,13 +3,17 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
+        <p>"La tua fascia di <br> eta' e'?</p>
       </div>
       <div class="card card-b">
         <div class="answer1">
-          <p>si</p>
-          <p>no</p>
-          <p>forse</p>
+          <p>16-20</p>
+          <p>21-27</p>
+          <p>28-37</p>
+        </div>
+        <div class="answer2">
+          <p>38-55</p>
+          <p>56-90</p>
         </div>
         <div class="arrow">
             <a href="" class="fas fa-angle-right"></a>
@@ -46,9 +50,10 @@
 }
 .card-a p {
   color: white;
+  font-style: italic;
   font-size: 40px;
   text-align: left;
-  padding-top: 100px;
+  
   margin-left: 20%;
 }
 .answer1 {
@@ -56,6 +61,14 @@
   justify-content: space-between;
   margin-left: 20%;
   margin-right: 20%;
+  font-style: italic;
+}
+.answer2 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30%;
+  margin-right: 30%;
+  font-style: italic;
 }
 .card-b p {
   font-size: 30px;

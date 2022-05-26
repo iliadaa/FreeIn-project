@@ -3,16 +3,18 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
+        <p>"Sei ...?"</p>
       </div>
       <div class="card card-b">
-        <div class="answer1">
-          <p>si</p>
-          <p>no</p>
-          <p>forse</p>
-        </div>
+          <div class="answer1">
+              <p>Altro</p> 
+          </div>
+          <div class="answer2">
+              <p>Uomo</p>
+              <p>Donna</p>
+          </div>
         <div class="arrow">
-            <a href="" class="fas fa-angle-right"></a>
+          <a href="#" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -46,12 +48,12 @@
 }
 .card-a p {
   color: white;
+  font-style: italic;
   font-size: 40px;
   text-align: left;
-  padding-top: 100px;
   margin-left: 20%;
 }
-.answer1 {
+.answer2 {
   display: flex;
   justify-content: space-between;
   margin-left: 20%;
@@ -68,7 +70,7 @@
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a {
+.arrow a  {
   justify-content: center;
   align-items: center;
   display: inline-flex;
