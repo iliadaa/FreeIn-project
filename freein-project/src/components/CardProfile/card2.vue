@@ -70,7 +70,8 @@
 }
 .cards {
   display: flex;
-  padding: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 img {
