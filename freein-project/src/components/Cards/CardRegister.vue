@@ -7,9 +7,7 @@
           <!-- vedi vecchio codice login ed usalo qui -->
           <b-form @submit="onSubmit" v-if="show">
             <b-input-group>
-              <input class="email" 
-              placeholder="Email" 
-              v-model="form.email"/>
+              <input class="email" placeholder="Email" v-model="form.email" />
             </b-input-group>
             <b-input-group>
               <input
@@ -34,16 +32,20 @@
               ></i>
             </b-input-group>
             <b-input-group>
-              <input class="name" 
-              placeholder="Name"
-              required= "" 
-              v-model="form.name"/>
+              <input
+                class="name"
+                placeholder="Name"
+                required=""
+                v-model="form.name"
+              />
             </b-input-group>
             <b-input-group>
-              <input class="surname" 
-              placeholder="Surname" 
-              required= ""
-              v-model="form.surname"/>
+              <input
+                class="surname"
+                placeholder="Surname"
+                required=""
+                v-model="form.surname"
+              />
             </b-input-group>
             <!-- questo p class deve essere un a con style: text-decoration: none -->
             <b-button
@@ -68,7 +70,7 @@
 
       <div class="card card-r">
         <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
-        <p>Click the button below to log in </p>
+        <p>Click the button below to log in</p>
         <p style="margin-bottom: 20px">into your account!</p>
         <b-button class="log-in" @click="changePage(true)">LOG IN</b-button>
       </div>
@@ -89,7 +91,6 @@ export default {
         change: false,
         name: "",
         surname: "",
-        
       },
       hide: false,
       show: true,
@@ -238,7 +239,7 @@ export default {
   border-color: transparent;
 }
 
-.name{
+.name {
   margin-bottom: 20px;
   margin-top: 20px;
   margin-left: 20px;
@@ -248,8 +249,8 @@ export default {
   background-color: lightgrey;
   border-color: transparent;
 }
- 
-.surname{
+
+.surname {
   margin-left: 20px;
   width: 90%;
   font-size: 25px;
