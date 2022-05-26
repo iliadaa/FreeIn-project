@@ -2,8 +2,7 @@
   <div>
     <Header/>
     <CardRegister/>
-    <Footer/>  
-    <br> 
+    <Footer/>   
   </div>
 </template>
 

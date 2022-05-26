@@ -9,6 +9,7 @@ import Card1 from '../views/Card1.vue'
 import Card2 from '../views/Card2.vue'
 import Card3 from '../views/Card3.vue'
 import Cardprofile from '../views/Cardprofile.vue'
+import SignUp from '../views/SignUp-Page.vue'
 
 
 Vue.use(VueRouter)
