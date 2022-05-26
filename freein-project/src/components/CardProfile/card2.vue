@@ -96,7 +96,7 @@ img {
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.card-b a {
+.arrow a {
   justify-content: center;
   align-items: center;
   display: inline-flex;

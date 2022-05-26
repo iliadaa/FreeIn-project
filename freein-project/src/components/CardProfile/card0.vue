@@ -46,7 +46,7 @@
   text-align: left;
   padding-top: 100px;
 }
-.card-b a {
+.arrow a {
   justify-content: center;
   align-items: center;
   display: inline-flex;

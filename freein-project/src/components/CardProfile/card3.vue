@@ -6,7 +6,11 @@
         <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
       </div>
       <div class="card card-b">
-          <p>si no forse</p>
+        <div class="answer1">
+          <p>si</p>
+          <p>no</p>
+          <p>forse</p>
+        </div>
         <div class="arrow">
             <a href="#" class="fas fa-angle-right"></a>
         </div>
@@ -32,7 +36,7 @@
 }
 .card {
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   text-align: center;
   height: 600px;
   border-radius: 20px;  
@@ -45,11 +49,17 @@
   font-size: 40px;
   text-align: left;
   padding-top: 100px;
+  margin-left: 20%;
+}
+.answer1 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .card-b p {
   font-size: 30px;
   color: #ea5b0c;
-  word-spacing: 80px;
 }
 .arrow {
   position: absolute;
@@ -58,7 +68,7 @@
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.card-b a {
+.arrow a {
   justify-content: center;
   align-items: center;
   display: inline-flex;
