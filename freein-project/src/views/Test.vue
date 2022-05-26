@@ -3,6 +3,7 @@
     <CardProfileStart/>
     <card0/> 
     <card1/>
+    <card2/>
 
 </div>
 </template>
@@ -12,6 +13,7 @@
 import card0 from "../components/CardProfile/card0.vue"
 import CardProfileStart from "../components/CardProfile/CardProfile-Start.vue" 
 import card1 from '../components/CardProfile/card1.vue'
+import card2 from '../components/CardProfile/card2.vue'
 
 export default{
     name: "HomeView",
@@ -19,6 +21,7 @@ export default{
         CardProfileStart,
         card0,
         card1,
+        card2,
     }
 }
 </script>
