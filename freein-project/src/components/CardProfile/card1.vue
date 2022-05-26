@@ -8,7 +8,7 @@
       <div class="card card-b">
           <p>si no forse</p>
         <div class="arrow">
-            <a href="http://localhost:8081/#/card2" class="fas fa-angle-right"></a>
+            <a href="" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>

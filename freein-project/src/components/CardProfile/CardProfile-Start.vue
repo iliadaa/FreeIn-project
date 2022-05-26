@@ -3,7 +3,7 @@
   <h1>Scopri il <br> viaggiatore che e' in te.</h1>
   <img src="@/assets/photos.png" alt="" class="responsive" style="width: 100%; height: auto;">
         <div class="target">
-            <a href="http://localhost:8081/#/card0" class="fas fa-bullseye"> </a>
+            <a href="" class="fas fa-bullseye"> </a>
             <p >Vai al TEST</p>
         </div>
 </div>
