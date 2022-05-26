@@ -19,5 +19,6 @@ export default {
 }
 .navbar {
   background-color: white;
+  box-shadow: none;
  }
 </style>

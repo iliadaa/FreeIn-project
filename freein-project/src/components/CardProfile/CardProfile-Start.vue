@@ -4,12 +4,15 @@
   <img src="@/assets/photos.png" alt="" class="responsive" style="width: 100%; height: auto;">
         <div class="target">
             <a href="#" class="fas fa-bullseye"> </a>
-            <p>Vai al TEST</p>
+            <p >Vai al TEST</p>
         </div>
 </div>
 </template>
 
 <style scoped>
+.logo {
+    margin-left: 10%;
+}
 h1 {
     color: #2d2e83;
     font-size: 60px;

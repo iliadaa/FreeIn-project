@@ -1,4 +1,4 @@
-<!-- need to be created -->
+
 <template>
   <div class="container">
     <div class="card-group">
@@ -7,22 +7,28 @@
       </div>
       <div class="card card-b">
           <div class="cards">
-              <div class="imagecard">
-                  <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right:5px;">
+              <div>
+                  <div class="cardimage">
+                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
+                  </div>
                   <div class="cardcontainer">
                       <p>Lorem ipsum</p> 
                   </div>
               </div>
                             
-              <div class="imagecard">
-                  <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right:5px;">
+              <div>
+                  <div class="cardimage">
+                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
+                  </div>
                   <div class="cardcontainer">
                       <p>Lorem ipsum</p> 
                   </div>
               </div>
 
-              <div class="imagecard">
-                  <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right:5px;">
+              <div>
+                  <div class="cardimage">
+                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
+                  </div>
                   <div class="cardcontainer">
                       <p>Lorem ipsum</p> 
                   </div>
@@ -32,6 +38,7 @@
           <div class="arrow">
             <a href="#" class="fas fa-angle-right"></a>
           </div>
+
       </div>
     </div>
   </div>
@@ -70,8 +77,8 @@
 }
 .cards {
   display: flex;
-  padding-right: 5px;
-  padding-left: 5px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 img {
@@ -79,7 +86,7 @@ img {
   border-top-right-radius: 40px;
 }
 .card-b p {
-  font-size: 15px;
+  font-size: 20px;
   color: #ea5b0c;
 }
 .arrow {
