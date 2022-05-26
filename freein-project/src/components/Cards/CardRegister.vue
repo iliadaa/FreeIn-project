@@ -70,17 +70,20 @@
         <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
         <p>Click the button below to log in </p>
         <p style="margin-bottom: 20px">into your account!</p>
-        <b-button class="log-in">LOG IN</b-button>
+        <b-button class="log-in" @click="changePage(true)">LOG IN</b-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
+      
       form: {
+        
         email: "",
         password: "",
         change: false,
@@ -97,7 +100,7 @@ export default {
     changePage(change) {
       if (change == true) {
         this.$router.push({
-          name: "Test",
+          name: "FirstPage",
         });
       }
     },
@@ -106,6 +109,7 @@ export default {
       //console.log(email + password);
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
         alert("I dati inseriti sono corretti! Ora esegui il login!!");
+        this.changePage(true)
         console.log("L'email è scritta correttamente!");
         if(name.length > 2){
           alert("ciao " + name.length )
@@ -150,6 +154,7 @@ export default {
 
 <style scoped>
 .container {
+  margin-bottom: 100px;
   margin-top: 100px;
   align-content: center;
   justify-content: center;

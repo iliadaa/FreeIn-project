@@ -2,9 +2,7 @@
   <div class="home">
     <Header />
     <Slider />
-    <CardLayout />
-    <CardLogin />
-    <CardRegister />
+    <CardSwitch/>
     <Footer />
   </div>
 </template>
@@ -14,9 +12,10 @@
 import Header from "../components/Header.vue";
 import Slider from "../components/Slider.vue";
 import Footer from "../components/Footer.vue";
-import CardLayout from "../components/Cards/CardLayout.vue";
-import CardLogin from "../components/Cards/CardLogin.vue";
-import CardRegister from "../components/Cards/CardRegister.vue";
+import CardSwitch from "../components/Cards/CardSwitch.vue";
+//import CardLayout from "../components/Cards/CardLayout.vue";
+//import CardLogin from "../components/Cards/CardLogin.vue";
+//import CardRegister from "../components/Cards/CardRegister.vue";
 
 export default {
   name: "HomeView",
@@ -24,9 +23,8 @@ export default {
     Header,
     Slider,
     Footer,
-    CardLayout,
-    CardLogin,
-    CardRegister,
+    CardSwitch,
+
   },
 };
 </script>
