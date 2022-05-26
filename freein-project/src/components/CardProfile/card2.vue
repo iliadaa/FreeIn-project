@@ -36,7 +36,7 @@
           </div>
 
           <div class="arrow">
-            <a href="#" class="fas fa-angle-right"></a>
+            <a href="" class="fas fa-angle-right"></a>
           </div>
 
       </div>

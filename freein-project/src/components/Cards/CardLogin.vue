@@ -1,6 +1,5 @@
-<template>
-  <div class="container">
-    <div class="card-group">
+<template> 
+    <div class="card-group card-absolute">
       <div class="card card-b">
         <h2>Returning User</h2>
         <div class="card-login">
@@ -35,7 +34,7 @@
             <p class="forgot-password">Forgot password?</p>
             <b-button
               class="login-btn"
-              @click="form.change = !form.change"
+              @click="form.change = !form.change, goInTest = !goInTest"
               type="submit"
               >LOG IN</b-button
             >
@@ -44,29 +43,34 @@
         <div class="login-with-btn-hrefs">
           <p>- or -</p>
           <div class="href-buttons-rounded">
-          <a class="fab fa-facebook-f" href="#"></a>
-          <a class="fab fa-twitter"></a>
-          <a class="fab fa-google-plus-g"></a>
-          <a class="fab fa-microsoft"></a>
-          <a class="fab fa-linkedin" style="margin-right:20px"></a>
+            <a class="fab fa-facebook-f" href="#"></a>
+            <a class="fab fa-twitter"></a>
+            <a class="fab fa-google-plus-g"></a>
+            <a class="fab fa-microsoft"></a>
+            <a class="fab fa-linkedin" style="margin-right: 20px"></a>
           </div>
         </div>
       </div>
 
       <div class="card card-r">
         <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
-        <p>Enter your personal details and start journey</p>
-        <p style="margin-bottom: 20px">with us</p>
+        <p>If you are not registered click the </p>
+        <p style="margin-bottom: 20px">button below!!</p>
         <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
+import CardRegister from '../Cards/CardRegister.vue'
 export default {
+   components:{
+    'register': CardRegister,
+  },
+  
   data() {
     return {
+      component: 'register',
       form: {
         email: "",
         password: "",
@@ -74,36 +78,47 @@ export default {
       },
       hide: false,
       show: true,
+      goInTest: false
     };
   },
   methods: {
     changePage(change) {
       if (change == true) {
         this.$router.push({
+          name: "SignUp",
+        });
+      }
+    },
+
+    goIntoTest(goInTest){
+      if (goInTest == true) {
+        this.$router.push({
           name: "Test",
         });
       }
     },
 
-    correctData(email, password, change) {
+    correctData(email, password, change, goInTest) {
       console.log(email + password);
       if (email == "ciccio@gmail.com" && password == "01234") {
-        alert("Bravooo");
-        change == true;
-        this.changePage(change);
+        //change == true;
+        goInTest == true;
+        alert("Login avvenuto con successo! + ");
+        this.goIntoTest(goInTest);
       } else if (email == "CICCIO.@GMAIL.COM" && password == " 01234 ") {
-        alert("Bravooo");
-        change == true;
+        alert("Login avvenuto con successo!");
+        //change == true;
+        goInTest == true;
         this.changePage(change);
       } else {
-        console.log(email + "Password:" + password)
-        alert("La password e/o la email è errata!")
+        console.log(email + "Password:" + password);
+        alert("La password e/o la email è errata!");
         change == false;
       }
     },
     onSubmit(event) {
       event.preventDefault();
-      this.correctData(this.form.email, this.form.password, this.form.change);
+      this.correctData(this.form.email, this.form.password, this.form.change, this.goInTest);
     },
     onReset(event) {
       event.preventDefault();
@@ -131,11 +146,14 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin-top: 100px;
+.container1 {
+  margin-top: 165px;
+  margin-left: 455px;
   align-content: center;
   justify-content: center;
   display: flex;
+  width: 288%;
+  opacity: 100%;
 }
 
 .card {
@@ -153,15 +171,16 @@ export default {
 }
 
 .card-group {
+   z-index: 1;
   align-content: center;
   justify-content: center;
   display: flex;
-  box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
   width: 70%;
   height: 100%;
+  box-shadow: 0px 0px 0px transparent;
 }
 
-.card-group h2{
+.card-group h2 {
   color: gray;
 }
 
@@ -237,7 +256,7 @@ export default {
   border-color: orange;
 }
 
-.href-buttons-rounded a{
+.href-buttons-rounded a {
   margin-left: 20px;
   width: 60px;
   height: 60px;
@@ -247,20 +266,18 @@ export default {
   color: grey;
   border-color: black;
   display: inline-flex;
-  border-radius: 50% ;
+  border-radius: 50%;
   text-decoration: none;
   border: grey;
 }
 
-.href-buttons-rounded a:hover{
- box-shadow: 0px 0px 10px lightgrey;
+.href-buttons-rounded a:hover {
+  box-shadow: 0px 0px 10px lightgrey;
 }
 
-.login-with-btn-hrefs p{
-    text-align: center;
+.login-with-btn-hrefs p {
+  text-align: center;
 }
-
-
 </style>
 
 <!--    

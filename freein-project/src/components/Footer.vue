@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .flex-fill {
   width: 20%;
 }
