@@ -79,13 +79,10 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      
       form: {
-        
         email: "",
         password: "",
         change: false,
@@ -110,11 +107,11 @@ export default {
       //console.log(email + password);
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
         alert("I dati inseriti sono corretti! Ora esegui il login!!");
-        this.changePage(true)
+        this.changePage(true);
         console.log("L'email è scritta correttamente!");
-        if(name.length > 2){
-          alert("ciao " + name.length )
-          console.log("Sono qui")
+        if (name.length > 2) {
+          alert("ciao " + name.length);
+          console.log("Sono qui");
         }
       } else {
         alert("L'email deve contenere una @ seguita da: gmail, outlook..");

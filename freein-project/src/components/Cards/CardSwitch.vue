@@ -1,12 +1,10 @@
 <template>
   <div class="container">
-       <component :is="component"></component>
-    <div class="card-group card-absolute" v-on:click="component='login'">
+    <component :is="component"></component>
+    <div class="card-group card-absolute" v-on:click="component = 'login'">
       <div class="card card-b">
-          <p>ispira</p>
+        <p>ispira</p>
       </div>
-          
-      
 
       <div class="card card-r">
         <p>lasciati</p>
@@ -17,24 +15,20 @@
 </template>
 
 <script>
-import CardLogin from '../Cards/CardLogin.vue'
-export default{
-  components:{
-    'login': CardLogin
-  }
-
-}
-
-
+import CardLogin from "../Cards/CardLogin.vue";
+export default {
+  components: {
+    login: CardLogin,
+  },
+};
 </script>
 
 <style scoped>
-
-.card-absolute{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container {
@@ -44,7 +38,7 @@ export default{
   display: flex;
   position: relative;
   height: 600px;
-  margin-bottom: 100px ;
+  margin-bottom: 100px;
 }
 
 .card {
@@ -61,7 +55,6 @@ export default{
 .card-b p {
   color: #eb6349;
   font-size: 100px;
-
 }
 
 .card-r p {
@@ -183,24 +176,19 @@ export default {
 -->
 
 <script>
-import CardLogin from '../Cards/CardLogin.vue'
+import CardLogin from "../Cards/CardLogin.vue";
 
-export default{
-  components:{
-    'login': CardLogin
+export default {
+  components: {
+    login: CardLogin,
   },
-  data(){
-  return {
-    component: 'layout'
-  }
-}
-
-}
-
-
+  data() {
+    return {
+      component: "layout",
+    };
+  },
+};
 </script>
-
-
 
 <!--    
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">

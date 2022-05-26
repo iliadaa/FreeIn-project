@@ -10,6 +10,7 @@ import Card2 from '../views/Card2.vue'
 import Card3 from '../views/Card3.vue'
 import Cardprofile from '../views/Cardprofile.vue'
 import SignUp from '../views/SignUp-Page.vue'
+import StageCreation from '../views/Stage-Creation.vue'
 
 
 Vue.use(VueRouter)
@@ -61,9 +62,14 @@ const routes = [
     component: Card3
   },
   {
-    path:'/cardprofile',
+    path:'/cardProfile',
     name:' Cardprofile ',
     component: Cardprofile 
+  },
+  {
+    path:'/stagecreation',
+    name:' StageCreation ',
+    component: StageCreation 
   }
  
  

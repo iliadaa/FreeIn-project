@@ -1,76 +1,76 @@
-<template> 
-    <div class="card-group card-absolute">
-      <div class="card card-b">
-        <h2>Returning User</h2>
-        <div class="card-login">
-          <!-- vedi vecchio codice login ed usalo qui -->
-          <b-form @submit="onSubmit" v-if="show">
-            <b-input-group>
-              <input class="email" placeholder="Email" v-model="form.email" />
-            </b-input-group>
-            <b-input-group>
-              <input
-                class="password"
-                placeholder="Password"
-                v-model="form.password"
-                type="password"
-                required=""
-                id="myInput"
-              />
-              <i
-                v-if="!hide"
-                class="far fa-solid fa-eye-slash"
-                @click="showPass"
-                style="margin-left: -30px; margin-top: 13px"
-              ></i>
-              <i
-                v-else
-                class="far fa-eye"
-                @click="showPass"
-                style="margin-left: -30px; margin-top: 13px"
-              ></i>
-            </b-input-group>
-            <!-- questo p class deve essere un a con style: text-decoration: none -->
-            <p class="forgot-password">Forgot password?</p>
-            <b-button
-              class="login-btn"
-              @click="form.change = !form.change, goInTest = !goInTest"
-              type="submit"
-              >LOG IN</b-button
-            >
-          </b-form>
-        </div>
-        <div class="login-with-btn-hrefs">
-          <p>- or -</p>
-          <div class="href-buttons-rounded">
-            <a class="fab fa-facebook-f" href="#"></a>
-            <a class="fab fa-twitter"></a>
-            <a class="fab fa-google-plus-g"></a>
-            <a class="fab fa-microsoft"></a>
-            <a class="fab fa-linkedin" style="margin-right: 20px"></a>
-          </div>
-        </div>
+<template>
+  <div class="card-group card-absolute">
+    <div class="card card-b">
+      <h2>Returning User</h2>
+      <div class="card-login">
+        <!-- vedi vecchio codice login ed usalo qui -->
+        <b-form @submit="onSubmit" v-if="show">
+          <b-input-group>
+            <input class="email" placeholder="Email" v-model="form.email" />
+          </b-input-group>
+          <b-input-group>
+            <input
+              class="password"
+              placeholder="Password"
+              v-model="form.password"
+              type="password"
+              required=""
+              id="myInput"
+            />
+            <i
+              v-if="!hide"
+              class="far fa-solid fa-eye-slash"
+              @click="showPass"
+              style="margin-left: -30px; margin-top: 13px"
+            ></i>
+            <i
+              v-else
+              class="far fa-eye"
+              @click="showPass"
+              style="margin-left: -30px; margin-top: 13px"
+            ></i>
+          </b-input-group>
+          <!-- questo p class deve essere un a con style: text-decoration: none -->
+          <p class="forgot-password">Forgot password?</p>
+          <b-button
+            class="login-btn"
+            @click="(form.change = !form.change), (goInTest = !goInTest)"
+            type="submit"
+            >LOG IN</b-button
+          >
+        </b-form>
       </div>
-
-      <div class="card card-r">
-        <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
-        <p>If you are not registered click the </p>
-        <p style="margin-bottom: 20px">button below!!</p>
-        <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
+      <div class="login-with-btn-hrefs">
+        <p>- or -</p>
+        <div class="href-buttons-rounded">
+          <a class="fab fa-facebook-f" href="#"></a>
+          <a class="fab fa-twitter"></a>
+          <a class="fab fa-google-plus-g"></a>
+          <a class="fab fa-microsoft"></a>
+          <a class="fab fa-linkedin" style="margin-right: 20px"></a>
+        </div>
       </div>
     </div>
+
+    <div class="card card-r">
+      <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
+      <p>If you are not registered click the</p>
+      <p style="margin-bottom: 20px">button below!!</p>
+      <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
+    </div>
+  </div>
 </template>
 
 <script>
-import CardRegister from '../Cards/CardRegister.vue'
+import CardRegister from "../Cards/CardRegister.vue";
 export default {
-   components:{
-    'register': CardRegister,
+  components: {
+    register: CardRegister,
   },
-  
+
   data() {
     return {
-      component: 'register',
+      component: "register",
       form: {
         email: "",
         password: "",
@@ -78,7 +78,7 @@ export default {
       },
       hide: false,
       show: true,
-      goInTest: false
+      goInTest: false,
     };
   },
   methods: {
@@ -90,7 +90,7 @@ export default {
       }
     },
 
-    goIntoTest(goInTest){
+    goIntoTest(goInTest) {
       if (goInTest == true) {
         this.$router.push({
           name: "Test",
@@ -118,7 +118,12 @@ export default {
     },
     onSubmit(event) {
       event.preventDefault();
-      this.correctData(this.form.email, this.form.password, this.form.change, this.goInTest);
+      this.correctData(
+        this.form.email,
+        this.form.password,
+        this.form.change,
+        this.goInTest
+      );
     },
     onReset(event) {
       event.preventDefault();
@@ -171,7 +176,7 @@ export default {
 }
 
 .card-group {
-   z-index: 1;
+  z-index: 1;
   align-content: center;
   justify-content: center;
   display: flex;
