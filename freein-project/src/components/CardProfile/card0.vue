@@ -7,7 +7,7 @@
       </div>
       <div class="card card-b">
         <div class="arrow">
-          <a href="http://localhost:8081/#/card1" class="fas fa-angle-right"></a>
+          <a href="#" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
