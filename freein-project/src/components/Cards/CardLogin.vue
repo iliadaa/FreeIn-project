@@ -44,11 +44,11 @@
         <div class="login-with-btn-hrefs">
           <p>- or -</p>
           <div class="href-buttons-rounded">
-          <a class="fab fa-facebook-f" href="#"></a>
-          <a class="fab fa-twitter"></a>
-          <a class="fab fa-google-plus-g"></a>
-          <a class="fab fa-microsoft"></a>
-          <a class="fab fa-linkedin" style="margin-right:20px"></a>
+            <a class="fab fa-facebook-f" href="#"></a>
+            <a class="fab fa-twitter"></a>
+            <a class="fab fa-google-plus-g"></a>
+            <a class="fab fa-microsoft"></a>
+            <a class="fab fa-linkedin" style="margin-right: 20px"></a>
           </div>
         </div>
       </div>
@@ -96,8 +96,8 @@ export default {
         change == true;
         this.changePage(change);
       } else {
-        console.log(email + "Password:" + password)
-        alert("La password e/o la email è errata!")
+        console.log(email + "Password:" + password);
+        alert("La password e/o la email è errata!");
         change == false;
       }
     },
@@ -161,7 +161,7 @@ export default {
   height: 100%;
 }
 
-.card-group h2{
+.card-group h2 {
   color: gray;
 }
 
@@ -237,7 +237,7 @@ export default {
   border-color: orange;
 }
 
-.href-buttons-rounded a{
+.href-buttons-rounded a {
   margin-left: 20px;
   width: 60px;
   height: 60px;
@@ -247,20 +247,18 @@ export default {
   color: grey;
   border-color: black;
   display: inline-flex;
-  border-radius: 50% ;
+  border-radius: 50%;
   text-decoration: none;
   border: grey;
 }
 
-.href-buttons-rounded a:hover{
- box-shadow: 0px 0px 10px lightgrey;
+.href-buttons-rounded a:hover {
+  box-shadow: 0px 0px 10px lightgrey;
 }
 
-.login-with-btn-hrefs p{
-    text-align: center;
+.login-with-btn-hrefs p {
+  text-align: center;
 }
-
-
 </style>
 
 <!--    
