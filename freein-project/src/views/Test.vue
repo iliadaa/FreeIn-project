@@ -9,6 +9,7 @@
     <card4/>
     <card5/>
     <card6/>
+    <card7/>
 
 </div>
 </template>
@@ -24,6 +25,7 @@ import Header from '../components/Header.vue'
 import card4 from '../components/CardProfile/card4.vue'
 import card5 from '../components/CardProfile/card5.vue'
 import card6 from '../components/CardProfile/card6.vue'
+import card7 from '../components/CardProfile/card7.vue'
 export default{
     name: "HomeView",
     components: {
@@ -35,7 +37,8 @@ export default{
     Header,
     card4,
     card5,
-    card6
+    card6,
+    card7,
 }
 }
 </script>
