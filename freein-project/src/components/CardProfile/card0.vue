@@ -1,4 +1,4 @@
-<!-- need to be created -->
+
 <template>
   <div class="container">
     <div class="card-group">
@@ -46,7 +46,6 @@
   text-align: left;
   padding-top: 100px;
 }
-
 .card-b a {
   justify-content: center;
   align-items: center;

@@ -106,11 +106,11 @@ export default {
     correctData(email, password, name, surname) {
       //console.log(email + password);
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
-        alert("ciao " + this.name.length);
-        console.log("Sono qui");
-        if (name.length > 2) {
-          alert("ciao " + name.length);
-          console.log("Sono qui");
+        alert("I dati inseriti sono corretti! Ora esegui il login!!");
+        console.log("L'email è scritta correttamente!");
+        if(name.length > 2){
+          alert("ciao " + name.length )
+          console.log("Sono qui")
         }
       } else {
         alert("L'email deve contenere una @ seguita da: gmail, outlook..");
