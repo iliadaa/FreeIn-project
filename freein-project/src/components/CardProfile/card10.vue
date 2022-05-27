@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> l'avventura in <br> viaggio?"</p>
+        <p>"Quanto conta <br> lo shopping in <br> viaggio?"</p>
       </div>
       <div class="card card-b">
               <p>Esprimi un voto da 1 a 10</p> 
@@ -13,8 +13,8 @@
 
               </div>
           
-        <div class="arrow">
-          <a href="" class="fas fa-angle-right"></a>
+         <div class="arrow">
+          <a href="http://localhost:8080/#/card11" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
