@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> la natura in <br> viaggio?"</p>
+        <p>"Quanto conta <br> la natura in un<br> viaggio?"</p>
       </div>
       <div class="card card-b">
               <p>Esprimi un voto da 1 a 10</p> 
