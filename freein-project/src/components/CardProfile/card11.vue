@@ -2,7 +2,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> l'avventura in <br> viaggio?"</p>
+        <p>"Quanto conta la<br> natura in un <br> viaggio?"</p>
       </div>
       <div class="card card-b">
               <p>Esprimi un voto da 1 a 10</p> 
@@ -10,9 +10,9 @@
               <div class="slidecontainer">
                  <input type="range" min="0" max="100" value="50" id="slider">
               </div>
-          
+              
               <div class="arrow">
-                <a href="" class="fas fa-angle-right"></a>
+                  <a href="" class="fas fa-angle-right"></a>
               </div>
       </div>
     </div>
@@ -98,4 +98,5 @@ z-index: 2;
   color: white;
   background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
 }
+
 </style>
