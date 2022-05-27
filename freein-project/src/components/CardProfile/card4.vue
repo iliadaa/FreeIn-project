@@ -11,7 +11,7 @@
               <p>In gruppo</p>
           </div>
         <div class="arrow">
-          <a href="#" class="fas fa-angle-right"></a>
+          <a href="http://localhost:8080/#/card5" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
