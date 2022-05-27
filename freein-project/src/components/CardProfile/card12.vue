@@ -4,7 +4,7 @@
       <div class="card card-a">
         <p>
           "Quanto conta <br />
-          la cultura in <br />
+          la cultura in un<br />
           viaggio?"
         </p>
       </div>

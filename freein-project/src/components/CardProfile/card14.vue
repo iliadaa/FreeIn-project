@@ -4,8 +4,7 @@
       <div class="card card-a">
         <p>
           "Quanto conta <br />
-          il cibo in <br />
-          viaggio?"
+          il cibo in <br />un viaggio?"
         </p>
       </div>
       <div class="card card-b">
