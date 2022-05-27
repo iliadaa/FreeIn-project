@@ -3,17 +3,14 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> il relax in <br> viaggio?"</p>
+        <p>"Zaino in spalla o<br/> Valigia con le ruote?"</p>
       </div>
       <div class="card card-b">
-              <p>Esprimi un voto da 1 a 10</p> 
-
-              <div class="slidecontainer">
-                 <input type="range" min="0" max="100" value="50" id="slider">
-
-              </div>
-          
-         <div class="arrow">
+          <div class="answer1">
+              <p>Zaino</p> 
+              <p>Valigia</p>
+          </div>
+        <div class="arrow">
           <a href="http://localhost:8080/#/testend" class="fas fa-angle-right"></a>
         </div>
       </div>
