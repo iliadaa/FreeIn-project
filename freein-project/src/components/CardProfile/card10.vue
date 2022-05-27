@@ -9,9 +9,8 @@
               <p>Esprimi un voto da 1 a 10</p> 
 
               <div class="slidecontainer">
-                <!--<input type="range" min="1" max="100" value="50">-->
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                <p>1 2 3 4 5 6 7 8 9 10</p>
+                 <input type="range" min="0" max="100" value="50" id="slider">
+
               </div>
           
         <div class="arrow">
@@ -59,18 +58,30 @@
   font-style: italic;
 }
 .slidecontainer {
-  width: 85%;
+  width: 90%;
 }
-.slider {
+#slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
+  height: 4px;
+  border-radius: 3px;
   outline: none;
-  opacity: 0.7;
+  background: rgb(215, 213, 213);
+  /*opacity: 0.7;
   -webkit-transition: .2s;
-  transition: opacity .2s;
+  transition: opacity .2s;*/
+}
+
+
+
+#selector {
+height: 104px;
+width: 48px;
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 2;
 }
 .arrow {
   position: absolute;
