@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> il relax in <br> viaggio?"</p>
+        <p>"Quanto conta <br> la cultura in <br> viaggio?"</p>
       </div>
       <div class="card card-b">
               <p>Esprimi un voto da 1 a 10</p> 

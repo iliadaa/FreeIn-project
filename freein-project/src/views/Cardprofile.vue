@@ -19,7 +19,7 @@
     <card14/>
     <card15/>
     <card16/>
-
+    <CardProfileEnd/>
 </div>
 </template>
 
