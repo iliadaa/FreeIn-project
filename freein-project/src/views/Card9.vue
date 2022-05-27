@@ -1,19 +1,20 @@
 <template>
-  <div>
+   <div>
     <Header />
     <div class="container">
-      <card2 />
+      <card9 />
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import card2 from "../components/CardProfile/card2.vue";
+
+import card9 from '../components/CardProfile/card9.vue'
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
-export default {
-  name: "Card2",
-  components: { card2, Header, Footer },
-};
+export default ({
+ name:'Card9',
+ components:{card9, Header, Footer}
+})
 </script>

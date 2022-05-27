@@ -11,6 +11,14 @@ import Card3 from '../views/Card3.vue'
 import Cardprofile from '../views/Cardprofile.vue'
 import SignUp from '../views/SignUp-Page.vue'
 import StageCreation from '../views/Stage-Creation.vue'
+import Card4 from '../views/Card4.vue'
+import Card5 from '../views/Card5.vue'
+import Card6 from '../views/Card6.vue'
+import Card7 from '../views/Card7.vue'
+import Card8 from '../views/Card8.vue'
+import Card9 from '../views/Card9.vue'
+import Card10 from '../views/Card10.vue'
+
 
 
 Vue.use(VueRouter)
@@ -61,6 +69,7 @@ const routes = [
     name: 'Card3',
     component: Card3
   },
+  
   {
     path:'/cardProfile',
     name:' Cardprofile ',
@@ -70,6 +79,41 @@ const routes = [
     path:'/stagecreation',
     name:' StageCreation ',
     component: StageCreation 
+  },
+  {
+    path: '/card4',
+    name: 'Card4',
+    component: Card4
+  },
+  {
+    path: '/card5',
+    name: 'Card5',
+    component: Card5
+  },
+  {
+    path: '/card6',
+    name: 'Card6',
+    component: Card6
+  },
+  {
+    path: '/card7',
+    name: 'Card7',
+    component: Card7
+  },
+  {
+    path: '/card8',
+    name: 'Card8',
+    component: Card8
+  },
+  {
+    path: '/card9',
+    name: 'Card9',
+    component: Card9
+  },
+  {
+    path: '/card10',
+    name: 'Card10',
+    component: Card10
   }
  
  

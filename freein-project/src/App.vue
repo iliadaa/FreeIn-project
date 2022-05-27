@@ -7,6 +7,7 @@
 <style lang="scss">
 @import "~@/../mdb/scss/index.free.scss";
 
+
 #app {
   font-family: Exo 2;
   -webkit-font-smoothing: antialiased;
