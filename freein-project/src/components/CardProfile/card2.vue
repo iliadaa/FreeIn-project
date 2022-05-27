@@ -3,42 +3,16 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Lorem ipsum <br> dolor sit amet, <br> consectetur adi- <br> pisicing elit?"</p>
+        <p>"Di solito <br> viaggi ...?"</p>
       </div>
       <div class="card card-b">
-          <div class="cards">
-              <div>
-                  <div class="cardimage">
-                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
-                  </div>
-                  <div class="cardcontainer">
-                      <p>Lorem ipsum</p> 
-                  </div>
-              </div>
-                            
-              <div>
-                  <div class="cardimage">
-                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
-                  </div>
-                  <div class="cardcontainer">
-                      <p>Lorem ipsum</p> 
-                  </div>
-              </div>
-
-              <div>
-                  <div class="cardimage">
-                    <img src="@/assets/travel.jpg" alt="" class="responsive" style="width: 100%; height: auto; padding-right: 5px;">
-                  </div>
-                  <div class="cardcontainer">
-                      <p>Lorem ipsum</p> 
-                  </div>
-              </div>       
+          <div class="answer1">
+              <p>Da solo</p> 
+              <p>In gruppo</p>
           </div>
-
-          <div class="arrow">
-            <a href="http://localhost:8080/#/card3" class="fas fa-angle-right"></a>
-          </div>
-
+        <div class="arrow">
+          <a href="http://localhost:8080/#/card3" class="fas fa-angle-right"></a>
+        </div>
       </div>
     </div>
   </div>
@@ -61,7 +35,7 @@
 }
 .card {
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   text-align: center;
   height: 600px;
   border-radius: 20px;  
@@ -71,22 +45,19 @@
 }
 .card-a p {
   color: white;
+  font-style: italic;
   font-size: 40px;
   text-align: left;
-  padding-top: 100px;
+  margin-left: 20%;
 }
-.cards {
+.answer1 {
   display: flex;
-  margin-right: 30px;
-  margin-left: 30px;
-}
-
-img {
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .card-b p {
-  font-size: 20px;
+  font-size: 30px;
   color: #ea5b0c;
 }
 .arrow {
@@ -96,7 +67,7 @@ img {
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a {
+.arrow a  {
   justify-content: center;
   align-items: center;
   display: inline-flex;

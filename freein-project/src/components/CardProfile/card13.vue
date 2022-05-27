@@ -2,18 +2,15 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta lo<br> shopping in un <br> viaggio?"</p>
-      </div>
-      <div class="card card-b">
-              <p>Esprimi un voto da 1 a 10</p> 
-
-              <div class="slidecontainer">
-                 <input type="range" min="0" max="100" value="50" id="slider">
-              </div>
-              
-              <div class="arrow">
+        <p>"Quanto conta <br> il relax in <br> viaggio?"</p>
                   <a href="" class="fas fa-angle-right"></a>
+
+
               </div>
+          
+         <div class="arrow">
+          <a href="http://localhost:8080/#/card14" class="fas fa-angle-right"></a>
+        </div>
       </div>
     </div>
   </div>
@@ -69,6 +66,8 @@
   -webkit-transition: .2s;
   transition: opacity .2s;*/
 }
+
+
 
 #selector {
 height: 104px;
