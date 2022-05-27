@@ -15,6 +15,7 @@
     <card10/>
     <card11/>
     <card12/>
+    <card13/>
 
 </div>
 </template>
@@ -36,6 +37,7 @@ import card9 from '../components/CardProfile/card9.vue'
 import card10 from '../components/CardProfile/card10.vue'
 import card11 from '../components/CardProfile/card11.vue'
 import card12 from '../components/CardProfile/card12.vue'
+import card13 from '../components/CardProfile/card13.vue'
 
 export default{
     name: "HomeView",
@@ -54,7 +56,8 @@ export default{
     card9,
     card10,
     card11,
-    card12
+    card12,
+    card13
 }
 }
 </script>
