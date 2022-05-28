@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>Scopri il <br> viaggiatore che &egrave; in te.</h1>
+  <h1>Complimenti! <br> Sei un viaggiatore...</h1>
     <div class="cards">
       <div class="arte">
         <div class="image1">
@@ -54,9 +54,9 @@
 
   <!--<img src="@/assets/photos.png" alt="">-->
 
-        <div class="target target_test">
-            <a href="http://localhost:8080/#/card0" class="fas fa-bullseye"></a>
-            <div><p >Vai al TEST</p></div> 
+        <div class="target target_hall">
+            <a href="http://localhost:8080/#/" class="fas fa-bullseye"></a>
+            <div><p >Vai alla tua Hall</p></div> 
         </div>
 </div>
 </template>
@@ -167,7 +167,7 @@ h1 {
 
 .target {
   text-align: right;
-  margin-right: 30px;
+  margin-right: 5px;
 }
 
 .target a {
@@ -183,8 +183,10 @@ h1 {
   background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
   margin-bottom: 10px;
 }
-.target_test a {   
-  margin-right: 11px;
+.target_hall a {   
+  margin-right: 25px;
 }
-
 </style>
+
+
+

@@ -3,12 +3,12 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Di solito <br> viaggi ...?"</p>
+        <p>"Vegano o<br> Hamburger?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <p>Da solo</p> 
-              <p>In gruppo</p>
+              <p>Vegano</p> 
+              <p>Hamburger</p>
           </div>
         <div class="arrow">
           <a href="http://localhost:8080/#/card5" class="fas fa-angle-right"></a>

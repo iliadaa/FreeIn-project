@@ -3,20 +3,18 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"La tua fascia di <br> eta' e'?</p>
+        <p>"Quanto conta <br> la natura in un<br> viaggio?"</p>
       </div>
       <div class="card card-b">
-        <div class="answer1">
-          <p>16-20</p>
-          <p>21-27</p>
-          <p>28-37</p>
-        </div>
-        <div class="answer2">
-          <p>38-55</p>
-          <p>56-90</p>
-        </div>
-        <div class="arrow">
-            <a href="http://localhost:8080/#/card9" class="fas fa-angle-right"></a>
+              <p>Esprimi un voto da 1 a 10</p> 
+
+              <div class="slidecontainer">
+                 <input type="range" min="0" max="100" value="50" id="slider">
+
+              </div>
+          
+         <div class="arrow">
+          <a href="http://localhost:8080/#/card9" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -40,7 +38,7 @@
 }
 .card {
   justify-content: center;
-  /*align-items: center;*/
+  align-items: center;
   text-align: center;
   height: 600px;
   border-radius: 20px;  
@@ -53,26 +51,37 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  
-  margin-left: 20%;
-}
-.answer1 {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20%;
-  margin-right: 20%;
-  font-style: italic;
-}
-.answer2 {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 30%;
-  margin-right: 30%;
-  font-style: italic;
 }
 .card-b p {
   font-size: 30px;
   color: #ea5b0c;
+  font-style: italic;
+}
+.slidecontainer {
+  width: 90%;
+}
+#slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  outline: none;
+  background: rgb(215, 213, 213);
+  /*opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;*/
+}
+
+
+
+#selector {
+height: 104px;
+width: 48px;
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 2;
 }
 .arrow {
   position: absolute;
@@ -81,7 +90,7 @@
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a {
+.arrow a  {
   justify-content: center;
   align-items: center;
   display: inline-flex;
