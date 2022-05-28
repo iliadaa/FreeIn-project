@@ -1,19 +1,20 @@
-
 <template>
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto conta <br> il cibo in <br>un viaggio?"</p>
+        <p>
+          "Quanto conta <br />
+          il cibo in <br />un viaggio?"
+        </p>
       </div>
       <div class="card card-b">
-              <p>Esprimi un voto da 1 a 10</p> 
+        <p>Esprimi un voto da 1 a 10</p>
 
-              <div class="slidecontainer">
-                 <input type="range" min="0" max="100" value="50" id="slider">
+        <div class="slidecontainer">
+          <input type="range" min="0" max="100" value="50" id="slider" />
+        </div>
 
-              </div>
-          
-         <div class="arrow">
+        <div class="arrow">
           <a href="http://localhost:8080/#/card15" class="fas fa-angle-right"></a>
         </div>
       </div>
@@ -26,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 .card-group {
   justify-content: center;
@@ -41,9 +42,9 @@
   align-items: center;
   text-align: center;
   height: 600px;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
-.card-a{
+.card-a {
   background-color: #ea5b0c;
 }
 .card-a p {
@@ -72,16 +73,14 @@
   transition: opacity .2s;*/
 }
 
-
-
 #selector {
-height: 104px;
-width: 48px;
-position: absolute;
-bottom: -20px;
-left: 50%;
-transform: translateX(-50%);
-z-index: 2;
+  height: 104px;
+  width: 48px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 .arrow {
   position: absolute;
@@ -90,7 +89,7 @@ z-index: 2;
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a  {
+.arrow a {
   justify-content: center;
   align-items: center;
   display: inline-flex;
@@ -100,7 +99,6 @@ z-index: 2;
   font-size: 25px;
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);
 }
-
 </style>
