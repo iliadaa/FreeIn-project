@@ -8,12 +8,16 @@
           viaggio?"
         </p>
       </div>
-      <div class="card card-b">
+            <div class="card card-b">
         <p>Esprimi un voto da 1 a 10</p>
-      </div>
 
-      <div class="arrow">
-        <a href="http://localhost:8080/#/card14" class="fas fa-angle-right"></a>
+        <div class="slidecontainer">
+          <input type="range" min="0" max="100" value="50" id="slider" />
+        </div>
+
+        <div class="arrow">
+          <a href="http://localhost:8080/#/card14" class="fas fa-angle-right"></a>
+        </div>
       </div>
     </div>
   </div>
