@@ -33,51 +33,133 @@
           <p style="font-size: 12px">(obbligatorio)</p>
         </h2>
       </div>
-      <div class="percentages">
-        <p style="margin-bottom: 0px">arte e cultura</p>
-        <div class="value-range">
-          {{ value }}%
-          <br />
-          <b-form-input
-            id="range-1"
-            v-model="value"
-            type="range"
-            min="-100"
-            max="100%"
-          >
-          </b-form-input>
+      <div class="flex">
+        <div class="percentages">
+          <p>arte e cultura</p>
+          <p>relax</p>
+          <p>mare</p>
+          <p>natura e avventura</p>
+          <p>gourmet explorer</p>
+          <p>party</p>
         </div>
-        <p style="margin-bottom: 0px">arte e cultura</p>
-        <div class="value-range">
-          {{ value }}%
-          <br />
-          <b-form-input
-            id="range-1"
-            v-model="value"
-            type="range"
-            min="-100"
-            max="100%"
+        <div class="sliders">
+          <VueSlideBar
+            v-model="valueArt"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
           >
-          </b-form-input>
+          </VueSlideBar>
+          <VueSlideBar
+            v-model="valueRelax"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+          >
+          </VueSlideBar>
+          <VueSlideBar
+            v-model="valueMare"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+          >
+          </VueSlideBar>
+          <VueSlideBar
+            v-model="valueNatura"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+          >
+          </VueSlideBar>
+          <VueSlideBar
+            v-model="valueGourmetExplorer"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+          >
+          </VueSlideBar>
+          <VueSlideBar
+            v-model="valueParty"
+            :min="-100"
+            :max="100"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+          >
+          </VueSlideBar>
         </div>
       </div>
+      <hr style="width: 390px; margin-left: 80px" />
+      <div class="Reccomend-orNot">
+        <h2>
+          A chi consiglieresti questa tappa?
+          <p style="font-size: 10px">(obbligatorio)</p>
+        </h2>
+        <div class="btns-group1">
+          <b-button class="btn" type="submit">Famiglia</b-button>
+          <b-button class="btn" type="submit">Single</b-button>
+          <b-button class="btn" type="submit">Struttura per animali</b-button>
+        </div>
+        <div class="btns-group2">
+          <b-button class="btn" type="submit">Bambini</b-button>
+          <b-button class="btn" type="submit">Comitiva</b-button>
+          <b-button class="btn" type="submit">Coppia</b-button>
+        </div>
+      </div>
+      <div class="vl">
+          <div class="stage-details">
+          <h2>Titolo tappa
+              <input>
+          </h2>
+          <h2>
+              <input>
+          </h2>
+      </div>
+      </div>
+      
     </div>
   </div>
 </template>
 
 <script>
+import VueSlideBar from "vue-slide-bar";
 export default {
   data() {
     return {
+      slider: {
+        lineHeight: 2,
+        processStyle: {
+          backgroundColor: "grey",
+        },
+      },
       files: [],
-      value: "2",
+      valueArt: "0",
+      valueRelax: "0",
+      valueMare: "0",
+      valueNatura: "0",
+      valueGourmetExplorer: "0",
+      valueParty: "0",
     };
+  },
+  components: {
+    VueSlideBar,
   },
   filters: {
     kb(val) {
       return Math.floor(val / 1024);
     },
   },
+
   methods: {
     addFile(e) {
       let files = e.dataTransfer.files;
@@ -97,6 +179,9 @@ export default {
 </script>
 
 <style scoped>
+.flex {
+  display: flex;
+}
 .value-range {
   margin-left: 130px;
 }
@@ -105,17 +190,28 @@ export default {
   margin-left: 150px;
 }
 
+#wrap {
+  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
 .percentages {
   margin-left: 80px;
-  display: flex;
+  align-items: center;
+}
+.percentages p {
+  margin-bottom: 50px;
+  margin-top: 22px;
+  text-align: left;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1920px;
   background-color: #e6e6e6;
   margin-left: auto;
   margin-right: auto;
-  height: 1000px;
+  height: auto;
   align-content: center;
   justify-content: center;
   display: flex;
@@ -128,6 +224,13 @@ export default {
   margin-right: auto;
   border-radius: 2%;
   color: #939393;
+}
+
+.vl {
+  border-right: 2px solid #e6e6e6;
+  height: 1250px;
+  margin-top: -1200px;
+  margin-right: 820px;
 }
 
 .ph-layout {
@@ -165,11 +268,42 @@ export default {
 
 .classify-stage {
   margin-top: 80px;
-  margin-left: 80px;
+  margin-left: 70px;
 }
 
 .classify-stage h2 {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+.Reccomend-orNot {
+  margin-left: 70px;
+}
+
+.Reccomend-orNot h2 {
+  font-size: 20px;
+}
+
+.btn {
+  margin-right: 20px;
+  height: auto;
+  width: auto;
+  border-radius: 30px;
+  font-size: 70%;
+  border-color: white;
+  background-color: orange;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.btns-group2 {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.stage-details{
+    margin-left: 500px;
+}
+
 </style>
