@@ -9,7 +9,16 @@
               <p>Esprimi un voto da 1 a 10</p> 
 
               <div class="slidecontainer">
-                 <input type="range" min="0" max="100" value="50" id="slider">
+                <VueSlideBar
+                  v-model="value2"
+                  :min="1"
+                  :max="10"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :range="slider.range"
+                  @callbackRange="callbackRange"
+                  :tooltipStyles="{ backgroundColor: '#ea5b0c', borderColor: '#ea5b0c' }">
+                </VueSlideBar>
 
               </div>
           
@@ -20,7 +29,59 @@
     </div>
   </div>
 </template>
+<script>
 
+export default {
+  data () {
+    return {
+      value2: 8,
+      slider: {
+        lineHeight: 10,
+        processStyle: {
+          backgroundColor: '#ea5b0c'
+        },
+        range: [
+          {
+            label: '1'
+          },
+          {
+            label: '2'
+          },
+          {
+            label: '3'
+          },
+          {
+            label: '4'
+          },
+          {
+            label: '5'
+          },
+          {
+            label: '6'
+          },
+          {
+            label: '7'
+          },
+          {
+            label: '8'
+          },
+          {
+            label: '9'
+          },
+          {
+            label: '10'
+          }
+        ]
+      }
+    }
+  },
+  methods: {
+    callbackRange (val) {
+      this.rangeValue = val
+    }
+  }
+}
+</script> 
 <style scoped>
 .container {
   display: flex;
