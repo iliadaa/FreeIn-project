@@ -23,7 +23,9 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Avanti >></b-button>
+        <b-button class="business-1-button"
+          ><a href="http://localhost:8080/#/businesscard3">Avanti >></a></b-button
+        >
       </div>
     </div>
   </div>
@@ -154,5 +156,12 @@ input {
 
 .espositore {
   padding-top: 15px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 </style>

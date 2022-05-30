@@ -9,15 +9,21 @@
           <h3>Riepilogo</h3>
           <div class="payment-method">
             <h4>Metodo di acquisto</h4>
-            <div class="modification"><a href="#">Modifica</a></div>
+            <div class="modification">
+              <a href="http://localhost:8080/#/businesscard3">Modifica</a>
+            </div>
           </div>
           <div class="business-name">
             <h4>Ragione Sociale</h4>
-            <div class="modification"><a href="#">Modifica</a></div>
+            <div class="modification">
+              <a href="http://localhost:8080/#/businesscard2">Modifica</a>
+            </div>
           </div>
           <div class="e-mail">
             <h4>Indirizzo e-mail aziendale</h4>
-            <div class="modification"><a href="#">Modifica</a></div>
+            <div class="modification">
+              <a href="http://localhost:8080/#/businesscard2">Modifica</a>
+            </div>
           </div>
         </div>
       </div>
@@ -172,5 +178,8 @@ ul {
 a {
   color: #989a9d;
   text-decoration: none;
+}
+a:hover {
+  color: #989a9d;
 }
 </style>

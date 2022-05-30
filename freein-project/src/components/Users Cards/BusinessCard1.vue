@@ -18,7 +18,9 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Avanti >></b-button>
+        <b-button class="business-1-button"
+          ><a href="http://localhost:8080/#/businesscard2">Avanti >></a></b-button
+        >
       </div>
     </div>
   </div>
@@ -127,5 +129,12 @@ export default {
 }
 .dots {
   padding-left: 25%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 </style>

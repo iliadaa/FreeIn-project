@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <UserCard />
+
+    <BusinessCard2 />
 
     <Footer />
   </div>
@@ -10,13 +11,13 @@
 <script>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
-import UserCard from "../components/Users Cards/UserCard.vue";
-
+import BusinessCard2 from "../components/Users Cards/BusinessCard2.vue";
 export default {
   name: "BusinessPage",
   components: {
     Header,
-    UserCard,
+
+    BusinessCard2,
 
     Footer,
   },

@@ -23,7 +23,9 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Avanti >></b-button>
+        <b-button class="business-1-button"
+          ><a href="http://localhost:8080/#/businesscard4">Avanti >></a></b-button
+        >
       </div>
     </div>
   </div>
@@ -134,5 +136,12 @@ export default {
 li {
   font-weight: bold;
   font-size: x-large;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 </style>
