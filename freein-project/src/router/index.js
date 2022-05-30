@@ -4,6 +4,7 @@ import FirstPage from '../views/FirstPage.vue'
 import AboutView from '../views/AboutView.vue'
 import Test from '../views/Test.vue'
 import TestEnd from '../views/TestEnd.vue'
+import TestEnd2 from '../views/TestEnd2.vue'
 import BusinessPage from "../views/BusinessPage.vue"
 import Card0 from '../views/Card0.vue'
 import Card1 from '../views/Card1.vue'
@@ -57,6 +58,11 @@ const routes = [{
         path: '/testend',
         name: 'TestEnd',
         component: TestEnd
+    },
+    {
+        path: '/testend2',
+        name: 'TestEnd2',
+        component: TestEnd2
     },
     {
         path: '/businesspage',

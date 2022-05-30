@@ -20,6 +20,7 @@
     <card15 />
     <card16 />
     <CardProfileEnd />
+    <CardProfileEnd2 />
   </div>
 </template>
 
@@ -44,6 +45,7 @@ import card14 from "../components/CardProfile/card14.vue";
 import card15 from "../components/CardProfile/card15.vue";
 import card16 from "../components/CardProfile/card16.vue";
 import CardProfileEnd from "../components/CardProfile/CardProfile-End.vue";
+import CardProfileEnd2 from "../components/CardProfile/CardProfile-End2.vue";
 export default {
   name: "HomeView",
   components: {
@@ -67,6 +69,7 @@ export default {
     card15,
     card16,
     CardProfileEnd,
+    CardProfileEnd2,
   },
 };
 </script>

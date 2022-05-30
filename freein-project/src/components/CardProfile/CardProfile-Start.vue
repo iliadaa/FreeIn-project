@@ -8,7 +8,7 @@
           <img src="@/assets/art.png" alt="">
         </div>
         <div class="cardcontainer1">
-          <p>Arte & Cultura</p> 
+          <p>Arte &AMP; Cultura</p> 
         </div>
       </div>
       <div class="mare">
@@ -45,10 +45,10 @@
       </div>
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura-&-Avventura.png" alt="">
+          <img src="@/assets/Natura_Avventura.png" alt="">
         </div>
         <div class="cardcontainer1">
-          <p>Natura & Avventura</p> 
+          <p>Natura &AMP; Avventura</p> 
         </div>
       </div>
     </div>
