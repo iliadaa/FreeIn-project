@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Di solito <br> viaggi ...?"</p>
+        <p>"Di solito viaggi ...?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
@@ -48,7 +48,7 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 100px;
 }
 .answer1 {
   display: flex;

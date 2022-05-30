@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"La tua fascia di <br> eta' e'?</p>
+        <p>"La tua fascia di eta' e'?</p>
       </div>
       <div class="card card-b">
         <div class="answer1">
@@ -53,8 +53,8 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  
-  margin-left: 20%;
+  margin-left: 100px;
+  margin-right: 80px;
 }
 .answer1 {
   display: flex;

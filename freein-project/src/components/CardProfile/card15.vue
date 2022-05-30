@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Cucina Gourmet o<br> Street Food?"</p>
+        <p>"Cucina Gourmet o Street Food?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
@@ -48,7 +48,7 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 110px;
 }
 .answer1 {
   display: flex;

@@ -2,11 +2,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>
-          "Quanto conta <br />
-          il divertimento in un<br />
-          viaggio?"
-        </p>
+        <p>"Quanto conta il divertimento in un viaggio?"</p>
       </div>
             <div class="card card-b">
         <p>Esprimi un voto da 1 a 10</p>
@@ -114,6 +110,7 @@ export default {
   font-style: italic;
   font-size: 40px;
   text-align: left;
+  margin-left: 110px;
 }
 .card-b p {
   font-size: 30px;
