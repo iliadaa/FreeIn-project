@@ -47,6 +47,7 @@ export default {
 }
 .card > h1 {
   margin-bottom: 100px;
+  color: #000000;
 }
 .button > h2 {
   color: white;
@@ -59,18 +60,16 @@ export default {
 .button:active {
   background-color: #ea5b0c;
   border-color: transparent;
- 
 }
 .button:focus {
- outline-color: transparent;
+  outline-color: transparent;
   background-color: #ea5b0c;
-  outline-style:none;
+  outline-style: none;
   border-color: none;
-  
 }
-.btn-secondary:focus{
-    box-shadow: none;
-     outline-style:none;
+.btn-secondary:focus {
+  box-shadow: none;
+  outline-style: none;
 }
 
 .button-group > .button:not(:last-child) {
