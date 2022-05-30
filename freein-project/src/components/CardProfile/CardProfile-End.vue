@@ -69,7 +69,7 @@
         </div>
 
         <div class="button1">
-          <a href="#" class="button">portami alla mia hall</a>
+          <a href="http://localhost:8080/#/businesspage" class="button">portami alla mia hall</a>
         </div>
         
 </div>
