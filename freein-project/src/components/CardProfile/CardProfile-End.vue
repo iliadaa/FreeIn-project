@@ -7,14 +7,14 @@
     <img class="img1" src="@/assets/Gourmet-Explorer.png" alt=""> 
   </div>
   <div class="circle2">
-    <img class="img2" src="@/assets/Relax.png" alt=""> 
+    <img class="img2" src="@/assets/donna.png" alt=""> 
   </div>
 </div>
 
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/Arte-&-Cultura.png" alt="">
+          <img src="@/assets/art.png" alt="">
         </div>
         <div class="cardcontainer1">
           <p>Arte & Cultura</p> 
@@ -38,7 +38,7 @@
       </div>
       <div class="relax">
         <div class="image3">
-          <img src="@/assets/Relax.png" alt="">
+          <img src="@/assets/relax.png" alt="">
         </div>
         <div class="cardcontainer2">
           <p>Relax</p> 
@@ -67,6 +67,11 @@
         <div class="text">
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque rerum architecto officia necessitatibus vel dolorum provident quod ex atque magnam porro vero ratione, dolore accusantium!</p>
         </div>
+
+        <div class="button1">
+          <a href="#" class="button">portami alla mia hall</a>
+        </div>
+        
 </div>
 </template>
 
@@ -103,10 +108,10 @@ h1 {
   margin-top: 40px;
 }
 .img2 {
-  width: 131px;
+  width: 181px;
   height: 170px;
-  margin-left: 45px;
-  margin-top: 15px;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 .cards {
   display: flex;
@@ -210,6 +215,27 @@ img {
   text-align: justify;
   margin-left: 320px;
   margin-right: 318px;
+}
+
+.button1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+.button {
+  background-color: #ea5b0c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 </style>
 

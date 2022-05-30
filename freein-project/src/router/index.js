@@ -25,6 +25,7 @@ import Card13 from '../views/Card13.vue'
 import Card14 from '../views/Card14.vue'
 import Card15 from '../views/Card15.vue'
 import Card16 from '../views/Card16.vue'
+import Dashboard1 from '../views/Dashboard1.vue'
 
 
 Vue.use(VueRouter)
@@ -154,7 +155,13 @@ const routes = [{
         path: '/card16',
         name: 'Card16',
         component: Card16
+    },
+    {
+        path: '/dashboard1',
+        name: 'Dashboard1',
+        component: Dashboard1
     }
+
 
 
 ]

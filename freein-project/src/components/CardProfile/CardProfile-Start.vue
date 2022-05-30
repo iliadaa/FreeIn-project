@@ -5,7 +5,7 @@
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/Arte-&-Cultura.png" alt="">
+          <img src="@/assets/art.png" alt="">
         </div>
         <div class="cardcontainer1">
           <p>Arte & Cultura</p> 
@@ -29,7 +29,7 @@
       </div>
       <div class="relax">
         <div class="image3">
-          <img src="@/assets/Relax.png" alt="">
+          <img src="@/assets/relax.png" alt="">
         </div>
         <div class="cardcontainer2">
           <p>Relax</p> 
