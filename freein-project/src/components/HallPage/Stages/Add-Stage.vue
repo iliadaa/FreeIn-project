@@ -116,17 +116,17 @@
           <b-button class="btn" type="submit">Coppia</b-button>
         </div>
       </div>
-      <div class="vl">
-          <div class="stage-details">
-          <h2>Titolo tappa
-              <input>
+      <div class="vl">  
+      </div>
+         <div class="stage-details">
+          <h2>Titolo tappa <p>(obbligatorio)</p>
+          <input>
           </h2>
+          <input>
           <h2>
-              <input>
+              
           </h2>
       </div>
-      </div>
-      
     </div>
   </div>
 </template>
@@ -303,7 +303,25 @@ export default {
 }
 
 .stage-details{
-    margin-left: 500px;
+    margin-left: 550px;
+    position: absolute;
+    top: 32%;
+}
+
+.stage-details h2{
+    font-size: 20px;
+}
+
+.stage-details p{
+    font-size: 10px;
+    margin-left: 110px;
+    margin-top: -15px;
+}
+
+.stage-details input{
+  border: 0px, 0px ,0px;
+  border-style: ridge;
+  border-color: rgba(211, 211, 211, 0.236);
 }
 
 </style>
