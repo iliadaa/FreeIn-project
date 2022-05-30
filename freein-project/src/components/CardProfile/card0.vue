@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>Scopri che <br> viaggiatore sei <br> in pochi passi</p>
+        <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
       <div class="card card-b">
         <div class="arrow">
@@ -44,7 +44,7 @@
   font-size: 45px;
   font-weight: bold;
   text-align: left;
-  padding-top: 100px;
+  margin-left: 100px;
 }
 .arrow a {
   justify-content: center;

@@ -54,7 +54,7 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 100px;
 }
 .answer2 {
   display: flex;

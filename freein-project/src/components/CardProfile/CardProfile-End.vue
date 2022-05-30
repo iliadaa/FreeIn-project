@@ -1,6 +1,16 @@
 <template>
-<div>
-  <h1>Complimenti! <br> Sei un viaggiatore...</h1>
+<div class="container">
+  <h1>Il Tuo profilo &egrave;</h1>
+
+<div class="circles">
+  <div class="circle1">
+    <img class="img1" src="@/assets/Gourmet-Explorer.png" alt=""> 
+  </div>
+  <div class="circle2">
+    <img class="img2" src="@/assets/Relax.png" alt=""> 
+  </div>
+</div>
+
     <div class="cards">
       <div class="arte">
         <div class="image1">
@@ -54,137 +64,152 @@
 
   <!--<img src="@/assets/photos.png" alt="">-->
 
-        <div class="target target_hall">
-            <a href="http://localhost:8080/#/" class="fas fa-bullseye"></a>
-            <div><p >Vai alla tua Hall</p></div> 
+        <div class="text">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque rerum architecto officia necessitatibus vel dolorum provident quod ex atque magnam porro vero ratione, dolore accusantium!</p>
         </div>
 </div>
 </template>
 
-<style>
+<style scoped>
 h1 {
-  color: #2d2e83;
-  font-size: 60px;
-  text-align: right;
+  color: #ea5b0c;
+  font-size: 40px;
+  text-align: center;
 }
-
+.circles {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 8%;
+  margin-bottom: 75px; 
+}
+.circle1, .circle2 {
+  height: 225px;
+  width: 225px;
+  border-radius: 50%;
+}
+.circle1 {
+  background: #009EE2;
+}
+.circle2 {
+  background: #ea5b0c;
+  transform: translateX(-100px);
+  z-index: 2;
+}
+.img1 {
+  width: 131px;
+  height: 170px;
+  margin-left: 45px;
+  margin-top: 40px;
+}
+.img2 {
+  width: 131px;
+  height: 170px;
+  margin-left: 45px;
+  margin-top: 15px;
+}
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: auto;
   margin-top: 70px;
   margin-bottom: 70px;
 }
-
+img {
+  width: 71px;
+  height: 90px;
+}
 .arte {
   background-color: #EC624C;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
+  margin-right: 20px;
 }
-
 .mare {
   background-color: #2C307F;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
+  margin-right: 20px;
 }
-
 .gourmet {
   background-color: #009EE2;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
+  margin-right: 20px;
 }
-
 .relax {
   background-color: #DC2C6C;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
+  margin-right: 20px;
 }
-
 .party {
   background-color: purple;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
+  margin-right: 20px;
 }
-
 .natura {
   background-color: #F6A314;
-  width: 160px;
-  height: 220px;
+  width: 90px;
+  height: 120px;
   position: relative;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  border-radius: 10px;
 }
-
 .image1 {
   padding: 10px;
 }
-
 .image2 {
   padding-left: 20px;
 }
-
 .image3 {
   padding-left: 7px;
 }
-
 .image4 {
-  padding-left: 20px;
+  padding-left: 15px;
 }
-
 .image5 {
   padding-left: 10px;
 }
-
 .cardcontainer1 {
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
   color: white;
   text-align: center;
   position: absolute;
-  line-height: 22px;
-  top: 170px;
+  line-height: 11px;
+  top: 95px;
 }
-
 .cardcontainer2 {
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
   color: white;
   position: absolute;
-  line-height: 22px;
-  top: 193px;
-  left: 45px;
+  line-height: 11px;
+  top: 105px;
+  left: 28px;
 }
-
-.target {
-  text-align: right;
-  margin-right: 5px;
-}
-
-.target a {
-  justify-content: center;
-  align-items: center;
-  display: inline-flex;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 40px;
-  text-decoration: none;
-  color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
-  margin-bottom: 10px;
-}
-.target_hall a {   
-  margin-right: 25px;
+.text {
+  text-align: justify;
+  margin-left: 320px;
+  margin-right: 318px;
 }
 </style>
 

@@ -1,6 +1,7 @@
 <template>
-<div>
-  <h1>Scopri il <br> viaggiatore che &egrave; in te.</h1>
+<div class="conatiner">
+  <h1>Scopri il</h1> 
+  <h1>viaggiatore che &egrave; in te.</h1>
     <div class="cards">
       <div class="arte">
         <div class="image1">
@@ -61,7 +62,11 @@
 </div>
 </template>
 
-<style>
+<style scoped>
+.container {
+  display: flex;
+}
+
 h1 {
   color: #2d2e83;
   font-size: 60px;

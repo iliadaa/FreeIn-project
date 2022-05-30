@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Quanto spendi <br> per una bottiglia <br> di vino?"</p>
+        <p>"Quanto spendi per una bottiglia di vino?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
@@ -53,7 +53,8 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 100px;
+  margin-right: 80px;
 }
 .answer2 {
   display: flex;

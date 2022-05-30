@@ -3,7 +3,7 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Zaino in spalla o<br/> Valigia con le ruote?"</p>
+        <p>"Zaino in spalla o Valigia con le ruote?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
@@ -48,7 +48,7 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 110px;
 }
 .answer1 {
   display: flex;
