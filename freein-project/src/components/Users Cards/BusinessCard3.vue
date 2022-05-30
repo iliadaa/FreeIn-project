@@ -2,15 +2,20 @@
   <div class="container-business-user">
     <div class="card">
       <div class="card-header">Configura il tuo Business</div>
-      <div class="card-sub-title">
-        <h2>Ecco cosa ti servira per iniziare</h2>
-        <h6>Prima di iniziare a vendere, dovrai completare alcun passaggi</h6>
-      </div>
-      <div class="business-list">
-        <img src="@/assets/business-icon.png" />
-        <img src="@/assets/list2.jpg" />
-      </div>
 
+      <div class="business-list-2">
+        <img src="@/assets/business-icon.png" />
+        <div class="card-sub-title">
+          <h3>Scegli il metodo di acquisto</h3>
+          <p>
+            Il tuo metodo di acquisto determina dove eseguono la conversione i tuoi
+            clienti quando desiderano acquistare un articolo dal tuo shop. La
+            configurazione della procedura di acquisto &egrave; gratuita.
+          </p>
+          <li>Paypal</li>
+          <li>Bonifico</li>
+        </div>
+      </div>
       <div class="button-dots">
         <div class="dots">
           <span class="dot-1"></span>
@@ -19,19 +24,17 @@
           <span class="dot-4"></span>
         </div>
         <b-button class="business-1-button"
-          ><a href="http://localhost:8080/#/businesscard2">Avanti >></a></b-button
+          ><a href="http://localhost:8080/#/businesscard4">Avanti >></a></b-button
         >
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  name: "BusinessCard1",
+  name: "BusinessCard3",
 };
 </script>
-
 <style scoped>
 .container-business-user {
   display: flex;
@@ -57,14 +60,7 @@ export default {
 .card-header:first-child {
   border-radius: calc(2.25rem) calc(2.25rem) 0 0;
 }
-.card-sub-title {
-  padding-top: 2%;
-  text-align: center;
-}
-.card-sub-title > h2 {
-  color: black;
-  text-transform: uppercase;
-}
+
 .business-1-button {
   background-color: #ea5b0c;
   border-color: transparent;
@@ -107,7 +103,7 @@ export default {
 .dot-2 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
+  background-color: #ea5b0c;
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px 0px 30px;
@@ -123,12 +119,23 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #bbb;
+
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px;
 }
 .dots {
   padding-left: 25%;
+}
+.business-list-2 {
+  display: flex;
+}
+.card-sub-title {
+  padding: 80px 0 0 65px;
+}
+li {
+  font-weight: bold;
+  font-size: x-large;
 }
 a {
   color: white;

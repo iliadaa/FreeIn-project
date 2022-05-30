@@ -25,7 +25,10 @@ import Card13 from '../views/Card13.vue'
 import Card14 from '../views/Card14.vue'
 import Card15 from '../views/Card15.vue'
 import Card16 from '../views/Card16.vue'
-import Dashboard1 from '../views/Dashboard1.vue'
+import BusinessCard2 from "../views/BusinessCard2.vue"
+import BusinessCard1 from "../views/BusinessCard1.vue"
+import BusinessCard3 from "../views/BusinessCard3.vue"
+import BusinessCard4 from "../views/BusinessCard4.vue"
 
 
 Vue.use(VueRouter)
@@ -157,10 +160,26 @@ const routes = [{
         component: Card16
     },
     {
-        path: '/dashboard1',
-        name: 'Dashboard1',
-        component: Dashboard1
-    }
+        path: '/businesscard2',
+        name: 'BusinessCard2',
+        component: BusinessCard2
+    },
+    {
+        path: '/businesscard1',
+        name: 'BusinessCard1',
+        component: BusinessCard1
+    },
+    {
+        path: '/businesscard3',
+        name: 'BusinessCard3',
+        component: BusinessCard3
+    },
+    {
+        path: '/businesscard4',
+        name: 'BusinessCard4',
+        component: BusinessCard4
+    },
+
 
 
 
