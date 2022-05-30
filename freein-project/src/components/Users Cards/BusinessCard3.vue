@@ -2,18 +2,18 @@
   <div class="container-business-user">
     <div class="card">
       <div class="card-header">Configura il tuo Business</div>
-      <div class="card-sub-title">
-        <h3>Fornisci i dettagli della tua Azienda</h3>
-      </div>
+
       <div class="business-list-2">
         <img src="@/assets/business-icon.png" />
-        <div class="business-information">
-          <input placeholder="Ragione Sociale" />
-          <div class="email">
-            <input placeholder="Indirizzo mail Aziendale" />
-          </div>
-          <h3>Fornisci un nome all'espositore</h3>
-          <div class="espositore"><input placeholder="Espositore" /></div>
+        <div class="card-sub-title">
+          <h3>Scegli il metodo di acquisto</h3>
+          <p>
+            Il tuo metodo di acquisto determina dove eseguono la conversione i tuoi
+            clienti quando desiderano acquistare un articolo dal tuo shop. La
+            configurazione della procedura di acquisto &egrave; gratuita.
+          </p>
+          <li>Paypal</li>
+          <li>Bonifico</li>
         </div>
       </div>
       <div class="button-dots">
@@ -30,7 +30,7 @@
 </template>
 <script>
 export default {
-  name: "BusinessCard2",
+  name: "BusinessCard3",
 };
 </script>
 <style scoped>
@@ -58,14 +58,7 @@ export default {
 .card-header:first-child {
   border-radius: calc(2.25rem) calc(2.25rem) 0 0;
 }
-.card-sub-title {
-  padding-top: 2%;
-  text-align: center;
-}
-.card-sub-title > h2 {
-  color: black;
-  text-transform: uppercase;
-}
+
 .business-1-button {
   background-color: #ea5b0c;
   border-color: transparent;
@@ -116,7 +109,7 @@ export default {
 .dot-3 {
   height: 50px;
   width: 50px;
-  background-color: #ea5b0c;
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
 }
@@ -135,24 +128,11 @@ export default {
 .business-list-2 {
   display: flex;
 }
-.email {
-  padding-top: 3%;
-  padding-bottom: 15px;
+.card-sub-title {
+  padding: 80px 0 0 65px;
 }
-.Ragione-sociale {
-  padding-top: 10%;
-}
-input {
-  width: 400px;
-  height: 70px;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-.business-information {
-  padding-top: 50px;
-}
-
-.espositore {
-  padding-top: 15px;
+li {
+  font-weight: bold;
+  font-size: x-large;
 }
 </style>

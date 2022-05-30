@@ -2,18 +2,23 @@
   <div class="container-business-user">
     <div class="card">
       <div class="card-header">Configura il tuo Business</div>
-      <div class="card-sub-title">
-        <h3>Fornisci i dettagli della tua Azienda</h3>
-      </div>
+
       <div class="business-list-2">
         <img src="@/assets/business-icon.png" />
-        <div class="business-information">
-          <input placeholder="Ragione Sociale" />
-          <div class="email">
-            <input placeholder="Indirizzo mail Aziendale" />
+        <div class="card-sub-title">
+          <h3>Riepilogo</h3>
+          <div class="payment-method">
+            <h4>Metodo di acquisto</h4>
+            <div class="modification"><a href="#">Modifica</a></div>
           </div>
-          <h3>Fornisci un nome all'espositore</h3>
-          <div class="espositore"><input placeholder="Espositore" /></div>
+          <div class="business-name">
+            <h4>Ragione Sociale</h4>
+            <div class="modification"><a href="#">Modifica</a></div>
+          </div>
+          <div class="e-mail">
+            <h4>Indirizzo e-mail aziendale</h4>
+            <div class="modification"><a href="#">Modifica</a></div>
+          </div>
         </div>
       </div>
       <div class="button-dots">
@@ -23,14 +28,21 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Avanti >></b-button>
+        <b-button class="business-1-button">Fine</b-button>
+      </div>
+      <div class="privacy">
+        <input type="checkbox" />
+        <label>
+          Inviando il tuo business per controllo, Accetti il nostro
+          <span style="color: #37beeb">Accordo con il venditore</span></label
+        >
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "BusinessCard2",
+  name: "BusinessCard4",
 };
 </script>
 <style scoped>
@@ -58,19 +70,13 @@ export default {
 .card-header:first-child {
   border-radius: calc(2.25rem) calc(2.25rem) 0 0;
 }
-.card-sub-title {
-  padding-top: 2%;
-  text-align: center;
-}
-.card-sub-title > h2 {
-  color: black;
-  text-transform: uppercase;
-}
+
 .business-1-button {
   background-color: #ea5b0c;
   border-color: transparent;
   font-style: normal;
   line-height: 28px;
+  width: 150px;
 }
 .business-1-button:hover {
   background-color: #ea5b0c;
@@ -135,24 +141,36 @@ export default {
 .business-list-2 {
   display: flex;
 }
-.email {
-  padding-top: 3%;
-  padding-bottom: 15px;
+.card-sub-title {
+  padding: 80px 0 0 65px;
 }
-.Ragione-sociale {
-  padding-top: 10%;
+ul {
+  font-weight: bold;
+  font-size: large;
 }
-input {
-  width: 400px;
-  height: 70px;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-.business-information {
-  padding-top: 50px;
+.privacy {
+  text-align: center;
+  padding-top: 5%;
 }
 
-.espositore {
-  padding-top: 15px;
+.payment-method {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.business-name {
+  display: flex;
+  justify-content: space-between;
+}
+.e-mail {
+  display: flex;
+  justify-content: space-between;
+}
+.modification {
+  padding-left: 120px;
+}
+a {
+  color: #989a9d;
+  text-decoration: none;
 }
 </style>
