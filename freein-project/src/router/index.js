@@ -30,6 +30,7 @@ import BusinessCard2 from "../views/BusinessCard2.vue"
 import BusinessCard1 from "../views/BusinessCard1.vue"
 import BusinessCard3 from "../views/BusinessCard3.vue"
 import BusinessCard4 from "../views/BusinessCard4.vue"
+import BusinessProfile from "../views/BusinessProfile.vue"
 
 
 Vue.use(VueRouter)
@@ -185,7 +186,11 @@ const routes = [{
         name: 'BusinessCard4',
         component: BusinessCard4
     },
-
+  {
+      path:'/businessprofile',
+      name:"BusinessProfile",
+      component: BusinessProfile
+  }
 
 
 
