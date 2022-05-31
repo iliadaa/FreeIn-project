@@ -116,16 +116,35 @@
           <b-button class="btn" type="submit">Coppia</b-button>
         </div>
       </div>
-      <div class="vl">  
+      <div class="vl"></div>
+      <div class="stage-details">
+        <h2>
+          Titolo tappa
+          <p>(obbligatorio)</p>
+        </h2>
+        <input
+          placeholder="   Assegna un titolo alla tappa massimo xx caratteri"
+        />
+        <h2>
+          Location
+          <p>(obbligatorio)</p>
+        </h2>
+        <input
+          placeholder="   Inserisci il nome del luogo massimo xx caratteri"
+        />
+        <h2>
+          Testo
+          <p>(obbligatorio)</p>
+        </h2>
+        <input
+          style="height: 150px"
+          placeholder="   Inserisci descrizione massimo 37 caratteri"
+        />
       </div>
-         <div class="stage-details">
-          <h2>Titolo tappa <p>(obbligatorio)</p>
-          <input>
-          </h2>
-          <input>
-          <h2>
-              
-          </h2>
+      <div class="end-adding-buttons">
+        <a href="#">Annulla</a>
+        <a href="#">Salva come bozza</a>
+        <a href="#">Pubblica</a>
       </div>
     </div>
   </div>
@@ -218,6 +237,7 @@ export default {
 }
 .form-group {
   width: 1300px;
+  height: 1400px;
   margin-top: 80px;
   background-color: #f2f2f2;
   margin-left: auto;
@@ -302,26 +322,51 @@ export default {
   margin-left: 100px;
 }
 
-.stage-details{
-    margin-left: 550px;
-    position: absolute;
-    top: 32%;
+.stage-details {
+  margin-left: 550px;
+  position: absolute;
+  top: 32%;
 }
 
-.stage-details h2{
-    font-size: 20px;
+.stage-details h2 {
+  font-size: 20px;
 }
 
-.stage-details p{
-    font-size: 10px;
-    margin-left: 110px;
-    margin-top: -15px;
+.stage-details p {
+  font-size: 10px;
+  margin-top: -15px;
+  display: contents;
 }
 
-.stage-details input{
-  border: 0px, 0px ,0px;
+.stage-details input {
+  width: 300%;
+  height: 50px;
+  margin-bottom: 10px;
+  border: 0px, 0px, 0px;
   border-style: ridge;
   border-color: rgba(211, 211, 211, 0.236);
 }
 
+.end-adding-buttons {
+  position: absolute;
+  left: 42%;
+  bottom: -680px;
+}
+
+.end-adding-buttons a {
+  text-decoration: none;
+  margin-right: 100px;
+  width: 100px;
+  height: 100px;
+  font-size: 25px;
+  margin-left: 20px;
+  background-color: orange;
+  color: grey;
+  align-items: center;
+  text-align: center;
+  display: inline;
+  border-color: black;
+  border-radius: 20%;
+  text-decoration: none;
+}
 </style>
