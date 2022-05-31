@@ -114,13 +114,12 @@
         </div>
         <div class="progress_container1">
           <VueProgressBar 
-
-      type="line"
-      :border="true" 
-      :line-height="18"
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="30" ></VueProgressBar>
+            type="line"
+            :border="true" 
+            :line-height="18"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="30" ></VueProgressBar>
         </div>
       </div>
     </div>
