@@ -5,10 +5,10 @@
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/Arte-&-Cultura.png" alt="">
+          <img src="@/assets/art.png" alt="">
         </div>
         <div class="cardcontainer1">
-          <p>Arte & Cultura</p> 
+          <p>Arte &AMP; Cultura</p> 
         </div>
       </div>
       <div class="mare">
@@ -29,7 +29,7 @@
       </div>
       <div class="relax">
         <div class="image3">
-          <img src="@/assets/Relax.png" alt="">
+          <img src="@/assets/relax.png" alt="">
         </div>
         <div class="cardcontainer2">
           <p>Relax</p> 
@@ -45,10 +45,10 @@
       </div>
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura-&-Avventura.png" alt="">
+          <img src="@/assets/Natura_Avventura.png" alt="">
         </div>
         <div class="cardcontainer1">
-          <p>Natura & Avventura</p> 
+          <p>Natura &AMP; Avventura</p> 
         </div>
       </div>
     </div>

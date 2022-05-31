@@ -4,6 +4,7 @@ import FirstPage from '../views/FirstPage.vue'
 import AboutView from '../views/AboutView.vue'
 import Test from '../views/Test.vue'
 import TestEnd from '../views/TestEnd.vue'
+import TestEnd2 from '../views/TestEnd2.vue'
 import BusinessPage from "../views/BusinessPage.vue"
 import Card0 from '../views/Card0.vue'
 import Card1 from '../views/Card1.vue'
@@ -25,6 +26,10 @@ import Card13 from '../views/Card13.vue'
 import Card14 from '../views/Card14.vue'
 import Card15 from '../views/Card15.vue'
 import Card16 from '../views/Card16.vue'
+import BusinessCard2 from "../views/BusinessCard2.vue"
+import BusinessCard1 from "../views/BusinessCard1.vue"
+import BusinessCard3 from "../views/BusinessCard3.vue"
+import BusinessCard4 from "../views/BusinessCard4.vue"
 
 
 Vue.use(VueRouter)
@@ -53,6 +58,11 @@ const routes = [{
         path: '/testend',
         name: 'TestEnd',
         component: TestEnd
+    },
+    {
+        path: '/testend2',
+        name: 'TestEnd2',
+        component: TestEnd2
     },
     {
         path: '/businesspage',
@@ -154,7 +164,29 @@ const routes = [{
         path: '/card16',
         name: 'Card16',
         component: Card16
-    }
+    },
+    {
+        path: '/businesscard2',
+        name: 'BusinessCard2',
+        component: BusinessCard2
+    },
+    {
+        path: '/businesscard1',
+        name: 'BusinessCard1',
+        component: BusinessCard1
+    },
+    {
+        path: '/businesscard3',
+        name: 'BusinessCard3',
+        component: BusinessCard3
+    },
+    {
+        path: '/businesscard4',
+        name: 'BusinessCard4',
+        component: BusinessCard4
+    },
+
+
 
 
 ]

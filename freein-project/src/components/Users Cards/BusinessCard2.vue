@@ -7,10 +7,10 @@
       </div>
       <div class="business-list-2">
         <img src="@/assets/business-icon.png" />
-        <div class="">
+        <div class="business-information">
           <input placeholder="Ragione Sociale" />
           <div class="email">
-            <input placeholder="indirizzoo mail Aziendale" />
+            <input placeholder="Indirizzo mail Aziendale" />
           </div>
           <h3>Fornisci un nome all'espositore</h3>
           <div class="espositore"><input placeholder="Espositore" /></div>
@@ -23,7 +23,9 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Avanti >></b-button>
+        <b-button class="business-1-button"
+          ><a href="http://localhost:8080/#/businesscard3">Avanti >></a></b-button
+        >
       </div>
     </div>
   </div>
@@ -137,6 +139,7 @@ export default {
 }
 .email {
   padding-top: 3%;
+  padding-bottom: 15px;
 }
 .Ragione-sociale {
   padding-top: 10%;
@@ -145,5 +148,20 @@ input {
   width: 400px;
   height: 70px;
   border: 1px solid #ddd;
+  padding: 10px;
+}
+.business-information {
+  padding-top: 50px;
+}
+
+.espositore {
+  padding-top: 15px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 </style>

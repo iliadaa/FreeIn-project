@@ -3,7 +3,9 @@
     <div class="card">
       <h1>Sei un’azienda o un privato?</h1>
       <div class="button-group">
-        <b-button class="button business-button">AZIENDA</b-button>
+        <b-button class="button business-button"
+          ><a href="http://localhost:8080/#/businesscard1">AZIENDA</a></b-button
+        >
         <b-button class="button privat-button">PRIVATO</b-button>
       </div>
     </div>
@@ -49,9 +51,7 @@ export default {
   margin-bottom: 100px;
   color: #000000;
 }
-.button > h2 {
-  color: white;
-}
+
 .button:hover {
   background-color: #ea5b0c;
   border-color: transparent;
@@ -74,5 +74,12 @@ export default {
 
 .button-group > .button:not(:last-child) {
   margin-right: 50px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 </style>

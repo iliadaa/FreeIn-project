@@ -10,7 +10,7 @@
     <img class="img2" src="@/assets/donna.png" alt=""> 
   </div>
 </div>
-<h1>L'Acculturato</h1>
+<h1>Il Buongustaio</h1>
     <div class="cards">
       <div class="arte">
         <div class="image1">
@@ -28,7 +28,7 @@
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
-      :percent="89" ></VueProgressBar>
+      :percent="40" ></VueProgressBar>
         </div>
       </div>
       <div class="mare">
@@ -40,12 +40,14 @@
         </div>
         <div class="progress_container1">
           <VueProgressBar 
-            type="line"
-            :border="true" 
-            :line-height="18"      
-            :cut-color="'#40a9ff'"
-            :color="['#2d2e83', '#ea5b0c']"
-            :percent="50" ></VueProgressBar>
+
+      type="line"
+      :border="true" 
+      :line-height="18"
+      
+      :cut-color="'#40a9ff'"
+      :color="['#2d2e83', '#ea5b0c']"
+      :percent="45" ></VueProgressBar>
         </div>
       </div>
       <div class="gourmet">
@@ -64,7 +66,7 @@
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
-      :percent="10" ></VueProgressBar>
+      :percent="90" ></VueProgressBar>
         </div>
       </div>
       <div class="relax">
@@ -76,12 +78,14 @@
         </div>
         <div class="progress_container1">
           <VueProgressBar 
+
       type="line"
       :border="true" 
       :line-height="18"
+      
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
-      :percent="40" ></VueProgressBar>
+      :percent="60" ></VueProgressBar>
         </div>
       </div>
       <div class="party">
@@ -98,7 +102,7 @@
       :line-height="18"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
-      :percent="55" ></VueProgressBar>
+      :percent="50" ></VueProgressBar>
         </div>
       </div>
       <div class="natura">
@@ -116,7 +120,7 @@
       :line-height="18"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
-      :percent="20" ></VueProgressBar>
+      :percent="30" ></VueProgressBar>
         </div>
       </div>
     </div>
@@ -124,11 +128,11 @@
   <!--<img src="@/assets/photos.png" alt="">-->
 
         <div class="text">
-          <p>Viaggiatore interessato agli aspetti artistici dei luoghi, ovvero interessato a città storiche, siti di interesse (Colosseo, Piramidi, ecc) e con una spiccata propensione verso la conoscenza dei luoghi (sei un turista che utilizza guide e materiale informativo).</p>
+          <p>Viaggiatore interessato agli aspetti eno-gastronomici di un territorio, focalizzato sui piatti tipici, sulle tradizioni e sugli aspetti più rurali dell’identità culturale. Vocazione che può essere tanto indirizzata verso ristoranti stellati tanto quanto verso mercati tipici e street food.</p>
         </div>
 
         <div class="button1">
-          <a href="http://localhost:8080/#/testend2" class="button">portami alla mia hall</a>
+          <a href="http://localhost:8080/#/businesspage" class="button">portami alla mia hall</a>
         </div>
         
 </div>
