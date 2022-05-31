@@ -1,0 +1,27 @@
+[
+    {
+        "id":"1",
+        "image1":"@/assets/Travel1.jpg",
+        "month1":"Aug",
+        "day1":"28",
+        "description1":"Earn your diving merit badge.",
+        "stage1": "Scuba"
+
+    },
+    {
+        "id":"2",
+        "image2":"assets/Travel2.jpg",
+        "month2":"Aug",
+        "day2":"28",
+        "description2":"Earn your diving merit badge.",
+        "stage2": "New york"
+    },
+    {
+        "id":"3",
+        "image3":"assets/Travel3.jpg",
+        "month3":"Aug",
+        "day3":"28",
+        "description3":"Earn your diving merit badge.",
+        "stage3": "Dubai"
+    }
+]

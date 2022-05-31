@@ -3,7 +3,7 @@
     <div class="form-group">
       <div class="ph-layout">
         <h3>Foto tappa (obbligatorio)</h3>
-        <div
+        <div  
           class="wrapper px-2 stage-ph"
           v-cloak
           @drop.prevent="addFile"
@@ -14,6 +14,7 @@
           <p style="margin-top: -40px">
             Dimensioni minime di "808 x 632 pixel"
           </p>
+          
           <ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
               {{ file.name }} ({{ file.size | kb }} kb)
@@ -116,35 +117,62 @@
           <b-button class="btn" type="submit">Coppia</b-button>
         </div>
       </div>
-      <div class="vl"></div>
+
+      <b-form style="width: auto">
       <div class="stage-details">
         <h2>
           Titolo tappa
           <p>(obbligatorio)</p>
         </h2>
+        <div v-text="(maxTitle - textTitle.length)" style="color: red"></div>
+        
         <input
-          placeholder="   Assegna un titolo alla tappa massimo xx caratteri"
+         required
+          type="text"
+          :maxlength="maxTitle"
+          v-model="textTitle"
+          style="padding-left: 10px"
+          placeholder="Assegna un titolo alla tappa massimo 40 caratteri"
         />
         <h2>
           Location
           <p>(obbligatorio)</p>
         </h2>
+        <div v-text="(maxLocation - textLocation.length)" style="color: red"></div>
         <input
-          placeholder="   Inserisci il nome del luogo massimo xx caratteri"
+          type="text"
+          :maxlength="maxLocation"
+          v-model="textLocation"
+          style="padding-left: 10px"
+          placeholder="Inserisci il nome del luogo massimo 40 caratteri"
+          required=""
         />
+
         <h2>
           Testo
           <p>(obbligatorio)</p>
         </h2>
+        <div v-text="(maxText - textText.length)" style="color: red"></div>
         <input
-          style="height: 150px"
-          placeholder="   Inserisci descrizione massimo 37 caratteri"
+          required=""
+          type="text"
+          style="height: 150px; padding-bottom: 50%; padding-left: 10px"
+          placeholder="Inserisci descrizione massimo 37 caratteri"
+          :maxlength="maxText"
+          v-model="textText"
         />
+        
       </div>
+      
       <div class="end-adding-buttons">
-        <a href="#">Annulla</a>
-        <a href="#">Salva come bozza</a>
-        <a href="#">Pubblica</a>
+        <a class="cancel" href="/#/test">Annulla</a>
+        <a class="save-as" href="#">Salva come bozza</a>
+        <a class="publishy" href="#">Pubblica</a>
+      </div>
+      </b-form>
+      
+      <div style="margin-left: -110px; margin-top: -650px; width: 90%">
+        <hr style="transform: rotate(90deg)" />
       </div>
     </div>
   </div>
@@ -168,6 +196,12 @@ export default {
       valueNatura: "0",
       valueGourmetExplorer: "0",
       valueParty: "0",
+      maxTitle: 40,
+      maxLocation: 40,
+      maxText: 37,
+      textTitle: "",
+      textLocation: "",
+      textText: "",
     };
   },
   components: {
@@ -193,11 +227,20 @@ export default {
         return f != file;
       });
     },
+   selectFile(){
+      let fileInputElement = this.$refs.file;
+      fileInputElement.click();
+      // ...
+    }
   },
 };
 </script>
 
 <style scoped>
+.input[type="text"]::placeholder {
+  padding-bottom: 50%;
+}
+
 .flex {
   display: flex;
 }
@@ -304,6 +347,10 @@ export default {
   font-size: 20px;
 }
 
+.sliders {
+  margin-top: 5px;
+}
+
 .btn {
   margin-right: 20px;
   height: auto;
@@ -311,7 +358,7 @@ export default {
   border-radius: 30px;
   font-size: 70%;
   border-color: white;
-  background-color: orange;
+  background-color: #ea5b0c;
   color: white;
   align-items: center;
   justify-content: center;
@@ -323,6 +370,7 @@ export default {
 }
 
 .stage-details {
+  margin-top: 5px;
   margin-left: 550px;
   position: absolute;
   top: 32%;
@@ -348,25 +396,31 @@ export default {
 }
 
 .end-adding-buttons {
-  position: absolute;
-  left: 42%;
-  bottom: -680px;
+  display: flex;
+  justify-content: end;
 }
 
 .end-adding-buttons a {
-  text-decoration: none;
-  margin-right: 100px;
-  width: 100px;
-  height: 100px;
-  font-size: 25px;
-  margin-left: 20px;
-  background-color: orange;
-  color: grey;
-  align-items: center;
   text-align: center;
-  display: inline;
-  border-color: black;
-  border-radius: 20%;
+  width: 180px;
+  height: auto;
   text-decoration: none;
+  margin-right: 60px;
+  font-size: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #ea5b0c;
+  color: white;
+  border-color: black;
+  text-decoration: none;
+}
+
+.end-adding-buttons .cancel {
+  color: black;
+  background-color: transparent;
+}
+
+.end-adding-buttons .publishy {
+  background-color: #2d2e83;
 }
 </style>

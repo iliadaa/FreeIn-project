@@ -13,6 +13,8 @@ import Card3 from '../views/Card3.vue'
 import Cardprofile from '../views/Cardprofile.vue'
 import SignUp from '../views/SignUp-Page.vue'
 import StageCreation from '../views/Stage-Creation.vue'
+import ItineraryCreation from '../views/Itinerary-Creation.vue'
+import SelectionStageList from '../views/SelectionStage-List.vue'
 import Card4 from '../views/Card4.vue'
 import Card5 from '../views/Card5.vue'
 import Card6 from '../views/Card6.vue'
@@ -99,6 +101,16 @@ const routes = [{
         path: '/stagecreation',
         name: ' StageCreation ',
         component: StageCreation
+    },
+    {
+        path: '/itinerarycreation',
+        name: ' ItineraryCreation ',
+        component: ItineraryCreation
+    },
+    {
+        path: '/stagelist',
+        name: ' SelectionStageList ',
+        component: SelectionStageList
     },
     {
         path: '/card4',
