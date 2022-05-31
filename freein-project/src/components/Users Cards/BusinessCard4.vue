@@ -135,7 +135,7 @@ export default {
 .dot-4 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
+  background-color: #ea5b0c;
 
   border-radius: 50%;
   display: inline-block;

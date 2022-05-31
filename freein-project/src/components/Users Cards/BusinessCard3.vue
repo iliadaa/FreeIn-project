@@ -24,7 +24,7 @@
           <span class="dot-4"></span>
         </div>
         <b-button class="business-1-button"
-          ><a href="http://localhost:8080/#/businesscard4">Avanti >></a></b-button
+          ><a href="http://localhost:8080/#/businesscard2">Avanti >></a></b-button
         >
       </div>
     </div>
