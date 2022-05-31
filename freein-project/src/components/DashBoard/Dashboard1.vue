@@ -118,7 +118,6 @@
 </template>
 
 <style scoped>
-
 .container {
   background-color: rgb(245, 238, 238);
 }
@@ -275,7 +274,4 @@ td i {
   font-size: 20px;
   color: white;
 }
-
-
-
 </style>
