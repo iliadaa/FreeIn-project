@@ -1,72 +1,78 @@
 <template>
   <div class="container">
-      <div class="heading">
-        <p class="p1"><i class="fas fa-map-marked-alt"></i>Itinerario</p>
-      </div>
+    <div class="heading">
+      <p class="p1"><i class="fas fa-map-marked-alt"></i>Itinerario</p>
+    </div>
 
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/art.png" alt="">
+          <img src="@/assets/art.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>50%</p> 
-        </div>   
+          <p>50%</p>
+        </div>
       </div>
 
       <div class="mare">
         <div class="image1">
-          <img src="@/assets/Mare.png" alt="">
+          <img src="@/assets/Mare.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>20%</p> 
+          <p>20%</p>
         </div>
       </div>
 
       <div class="gourmet">
         <div class="image2">
-          <img src="@/assets/Gourmet-Explorer.png" alt="">
+          <img src="@/assets/Gourmet-Explorer.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>50%</p> 
+          <p>50%</p>
         </div>
       </div>
 
       <div class="relax">
         <div class="image3">
-          <img src="@/assets/relax.png" alt="">
+          <img src="@/assets/relax.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>70%</p> 
+          <p>70%</p>
         </div>
       </div>
 
       <div class="party">
         <div class="image4">
-          <img src="@/assets/Party.png" alt="">
+          <img src="@/assets/Party.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>30%</p> 
+          <p>30%</p>
         </div>
       </div>
 
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura_Avventura.png" alt="">
+          <img src="@/assets/Natura_Avventura.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>30%</p> 
+          <p>30%</p>
         </div>
       </div>
     </div>
 
     <div class="text">
       <h1>Un week and d’avventura</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolores molestiae soluta eos maiores, minus sapiente pariatur fugit recusandae quibusdam quisquam nihil alias consectetur cum quae voluptas reiciendis voluptatem in, quas nesciunt? Saepe quam voluptatum laboriosam odit ipsam, ratione nam optio. Doloribus molestias ex explicabo natus! Explicabo rerum repellendus suscipit maxime debitis ipsam recusandae dignissimos officiis facere enim? Molestias, earum.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolores molestiae
+        soluta eos maiores, minus sapiente pariatur fugit recusandae quibusdam quisquam
+        nihil alias consectetur cum quae voluptas reiciendis voluptatem in, quas nesciunt?
+        Saepe quam voluptatum laboriosam odit ipsam, ratione nam optio. Doloribus
+        molestias ex explicabo natus! Explicabo rerum repellendus suscipit maxime debitis
+        ipsam recusandae dignissimos officiis facere enim? Molestias, earum.
+      </p>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .heading {
@@ -96,7 +102,7 @@ img {
   height: 50px;
 }
 .arte {
-  background-color: #EC624C;
+  background-color: #ec624c;
   width: 65px;
   height: 65px;
   position: relative;
@@ -104,7 +110,7 @@ img {
   margin-right: 20px;
 }
 .mare {
-  background-color: #2C307F;
+  background-color: #2c307f;
   width: 65px;
   height: 65px;
   position: relative;
@@ -112,7 +118,7 @@ img {
   margin-right: 20px;
 }
 .gourmet {
-  background-color: #009EE2;
+  background-color: #009ee2;
   width: 65px;
   height: 65px;
   position: relative;
@@ -120,7 +126,7 @@ img {
   margin-right: 20px;
 }
 .relax {
-  background-color: #DC2C6C;
+  background-color: #dc2c6c;
   width: 65px;
   height: 65px;
   position: relative;
@@ -136,7 +142,7 @@ img {
   margin-right: 20px;
 }
 .natura {
-  background-color: #F6A314;
+  background-color: #f6a314;
   width: 65px;
   height: 65px;
   position: relative;
@@ -178,6 +184,6 @@ img {
   left: 14px;
 }
 .text {
-width: 50%;
+  width: 50%;
 }
 </style>
