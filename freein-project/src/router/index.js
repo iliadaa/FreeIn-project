@@ -15,6 +15,7 @@ import SignUp from '../views/SignUp-Page.vue'
 import StageCreation from '../views/Stage-Creation.vue'
 import ItineraryCreation from '../views/Itinerary-Creation.vue'
 import SelectionStageList from '../views/SelectionStage-List.vue'
+import EditProfilePage from '../views/EditProfilePage.vue'
 import Card4 from '../views/Card4.vue'
 import Card5 from '../views/Card5.vue'
 import Card6 from '../views/Card6.vue'
@@ -120,6 +121,11 @@ const routes = [{
         path: '/stagelist',
         name: ' SelectionStageList ',
         component: SelectionStageList
+    },
+    {
+        path: '/editProfile',
+        name: ' EditProfilePage ',
+        component: EditProfilePage
     },
     {
         path: '/card4',
