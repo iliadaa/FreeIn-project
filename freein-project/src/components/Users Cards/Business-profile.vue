@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <h4>My personal attitude</h4>
+    <h5>My personal attitude</h5>
     <div class="personal-icons">
       <img class="art-culture" src="@/assets/art.png" />
       <img class="relax" src="@/assets/relax.png" />
@@ -26,14 +26,14 @@
       </div>
       <img src="@/assets/map.jpg" />
       <div class="avatar-5">
-        <div class="flex">
+        <div class="flex-1">
           <img src="@/assets/avatar-plus.png" />
           <img src="@/assets/avatar-plus.png" />
           <img src="@/assets/avatar-with-logo.png" />
           <img src="@/assets/avatar-plus.png" />
           <img src="@/assets/avatar-with-logo.png" />
         </div>
-        <div class="flex text2">
+        <div class="name text2">
           <label>Alex</label>
           <label>Jhon</label>
           <label>Alisha</label>
@@ -205,9 +205,7 @@ export default {
 #wrap {
   width: 100px;
 }
-.box {
-  padding: 0 5% 0 5%;
-}
+
 .personal-group h4 {
   margin-bottom: 15px;
 }
@@ -249,8 +247,9 @@ img.ringbell {
 img.settings {
   margin-right: 70px;
 }
-h4 {
+h5 {
   color: #ea5b0c;
+  font-style: italic;
 }
 img.avatar {
   width: 80px;
@@ -312,10 +311,12 @@ img.avatar {
   margin-top: 8px;
 }
 
-.flex {
+.name {
   display: flex;
   justify-content: space-around;
-  background-color: transparent;
+  background-color: #d1d3d4;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .text2 label {
@@ -420,5 +421,10 @@ input {
 }
 .sliders {
   margin-top: 5px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
 }
 </style>
