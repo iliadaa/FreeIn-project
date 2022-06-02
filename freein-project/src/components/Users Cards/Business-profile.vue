@@ -205,7 +205,9 @@ export default {
 #wrap {
   width: 100px;
 }
-
+.box {
+  padding: 0 5% 0 5%;
+}
 .personal-group h4 {
   margin-bottom: 15px;
 }
@@ -295,6 +297,12 @@ img.avatar {
 }
 .avatar-5 img {
   background-color: #d1d3d4;
+}
+.flex-1 :last-child {
+  border-top-right-radius: 15px;
+}
+.flex-1 :first-child {
+  border-top-left-radius: 15px;
 }
 .dot {
   height: 40px;
