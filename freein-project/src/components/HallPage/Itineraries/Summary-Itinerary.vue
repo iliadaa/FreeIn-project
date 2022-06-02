@@ -401,8 +401,8 @@
 
   <div class="search-container">
       <form action="">
-        <input type="text" placeholder="Cerca itinerario..." name="search">
         <button type="submit"><i class="fas fa-search"></i></button>
+        <input type="text" placeholder="Cerca itinerario..." name="search">
       </form>
   </div>
 
@@ -895,6 +895,11 @@ hr {
   font-size: 17px;
   border: none;
   cursor: pointer;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
 }
 
 .box6 {

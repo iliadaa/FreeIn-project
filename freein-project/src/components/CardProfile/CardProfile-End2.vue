@@ -4,7 +4,7 @@
   
 <div class="circles">
   <div class="circle1">
-    <img class="img1" src="@/assets/Gourmet-Explorer.png" alt=""> 
+    <img class="img1" src="@/assets/gourment.png" alt=""> 
   </div>
   <div class="circle2">
     <img class="img2" src="@/assets/donna.png" alt=""> 
@@ -179,8 +179,8 @@ h1 {
 .img1 {
   width: 131px;
   height: 170px;
-  margin-left: 45px;
-  margin-top: 40px;
+  margin-left: 60px;
+  margin-top: 30px;
 }
 .img2 {
   width: 181px;
