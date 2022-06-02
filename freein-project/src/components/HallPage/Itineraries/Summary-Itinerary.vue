@@ -439,7 +439,6 @@
   </div>
 </template>
 
-
 <style scoped>
 .container {
   margin-left: 30px;
@@ -472,7 +471,7 @@ img {
   height: 50px;
 }
 .arte {
-  background-color: #EC624C;
+  background-color: #ec624c;
   width: 65px;
   height: 65px;
   position: relative;
@@ -480,7 +479,7 @@ img {
   margin-right: 20px;
 }
 .mare {
-  background-color: #2C307F;
+  background-color: #2c307f;
   width: 65px;
   height: 65px;
   position: relative;
@@ -488,14 +487,14 @@ img {
   margin-right: 20px;
 }
 .gourmet {
-  background-color: #009EE2;
+  background-color: #009ee2;
   width: 65px;
   height: 65px;
   position: relative;
   border-radius: 50%;
 }
 .relax {
-  background-color: #DC2C6C;
+  background-color: #dc2c6c;
   width: 65px;
   height: 65px;
   position: relative;
@@ -511,7 +510,7 @@ img {
   margin-right: 20px;
 }
 .natura {
-  background-color: #F6A314;
+  background-color: #f6a314;
   width: 65px;
   height: 65px;
   position: relative;

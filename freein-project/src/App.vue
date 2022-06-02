@@ -4,6 +4,7 @@
   </div>
 </template>
 
+
 <style lang="scss">
 @import "~@/../mdb/scss/index.free.scss";
 
