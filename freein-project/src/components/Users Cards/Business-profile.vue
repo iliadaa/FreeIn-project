@@ -56,22 +56,155 @@
         <button><a href="">Business >></a></button>
       </div>
     </div>
-    <div class="cards">
-      <b-card class="card-1">
-        <img src="@/assets/image-card-1.jpg" />
-        <label>Peschici</label>
+    <div class="image-group">
+      <div class="group">
+        <img src="@/assets/image1.jpg" />
+        <img src="@/assets/image2.jpg" />
+        <img src="@/assets/image3.jpg" />
+      </div>
+      <div class="group">
+        <img src="@/assets/image4.jpg" />
+        <img src="@/assets/image5.jpg" />
+        <img src="@/assets/image6.jpg" />
+      </div>
+      <div class="group">
+        <img src="@/assets/image1.jpg" />
+        <img src="@/assets/image2.jpg" />
+        <img src="@/assets/image3.jpg" />
+      </div>
+    </div>
+    <div class="cards-group">
+      <h5>Sponsorizzato</h5>
+      <b-card
+        img-src="card-img1.jpg"
+        img-left
+        class="mb-3"
+        title="Ostaria del moro"
+        sub-title="ostariadelmoro.com"
+      >
       </b-card>
+      <b-card
+        img-src="card-img2.jpg"
+        img-left
+        class="mb-3"
+        title="Oleificio di Puglia"
+        sub-title="oleificitodipuglia.com"
+      >
+      </b-card>
+      <b-card
+        img-src="card-img3.jpg"
+        img-left
+        class="mb-3"
+        title="La Focaccia"
+        sub-title="lafocaccia.com"
+      >
+      </b-card>
+      <div class="filter-attitude">
+        <div class="search">
+          <input type="text" v-model="input" placeholder="Search " />
+        </div>
+        <h5>Filter attitude</h5>
+        <div class="flex">
+          <div class="percentages">
+            <p>arte e cultura</p>
+            <p>relax</p>
+            <p>mare</p>
+            <p>natura e avventura</p>
+            <p>gourmet explorer</p>
+            <p>party</p>
+          </div>
+          <div class="sliders">
+            <VueSlideBar
+              v-model="valueArt"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+            <VueSlideBar
+              v-model="valueRelax"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+            <VueSlideBar
+              v-model="valueMare"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+            <VueSlideBar
+              v-model="valueNatura"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+            <VueSlideBar
+              v-model="valueGourmetExplorer"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+            <VueSlideBar
+              v-model="valueParty"
+              :min="0"
+              :max="100"
+              :processStyle="slider.processStyle"
+              :lineHeight="slider.lineHeight"
+              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+            >
+            </VueSlideBar>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import VueSlideBar from "vue-slide-bar";
 export default {
   name: "Business-profile",
+  data() {
+    return {
+      slider: {
+        lineHeight: 2,
+        processStyle: {
+          backgroundColor: "grey",
+        },
+      },
+      valueArt: "0",
+      valueRelax: "0",
+      valueMare: "0",
+      valueNatura: "0",
+      valueGourmetExplorer: "0",
+      valueParty: "0",
+    };
+  },
+  components: {
+    VueSlideBar,
+  },
 };
 </script>
 
 <style scoped>
+#wrap {
+  width: 100px;
+}
 .box {
   padding: 0 5% 0 5%;
 }
@@ -182,7 +315,7 @@ img.avatar {
 .flex {
   display: flex;
   justify-content: space-around;
-  background-color: #d1d3d4;
+  background-color: transparent;
 }
 
 .text2 label {
@@ -196,10 +329,9 @@ img.avatar {
 .icons {
   display: flex;
   align-items: center;
+  float: left;
 }
-.button {
-  margin-left: 10%;
-}
+
 button {
   padding: 10px 30px;
   background: #f26522;
@@ -218,29 +350,75 @@ a {
 a:hover {
   color: white;
 }
+.image-group img {
+  border-radius: 50px;
+  padding: 0 10px 10px 10px;
+}
+.image-group {
+  float: left;
+  padding-right: 60px;
+}
+h4.card-title {
+  color: black;
+  font-size: initial;
+  margin-top: 45px;
+}
 .card {
-  width: 250px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  height: 330px;
-  border-radius: 30px;
-  box-shadow: 0px 4px 4px rgbaa(0, 0, 0, 0.25);
-  border-color: white;
-  font-size: 25px;
+  box-shadow: none;
 }
-.card-1 img {
-  width: 100%;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+
+.cards-group {
+  margin-top: -125px;
+  display: flex;
+  flex-direction: column;
 }
-.card-1 {
-  background-color: #009fe3;
-  color: white;
+.cards-group h5 {
+  color: gray;
+  font-style: italic;
 }
-.card-body {
-  padding: 0rem 0rem;
+.filter-attitude {
+  background-color: gainsboro;
+  border-radius: 45px;
+  margin-top: 70px;
 }
-.card-1 label {
+.filter-attitude h5 {
+  color: gray;
+  font-style: italic;
+  border-bottom: 1px solid grey;
+  margin: 35px;
+}
+input {
+  display: block;
+  width: 350px;
+  margin: 20px auto;
+  padding: 10px 45px;
+  background: white url("../../assets/search.png") no-repeat 15px center;
+  background-size: 30px 30px;
+  font-size: 15px;
+  border: solid white 2px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: transparent;
+}
+.search {
+  background-color: white;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  border-radius: 37px;
+}
+
+.percentages {
   margin-left: 30px;
+  align-items: center;
+}
+.percentages p {
+  margin-bottom: 19px;
+  margin-top: 19px;
+  text-align: left;
+  color: gray;
+  font-style: italic;
+}
+.sliders {
+  margin-top: 5px;
 }
 </style>
