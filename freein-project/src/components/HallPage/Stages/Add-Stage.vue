@@ -46,7 +46,7 @@
         <div class="sliders">
           <VueSlideBar
             v-model="valueArt"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
@@ -55,7 +55,7 @@
           </VueSlideBar>
           <VueSlideBar
             v-model="valueRelax"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
@@ -64,7 +64,7 @@
           </VueSlideBar>
           <VueSlideBar
             v-model="valueMare"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
@@ -73,7 +73,7 @@
           </VueSlideBar>
           <VueSlideBar
             v-model="valueNatura"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
@@ -82,7 +82,7 @@
           </VueSlideBar>
           <VueSlideBar
             v-model="valueGourmetExplorer"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
@@ -91,7 +91,7 @@
           </VueSlideBar>
           <VueSlideBar
             v-model="valueParty"
-            :min="-100"
+            :min="0"
             :max="100"
             :processStyle="slider.processStyle"
             :lineHeight="slider.lineHeight"
