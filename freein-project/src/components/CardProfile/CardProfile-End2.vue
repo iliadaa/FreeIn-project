@@ -4,7 +4,7 @@
   
 <div class="circles">
   <div class="circle1">
-    <img class="img1" src="@/assets/gourment.png" alt=""> 
+    <img class="img1" src="@/assets/gourmet.png" alt=""> 
   </div>
   <div class="circle2">
     <img class="img2" src="@/assets/donna.png" alt=""> 

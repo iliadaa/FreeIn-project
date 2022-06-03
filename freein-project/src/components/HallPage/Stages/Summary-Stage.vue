@@ -681,7 +681,7 @@ hr {
 .search-container input[type=text] {
   padding: 6px;
   font-size: 17px;
-  border: none;
+  border: 1px solid rgb(238, 238, 238);
   width: 250px;
 }
 .search-container button {
@@ -774,6 +774,8 @@ hr {
 .box9 p {
   font-size: 12px;
 }
+
+
 
 </style>
 

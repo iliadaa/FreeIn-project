@@ -56,7 +56,26 @@
         </div>
       </div>
       <div class="text">
-        <h1>Un week and d’avventura <i class="fas fa-share-alt"></i></h1>
+
+        <div class="h1icon">
+          <div class="h1i">
+            <h1>Un week and d’avventura <!--<i class="fas fa-share-alt"></i>--></h1>
+          </div>
+          
+          <div class="c-share">
+            <input class="c-share__input" type="checkbox" id="checkbox">
+            <label class="c-share__toggler" for="checkbox">
+              <span class="c-share__icon"></span>
+            </label>
+          <ul class="c-share_options" data-title="Share">
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Google</li>
+            <li>Email</li>
+          </ul>
+          </div>
+        </div>
+
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores delectus id expedita! Nemo tempore architecto eum modi accusantium atque quis cupiditate pariatur beatae praesentium possimus soluta in dignissimos ducimus dolores, libero provident impedit magnam nam sint. Maxime ex, hic totam unde similique eius veritatis doloremque. Saepe tempora iusto illum incidunt, maxime perspiciatis quae itaque fuga maiores, eos sit. Dolorum delectus magni deleniti harum nam provident. Sapiente provident, debitis alias, quia quisquam cupiditate necessitatibus molestias aperiam corporis quos magni harum.</p>
       </div>
       
@@ -555,15 +574,23 @@ img {
   width: 55%;
   text-align: justify;
 }
+.h1icon {
+  display: flex;
+}
 .text h1 {
   font-size: 28px;
   font-weight: bold;
 }
-.text i {
+
+.h1i {
+  padding-right: 20px;
+}
+
+/*.text i {
   display: inline-block;
   font-size: 25px;
   padding-left: 20px;
-}
+}*/
 .cards1 {
   width: 55%;
   display: flex;
@@ -886,7 +913,7 @@ hr {
 .search-container input[type=text] {
   padding: 6px;
   font-size: 17px;
-  border: none;
+  border: 1px solid rgb(238, 238, 238);
   width: 250px;
 }
 .search-container button {
@@ -979,6 +1006,125 @@ hr {
 
 .box9 p {
   font-size: 12px;
+}
+
+.c-share {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  /*width: 3.4375em;
+  height: 3.4375em;*/
+}
+.c-share__input {
+  display: none;
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon {
+  transition: 0s;
+  width: 0;
+  height: 0;
+}
+
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::before {
+  transform: rotate(-45deg);
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::after {
+  transform: rotate(45deg);
+}
+.c-share__input:checked ~ .c-share_options {
+  width: 177px;
+  height: 200px;
+  border-radius: 7px;
+  /*width: 11.0625em;
+  height: 12.5em;
+  border-radius: 0.3125em;*/
+}
+.c-share__input:checked ~ .c-share_options::before, 
+.c-share__input:checked ~ .c-share_options li {
+  transition: 0.3s 0.15s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.c-share__toggler,
+.c-share_options {
+  position: absolute;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: rgb(245, 238, 238);
+}
+.c-share_options {
+  background-color: white;
+  border: 2px solid #ea5b0c;
+}
+.c-share__toggler {
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-share__icon {
+  position: relative;
+  left: -0.3125em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  color: black;
+  background-color: currentColor;
+  box-shadow: 0.625em -0.625em, 0.625em 0.625em;
+  transition: 0.1s 0.05s;
+}
+.c-share__icon::before, .c-share__icon::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 0.125em;
+  background-color: currentColor;
+  transition: 0.1s;
+}
+.c-share__icon::before {
+  top: 0.1875em;
+  left: 0.1875em;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+.c-share__icon::after {
+  top: -0.125em;
+  left: 0.03125em;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+
+.c-share_options {
+  list-style: none;
+  margin: 0;
+  padding: 1.0625em 1.25em;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.2s;
+  box-shadow: 0 0.125em 0.125em rgba(0, 0, 0, 0.3);
+}
+.c-share_options::before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 1.25em;
+  font-weight: 700;
+}
+.c-share_options li {
+  font-size: 0.875em;
+  color: #464646;
+  cursor: pointer;
+}
+.c-share_options li:not(:last-child) {
+  margin-bottom: 0.75em;
+}
+.c-share_options::before,
+.c-share_options li {
+  opacity: 0;
+  transform: translateY(0.625em);
+  transition: 0s;
 }
 
 </style>
