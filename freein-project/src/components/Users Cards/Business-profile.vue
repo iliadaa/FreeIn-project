@@ -1,196 +1,197 @@
 <template>
   <div class="box">
-    <h5>My personal attitude</h5>
-    <div class="personal-icons">
-      <img class="art-culture" src="@/assets/art.png" />
-      <img class="relax" src="@/assets/relax.png" />
-      <img class="sea" src="@/assets/Mare.png" />
-      <img class="nature-adventure" src="@/assets/Natura_Avventura.png" />
-      <img class="gourmet-explorer" src="@/assets/Gourmet-Explorer.png" />
-      <img class="party" src="@/assets/Party.png" />
-    </div>
+    <div class="personal-group">
+      <h5>My personal attitude</h5>
+      <div class="personal-icons">
+        <img class="art-culture" src="@/assets/art.png" />
+        <img class="relax" src="@/assets/relax.png" />
+        <img class="sea" src="@/assets/Mare.png" />
+        <img class="nature-adventure" src="@/assets/Natura_Avventura.png" />
+        <img class="gourmet-explorer" src="@/assets/Gourmet-Explorer.png" />
+        <img class="party" src="@/assets/Party.png" />
+      </div>
+      <div class="profile">
+        <div id="container-pig">
+          <button class="button-area" @click="showModalDashBoard">
+            <img class="pig" src="@/assets/pig.png" />
+          </button>
+          <Dashboard
+            v-show="isModalDashBoardVisible"
+            @close="closeModalDashBoard($event)"
+          ></Dashboard>
+        </div>
+        <div id="container-bell">
+          <button class="button-area" @click="showModal">
+            <img class="ringbell" src="@/assets/ringbell.png" />
+          </button>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+        </div>
+        <div id="container-settings">
+          <button class="button-area" @click="showModal">
+            <img class="settings" src="@/assets/settings.png" />
+          </button>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+        </div>
+        <div id="container-avatar">
+          <button class="button-area" @click="showModal">
+            <img class="avatar" src="@/assets/avatar.png" />
+          </button>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+        </div>
+      </div>
 
-    <div class="profile">
-      <div id="container-pig">
-        <button class="button-area" @click="showModalDashBoard">
-          <img class="pig" src="@/assets/pig.png" />
-        </button>
-        <Dashboard
-          v-show="isModalDashBoardVisible"
-          @close="closeModalDashBoard($event)"
-        ></Dashboard>
-      </div>
-      <div id="container-bell">
-        <button class="button-area" @click="showModal">
-          <img class="ringbell" src="@/assets/ringbell.png" />
-        </button>
-        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
-      </div>
-      <div id="container-settings">
-        <button class="button-area" @click="showModal">
-          <img class="settings" src="@/assets/settings.png" />
-        </button>
-        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
-      </div>
-      <div id="container-avatar">
-        <button class="button-area" @click="showModal">
-          <img class="avatar" src="@/assets/avatar.png" />
-        </button>
-        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
-      </div>
-    </div>
-
-    <div class="map-profile">
-      <div class="plus-icon">
-        <a class="fas fa-plus" href="#"> </a>
-        <span class="text">Crea tappa</span>
-        <a class="fas fa-plus" href="#"></a>
-        <span class="text">Crea Itinerario</span>
-      </div>
-      <img src="@/assets/map.jpg" />
-      <div class="avatar-5">
-        <div class="flex-1">
-          <img src="@/assets/avatar-plus.png" />
-          <img src="@/assets/avatar-plus.png" />
-          <img src="@/assets/avatar-with-logo.png" />
-          <img src="@/assets/avatar-plus.png" />
-          <img src="@/assets/avatar-with-logo.png" />
+      <div class="map-profile">
+        <div class="plus-icon">
+          <a class="fas fa-plus" href="#"> </a>
+          <span class="text">Crea tappa</span>
+          <a class="fas fa-plus" href="#"></a>
+          <span class="text">Crea Itinerario</span>
         </div>
-        <div class="name text2">
-          <label>Alex</label>
-          <label>Jhon</label>
-          <label>Alisha</label>
-          <label>Alex</label>
-          <label>Alex</label>
-        </div>
-        <div class="follower-following">
-          <span class="dot">27</span> <label>Seguiti</label>
-          <span class="dot">157</span>
-          <label>Follower</label>
-        </div>
-      </div>
-    </div>
-    <div class="icons">
-      <img src="@/assets/img-5.png" />
-      <img src="@/assets/img-6.png" style="margin: 30px" />
-      <img src="@/assets/img-7.png" />
-      <img src="@/assets/img-8.png" style="margin: 30px" />
-      <div class="button button-console">
-        <button><a href="">Business >></a></button>
-      </div>
-    </div>
-    <div class="image-group">
-      <div class="group">
-        <img src="@/assets/image1.jpg" />
-        <img src="@/assets/image2.jpg" />
-        <img src="@/assets/image3.jpg" />
-      </div>
-      <div class="group">
-        <img src="@/assets/image4.jpg" />
-        <img src="@/assets/image5.jpg" />
-        <img src="@/assets/image6.jpg" />
-      </div>
-      <div class="group">
-        <img src="@/assets/image1.jpg" />
-        <img src="@/assets/image2.jpg" />
-        <img src="@/assets/image3.jpg" />
-      </div>
-    </div>
-    <div class="cards-group">
-      <h5>Sponsorizzato</h5>
-      <b-card
-        img-src="card-img1.jpg"
-        img-left
-        class="mb-3"
-        title="Ostaria del moro"
-        sub-title="ostariadelmoro.com"
-      >
-      </b-card>
-      <b-card
-        img-src="card-img2.jpg"
-        img-left
-        class="mb-3"
-        title="Oleificio di Puglia"
-        sub-title="oleificitodipuglia.com"
-      >
-      </b-card>
-      <b-card
-        img-src="card-img3.jpg"
-        img-left
-        class="mb-3"
-        title="La Focaccia"
-        sub-title="lafocaccia.com"
-      >
-      </b-card>
-      <div class="filter-attitude">
-        <div class="search">
-          <input type="text" v-model="input" placeholder="Search " />
-        </div>
-        <h5>Filter attitude</h5>
-        <div class="flex">
-          <div class="percentages">
-            <p>arte e cultura</p>
-            <p>relax</p>
-            <p>mare</p>
-            <p>natura e avventura</p>
-            <p>gourmet explorer</p>
-            <p>party</p>
+        <img src="@/assets/map.jpg" />
+        <div class="avatar-5">
+          <div class="flex-1">
+            <img src="@/assets/avatar-plus.png" />
+            <img src="@/assets/avatar-plus.png" />
+            <img src="@/assets/avatar-with-logo.png" />
+            <img src="@/assets/avatar-plus.png" />
+            <img src="@/assets/avatar-with-logo.png" />
           </div>
-          <div class="sliders">
-            <VueSlideBar
-              v-model="valueArt"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
-            <VueSlideBar
-              v-model="valueRelax"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
-            <VueSlideBar
-              v-model="valueMare"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
-            <VueSlideBar
-              v-model="valueNatura"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
-            <VueSlideBar
-              v-model="valueGourmetExplorer"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
-            <VueSlideBar
-              v-model="valueParty"
-              :min="0"
-              :max="100"
-              :processStyle="slider.processStyle"
-              :lineHeight="slider.lineHeight"
-              :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-            >
-            </VueSlideBar>
+          <div class="name text2">
+            <label>Alex</label>
+            <label>Jhon</label>
+            <label>Alisha</label>
+            <label>Alex</label>
+            <label>Alex</label>
+          </div>
+          <div class="follower-following">
+            <span class="dot">27</span> <label>Seguiti</label>
+            <span class="dot">157</span>
+            <label>Follower</label>
+          </div>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="@/assets/img-5.png" />
+        <img src="@/assets/img-6.png" style="margin: 30px" />
+        <img src="@/assets/img-7.png" />
+        <img src="@/assets/img-8.png" style="margin: 30px" />
+        <div class="button button-console">
+          <button><a href="">Business >></a></button>
+        </div>
+      </div>
+      <div class="image-group">
+        <div class="group">
+          <img src="@/assets/image1.jpg" />
+          <img src="@/assets/image2.jpg" />
+          <img src="@/assets/image3.jpg" />
+        </div>
+        <div class="group">
+          <img src="@/assets/image4.jpg" />
+          <img src="@/assets/image5.jpg" />
+          <img src="@/assets/image6.jpg" />
+        </div>
+        <div class="group">
+          <img src="@/assets/image1.jpg" />
+          <img src="@/assets/image2.jpg" />
+          <img src="@/assets/image3.jpg" />
+        </div>
+      </div>
+      <div class="cards-group">
+        <h5>Sponsorizzato</h5>
+        <b-card
+          img-src="card-img1.jpg"
+          img-left
+          class="mb-3"
+          title="Ostaria del moro"
+          sub-title="ostariadelmoro.com"
+        >
+        </b-card>
+        <b-card
+          img-src="card-img2.jpg"
+          img-left
+          class="mb-3"
+          title="Oleificio di Puglia"
+          sub-title="oleificitodipuglia.com"
+        >
+        </b-card>
+        <b-card
+          img-src="card-img3.jpg"
+          img-left
+          class="mb-3"
+          title="La Focaccia"
+          sub-title="lafocaccia.com"
+        >
+        </b-card>
+        <div class="filter-attitude">
+          <div class="search">
+            <input type="text" v-model="input" placeholder="Search " />
+          </div>
+          <h5>Filter attitude</h5>
+          <div class="flex">
+            <div class="percentages">
+              <p>arte e cultura</p>
+              <p>relax</p>
+              <p>mare</p>
+              <p>natura e avventura</p>
+              <p>gourmet explorer</p>
+              <p>party</p>
+            </div>
+            <div class="sliders">
+              <VueSlideBar
+                v-model="valueArt"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueRelax"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueMare"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueNatura"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueGourmetExplorer"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueParty"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+            </div>
           </div>
         </div>
       </div>
@@ -256,7 +257,15 @@ export default {
   box-shadow: transparent;
 }
 .modal-container {
-  opacity: 1;
+  position: absolute;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  background-color: rgb(246 239 239);
+  z-index: 1;
 }
 #wrap {
   width: 100px;
