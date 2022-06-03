@@ -11,42 +11,33 @@
     </div>
 
     <div class="profile">
-        <div id="container-pig">
-          <button class="button-area" @click="showModalDashBoard">
-            <img class="pig" src="@/assets/pig.png" />
-          </button>
-          <Dashboard 
-            v-show="isModalDashBoardVisible"
-            @close="closeModalDashBoard($event)"
-          ></Dashboard>
-        </div>
-        <div id="container-bell">
-          <button class="button-area" @click="showModal">
-            <img class="ringbell" src="@/assets/active.png" />
-          </button>
-          <Modal 
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
-        </div>
-        <div id="container-settings">
-          <button class="button-area" @click="showModal">
-            <img class="settings" src="@/assets/settings.png" />
-          </button>
-          <Modal 
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
-        </div>
-        <div id="container-avatar">
-          <button class="button-area" @click="showModal">
-            <img class="avatar" src="@/assets/avatar.png" />
-          </button>
-          <Modal
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
-        </div>
+      <div id="container-pig">
+        <button class="button-area" @click="showModalDashBoard">
+          <img class="pig" src="@/assets/pig.png" />
+        </button>
+        <Dashboard
+          v-show="isModalDashBoardVisible"
+          @close="closeModalDashBoard($event)"
+        ></Dashboard>
+      </div>
+      <div id="container-bell">
+        <button class="button-area" @click="showModal">
+          <img class="ringbell" src="@/assets/ringbell.png" />
+        </button>
+        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+      </div>
+      <div id="container-settings">
+        <button class="button-area" @click="showModal">
+          <img class="settings" src="@/assets/settings.png" />
+        </button>
+        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+      </div>
+      <div id="container-avatar">
+        <button class="button-area" @click="showModal">
+          <img class="avatar" src="@/assets/avatar.png" />
+        </button>
+        <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+      </div>
     </div>
 
     <div class="map-profile">
@@ -222,7 +213,7 @@ export default {
         },
       },
       isModalVisible: false,
-      isModalDashBoardVisible:false,
+      isModalDashBoardVisible: false,
       valueArt: "0",
       valueRelax: "0",
       valueMare: "0",
@@ -230,7 +221,7 @@ export default {
       valueGourmetExplorer: "0",
       valueParty: "0",
     };
-  },  
+  },
   methods: {
     showModal() {
       this.isModalVisible = true;
@@ -244,25 +235,25 @@ export default {
     closeModalDashBoard(data) {
       console.log(data);
       this.isModalDashBoardVisible = false;
-    }
+    },
   },
-  components: {    
+  components: {
     Modal,
-    Dashboard,  
+    Dashboard,
     VueSlideBar,
   },
 };
 </script>
 
 <style scoped>
-.btn-info:hover{
+.btn-info:hover {
   background-color: transparent;
   border-color: transparent;
 }
-.button-area{
+.button-area {
   background-color: transparent;
   border-color: transparent;
-  box-shadow: transparent ;
+  box-shadow: transparent;
 }
 .modal-container {
   opacity: 1;
@@ -278,7 +269,7 @@ export default {
 }
 .profile {
   float: right;
-
+  display: flex;
   align-items: center;
 }
 .personal-icons img {
@@ -412,9 +403,10 @@ button {
   color: white;
   position: relative;
   border: none;
+  border-radius: 20px;
 }
 .button-console {
-  padding: 10px 30px;  
+  padding: 10px 30px;
   margin: 50px;
   border-radius: 35px;
 }
