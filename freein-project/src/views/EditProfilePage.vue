@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <Header style="z-index: 1"/>
     <EditProfile/>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   components:{
     Header,
     EditProfile
-  } 
+  },
+  methods:{
+    changeData(data){
+      console.log(data)
+    }
+  }
 };
 </script>

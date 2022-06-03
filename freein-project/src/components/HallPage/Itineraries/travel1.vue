@@ -6,34 +6,20 @@
           <b-col cols="4">
             <div class="cards">
               <div class="text">
-                <img :src="data.image1" alt="" class="rounded-0" />
-       
-              
-                <img :src="data.image2" alt="" class="rounded-0" />
-       
-             
-                <img :src="data.image3" alt="" class="rounded-0" />
+                <img :src="data.image" alt="" class="rounded-0" />
+
               </div>
             </div>
           </b-col>
           <b-col cols="8">
             <b-card-body class="text-layout">
-              <h2>{{ data.stage1 }}</h2>
-              <p>{{ data.inlineDate1}}</p>
-              <h2>{{ data.stage2 }}</h2>
-              <p>{{ data.inlineDate2}}</p>
-              <h2>{{ data.stage3 }}</h2>
-               <p>{{ data.inlineDate3}}</p>
-               
+              <h2>{{ data.stage }}</h2>
+              <p>{{ data.inlineDate}}</p>
               <b-card-text style="font-size:15px">
-                <p>{{ data.description1 }}</p>
-                <p>{{ data.description2 }}</p>
-                <p>{{ data.description3 }}</p> 
+                <p>{{ data.description }}</p>
                 <div class="flex" style="margin-top: -20px">
                   <i class="fa-solid fa-location-dot"></i> 
-                  <p>{{data.location1}}</p>
-                  <p>{{data.location2}}</p>
-                  <p>{{data.location3}}</p>
+                  <p>{{data.location}}</p>
                 </div>
               </b-card-text>
             </b-card-body>
@@ -41,13 +27,20 @@
         </b-row>
       </b-card>
     </div>
+
+   
   </div>
+  
 </template>
 
-<script type="text/javascript">
+<script>
 
 import dataStagesList from "/data-stages-list.json";
 export default {
+
+ props: {
+
+ },
   
   data() {
      
@@ -56,13 +49,19 @@ export default {
       filteredDialog: []
     };
   },
-  mounted() {
-    this.filteredDialog = this.datas;
-  },
+
+
   methods: {
-    alert(id, datas){
-      alert("AWEEE" + id)
-      console.log(id, datas)
+    alert(id, datas,){
+      alert("Sto copiando " + id)
+      this.filteredDialog = datas
+      console.log(this.filteredDialog)
+
+      /* 
+      this.filteredDialog = datas
+      //console log works fine, he is getting full of the data that are coming from datas
+      console.log(this.filteredDialog)
+      */
     },
    
   },
