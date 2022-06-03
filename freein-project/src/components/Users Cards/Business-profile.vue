@@ -11,10 +11,42 @@
     </div>
 
     <div class="profile">
-      <img class="pig" src="@/assets/pig.png" />
-      <img class="ringbell" src="@/assets/ringbell.png" />
-      <img class="settings" src="@/assets/settings.png" />
-      <img class="avatar" src="@/assets/avatar.png" />
+        <div id="container-pig">
+          <button class="button-area" @click="showModalDashBoard">
+            <img class="pig" src="@/assets/pig.png" />
+          </button>
+          <Dashboard 
+            v-show="isModalDashBoardVisible"
+            @close="closeModalDashBoard($event)"
+          ></Dashboard>
+        </div>
+        <div id="container-bell">
+          <button class="button-area" @click="showModal">
+            <img class="ringbell" src="@/assets/active.png" />
+          </button>
+          <Modal 
+            v-show="isModalVisible"
+            @close="closeModal"
+          ></Modal>
+        </div>
+        <div id="container-settings">
+          <button class="button-area" @click="showModal">
+            <img class="settings" src="@/assets/settings.png" />
+          </button>
+          <Modal 
+            v-show="isModalVisible"
+            @close="closeModal"
+          ></Modal>
+        </div>
+        <div id="container-avatar">
+          <button class="button-area" @click="showModal">
+            <img class="avatar" src="@/assets/avatar.png" />
+          </button>
+          <Modal
+            v-show="isModalVisible"
+            @close="closeModal"
+          ></Modal>
+        </div>
     </div>
 
     <div class="map-profile">
@@ -52,7 +84,7 @@
       <img src="@/assets/img-6.png" style="margin: 30px" />
       <img src="@/assets/img-7.png" />
       <img src="@/assets/img-8.png" style="margin: 30px" />
-      <div class="button">
+      <div class="button button-console">
         <button><a href="">Business >></a></button>
       </div>
     </div>
@@ -176,6 +208,8 @@
 </template>
 
 <script>
+import Modal from "../Modal.vue";
+import Dashboard from "../DashBoard/ModalDashBoard.vue";
 import VueSlideBar from "vue-slide-bar";
 export default {
   name: "Business-profile",
@@ -187,6 +221,8 @@ export default {
           backgroundColor: "grey",
         },
       },
+      isModalVisible: false,
+      isModalDashBoardVisible:false,
       valueArt: "0",
       valueRelax: "0",
       valueMare: "0",
@@ -194,14 +230,43 @@ export default {
       valueGourmetExplorer: "0",
       valueParty: "0",
     };
+  },  
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    showModalDashBoard() {
+      this.isModalDashBoardVisible = true;
+    },
+    closeModalDashBoard(data) {
+      console.log(data);
+      this.isModalDashBoardVisible = false;
+    }
   },
-  components: {
+  components: {    
+    Modal,
+    Dashboard,  
     VueSlideBar,
   },
 };
 </script>
 
 <style scoped>
+.btn-info:hover{
+  background-color: transparent;
+  border-color: transparent;
+}
+.button-area{
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: transparent ;
+}
+.modal-container {
+  opacity: 1;
+}
 #wrap {
   width: 100px;
 }
@@ -342,12 +407,14 @@ img.avatar {
 }
 
 button {
-  padding: 10px 30px;
   background: #f26522;
   font-size: 45px;
   color: white;
   position: relative;
   border: none;
+}
+.button-console {
+  padding: 10px 30px;  
   margin: 50px;
   border-radius: 35px;
 }
