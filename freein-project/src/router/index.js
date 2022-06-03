@@ -35,6 +35,7 @@ import BusinessCard3 from "../views/BusinessCard3.vue"
 import BusinessCard4 from "../views/BusinessCard4.vue"
 import Dashboard1 from "../views/Dashboard1.vue"
 import BusinessProfile from "../views/BusinessProfile.vue"
+import BusinessProfile1 from "../views/BusinessProfile1.vue"
 import SummaryStage from "../views/Summary-Stage.vue"
 import SummaryItinerary from "../views/Summary-Itinerary.vue"
 
@@ -65,7 +66,7 @@ const routes = [{
         path: '/testend',
         name: 'TestEnd',
         component: TestEnd
-    },    
+    },
     {
         path: '/dashboard1',
         name: 'Dashboard1',
@@ -212,21 +213,27 @@ const routes = [{
         name: 'BusinessCard4',
         component: BusinessCard4
     },
-  {
-      path:'/businessprofile',
-      name:"BusinessProfile",
-      component: BusinessProfile
-  },    
-  {
-      path: '/summaryItinerary',
-      name: 'SummaryItinerary',
-      component: SummaryItinerary
-  },    
-  {
-      path: '/summaryStage',
-      name: 'SummaryStage',
-      component: SummaryStage
-  }
+
+    {
+        path: '/businessprofile1',
+        name: "BusinessProfile1",
+        component: BusinessProfile1
+    },
+    {
+        path: '/businessprofile',
+        name: "BusinessProfile",
+        component: BusinessProfile
+    },
+    {
+        path: '/summaryItinerary',
+        name: 'SummaryItinerary',
+        component: SummaryItinerary
+    },
+    {
+        path: '/summaryStage',
+        name: 'SummaryStage',
+        component: SummaryStage
+    }
 
 
 
