@@ -1,68 +1,104 @@
 <template>
   <div class="container2">
     <div class="edit-sections">
-      <img style="filter: blur(5px)" src="../../assets/editProfileBG.jpg" />
-      <div class="card-left">
-        <div class="text-color">
-          <i class="far fa-user-circle"></i>
-          <button>
-            <div class="space-between">
-            <span class="fas fa-user"></span>
-            <span class="section-text">ciao</span>
-            </div>
-          </button>
-          <button>
-            <div class="space-between">
-            <span class="fas fa-user"></span>
-            <span class="section-text">ciao</span>
-            </div>
-          </button>
-          <button>
-            <div class="space-between">
-            <span class="fas fa-user"></span>
-            <span class="section-text">ciao</span>
-            </div>
-          </button>
-          <button>
-            <div class="space-between">
-            <span class="fas fa-user"></span>
-            <span class="section-text">ciao</span>
-            </div>
-          </button>
-          <button>
-            <div class="space-between">
-            <span class="fas fa-user"></span>
-            <span class="section-text">ciao</span>
-            </div>
-          </button>
+      <div class="container">
+        <div class="wrap">
+        <div class="left-section">
+          <div class="text-color">
+            <i class="far fa-user-circle"></i>
+            <button @click="alert">
+              <div class="space-margin-left">
+                <span class="fas fa-user"></span>
+                <span class="section-text">Profilo</span>
+              </div>
+            </button>
+            <button @click="alert">
+              <div class="space-margin-left">
+                <span class="fas fa-user"></span>
+                <span class="section-text">Avatar</span>
+              </div>
+            </button>
+            <button @click="alert">
+              <div class="space-margin-left">
+                <span style="" class="fas fa-user"></span>
+                <span class="section-text">Change Password</span>
+              </div>
+            </button>
+            <button @click="alert">
+              <div class="space-margin-left">
+                <span class="fas fa-user"></span>
+                <span class="section-text">GDPR Tools</span>
+              </div>
+            </button>
+            <button @click="alert">
+              <div class="space-margin-left">
+                <span class="fas fa-user"></span>
+                <span class="section-text">Psico test</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="right-section-text">
+            <h2>My account -</h2>
+            <p>user info</p>
+            
+          </div>
+          <p style="margin-top:-15px">Your personal datas</p>
+          <b-form>
+            <b-input-group>
+              <b-input class="email" placeholder="Email" />
+            </b-input-group>
+            <b-input-group>
+              <b-input class="email" placeholder="Email" />
+            </b-input-group>
+            <b-input-group>
+              <b-input class="email" placeholder="Email" />
+            </b-input-group>
+            <b-input-group>
+              <b-input class="email" placeholder="Email" />
+            </b-input-group>
+          </b-form>
         </div>
       </div>
-
-      <!-- 
-      <div></div>
-      -->
+     </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {},
+  methods: {
+    alert(event) {
+      event.preventDefault();
+      alert("!!");
+    },
+  },
+};
 </script>
 
 <style scoped>
 .container2 {
   width: auto;
-  background-color: black;
+ 
+}
+
+.wrap{
+  padding-top: 15%;
+  display: flex;
+  justify-content: center;
 }
 
 .edit-sections {
   position: relative;
   color: white;
+  background-image: url(../../assets/editProfileBG.jpg);
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.edit-sections img {
-  width: 100%;
-}
 
 .text-color {
   display: flex;
@@ -77,6 +113,7 @@ button {
   /* justify-content: center; */
   border-color: none;
   color: grey;
+  background-color: white;
   display: inline-flex;
   border: transparent;
   /* border-radius: 50%; */
@@ -85,18 +122,36 @@ button {
 }
 
 button:hover {
-  background-color: #ea5b0c;
+  background-color: whitesmoke;
 }
 
-.card-left {
-  background-color: whitesmoke;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  width: 20%;
-  position: absolute;
-  left: 20%;
-  top: 20%;
-  transform: translate(-20%, -20%);
+.left-section {
+  flex: 0 0 300px;
+}
+
+.right-section-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.right-section-text p {
+  font-size: 30px;
+  margin-left: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.right-section{
+  flex: 0 0 auto;
+    min-width: 40%;
+    padding-left: 20px;
+}
+
+
+.right-section input {
+  border: transparent;
+  border-radius: 0px;
+  margin-bottom: 10px;
 }
 
 .far {
@@ -107,12 +162,16 @@ button:hover {
   align-items: center;
   font-size: 40px;
   padding-left: 10px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
-.space-between{
+.space-margin-left {
   margin-left: 20px;
+  font-size: 20px;
 }
 
+.section-text {
+  margin-left: 10px;
+}
 </style>

@@ -118,7 +118,7 @@
         </div>
       </div>
 
-      <b-form style="width: auto">
+      <b-form @submit="allerta" style="width: auto">
       <div class="stage-details">
         <h2>
           Titolo tappa
@@ -127,7 +127,7 @@
         <div v-text="(maxTitle - textTitle.length)" style="color: red"></div>
         
         <input
-         required
+         required=""
           type="text"
           :maxlength="maxTitle"
           v-model="textTitle"
@@ -167,7 +167,7 @@
       <div class="end-adding-buttons">
         <a class="cancel" href="/#/test">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
-        <a class="publishy" href="#">Pubblica</a>
+        <a @click="allerta" class="publishy" type="submit" href="#">Pubblica</a>
       </div>
       </b-form>
       
@@ -231,6 +231,9 @@ export default {
       let fileInputElement = this.$refs.file;
       fileInputElement.click();
       // ...
+    },
+    allerta(){
+      alert("Funziono");
     }
   },
 };
