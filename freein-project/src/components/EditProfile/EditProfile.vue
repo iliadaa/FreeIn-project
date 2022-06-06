@@ -92,7 +92,7 @@
                   <label>e mail</label>
                 </div>
               </b-input-group>
-              <hr style="color: orange; opacity: 100%; height: 2px" />
+              <hr style="color: #ea5b0c; opacity: 100%; height: 2px" />
               <div class="company-details">
                 <h2>Company Details</h2>
                 <b-input-group class="input-group-email" style="">
@@ -107,7 +107,7 @@
                   </div>
                 </b-input-group>
               </div>
-              <hr style="color: orange; opacity: 100%; height: 2px" />
+              <hr style="color: #ea5b0c; opacity: 100%; height: 2px" />
               <div class="option">
                 <h2>Options</h2>
                 <div class="check">
@@ -124,7 +124,7 @@
                   I agree to the Terms of Service & Privacy Policy
                 </label>
                 <br />
-                <button class="save">
+                <button @click="changePage(true)" class="save">
                   <p>Save</p>
                 </button>
               </div>
@@ -143,6 +143,17 @@ export default {
   },
 
   methods: {
+
+    //need a new method that is going to let chanePage if all the forms are compiled
+    //correctly :)
+
+    changePage(change) {
+      if (change == true) {
+        this.$router.push({
+          name: "Privatprofile",
+        });
+      }
+    },
     alert(event) {
       event.preventDefault();
       alert("!!");
@@ -405,6 +416,11 @@ button:hover {
   border-color: transparent;
   margin-top: 30px;
 }
+
+.save:hover{
+   border-color: black;
+   background-color: #ea5b0c;
+  }
 
 .save p {
   padding-left: 25px;
