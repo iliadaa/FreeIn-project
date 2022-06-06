@@ -48,37 +48,63 @@
 
             <b-form>
               <b-input-group class="input-gender">
-                <span style="color: grey" class="fa-regular fa-user"></span>
-                <label style="color: grey">Gender</label>
+                <i
+                  style="color: grey; margin-left: -10px; margin-top: -5px"
+                  class="fa-regular fa-user"
+                ></i>
+                <label style="color: grey; margin-left: 15px">Gender</label>
                 <div class="flex-checkbox">
-                  <input type="checkbox" checked id="checkbox" />
-                  <label for="checkbox">
+                  <input @click="switchBox()" type="checkbox" id="ck1" />
+                  <label for="ck1">
                     <p>Male</p>
                   </label>
-                  <input type="checkbox" checked id="checkbox" />
-                  <label for="checkbox">
-                    <p>Male</p>
+                  <input
+                    @click="switchBox()"
+                    style="margin-left: 45px"
+                    type="checkbox"
+                    id="ck2"
+                  />
+                  <label for="ck2">
+                    <p>Female</p>
                   </label>
                 </div>
               </b-input-group>
               <b-input-group>
-                <i class="fa-regular fa-user"></i>
-                <b-input class="firstName" placeholder="First Name" />
+                <div class="right-labelIcon">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" class="rightSectionInputs" />
+                  <label>First Name</label>
+                </div>
               </b-input-group>
+
               <b-input-group>
-                <i class="fa-solid fa-user-group"></i>
-                <b-input class="lastName" placeholder="Last Name" />
+                <div class="right-labelIcon">
+                  <i class="fa-solid fa-user-group"></i>
+                  <input type="text" class="rightSectionInputs" />
+                  <label>Last Name</label>
+                </div>
               </b-input-group>
+
               <b-input-group class="input-group-email">
-                <i class="fa-regular fa-envelope"></i>
-                <b-input class="email" placeholder="e mail" />
+                <div class="right-labelIcon">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="text" class="rightSectionInputs" />
+                  <label>e mail</label>
+                </div>
               </b-input-group>
               <hr style="color: orange; opacity: 100%; height: 2px" />
               <div class="company-details">
                 <h2>Company Details</h2>
-                <b-input-group class="input-group-email">
-                  <i class="fa-regular fa-envelope"></i>
-                  <b-input class="email" placeholder="Company name" />
+                <b-input-group class="input-group-email" style="">
+                  <div class="right-labelIcon" style="width: 122px">
+                    <i class="fa-regular fa-rectangle-list"></i>
+                    <input
+                      style="width: 84%; margin-left: 20px"
+                      type="text"
+                      class="rightSectionInputs"
+                    />
+                    <label>Company name</label>
+                  </div>
                 </b-input-group>
               </div>
               <hr style="color: orange; opacity: 100%; height: 2px" />
@@ -97,6 +123,10 @@
                 <label class="form-check-label" for="flexCheckDefault2">
                   I agree to the Terms of Service & Privacy Policy
                 </label>
+                <br />
+                <button class="save">
+                  <p>Save</p>
+                </button>
               </div>
             </b-form>
           </div>
@@ -111,10 +141,21 @@ export default {
   data() {
     return {};
   },
+
   methods: {
     alert(event) {
       event.preventDefault();
       alert("!!");
+    },
+    switchBox() {
+      var checkBox1 = document.getElementById("ck1");
+      var checkBox2 = document.getElementById("ck2");
+
+      if (checkBox1.checked == true) {
+        checkBox2.checked = false;
+      } else if (checkBox2.checked == true) {
+        checkBox1.checked = false;
+      }
     },
   },
 };
@@ -126,7 +167,7 @@ export default {
 }
 
 .wrap {
-  padding-top: 15%;
+  padding-top: 12%;
   display: flex;
   justify-content: center;
 }
@@ -162,34 +203,6 @@ button {
 
 button:hover {
   background-color: whitesmoke;
-}
-
-.left-section {
-  flex: 0 0 300px;
-}
-
-.right-section-text {
-  display: flex;
-  align-items: baseline;
-}
-
-.right-section-text p {
-  font-size: 30px;
-  margin-left: 10px;
-  display: flex;
-  align-items: baseline;
-}
-
-.right-section {
-  flex: 0 0 auto;
-  min-width: 60%;
-  padding-left: 20px;
-}
-
-.right-section input {
-  border: transparent;
-  border-radius: 0px;
-  margin-bottom: 10px;
 }
 
 .far {
@@ -234,13 +247,76 @@ button:hover {
 
 .input-gender label {
   position: relative;
-  bottom: 10px;
+  bottom: 4px;
   left: 10px;
+  font-size: 10px;
 }
 
 .input-gender input {
   position: relative;
   left: 20px;
+}
+
+.rightSectionInputs {
+  position: absolute;
+  left: 100px;
+  height: 40px;
+  width: 86.8%;
+  color: grey;
+}
+
+.rightSectionInputs:focus {
+  outline: none;
+  background-color: whitesmoke;
+  border-left: 1px solid #ea5b0c;
+}
+
+.rightSectionInputs:hover {
+  background-color: whitesmoke;
+  border-left: 1px solid #ea5b0c;
+}
+
+.right-labelIcon {
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: 10px;
+  height: 40px;
+  width: 102px;
+}
+
+.right-labelIcon label {
+  margin-left: 35px;
+  margin-top: -5px;
+  font-size: 10px;
+  color: grey;
+}
+
+.left-section {
+  flex: 0 0 300px;
+}
+
+.right-section-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.right-section-text p {
+  font-size: 30px;
+  margin-left: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.right-section {
+  flex: 0 0 auto;
+  min-width: 60%;
+  padding-left: 20px;
+}
+
+.right-section input {
+  border: transparent;
+  border-radius: 0px;
+  margin-bottom: 10px;
 }
 
 .flex-checkbox {
@@ -251,7 +327,7 @@ button:hover {
 
 .flex-checkbox p {
   margin-left: 20px;
-  margin-top: -5px;
+  margin-top: 0px;
 }
 
 .flex-checkbox label {
@@ -262,7 +338,8 @@ button:hover {
   height: 15px;
   width: 15px;
   position: relative;
-  top: 10px;
+  top: 5px;
+  left: 10px;
 }
 
 .flex-checkbox input[type="checkbox"] {
@@ -270,8 +347,8 @@ button:hover {
 }
 
 .flex-checkbox input[type="checkbox"]:checked + label {
-  background-color: #66bb6a;
-  border-color: #66bb6a;
+  background-color: #ea5b0c;
+  border-color: grey;
 }
 
 .flex-checkbox input[type="checkbox"]:checked + label:after {
@@ -317,5 +394,20 @@ button:hover {
 
 .disclaimer-bottom-left input {
   margin-right: 5px;
+}
+
+.save {
+  background-color: #ea5b0c;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-top: 30px;
+}
+
+.save p {
+  padding-left: 25px;
+  padding-top: 15px;
 }
 </style>
