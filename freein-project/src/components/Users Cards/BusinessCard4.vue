@@ -34,7 +34,10 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button">Fine</b-button>
+
+        <b-button class="business-1-button">
+          <a href="http://localhost:8080/#/businessprofile"> Fine</a></b-button
+        >
       </div>
       <div class="privacy">
         <input type="checkbox" />
@@ -181,5 +184,11 @@ a {
 }
 a:hover {
   color: #989a9d;
+}
+.business-1-button > a {
+  color: #ffffff;
+}
+.business-1-button > a:hover {
+  color: #ffffff;
 }
 </style>
