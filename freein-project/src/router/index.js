@@ -38,6 +38,7 @@ import BusinessProfile from "../views/BusinessProfile.vue"
 import BusinessProfile1 from "../views/BusinessProfile1.vue"
 import SummaryStage from "../views/Summary-Stage.vue"
 import SummaryItinerary from "../views/Summary-Itinerary.vue"
+import Privatprofile from "../views/PrivatProfile.vue"
 
 
 Vue.use(VueRouter)
@@ -233,8 +234,14 @@ const routes = [{
         path: '/summaryStage',
         name: 'SummaryStage',
         component: SummaryStage
-    }
+    },
+    {
+        path:'/privatprofile',
+        name:'Privatprofile',
+        component:Privatprofile
 
+    }
+   
 
 
 ]

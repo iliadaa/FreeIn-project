@@ -6,7 +6,9 @@
         <b-button class="button business-button"
           ><a href="http://localhost:8080/#/businesscard1">AZIENDA</a></b-button
         >
-        <b-button class="button privat-button">PRIVATO</b-button>
+        <b-button class="button privat-button"
+          ><a href="http://localhost:8080/#/businessprofile">PRIVATO</a></b-button
+        >
       </div>
     </div>
   </div>

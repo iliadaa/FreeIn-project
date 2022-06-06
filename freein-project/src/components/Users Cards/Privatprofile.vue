@@ -75,9 +75,6 @@
         <img src="@/assets/img-6.png" style="margin: 30px" />
         <img src="@/assets/img-7.png" />
         <img src="@/assets/img-8.png" style="margin: 30px" />
-        <div class="button button-console">
-          <button><a href="http://localhost:8080/#/businesscard1">Business >></a></button>
-        </div>
       </div>
       <div class="image-group">
         <div class="group">
@@ -204,7 +201,7 @@ import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
 import VueSlideBar from "vue-slide-bar";
 export default {
-  name: "Business-profile",
+  name: "Privatprofile",
   data() {
     return {
       slider: {
@@ -403,22 +400,8 @@ img.avatar {
 .icons {
   display: flex;
   align-items: center;
-  float: left;
 }
 
-button {
-  background: #f26522;
-  font-size: 45px;
-  color: white;
-  position: relative;
-  border: none;
-  border-radius: 20px;
-}
-.button-console {
-  padding: 10px 30px;
-  margin: 50px;
-  border-radius: 35px;
-}
 a {
   text-decoration: none;
   color: white;

@@ -36,12 +36,12 @@
         </div>
 
         <b-button class="business-1-button">
-          <a href="http://localhost:8080/#/businessprofile"> Fine</a></b-button
+          <a href="http://localhost:8080/#/privatprofile"> Fine</a></b-button
         >
       </div>
       <div class="privacy">
         <input type="checkbox" />
-        <label>
+        <label style="margin-left: 10px">
           Inviando il tuo business per controllo, Accetti il nostro
           <span style="color: #37beeb">Accordo con il venditore</span></label
         >
