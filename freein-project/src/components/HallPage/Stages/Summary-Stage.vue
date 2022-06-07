@@ -87,7 +87,7 @@
             <img src="@/assets/italy.jpg" alt="">
           </div>
           <div class="container1">
-            <a href="#"><i class="fas fa-plus-circle"></i></a>
+            <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
             <p>Crea itinerario</p>
           </div>
         </div>
