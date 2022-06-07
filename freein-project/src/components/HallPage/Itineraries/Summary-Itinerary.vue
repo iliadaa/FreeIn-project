@@ -55,11 +55,12 @@
           </div>
         </div>
       </div>
+
       <div class="text">
 
         <div class="h1icon">
           <div class="h1i">
-            <h1>Un week and d’avventura <!--<i class="fas fa-share-alt"></i>--></h1>
+            <h1>Un week and d’avventura</h1>
           </div>
           
           <div class="c-share">
@@ -68,10 +69,11 @@
               <span class="c-share__icon"></span>
             </label>
           <ul class="c-share_options" data-title="Share">
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Google</li>
-            <li>Email</li>
+            <li><i class="fab fa-facebook"></i> Facebook</li>
+            <li><i class="fab fa-twitter"></i> Twitter</li>
+            <li><i class="fab fa-instagram"></i> Instagram</li>
+            <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
+            <li><i class="fab fa-telegram-plane"></i> Telegram</li>
           </ul>
           </div>
         </div>
@@ -85,7 +87,7 @@
             <img src="@/assets/italy.jpg" alt="">
           </div>
           <div class="container1">
-            <a href="#"><i class="fas fa-plus-circle"></i></a>
+            <a href="#/itinerarycreation"><i class="fas fa-plus-circle"></i></a>
             <p>Crea itinerario</p>
           </div>
         </div>
@@ -585,12 +587,6 @@ img {
 .h1i {
   padding-right: 20px;
 }
-
-/*.text i {
-  display: inline-block;
-  font-size: 25px;
-  padding-left: 20px;
-}*/
 .cards1 {
   width: 55%;
   display: flex;
@@ -1010,10 +1006,8 @@ hr {
 
 .c-share {
   position: relative;
-  height: 44px;
-  width: 44px;
-  /*width: 3.4375em;
-  height: 3.4375em;*/
+  height: 40px;
+  width: 40px;
 }
 .c-share__input {
   display: none;
@@ -1031,12 +1025,9 @@ hr {
   transform: rotate(45deg);
 }
 .c-share__input:checked ~ .c-share_options {
-  width: 177px;
-  height: 200px;
+  width: 160px;
+  height: 240px;
   border-radius: 7px;
-  /*width: 11.0625em;
-  height: 12.5em;
-  border-radius: 0.3125em;*/
 }
 .c-share__input:checked ~ .c-share_options::before, 
 .c-share__input:checked ~ .c-share_options li {
@@ -1067,32 +1058,32 @@ hr {
 
 .c-share__icon {
   position: relative;
-  left: -0.3125em;
-  width: 0.5em;
-  height: 0.5em;
+  left: -5px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   color: black;
   background-color: currentColor;
-  box-shadow: 0.625em -0.625em, 0.625em 0.625em;
+  box-shadow: 10px -10px, 10px 10px;
   transition: 0.1s 0.05s;
 }
 .c-share__icon::before, .c-share__icon::after {
   content: "";
   position: absolute;
-  width: 1em;
-  height: 0.125em;
+  width: 16px;
+  height: 2px;
   background-color: currentColor;
   transition: 0.1s;
 }
 .c-share__icon::before {
-  top: 0.1875em;
-  left: 0.1875em;
+  top: 3px;
+  left: 3px;
   transform-origin: bottom left;
   transform: rotate(45deg);
 }
 .c-share__icon::after {
-  top: -0.125em;
-  left: 0.03125em;
+  top: -2px;
+  left: 0.5px;
   transform-origin: center;
   transform: rotate(-45deg);
 }
@@ -1100,30 +1091,29 @@ hr {
 .c-share_options {
   list-style: none;
   margin: 0;
-  padding: 1.0625em 1.25em;
+  padding: 14px 17px;
   box-sizing: border-box;
   overflow: hidden;
   transition: 0.2s;
-  box-shadow: 0 0.125em 0.125em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 .c-share_options::before {
   content: attr(data-title);
   display: block;
-  margin-bottom: 1.25em;
+  margin-bottom: 20px;
   font-weight: 700;
 }
 .c-share_options li {
-  font-size: 0.875em;
-  color: #464646;
+  font-size: 14px;
   cursor: pointer;
 }
 .c-share_options li:not(:last-child) {
-  margin-bottom: 0.75em;
+  margin-bottom: 12px;
 }
 .c-share_options::before,
 .c-share_options li {
   opacity: 0;
-  transform: translateY(0.625em);
+  transform: translateY(10px);
   transition: 0s;
 }
 

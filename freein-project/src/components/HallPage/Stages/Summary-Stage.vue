@@ -55,8 +55,29 @@
           </div>
         </div>
       </div>
+
       <div class="text">
-        <h1>Un week and d’avventura <i class="fas fa-share-alt"></i></h1>
+
+        <div class="h1icon">
+          <div class="h1i">
+            <h1>Un week and d’avventura</h1>
+          </div>
+          
+          <div class="c-share">
+            <input class="c-share__input" type="checkbox" id="checkbox">
+            <label class="c-share__toggler" for="checkbox">
+              <span class="c-share__icon"></span>
+            </label>
+          <ul class="c-share_options" data-title="Share">
+            <li><i class="fab fa-facebook"></i> Facebook</li>
+            <li><i class="fab fa-twitter"></i> Twitter</li>
+            <li><i class="fab fa-instagram"></i> Instagram</li>
+            <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
+            <li><i class="fab fa-telegram-plane"></i> Telegram</li>
+          </ul>
+          </div>
+        </div>
+        
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores delectus id expedita! Nemo tempore architecto eum modi accusantium atque quis cupiditate pariatur beatae praesentium possimus soluta in dignissimos ducimus dolores, libero provident impedit magnam nam sint. Maxime ex, hic totam unde similique eius veritatis doloremque. Saepe tempora iusto illum incidunt, maxime perspiciatis quae itaque fuga maiores, eos sit. Dolorum delectus magni deleniti harum nam provident. Sapiente provident, debitis alias, quia quisquam cupiditate necessitatibus molestias aperiam corporis quos magni harum.</p>
       </div>
       
@@ -66,7 +87,7 @@
             <img src="@/assets/italy.jpg" alt="">
           </div>
           <div class="container1">
-            <a href="#"><i class="fas fa-plus-circle"></i></a>
+            <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
             <p>Crea itinerario</p>
           </div>
         </div>
@@ -452,15 +473,17 @@ img {
   width: 55%;
   text-align: justify;
 }
+.h1icon {
+  display: flex;
+}
 .text h1 {
   font-size: 28px;
   font-weight: bold;
 }
-.text i {
-  display: inline-block;
-  font-size: 25px;
-  padding-left: 20px;
+.h1i {
+  padding-right: 20px;
 }
+
 .cards1 {
   width: 55%;
   display: flex;
@@ -773,6 +796,119 @@ hr {
 
 .box9 p {
   font-size: 12px;
+}
+
+.c-share {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.c-share__input {
+  display: none;
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon {
+  transition: 0s;
+  width: 0;
+  height: 0;
+}
+
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::before {
+  transform: rotate(-45deg);
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::after {
+  transform: rotate(45deg);
+}
+.c-share__input:checked ~ .c-share_options {
+  width: 160px;
+  height: 240px;
+  border-radius: 7px;
+}
+.c-share__input:checked ~ .c-share_options::before, 
+.c-share__input:checked ~ .c-share_options li {
+  transition: 0.3s 0.15s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.c-share__toggler,
+.c-share_options {
+  position: absolute;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: rgb(245, 238, 238);
+}
+.c-share_options {
+  background-color: white;
+  border: 2px solid #ea5b0c;
+}
+.c-share__toggler {
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-share__icon {
+  position: relative;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  color: black;
+  background-color: currentColor;
+  box-shadow: 10px -10px, 10px 10px;
+  transition: 0.1s 0.05s;
+}
+.c-share__icon::before, .c-share__icon::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: currentColor;
+  transition: 0.1s;
+}
+.c-share__icon::before {
+  top: 3px;
+  left: 3px;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+.c-share__icon::after {
+  top: -2px;
+  left: 0.5px;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+
+.c-share_options {
+  list-style: none;
+  margin: 0;
+  padding: 14px 17px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.2s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.c-share_options::before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.c-share_options li {
+  font-size: 14px;
+  cursor: pointer;
+}
+.c-share_options li:not(:last-child) {
+  margin-bottom: 12px;
+}
+.c-share_options::before,
+.c-share_options li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0s;
 }
 
 
