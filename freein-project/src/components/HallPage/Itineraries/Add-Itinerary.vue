@@ -157,13 +157,23 @@
         />
       </div>
       <div class="add-new-stage-btn">
-          <h2>Aggiungi nuova tappa</h2>
-          <a class="fas fa-plus " href="#/stagelist"></a>
+          <a class="button-area fas fa-plus" href="#/itinerarycreation" @click="showModalStages"></a>
+            <i ></i>
+            <h2>Aggiungi nuova tappa</h2>
+         
+          
+          
+          
       </div>
+      <ModalStages
+            v-show="isModalStagesVisible"
+            @close="choosed($event)"
+          ><i class="fas fa-plus "></i>
+          </ModalStages>
       <div class="end-adding-buttons">
         <a class="cancel" href="#">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
-        <a class="publishy" href="#">Pubblica</a>
+        <a class="publishy" href="#/summaryitinerary">Pubblica</a>
       </div>
       <div style="margin-left: -110px; margin-top: -650px; width: 90%">
         <hr style="transform: rotate(90deg)" />
@@ -174,6 +184,7 @@
 
 <script>
 import VueSlideBar from "vue-slide-bar";
+import ModalStages from "./ModalStages.vue";
 export default {
   data() {
     return {
@@ -196,10 +207,12 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
+      isModalStagesVisible:false,
     };
   },
   components: {
     VueSlideBar,
+    ModalStages
   },
   filters: {
     kb(val) {
@@ -225,6 +238,13 @@ export default {
       let fileInputElement = this.$refs.file;
       fileInputElement.click();
       // ...
+    },
+    choosed(data){
+      console.log(data);
+      this.isModalStagesVisible=false;
+    },
+    showModalStages(){
+      this.isModalStagesVisible=true;
     }
   },
 };

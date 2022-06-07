@@ -1,25 +1,28 @@
+<!-- PADRE -->
 <template>
   <div class="container1">
     <div class="first-travel" v-for="data in datas" :key="data.id">
-      <b-card @click="alert(data.id, datas[data.id-1])" class="overflow-hidden">
+      <b-card
+        @click="alert(data.id, datas[data.id - 1])"
+        class="overflow-hidden"
+      >
         <b-row no-gutters>
           <b-col cols="4">
             <div class="cards">
               <div class="text">
                 <img :src="data.image" alt="" class="rounded-0" />
-
               </div>
             </div>
           </b-col>
           <b-col cols="8">
             <b-card-body class="text-layout">
               <h2>{{ data.stage }}</h2>
-              <p>{{ data.inlineDate}}</p>
-              <b-card-text style="font-size:15px">
+              <p>{{ data.inlineDate }}</p>
+              <b-card-text style="font-size: 15px">
                 <p>{{ data.description }}</p>
                 <div class="flex" style="margin-top: -20px">
-                  <i class="fa-solid fa-location-dot"></i> 
-                  <p>{{data.location}}</p>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>{{ data.location }}</p>
                 </div>
               </b-card-text>
             </b-card-body>
@@ -27,49 +30,56 @@
         </b-row>
       </b-card>
     </div>
-
-   
+    <DialogCardList :messagge="filteredDialog"/>
+    <!-- <DialogCardList :messagge="arrayVuoto" /> -->
   </div>
-  
 </template>
 
 <script>
-
+import DialogCardList from "./DialogCardList.vue";
 import dataStagesList from "/data-stages-list.json";
 export default {
-
- props: {
-
- },
-  
   data() {
-     
     return {
       datas: dataStagesList,
-      filteredDialog: []
+      filteredDialog: [],
+      arrayVuoto: [
+        {
+          id: "1",
+          image: "https://7wallpapers.net/wp-content/uploads/16_Firewatch.png",
+          month: "Aug",
+          day: "28",
+          inlineDate: "August 28, 2022",
+          description:
+            "Mountain climbing. Pack your climbing shoes, backpack and get there!",
+          stage: "Matterhorn",
+          location: "Matterhorn, Switzerland/Italy ",
+        },
+      ],
+      hello: "SONO IL PADRE",
     };
   },
 
+  components: {
+    DialogCardList,
+  },
 
   methods: {
-    alert(id, datas,){
+    alert(id, datas) {
+      alert("Sto copiando " + id);
+      this.$emit('choosed',datas);
+    
+
+      /* 
+      alert(id, datas,){
       alert("Sto copiando " + id)
       this.filteredDialog = datas
       console.log(this.filteredDialog)
-
-      /* 
-      this.filteredDialog = datas
-      //console log works fine, he is getting full of the data that are coming from datas
-      console.log(this.filteredDialog)
       */
     },
-   
   },
 };
-
-
 </script>
-
 
 <style scoped>
 .container1 {
@@ -86,33 +96,30 @@ export default {
   margin-bottom: 40px;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: baseline;
 }
 
-.flex i{
+.flex i {
   margin-top: 5px;
   margin-right: 3px;
 }
 
-
-.text{
+.text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.text-layout p{
+.text-layout p {
   margin-top: -10px;
   margin-bottom: 20px;
 }
 
-.text img{
+.text img {
   width: 250px;
   height: 200px;
   margin-top: -16px;
-  
 }
-
 </style>

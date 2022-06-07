@@ -1,25 +1,26 @@
-<template>
-  <div class="container1">
+ <template>
+ <div class="container1">
     <div class="first-travel">
-      <b-card class="overflow-hidden">
+      <b-card
+        class="overflow-hidden"
+      >
         <b-row no-gutters>
           <b-col cols="4">
             <div class="cards">
               <div class="text">
-                <img :src="card.image" alt="" class="rounded-0" />
-
+                <img :src="messagge.image" alt="" class="rounded-0" />
               </div>
             </div>
           </b-col>
           <b-col cols="8">
             <b-card-body class="text-layout">
-              <h2>{{ card.stage }}</h2>
-              <p>{{ card.inlineDate}}</p>
-              <b-card-text style="font-size:15px">
-                <p>{{ card.description }}</p>
+              <h2>{{ messagge.stage }}</h2>
+              <p>{{ messagge.inlineDate }}</p>
+              <b-card-text style="font-size: 15px">
+                <p>{{ messagge.description }}</p>
                 <div class="flex" style="margin-top: -20px">
-                  <i class="fa-solid fa-location-dot"></i> 
-                  <p>{{card.location}}</p>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>{{ messagge.location }}</p>
                 </div>
               </b-card-text>
             </b-card-body>
@@ -27,24 +28,15 @@
         </b-row>
       </b-card>
     </div>
-
-   
+    <!-- <DialogCardList :messagge="arrayVuoto" /> -->
   </div>
-  
 </template>
 
 <script>
 
 export default {
-
-  props: {
-    card: {
-      type: Object,
-      required: true
-    }
- 
-
-}
+  name: "DialogCardList",
+  props: ["messagge"]
 }
 </script>
 
@@ -94,3 +86,4 @@ export default {
 }
 
 </style>
+

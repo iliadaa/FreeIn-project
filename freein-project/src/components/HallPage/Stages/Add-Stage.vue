@@ -165,9 +165,9 @@
       </div>
       
       <div class="end-adding-buttons">
-        <a class="cancel" href="/#/test">Annulla</a>
+        <a class="cancel" href="#/privatprofile">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
-        <a @click="allerta" class="publishy" type="submit" href="#">Pubblica</a>
+        <a @click="allerta" class="publishy" type="submit" href="#/summarystage">Pubblica</a>
       </div>
       </b-form>
       

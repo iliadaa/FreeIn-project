@@ -33,10 +33,11 @@
           <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
         <div id="container-avatar">
-          <button class="button-area" @click="showModal">
+          <button class="button-area" @click="showTopRightVisible">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
-          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+         <!-- modal here -->
+          <TopRightListHall v-show="isTopRightVisible" @close="closeTopRightVisible"></TopRightListHall>
         </div>
       </div>
 
@@ -202,6 +203,7 @@
 <script>
 import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
+import TopRightListHall from "../Users Cards/TopRightListHall.vue"
 import VueSlideBar from "vue-slide-bar";
 export default {
   name: "Business-profile",
@@ -213,6 +215,7 @@ export default {
           backgroundColor: "grey",
         },
       },
+      isTopRightVisible: false,
       isModalVisible: false,
       isModalDashBoardVisible: false,
       valueArt: "0",
@@ -236,11 +239,18 @@ export default {
     closeModalDashBoard(data) {
       console.log(data);
       this.isModalDashBoardVisible = false;
+    }, 
+    showTopRightVisible(){
+      this.isTopRightVisible=true;
     },
+    closeTopRightVisible(){
+      this.isTopRightVisible=false; 
+    }
   },
   components: {
     Modal,
     Dashboard,
+    TopRightListHall,
     VueSlideBar,
   },
 };

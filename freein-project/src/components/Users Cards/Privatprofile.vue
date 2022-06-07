@@ -24,27 +24,28 @@
           <button class="button-area" @click="showModal">
             <img class="ringbell" src="@/assets/ringbell.png" />
           </button>
-          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+         <!-- modal here -->
         </div>
         <div id="container-settings">
           <button class="button-area" @click="showModal">
             <img class="settings" src="@/assets/settings.png" />
           </button>
-          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+         <!-- modal here -->
         </div>
         <div id="container-avatar">
-          <button class="button-area" @click="showModal">
+          <button class="button-area" @click="showTopRightVisible">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
-          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+         <!-- modal here -->
+          <TopRightListHall v-show="isTopRightVisible" @close="closeTopRightVisible"></TopRightListHall>
         </div>
       </div>
 
       <div class="map-profile">
         <div class="plus-icon">
-          <a class="fas fa-plus" href="#"> </a>
+          <a class="fas fa-plus" href="#/stagecreation"> </a>
           <span class="text">Crea tappa</span>
-          <a class="fas fa-plus" href="#"></a>
+          <a class="fas fa-plus" href="#/itinerarycreation"></a>
           <span class="text">Crea Itinerario</span>
         </div>
         <img src="@/assets/map.jpg" />
@@ -199,6 +200,7 @@
 <script>
 import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
+import TopRightListHall from "../Users Cards/TopRightListHall.vue"
 import VueSlideBar from "vue-slide-bar";
 export default {
   name: "Privatprofile",
@@ -210,6 +212,7 @@ export default {
           backgroundColor: "grey",
         },
       },
+      isTopRightVisible: false,
       isModalVisible: false,
       isModalDashBoardVisible: false,
       valueArt: "0",
@@ -234,10 +237,17 @@ export default {
       console.log(data);
       this.isModalDashBoardVisible = false;
     },
+    showTopRightVisible(){
+      this.isTopRightVisible=true;
+    },
+    closeTopRightVisible(){
+      this.isTopRightVisible=false; 
+    }
   },
   components: {
     Modal,
     Dashboard,
+    TopRightListHall,
     VueSlideBar,
   },
 };
