@@ -272,8 +272,6 @@ export default {
 }
 .box {
   padding: 0 5% 0 5%;
-  margin-left: 30px;
-  margin-right: 30px;
 }
 .personal-group h4 {
   margin-bottom: 15px;
