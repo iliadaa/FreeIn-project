@@ -110,6 +110,7 @@ export default {
 .button-dots {
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 30px;
 }
 
 .dot-1 {
@@ -160,6 +161,7 @@ ul {
 .privacy {
   text-align: center;
   padding-top: 5%;
+  border-top: 2px solid #b9b9b94e;
 }
 
 .payment-method {
