@@ -1,9 +1,11 @@
 <template>
   <div class="container">
     <div class="form-group">
+      <ModalStages v-show="isModalStagesVisible" @close="choosed($event)">
+      </ModalStages>
       <div class="ph-layout">
         <h3>Foto itinerario (obbligatorio)</h3>
-        <div  
+        <div
           class="wrapper px-2 stage-ph"
           v-cloak
           @drop.prevent="addFile"
@@ -14,7 +16,7 @@
           <p style="margin-top: -40px">
             Dimensioni minime di "808 x 632 pixel"
           </p>
-          
+
           <ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
               {{ file.name }} ({{ file.size | kb }} kb)
@@ -122,7 +124,7 @@
           Titolo itinerario
           <p>(obbligatorio)</p>
         </h2>
-        <div v-text="(maxTitle - textTitle.length)" style="color: red"></div>
+        <div v-text="maxTitle - textTitle.length" style="color: red"></div>
         <input
           type="text"
           :maxlength="maxTitle"
@@ -134,7 +136,10 @@
           Location
           <p>(obbligatorio)</p>
         </h2>
-        <div v-text="(maxLocation - textLocation.length)" style="color: red"></div>
+        <div
+          v-text="maxLocation - textLocation.length"
+          style="color: red"
+        ></div>
         <input
           type="text"
           :maxlength="maxLocation"
@@ -147,7 +152,7 @@
           Testo
           <p>(obbligatorio)</p>
         </h2>
-        <div v-text="(maxText - textText.length)" style="color: red"></div>
+        <div v-text="maxText - textText.length" style="color: red"></div>
         <input
           type="text"
           style="height: 150px; padding-bottom: 50%; padding-left: 10px"
@@ -157,19 +162,76 @@
         />
       </div>
       <div class="add-new-stage-btn">
-          <a class="button-area fas fa-plus" href="#/itinerarycreation" @click="showModalStages"></a>
-            <i ></i>
-            <h2>Aggiungi nuova tappa</h2>
-         
-          
-          
-          
+        <a
+          class="button-area fas fa-plus"
+          href="#/itinerarycreation"
+          @click="showModalStages"
+        ></a>
+        <h2>Aggiungi nuova tappa</h2>
       </div>
-      <ModalStages
-            v-show="isModalStagesVisible"
-            @close="choosed($event)"
-          ><i class="fas fa-plus "></i>
-          </ModalStages>
+      <div class="flex-Dialog">
+      <div class="container1">
+        <div class="first-travel" id="travel-card2">
+          <b-card class="overflow-hidden">
+            <b-row no-gutters>
+              <b-col cols="4">
+                <div class="cards">
+                  <div class="text">
+                    <img :src="cardList.image" alt="" class="rounded-0" />
+                  </div>
+                </div>
+              </b-col>
+              <b-col cols="8">
+                <b-card-body class="text-layout">
+                  <h2>{{ cardList.stage }}</h2>
+                  <p>{{ cardList.inlineDate }}</p>
+                  <b-card-text style="font-size: 15px">
+                    <p>{{ cardList.description }}</p>
+                    <div class="flexCard" style="margin-top: -20px">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p>{{ cardList.location }}</p>
+                    </div>
+                  </b-card-text>
+                </b-card-body>
+              </b-col>
+            </b-row>
+          </b-card>
+        </div>
+
+        <!-- <DialogCardList :messagge="arrayVuoto" /> -->
+      </div>
+      <div class="container2">
+        <div class="first-travel" id="travel-card">
+          <b-card class="overflow-hidden">
+            <b-row no-gutters>
+              <b-col cols="4">
+                <div class="cards">
+                  <div class="text">
+                    <img :src="cardList2.image" alt="" class="rounded-0" />
+                  </div>
+                </div>
+              </b-col>
+              <b-col cols="8">
+                <b-card-body class="text-layout">
+                  <h2>{{ cardList2.stage }}</h2>
+                  <p>{{ cardList2.inlineDate }}</p>
+                  <b-card-text style="font-size: 15px">
+                    <p>{{ cardList2.description }}</p>
+                    <div class="flexCard" style="margin-top: -20px">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p>{{ cardList2.location }}</p>
+                    </div>
+                  </b-card-text>
+                </b-card-body>
+              </b-col>
+            </b-row>
+          </b-card>
+        </div>
+
+        <!-- <DialogCardList :messagge="arrayVuoto" /> -->
+      </div>
+
+      </div>
       <div class="end-adding-buttons">
         <a class="cancel" href="#">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
@@ -183,8 +245,22 @@
 </template>
 
 <script>
+$(document).ready(function () {
+  // Set div display to none
+  $("#travel-card" ).css("display", "none");
+  $("#travel-card2" ).css("display", "none");
+
+  // Set div display to block
+  $(".button-area").click(function () {
+    $("#travel-card").css("display", "block");
+      $("#travel-card2" ).css("display", "block");
+  });
+});
+
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
+import dataStagesList from "/data-stages-list.json";
+
 export default {
   data() {
     return {
@@ -194,6 +270,8 @@ export default {
           backgroundColor: "grey",
         },
       },
+      cardList: [],
+      cardList2: dataStagesList,
       files: [],
       valueArt: "0",
       valueRelax: "0",
@@ -207,12 +285,12 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
-      isModalStagesVisible:false,
+      isModalStagesVisible: false,
     };
   },
   components: {
     VueSlideBar,
-    ModalStages
+    ModalStages,
   },
   filters: {
     kb(val) {
@@ -234,27 +312,88 @@ export default {
         return f != file;
       });
     },
-   selectFile(){
+    selectFile() {
       let fileInputElement = this.$refs.file;
       fileInputElement.click();
       // ...
     },
-    choosed(data){
-      console.log(data);
-      this.isModalStagesVisible=false;
+    choosed(data) {
+ 
+      this.isModalStagesVisible = false;
+      this.cardList = data;
+      if(this.cardList == this.cardList2[0]){
+          console.log("Sono ugale")
+      }
+      else{
+        document.getElementsByClassName
+      }
+      
     },
-    showModalStages(){
-      this.isModalStagesVisible=true;
-    }
+    showModalStages() {
+      this.isModalStagesVisible = true;
+    },
   },
 };
 </script>
 
 <style scoped>
 
+.flex-Dialog{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 21%;
+  top: 105%;
+}
+
+.first-travel {
+  position: relative;
+  left: 44%;
+  
+}
+
+.container1 {
+  max-width: 1440px;
+ 
+}
+
+.overflow-hidden {
+  max-width: 700px;
+  height: 200px;
+  margin-bottom: 40px;
+}
+
 .flex {
   display: flex;
 }
+
+.flexCard {
+  display: flex;
+  align-items: baseline;
+}
+
+.flexCard i {
+  margin-top: 5px;
+  margin-right: 3px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-layout p {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.text img {
+  width: 250px;
+  height: 200px;
+  margin-top: -16px;
+}
+
 .value-range {
   margin-left: 130px;
 }
@@ -360,6 +499,7 @@ export default {
 
 .sliders {
   margin-top: 5px;
+  z-index: 0;
 }
 
 .btn {
@@ -435,15 +575,14 @@ export default {
   background-color: #2d2e83;
 }
 
-.add-new-stage-btn{
- margin-top: 5px;
+.add-new-stage-btn {
+  margin-top: 5px;
   margin-left: 850px;
   position: absolute;
   bottom: 0%;
-  
 }
 
-.add-new-stage-btn a{
+.add-new-stage-btn a {
   margin-left: 280px;
   width: 40px;
   height: 40px;
@@ -457,8 +596,16 @@ export default {
   border: 2px solid grey;
 }
 
-.fas{
-    font-size: 20px;
+.fas {
+  font-size: 20px;
 }
 
+.card-position {
+  width: 700px;
+  height: 453px;
+  position: absolute;
+  z-index: 2;
+  left: 42%;
+  top: 105%;
+}
 </style>

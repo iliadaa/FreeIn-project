@@ -7,6 +7,7 @@
                 @click="close(data.id, datas[data.id - 1])"
                 class="overflow-hidden"
               >
+              
                 <b-row no-gutters>
                   <b-col cols="4">
                     <div class="cards">
@@ -30,8 +31,7 @@
                   </b-col>
                 </b-row>
               </b-card>
-            </div>
-                    
+            </div>  
           </div>
         </div>
       </div>
@@ -59,36 +59,34 @@ export default {
 <style scoped>
   
   .modal-container {
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     top: 0;
     bottom:0;
     left: 0;
     width:100%;
-    background-color: rgba(255, 255, 255);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y:scroll;
+    overflow:scroll;
   }
   .modal-container-child{
-    position: absolute;
     top: 0;
     bottom:0;
     width:100%;
   }
 
 .container {
-    background-color: rgb(246 239 239);
-}
-.container1 {
-  max-width: 1440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    
+    height: 100%;
+    max-height: 100vh;
+    max-width: 100%;
 }
 
+
 .overflow-hidden {
+  margin: 0 auto;
   max-width: 700px;
   height: 200px;
   margin-bottom: 40px;

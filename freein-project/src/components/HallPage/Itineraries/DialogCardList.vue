@@ -42,13 +42,7 @@ export default {
 
 
 <style scoped>
-.container1 {
-  max-width: 1440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .overflow-hidden {
   max-width: 700px;

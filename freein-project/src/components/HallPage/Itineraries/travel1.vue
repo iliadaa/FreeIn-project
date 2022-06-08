@@ -43,20 +43,6 @@ export default {
     return {
       datas: dataStagesList,
       filteredDialog: [],
-      arrayVuoto: [
-        {
-          id: "1",
-          image: "https://7wallpapers.net/wp-content/uploads/16_Firewatch.png",
-          month: "Aug",
-          day: "28",
-          inlineDate: "August 28, 2022",
-          description:
-            "Mountain climbing. Pack your climbing shoes, backpack and get there!",
-          stage: "Matterhorn",
-          location: "Matterhorn, Switzerland/Italy ",
-        },
-      ],
-      hello: "SONO IL PADRE",
     };
   },
 
@@ -83,6 +69,7 @@ export default {
 
 <style scoped>
 .container1 {
+  color: grey;
   max-width: 1440px;
   display: flex;
   flex-direction: column;
