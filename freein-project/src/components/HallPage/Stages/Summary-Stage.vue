@@ -40,7 +40,7 @@
         </div>
         <div class="gourmet">
           <div class="image2">
-            <img src="@/assets/Gourmet-Explorer.png" alt="">
+            <img src="@/assets/yellowgourmet.png" alt="">
           </div>
           <div class="cardcontainer1">
             <p>30%</p>
@@ -440,8 +440,8 @@ img {
   padding-top: 7px;
 }
 .image2 {
-  padding-left: 12px;
-  padding-top: 8px;
+  padding-left: 14px;
+  padding-top: 7px;
 }
 .image3 {
   padding-left: 11px;
