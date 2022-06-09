@@ -1,7 +1,13 @@
 <template>
   <div class="container">
     <div class="form-group">
-      <ModalStages v-show="isModalStagesVisible" @close="choosed($event)">
+      <ModalStages
+        
+        v-show="isModalStagesVisible"
+        @close="choosed($event, disabled)"
+        
+        
+      >
       </ModalStages>
       <div class="ph-layout">
         <h3>Foto itinerario (obbligatorio)</h3>
@@ -169,68 +175,38 @@
         ></a>
         <h2>Aggiungi nuova tappa</h2>
       </div>
-      <div class="flex-Dialog">
-      <div class="container1">
-        <div class="first-travel" id="travel-card2">
-          <b-card class="overflow-hidden">
-            <b-row no-gutters>
-              <b-col cols="4">
-                <div class="cards">
-                  <div class="text">
-                    <img :src="cardList.image" alt="" class="rounded-0" />
-                  </div>
-                </div>
-              </b-col>
-              <b-col cols="8">
-                <b-card-body class="text-layout">
-                  <h2>{{ cardList.stage }}</h2>
-                  <p>{{ cardList.inlineDate }}</p>
-                  <b-card-text style="font-size: 15px">
-                    <p>{{ cardList.description }}</p>
-                    <div class="flexCard" style="margin-top: -20px">
-                      <i class="fa-solid fa-location-dot"></i>
-                      <p>{{ cardList.location }}</p>
+
+      <div class="box">
+        <div class="flex-Dialog">
+          <div class="container1" v-for="card in cardList" :key="card.id" :disabled="card.disabled">
+            <div class="first-travel" id="travel-card">
+              <b-card class="overflow-hidden">
+                <b-row no-gutters>
+                  <b-col cols="4">
+                    <div class="cards">
+                      <div class="text">
+                        <img :src="card.image" alt="" class="rounded-0" />
+                      </div>
                     </div>
-                  </b-card-text>
-                </b-card-body>
-              </b-col>
-            </b-row>
-          </b-card>
+                  </b-col>
+                  <b-col cols="8">
+                    <b-card-body class="text-layout">
+                      <h2>{{ card.stage }}</h2>
+                      <p>{{ card.inlineDate }}</p>
+                      <b-card-text style="font-size: 15px">
+                        <p>{{ card.description }}</p>
+                        <div class="flexCard" style="margin-top: -20px">
+                          <i class="fa-solid fa-location-dot"></i>
+                          <p>{{ card.location }}</p>
+                        </div>
+                      </b-card-text>
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </div>
+          </div>
         </div>
-
-        <!-- <DialogCardList :messagge="arrayVuoto" /> -->
-      </div>
-      <div class="container2">
-        <div class="first-travel" id="travel-card">
-          <b-card class="overflow-hidden">
-            <b-row no-gutters>
-              <b-col cols="4">
-                <div class="cards">
-                  <div class="text">
-                    <img :src="cardList2.image" alt="" class="rounded-0" />
-                  </div>
-                </div>
-              </b-col>
-              <b-col cols="8">
-                <b-card-body class="text-layout">
-                  <h2>{{ cardList2.stage }}</h2>
-                  <p>{{ cardList2.inlineDate }}</p>
-                  <b-card-text style="font-size: 15px">
-                    <p>{{ cardList2.description }}</p>
-                    <div class="flexCard" style="margin-top: -20px">
-                      <i class="fa-solid fa-location-dot"></i>
-                      <p>{{ cardList2.location }}</p>
-                    </div>
-                  </b-card-text>
-                </b-card-body>
-              </b-col>
-            </b-row>
-          </b-card>
-        </div>
-
-        <!-- <DialogCardList :messagge="arrayVuoto" /> -->
-      </div>
-
       </div>
       <div class="end-adding-buttons">
         <a class="cancel" href="#">Annulla</a>
@@ -245,23 +221,14 @@
 </template>
 
 <script>
-$(document).ready(function () {
-  // Set div display to none
-  $("#travel-card" ).css("display", "none");
-  $("#travel-card2" ).css("display", "none");
-
-  // Set div display to block
-  $(".button-area").click(function () {
-    $("#travel-card").css("display", "block");
-      $("#travel-card2" ).css("display", "block");
-  });
-});
-
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
 import dataStagesList from "/data-stages-list.json";
 
+
+
 export default {
+
   data() {
     return {
       slider: {
@@ -270,8 +237,10 @@ export default {
           backgroundColor: "grey",
         },
       },
+      disabled: false,
       cardList: [],
-      cardList2: dataStagesList,
+      cardList2: [],
+      json: dataStagesList,
       files: [],
       valueArt: "0",
       valueRelax: "0",
@@ -317,17 +286,10 @@ export default {
       fileInputElement.click();
       // ...
     },
-    choosed(data) {
- 
+    choosed(data, disabled) {
       this.isModalStagesVisible = false;
-      this.cardList = data;
-      if(this.cardList == this.cardList2[0]){
-          console.log("Sono ugale")
-      }
-      else{
-        document.getElementsByClassName
-      }
-      
+      this.cardList.push(data);
+      this.disabled = true;
     },
     showModalStages() {
       this.isModalStagesVisible = true;
@@ -337,24 +299,26 @@ export default {
 </script>
 
 <style scoped>
+.box {
+  height: 489px;
+  overflow: auto;
+  width: 700px;
+  position: absolute;
+  left: 40%;
+  top: 101%;
+}
 
-.flex-Dialog{
+.flex-Dialog {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 21%;
-  top: 105%;
 }
 
 .first-travel {
-  position: relative;
   left: 44%;
-  
 }
 
 .container1 {
-  max-width: 1440px;
- 
+  max-width: 700px;
 }
 
 .overflow-hidden {

@@ -2,8 +2,9 @@
       <div id='ModalStages' class="modal-container">
         <div class="modal-container-child">
           <div class="container">
-            <div class="first-travel" v-for="data in datas" :key="data.id">
+            <div class="first-travel"  v-for="data in datas" :key="data.id" id="disable">
               <b-card
+              
                 @click="close(data.id, datas[data.id - 1])"
                 class="overflow-hidden"
               >
@@ -37,6 +38,17 @@
       </div>
 </template>
 <script>
+$(document).ready(function(){
+
+    $(".first-travel").click(function(){
+
+          $('#disable').css('pointer-events', 'none')
+          $('#disable').css('opacity', '0.5')
+    
+  });
+});
+
+
 import DialogCardList from "./DialogCardList.vue";
 import dataStagesList from "/data-stages-list.json";
 export default {
@@ -51,7 +63,7 @@ export default {
   name: 'ModalStages',
   methods: {
     close(id, datas) {
-      this.$emit('close',datas);
+      this.$emit('close',datas,);
     },
   },
 };
@@ -78,7 +90,7 @@ export default {
   }
 
 .container {
-    
+
     height: 100%;
     max-height: 100vh;
     max-width: 100%;
