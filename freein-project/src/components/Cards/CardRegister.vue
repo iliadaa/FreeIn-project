@@ -168,7 +168,7 @@ export default {
 }
 
 .card-r {
-  background-color: orange;
+  background-color: #ea5b0c;
   justify-content: center;
   align-items: center;
 }
@@ -201,13 +201,13 @@ export default {
 .log-in {
   border-radius: 20px;
   border-color: white;
-  background-color: orange;
+  background-color: #ea5b0c;
   color: white;
 }
 
 .log-in:hover {
   border-color: white;
-  background-color: orange;
+  background-color: #ea5b0c;
 }
 
 .card-login {
@@ -268,14 +268,14 @@ export default {
   border-radius: 30px;
   font-size: 120%;
   border-color: white;
-  background-color: orange;
+  background-color: #ea5b0c;
   color: white;
   align-items: center;
 }
 
 .sign-up-btn:hover {
-  background-color: orange;
-  border-color: orange;
+  background-color: #ea5b0c;
+  border-color: #ea5b0c;
 }
 
 .href-buttons-rounded a {
