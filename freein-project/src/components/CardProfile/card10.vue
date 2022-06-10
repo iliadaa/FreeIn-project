@@ -2,6 +2,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Quanto conta lo shopping in un viaggio?"</p>
       </div>
       <div class="card card-b">
@@ -112,6 +115,7 @@ export default {
   text-align: left;
   margin-left: 110px;
   margin-right: 110px;
+  margin-bottom: 210px;
 }
 .card-b p {
   font-size: 30px;

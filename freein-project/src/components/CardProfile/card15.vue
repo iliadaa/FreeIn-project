@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Cucina Gourmet o Street Food?"</p>
       </div>
       <div class="card card-b">
@@ -48,7 +51,8 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 110px;
+  margin-left: 90px;
+  margin-bottom: 210px;
 }
 .answer1 {
   display: flex;

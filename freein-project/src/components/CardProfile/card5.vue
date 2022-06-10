@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"La tua fascia di eta' e'?</p>
       </div>
       <div class="card card-b">
@@ -55,6 +58,7 @@
   text-align: left;
   margin-left: 100px;
   margin-right: 80px;
+  margin-bottom: 250px;
 }
 .answer1 {
   display: flex;

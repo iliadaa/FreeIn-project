@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Il tuo stato sentimentale ...?"</p>
       </div>
       <div class="card card-b">
@@ -55,6 +58,7 @@
   font-size: 40px;
   text-align: left;
   margin-left: 100px;
+  margin-bottom: 250px;
 }
 .answer2 {
   display: flex;

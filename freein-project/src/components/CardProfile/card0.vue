@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="" alt="">
+        </div>
         <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
       <div class="card card-b">

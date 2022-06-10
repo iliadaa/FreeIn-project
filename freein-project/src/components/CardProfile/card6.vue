@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Quanto spendi per una bottiglia di vino?"</p>
       </div>
       <div class="card card-b">
@@ -55,6 +58,7 @@
   text-align: left;
   margin-left: 100px;
   margin-right: 80px;
+  margin-bottom: 210px;
 }
 .answer2 {
   display: flex;

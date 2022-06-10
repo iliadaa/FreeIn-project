@@ -3,7 +3,10 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
-        <p>"Sei ...?"</p>
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
+          <p>"Sei ...?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
@@ -26,7 +29,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 .card-group {
   justify-content: center;
@@ -46,12 +49,14 @@
 .card-a{
   background-color: #ea5b0c;
 }
+
 .card-a p {
   color: white;
   font-style: italic;
   font-size: 40px;
   text-align: left;
   margin-left: 100px;
+  margin-bottom: 250px;
 }
 .answer2 {
   display: flex;
