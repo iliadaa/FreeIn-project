@@ -22,7 +22,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px; 
 }
 .card-group {
   justify-content: center;

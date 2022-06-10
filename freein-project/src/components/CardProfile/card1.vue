@@ -10,11 +10,17 @@
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <p>Altro</p> 
+              <a href="">
+                <p>Altro</p> 
+              </a>
           </div>
           <div class="answer2">
-              <p>Uomo</p>
-              <p>Donna</p>
+              <a href="">
+                <p>Uomo</p>
+              </a>
+              <a href="">
+                <p>Donna</p>
+              </a>
           </div>
         <div class="arrow">
           <a href="http://localhost:8080/#/card2" class="fas fa-angle-right"></a>
@@ -29,7 +35,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -63,6 +70,9 @@
   justify-content: space-between;
   margin-left: 20%;
   margin-right: 20%;
+}
+.card-b a {
+  text-decoration: none;
 }
 .card-b p {
   font-size: 30px;
