@@ -12,8 +12,16 @@
             clienti quando desiderano acquistare un articolo dal tuo shop. La
             configurazione della procedura di acquisto &egrave; gratuita.
           </p>
-          <li>Paypal</li>
-          <li>Bonifico</li>
+
+<!--Added-->
+          <label class="container">Paypal
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Bonifico
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
         </div>
       </div>
       <div class="button-dots">
@@ -96,7 +104,6 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #ea5b0c;
-
   border-radius: 50%;
   display: inline-block;
 }
@@ -133,15 +140,62 @@ export default {
 .card-sub-title {
   padding: 80px 0 0 65px;
 }
-li {
-  font-weight: bold;
-  font-size: x-large;
-}
+
 a {
   color: white;
   text-decoration: none;
 }
 a:hover {
   color: white;
+}
+
+/*Added*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.container:hover input ~ .checkmark {
+  background-color: #eee;
+}
+.container input:checked ~ .checkmark {
+  background-color: #eee;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+ 	top: 8px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: black;
 }
 </style>
