@@ -4,7 +4,7 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="" alt="">
+          <img src="@/assets/dots.png" alt="">
         </div>
         <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
@@ -42,6 +42,9 @@
 }
 .card-a{
   background-color: #ea5b0c;
+}
+.illustrations {
+  margin-right: 145px;
 }
 .card-a p {
   color: white;

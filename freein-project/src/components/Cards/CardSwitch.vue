@@ -1,4 +1,26 @@
 <template>
+<!--Added-->
+  <!--<div class="container">
+    <component :is="component"></component>
+    <div class="card-group card-absolute" v-on:click="component = 'login'">
+      <div class="card card-a">
+        <div class="illustrations1">
+          <img src="@/assets/dots-orange.png" alt="">
+        </div>
+          <p>ispira</p>
+      </div>
+
+      <div class="card card-b">
+        <div class="illustrations2">
+          <img src="@/assets/dots-blue.png" alt="">
+        </div>
+        <p>lasciati</p> 
+        <p>ispirare</p>
+      </div>
+    </div>
+  </div>-->
+
+
   <div class="container">
     <component :is="component"></component>
     <div class="card-group card-absolute" v-on:click="component = 'login'">
@@ -24,6 +46,55 @@ export default {
 </script>
 
 <style scoped>
+/*Added*/
+/*.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+.card-group {
+  justify-content: center;
+  align-content: center;
+  box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+}
+.card {
+  justify-content: center;
+  text-align: center;
+  height: 600px;
+  border-radius: 20px;  
+}
+.card-a{
+  background-color: #442A63;
+}
+.illustrations1 {
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+.illustrations2 {
+  margin-right: -25px;
+  margin-bottom: 10px;
+}
+.card-a p {
+  color: #EB6349;
+  font-size: 50px;
+  font-weight: bold;
+}
+.card-b {
+  background-color: #EB6349;
+}
+.card-b p {
+  color: #442A63;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 30px;
+}*/
+
+
 .card-absolute {
   position: absolute;
   top: 50%;
