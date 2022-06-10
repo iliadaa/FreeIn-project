@@ -3,7 +3,11 @@
     <div class="card">
       <div class="card-header">Configura il tuo Business</div>
       <keep-alive> <component v-bind:is="comp"></component></keep-alive>
-      <div class="button-dots">
+      <div
+        v-on:click="available = !available"
+        v-bind:class="{ available: available }"
+        class="button-dots"
+      >
         <div class="dots">
           <span class="dot-1"></span>
           <span class="dot-2"></span>
@@ -12,6 +16,9 @@
         </div>
         <b-button v-on:click="toggle" class="business-1-button">Avanti >></b-button>
       </div>
+    </div>
+    <div v-on:click="available = !available" v-bind:class="{ available: available }">
+      <span>Hello</span>
     </div>
   </div>
 </template>
@@ -28,6 +35,8 @@ export default {
   data() {
     return {
       comp: "card1",
+      available: true,
+      nearby: false,
     };
   },
   methods: {
@@ -40,30 +49,6 @@ export default {
         this.comp = card4test;
       }
     },
-
-    /* */
-    /* if (this.comp != "card1" && this.comp != "card2test" && this.comp != "card3test") {
-        this.comp == card4test;
-        console.log(card4test, "card4");
-      } else if (
-        this.comp != "card4test" &&
-        this.comp != "card2test" &&
-        this.comp != "card1"
-      ) {
-        this.comp = card3test;
-        console.log(card3test, "card3");
-      } else if (
-        this.comp != "card3test" &&
-        this.comp != "card4test" &&
-        this.comp != "card1"
-      ) {
-        this.comp = card2test;
-        console.log(card2test, "card2");
-      }
-    },*/
-    // toggle() {
-    //    this.comp = this.comp === "card1" ? "card2test" : "card3test";
-    //  },
   },
 };
 </script>
@@ -127,15 +112,12 @@ export default {
 .dot-1 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
-
   border-radius: 50%;
   display: inline-block;
 }
 .dot-2 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px 0px 30px;
@@ -143,20 +125,23 @@ export default {
 .dot-3 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
 }
 .dot-4 {
   height: 50px;
   width: 50px;
-  background-color: #bbb;
-
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px;
 }
 .dots {
   padding-left: 25%;
+}
+.dots > span {
+  background-color: #bbb;
+}
+.available span {
+  background-color: #ea5b0c;
 }
 </style>
