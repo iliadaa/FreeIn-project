@@ -2,11 +2,8 @@
   <div class="container">
     <div class="form-group">
       <ModalStages
-        
         v-show="isModalStagesVisible"
         @close="choosed($event, disabled)"
-        
-        
       >
       </ModalStages>
       <div class="ph-layout">
