@@ -39,6 +39,7 @@ import BusinessProfile1 from "../views/BusinessProfile1.vue"
 import SummaryStage from "../views/Summary-Stage.vue"
 import SummaryItinerary from "../views/Summary-Itinerary.vue"
 import Privatprofile from "../views/PrivatProfile.vue"
+import TestSwitchPage from "../views/TestSwitchPage.vue"
 
 
 Vue.use(VueRouter)
@@ -240,6 +241,11 @@ const routes = [{
         name:'Privatprofile',
         component:Privatprofile
 
+    },
+    {
+        path:'/switchtest',
+        name:'TestSwitchPage',
+        component:TestSwitchPage
     }
    
 
