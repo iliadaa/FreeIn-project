@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div>
     <Header />
-   <div class="container"><cardprofile /></div> 
+    <div class="container"><cardprofile /></div>
     <Footer />
   </div>
 </template>

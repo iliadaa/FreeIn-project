@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Quanto spendi per una bottiglia di vino?"</p>
       </div>
       <div class="card card-b">
@@ -10,10 +13,18 @@
               <p>soglie espresse in euro € </p> 
           </div>
           <div class="answer2">
-              <p>2-6</p>
-              <p>7-12</p>
-              <p>13-22</p>
-              <p>oltre 23</p>
+              <a href="">
+                <p>2-6</p>
+              </a>
+              <a href="">
+                <p>7-12</p>
+              </a>
+              <a href="">
+                <p>13-22</p>
+              </a>
+              <a href="">
+                <p>oltre 23</p>
+              </a>
           </div>
         <div class="arrow">
           <a href="http://localhost:8080/#/card7" class="fas fa-angle-right"></a>
@@ -28,7 +39,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -55,12 +67,16 @@
   text-align: left;
   margin-left: 100px;
   margin-right: 80px;
+  margin-bottom: 210px;
 }
 .answer2 {
   display: flex;
   justify-content: space-between;
   margin-left: 10%;
   margin-right: 10%;
+}
+.card-b a {
+  text-decoration: none;
 }
 .card-b p {
   font-size: 30px;

@@ -3,12 +3,19 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Vegano o Hamburger?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <p>Vegano</p> 
-              <p>Hamburger</p>
+              <a href="">
+                <p>Vegano</p>
+              </a> 
+              <a href="">
+                <p>Hamburger</p>
+              </a>
           </div>
         <div class="arrow">
           <a href="http://localhost:8080/#/card5" class="fas fa-angle-right"></a>
@@ -23,7 +30,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -49,12 +57,16 @@
   font-size: 40px;
   text-align: left;
   margin-left: 100px;
+  margin-bottom: 250px;
 }
 .answer1 {
   display: flex;
   justify-content: space-between;
   margin-left: 20%;
   margin-right: 20%;
+}
+.card-b a {
+  text-decoration: none;
 }
 .card-b p {
   font-size: 30px;

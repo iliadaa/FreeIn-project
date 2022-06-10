@@ -3,17 +3,30 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"La tua fascia di eta' e'?</p>
       </div>
       <div class="card card-b">
         <div class="answer1">
-          <p>16-20</p>
-          <p>21-27</p>
-          <p>28-37</p>
+          <a href="">
+            <p>16-20</p>
+          </a>
+          <a href="">
+            <p>21-27</p>
+          </a>
+          <a href="">
+            <p>28-37</p>
+          </a>
         </div>
         <div class="answer2">
-          <p>38-55</p>
-          <p>56-90</p>
+          <a href="">
+            <p>38-55</p>
+          </a>
+          <a href="">
+            <p>56-90</p>
+          </a>
         </div>
         <div class="arrow">
             <a href="http://localhost:8080/#/card6" class="fas fa-angle-right"></a>
@@ -28,7 +41,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -55,6 +69,7 @@
   text-align: left;
   margin-left: 100px;
   margin-right: 80px;
+  margin-bottom: 250px;
 }
 .answer1 {
   display: flex;
@@ -69,6 +84,9 @@
   margin-left: 30%;
   margin-right: 30%;
   font-style: italic;
+}
+.card-b a {
+  text-decoration: none;
 }
 .card-b p {
   font-size: 30px;

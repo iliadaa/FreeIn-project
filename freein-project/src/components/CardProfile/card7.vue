@@ -3,6 +3,9 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Quanto conta l'avventura in viaggio?"</p>
       </div>
       <div class="card card-b">
@@ -86,7 +89,8 @@ export default {
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -113,6 +117,7 @@ export default {
   text-align: left;
   margin-left: 100px;
   margin-right: 80px;
+  margin-bottom: 210px;
 }
 .card-b p {
   font-size: 30px;

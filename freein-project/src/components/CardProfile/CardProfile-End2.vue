@@ -315,6 +315,7 @@ img {
   font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
+  margin-bottom: 100px;
 }
 .progress_container1 {
     width:100%;

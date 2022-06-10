@@ -3,12 +3,19 @@
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
+        <div class="illustrations">
+          <img src="@/assets/illustration.png" alt="">
+        </div>
         <p>"Cucina Gourmet o Street Food?"</p>
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <p>Gourmet</p> 
-              <p>Street Food</p>
+              <a href="">
+                <p>Gourmet</p>
+              </a> 
+              <a href="">
+                <p>Street Food</p>
+              </a>
           </div>
         <div class="arrow">
           <a href="http://localhost:8080/#/card16" class="fas fa-angle-right"></a>
@@ -23,7 +30,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 50px; 
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -48,13 +56,17 @@
   font-style: italic;
   font-size: 40px;
   text-align: left;
-  margin-left: 110px;
+  margin-left: 90px;
+  margin-bottom: 210px;
 }
 .answer1 {
   display: flex;
   justify-content: space-between;
   margin-left: 20%;
   margin-right: 20%;
+}
+.card-b a {
+  text-decoration: none;
 }
 .card-b p {
   font-size: 30px;
