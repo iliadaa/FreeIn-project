@@ -86,13 +86,24 @@
           <div class="cardimage">
             <img src="@/assets/italy.jpg" alt="">
           </div>
-          <div class="container1">
-            <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
-            <p>Crea itinerario</p>
-          </div>
+<div class="parentcontainer">
+  
+            <div class="container1">
+              <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
+              <p>Crea itinerario</p>
+            </div>
+  
+            <div class="container2">
+                <a href="#"><i class="fas fa-tag"></i></a>
+                <a href="#"><i class="fas fa-star"></i></a>
+                <a href="#"><i class="far fa-bookmark"></i></a>
+            </div>
+</div>
+
         </div>
+        
       
-        <div>
+        <!--<div>
           <div class="cardimage">
             <img src="@/assets/italy.jpg" alt="">
           </div>
@@ -101,7 +112,8 @@
               <a href="#"><i class="fas fa-star"></i></a>
               <a href="#"><i class="far fa-bookmark"></i></a>
           </div>
-        </div>
+        </div>-->
+
       </div>
       <hr class="hr1">
 
@@ -491,15 +503,17 @@ img {
 .cardimage img {
   width: 100%; 
   height: auto; 
-  padding-right: 10px;
   margin-bottom: 35px;
+}
+.parentcontainer {
+  display: flex;
+  justify-content: space-between;
 }
 .container1 .container2 i {
   font-size: 25px;
 }
 .container2 i {
-  float: right;
-  padding-left: 15px;
+  padding-left: 15px; 
 }
 .fa-plus-circle:before {
   color: black;

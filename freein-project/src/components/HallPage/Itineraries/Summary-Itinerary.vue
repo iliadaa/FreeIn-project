@@ -597,6 +597,7 @@ img {
   padding-right: 10px;
   margin-bottom: 35px;
 }
+
 .container1 .container2 i {
   font-size: 25px;
 }
