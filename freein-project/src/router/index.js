@@ -40,6 +40,7 @@ import SummaryStage from "../views/Summary-Stage.vue"
 import SummaryItinerary from "../views/Summary-Itinerary.vue"
 import Privatprofile from "../views/PrivatProfile.vue"
 import TestSwitchPage from "../views/TestSwitchPage.vue"
+import SecondSliderpage from "../views/SecondSliderpage.vue"
 
 
 Vue.use(VueRouter)
@@ -246,7 +247,13 @@ const routes = [{
         path:'/switchtest',
         name:'TestSwitchPage',
         component:TestSwitchPage
+    },
+    {
+        path:'/secondsliderpage',
+        name:'SecondSliderpage',
+        component:SecondSliderpage
     }
+   
    
 
 
