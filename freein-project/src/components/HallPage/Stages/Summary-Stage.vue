@@ -86,35 +86,20 @@
           <div class="cardimage">
             <img src="@/assets/italy.jpg" alt="">
           </div>
-<div class="parentcontainer">
-  
+          <div class="parentcontainer">
             <div class="container1">
               <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
               <p>Crea itinerario</p>
             </div>
-  
             <div class="container2">
                 <a href="#"><i class="fas fa-tag"></i></a>
                 <a href="#"><i class="fas fa-star"></i></a>
                 <a href="#"><i class="far fa-bookmark"></i></a>
             </div>
-</div>
-
+          </div>
         </div>
-        
-      
-        <!--<div>
-          <div class="cardimage">
-            <img src="@/assets/italy.jpg" alt="">
-          </div>
-          <div class="container2">
-              <a href="#"><i class="fas fa-tag"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href="#"><i class="far fa-bookmark"></i></a>
-          </div>
-        </div>-->
-
       </div>
+      
       <hr class="hr1">
 
       <p class="title">Ti potrebbe anche interessare</p>
