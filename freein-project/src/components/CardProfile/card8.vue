@@ -136,9 +136,6 @@ export default {
   border-radius: 3px;
   outline: none;
   background: rgb(215, 213, 213);
-  /*opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;*/
 }
 
 

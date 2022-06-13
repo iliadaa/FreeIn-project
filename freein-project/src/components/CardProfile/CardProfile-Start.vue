@@ -53,8 +53,6 @@
       </div>
     </div>
 
-  <!--<img src="@/assets/photos.png" alt="">-->
-
         <div class="target target_test">
             <a href="http://localhost:8080/#/card0" class="fas fa-bullseye"></a>
             <div><p >Vai al TEST</p></div> 

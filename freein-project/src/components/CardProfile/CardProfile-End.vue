@@ -121,8 +121,6 @@
       </div>
     </div>
 
-  <!--<img src="@/assets/photos.png" alt="">-->
-
         <div class="text">
           <p>Viaggiatore interessato agli aspetti artistici dei luoghi, ovvero interessato a città storiche, siti di interesse (Colosseo, Piramidi, ecc) e con una spiccata propensione verso la conoscenza dei luoghi (sei un turista che utilizza guide e materiale informativo).</p>
         </div>

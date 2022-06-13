@@ -124,8 +124,6 @@
       </div>
     </div>
 
-  <!--<img src="@/assets/photos.png" alt="">-->
-
         <div class="text">
           <p>Viaggiatore interessato agli aspetti eno-gastronomici di un territorio, focalizzato sui piatti tipici, sulle tradizioni e sugli aspetti più rurali dell’identità culturale. Vocazione che può essere tanto indirizzata verso ristoranti stellati tanto quanto verso mercati tipici e street food.</p>
         </div>
