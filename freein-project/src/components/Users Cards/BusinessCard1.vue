@@ -6,9 +6,40 @@
         <h2>Ecco cosa ti servira per iniziare</h2>
         <h6>Prima di iniziare a vendere, dovrai completare alcun passaggi</h6>
       </div>
+
       <div class="business-list">
-        <img src="@/assets/business-icon.png" />
-        <img src="@/assets/list2.jpg" />
+        <!--Added-->
+        <div><img src="@/assets/business-icon.png" /></div>
+
+        <div>
+          <div class="businesstext1">
+            <div class="number">1</div>
+          
+            <div class="text1">
+              <div class="first">
+                <p>Scegli un metodo di acquisto <br> Fornisci ai tuoi clienti un modo per pagare.</p>
+              </div>
+            </div>
+          </div>
+          <div class="businesstext2">
+            <div class="number">2</div>
+          
+            <div class="text1">
+              <div class="first">
+                <p>Fornisci i dettagli relativi alla tua azienda <br> Inserisci il nome e l'indirizzo e-mail della tua azienda o collega un account aziendale se ne hai gia' uno.</p>
+              </div>
+            </div>
+          </div>
+          <div class="businesstext3">
+            <div class="number">3</div>
+          
+            <div class="text1">
+              <div class="first">
+                <p>Aggiungi il tuo prodotto <br> Crea un espositore per promuovere e vendere i tuoi prodotti.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="button-dots">
@@ -137,4 +168,44 @@ a {
 a:hover {
   color: white;
 }
+
+/*added*/
+.business-list {
+  display: flex;
+  justify-content: space-between;
+}
+.businesstext1 {
+  display: flex; 
+  margin-left: 5%;
+  margin-top: 60px;
+}
+
+.businesstext2 {
+  display: flex; 
+  margin-left: 5%;
+  margin-right: 15%;
+  margin-top: 5px;
+}
+
+.businesstext3 {
+  display: flex; 
+  margin-left: 5%;
+  margin-top: 5px;
+}
+.number {
+  font-size: 45px;
+  font-weight: bold;
+  color: #ea5b0c ;
+}
+.text1 {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.first p {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
 </style>
