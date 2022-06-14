@@ -9,7 +9,7 @@
         <p>Ispira &</p>
         <p>Lasciati ispirare.</p>
 
-        <div class="discover">
+        <div class="discoverhow">
             <div>
               <a href="#">Scopri come</a>
             </div>
@@ -67,7 +67,7 @@ export default {
   line-height: 50px;
 }
 
-.discover {
+.discoverhow {
   display: flex;
   margin-left: 305px;
   margin-top: 50px;
