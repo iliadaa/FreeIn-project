@@ -66,11 +66,44 @@
           <a class="fas fa-plus" href="#"></a>
           <span class="text-itinerario">Crea Itinerario</span>
         </div>
+        <!-- Map  Filter -->
         <!-- Map -->
         <div class="map">
           <img src="@/assets/map.jpg" />
+          <!-- Filter -->
+          <div class="filter">
+            <div class="icons">
+              <img src="@/assets/img-5.png" />
+              <img src="@/assets/img-6.png" style="margin: 30px" />
+              <img src="@/assets/img-7.png" />
+              <img src="@/assets/img-8.png" style="margin: 30px" />
+              <div class="button button-console">
+                <button>
+                  <a href="http://localhost:8080/#/businesscard1">Business >></a>
+                </button>
+              </div>
+            </div>
+            <div class="image-group">
+              <div class="group">
+                <img src="@/assets/image1.jpg" />
+                <img src="@/assets/image2.jpg" />
+                <img src="@/assets/image3.jpg" />
+              </div>
+              <div class="group">
+                <img src="@/assets/image4.jpg" />
+                <img src="@/assets/image5.jpg" />
+                <img src="@/assets/image6.jpg" />
+              </div>
+              <div class="group">
+                <img src="@/assets/image1.jpg" />
+                <img src="@/assets/image2.jpg" />
+                <img src="@/assets/image3.jpg" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <!-- Avatar Sponsor Search -->
       <div class="avatar-sponsor-search">
         <!-- Avatar Sponsor  -->
@@ -104,24 +137,97 @@
 
             <div class="card-body">
               <img src="card-img1.jpg" />
-              <div class="card-text">
+              <div class="sponsor-card-text">
                 <h6>Ostaria del moro</h6>
                 <p>ostariadelmoro.com</p>
               </div>
             </div>
             <div class="card-body">
               <img src="card-img2.jpg" />
-              <div class="card-text">
+              <div class="sponsor-card-text">
                 <h6>Oleificio di Puglia</h6>
                 <p>oleificiodipuglia.com</p>
               </div>
             </div>
             <div class="card-body">
               <img src="card-img3.jpg" />
-              <div class="card-text">
+              <div class="sponsor-card-text">
                 <h6>La Focaccia</h6>
                 <p>lafocaccia.com</p>
               </div>
+            </div>
+          </div>
+        </div>
+        <!-- search-->
+        <div class="filter-attitude">
+          <div class="search-filter-attitude">
+            <input type="text" v-model="input" placeholder="Search " />
+          </div>
+          <h5>Filter attitude</h5>
+          <div class="text-slider-filter-attitude">
+            <div class="text-filter-attitude">
+              <p>arte e cultura</p>
+              <p>relax</p>
+              <p>mare</p>
+              <p>natura e avventura</p>
+              <p>gourmet explorer</p>
+              <p>party</p>
+            </div>
+            <div class="slider-filter-attitude">
+              <VueSlideBar
+                v-model="valueArt"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueRelax"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueMare"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueNatura"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueGourmetExplorer"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
+              <VueSlideBar
+                v-model="valueParty"
+                :min="0"
+                :max="100"
+                :processStyle="slider.processStyle"
+                :lineHeight="slider.lineHeight"
+                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+              >
+              </VueSlideBar>
             </div>
           </div>
         </div>
@@ -265,6 +371,7 @@ img.avatar {
   display: flex;
   margin-top: 15px;
 }
+
 /* Tappa and Itinerario */
 .tappa-itinerario a {
   width: 60px;
@@ -281,9 +388,6 @@ img.avatar {
 }
 
 /* Avatar Sponsor Search*/
-.avatar-sponsor-search {
-  display: flex;
-}
 
 /* Avatar */
 .avatar-image {
@@ -337,17 +441,66 @@ img.avatar {
   font-size: 20px;
   font-weight: 400;
 }
-/**Sponsor */
-/**Card */
-.card-body {
+
+/**sponsor */
+.sponsor {
+  margin-top: 25%;
+}
+/**Card*/
+.sponsor > .card-body {
   display: flex;
   align-items: center;
 }
-.card-body > img {
+.sponsor > .card-body > img {
   max-width: 200px;
-  max-height: 160px;
+  height: 160px;
 }
-.card-text {
+.sponsor-card-text {
   margin-left: 5%;
+}
+
+/**Search */
+
+.filter-attitude {
+  background-color: gainsboro;
+  border-radius: 45px;
+  margin-top: 70px;
+}
+.filter-attitude h5 {
+  color: gray;
+  font-style: italic;
+  border-bottom: 1px solid grey;
+  margin: 35px;
+}
+.search-filter-attitude {
+  background-color: white;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  border-radius: 37px;
+}
+.search-filter-attitude > input {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px 45px;
+  background: white url("../../assets/search.png") no-repeat 15px center;
+  background-size: 30px 30px;
+  font-size: 15px;
+  border: solid white 2px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: transparent;
+}
+.text-filter-attitude {
+  margin-left: 30px;
+  align-items: center;
+}
+.text-filter-attitude p {
+  margin-top: 19px;
+  color: gray;
+  font-style: italic;
+}
+.text-slider-filter-attitude {
+  display: flex;
 }
 </style>
