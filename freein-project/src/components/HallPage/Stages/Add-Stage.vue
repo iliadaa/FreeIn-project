@@ -28,6 +28,15 @@
           </ul>
         </div>
       </div>
+
+ <!--     
+<ul>
+  <li v-for="element of stageInfo" :key="element.id">
+      {{element.description}}
+  </li>
+</ul>
+-->
+
       <div class="classify-stage">
         <h2>
           Come classificheresti questa Tappa?
@@ -118,7 +127,7 @@
         </div>
       </div>
 
-      <b-form @submit="allerta" style="width: auto">
+      <b-form @submit="allerta" style="width: auto" >
       <div class="stage-details">
         <h2>
           Titolo tappa
@@ -133,6 +142,7 @@
           v-model="textTitle"
           style="padding-left: 10px"
           placeholder="Assegna un titolo alla tappa massimo 40 caratteri"
+          @keyup.enter="addInfo"
         />
         <h2>
           Location
@@ -160,6 +170,7 @@
           placeholder="Inserisci descrizione massimo 37 caratteri"
           :maxlength="maxText"
           v-model="textText"
+          @keyup.enter="addInfo"
         />
         
       </div>
@@ -167,7 +178,8 @@
       <div class="end-adding-buttons">
         <a class="cancel" href="#/privatprofile">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
-        <a @click="allerta" class="publishy" type="submit" href="#/summarystage">Pubblica</a>
+        <a @click="allerta" class="publishy" type="submit" >Pubblica</a>
+        href="#/summarystage"
       </div>
       </b-form>
       
@@ -180,9 +192,12 @@
 
 <script>
 import VueSlideBar from "vue-slide-bar";
+import axios from 'axios'
+const baseURL = "http://localhost:3000/jsonarray"
 export default {
   data() {
     return {
+      //stageInfo: [],
       slider: {
         lineHeight: 2,
         processStyle: {
@@ -204,6 +219,18 @@ export default {
       textText: "",
     };
   },
+
+/* 
+  async created(){
+    try {
+      const res = await axios.get(baseURL);
+      this.stageInfo = res.data;
+      console.log("sono qui")
+    } catch(e){
+      console.error(e);
+    }
+  },
+*/
   components: {
     VueSlideBar,
   },
@@ -234,8 +261,17 @@ export default {
     },
     allerta(){
       alert("Funziono");
+    },
+
+    /* 
+    async addInfo(){
+      const res = await axios.post(baseURL, {stage: this.textTitle, description: this.textText});
+       this.stageInfo = [...this.stageInfo, res.data];
+       this.textTitle = '';
     }
+    */
   },
+  
 };
 </script>
 
