@@ -101,6 +101,28 @@
           <!-- Sponsor -->
           <div class="sponsor">
             <h5>Sponsorizzato</h5>
+
+            <div class="card-body">
+              <img src="card-img1.jpg" />
+              <div class="card-text">
+                <h6>Ostaria del moro</h6>
+                <p>ostariadelmoro.com</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <img src="card-img2.jpg" />
+              <div class="card-text">
+                <h6>Oleificio di Puglia</h6>
+                <p>oleificiodipuglia.com</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <img src="card-img3.jpg" />
+              <div class="card-text">
+                <h6>La Focaccia</h6>
+                <p>lafocaccia.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -314,5 +336,18 @@ img.avatar {
   margin-right: 30px;
   font-size: 20px;
   font-weight: 400;
+}
+/**Sponsor */
+/**Card */
+.card-body {
+  display: flex;
+  align-items: center;
+}
+.card-body > img {
+  max-width: 200px;
+  max-height: 160px;
+}
+.card-text {
+  margin-left: 5%;
 }
 </style>
