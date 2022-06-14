@@ -66,6 +66,7 @@
           <a class="fas fa-plus" href="#"></a>
           <span class="text-itinerario">Crea Itinerario</span>
         </div>
+        <!-- Map  Filter -->
         <!-- Map -->
         <div class="map">
           <img src="@/assets/map.jpg" />
