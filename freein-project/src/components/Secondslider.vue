@@ -80,9 +80,6 @@ p {
     line-height: 15px;
     margin-top: 40px;
 }
-
-
-
 </style>
 
 

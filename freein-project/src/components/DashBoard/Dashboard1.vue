@@ -20,7 +20,7 @@
         <p>admin@yoursite.com</p>
       </div>
       <div class="change">
-        <a href="#" class="button">Modifica profilo</a>
+        <a href="#/editprofile" class="button">Modifica profilo</a>
       </div>
     </div>
   </div>

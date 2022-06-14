@@ -41,6 +41,7 @@ import SummaryItinerary from "../views/Summary-Itinerary.vue"
 import Privatprofile from "../views/PrivatProfile.vue"
 import TestSwitchPage from "../views/TestSwitchPage.vue"
 import Businessprofiletest2 from "../views/Businessprofiletest2.vue"
+import secondsliderpage from "../views/SecondSliderpage.vue"
 
 
 Vue.use(VueRouter)
@@ -252,6 +253,12 @@ const routes = [{
         path:'/businessprofiletest2',
         name:'Businessprofiletest2',
         component:  Businessprofiletest2
+    }
+    ,
+    { 
+        path:'/secondsliderpage',
+        name:'secondsliderpage',
+        component:secondsliderpage
     }
    
    
