@@ -2,7 +2,7 @@
   <footer>
     <div
       class="text-center p-3 text-black"
-      style="background-color: rgba(0, 0, 0, 0.2)"
+      style="background-color: #504e4e"
     >
       <h3>NEWSLETTER</h3>
       <b-container fluid class="form">

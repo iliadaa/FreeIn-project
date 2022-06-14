@@ -153,7 +153,7 @@ export default {
 <style scoped>
 .container {
   margin-bottom: 100px;
-  margin-top: 100px;
+  margin-top: 40px;
   align-content: center;
   justify-content: center;
   display: flex;
@@ -165,6 +165,7 @@ export default {
   background-color: white;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
 }
 
 .card-r {
@@ -178,8 +179,9 @@ export default {
   justify-content: center;
   display: flex;
   box-shadow: 2px 2px 30px rgba(25, 25, 25, 0.668);
-  width: 70%;
+  width: 80%;
   height: 100%;
+  border-radius: 20px;
 }
 
 .card-group h2 {
