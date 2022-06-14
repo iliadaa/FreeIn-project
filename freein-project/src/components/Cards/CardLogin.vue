@@ -152,7 +152,8 @@ export default {
 
 <style scoped>
 .container1 {
-  margin-top: 165px;
+  margin-bottom: 100px;
+  margin-top: 40px;
   margin-left: 455px;
   align-content: center;
   justify-content: center;
@@ -167,6 +168,7 @@ export default {
   background-color: white;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
 }
 
 .card-r {
@@ -180,7 +182,7 @@ export default {
   align-content: center;
   justify-content: center;
   display: flex;
-  width: 70%;
+  width: 80%;
   height: 100%;
   box-shadow: 0px 0px 0px transparent;
 }
@@ -285,105 +287,3 @@ export default {
 }
 </style>
 
-<!--    
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-input-group class="userName" prepend="@">
-        <b-form-input
-          style="color: black"
-          placeholder="Username"
-          v-model="form.email"
-        ></b-form-input>
-      </b-input-group>
-
-      <b-input-group class="password" prepend="@">
-        <b-form-input
-          style="color: black"
-          placeholder="Password"
-          v-model="form.password"
-        >
-        </b-form-input>
-
-        <b-button
-          @click="form.change = !form.change"
-          type="submit"
-          style="background-color: darkorange"
-          >Submit</b-button
-        >
-        <b-button type="reset" variant="dark">Reset</b-button>
-      </b-input-group>
-    </b-form>
-
-    <div></div>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-        change: false,
-      },
-      show: true,
-    };
-  },
-  methods: {
-    changePage(change) {
-      if (change == true) {
-        this.$router.push({
-          name: "AboutPage",
-        });
-      }
-    },
-
-    correctData(email, password, change) {
-      console.log(email + password);
-      if (email == "mailto:ciccio@gmail.com" && password == "01234") {
-        alert("Bravooo");
-        change == true;
-        this.changePage(change);
-      } else if (email == "mailto:ciccio.@gmail.com" && password == " 01234 ") {
-        alert("Bravooo");
-        change == true;
-        this.changePage(change);
-      } else {
-        alert("Ritenta");
-      }
-    },
-    onSubmit(event) {
-      event.preventDefault();
-      this.correctData(this.form.email, this.form.password, this.form.change);
-    },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.password = "";
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    },
-  },
-};
-</script>
-
-
-
-<style scoped>
-.userName {
-  width: 750px;
-  margin-top: 60px;
-  margin-left: 180px;
-}
-
-.password {
-  max-width: 750px;
-  margin-top: 60px;
-  margin-left: 180px;
-}
-</style>
--->
