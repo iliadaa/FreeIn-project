@@ -1,71 +1,206 @@
 <template>
 <div class="container">
-    <div>
-        <img src="@/assets/girls.png" alt="">
-    </div>
-    
-    <div>
-            <div class="heading">
-                <p>Freein ti porta alla</p>
-                <p>scoperta di nuovi</p>
-                <p>itinerari di viaggio</p>
-            </div>
-            
-            <div class="text1">
-                <p>Conoscerai nuovi itinerari di viaggio</p>
-                <p>attraverso l'esperienza dei tuoi nuovi amici.</p>
-            </div>     
+    <div class="imageandtext">
+        <div>
+            <img src="@/assets/boy&girl.png" alt="">
+        </div>
+        
+        <div>
+                <div class="heading">
+                    <p>Freein ti porta alla</p>
+                    <p>scoperta di nuovi</p>
+                    <p>itinerari di viaggio</p>
+                </div>
+        
+                <div class="text1">
+                    <p>Conoscerai nuovi itinerari di viaggio</p>
+                    <p>attraverso l'esperienza dei tuoi nuovi amici.</p>
+                </div>
+        </div>
     </div>
             
         <div class="circles">
-            <div class="circle"><p>1</p></div>
-            <div class="circle"><p>2</p></div>
-            <div class="circle"><p>3</p></div>
-            <div class="circle"><p>4</p></div>
+            <div class="circle">
+                <div class="circle01">
+                    <p>1</p>
+                </div>
+                <div class="circletext1">
+                    <h1>ispira</h1>
+                    <p>Ripercorri e racconta il</p>
+                    <p>tuo viaggio,</p>
+                    <p>i tuoi amici vivranno la</p>
+                    <p>tua esperienza</p>
+                </div>
+            </div>
+
+            <div class="circle">
+                <div class="circle02">
+                    <p>2</p>
+                </div>
+                    <div class="circletext2">
+                        <h1>lasciati ispirare</h1>
+                        <p>Scopri le esperienze di</p>
+                        <p>viaggio dei tuoi amici,</p>
+                        <p>salva quella che ti ispira</p>
+                        <p>di piu'</p>
+                    </div>
+            </div>
+
+            <div class="circle">
+                <div class="circle03">
+                    <p>3</p>
+                </div>
+                    <div class="circletext3">
+                        <h1>scopri</h1>
+                        <p>Scopri che viaggiatore</p>
+                        <p>sei, scoprirai il mood piu'</p>
+                        <p>adatto a te.</p>
+                    </div>
+            </div>
+
+            <div class="circle">
+                <div class="circle04">
+                    <p>4</p>
+                </div>
+                    <div class="circletext4">
+                        <h1>guadagna</h1>
+                        <p>Ricrea il tuo itinerario di</p>
+                        <p>viaggio,</p>
+                        <p>condividi e guadagna</p>
+                    </div>
+            </div>
         </div>
 </div>
 </template>
 
 <style scoped>
-.container {
+.imageandtext {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
 }
 
 img {
-    margin-top: 40px;
     margin-left: 100px;
 }
-p {
-    text-align: right;
-    color: #2B3081;
-    margin-right: 100px;
-}
 .heading {
+    text-align: right;
     font-size: 50px;
     font-weight: bold;
     line-height: 40px;
+    color: #2B3081;
+    margin-right: 150px;
 }
-
 .text1 {
+    text-align: right;
     font-size: 25px;
     line-height: 15px;
+    color: #2B3081;
     margin-top: 40px;
+    margin-right: 150px;
 }
 .circles {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
-.circle {
-    width: 20px;
-    line-height: 120px;
+.circle01 {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    background-color: #2B3081; 
+    line-height: 80px;
     text-align: center;
-    font-size: 32px;
-    border: 3px solid #000;
+    font-size: 25px;
+    color: white;
+    margin-left: 40px;
 }
+.circle02 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #2B3081; 
+    line-height: 80px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-left: 75px;
+}
+
+.circle03 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #2B3081; 
+    line-height: 80px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-left: 45px;
+}
+
+.circle04 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #2B3081; 
+    line-height: 80px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-left: 45px;
+}
+.circletext1 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext2 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+.circletext3 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext4 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext1 h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+.circletext2 h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.circletext3 h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.circletext4 h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+
+
+
 </style>
 
 
