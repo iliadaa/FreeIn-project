@@ -89,7 +89,7 @@ img {
     font-weight: bold;
     line-height: 40px;
     color: #2B3081;
-    margin-right: 150px;
+    margin-right: 100px;
 }
 .text1 {
     text-align: right;
@@ -97,13 +97,12 @@ img {
     line-height: 15px;
     color: #2B3081;
     margin-top: 40px;
-    margin-right: 150px;
+    margin-right: 100px;
 }
 .circles {
     display: flex;
     justify-content: space-evenly;
     margin-left: 100px;
-    margin-right: 100px;
 }
 
 .circle01 {

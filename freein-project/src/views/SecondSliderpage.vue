@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="SecondSliderpage">
     <div class="container"><Header /></div>
     <div class="first-slider">
       <img src="../assets/eiffel.jpg" />
@@ -26,4 +26,13 @@ export default {
   left: 10%;
   padding-top: 0;
 }
+
+.first-slider img{
+  width: 100%;
+}
+
+
+
+
+
 </style>
