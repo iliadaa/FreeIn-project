@@ -761,10 +761,16 @@ hr {
 }
 .cards2i {
   display: flex;
-  color: #ea5b0c;
+  color: white;
   font-size: 30px;
   position: absolute;
   z-index: 1;
+}
+
+.mapicon {
+  background-color: #ea5b0c;
+  width: 40px;
+  height: 45px;
 }
 
 .usericon {
