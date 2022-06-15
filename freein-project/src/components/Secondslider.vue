@@ -1,10 +1,10 @@
 <template>
-<div class="container">
-    <div>
+<div class="second-slider-component">
+    <div class="second-slider-image">
         <img src="@/assets/girls.png" alt="">
     </div>
     
-    <div>
+    <div class="second-slider-text">
             <div class="heading">
                 <p>Freein il primo vero </p>
                 <p>Social travel</p>
@@ -36,15 +36,19 @@
 </template>
 
 <style scoped>
-.container {
+.second-slider-component {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+
 }
 
 img {
-    margin-top: 150px;
+    margin-top: 400px;
     margin-left: 100px;
+}
+
+.second-slider-text {
+    margin-top: -22%;
 }
 p {
     text-align: right;

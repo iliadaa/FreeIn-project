@@ -1,7 +1,7 @@
 <template>
   <div class="SecondSliderpage">
     <div class="container"><Header /></div>
-
+     <VueSlickCarousel v-bind="settings">
     <div class="first-slider">
       <img src="../assets/eiffel.jpg" />
       <div class="first-slider-caption">
@@ -22,15 +22,32 @@
     </div>
     <Secondslider />
     <Thirdslider />
+  </VueSlickCarousel>
+   
   </div>
 </template>
 <script>
 import Secondslider from "@/components/Secondslider.vue";
 import Thirdslider from "@/components/Thirdslider.vue";
 import Header from "@/components/Header.vue";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 export default {
   name: "SecondSliderpage",
-  components: { Secondslider, Thirdslider, Header },
+  components: {VueSlickCarousel, Secondslider, Thirdslider, Header },
+  data() {
+    return {
+      settings: {
+        arrows:false,
+        infinite: true,     
+        speed: 500,
+        slidesToShow: 1,
+        cssEase: "linear",
+      },
+    };
+  },
 };
 </script>
 

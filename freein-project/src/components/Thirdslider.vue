@@ -77,7 +77,7 @@
 .imageandtext {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 150px;
 }
 
 img {
@@ -89,7 +89,7 @@ img {
     font-weight: bold;
     line-height: 40px;
     color: #2B3081;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 .text1 {
     text-align: right;
@@ -97,12 +97,13 @@ img {
     line-height: 15px;
     color: #2B3081;
     margin-top: 40px;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 .circles {
     display: flex;
     justify-content: space-evenly;
-    margin-left: 100px;
+    margin-left: 150px;
+    margin-top: 50px;
 }
 
 .circle01 {
