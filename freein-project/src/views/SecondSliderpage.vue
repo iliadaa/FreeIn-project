@@ -16,7 +16,6 @@
             <div>
               <a href="#"><i class="fas fa-angle-double-right"></i></a>
             </div>
-          
         </div>
       </div>
     </div>
@@ -51,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .SecondSliderpage .navbar {
   position: absolute;
   z-index: 1;
@@ -67,6 +66,7 @@ export default {
 
 .first-slider img {
   width: 100%;
+  height: auto;
 }
 
 .first-slider-caption {
@@ -106,10 +106,4 @@ export default {
   padding-top: 5px;
   padding-left: 10px;
 }
-
-
-
-
-
-
 </style>
