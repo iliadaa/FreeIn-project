@@ -57,7 +57,9 @@
         </div>
       </div>
     </div>
+    <!-- Map  Search Filter -->
     <div class="map-filter-search">
+      <!-- Map Tappa Intinerario -->
       <div class="map-tappa-itinerario">
         <!-- Tappa and Itinerario -->
         <div class="tappa-itinerario">
@@ -66,44 +68,99 @@
           <a class="fas fa-plus" href="#"></a>
           <span class="text-itinerario">Crea Itinerario</span>
         </div>
-        <!-- Map  Filter -->
         <!-- Map -->
         <div class="map">
-          <img src="@/assets/map.jpg" />
-          <!-- Filter -->
-          <div class="filter">
-            <div class="icons">
-              <img src="@/assets/img-5.png" />
-              <img src="@/assets/img-6.png" style="margin: 30px" />
-              <img src="@/assets/img-7.png" />
-              <img src="@/assets/img-8.png" style="margin: 30px" />
-              <div class="button button-console">
+          <!--<img src="@/assets/map.jpg" />-->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072469.3549467237!2d16.067811961168818!3d41.23357271616032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e846099e537b%3A0x5f08efb1b04f362f!2sCaff%C3%A8%20Vergnano%201882!5e0!3m2!1ssq!2s!4v1655289552962!5m2!1ssq!2s"
+            width="100%"
+            height="70%"
+            style="border-radius: 20px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <!--Filter Card-->
+          <div class="filter-card">
+            <!--Filter -->
+            <div class="filter">
+              <div class="icons">
+                <img src="@/assets/img-5.png" />
+                <img src="@/assets/img-6.png" style="margin: 30px" />
+                <img src="@/assets/img-7.png" />
+                <img src="@/assets/img-8.png" style="margin: 30px" />
+              </div>
+              <div class="business-button">
                 <button>
                   <a href="http://localhost:8080/#/businesscard1">Business >></a>
                 </button>
               </div>
             </div>
-            <div class="image-group">
-              <div class="group">
-                <img src="@/assets/image1.jpg" />
-                <img src="@/assets/image2.jpg" />
-                <img src="@/assets/image3.jpg" />
-              </div>
-              <div class="group">
-                <img src="@/assets/image4.jpg" />
-                <img src="@/assets/image5.jpg" />
-                <img src="@/assets/image6.jpg" />
-              </div>
-              <div class="group">
-                <img src="@/assets/image1.jpg" />
-                <img src="@/assets/image2.jpg" />
-                <img src="@/assets/image3.jpg" />
+            <!-- Business Card -->
+            <div class="business-profile-card">
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-2.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-3.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- Avatar Sponsor Search -->
       <div class="avatar-sponsor-search">
         <!-- Avatar Sponsor  -->
@@ -158,79 +215,6 @@
             </div>
           </div>
         </div>
-        <!-- search-->
-        <div class="filter-attitude">
-          <div class="search-filter-attitude">
-            <input type="text" v-model="input" placeholder="Search " />
-          </div>
-          <h5>Filter attitude</h5>
-          <div class="text-slider-filter-attitude">
-            <div class="text-filter-attitude">
-              <p>arte e cultura</p>
-              <p>relax</p>
-              <p>mare</p>
-              <p>natura e avventura</p>
-              <p>gourmet explorer</p>
-              <p>party</p>
-            </div>
-            <div class="slider-filter-attitude">
-              <VueSlideBar
-                v-model="valueArt"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueRelax"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueMare"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueNatura"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueGourmetExplorer"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueParty"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -259,6 +243,7 @@ export default {
       valueNatura: "0",
       valueGourmetExplorer: "0",
       valueParty: "0",
+      input: "",
     };
   },
   methods: {
@@ -361,15 +346,17 @@ img.avatar {
 }
 
 /** Map Filter Search  */
+.map {
+  margin-right: 5%;
+}
 .map-filter-search {
   display: flex;
-  justify-content: space-around;
+
   padding-top: 3%;
 }
 /* Map Tappa Itinerario */
 .map-tappa-itinerario {
   display: flex;
-  margin-top: 15px;
 }
 
 /* Tappa and Itinerario */
@@ -442,6 +429,107 @@ img.avatar {
   font-weight: 400;
 }
 
+/**Filter Business-Card */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/**Filter*/
+.icons img {
+  height: 40px;
+  width: 40px;
+}
+.icons img:nth-child(1) {
+  width: fit-content;
+  height: auto;
+}
+.business-button > button {
+  background: #f26522;
+  font-size: 18px;
+  color: white;
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
+}
+.business-button {
+  padding: 10px 30px;
+  margin: 50px;
+  border-radius: 35px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  border-radius: 10%;
+}
+a:hover {
+  color: white;
+}
+/**Business card */
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.cards2 {
+  margin-left: 10px;
+}
+.cards2i {
+  display: flex;
+  color: #ea5b0c;
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
+}
+
+.usericon {
+  padding-left: 150px;
+  padding-top: 5px;
+  color: white;
+}
+
+.wrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 0% 20% 0% 0%;
+  position: relative;
+}
+.cards2body {
+  width: 100%;
+  background: #ea5b0c;
+  border-radius: 0% 0% 20% 20%;
+}
+.cards2body p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.button {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  color: #ea5b0c;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.cards2icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+.cards2icons i {
+  padding-left: 34px;
+  color: white;
+}
 /**sponsor */
 .sponsor {
   margin-top: 25%;
@@ -459,7 +547,7 @@ img.avatar {
   margin-left: 5%;
 }
 
-/**Search */
+/**Search 
 
 .filter-attitude {
   background-color: gainsboro;
@@ -503,4 +591,8 @@ img.avatar {
 .text-slider-filter-attitude {
   display: flex;
 }
+.slider-filter-attitude {
+  z-index: 200;
+  width: 200px;
+}*/
 </style>
