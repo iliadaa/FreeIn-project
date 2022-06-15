@@ -540,12 +540,17 @@ hr {
 }
 .cards2i {
   display: flex; 
-  color: #009EE2;
+  color: white;
   font-size: 30px;
   position: absolute;
   z-index: 1;
 }
 
+.mapicon {
+  background-color: #009EE2;
+  width: 40px;
+  height: 45px;
+}
 .usericon {
   padding-left: 150px;
   padding-top: 5px;
@@ -555,13 +560,13 @@ hr {
 .wrap img {
   width: 100%;
   height: auto;
-  border-radius: 0% 20% 0% 0%;
+  border-radius: 0% 8% 0% 0%;
   position: relative;
 }
 .cards2body {
   width: 100%;
   background: #009EE2;
-  border-radius: 0% 0% 20% 20%;
+  border-radius: 0% 0% 8% 8%;
  }
  .cards2body p {
   font-size: 16px;

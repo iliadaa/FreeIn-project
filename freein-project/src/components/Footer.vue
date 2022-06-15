@@ -1,10 +1,7 @@
 <template>
   <footer>
-    <div
-      class="text-center p-3 text-black"
-      style="background-color: #504e4e"
-    >
-      <h3>NEWSLETTER</h3>
+    <div class="text-center p-3 text-black" style="background-color: #504e4e">
+      <h3 style="color: white">NEWSLETTER</h3>
       <b-container fluid class="form">
         <b-row class="my-4" v-for="type in types" :key="type">
           <b-col sm="4">
@@ -22,10 +19,7 @@
                   height="20"
                   viewBox="0 0 20 20"
                 >
-                  <path
-                    fill="#fff"
-                    d="M0 0l20 10-20 10v-20zM0 8v4l10-2-10-2z"
-                  ></path>
+                  <path fill="#fff" d="M0 0l20 10-20 10v-20zM0 8v4l10-2-10-2z"></path>
                 </svg>
               </b-button>
             </b-input-group>
@@ -39,7 +33,7 @@
         <img class="logo" src="logo-Freein.png" />
       </div>
       <div class="p-2 flex-fill text-black">
-        <h5 class="text-center">Information</h5>
+        <h5 class="text-start">Information</h5>
         <ul>
           <li><a>Privacy notice</a></li>
           <li><a>Conditions of Use</a></li>
@@ -47,17 +41,17 @@
         </ul>
       </div>
       <div class="p-2 flex-fill bd-highlight text-black">
-        <h5 class="text-center">User Service</h5>
+        <h5 class="text-start">User Service</h5>
       </div>
       <div class="p-2 flex-fill bd-highlight text-black">
-        <h5 class="text-center">My account</h5>
+        <h5 class="text-start">My account</h5>
       </div>
       <div class="p-2 flex-fill bd-highlight text-black">
-        <h5 class="text-center">Follow Us</h5>
+        <h5 class="text-start">Follow Us</h5>
         <dl>
           <dd>
-            Free-in e un marchio di Ada Travl srl Via Punzi 101/D, 70024 Gravina
-            in Puglia BA
+            Free-in e un marchio di Ada Travl srl Via Punzi 101/D, 70024 Gravina in Puglia
+            BA
           </dd>
           <dd>Numero REA BA - 608876</dd>
           <dd>Partita iva 08161930725</dd>
@@ -84,16 +78,24 @@ export default {
 };
 </script>
 
-<style >
+<style>
 .flex-fill {
   width: 20%;
 }
 .logo {
   max-width: 60%;
 }
-.input-group > .form-control {    height: auto;}
+.input-group > .form-control {
+  height: auto;
+}
 
 .row {
   justify-content: space-around;
+}
+input#type-email {
+  background-color: transparent;
+}
+button.btn.btn-secondary {
+  background-color: transparent;
 }
 </style>

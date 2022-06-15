@@ -1,7 +1,7 @@
 <template>
   <div class="SecondSliderpage">
     <div class="container"><Header /></div>
-
+     <VueSlickCarousel v-bind="settings">
     <div class="first-slider">
       <img src="../assets/eiffel.jpg" />
       <div class="first-slider-caption">
@@ -16,25 +16,41 @@
             <div>
               <a href="#"><i class="fas fa-angle-double-right"></i></a>
             </div>
-          
         </div>
       </div>
     </div>
     <Secondslider />
     <Thirdslider />
+  </VueSlickCarousel>
+   
   </div>
 </template>
 <script>
 import Secondslider from "@/components/Secondslider.vue";
 import Thirdslider from "@/components/Thirdslider.vue";
 import Header from "@/components/Header.vue";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 export default {
   name: "SecondSliderpage",
-  components: { Secondslider, Thirdslider, Header },
+  components: {VueSlickCarousel, Secondslider, Thirdslider, Header },
+  data() {
+    return {
+      settings: {
+        arrows:false,
+        infinite: true,     
+        speed: 500,
+        slidesToShow: 1,
+        cssEase: "linear",
+      },
+    };
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .SecondSliderpage .navbar {
   position: absolute;
   z-index: 1;
@@ -50,6 +66,7 @@ export default {
 
 .first-slider img {
   width: 100%;
+  height: auto;
 }
 
 .first-slider-caption {
@@ -89,10 +106,4 @@ export default {
   padding-top: 5px;
   padding-left: 10px;
 }
-
-
-
-
-
-
 </style>

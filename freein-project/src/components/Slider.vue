@@ -1,9 +1,8 @@
 <template>
   <VueSlickCarousel v-bind="settings">
-    <img src="@/assets/eiffel.jpg">
-    <img src="@/assets/image 2.jpg" />
-    <img src="@/assets/image 3.jpg" />
-
+    <img src="@/assets/pasta.jpg" />
+    <img src="@/assets/olive.jpg" />
+    <img src="@/assets/focaccia.jpg" />
   </VueSlickCarousel>
 </template>
 
@@ -18,8 +17,9 @@ export default {
   data() {
     return {
       settings: {
-        arrows:false,
-        infinite: true,     
+        arrows: false,
+        dots: true,
+        infinite: true,
         speed: 500,
         slidesToShow: 1,
         cssEase: "linear",
@@ -28,4 +28,3 @@ export default {
   },
 };
 </script>
-

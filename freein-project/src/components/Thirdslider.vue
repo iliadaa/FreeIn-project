@@ -1,11 +1,12 @@
 <template>
-<div class="container">
-    <div class="imageandtext">
-        <div>
+<div class="third-slider-component">
+    <div class="third-slider-imagetext">
+
+        <div class="third-slider-image">
             <img src="@/assets/boy&girl.png" alt="">
         </div>
         
-        <div>
+        <div class="third-slider-text">
                 <div class="heading">
                     <p>Freein ti porta alla</p>
                     <p>scoperta di nuovi</p>
@@ -74,35 +75,35 @@
 </template>
 
 <style scoped>
-.imageandtext {
+.third-slider-imagetext {
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    justify-content: space-evenly;
+    margin-top: 150px;
+}
+.third-slider-text {
+    margin-top: 20px;
 }
 
-img {
-    margin-left: 100px;
-}
-.heading {
+.third-slider-text p {
     text-align: right;
+    color: #2B3081;
+}
+.third-slider-text .heading {
     font-size: 50px;
     font-weight: bold;
     line-height: 40px;
-    color: #2B3081;
-    margin-right: 100px;
 }
-.text1 {
-    text-align: right;
+
+.third-slider-text .text1 {
     font-size: 25px;
     line-height: 15px;
-    color: #2B3081;
     margin-top: 40px;
-    margin-right: 100px;
 }
+
 .circles {
     display: flex;
     justify-content: space-evenly;
-    margin-left: 100px;
+    margin-top: 50px;
 }
 
 .circle01 {
@@ -196,10 +197,6 @@ img {
     letter-spacing: 2px;
     margin-top: 15px;
 }
-
-
-
-
 </style>
 
 

@@ -24,7 +24,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -43,7 +43,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -62,7 +62,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -81,7 +81,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -99,7 +99,7 @@
           <VueProgressBar 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
       :percent="50" ></VueProgressBar>
@@ -116,7 +116,7 @@
           <VueProgressBar 
             type="line"
             :border="true" 
-            :line-height="18"
+            :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
             :percent="30" ></VueProgressBar>

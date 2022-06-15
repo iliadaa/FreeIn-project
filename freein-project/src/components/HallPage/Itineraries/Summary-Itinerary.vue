@@ -1,14 +1,14 @@
 <template>
   <div>
-      <div class="heading">
-        <p><i class="fas fa-map-marked-alt"></i>Itinerario</p>
-      </div>
+    <div class="heading">
+      <p><i class="fas fa-map-marked-alt"></i>Itinerario</p>
+    </div>
 
     <div class="container">
       <div class="cards">
         <div class="arte">
           <div class="image1">
-            <img src="@/assets/art.png" alt="">
+            <img src="@/assets/art.png" alt="" />
           </div>
           <div class="cardcontainer1">
             <p>50%</p>
@@ -16,7 +16,7 @@
         </div>
         <div class="relax">
           <div class="image3">
-            <img src="@/assets/relax.png" alt="">
+            <img src="@/assets/relax.png" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>70%</p>
@@ -24,7 +24,7 @@
         </div>
         <div class="mare">
           <div class="image1">
-            <img src="@/assets/Mare.png" alt="">
+            <img src="@/assets/Mare.png" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>20%</p>
@@ -32,7 +32,7 @@
         </div>
         <div class="natura">
           <div class="image5">
-            <img src="@/assets/Natura_Avventura.png" alt="">
+            <img src="@/assets/Natura_Avventura.png" alt="" />
           </div>
           <div class="cardcontainer1">
             <p>30%</p>
@@ -40,7 +40,7 @@
         </div>
         <div class="party">
           <div class="image4">
-            <img src="@/assets/Party.png" alt="">
+            <img src="@/assets/Party.png" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>30%</p>
@@ -48,7 +48,7 @@
         </div>
         <div class="gourmet">
           <div class="image2">
-            <img src="@/assets/yellowgourmet.png" alt="">
+            <img src="@/assets/yellowgourmet.png" alt="" />
           </div>
           <div class="cardcontainer1">
             <p>50%</p>
@@ -57,32 +57,41 @@
       </div>
 
       <div class="text">
-
         <div class="h1icon">
           <div class="h1i">
             <h1>Un week and d’avventura</h1>
           </div>
-          
+
           <div class="c-share">
-            <input class="c-share__input" type="checkbox" id="checkbox">
+            <input class="c-share__input" type="checkbox" id="checkbox" />
             <label class="c-share__toggler" for="checkbox">
               <span class="c-share__icon"></span>
             </label>
-          <ul class="c-share_options" data-title="Share">
-            <li><i class="fab fa-facebook"></i> Facebook</li>
-            <li><i class="fab fa-twitter"></i> Twitter</li>
-            <li><i class="fab fa-instagram"></i> Instagram</li>
-            <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
-            <li><i class="fab fa-telegram-plane"></i> Telegram</li>
-          </ul>
+            <ul class="c-share_options" data-title="Share">
+              <li><i class="fab fa-facebook"></i> Facebook</li>
+              <li><i class="fab fa-twitter"></i> Twitter</li>
+              <li><i class="fab fa-instagram"></i> Instagram</li>
+              <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
+              <li><i class="fab fa-telegram-plane"></i> Telegram</li>
+            </ul>
           </div>
         </div>
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores delectus id expedita! Nemo tempore architecto eum modi accusantium atque quis cupiditate pariatur beatae praesentium possimus soluta in dignissimos ducimus dolores, libero provident impedit magnam nam sint. Maxime ex, hic totam unde similique eius veritatis doloremque. Saepe tempora iusto illum incidunt, maxime perspiciatis quae itaque fuga maiores, eos sit. Dolorum delectus magni deleniti harum nam provident. Sapiente provident, debitis alias, quia quisquam cupiditate necessitatibus molestias aperiam corporis quos magni harum.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores
+          delectus id expedita! Nemo tempore architecto eum modi accusantium atque quis
+          cupiditate pariatur beatae praesentium possimus soluta in dignissimos ducimus
+          dolores, libero provident impedit magnam nam sint. Maxime ex, hic totam unde
+          similique eius veritatis doloremque. Saepe tempora iusto illum incidunt, maxime
+          perspiciatis quae itaque fuga maiores, eos sit. Dolorum delectus magni deleniti
+          harum nam provident. Sapiente provident, debitis alias, quia quisquam cupiditate
+          necessitatibus molestias aperiam corporis quos magni harum.
+        </p>
       </div>
-      
+
       <div class="cards1">
-        <div>
+        <slider />
+        <!-- <div>
           <div class="cardimage">
             <img src="@/assets/italy.jpg" alt="">
           </div>
@@ -101,10 +110,10 @@
               <a href="#"><i class="fas fa-star"></i></a>
               <a href="#"><i class="far fa-bookmark"></i></a>
           </div>
-        </div>
+        </div>-->
       </div>
-      <hr class="hr1">
-      
+      <hr class="hr1" />
+
       <p class="title">Itinerario</p>
       <div class="section">
         <div class="icontext">
@@ -113,7 +122,7 @@
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="">
+              <img class="imgsmall" src="@/assets/art.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -121,7 +130,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="">
+              <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -129,7 +138,7 @@
           </div>
           <div class="mare1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/Mare.png" alt="">
+              <img class="imgsmall" src="@/assets/Mare.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>20%</p>
@@ -137,7 +146,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="">
+              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -145,7 +154,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="">
+              <img class="imgsmall" src="@/assets/Party.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>
@@ -153,7 +162,7 @@
           </div>
           <div class="gourmet1">
             <div class="image02">
-              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="">
+              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -161,15 +170,15 @@
           </div>
         </div>
       </div>
-      <hr class="hr2">
-          <div class="section">
+      <hr class="hr2" />
+      <div class="section">
         <div class="icontext">
           <p><i class="far fa-flag"></i>Matinata</p>
         </div>
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="">
+              <img class="imgsmall" src="@/assets/art.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -177,7 +186,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="">
+              <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -185,7 +194,7 @@
           </div>
           <div class="mare1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/Mare.png" alt="">
+              <img class="imgsmall" src="@/assets/Mare.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>20%</p>
@@ -193,7 +202,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="">
+              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -201,7 +210,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="">
+              <img class="imgsmall" src="@/assets/Party.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>
@@ -209,7 +218,7 @@
           </div>
           <div class="gourmet1">
             <div class="image02">
-              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="">
+              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -217,15 +226,15 @@
           </div>
         </div>
       </div>
-      <hr class="hr3">
-          <div class="section">
+      <hr class="hr3" />
+      <div class="section">
         <div class="icontext">
           <p><i class="far fa-flag"></i>Vieste</p>
         </div>
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="">
+              <img class="imgsmall" src="@/assets/art.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -233,7 +242,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="">
+              <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -241,7 +250,7 @@
           </div>
           <div class="mare1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/Mare.png" alt="">
+              <img class="imgsmall" src="@/assets/Mare.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>20%</p>
@@ -249,7 +258,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="">
+              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -257,7 +266,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="">
+              <img class="imgsmall" src="@/assets/Party.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>
@@ -265,7 +274,7 @@
           </div>
           <div class="gourmet1">
             <div class="image02">
-              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="">
+              <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -274,24 +283,24 @@
         </div>
       </div>
 
-      <hr class="hr4">
+      <hr class="hr4" />
 
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
+
               <div>
                 <a href="#"><i class="fas fa-star"></i></a>
                 <a href="#"><i class="far fa-bookmark"></i></a>
@@ -299,20 +308,20 @@
             </div>
           </div>
         </div>
-      
+
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
+
               <div>
                 <a href=""><i class="fas fa-star"></i></a>
                 <a href=""><i class="far fa-bookmark"></i></a>
@@ -320,21 +329,20 @@
             </div>
           </div>
         </div>
-      
-      
+
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
+
               <div>
                 <a href="#"><i class="fas fa-star"></i></a>
                 <a href=""><i class="far fa-bookmark"></i></a>
@@ -343,7 +351,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="box1">
         <div>
           <div>
@@ -353,7 +361,7 @@
             <p>Alex</p>
           </div>
         </div>
-      
+
         <div>
           <div>
             <i class="fas fa-user-plus"></i>
@@ -395,70 +403,74 @@
         <p class="title">Sponsorizzato</p>
       </div>
 
-<div class="box3">
-  <img src="@/assets/pasta.jpg" alt="">
-  <div class="boxcontainer3">
-    <h1>Ostaria del moro</h1> 
-    <p>ostariadelmoro.com</p> 
-  </div>
-</div>
+      <div class="box3">
+        <img src="@/assets/pasta.jpg" alt="" />
+        <div class="boxcontainer3">
+          <h1>Ostaria del moro</h1>
+          <p>ostariadelmoro.com</p>
+        </div>
+      </div>
 
-<div class="box4">
-  <img src="@/assets/olive.jpg" alt="">
-  <div class="boxcontainer4">
-    <h1>Oleificio di Puglia</h1> 
-    <p>oleificiodipuglia.com</p> 
-  </div>
-</div>
+      <div class="box4">
+        <img src="@/assets/olive.jpg" alt="" />
+        <div class="boxcontainer4">
+          <h1>Oleificio di Puglia</h1>
+          <p>oleificiodipuglia.com</p>
+        </div>
+      </div>
 
-<div class="box5">
-  <img src="@/assets/focaccia.jpg" alt="">
-  <div class="boxcontainer5">
-    <h1>La Focaccia</h1> 
-    <p>lafocaccia.com</p> 
-  </div>
-</div>
+      <div class="box5">
+        <img src="@/assets/focaccia.jpg" alt="" />
+        <div class="boxcontainer5">
+          <h1>La Focaccia</h1>
+          <p>lafocaccia.com</p>
+        </div>
+      </div>
 
+      <div class="search-container">
+        <form action="">
+          <button type="submit"><i class="fas fa-search"></i></button>
+          <input type="text" placeholder="Cerca itinerario..." name="search" />
+        </form>
+      </div>
 
-  <div class="search-container">
-      <form action="">
-        <button type="submit"><i class="fas fa-search"></i></button>
-        <input type="text" placeholder="Cerca itinerario..." name="search">
-      </form>
-  </div>
+      <div class="box6">
+        <p class="title">Sponsorizzato</p>
+      </div>
 
+      <div class="box7">
+        <img src="@/assets/pasta.jpg" alt="" />
+        <div class="boxcontainer7">
+          <h1>Ostaria del moro</h1>
+          <p>ostariadelmoro.com</p>
+        </div>
+      </div>
 
-<div class="box6">
-  <p class="title">Sponsorizzato</p>    
-</div>
+      <div class="box8">
+        <img src="@/assets/olive.jpg" alt="" />
+        <div class="boxcontainer8">
+          <h1>Oleificio di Puglia</h1>
+          <p>oleificiodipuglia.com</p>
+        </div>
+      </div>
 
-<div class="box7">
-  <img src="@/assets/pasta.jpg" alt="">
-  <div class="boxcontainer7">
-    <h1>Ostaria del moro</h1> 
-    <p>ostariadelmoro.com</p> 
-  </div>
-</div>
-
-<div class="box8">
-  <img src="@/assets/olive.jpg" alt="">
-  <div class="boxcontainer8">
-    <h1>Oleificio di Puglia</h1> 
-    <p>oleificiodipuglia.com</p> 
-  </div>
-</div>
-
-<div class="box9">
-  <img src="@/assets/focaccia.jpg" alt="">
-  <div class="boxcontainer9">
-    <h1>La Focaccia</h1> 
-    <p>lafocaccia.com</p> 
-  </div>
-</div>
+      <div class="box9">
+        <img src="@/assets/focaccia.jpg" alt="" />
+        <div class="boxcontainer9">
+          <h1>La Focaccia</h1>
+          <p>lafocaccia.com</p>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
+<script>
+import slider from "@/components/Slider.vue";
+export default {
+  name: "Summary-Itinerary",
+  components: { slider },
+};
+</script>
 
 <style scoped>
 .container {
@@ -589,11 +601,10 @@ img {
 }
 .cards1 {
   width: 55%;
-  display: flex;
 }
 .cardimage img {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   padding-right: 10px;
   margin-bottom: 35px;
 }
@@ -625,6 +636,9 @@ img {
 hr {
   width: 55%;
 }
+.hr1 {
+  margin-top: 40px;
+}
 .title {
   font-size: 16px;
   font-weight: bold;
@@ -647,7 +661,7 @@ hr {
   color: black;
 }
 .arte1 {
-  background-color: #EC624C;
+  background-color: #ec624c;
   width: 42px;
   height: 42px;
   position: relative;
@@ -656,7 +670,7 @@ hr {
   margin-left: 40px;
 }
 .mare1 {
-  background-color: #2C307F;
+  background-color: #2c307f;
   width: 42px;
   height: 42px;
   position: relative;
@@ -664,14 +678,14 @@ hr {
   margin-right: 20px;
 }
 .gourmet1 {
-  background-color: #009EE2;
+  background-color: #009ee2;
   width: 42px;
   height: 42px;
   position: relative;
   border-radius: 50%;
 }
 .relax1 {
-  background-color: #DC2C6C;
+  background-color: #dc2c6c;
   width: 42px;
   height: 42px;
   position: relative;
@@ -687,7 +701,7 @@ hr {
   margin-right: 20px;
 }
 .natura1 {
-  background-color: #F6A314;
+  background-color: #f6a314;
   width: 42px;
   height: 42px;
   position: relative;
@@ -746,11 +760,17 @@ hr {
   margin-left: 10px;
 }
 .cards2i {
-  display: flex; 
-  color: #ea5b0c;
+  display: flex;
+  color: white;
   font-size: 30px;
   position: absolute;
   z-index: 1;
+}
+
+.mapicon {
+  background-color: #ea5b0c;
+  width: 40px;
+  height: 45px;
 }
 
 .usericon {
@@ -762,20 +782,20 @@ hr {
 .wrap img {
   width: 100%;
   height: auto;
-  border-radius: 0% 20% 0% 0%;
+  border-radius: 0% 8% 0% 0%;
   position: relative;
 }
 .cards2body {
   width: 100%;
   background: #ea5b0c;
-  border-radius: 0% 0% 20% 20%;
- }
- .cards2body p {
+  border-radius: 0% 0% 8% 8%;
+}
+.cards2body p {
   font-size: 16px;
   color: white;
   padding-top: 15px;
   padding-left: 15px;
- }
+}
 .button {
   background-color: white;
   border: none;
@@ -806,7 +826,7 @@ hr {
   position: absolute;
   left: 64%;
   top: 50%;
-  background-color: rgb(245, 238, 238); 
+  background-color: rgb(245, 238, 238);
 }
 
 .box1 i {
@@ -836,7 +856,7 @@ hr {
   line-height: 4px;
 }
 .box3 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -860,7 +880,7 @@ hr {
   line-height: 4px;
 }
 .box4 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -884,7 +904,7 @@ hr {
   line-height: 4px;
 }
 .box5 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -907,7 +927,7 @@ hr {
   top: 131%;
 }
 
-.search-container input[type=text] {
+.search-container input[type="text"] {
   padding: 6px;
   font-size: 17px;
   border: 1px solid rgb(238, 238, 238);
@@ -941,7 +961,7 @@ hr {
   line-height: 4px;
 }
 .box7 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -965,7 +985,7 @@ hr {
   line-height: 4px;
 }
 .box8 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -989,7 +1009,7 @@ hr {
   line-height: 4px;
 }
 .box9 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -1030,7 +1050,7 @@ hr {
   height: 240px;
   border-radius: 7px;
 }
-.c-share__input:checked ~ .c-share_options::before, 
+.c-share__input:checked ~ .c-share_options::before,
 .c-share__input:checked ~ .c-share_options li {
   transition: 0.3s 0.15s;
   opacity: 1;
@@ -1068,7 +1088,8 @@ hr {
   box-shadow: 10px -10px, 10px 10px;
   transition: 0.1s 0.05s;
 }
-.c-share__icon::before, .c-share__icon::after {
+.c-share__icon::before,
+.c-share__icon::after {
   content: "";
   position: absolute;
   width: 16px;
@@ -1117,5 +1138,4 @@ hr {
   transform: translateY(10px);
   transition: 0s;
 }
-
 </style>
