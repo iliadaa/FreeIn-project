@@ -782,13 +782,13 @@ hr {
 .wrap img {
   width: 100%;
   height: auto;
-  border-radius: 0% 20% 0% 0%;
+  border-radius: 0% 8% 0% 0%;
   position: relative;
 }
 .cards2body {
   width: 100%;
   background: #ea5b0c;
-  border-radius: 0% 0% 20% 20%;
+  border-radius: 0% 0% 8% 8%;
 }
 .cards2body p {
   font-size: 16px;
