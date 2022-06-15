@@ -109,27 +109,27 @@ const routes = [{
 
     {
         path: '/cardProfile',
-        name: ' Cardprofile ',
+        name: 'Cardprofile ',
         component: Cardprofile
     },
     {
         path: '/stagecreation',
-        name: ' StageCreation ',
+        name: 'StageCreation ',
         component: StageCreation
     },
     {
         path: '/itinerarycreation',
-        name: ' ItineraryCreation ',
+        name: 'ItineraryCreation ',
         component: ItineraryCreation
     },
     {
         path: '/stagelist',
-        name: ' SelectionStageList ',
+        name: 'SelectionStageList ',
         component: SelectionStageList
     },
     {
         path: '/editProfile',
-        name: ' EditProfilePage ',
+        name: 'EditProfilePage ',
         component: EditProfilePage
     },
     {

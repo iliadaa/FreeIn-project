@@ -66,7 +66,7 @@ $(document).ready(function () {
 export default {
   data() {
     return {
-      datas: dataStagesList,
+      datas: dataStagesList.jsonarray,
       search: "",
     };
   },

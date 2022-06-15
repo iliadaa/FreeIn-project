@@ -109,7 +109,7 @@ export default {
   },
   data() {
     return {
-      component: "layout",
+      component: "",
     };
   },
 };

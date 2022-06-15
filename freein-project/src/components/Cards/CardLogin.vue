@@ -4,7 +4,7 @@
       <h2>Returning User</h2>
       <div class="card-login">
         <!-- vedi vecchio codice login ed usalo qui -->
-        <b-form @submit="onSubmit" v-if="show">
+        <b-form  v-if="show">
           <b-input-group>
             <input class="email" placeholder="Email" v-model="form.email" />
           </b-input-group>
@@ -34,7 +34,11 @@
           <p class="forgot-password">Forgot password?</p>
           <b-button
             class="login-btn"
-            @click="(form.change = !form.change), (goInTest = !goInTest)"
+            @click="
+              (form.change = !form.change),
+                (goInTest = !goInTest),
+                wrongLoginData(form.email, total)
+            "
             type="submit"
             >LOG IN</b-button
           >
@@ -70,11 +74,12 @@ export default {
 
   data() {
     return {
-      component: "register",
+      
       form: {
         email: "",
         password: "",
         change: false,
+        //registered: false,
       },
       hide: false,
       show: true,
@@ -98,6 +103,7 @@ export default {
       }
     },
 
+/* 
     correctData(email, password, change, goInTest) {
       console.log(email + password);
       if (email == "ciccio@gmail.com" && password == "01234") {
@@ -116,6 +122,7 @@ export default {
         change == false;
       }
     },
+    */
     onSubmit(event) {
       event.preventDefault();
       this.correctData(
@@ -136,6 +143,8 @@ export default {
         this.show = true;
       });
     },
+
+    
     showPass(hide) {
       var x = document.getElementById("myInput");
       if (x.type === "password") {
@@ -145,6 +154,33 @@ export default {
         x.type = "password";
         this.hide = false;
       }
+    },
+    wrongLoginData(email, total) {
+      const user = this.$store.state.registrations;
+      var i;
+      for (i = 0; i < total; i++) {
+        if (user[i].email == email) {
+          alert("Dati inseriti correttamente " + "bentornato: " + user[i].name)
+          this.$router.push({
+          name: "BusinessProfile",
+        });
+          //this.form.registered = true;
+        } else {
+          alert("L'email e/o la password sono errati. Ritenta")
+          //this.form.registered;
+        }
+      }
+      if(total === 0 ){
+        alert(total)
+      }
+    },
+  },
+  computed: {
+    registrations() {
+      return this.$store.state.registrations;
+    },
+    total() {
+      return this.$store.state.registrations.length;
     },
   },
 };
@@ -286,4 +322,3 @@ export default {
   text-align: center;
 }
 </style>
-

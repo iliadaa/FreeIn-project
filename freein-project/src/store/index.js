@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import dataStageList from '../../data-stages-list'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    firtsName: 'John',
-    lastName: 'Doe'
+    registrations: [],
+    dati: dataStageList
   },
   getters: {
   },

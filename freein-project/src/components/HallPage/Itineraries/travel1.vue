@@ -41,7 +41,7 @@ import dataStagesList from "/data-stages-list.json";
 export default {
   data() {
     return {
-      datas: dataStagesList,
+      datas: dataStagesList.jsonarray,
       filteredDialog: [],
     };
   },

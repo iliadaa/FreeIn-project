@@ -50,7 +50,7 @@
             <!-- questo p class deve essere un a con style: text-decoration: none -->
             <b-button
               class="sign-up-btn"
-              @click="form.change = !form.change"
+              @click="form.change = !form.change ,registerUser(form)"
               type="submit"
               >SIGN UP</b-button
             >
@@ -146,7 +146,33 @@ export default {
         this.hide = false;
       }
     },
+    registerUser (user){
+      const date = new Date;
+      this.registrations
+      this.$store.state.registrations.push({userId: user.id, email: user.email, password: user.password, name: user.name, surname: user.surname, date: date.getMonth() + '/' + date.getDay()})
+      console.log(this.$store.state.registrations)
+    },
+    /*
+    unregister(registrations){
+      const user = this.$store.registrations.find(user => {
+        return user.email == registrations.email;
+      });
+      user.registered = false;
+      this.$store.restrations.splice(this.$store.registrations.indexOf(registrations), 1);
+    } 
+    */
   },
+  computed: {
+    dati() {
+      return this.$store.state.dati;
+    },
+    registrations(){
+      return this.$store.state.registrations;
+    },
+    total(){
+      return this.$store.state.registrations.length;
+    }
+  }
 };
 </script>
 
