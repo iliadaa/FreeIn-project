@@ -24,7 +24,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -42,7 +42,7 @@
           <VueProgressBar 
             type="line"
             :border="true" 
-            :line-height="18"      
+            :line-height="4"      
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
             :percent="50" ></VueProgressBar>
@@ -60,7 +60,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
@@ -78,7 +78,7 @@
           <VueProgressBar 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
       :percent="40" ></VueProgressBar>
@@ -95,7 +95,7 @@
           <VueProgressBar 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
       :percent="55" ></VueProgressBar>
@@ -113,7 +113,7 @@
 
       type="line"
       :border="true" 
-      :line-height="18"
+      :line-height="4"
       :cut-color="'#40a9ff'"
       :color="['#2d2e83', '#ea5b0c']"
       :percent="20" ></VueProgressBar>
