@@ -1,5 +1,7 @@
 <template>
   <div class="box">
+    <!--Testi ESMERALDES -->
+
     <!-- Attitude & Profile -->
     <div class="attitude-profile">
       <!-- Attitude -->
@@ -71,10 +73,11 @@
         <!-- Map -->
         <div class="map">
           <!--<img src="@/assets/map.jpg" />-->
+
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072469.3549467237!2d16.067811961168818!3d41.23357271616032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e846099e537b%3A0x5f08efb1b04f362f!2sCaff%C3%A8%20Vergnano%201882!5e0!3m2!1ssq!2s!4v1655289552962!5m2!1ssq!2s"
             width="100%"
-            height="70%"
+            height="600"
             style="border-radius: 20px"
             allowfullscreen=""
             loading="lazy"
@@ -86,18 +89,79 @@
             <div class="filter">
               <div class="icons">
                 <img src="@/assets/img-5.png" />
-                <img src="@/assets/img-6.png" style="margin: 30px" />
+                <img src="@/assets/img-6.png" />
                 <img src="@/assets/img-7.png" />
-                <img src="@/assets/img-8.png" style="margin: 30px" />
+                <img src="@/assets/img-8.png" />
               </div>
               <div class="business-button">
                 <button>
-                  <a href="http://localhost:8080/#/businesscard1">Business >></a>
+                  <a href="http://localhost:8080/#/businesscard1">Business </a>
                 </button>
               </div>
             </div>
             <!-- Business Card -->
             <div class="business-profile-card">
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <div class="image-card1">
+                    <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  </div>
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="wrap">
                 <div class="cards2">
                   <div class="cards2i">
@@ -123,7 +187,7 @@
                     <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
                     <div class="usericon"><i class="fas fa-user-circle"></i></div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-2.jpg" alt="" />
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -142,7 +206,66 @@
                     <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
                     <div class="usericon"><i class="fas fa-user-circle"></i></div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-3.jpg" alt="" />
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -211,6 +334,78 @@
               <div class="sponsor-card-text">
                 <h6>La Focaccia</h6>
                 <p>lafocaccia.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="filter-attitude">
+            <div class="search">
+              <input type="text" v-model="input" placeholder="Search " />
+            </div>
+            <h5>Filter attitude</h5>
+            <div class="flex">
+              <div class="percentages">
+                <p>arte e cultura</p>
+                <p>relax</p>
+                <p>mare</p>
+                <p>natura e avventura</p>
+                <p>gourmet explorer</p>
+                <p>party</p>
+              </div>
+              <div class="sliders">
+                <VueSlideBar
+                  v-model="valueArt"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueRelax"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueMare"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueNatura"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueGourmetExplorer"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueParty"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
               </div>
             </div>
           </div>
@@ -440,15 +635,23 @@ img.avatar {
   height: 40px;
   width: 40px;
 }
+.icons {
+  display: inline-flex;
+  align-items: center;
+}
 .icons img:nth-child(1) {
   width: fit-content;
   height: auto;
+  margin-right: 5%;
+}
+.icons img:nth-child(3) {
+  margin-right: 5%;
+  margin-left: 5%;
 }
 .business-button > button {
   background: #f26522;
   font-size: 18px;
   color: white;
-  position: relative;
   border: none;
   border-radius: 20px;
   padding: 10px 40px;
@@ -485,21 +688,24 @@ a:hover {
 }
 
 .usericon {
-  padding-left: 150px;
   padding-top: 5px;
   color: white;
 }
 
+.mapicon {
+  background-color: #009fe3;
+  width: 50px;
+}
 .wrap img {
   width: 100%;
   height: auto;
-  border-radius: 0% 20% 0% 0%;
+  border-radius: 10% 10% 0% 0%;
   position: relative;
 }
 .cards2body {
   width: 100%;
   background: #ea5b0c;
-  border-radius: 0% 0% 20% 20%;
+  border-radius: 0% 0% 10% 10%;
 }
 .cards2body p {
   font-size: 16px;
@@ -531,9 +737,7 @@ a:hover {
   color: white;
 }
 /**sponsor */
-.sponsor {
-  margin-top: 25%;
-}
+
 /**Card*/
 .sponsor > .card-body {
   display: flex;
@@ -546,9 +750,7 @@ a:hover {
 .sponsor-card-text {
   margin-left: 5%;
 }
-
-/**Search 
-
+/**Search filter */
 .filter-attitude {
   background-color: gainsboro;
   border-radius: 45px;
@@ -560,15 +762,9 @@ a:hover {
   border-bottom: 1px solid grey;
   margin: 35px;
 }
-.search-filter-attitude {
-  background-color: white;
-  padding-bottom: 5px;
-  padding-top: 2px;
-  border-radius: 37px;
-}
-.search-filter-attitude > input {
+input {
   display: block;
-  width: 200px;
+  width: 350px;
   margin: 20px auto;
   padding: 10px 45px;
   background: white url("../../assets/search.png") no-repeat 15px center;
@@ -579,20 +775,29 @@ a:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   background-color: transparent;
 }
-.text-filter-attitude {
-  margin-left: 30px;
+.search {
+  background-color: white;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  border-radius: 37px;
+}
+
+.percentages {
   align-items: center;
 }
-.text-filter-attitude p {
+.percentages p {
+  margin-bottom: 19px;
   margin-top: 19px;
+  text-align: left;
   color: gray;
   font-style: italic;
 }
-.text-slider-filter-attitude {
-  display: flex;
+.sliders {
+  margin-top: 5px;
 }
-.slider-filter-attitude {
-  z-index: 200;
-  width: 200px;
-}*/
+.flex {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
 </style>
