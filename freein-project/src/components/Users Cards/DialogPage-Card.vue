@@ -10,15 +10,17 @@
         </div>
 
         <div class="dialogpage-iframe">
-            <iframe  seamless="seamless" scrolling="no" src="_blank" name="iframe_a" height="600px" width="1000px" title="Iframe"></iframe>
-
-            <hr>
+            <iframe  seamless="seamless" scrolling="no" src="_blank" name="iframe_a" height="600px" width="950px" title="Iframe"></iframe>
         </div>
     </div>
 </div>
 </template>
 
 <style scoped>
+.container {
+    position: absolute;
+    right: 60px;
+}
 .dialogpage1 {
     display: flex;
     justify-content: space-evenly;
