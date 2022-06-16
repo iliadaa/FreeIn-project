@@ -10,7 +10,7 @@
         </div>
 
         <div class="dialogpage-iframe">
-            <iframe  seamless="seamless" scrolling="no" src="_blank" name="iframe_a" height="600px" width="800px" title="Iframe"></iframe>
+            <iframe  seamless="seamless" scrolling="no" src="_blank" name="iframe_a" height="600px" width="1000px" title="Iframe"></iframe>
 
             <hr>
         </div>
@@ -48,5 +48,7 @@
     padding-top: 253px;
     padding-left: 5px;
 }
+
+
 
 </style>
