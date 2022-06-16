@@ -18,6 +18,7 @@
 
 <style scoped>
 .container {
+    background: white;
     position: absolute;
     right: 60px;
 }
