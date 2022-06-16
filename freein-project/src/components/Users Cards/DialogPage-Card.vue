@@ -18,13 +18,12 @@
 
 <style scoped>
 .container {
-    background: white;
     position: absolute;
     right: 60px;
 }
 .dialogpage1 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 40px;
     margin-bottom: 100px;
 }
