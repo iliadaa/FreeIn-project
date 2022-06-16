@@ -75,7 +75,7 @@ export default {
 
 .illustrations1 {
   margin-right: -10px;
-  margin-bottom: -10px;
+  margin-bottom: 8px;
 }
 
 .card-r p {
