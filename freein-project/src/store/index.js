@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     registrations: [],
+    admin: [{email: 'test@gmail.com', password: '123', name: 'Admin', surname: 'Test'}],
     dati: dataStageList
   },
   getters: {

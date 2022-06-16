@@ -224,6 +224,7 @@ export default {
       valueNatura: "0",
       valueGourmetExplorer: "0",
       valueParty: "0",
+      input: "",
     };
   },
   methods: {

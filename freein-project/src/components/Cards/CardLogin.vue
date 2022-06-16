@@ -55,7 +55,6 @@
         </div>
       </div>
     </div>
-
     <div class="card card-r">
       <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
       <p>If you are not registered click the</p>
@@ -156,17 +155,19 @@ export default {
       }
     },
     wrongLoginData(email, total) {
-      const user = this.$store.state.registrations;
+      const users = [...this.$store.state.registrations];
       var i;
+      console.log(users);
       for (i = 0; i < total; i++) {
-        if (user[i].email == email) {
-          alert("Dati inseriti correttamente " + "bentornato: " + user[i].name)
+        console.log(users[i].userObj);
+        if (users[i].userObj.email == email) {
+          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);
           this.$router.push({
           name: "BusinessProfile",
         });
           //this.form.registered = true;
         } else {
-          alert("L'email e/o la password sono errati. Ritenta")
+          console.log(email + " e " + users[i].userObj.email)
           //this.form.registered;
         }
       }

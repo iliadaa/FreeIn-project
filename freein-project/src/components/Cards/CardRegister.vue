@@ -7,13 +7,13 @@
           <!-- vedi vecchio codice login ed usalo qui -->
           <b-form @submit="onSubmit" v-if="show">
             <b-input-group>
-              <input class="email" placeholder="Email" v-model="form.email" />
+              <input class="email" placeholder="Email" v-model="user.email" />
             </b-input-group>
             <b-input-group>
               <input
                 class="password"
                 placeholder="Password"
-                v-model="form.password"
+                v-model="user.password"
                 type="password"
                 required=""
                 id="myInput2"
@@ -36,7 +36,7 @@
                 class="name"
                 placeholder="Name"
                 required=""
-                v-model="form.name"
+                v-model="user.name"
               />
             </b-input-group>
             <b-input-group>
@@ -44,13 +44,13 @@
                 class="surname"
                 placeholder="Surname"
                 required=""
-                v-model="form.surname"
+                v-model="user.surname"
               />
             </b-input-group>
             <!-- questo p class deve essere un a con style: text-decoration: none -->
             <b-button
               class="sign-up-btn"
-              @click="form.change = !form.change ,registerUser(form)"
+              @click="user.change = !user.change ,registerUser(user, registrations, total)"
               type="submit"
               >SIGN UP</b-button
             >
@@ -82,7 +82,7 @@
 export default {
   data() {
     return {
-      form: {
+      user: {
         email: "",
         password: "",
         change: false,
@@ -120,14 +120,14 @@ export default {
     },
     onSubmit(event) {
       event.preventDefault();
-      this.correctData(this.form.email, this.form.password, this.form.change);
+      this.correctData(this.user.email, this.user.password, this.user.change);
     },
     onReset(event) {
       event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.password = "";
-      // Trick to reset/clear native browser form validation state
+      // Reset our user values
+      this.user.email = "";
+      this.user.password = "";
+      // Trick to reset/clear native browser user validation state
       this.show = false;
       this.$nextTick(() => {
         this.show = true;
@@ -146,11 +146,22 @@ export default {
         this.hide = false;
       }
     },
-    registerUser (user){
-      const date = new Date;
-      this.registrations
-      this.$store.state.registrations.push({userId: user.id, email: user.email, password: user.password, name: user.name, surname: user.surname, date: date.getMonth() + '/' + date.getDay()})
-      console.log(this.$store.state.registrations)
+    registerUser (userObj, registrations, total){
+      var i
+      let trovato=false;
+      console.log(total);
+      console.log(total==0?"niente":[...registrations]);
+      for (i = 0; i < total; i++) {
+        if (userObj.email == registrations[i].userObj.email) {
+          trovato=true;
+          break;
+        } 
+      }
+      if (!trovato){
+          registrations.push({userObj});
+          console.log("SONO QUI2")
+          //this.form.registered;
+      }
     },
     /*
     unregister(registrations){
@@ -162,6 +173,7 @@ export default {
     } 
     */
   },
+
   computed: {
     dati() {
       return this.$store.state.dati;
@@ -330,105 +342,3 @@ export default {
 }
 </style>
 
-<!--    
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-input-group class="userName" prepend="@">
-        <b-form-input
-          style="color: black"
-          placeholder="Username"
-          v-model="form.email"
-        ></b-form-input>
-      </b-input-group>
-
-      <b-input-group class="password" prepend="@">
-        <b-form-input
-          style="color: black"
-          placeholder="Password"
-          v-model="form.password"
-        >
-        </b-form-input>
-
-        <b-button
-          @click="form.change = !form.change"
-          type="submit"
-          style="background-color: darkorange"
-          >Submit</b-button
-        >
-        <b-button type="reset" variant="dark">Reset</b-button>
-      </b-input-group>
-    </b-form>
-
-    <div></div>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-        change: false,
-      },
-      show: true,
-    };
-  },
-  methods: {
-    changePage(change) {
-      if (change == true) {
-        this.$router.push({
-          name: "AboutPage",
-        });
-      }
-    },
-
-    correctData(email, password, change) {
-      console.log(email + password);
-      if (email == "mailto:ciccio@gmail.com" && password == "01234") {
-        alert("Bravooo");
-        change == true;
-        this.changePage(change);
-      } else if (email == "mailto:ciccio.@gmail.com" && password == " 01234 ") {
-        alert("Bravooo");
-        change == true;
-        this.changePage(change);
-      } else {
-        alert("Ritenta");
-      }
-    },
-    onSubmit(event) {
-      event.preventDefault();
-      this.correctData(this.form.email, this.form.password, this.form.change);
-    },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.password = "";
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    },
-  },
-};
-</script>
-
-
-
-<style scoped>
-.userName {
-  width: 750px;
-  margin-top: 60px;
-  margin-left: 180px;
-}
-
-.password {
-  max-width: 750px;
-  margin-top: 60px;
-  margin-left: 180px;
-}
-</style>
--->
