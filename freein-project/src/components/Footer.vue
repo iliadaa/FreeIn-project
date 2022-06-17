@@ -34,10 +34,11 @@
       </div>
       <div class="p-2 flex-fill text-black">
         <h5 class="text-start">Information</h5>
-        <ul>
-          <li><a>Privacy notice</a></li>
+        <ul class="information">
+          <li><a href="#/privacy-policy">Privacy notice</a></li>
           <li><a>Conditions of Use</a></li>
           <li><a>About us</a></li>
+          <li><a href="#/cookie-policy">Cookie Policy</a></li>
         </ul>
       </div>
       <div class="p-2 flex-fill bd-highlight text-black">
@@ -97,5 +98,9 @@ input#type-email {
 }
 button.btn.btn-secondary {
   background-color: transparent;
+}
+.information > li > a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
