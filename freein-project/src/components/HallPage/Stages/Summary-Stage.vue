@@ -313,13 +313,18 @@
   </div>
 </div>
 
+      <div class="search-container">
+        <form action="">
+          <input type="text" placeholder="Cerca itinerario" />
+        </form>
+      </div>
 
-  <div class="search-container">
+  <!--<div class="search-container">
       <form action="">
         <button type="submit"><i class="fas fa-search"></i></button>
         <input type="text" placeholder="Cerca itinerario..." name="search">
       </form>
-  </div>
+  </div>-->
 
 
 <div class="box6">
@@ -704,6 +709,28 @@ hr {
   left: 66%;
   top: 131%;
 }
+.search-container input[type=text] {
+  padding: 6px 45px;
+  font-size: 17px;
+  border: 1px solid rgb(238, 238, 238);
+  width: 300px;
+  background: white url("@/assets/search.png") no-repeat 10px center;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}
+
+/*.search-container {
+  width: 25%;
+  position: absolute;
+  left: 66%;
+  top: 131%;
+}
 
 .search-container input[type=text] {
   padding: 6px;
@@ -722,7 +749,7 @@ hr {
 ::placeholder {
   font-size: 14px;
   font-style: italic;
-}
+}*/
 .box6 {
   width: 25%;
   position: absolute;
