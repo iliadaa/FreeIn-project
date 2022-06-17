@@ -6,9 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    registrations: [],
-    admin: [{email: 'test@gmail.com', password: '123', name: 'Admin', surname: 'Test'}],
+    registrations: [{ "userObj": {"id": "0", "email": "test@gmail.com", "password": "test", "change": true, "name": "Admin", "surname": "Test", "testDone": true }}],
+    inSession: [],
     dati: dataStageList
+   
   },
   getters: {
   },
