@@ -1,7 +1,5 @@
 <template>
   <div class="box">
-    <!--Testi ESMERALDES -->
-
     <!-- Attitude & Profile -->
     <div class="attitude-profile">
       <!-- Attitude -->
@@ -42,10 +40,10 @@
           <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
         <div id="container-settings">
-          <button class="button-area" @click="showModal">
+          <button class="button-area" @click="showDialogPage">
             <img class="settings" src="@/assets/settings.png" />
           </button>
-          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
+          <DialogPage v-show="isDialogPageVisible" @close="closeDialogPage"></DialogPage>
         </div>
         <div id="container-avatar">
           <button class="button-area" @click="showTopRightVisible">
@@ -80,7 +78,7 @@
             height="600"
             style="border-radius: 20px"
             allowfullscreen=""
-            loading="lazy"
+            loading="fast"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
           <!--Filter Card-->
@@ -420,6 +418,8 @@ import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
 import TopRightListHall from "../Users Cards/TopRightListHall.vue";
 import VueSlideBar from "vue-slide-bar";
+import DialogPage from "../Users Cards/DialogPage-Card.vue";
+
 export default {
   data() {
     return {
@@ -429,6 +429,7 @@ export default {
           backgroundColor: "grey",
         },
       },
+      isDialogPageVisible: false,
       isTopRightVisible: false,
       isModalVisible: false,
       isModalDashBoardVisible: false,
@@ -442,6 +443,12 @@ export default {
     };
   },
   methods: {
+    showDialogPage() {
+      this.isDialogPageVisible = true;
+    },
+    closeDialogPage() {
+      this.isDialogPageVisible = false;
+    },
     showModal() {
       this.isModalVisible = true;
     },
@@ -463,6 +470,7 @@ export default {
     },
   },
   components: {
+    DialogPage,
     Modal,
     Dashboard,
     TopRightListHall,
