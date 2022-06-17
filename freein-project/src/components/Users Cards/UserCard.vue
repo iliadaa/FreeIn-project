@@ -69,9 +69,8 @@ export default {
   outline-style: none;
   border-color: none;
 }
-.btn-secondary:focus {
-  box-shadow: none;
-  outline-style: none;
+button.btn.btn-secondary {
+  background-color: #ea5b0c;
 }
 
 .button-group > .button:not(:last-child) {
