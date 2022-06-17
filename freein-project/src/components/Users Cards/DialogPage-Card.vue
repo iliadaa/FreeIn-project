@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="modal-backdrop">
     <div class="dialogpage1">
       <button type="button" class="btn-close" @click="close"></button>
       <div class="dialogpage-links">
@@ -9,14 +9,10 @@
           >
         </p>
         <p>
-          <a href="https://www.contattipower.it/" target="iframe_a"
-            >Marketing</a
-          >
+          <a href="https://www.contattipower.it/" target="iframe_a">Marketing</a>
         </p>
         <p>
-          <a
-            href="https://signin.travelappeal.com/#/login?redirect=)"
-            target="iframe_a"
+          <a href="https://signin.travelappeal.com/#/login?redirect=)" target="iframe_a"
             >Benchmark</a
           >
         </p>
@@ -53,14 +49,22 @@ export default {
 </script>
 
 <style scoped>
+.modal-backdrop {
+  opacity: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   position: absolute;
   right: 60px;
 }
-.btn-close{
-    position: absolute;
-    right: 8%;
-    top: 6%;
+.btn-close {
+  position: absolute;
+  right: 8%;
+  top: 6%;
 }
 .dialogpage1 {
   display: flex;
