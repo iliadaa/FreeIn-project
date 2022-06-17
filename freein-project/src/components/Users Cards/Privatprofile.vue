@@ -1,15 +1,28 @@
 <template>
   <div class="box">
-    <div class="personal-group">
-      <h5>My personal attitude</h5>
-      <div class="personal-icons">
-        <img class="art-culture" src="@/assets/art.png" />
-        <img class="relax" src="@/assets/relax.png" />
-        <img class="sea" src="@/assets/Mare.png" />
-        <img class="nature-adventure" src="@/assets/Natura_Avventura.png" />
-        <img class="gourmet-explorer" src="@/assets/Gourmet-Explorer.png" />
-        <img class="party" src="@/assets/Party.png" />
+    <!-- Attitude & Profile -->
+    <div class="attitude-profile">
+      <!-- Attitude -->
+      <div class="personal-attitude">
+        <h5>My personal attitude</h5>
+        <div class="personal-attitude-icons">
+          <img class="art-culture" src="@/assets/art.png" />
+          <img class="relax" src="@/assets/relax.png" />
+          <img class="sea" src="@/assets/Mare.png" />
+          <img class="nature-adventure" src="@/assets/Natura_Avventura.png" />
+          <img class="gourmet-explorer" src="@/assets/Gourmet-Explorer.png" />
+          <img class="party" src="@/assets/Party.png" />
+        </div>
+        <div class="personal-attitude-percentage">
+          <label>50%</label>
+          <label>70%</label>
+          <label>50%</label>
+          <label>70%</label>
+          <label>30%</label>
+          <label>30%</label>
+        </div>
       </div>
+      <!-- Profile -->
       <div class="profile">
         <div id="container-pig">
           <button class="button-area" @click="showModalDashBoard">
@@ -24,171 +37,370 @@
           <button class="button-area" @click="showModal">
             <img class="ringbell" src="@/assets/ringbell.png" />
           </button>
-         <!-- modal here -->
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
         <div id="container-settings">
-          <button class="button-area" @click="showModal">
+          <button class="button-area" @click="showDialogPage">
             <img class="settings" src="@/assets/settings.png" />
           </button>
-         <!-- modal here -->
+          <DialogPage v-show="isDialogPageVisible" @close="closeDialogPage"></DialogPage>
         </div>
         <div id="container-avatar">
           <button class="button-area" @click="showTopRightVisible">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
-         <!-- modal here -->
-          <TopRightListHall v-show="isTopRightVisible" @close="closeTopRightVisible"></TopRightListHall>
+          <!-- modal here -->
+          <TopRightListHall
+            v-show="isTopRightVisible"
+            @close="closeTopRightVisible"
+          ></TopRightListHall>
         </div>
       </div>
+    </div>
+    <!-- Map  Search Filter -->
+    <div class="map-filter-search">
+      <!-- Map Tappa Intinerario -->
+      <div class="map-tappa-itinerario">
+        <!-- Tappa and Itinerario -->
+        <div class="tappa-itinerario">
+          <a class="fas fa-plus" href="#"> </a>
+          <span class="text-tappa">Crea tappa</span>
+          <a class="fas fa-plus" href="#"></a>
+          <span class="text-itinerario">Crea Itinerario</span>
+        </div>
+        <!-- Map -->
+        <div class="map">
+          <!--<img src="@/assets/map.jpg" />-->
 
-      <div class="map-profile">
-        <div class="plus-icon">
-          <a class="fas fa-plus" href="#/stagecreation"> </a>
-          <span class="text">Crea tappa</span>
-          <a class="fas fa-plus" href="#/itinerarycreation"></a>
-          <span class="text">Crea Itinerario</span>
-        </div>
-        <img src="@/assets/map.jpg" />
-        <div class="avatar-5">
-          <div class="flex-1">
-            <img src="@/assets/avatar-plus.png" />
-            <img src="@/assets/avatar-plus.png" />
-            <img src="@/assets/avatar-with-logo.png" />
-            <img src="@/assets/avatar-plus.png" />
-            <img src="@/assets/avatar-with-logo.png" />
-          </div>
-          <div class="name text2">
-            <label>Alex</label>
-            <label>Jhon</label>
-            <label>Alisha</label>
-            <label>Alex</label>
-            <label>Alex</label>
-          </div>
-          <div class="follower-following">
-            <span class="dot">27</span> <label>Seguiti</label>
-            <span class="dot">157</span>
-            <label>Follower</label>
-          </div>
-        </div>
-      </div>
-      <div class="icons">
-        <img src="@/assets/img-5.png" />
-        <img src="@/assets/img-6.png" style="margin: 30px" />
-        <img src="@/assets/img-7.png" />
-        <img src="@/assets/img-8.png" style="margin: 30px" />
-      </div>
-      <div class="image-group">
-        <div class="group">
-          <img src="@/assets/image1.jpg" />
-          <img src="@/assets/image2.jpg" />
-          <img src="@/assets/image3.jpg" />
-        </div>
-        <div class="group">
-          <img src="@/assets/image4.jpg" />
-          <img src="@/assets/image5.jpg" />
-          <img src="@/assets/image6.jpg" />
-        </div>
-        <div class="group">
-          <img src="@/assets/image1.jpg" />
-          <img src="@/assets/image2.jpg" />
-          <img src="@/assets/image3.jpg" />
-        </div>
-      </div>
-      <div class="cards-group">
-        <h5>Sponsorizzato</h5>
-        <b-card
-          img-src="card-img1.jpg"
-          img-left
-          class="mb-3"
-          title="Ostaria del moro"
-          sub-title="ostariadelmoro.com"
-        >
-        </b-card>
-        <b-card
-          img-src="card-img2.jpg"
-          img-left
-          class="mb-3"
-          title="Oleificio di Puglia"
-          sub-title="oleificitodipuglia.com"
-        >
-        </b-card>
-        <b-card
-          img-src="card-img3.jpg"
-          img-left
-          class="mb-3"
-          title="La Focaccia"
-          sub-title="lafocaccia.com"
-        >
-        </b-card>
-        <div class="filter-attitude">
-          <div class="search">
-            <input type="text" v-model="input" placeholder="Search " />
-          </div>
-          <h5>Filter attitude</h5>
-          <div class="flex">
-            <div class="percentages">
-              <p>arte e cultura</p>
-              <p>relax</p>
-              <p>mare</p>
-              <p>natura e avventura</p>
-              <p>gourmet explorer</p>
-              <p>party</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072469.3549467237!2d16.067811961168818!3d41.23357271616032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e846099e537b%3A0x5f08efb1b04f362f!2sCaff%C3%A8%20Vergnano%201882!5e0!3m2!1ssq!2s!4v1655289552962!5m2!1ssq!2s"
+            width="100%"
+            height="600"
+            style="border-radius: 20px"
+            allowfullscreen=""
+            loading="fast"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <!--Filter Card-->
+          <div class="filter-card">
+            <!--Filter -->
+            <div class="filter">
+              <div class="icons">
+                <img src="@/assets/img-5.png" />
+                <img src="@/assets/img-6.png" />
+                <img src="@/assets/img-7.png" />
+                <img src="@/assets/img-8.png" />
+              </div>
+              <div class="business-button"></div>
             </div>
-            <div class="sliders">
-              <VueSlideBar
-                v-model="valueArt"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueRelax"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueMare"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueNatura"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueGourmetExplorer"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
-              <VueSlideBar
-                v-model="valueParty"
-                :min="0"
-                :max="100"
-                :processStyle="slider.processStyle"
-                :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
-              >
-              </VueSlideBar>
+            <!-- Business Card -->
+            <div class="business-profile-card">
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <div class="image-card1">
+                    <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  </div>
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards2">
+                  <div class="cards2i">
+                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                  </div>
+                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <div class="cards2body">
+                    <p>Peschici</p>
+                    <div class="cards2icons">
+                      <div class="button1">
+                        <a href="#" class="button">Go</a>
+                      </div>
+                      <div>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Avatar Sponsor Search -->
+      <div class="avatar-sponsor-search">
+        <!-- Avatar Sponsor  -->
+        <div class="avatar-sponsor">
+          <!-- Avatar -->
+          <div class="avatar">
+            <div class="avatar-image">
+              <img src="@/assets/avatar-plus.png" />
+              <img src="@/assets/avatar-plus.png" />
+              <img src="@/assets/avatar-with-logo.png" />
+              <img src="@/assets/avatar-plus.png" />
+              <img src="@/assets/avatar-with-logo.png" />
+            </div>
+            <div class="avatar-name">
+              <label>Alex</label>
+              <label>Jhon</label>
+              <label>Alisha</label>
+              <label>Alex</label>
+              <label>Alex</label>
+            </div>
+            <div class="follower-following">
+              <span class="dot">27</span>
+              <label>Seguiti</label>
+              <span class="dot">157</span>
+              <label>Follower</label>
+            </div>
+          </div>
+          <!-- Sponsor -->
+          <div class="sponsor">
+            <h5>Sponsorizzato</h5>
+
+            <div class="card-body">
+              <img src="card-img1.jpg" />
+              <div class="sponsor-card-text">
+                <h6>Ostaria del moro</h6>
+                <p>ostariadelmoro.com</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <img src="card-img2.jpg" />
+              <div class="sponsor-card-text">
+                <h6>Oleificio di Puglia</h6>
+                <p>oleificiodipuglia.com</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <img src="card-img3.jpg" />
+              <div class="sponsor-card-text">
+                <h6>La Focaccia</h6>
+                <p>lafocaccia.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="filter-attitude">
+            <div class="search">
+              <input type="text" v-model="input" placeholder="Search " />
+            </div>
+            <h5>Filter attitude</h5>
+            <div class="flex">
+              <div class="percentages">
+                <p>arte e cultura</p>
+                <p>relax</p>
+                <p>mare</p>
+                <p>natura e avventura</p>
+                <p>gourmet explorer</p>
+                <p>party</p>
+              </div>
+              <div class="sliders">
+                <VueSlideBar
+                  v-model="valueArt"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueRelax"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueMare"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueNatura"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueGourmetExplorer"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+                <VueSlideBar
+                  v-model="valueParty"
+                  :min="0"
+                  :max="100"
+                  :processStyle="slider.processStyle"
+                  :lineHeight="slider.lineHeight"
+                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                >
+                </VueSlideBar>
+              </div>
             </div>
           </div>
         </div>
@@ -200,10 +412,11 @@
 <script>
 import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
-import TopRightListHall from "../Users Cards/TopRightListHall.vue"
+import TopRightListHall from "../Users Cards/TopRightListHall.vue";
 import VueSlideBar from "vue-slide-bar";
+import DialogPage from "../Users Cards/DialogPage-Card.vue";
+
 export default {
-  name: "Privatprofile",
   data() {
     return {
       slider: {
@@ -212,6 +425,7 @@ export default {
           backgroundColor: "grey",
         },
       },
+      isDialogPageVisible: false,
       isTopRightVisible: false,
       isModalVisible: false,
       isModalDashBoardVisible: false,
@@ -221,9 +435,16 @@ export default {
       valueNatura: "0",
       valueGourmetExplorer: "0",
       valueParty: "0",
+      input: "",
     };
   },
   methods: {
+    showDialogPage() {
+      this.isDialogPageVisible = true;
+    },
+    closeDialogPage() {
+      this.isDialogPageVisible = false;
+    },
     showModal() {
       this.isModalVisible = true;
     },
@@ -237,14 +458,15 @@ export default {
       console.log(data);
       this.isModalDashBoardVisible = false;
     },
-    showTopRightVisible(){
-      this.isTopRightVisible=true;
+    showTopRightVisible() {
+      this.isTopRightVisible = true;
     },
-    closeTopRightVisible(){
-      this.isTopRightVisible=false; 
-    }
+    closeTopRightVisible() {
+      this.isTopRightVisible = false;
+    },
   },
   components: {
+    DialogPage,
     Modal,
     Dashboard,
     TopRightListHall,
@@ -254,45 +476,19 @@ export default {
 </script>
 
 <style scoped>
-.btn-info:hover {
-  background-color: transparent;
-  border-color: transparent;
-}
-.button-area {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: transparent;
-}
-.modal-container {
-  position: absolute;
-
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
-  background-color: rgb(246 239 239);
-  z-index: 1;
-}
-#wrap {
-  width: 100px;
-}
 .box {
-  padding: 0 5% 0 5%;
+  margin: 50px;
 }
-.personal-group h4 {
-  margin-bottom: 15px;
-}
-.profile {
-  float: right;
+/* Attitude & Profile  */
+.attitude-profile {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
-.personal-icons img {
+/* Personal Attitude */
+.personal-attitude-icons img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  float: left;
 }
 img.art-culture {
   background-color: #ff6343;
@@ -315,24 +511,55 @@ img.party {
   background-color: #952685;
   margin: 0 20px 0 20px;
 }
-img.ringbell {
-  margin: 0 30px 0 30px;
-}
-img.settings {
-  margin-right: 70px;
-}
 h5 {
   color: #ea5b0c;
   font-style: italic;
+}
+.personal-attitude-percentage {
+  display: flex;
+  justify-content: space-around;
+}
+.personal-attitude {
+  font-size: 20px;
+  display: inline-grid;
+  padding-left: 6%;
+}
+
+.personal-attitude label {
+  color: black;
+}
+
+/** Profile  */
+.profile {
+  display: flex;
+  padding-right: 5%;
+}
+.button-area {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: transparent;
 }
 img.avatar {
   width: 80px;
   height: auto;
 }
-.fas {
-  font-size: 20px;
+
+/** Map Filter Search  */
+.map {
+  margin-right: 5%;
 }
-.plus-icon a {
+.map-filter-search {
+  display: flex;
+
+  padding-top: 3%;
+}
+/* Map Tappa Itinerario */
+.map-tappa-itinerario {
+  display: flex;
+}
+
+/* Tappa and Itinerario */
+.tappa-itinerario a {
   width: 60px;
   height: 60px;
   align-items: center;
@@ -345,73 +572,99 @@ img.avatar {
   border: 2px solid grey;
   margin-top: 20px;
 }
-.plus-icon {
-  margin-right: 25px;
-  float: left;
-}
-.map-profile {
-  margin-top: 150px;
-}
-.avatar-5 {
-  font-size: 20px;
-  float: right;
-  margin-right: 100px;
-  color: white;
-}
 
-.avatar-5 span {
+/* Avatar Sponsor Search*/
+
+/* Avatar */
+.avatar-image {
+  display: flex;
+  font-size: 20px;
+  background-color: #d1d3d4;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+.avatar span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.avatar-5 label {
-  color: black;
-}
-.avatar-5 img {
+.avatar-image img {
   background-color: #d1d3d4;
 }
-.flex-1 :last-child {
-  border-top-right-radius: 15px;
-}
-.flex-1 :first-child {
-  border-top-left-radius: 15px;
-}
-.dot {
-  height: 40px;
-  width: 40px;
-  background-color: #ea5b0c;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 8px 20px 0;
-}
-.follower-following {
-  display: flex;
-}
-.follower-following label {
-  margin-top: 8px;
-}
-
-.name {
+.avatar-name {
   display: flex;
   justify-content: space-around;
   background-color: #d1d3d4;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-
-.text2 label {
+.avatar-name label {
   margin-right: 10px;
   color: grey;
 }
+.avatar-image :last-child {
+  border-top-right-radius: 15px;
+}
+.avatar-image :first-child {
+  border-top-left-radius: 15px;
+}
+.dot {
+  height: 50px;
+  width: 50px;
+  background-color: #ea5b0c;
+  color: white;
+  border-radius: 50%;
+  margin-top: 8px;
+  font-size: 25px;
+}
+.follower-following {
+  display: flex;
+  justify-content: flex-end;
+}
+.follower-following label {
+  margin-top: 8px;
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/**Filter Business-Card */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/**Filter*/
 .icons img {
   height: 40px;
   width: 40px;
 }
 .icons {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
-
+.icons img:nth-child(1) {
+  width: fit-content;
+  height: auto;
+  margin-right: 5%;
+}
+.icons img:nth-child(3) {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.business-button > button {
+  background: #f26522;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
+}
+.business-button {
+  padding: 10px 30px;
+  margin: 50px;
+  border-radius: 35px;
+}
 a {
   text-decoration: none;
   color: white;
@@ -420,32 +673,88 @@ a {
 a:hover {
   color: white;
 }
-.image-group img {
-  border-radius: 50px;
-  padding: 0 10px 10px 10px;
+/**Business card */
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.image-group {
-  float: left;
-  padding-right: 60px;
+.cards2 {
+  margin-left: 10px;
 }
-h4.card-title {
-  color: black;
-  font-size: initial;
-  margin-top: 45px;
-}
-.card {
-  box-shadow: none;
+.cards2i {
+  display: flex;
+  color: #ea5b0c;
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
 }
 
-.cards-group {
-  margin-top: -125px;
+.usericon {
+  padding-top: 5px;
+  color: white;
+}
+
+.mapicon {
+  background-color: #009fe3;
+  width: 50px;
+}
+.wrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 10% 10% 0% 0%;
+  position: relative;
+}
+.cards2body {
+  width: 100%;
+  background: #ea5b0c;
+  border-radius: 0% 0% 10% 10%;
+}
+.cards2body p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.button {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  color: #ea5b0c;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.cards2icons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 17px;
+  padding-right: 17px;
 }
-.cards-group h5 {
-  color: gray;
-  font-style: italic;
+.cards2icons i {
+  padding-left: 34px;
+  color: white;
 }
+/**sponsor */
+
+/**Card*/
+.sponsor > .card-body {
+  display: flex;
+  align-items: center;
+}
+.sponsor > .card-body > img {
+  max-width: 200px;
+  height: 160px;
+}
+.sponsor-card-text {
+  margin-left: 5%;
+}
+/**Search filter */
 .filter-attitude {
   background-color: gainsboro;
   border-radius: 45px;
@@ -478,7 +787,6 @@ input {
 }
 
 .percentages {
-  margin-left: 30px;
   align-items: center;
 }
 .percentages p {
