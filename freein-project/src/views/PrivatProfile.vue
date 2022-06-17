@@ -1,5 +1,6 @@
 <template>
   <div><Privatprofile /></div>
+  
 </template>
 
 <script>
