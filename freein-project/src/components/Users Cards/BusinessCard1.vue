@@ -14,28 +14,38 @@
         <div>
           <div class="businesstext1">
             <div class="number">1</div>
-          
+
             <div class="text1">
               <div class="first">
-                <p>Scegli un metodo di acquisto <br> Fornisci ai tuoi clienti un modo per pagare.</p>
+                <p>
+                  Scegli un metodo di acquisto <br />
+                  Fornisci ai tuoi clienti un modo per pagare.
+                </p>
               </div>
             </div>
           </div>
           <div class="businesstext2">
             <div class="number">2</div>
-          
+
             <div class="text1">
               <div class="first">
-                <p>Fornisci i dettagli relativi alla tua azienda <br> Inserisci il nome e l'indirizzo e-mail della tua azienda o collega un account aziendale se ne hai gia' uno.</p>
+                <p>
+                  Fornisci i dettagli relativi alla tua azienda <br />
+                  Inserisci il nome e l'indirizzo e-mail della tua azienda o collega un
+                  account aziendale se ne hai gia' uno.
+                </p>
               </div>
             </div>
           </div>
           <div class="businesstext3">
             <div class="number">3</div>
-          
+
             <div class="text1">
               <div class="first">
-                <p>Aggiungi il tuo prodotto <br> Crea un espositore per promuovere e vendere i tuoi prodotti.</p>
+                <p>
+                  Aggiungi il tuo prodotto <br />
+                  Crea un espositore per promuovere e vendere i tuoi prodotti.
+                </p>
               </div>
             </div>
           </div>
@@ -97,7 +107,7 @@ export default {
   text-transform: uppercase;
 }
 .business-1-button {
-  background-color: #ea5b0c;
+  background-color: #ea5b0c !important;
   border-color: transparent;
   font-style: normal;
   line-height: 28px;
@@ -175,27 +185,27 @@ a:hover {
   justify-content: space-between;
 }
 .businesstext1 {
-  display: flex; 
+  display: flex;
   margin-left: 5%;
   margin-top: 60px;
 }
 
 .businesstext2 {
-  display: flex; 
+  display: flex;
   margin-left: 5%;
   margin-right: 15%;
   margin-top: 5px;
 }
 
 .businesstext3 {
-  display: flex; 
+  display: flex;
   margin-left: 5%;
   margin-top: 5px;
 }
 .number {
   font-size: 45px;
   font-weight: bold;
-  color: #ea5b0c ;
+  color: #ea5b0c;
 }
 .text1 {
   margin-left: 15px;
@@ -207,5 +217,4 @@ a:hover {
   font-weight: bold;
   color: black;
 }
-
 </style>
