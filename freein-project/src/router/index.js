@@ -44,6 +44,7 @@ import Businessprofiletest2 from "../views/Businessprofiletest2.vue"
 import secondsliderpage from "../views/SecondSliderpage.vue"
 import DialogPage from "../views/DialogPage.vue"
 import PrivacyPolicy from "../views/Privacy-policy.vue"
+import CookiePolicy from "../views/Cookie-policy.vue"
 
 
 Vue.use(VueRouter)
@@ -272,6 +273,11 @@ const routes = [{
         path:'/privacy-policy',
         name:'PrivacyPolicy',
         component:PrivacyPolicy,
+    },
+    {
+        path:'/cookie-policy',
+        name:'CookiePolicy',
+        component:CookiePolicy,
     }
 
     
