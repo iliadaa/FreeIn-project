@@ -36,7 +36,7 @@
         <h5 class="text-start">Information</h5>
         <ul class="information">
           <li><a href="#/privacy-policy">Privacy notice</a></li>
-          <li><a>Conditions of Use</a></li>
+          <li><a href="#/terms-and-conditions">Conditions of Use</a></li>
           <li><a>About us</a></li>
           <li><a href="#/cookie-policy">Cookie Policy</a></li>
         </ul>
