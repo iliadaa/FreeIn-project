@@ -13,13 +13,15 @@
             configurazione della procedura di acquisto &egrave; gratuita.
           </p>
 
-<!--Added-->
-          <label class="container">Paypal
-            <input type="radio" checked="checked" name="radio">
+          <!--Added-->
+          <label class="container"
+            >Paypal
+            <input type="radio" checked="checked" name="radio" />
             <span class="checkmark"></span>
           </label>
-          <label class="container">Bonifico
-            <input type="radio" name="radio">
+          <label class="container"
+            >Bonifico
+            <input type="radio" name="radio" />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -70,7 +72,7 @@ export default {
 }
 
 .business-1-button {
-  background-color: #ea5b0c;
+  background-color: #ea5b0c !important;
   border-color: transparent;
   font-style: normal;
   line-height: 28px;
@@ -191,11 +193,11 @@ a:hover {
   display: block;
 }
 .container .checkmark:after {
- 	top: 8px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: black;
+  top: 8px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: black;
 }
 </style>

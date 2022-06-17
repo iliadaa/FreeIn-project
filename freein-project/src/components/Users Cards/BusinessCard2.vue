@@ -69,7 +69,7 @@ export default {
   text-transform: uppercase;
 }
 .business-1-button {
-  background-color: #ea5b0c;
+  background-color: #ea5b0c !important;
   border-color: transparent;
   font-style: normal;
   line-height: 28px;
