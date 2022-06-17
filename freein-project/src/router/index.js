@@ -43,6 +43,7 @@ import TestSwitchPage from "../views/TestSwitchPage.vue"
 import Businessprofiletest2 from "../views/Businessprofiletest2.vue"
 import secondsliderpage from "../views/SecondSliderpage.vue"
 import DialogPage from "../views/DialogPage.vue"
+import PrivacyPolicy from "../views/Privacy-policy.vue"
 
 
 Vue.use(VueRouter)
@@ -266,6 +267,11 @@ const routes = [{
         path:'/dialogpage',
         name:'DialogPage',
         component: DialogPage
+    },
+    {
+        path:'/privacy-policy',
+        name:'PrivacyPolicy',
+        component:PrivacyPolicy,
     }
 
     
