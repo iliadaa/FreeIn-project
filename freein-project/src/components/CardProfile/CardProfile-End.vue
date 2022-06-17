@@ -126,11 +126,30 @@
         </div>
 
         <div class="button1">
-          <a href="http://localhost:8080/#/testend2" class="button">portami alla mia hall</a>
+          <a  class="button" @click="testCompleted(registrations)">portami alla mia hall</a>
         </div>
         
 </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      testCompleted(registrations){
+        console.log(registrations)
+     
+        
+      }
+      
+    },
+
+    computed: {
+      registrations() {
+      return this.$store.state.registrations;
+    }
+    }
+  }
+</script>
 <style>
 
 .k-progress{

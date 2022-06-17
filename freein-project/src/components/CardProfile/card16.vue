@@ -18,12 +18,34 @@
               </a>
           </div>
         <div class="arrow">
-          <a href="http://localhost:8080/#/testend" class="fas fa-angle-right"></a>
+          <a href="http://localhost:8080/#/testend" class="fas fa-angle-right" @click="testCompleted(registrations)"></a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    data: {
+
+    },
+
+    methods: {
+      testCompleted(registrations){
+        console.log(registrations)
+        
+      }
+      
+    },
+
+    computed: {
+      registrations() {
+      return this.$store.state.registrations;
+    }
+    }
+  }
+</script>
 
 <style scoped>
 .container {

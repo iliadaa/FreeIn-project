@@ -45,7 +45,7 @@ import secondsliderpage from "../views/SecondSliderpage.vue"
 import DialogPage from "../views/DialogPage.vue"
 import PrivacyPolicy from "../views/Privacy-policy.vue"
 import CookiePolicy from "../views/Cookie-policy.vue"
-
+import TermsAndConditons from "../views/Terms-and-conditions.vue"
 
 Vue.use(VueRouter)
 
@@ -278,6 +278,11 @@ const routes = [{
         path:'/cookie-policy',
         name:'CookiePolicy',
         component:CookiePolicy,
+    },
+    {
+        path:'/terms-and-conditions',
+        name:'TermsAndConditons ',
+        component:TermsAndConditons,
     }
 
     

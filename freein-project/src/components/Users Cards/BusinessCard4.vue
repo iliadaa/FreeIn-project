@@ -43,7 +43,11 @@
         <input type="checkbox" />
         <label style="margin-left: 10px">
           Inviando il tuo business per controllo, Accetti il nostro
-          <span style="color: #37beeb">Accordo con il venditore</span></label
+          <span
+            ><a style="color: #37beeb" href="#/terms-and-conditions"
+              >Accordo con il venditore</a
+            ></span
+          ></label
         >
       </div>
     </div>

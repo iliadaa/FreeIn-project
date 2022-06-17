@@ -37,7 +37,7 @@
             @click="
               (form.change = !form.change),
                 (goInTest = !goInTest),
-                wrongLoginData(form.email, total)
+                wrongLoginData(form.email, total, inSession)
             "
             type="submit"
             >LOG IN</b-button
@@ -154,20 +154,25 @@ export default {
         this.hide = false;
       }
     },
-    wrongLoginData(email, total) {
+    wrongLoginData(email, total, inSession) {
       const users = [...this.$store.state.registrations];
       var i;
       console.log(users);
       for (i = 0; i < total; i++) {
         console.log(users[i].userObj);
-        if (users[i].userObj.email == email) {
-          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);
+        if (users[i].userObj.email == email && users[i].userObj.testDone === true) {
+          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);          
           this.$router.push({
           name: "BusinessProfile",
         });
+        break;
           //this.form.registered = true;
         } else {
-          console.log(email + " e " + users[i].userObj.email)
+          alert("Dati inseriti correttamente " + "procediamo con il test: " + users[i].userObj.name);
+          this.$router.push({
+          name: "Test",
+        });
+        break;
           //this.form.registered;
         }
       }
@@ -179,6 +184,9 @@ export default {
   computed: {
     registrations() {
       return this.$store.state.registrations;
+    },
+    inSession(){
+      return this.$store.state.inSession;
     },
     total() {
       return this.$store.state.registrations.length;

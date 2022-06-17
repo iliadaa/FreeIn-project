@@ -5,7 +5,7 @@
         <h2>Returning User</h2>
         <div class="card-login">
           <!-- vedi vecchio codice login ed usalo qui -->
-          <b-form @submit="onSubmit" v-if="show">
+          <b-form v-if="show">
             <b-input-group>
               <input class="email" placeholder="Email" v-model="user.email" />
             </b-input-group>
@@ -83,11 +83,13 @@ export default {
   data() {
     return {
       user: {
+        id: "",
         email: "",
         password: "",
         change: false,
         name: "",
         surname: "",
+        testDone: false,
       },
       hide: false,
       show: true,
@@ -154,12 +156,18 @@ export default {
       for (i = 0; i < total; i++) {
         if (userObj.email == registrations[i].userObj.email) {
           trovato=true;
+          alert("Dati inseriti già registrati! Procedi con il login")
+          this.$router.push({
+          name: "FirstPage",
+        });
           break;
         } 
       }
       if (!trovato){
+        this.correctData(this.user.email, this.user.password, this.user.change);
           registrations.push({userObj});
-          console.log("SONO QUI2")
+          registrations[i].userObj.id = i;
+          console.log(userObj)
           //this.form.registered;
       }
     },
