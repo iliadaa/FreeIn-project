@@ -1,40 +1,64 @@
-
 <template>
   <div class="container">
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/illustration.png" alt="">
+          <img src="@/assets/illustration.png" alt="" />
         </div>
         <p>"La tua fascia di eta' e'?</p>
       </div>
       <div class="card card-b">
         <div class="answer1">
-          <a href="">
-            <p>16-20</p>
+          <a href="#/card6" @click="asks(answer.value1)">
+            <p>{{ answer.value1 }}</p>
           </a>
-          <a href="">
-            <p>21-27</p>
+          <a href="#/card6" @click="asks(answer.value2)">
+            <p>{{ answer.value2 }}</p>
           </a>
-          <a href="">
-            <p>28-37</p>
+          <a href="#/card6" @click="asks(answer.value3)">
+            <p>{{ answer.value3 }}</p>
           </a>
         </div>
         <div class="answer2">
-          <a href="">
-            <p>38-55</p>
+          <a href="#/card6" @click="asks(answer.value4)">
+            <p>{{ answer.value4 }}</p>
           </a>
-          <a href="">
-            <p>56-90</p>
+          <a href="#/card6" @click="asks(answer.value5)">
+            <p>{{ answer.value5 }}</p>
           </a>
         </div>
         <div class="arrow">
-            <a href="http://localhost:8080/#/card6" class="fas fa-angle-right"></a>
+          <a
+            href="http://localhost:8080/#/card6"
+            class="fas fa-angle-right"
+          ></a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      answer: {
+        value1: "16-20",
+        value2: "21-27",
+        value3: "28-37",
+        value4: "38-55",
+        value5: "56-90",
+      },
+    };
+  },
+  methods: {
+    asks(value) {
+      this.$store.commit("asksStore", value);
+      return value;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .container {
@@ -56,9 +80,9 @@
   justify-content: center;
   text-align: center;
   height: 600px;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
-.card-a{
+.card-a {
   background-color: #ea5b0c;
 }
 .card-a p {
@@ -108,7 +132,6 @@
   font-size: 25px;
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);
 }
-
 </style>

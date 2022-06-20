@@ -148,6 +148,7 @@ export default {
         this.hide = false;
       }
     },
+    
     registerUser (userObj, registrations, total){
       var i
       let trovato=false;

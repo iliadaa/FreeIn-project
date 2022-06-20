@@ -10,11 +10,11 @@
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <a href="">
-                <p>Da solo</p> 
+              <a href="#/card3" @click="asks(answer.value1)">
+                <p>{{answer.value1}}</p> 
               </a>
-              <a href="">
-                <p>In gruppo</p>
+              <a href="#/card3" @click="asks(answer.value2)">
+                <p>{{answer.value2}}</p>
               </a>
           </div>
         <div class="arrow">
@@ -24,6 +24,25 @@
     </div>
   </div>
 </template>
+
+<script>
+export default{
+data(){
+  return {
+    answer: {
+      value1: "Da solo",
+      value2: "In gruppo"
+    }
+  };
+  },
+  methods: {
+    asks(value){
+      this.$store.commit('asksStore', value)
+      return value;
+    }
+  }
+}
+</script>
 
 <style scoped>
 .container {

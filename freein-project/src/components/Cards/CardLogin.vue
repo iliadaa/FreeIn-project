@@ -157,29 +157,33 @@ export default {
     wrongLoginData(email, total, inSession) {
       const users = [...this.$store.state.registrations];
       var i;
-      console.log(users);
-      for (i = 0; i < total; i++) {
-        console.log(users[i].userObj);
-        if (users[i].userObj.email == email && users[i].userObj.testDone === true) {
-          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);          
+      console.log(users[0].userObj.testDone);
+      if (users[0].userObj.email == email && users[0].userObj.testDone == true) {
+          alert("Dati inseriti correttamente " + "bentornato: " + users[0].userObj.name);       
           this.$router.push({
           name: "BusinessProfile",
         });
-        break;
+      }
+      for (i = 1; i < total; i++) {
+        console.log(users[i].userObj.email, "Stiamo verificando che la email sia relativa al'utente in questione");
+        if (users[i].userObj.email == email && users[i].userObj.testDone == true) {
+          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);       
+          this.$router.push({
+          name: "BusinessProfile",
+        });
+          break;
           //this.form.registered = true;
         } else {
           alert("Dati inseriti correttamente " + "procediamo con il test: " + users[i].userObj.name);
+          inSession.push(users[i].userObj)
           this.$router.push({
           name: "Test",
         });
         break;
           //this.form.registered;
         }
-      }
-      if(total === 0 ){
-        alert(total)
-      }
-    },
+    }
+  }
   },
   computed: {
     registrations() {
@@ -190,6 +194,9 @@ export default {
     },
     total() {
       return this.$store.state.registrations.length;
+    },
+    testToDo() {
+      return this.$store.state.testToDo;
     },
   },
 };

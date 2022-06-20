@@ -10,21 +10,21 @@
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <a href="">
-                <p>Fidanzato</p> 
+              <a href="#/card4" @click="asks(answer.value1)">
+                <p>{{answer.value1}}</p> 
               </a>
           </div>
           <div class="answer2">
-              <a href="">
-                <p>Single</p>
+              <a href="#/card4" @click="asks(answer.value2)">
+                <p>{{answer.value2}}</p>
               </a>
-              <a href="">
-                <p>Famiglia</p>
+              <a href="#/card4" @click="asks(answer.value3)">
+                <p>{{answer.value3}}</p>
               </a>
           </div>
           <div class="answer3">
-              <a href="">
-                <p>Divorziato</p>
+              <a href="#/card4" @click="asks(answer.value4)">
+                <p>{{answer.value4}}</p>
               </a>
           </div>
         <div class="arrow">
@@ -34,6 +34,29 @@
     </div>
   </div>
 </template>
+
+<script>
+export default{
+data(){
+  return {
+    answer: {
+      value1: "Fidanzato",
+      value2: "Single",
+      value3: "Famiglia",
+      value4: "Divorziato"
+    }
+  };
+  },
+  methods: {
+    asks(value){
+      this.$store.commit('asksStore', value)
+      return value;
+    }
+  }
+}
+
+
+</script>
 
 <style scoped>
 .container {
