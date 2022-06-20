@@ -1,170 +1,180 @@
 <template>
-<div class="container">
-  <h1>Il Tuo profilo &egrave;</h1>
-  
-<div class="circles">
-  <div class="circle1">
-    <img class="img1" src="@/assets/gourmet.png" alt=""> 
-  </div>
-  <div class="circle2">
-    <img class="img2" src="@/assets/donna.png" alt=""> 
-  </div>
-</div>
-<h1>L'Acculturato</h1>
+  <div class="container">
+    <h1>Il Tuo profilo &egrave;</h1>
+
+    <div class="circles">
+      <div class="circle1">
+        <img class="img1" src="@/assets/gourmet.png" alt="" />
+      </div>
+      <div class="circle2">
+        <img class="img2" src="@/assets/donna.png" alt="" />
+      </div>
+    </div>
+    <h1>L'Acculturato</h1>
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/art.png" alt="">
+          <img src="@/assets/art.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>Arte &AMP; Cultura</p> 
+          <p>Arte &AMP; Cultura</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
-
-      type="line"
-      :border="true" 
-      :line-height="4"
-      
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="89" ></VueProgressBar>
+          <VueProgressBar
+            type="line"
+            :border="true"
+            :line-height="4"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="89"
+          ></VueProgressBar>
         </div>
       </div>
       <div class="mare">
         <div class="image1">
-          <img src="@/assets/Mare.png" alt="">
+          <img src="@/assets/Mare.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>Mare</p> 
+          <p>Mare</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
+          <VueProgressBar
             type="line"
-            :border="true" 
-            :line-height="4"      
+            :border="true"
+            :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="50" ></VueProgressBar>
+            :percent="50"
+          ></VueProgressBar>
         </div>
       </div>
       <div class="gourmet">
         <div class="image2">
-          <img src="@/assets/Gourmet-Explorer.png" alt="">
+          <img src="@/assets/Gourmet-Explorer.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>Gourmet Explorer</p> 
+          <p>Gourmet Explorer</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
-
-      type="line"
-      :border="true" 
-      :line-height="4"
-      
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="10" ></VueProgressBar>
+          <VueProgressBar
+            type="line"
+            :border="true"
+            :line-height="4"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="10"
+          ></VueProgressBar>
         </div>
       </div>
       <div class="relax">
         <div class="image3">
-          <img src="@/assets/relax.png" alt="">
+          <img src="@/assets/relax.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>Relax</p> 
+          <p>Relax</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
-      type="line"
-      :border="true" 
-      :line-height="4"
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="40" ></VueProgressBar>
+          <VueProgressBar
+            type="line"
+            :border="true"
+            :line-height="4"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="40"
+          ></VueProgressBar>
         </div>
       </div>
       <div class="party">
         <div class="image4">
-          <img src="@/assets/Party.png" alt="">
+          <img src="@/assets/Party.png" alt="" />
         </div>
         <div class="cardcontainer2">
-          <p>Party</p> 
+          <p>Party</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
-      type="line"
-      :border="true" 
-      :line-height="4"
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="55" ></VueProgressBar>
+          <VueProgressBar
+            type="line"
+            :border="true"
+            :line-height="4"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="55"
+          ></VueProgressBar>
         </div>
       </div>
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura_Avventura.png" alt="">
+          <img src="@/assets/Natura_Avventura.png" alt="" />
         </div>
         <div class="cardcontainer1">
-          <p>Natura &AMP; Avventura</p> 
+          <p>Natura &AMP; Avventura</p>
         </div>
         <div class="progress_container1">
-          <VueProgressBar 
-
-      type="line"
-      :border="true" 
-      :line-height="4"
-      :cut-color="'#40a9ff'"
-      :color="['#2d2e83', '#ea5b0c']"
-      :percent="20" ></VueProgressBar>
+          <VueProgressBar
+            type="line"
+            :border="true"
+            :line-height="4"
+            :cut-color="'#40a9ff'"
+            :color="['#2d2e83', '#ea5b0c']"
+            :percent="20"
+          ></VueProgressBar>
         </div>
       </div>
     </div>
 
-        <div class="text">
-          <p>Viaggiatore interessato agli aspetti artistici dei luoghi, ovvero interessato a città storiche, siti di interesse (Colosseo, Piramidi, ecc) e con una spiccata propensione verso la conoscenza dei luoghi (sei un turista che utilizza guide e materiale informativo).</p>
-        </div>
+    <div class="text">
+      <p>
+        Viaggiatore interessato agli aspetti artistici dei luoghi, ovvero
+        interessato a città storiche, siti di interesse (Colosseo, Piramidi,
+        ecc) e con una spiccata propensione verso la conoscenza dei luoghi (sei
+        un turista che utilizza guide e materiale informativo).
+      </p>
+    </div>
 
-        <div class="button1">
-          <a  class="button" @click="testCompleted(registrations)">portami alla mia hall</a>
-        </div>
-        
-</div>
+    <div class="button1">
+      <a class="button" @click="testCompleted(inSession, registrations)"
+        >portami alla mia hall</a
+      >
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    methods: {
-      testCompleted(registrations){
-        console.log(registrations)
-     
-        
-      }
-      
+export default {
+  methods: {
+    testCompleted(registrations) {
+        registrations[1].userObj.testDone = true;
+        console.log(registrations[1].userObj.testDone);
+    },
+  },
+
+  computed: {
+    total() {
+      return this.$store.state.registrations.length;
     },
 
-    computed: {
-      registrations() {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+
+    registrations() {
       return this.$store.state.registrations;
-    }
-    }
-  }
+    },
+  },
+};
 </script>
 <style>
-
-.k-progress{
+.k-progress {
   flex-direction: column;
 }
-.k-progress-text{
-  order:-1;
+.k-progress-text {
+  order: -1;
 }
 .k-progress-outer {
   padding-right: 0;
 }
 </style>
 <style scoped>
-
-
 h1 {
   color: #ea5b0c;
   font-size: 40px;
@@ -175,15 +185,16 @@ h1 {
   justify-content: center;
   margin-top: 25px;
   margin-left: 8%;
-  margin-bottom: 75px; 
+  margin-bottom: 75px;
 }
-.circle1, .circle2 {
+.circle1,
+.circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
 }
 .circle1 {
-  background: #009EE2;
+  background: #009ee2;
 }
 .circle2 {
   background: #ea5b0c;
@@ -215,7 +226,7 @@ img {
   height: 90px;
 }
 .arte {
-  background-color: #EC624C;
+  background-color: #ec624c;
   width: 90px;
   height: 120px;
   position: relative;
@@ -224,7 +235,7 @@ img {
   margin-right: 20px;
 }
 .mare {
-  background-color: #2C307F;
+  background-color: #2c307f;
   width: 90px;
   height: 120px;
   position: relative;
@@ -233,7 +244,7 @@ img {
   margin-right: 20px;
 }
 .gourmet {
-  background-color: #009EE2;
+  background-color: #009ee2;
   width: 90px;
   height: 120px;
   position: relative;
@@ -242,7 +253,7 @@ img {
   margin-right: 20px;
 }
 .relax {
-  background-color: #DC2C6C;
+  background-color: #dc2c6c;
   width: 90px;
   height: 120px;
   position: relative;
@@ -260,7 +271,7 @@ img {
   margin-right: 20px;
 }
 .natura {
-  background-color: #F6A314;
+  background-color: #f6a314;
   width: 90px;
   height: 120px;
   position: relative;
@@ -332,12 +343,7 @@ img {
   margin-bottom: 100px;
 }
 .progress_container1 {
-    width:100%;
-    padding-top: 20px;
+  width: 100%;
+  padding-top: 20px;
 }
-
-
 </style>
-
-
-

@@ -19,7 +19,8 @@ export default new Vuex.Store({
     asksStore (state, answer){
       state.testAnswers.push(answer)
       console.log(answer, " sono nel mutations")
-      console.log(state.testAnswers)
+      //se metto un ciclo for e dentro solo lo state.testAnswers[index] posso verificare tutte 
+      //le risposte salvate
     }
   },
   actions: {

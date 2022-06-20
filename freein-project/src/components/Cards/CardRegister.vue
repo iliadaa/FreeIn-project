@@ -50,7 +50,6 @@
             <!-- questo p class deve essere un a con style: text-decoration: none -->
             <b-button
               class="sign-up-btn"
-              @click="user.change = !user.change ,registerUser(user, registrations, total)"
               type="submit"
               >SIGN UP</b-button
             >
@@ -108,21 +107,25 @@ export default {
     correctData(email, password, name, surname) {
       //console.log(email + password);
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
-        alert("I dati inseriti sono corretti! Ora esegui il login!!");
         this.changePage(true);
         console.log("L'email è scritta correttamente!");
         if (name.length > 2) {
           alert("ciao " + name.length);
-          console.log("Sono qui");
+          console.log("Il name è lungo più di 2 chr");
+          return true;
+        }else {
+
+          return false;
         }
       } else {
         alert("L'email deve contenere una @ seguita da: gmail, outlook..");
         console.log("Non è presente la @");
+        return false;
       }
     },
     onSubmit(event) {
       event.preventDefault();
-      this.correctData(this.user.email, this.user.password, this.user.change);
+      registerUser(user, registrations, total);
     },
     onReset(event) {
       event.preventDefault();
@@ -164,8 +167,7 @@ export default {
           break;
         } 
       }
-      if (!trovato){
-        this.correctData(this.user.email, this.user.password, this.user.change);
+      if (!trovato && correctData(this.user.email, this.user.password, this.user.change)){
           registrations.push({userObj});
           registrations[i].userObj.id = i;
           console.log(userObj)
