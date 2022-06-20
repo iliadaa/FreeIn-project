@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <div class="card-group">
@@ -43,8 +42,9 @@
 .card-a{
   background-color: #ea5b0c;
 }
-.illustrations {
-  margin-right: 145px;
+.img {
+  width: 100%;
+  height: auto;
 }
 .card-a p {
   color: white;
@@ -66,6 +66,28 @@
   background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
 }
 
-
+@media (max-width: 575.98px) {
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px; 
+}
+.card-group {
+  box-shadow: none;
+}
+.card {
+  box-shadow: 5px 5px 20px;
+  height: 300px; 
+}
+.card-a p {
+  font-size: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+.arrow a {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+}
 
 </style>
