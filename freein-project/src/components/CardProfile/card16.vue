@@ -33,7 +33,6 @@
 
     methods: {
       testCompleted(registrations){
-        console.log(registrations)
         
       }
       
