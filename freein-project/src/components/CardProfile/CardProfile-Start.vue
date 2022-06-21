@@ -63,6 +63,8 @@
 <style scoped>
 .container {
   display: flex;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 h1 {
@@ -190,4 +192,102 @@ h1 {
   margin-right: 11px;
 }
 
+@media (max-width: 575.98px) {
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+.cards {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.arte {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.mare {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.gourmet {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.relax {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.party {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.natura {
+  width: 180px;
+  height: 240px;
+}
+
+.image1 {
+  padding: 20px;
+}
+
+.image2 {
+  padding-left: 40px;
+}
+
+.image3 {
+  padding-left: 14px;
+}
+
+.image4 {
+  padding-left: 20px;
+}
+
+.image5 {
+  padding-left: 20px;
+}
+
+.cardcontainer1 {
+  top: 180px;
+}
+
+.cardcontainer2 {
+  top: 200px;
+  left: 52px;
+}
+
+.target {
+  margin-right: 10px;
+}
+
+.target a {
+  width: 40px;
+  height: 40px;
+  font-size: 33px;
+}
+.target_test a {   
+  margin-right: 17px;
+}
+
+.target_test p {
+  font-size: 17px;
+}
+}
 </style>
