@@ -12,7 +12,7 @@
 
         <div class="slidecontainer">
           <VueSlideBar
-                  v-model="value2"
+                  v-model="value1"
                   :min="1"
                   :max="10"
                   :processStyle="slider.processStyle"
@@ -24,7 +24,7 @@
         </div>
 
         <div class="arrow">
-          <a href="http://localhost:8080/#/card11" class="fas fa-angle-right"></a>
+          <a href="http://localhost:8080/#/card11" class="fas fa-angle-right" @click="asks(value1)"></a>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
 export default {
   data () {
     return {
-      value2: 8,
+      value1: 8,
       slider: {
         lineHeight: 10,
         processStyle: {
@@ -79,6 +79,10 @@ export default {
   methods: {
     callbackRange (val) {
       this.rangeValue = val
+    },
+    asks(value) {
+      this.$store.commit("asksStore", value);
+      return value;
     }
   }
 }
