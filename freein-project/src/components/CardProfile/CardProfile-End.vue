@@ -132,7 +132,7 @@
     </div>
 
     <div class="button1">
-      <a class="button" @click="testCompleted(inSession, registrations)"
+      <a class="button" @click="testCompleted(inSession)"
         >portami alla mia hall</a
       >
     </div>
@@ -142,9 +142,9 @@
 <script>
 export default {
   methods: {
-    testCompleted(registrations) {
-        registrations[1].userObj.testDone = true;
-        console.log(registrations[1].userObj.testDone);
+    testCompleted(inSession) {
+        inSession.testDone == true;
+        console.log(inSession);
     },
   },
 

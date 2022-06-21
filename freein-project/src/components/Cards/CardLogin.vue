@@ -4,7 +4,7 @@
       <h2>Returning User</h2>
       <div class="card-login">
         <!-- vedi vecchio codice login ed usalo qui -->
-        <b-form  v-if="show">
+        <b-form v-if="show">
           <b-input-group>
             <input class="email" placeholder="Email" v-model="form.email" />
           </b-input-group>
@@ -73,7 +73,6 @@ export default {
 
   data() {
     return {
-      
       form: {
         email: "",
         password: "",
@@ -102,7 +101,7 @@ export default {
       }
     },
 
-/* 
+    /* 
     correctData(email, password, change, goInTest) {
       console.log(email + password);
       if (email == "ciccio@gmail.com" && password == "01234") {
@@ -143,7 +142,6 @@ export default {
       });
     },
 
-    
     showPass(hide) {
       var x = document.getElementById("myInput");
       if (x.type === "password") {
@@ -154,42 +152,59 @@ export default {
         this.hide = false;
       }
     },
+
     wrongLoginData(email, total, inSession) {
       const users = [...this.$store.state.registrations];
       var i;
-      console.log(users[0].userObj.testDone);
-      if (users[0].userObj.email == email && users[0].userObj.testDone == true) {
-          alert("Dati inseriti correttamente " + "bentornato: " + users[0].userObj.name);       
-          this.$router.push({
+      if (users[0].userObj.email == email) {
+        alert(
+          "Dati inseriti correttamente " + "bentornato" + users[0].userObj.name
+        );
+        this.$router.push({
           name: "BusinessProfile",
         });
-      }
-      for (i = 1; i < total; i++) {
-        console.log(users[i].userObj.email, "Stiamo verificando che la email sia relativa al'utente in questione");
-        if (users[i].userObj.email == email && users[i].userObj.testDone == true) {
-          alert("Dati inseriti correttamente " + "bentornato: " + users[i].userObj.name);       
-          this.$router.push({
-          name: "BusinessProfile",
-        });
+      } else if (total > 1){
+        console.log("sono appena entrato nell'else e non vado oltre");
+        for (i = 1; i < total; i++) {
+          console.log("sono nel for");
+          if (users[i].email == email && users[i].testDone == true) {
+            alert(
+              "Dati inseriti correttamente " +
+                "bentornato: " +
+                users[i].name
+            );
+            this.$router.push({
+              name: "BusinessProfile",
+            });
           break;
-          //this.form.registered = true;
-        } else {
-          alert("Dati inseriti correttamente " + "procediamo con il test: " + users[i].userObj.name);
-          inSession.push(users[i].userObj)
-          this.$router.push({
-          name: "Test",
-        });
-        break;
-          //this.form.registered;
+            //this.form.registered = true;
+          } else if (users[i].email == email && users[i].testDone == false) {
+            alert(
+              "Dati inseriti correttamente " +
+                "procediamo con il test: " +
+                users[i].name
+            );
+            inSession.push(users[i]);
+            console.log(inSession, "Sono appena entrato nella sezione del test tramite l'else if")
+            this.$router.push({
+              name: "Test",
+            });
+            break;
+            //this.form.registered;
+          } else {
+            console.log("I dati inseriti sono errati");
+          }
         }
-    }
-  }
+      }else{
+        console.log("I dati inseriti sono errati e sono fuori dal for!");
+      }
+    },
   },
   computed: {
     registrations() {
       return this.$store.state.registrations;
     },
-    inSession(){
+    inSession() {
       return this.$store.state.inSession;
     },
     total() {

@@ -51,6 +51,7 @@
             <b-button
               class="sign-up-btn"
               type="submit"
+              @click="registerUser(user, registrations, total)"
               >SIGN UP</b-button
             >
           </b-form>
@@ -113,9 +114,6 @@ export default {
           alert("ciao " + name.length);
           console.log("Il name è lungo più di 2 chr");
           return true;
-        }else {
-
-          return false;
         }
       } else {
         alert("L'email deve contenere una @ seguita da: gmail, outlook..");
@@ -151,51 +149,64 @@ export default {
         this.hide = false;
       }
     },
-    
-    registerUser (userObj, registrations, total){
-      var i
-      let trovato=false;
-      console.log(total);
-      console.log(total==0?"niente":[...registrations]);
-      for (i = 0; i < total; i++) {
-        if (userObj.email == registrations[i].userObj.email) {
-          trovato=true;
-          alert("Dati inseriti già registrati! Procedi con il login")
-          this.$router.push({
-          name: "FirstPage",
-        });
-          break;
-        } 
+
+    registerUser(user, registrations, total) {
+      var i;
+      var userObj = {
+        id: user.id,
+        email: user.email,
+        password: user.password,
+        name: user.name,
+        surname: user.surname,
+        testDone: user.testDone,
       }
-      if (!trovato && correctData(this.user.email, this.user.password, this.user.change)){
-          registrations.push({userObj});
-          registrations[i].userObj.id = i;
-          console.log(userObj)
+      registrations.push(userObj);
+      console.log(registrations);
+      for (i = 0; i < total; i++) {
+        if (registrations[i].email == userObj.eamil) {
+          registrations.push({ userObj });
+          registrations[i].id = i;
+          console.log(userObj, "sono l'userObj");
+          this.$router.push({
+            name: "FirstPage",
+          });
+        } else if (registrations[i].email == userObj.email) {
+          alert("Dati inseriti già registrati! Procedi con il login");
+          this.$router.push({
+            name: "FirstPage",
+          });
+          break;
           //this.form.registered;
+        }
       }
     },
-    /*
-    unregister(registrations){
-      const user = this.$store.registrations.find(user => {
+    unregister(registrations) {
+      const user = this.$store.registrations.find((user) => {
         return user.email == registrations.email;
       });
       user.registered = false;
-      this.$store.restrations.splice(this.$store.registrations.indexOf(registrations), 1);
-    } 
-    */
+      this.$store.restrations.splice(
+        this.$store.registrations.indexOf(registrations),
+        1
+      );
+    },
+
+    //register(state, user, registrations){
+    //this.$store.commit('register', state, user, registrations)
+    //}
   },
 
   computed: {
     dati() {
       return this.$store.state.dati;
     },
-    registrations(){
+    registrations() {
       return this.$store.state.registrations;
     },
-    total(){
+    total() {
       return this.$store.state.registrations.length;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -352,4 +363,3 @@ export default {
   text-align: center;
 }
 </style>
-
