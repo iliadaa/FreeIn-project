@@ -117,13 +117,9 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 400px;
+  min-height: 250px;
+  height: auto;
 }
-
-img {
-  margin-top: 100px;
-}
-
 .card-a p {
   font-size: 25px;
   margin-left: 30px;
@@ -133,7 +129,7 @@ img {
   display: block;
 }
 .card-b p {
-  font-size: 20px;
+  font-size: 17px;
 }
 .arrow {
   padding-right: 15px;

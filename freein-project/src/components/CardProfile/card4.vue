@@ -125,11 +125,8 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 400px;
-}
-
-img {
-  margin-top: 100px;
+  min-height: 250px;
+  height: auto;
 }
 
 .card-a p {
@@ -141,7 +138,7 @@ img {
   display: block;
 }
 .card-b p {
-  font-size: 20px;  
+  font-size: 17px;  
 }
 .arrow {
   padding-right: 15px;

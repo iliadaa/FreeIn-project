@@ -179,11 +179,8 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 400px;
-}
-
-img {
-  margin-top: 100px;
+  min-height: 250px;
+  height: auto;
 }
 .card-a p {
   font-size: 25px;
@@ -191,7 +188,7 @@ img {
   margin-right: 30px;
 }
 .card-b p {
-  font-size: 18px;
+  font-size: 17px;
 }
 .slidecontainer {
   width: 80%;
