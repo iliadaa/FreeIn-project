@@ -71,6 +71,11 @@
 .card-a{
   background-color: #ea5b0c;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
 .card-a p {
   color: white;
   font-style: italic;
@@ -110,6 +115,44 @@
   text-decoration: none;
   color: white;
   background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+}
+
+@media (max-width: 575.98px) {
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.card-group {
+  box-shadow: none;
+}
+.card {
+  box-shadow: 5px 5px 20px;
+  height: 400px;
+}
+
+img {
+  margin-top: 100px;
+}
+.card-a p {
+  font-size: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.answer1 {
+  display: block;
+}
+.card-b p {
+  font-size: 20px;
+}
+.arrow {
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+.arrow a  {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
 }
 
 </style>

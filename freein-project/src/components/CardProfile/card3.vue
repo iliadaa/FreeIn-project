@@ -139,11 +139,11 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px;
+  height: 400px;
 }
 
 img {
-  margin-top: 140px;
+  margin-top: 100px;
 }
 
 .card-a p {
@@ -152,8 +152,7 @@ img {
   margin-right: 30px;
 }
 .answer2 {
-  margin-left: 10%;
-  margin-right: 10%;
+  display: block;
 }
 .card-b p {
   font-size: 20px;

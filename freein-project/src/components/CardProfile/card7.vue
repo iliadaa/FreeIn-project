@@ -182,11 +182,11 @@ z-index: 2;
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px;
+  height: 400px;
 }
 
 img {
-  margin-top: 140px;
+  margin-top: 100px;
 }
 .card-a p {
   font-size: 25px;
@@ -194,7 +194,7 @@ img {
   margin-right: 30px;
 }
 .card-b p {
-  font-size: 20px;
+  font-size: 18px;
 }
 .slidecontainer {
   width: 80%;

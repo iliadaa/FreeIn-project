@@ -150,11 +150,11 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px;
+  height: 400px;
 }
 
 img {
-  margin-top: 140px;
+  margin-top: 100px;
 }
 
 .card-a p {
@@ -163,12 +163,10 @@ img {
   margin-right: 30px;
 }
 .answer1 {
-  margin-left: 5%;
-  margin-right: 5%;
+  display: block;
 }
 .answer2 {
-  margin-left: 20%;
-  margin-right: 20%;
+  display: block;
 }
 
 .card-b p {
