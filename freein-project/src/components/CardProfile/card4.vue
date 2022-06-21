@@ -125,11 +125,8 @@ img {
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px;
-}
-
-img {
-  margin-top: 140px;
+  min-height: 250px;
+  height: auto;
 }
 
 .card-a p {
@@ -138,11 +135,10 @@ img {
   margin-right: 30px;
 }
 .answer1 {
-  margin-left: 10%;
-  margin-right: 10%;
+  display: block;
 }
 .card-b p {
-  font-size: 20px;  
+  font-size: 17px;  
 }
 .arrow {
   padding-right: 15px;

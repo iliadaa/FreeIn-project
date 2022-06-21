@@ -187,19 +187,17 @@ z-index: 2;
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px;
+  min-height: 250px;
+  height: auto;
 }
 
-img {
-  margin-top: 140px;
-}
 .card-a p {
   font-size: 25px;
   margin-left: 30px;
   margin-right: 30px;
 }
 .card-b p {
-  font-size: 20px;
+  font-size: 17px;
 }
 .slidecontainer {
   width: 80%;

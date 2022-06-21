@@ -76,7 +76,8 @@
 }
 .card {
   box-shadow: 5px 5px 20px;
-  height: 300px; 
+  min-height: 250px;
+  height: auto;
 }
 .card-a p {
   font-size: 25px;
