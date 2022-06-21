@@ -10,15 +10,15 @@
       </div>
       <div class="card card-b">
           <div class="answer1">
-              <a href="">
-                <p>Zaino</p> 
+              <a href="#/testend" @click="asks(answer.value1)">
+                <p>{{answer.value1}}</p>
               </a>
-              <a href="">
-                <p>Valigia</p>
+              <a href="#/testend" @click="asks(answer.value2)">
+                <p>{{answer.value2}}</p>
               </a>
           </div>
         <div class="arrow">
-          <a href="http://localhost:8080/#/testend" class="fas fa-angle-right" @click="testCompleted(registrations)"></a>
+          <a href="http://localhost:8080/#/testend" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -27,23 +27,21 @@
 
 <script>
   export default {
-    data: {
-
-    },
-
-    methods: {
-      testCompleted(registrations){
-        
-      }
-      
-    },
-
-    computed: {
-      registrations() {
-      return this.$store.state.registrations;
+    data() {
+    return {
+    answer: {
+      value1: "Zaino",
+      value2: "Valigia",
     }
+  };
+},
+  methods: {
+    asks(value){
+      this.$store.commit('asksStore', value)
+      return value;
     }
   }
+}
 </script>
 
 <style scoped>
