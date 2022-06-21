@@ -1,4 +1,5 @@
 <template>
+
   <div class="container">
     <h1>Il Tuo profilo &egrave;</h1>
 
@@ -175,6 +176,10 @@ export default {
 }
 </style>
 <style scoped>
+.container {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
 h1 {
   color: #ea5b0c;
   font-size: 40px;
@@ -184,11 +189,10 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-  margin-left: 8%;
+  margin-left: 100px;
   margin-bottom: 75px;
 }
-.circle1,
-.circle2 {
+.circle1, .circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
@@ -340,10 +344,98 @@ img {
   font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
-  margin-bottom: 100px;
 }
 .progress_container1 {
   width: 100%;
   padding-top: 20px;
+}
+
+@media (max-width: 575.98px) {
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+h1 {
+  font-size: 25px;
+}
+.circles {
+  margin-bottom: 50px;
+}
+.circle1, .circle2 {
+  height: 200px;
+  width: 200px;
+}
+.img1 {
+  margin-right: 60px;
+  margin-top: 10px;
+}
+.img2 {
+  width: 141px;
+  height: 130px;
+  margin-right: 25px;
+}
+.cards {
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  margin-right: 5px;
+}
+img {
+  width: 51px;
+  height: 70px;
+}
+.arte {
+  width: 70px;
+  height: 100px;
+  margin-right: inherit;
+  margin-bottom: 50px;
+}
+.mare {
+  width: 70px;
+  height: 100px;
+  margin-right: inherit;
+  margin-bottom: 50px;
+}
+.gourmet {
+  width: 70px;
+  height: 100px;
+  margin-right: inherit;
+  margin-bottom: 50px;
+}
+.relax {
+  width: 70px;
+  height: 100px;
+  margin-right: inherit;
+}
+.party {
+  width: 70px;
+  height: 100px;
+  margin-right: inherit;
+}
+.natura {
+  width: 70px;
+  height: 100px;
+}
+.cardcontainer1 {
+  top: 75px;
+}
+.cardcontainer2 {
+  top: 85px;
+  left: 17px;
+}
+.text {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button1 {
+  margin-top: 50px;
+}
+.button {
+  padding: 10px 22px;
+  font-size: 17px;
+}
 }
 </style>
