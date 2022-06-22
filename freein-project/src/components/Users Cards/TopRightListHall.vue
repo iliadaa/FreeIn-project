@@ -100,7 +100,7 @@ export default {
     takingValue: function () {
       //jquery in this function is working because the function is dinamic it's like a continious method (idea of computed)
       $(document).ready(function () {
-        if ((this.isRolee = true)) {
+        if ((this.isRolee = false)) {
           $("#inners").css("display", "none");
         }
       });
@@ -134,7 +134,7 @@ export default {
   display: flex;
   color: grey;
   flex-direction: column;
-  height: 445px;
+  height: 450px;
 }
 
 .iconNameEmail {

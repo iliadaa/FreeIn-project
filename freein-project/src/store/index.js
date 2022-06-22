@@ -103,12 +103,12 @@ export default new Vuex.Store({
       console.log(state.inSession[0].userObj.roles)
       if (state.inSession[0].userObj.roles.includes("business" || "Business" || "admin" || "Admin")) {
         router.push({
-          name: "Privatprofile",
+          name: "BusinessProfile",
         });
         return trovato = true;
       } else {
         router.push({
-          name: "BusinessProfile",
+          name: "Privatprofile",
         });
         return trovato = false;
       }

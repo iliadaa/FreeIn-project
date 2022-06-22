@@ -95,7 +95,7 @@
                 <img src="@/assets/img-8.png" />
               </div>
               <div class="business-button">
-                <button>
+                <button id="beBusiness">
                   <a href="http://localhost:8080/#/businesscard1">Business </a>
                 </button>
               </div>
@@ -561,6 +561,11 @@ export default {
 
     takingValue: function () {
       console.log(this.inSession[0].userObj.profileTest);
+      $(document).ready(function () {
+        if ((this.isRolee = true)) {
+          $("#beBusiness").css("display", "none");
+        }
+      });
       return this.inSession[0].userObj;
     },
   },
