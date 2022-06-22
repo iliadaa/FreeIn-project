@@ -72,7 +72,11 @@
               <b-input-group>
                 <div class="right-labelIcon">
                   <i class="fa-regular fa-user"></i>
-                  <input type="text" class="rightSectionInputs" />
+                  <input
+                    type="text"
+                    class="rightSectionInputs"
+                    placeholder="Dati"
+                  />
                   <label>First Name</label>
                 </div>
               </b-input-group>
@@ -143,7 +147,6 @@ export default {
   },
 
   methods: {
-
     //need a new method that is going to let chanePage if all the forms are compiled
     //correctly :)
 
@@ -169,7 +172,6 @@ export default {
       }
     },
   },
-
 };
 </script>
 
@@ -418,10 +420,10 @@ button:hover {
   margin-top: 30px;
 }
 
-.save:hover{
-   border-color: black;
-   background-color: #ea5b0c;
-  }
+.save:hover {
+  border-color: black;
+  background-color: #ea5b0c;
+}
 
 .save p {
   padding-left: 25px;

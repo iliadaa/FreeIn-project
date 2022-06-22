@@ -151,6 +151,7 @@ export default {
     },
 
     registerUser(user, registrations, total) {
+      //io mi sto registrando come utente nuovo 
       var i;
       var userObj = {
         id: user.id,
@@ -160,25 +161,25 @@ export default {
         surname: user.surname,
         testDone: user.testDone,
       }
-      registrations.push(userObj);
-      console.log(registrations);
-      for (i = 0; i < total; i++) {
-        if (registrations[i].email == userObj.eamil) {
-          registrations.push({ userObj });
+      //devo validare se la email che ho usato è corretta e se non è gia presente nelle registrazioni
+      
+      //chiamo metodo per verifica mail di user.email
+      //nome_metodo : Validate true o false
+      /*
+      if (validate && find_inregistration of email) {
+          //allert mail presente 
+      } else {
+        // se email non gia presente : metodo in mutation che data una email 
+        //risponde true o false se email presente in registration e validate vera 
+        //registo il nuovo user
+        registrations.push({ userObj });
           registrations[i].id = i;
           console.log(userObj, "sono l'userObj");
           this.$router.push({
             name: "FirstPage",
           });
-        } else if (registrations[i].email == userObj.email) {
-          alert("Dati inseriti già registrati! Procedi con il login");
-          this.$router.push({
-            name: "FirstPage",
-          });
-          break;
-          //this.form.registered;
-        }
       }
+      */
     },
     unregister(registrations) {
       const user = this.$store.registrations.find((user) => {
@@ -197,11 +198,11 @@ export default {
   },
 
   computed: {
-    dati() {
-      return this.$store.state.dati;
-    },
     registrations() {
       return this.$store.state.registrations;
+    },
+    inSession() {
+      return this.$store.state.inSession;
     },
     total() {
       return this.$store.state.registrations.length;

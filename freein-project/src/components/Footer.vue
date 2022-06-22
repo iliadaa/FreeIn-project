@@ -19,7 +19,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                 >
-                  <path fill="#fff" d="M0 0l20 10-20 10v-20zM0 8v4l10-2-10-2z"></path>
+                  <path
+                    fill="#fff"
+                    d="M0 0l20 10-20 10v-20zM0 8v4l10-2-10-2z"
+                  ></path>
                 </svg>
               </b-button>
             </b-input-group>
@@ -51,8 +54,8 @@
         <h5 class="text-start">Follow Us</h5>
         <dl>
           <dd>
-            Free-in e un marchio di Ada Travl srl Via Punzi 101/D, 70024 Gravina in Puglia
-            BA
+            Free-in e un marchio di Ada Travl srl Via Punzi 101/D, 70024 Gravina
+            in Puglia BA
           </dd>
           <dd>Numero REA BA - 608876</dd>
           <dd>Partita iva 08161930725</dd>
@@ -79,7 +82,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .flex-fill {
   width: 20%;
 }

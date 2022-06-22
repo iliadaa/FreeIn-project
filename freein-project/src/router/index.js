@@ -132,7 +132,7 @@ const routes = [{
     },
     {
         path: '/editProfile',
-        name: 'EditProfilePage ',
+        name: 'EditProfilePage',
         component: EditProfilePage
     },
     {
