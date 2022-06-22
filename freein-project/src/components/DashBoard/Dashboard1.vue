@@ -274,4 +274,93 @@ td i {
   font-size: 20px;
   color: white;
 }
+
+@media (max-width: 575.98px) {
+.piggybank {
+  font-size: 40px;
+  padding-top: 30px;
+  padding-left: 5px;
+}
+.profile {
+  margin-left: 0%;
+  margin-top: 30px;
+}
+.info {
+  margin-left: 25px;
+}
+.name p {
+  font-size: 17px;
+}
+.email p {
+  font-size: 15px;
+}
+.button {
+  font-size: 15px;
+  margin-left: 25px; 
+}
+
+h1 {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.table1, .table2 {
+  margin-left: 0%;
+}
+
+.table2 {
+  margin-bottom: 70px;
+}
+
+.numbers {
+  font-size: 11px;
+}
+
+th, td {
+  font-size: 11px;
+  padding: 3px;
+  padding-left: 3px;
+  
+}
+.icons {
+  padding-left: 3px;
+}
+
+td i {
+  padding-right: 3px;
+}
+.hrtag2 {
+  width: 100%;
+  margin-left: 0%;
+}
+.hrtag2 i {
+  font-size: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.p1 {
+  font-size: 17px;
+}
+.p2 {
+  font-size: 20px;
+}
+.hr2 {
+  width: 100%;
+  margin-left: 0%;
+}
+.piggybank2 {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 50px;
+}
+.piggybank2 i {
+  font-size: 25px;
+  padding: 9px 12px;
+}
+.p3 {
+  font-size: 17px;
+}
+}
+
 </style>
