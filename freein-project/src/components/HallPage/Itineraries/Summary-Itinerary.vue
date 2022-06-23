@@ -1265,8 +1265,6 @@ hr {
 
 .search-container2 {
   display: block;
-  float: right;
-  margin-right: 5px;
   margin-top: 30px;
   margin-bottom: 40px;
 }
@@ -1277,7 +1275,7 @@ hr {
   padding: 6px 45px;
   font-size: 17px;
   border: 1px solid rgb(238, 238, 238);
-  width: 220px;
+  width: 270px;
   background: white url("@/assets/search.png") no-repeat 10px center;
   border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
