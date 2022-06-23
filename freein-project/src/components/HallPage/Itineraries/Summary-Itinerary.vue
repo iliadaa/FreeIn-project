@@ -114,6 +114,12 @@
       </div>
       <hr class="hr1" />
 
+      <div class="search-container2">
+        <form action="">
+          <input type="text" placeholder="Cerca itinerario" />
+        </form>
+      </div>
+
       <p class="title">Itinerario</p>
       <div class="section">
         <div class="icontext">
@@ -441,7 +447,7 @@
       </div>-->
 
       <div class="box6">
-        <p class="title">Sponsorizzato</p>
+        <p class="title1">Sponsorizzato</p>
       </div>
 
       <div class="box7">
@@ -644,6 +650,9 @@ hr {
 }
 .hr1 {
   margin-top: 40px;
+}
+.search-container2 {
+  display: none;
 }
 .title {
   font-size: 16px;
@@ -982,6 +991,12 @@ hr {
   top: 150%;
   line-height: 4px;
 }
+
+.title1 {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
 .box7 {
   width: 25%;
   position: absolute;
@@ -1186,6 +1201,7 @@ hr {
 .cards {
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   margin-bottom: 70px;
 }
@@ -1223,6 +1239,7 @@ hr {
 }
 .text {
   width: 100%;
+  text-align: left;
 }
 .h1icon {
   display: flex;
@@ -1245,6 +1262,32 @@ hr {
 .hr1 {
   margin-top: 40px;
 }
+
+.search-container2 {
+  display: block;
+  float: right;
+  margin-right: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+
+
+.search-container2 input[type=text] {
+  padding: 6px 45px;
+  font-size: 17px;
+  border: 1px solid rgb(238, 238, 238);
+  width: 220px;
+  background: white url("@/assets/search.png") no-repeat 10px center;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}
 .title {
   font-size: 17px;
 }
@@ -1252,7 +1295,7 @@ hr {
   width: 100%;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 0%;
+  margin-bottom: -11%;
 }
 .icontext i {
   font-size: 25px;
@@ -1337,6 +1380,9 @@ hr {
 .box1 {
   width: 80%;
   position: static;
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 50px;
   left: 0%;
   top: 0%;
 }
@@ -1423,27 +1469,7 @@ hr {
 }
 
 .search-container {
-  width: 70%;
-  position: static;
-  left: 0%;
-  margin-top: 25%;
-  margin-bottom: 50px;
-}
-
-.search-container input[type=text] {
-  padding: 6px 45px;
-  font-size: 17px;
-  border: 1px solid rgb(238, 238, 238);
-  width: 300px;
-  background: white url("@/assets/search.png") no-repeat 10px center;
-  border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  cursor: pointer;
-}
-
-::placeholder {
-  font-size: 14px;
-  font-style: italic;
+  display: none;
 }
 
 /*.search-container {
@@ -1479,11 +1505,14 @@ hr {
   top: 0%;
   line-height: 4px;
 }
+.title1 {
+  display: none;
+}
 .box7 {
   width: 100%;
   position: static;
   left: 0%;
-  top: 0%;
+  margin-top: 20%;
   line-height: 4px;
 }
 .box7 img {
