@@ -119,7 +119,7 @@
                     />
                   </div>
                   <div class="cards2body">
-                    <p>Peschici</p>
+                    <p>{{ takingValue.stage.stage }}</p>
                     <div class="cards2icons">
                       <div class="button1">
                         <a href="#" class="button">Go</a>
@@ -151,7 +151,7 @@
                         <a href="#" class="button">Go</a>
                       </div>
                       <div>
-                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="{fas fa-star}"></i></a>
                         <a href=""><i class="far fa-bookmark"></i></a>
                       </div>
                     </div>
