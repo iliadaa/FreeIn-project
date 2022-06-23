@@ -102,6 +102,12 @@
       
       <hr class="hr1">
 
+      <div class="search-container2">
+        <form action="">
+          <input type="text" placeholder="Cerca itinerario" />
+        </form>
+      </div>
+
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
@@ -328,7 +334,7 @@
 
 
 <div class="box6">
-  <p class="title">Sponsorizzato</p>    
+  <p class="title1">Sponsorizzato</p>    
 </div>
 
 <div class="box7">
@@ -525,14 +531,17 @@ img {
 hr {
   width: 55%;
 }
+.search-container2 {
+  display: none;
+}
 .title {
   font-size: 16px;
   font-weight: bold;
   font-style: italic;
 }
-.hr4 {
+/*.hr4 {
   margin-top: 60px;
-}
+}*/
 .wrap {
   width: 55%;
   display: flex;
@@ -757,6 +766,11 @@ hr {
   top: 150%;
   line-height: 4px;
 }
+.title1 {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
 .box7 {
   width: 25%;
   position: absolute;
@@ -942,6 +956,512 @@ hr {
   transition: 0s;
 }
 
+@media (max-width: 575.98px) {
+.container {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.heading {
+  margin-bottom: 30px;
+}
+.heading i {
+  font-size: 25px;
+  padding: 20px 16px;
+}
+.heading p {
+  font-size: 25px;
+}
+.cards {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+.arte {
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+.mare {
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+.gourmet {
+  width: 65px;
+  height: 65px;
+}
+.relax {
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+.party {
+  margin-right: 10px;
+}
+.natura {
+  margin-right: 10px;
+}
+.cardcontainer1 {
+  font-size: 17px;
+  top: 65px;
+  margin-left: 19px;
+}
+.cardcontainer2 {
+  font-size: 17px;
+  top: 65px;
+  left: 19px;
+}
+.text {
+  width: 100%;
+  text-align: left;
+}
+.h1icon {
+  display: flex;
+}
+.text h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.h1i {
+  padding-right: 20px;
+}
+.cards1 {
+  width: 100%;
+}
+
+.cardimage img {
+  margin-bottom: 15px;
+}
+
+hr {
+  width: 100%;
+}
+.hr1 {
+  margin-top: 10px;
+}
+
+.search-container2 {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+
+
+.search-container2 input[type=text] {
+  padding: 6px 45px;
+  font-size: 17px;
+  border: 1px solid rgb(238, 238, 238);
+  width: 270px;
+  background: white url("@/assets/search.png") no-repeat 10px center;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}
+.title {
+  font-size: 17px;
+}
+.section {
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: -11%;
+}
+.icontext i {
+  font-size: 25px;
+  padding: 10px 5px;
+}
+.icontext p {
+  font-size: 17px;
+}
+.arte1 {
+  /*margin-left: 40px;*/
+  margin-left: 0px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.mare1 {
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.gourmet1 {
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.relax1 {
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.party1 {
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.natura1 {
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.cardcontainer01 {
+  font-size: 13px;
+  top: 40px;
+  margin-left: 10px;
+}
+.cardcontainer02 {
+  font-size: 13px;
+  top: 40px;
+  left: 11px;
+}
+/*.hr4 {
+  margin-top: 2px;
+}*/
+
+.wrap {
+  width: 100%;
+  flex-direction: column;
+}
+.cards2 {
+  margin-left: 0px;
+  margin-bottom: 15px;
+}
+.cards2i {
+  display: flex;
+  font-size: 25px;
+}
+.mapicon {
+  width: 35px;
+  height: 40px;
+}
+
+.usericon {
+  padding-left: 205px;
+  padding-top: 6px;
+}
+
+.wrap img {
+  border-radius: 0% 16% 0% 0%;
+}
+.cards2body {
+  border-radius: 0% 0% 20% 20%;
+}
+.cards2body p {
+  font-size: 17px;
+}
+.button {
+  font-size: 17px;
+}
+.box1 {
+  width: 80%;
+  position: static;
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  left: 0%;
+  top: 0%;
+}
+
+.box1 i {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.boxcontainer1 {
+  font-size: 11px;
+  margin-left: 1px;
+}
+
+.box2 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  top: 0%;
+  margin-top: 16px;
+}
+
+.box3 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  top: 0%;
+  line-height: 4px;
+}
+.box3 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box3 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box3 p {
+  font-size: 13px;
+}
+
+.box4 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  margin-top: 20%;
+  line-height: 4px;
+}
+.box4 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box4 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box4 p {
+  font-size: 13px;
+}
+
+.box5 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  margin-top: 20%;
+  line-height: 4px;
+}
+.box5 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box5 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box5 p {
+  font-size: 13px;
+}
+
+.search-container {
+  display: none;
+}
+
+/*.search-container {
+  width: 25%;
+  position: absolute;
+  left: 66%;
+  top: 131%;
+}
+
+.search-container input[type="text"] {
+  padding: 6px;
+  font-size: 17px;
+  border: 1px solid rgb(238, 238, 238);
+  width: 250px;
+}
+.search-container button {
+  padding: 7px 10px;
+  background: #ea5b0c;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}*/
+
+.box6 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  top: 0%;
+  line-height: 4px;
+}
+.title1 {
+  display: none;
+}
+.box7 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  margin-top: 20%;
+  line-height: 4px;
+}
+.box7 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box7 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box7 p {
+  font-size: 13px;
+}
+
+.box8 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  margin-top: 20%;
+  line-height: 4px;
+}
+.box8 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box8 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box8 p {
+  font-size: 13px;
+}
+
+.box9 {
+  width: 100%;
+  position: static;
+  left: 0%;
+  margin-top: 20%;
+  margin-bottom: 16%;
+  line-height: 4px;
+}
+.box9 img {
+  width: 40%;
+  margin-right: 8px;
+}
+
+.box9 h1 {
+  font-size: 16px;
+  padding-top: 23px;
+}
+
+.box9 p {
+  font-size: 13px;
+}
+
+.c-share {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.c-share__input {
+  display: none;
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon {
+  transition: 0s;
+  width: 0;
+  height: 0;
+}
+
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::before {
+  transform: rotate(-45deg);
+}
+.c-share__input:checked ~ .c-share__toggler .c-share__icon::after {
+  transform: rotate(45deg);
+}
+.c-share__input:checked ~ .c-share_options {
+  width: 160px;
+  height: 240px;
+  border-radius: 7px;
+}
+.c-share__input:checked ~ .c-share_options::before,
+.c-share__input:checked ~ .c-share_options li {
+  transition: 0.3s 0.15s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.c-share__toggler,
+.c-share_options {
+  position: absolute;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: rgb(245, 238, 238);
+}
+.c-share_options {
+  background-color: white;
+  border: 2px solid #ea5b0c;
+}
+.c-share__toggler {
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-share__icon {
+  position: relative;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  color: black;
+  background-color: currentColor;
+  box-shadow: 10px -10px, 10px 10px;
+  transition: 0.1s 0.05s;
+}
+.c-share__icon::before,
+.c-share__icon::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: currentColor;
+  transition: 0.1s;
+}
+.c-share__icon::before {
+  top: 3px;
+  left: 3px;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+.c-share__icon::after {
+  top: -2px;
+  left: 0.5px;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+
+.c-share_options {
+  list-style: none;
+  margin: 0;
+  padding: 14px 17px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.2s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.c-share_options::before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.c-share_options li {
+  font-size: 14px;
+  cursor: pointer;
+}
+.c-share_options li:not(:last-child) {
+  margin-bottom: 12px;
+}
+.c-share_options::before,
+.c-share_options li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0s;
+}
+}
 
 
 </style>
