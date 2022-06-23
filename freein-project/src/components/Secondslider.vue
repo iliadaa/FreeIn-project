@@ -1,5 +1,6 @@
 <template>
-<div class="second-slider-component">
+<!--<div class="second-slider-component">-->
+    <div class="container">
     <div class="second-slider-imagetext">
         <div class="second-slider-image">
             <img src="@/assets/girls.png" alt="">
@@ -38,11 +39,25 @@
                     <div><a href="#"><i class="fas fa-angle-double-right"></i></a></div>
                 </div>
         </div>
+
+        <div class="second-slider-text2">
+                <div class="heading">
+                    <p>Freein il primo vero Social travel che ti premia.</p>
+                </div>
+                <div class="function">
+                    <div><a href="#">Scopri come funziona</a></div>
+                    <div><a href="#"><i class="fas fa-angle-double-right"></i></a></div>
+                </div>
+        </div>
     </div>
 </div>
 </template>
 
 <style scoped>
+.container {
+    width: 100%;
+    height: auto;
+}
 .second-slider-imagetext {
     display: flex;
     justify-content: space-evenly;
@@ -55,6 +70,10 @@
 
 .second-slider-text {
     margin-top: 20px;
+}
+
+.second-slider-text2 {
+    display: none;
 }
 .second-slider-text p {
     text-align: right;
@@ -93,6 +112,56 @@
   font-size: 25px;
   padding-top: 3px;
   padding-left: 10px;
+}
+
+@media (max-width: 575.98px) {
+.second-slider-imagetext {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+
+.second-slider-image img {
+    width: 100%;
+    height: auto;
+    margin-top: -170px;
+}
+
+.second-slider-text {
+    display: none;
+}
+
+.second-slider-text2 {
+    display: block;
+}
+.second-slider-text2 p {
+    text-align: right;
+    color: #ea5b0c;
+}
+.second-slider-text2 .heading {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.text1, .text2, .text3, .text4 {
+    display: none;
+}
+.second-slider-text2 .function {
+    margin-top: 10px;
+}
+
+.second-slider-text2 .function a {
+  text-decoration: none;
+  color: #ea5b0c;
+  font-size: 14px;
+}
+.second-slider-text2 .function i {
+  color: #ea5b0c;
+  font-size: 14px;
+  padding-top: 8px;
+  padding-left: 2px;
+}
 }
 </style>
 

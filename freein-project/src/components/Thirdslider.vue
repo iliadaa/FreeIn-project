@@ -24,10 +24,6 @@
                 <div class="heading">
                     <p>Freein ti porta alla scoperta di nuovi itinerari di viaggio</p>
                 </div>
-        
-                <div class="text1">
-                    <p>Conoscerai nuovi itinerari di viaggio attraverso l'esperienza dei tuoi nuovi amici.</p>
-                </div>
         </div>
 
     </div>
@@ -222,16 +218,14 @@
 @media (max-width: 575.98px) {
 .third-slider-imagetext {
     display: flex;
-    justify-content: space-between;
-    margin-top: 76px;
-    margin-left: 5px;
-    margin-right: 5px;
+    justify-content: space-evenly;
+    margin-top: 80px;
 }
 
 .third-slider-image img {
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 .third-slider-text {
     display: none;
@@ -246,15 +240,9 @@
     color: #2B3081;
 }
 .third-slider-text2 .heading {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-    line-height: 18px;
-}
-
-.third-slider-text2 .text1 {
-    font-size: 16px;
-    line-height: 18px;
-    margin-top: 17px;
+    line-height: 26px;
 }
 .circles {
     display: none;
