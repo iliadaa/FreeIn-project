@@ -30,6 +30,17 @@ export default new Vuex.Store({
             "relax": 60,
             "party": 50,
             "nature": 30,
+          },
+          "stage":
+          {
+
+            "id": "1",
+            "image": "https://7wallpapers.net/wp-content/uploads/16_Firewatch.png",
+            "inlineDate": "August 28, 2022",
+            "description": "Mountain climbing. Pack your climbing shoes, backpack and get there!",
+            "stage": "Matterhorn",
+            "location": "Matterhorn, Switzerland/Italy ",
+            "icon": "fas fa-star"
           }
         }
       },
@@ -100,7 +111,7 @@ export default new Vuex.Store({
     },
     isRole(state) {
       var trovato = false;
-      console.log(state.inSession[0].userObj.roles)
+      console.log(state.inSession[0].userObj)
       if (state.inSession[0].userObj.roles.includes("business" || "Business" || "admin" || "Admin")) {
         router.push({
           name: "BusinessProfile",
@@ -116,30 +127,32 @@ export default new Vuex.Store({
     isValidate(state, user) {
       var trovato;
       var i;
-      var userObj = {
-        id: user.id,
-        email: user.email,
-        password: user.password,
-        name: user.name,
-        surname: user.surname,
-        testDone: user.testDone,
-        profileTest: {
-          name: "",
-          description: "lorem ipsum",
-          arte: undefined,
-          mare: undefined,
-          cibo: undefined,
-          relax: undefined,
-          party: undefined,
-          nature: undefined,
+      var userData = {
+        userObj: {
+          id: user.id,
+          email: user.email,
+          password: user.password,
+          name: user.name,
+          surname: user.surname,
+          testDone: user.testDone,
+          roles: "private",
+          profileTest: {
+            name: "",
+            description: "lorem ipsum",
+            arte: undefined,
+            mare: undefined,
+            cibo: undefined,
+            relax: undefined,
+            party: undefined,
+            nature: undefined,
+          }
         },
       }
-
-      console.log(userObj, " Verifico che i dati inseriti siano validati correttamente")
+      console.log(userData, " Verifico che i dati inseriti siano validati correttamente")
       console.log(state.registrations[1].userObj)
-      console.log(userObj)
+      console.log(userData)
       for (i = 0; i < state.registrations.length; i++) {
-        if (state.registrations[i].userObj.email == userObj.email && state.registrations[i].userObj.password == userObj.password) {
+        if (state.registrations[i].userObj.email == userData.email && state.registrations[i].userObj.password == userData.password) {
           console.log("Ci sto")
           alert("Email già registrata, esegui il login!")
           router.push({
@@ -152,11 +165,9 @@ export default new Vuex.Store({
         }
       }
       if (trovato == false) {
-        state.registrations.push({
-          userObj: { userObj }
-        });
+        state.registrations.push(userData);
         alert("Nuovo utente registrato con successo")
-        console.log(state.registrations)
+        console.log(userData, "USER")
         router.push({
           name: "FirstPage",
         });
