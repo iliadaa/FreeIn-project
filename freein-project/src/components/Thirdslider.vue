@@ -1,5 +1,6 @@
 <template>
-<div class="third-slider-component">
+<!--<div class="third-slider-component">-->
+    <div class="container">
     <div class="third-slider-imagetext">
 
         <div class="third-slider-image">
@@ -18,6 +19,17 @@
                     <p>attraverso l'esperienza dei tuoi nuovi amici.</p>
                 </div>
         </div>
+
+        <div class="third-slider-text2">
+                <div class="heading">
+                    <p>Freein ti porta alla scoperta di nuovi itinerari di viaggio</p>
+                </div>
+        
+                <div class="text1">
+                    <p>Conoscerai nuovi itinerari di viaggio attraverso l'esperienza dei tuoi nuovi amici.</p>
+                </div>
+        </div>
+
     </div>
             
         <div class="circles">
@@ -75,6 +87,10 @@
 </template>
 
 <style scoped>
+.container {
+    width: 100%;
+    height: auto;
+}
 .third-slider-imagetext {
     display: flex;
     justify-content: space-evenly;
@@ -82,6 +98,10 @@
 }
 .third-slider-text {
     margin-top: 20px;
+}
+
+.third-slider-text2 {
+    display: none;
 }
 
 .third-slider-text p {
@@ -196,6 +216,49 @@
     font-size: 30px;
     letter-spacing: 2px;
     margin-top: 15px;
+}
+
+
+@media (max-width: 575.98px) {
+.third-slider-imagetext {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 76px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.third-slider-image img {
+    width: 70%;
+    height: auto;
+    margin-top: 70px;
+}
+.third-slider-text {
+    display: none;
+}
+
+.third-slider-text2 {
+    display: block;
+}
+
+.third-slider-text2 p {
+    text-align: right;
+    color: #2B3081;
+}
+.third-slider-text2 .heading {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+.third-slider-text2 .text1 {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 17px;
+}
+.circles {
+    display: none;
+}
 }
 </style>
 
