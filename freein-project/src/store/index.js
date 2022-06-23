@@ -117,14 +117,12 @@ export default new Vuex.Store({
       var trovato;
       var i;
       var userObj = {
-        userObj: {
-          id: user.id,
-          email: user.email,
-          password: user.password,
-          name: user.name,
-          surname: user.surname,
-          testDone: user.testDone,
-        },
+        id: user.id,
+        email: user.email,
+        password: user.password,
+        name: user.name,
+        surname: user.surname,
+        testDone: user.testDone,
         profileTest: {
           name: "",
           description: "lorem ipsum",
@@ -134,8 +132,9 @@ export default new Vuex.Store({
           relax: undefined,
           party: undefined,
           nature: undefined,
-        }
+        },
       }
+
       console.log(userObj, " Verifico che i dati inseriti siano validati correttamente")
       console.log(state.registrations[1].userObj)
       console.log(userObj)
@@ -153,7 +152,9 @@ export default new Vuex.Store({
         }
       }
       if (trovato == false) {
-        state.registrations.push(userObj);
+        state.registrations.push({
+          userObj: { userObj }
+        });
         alert("Nuovo utente registrato con successo")
         console.log(state.registrations)
         router.push({

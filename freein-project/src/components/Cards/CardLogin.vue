@@ -144,19 +144,23 @@ export default {
       const users = [...this.$store.state.registrations];
       var i;
       for (i = 0; i < total; i++) {
-        console.log("sono nel for");
+        console.log("sono nel for " + i + " di " + total);
         console.log(users[i].userObj.testDone, email);
         if (
           users[i].userObj.email == email &&
           users[i].userObj.testDone == true
         ) {
           users[i].userObj.name;
+          /*
           alert(
             "Dati inseriti correttamente " +
               "bentornato: " +
               users[i].userObj.name
           );
-          inSession.push(users[i]);
+          */
+          inSession.push({
+            userObj: { ...users[i].userObj },
+          });
           this.isRolee();
 
           //this.form.registered = true;
@@ -164,12 +168,16 @@ export default {
           users[i].userObj.email == email &&
           users[i].userObj.testDone == false
         ) {
+          /* 
           alert(
             "Dati inseriti correttamente " +
               "procediamo con il test: " +
               users[i].userObj.name
           );
-          inSession.push(users[i]);
+          */
+          inSession.push({
+            userObj: { ...users[i].userObj },
+          });
           this.$router.push({
             name: "Test",
           });
@@ -177,6 +185,8 @@ export default {
           //this.form.registered;
         } else {
           console.log("Sto ancora cercando la email");
+          alert("Questa email è errata o non registrata!!");
+          break;
         }
       }
     },

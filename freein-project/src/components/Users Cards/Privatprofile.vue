@@ -562,6 +562,7 @@ export default {
       $(document).ready(function () {
         if ((this.isRolee = true)) {
           $("#container-settings").css("display", "none");
+          $("#inners").css("display", "none");
         }
       });
       console.log(this.inSession[0].userObj.name);
