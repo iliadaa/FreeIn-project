@@ -94,7 +94,11 @@
                 <img src="@/assets/img-7.png" />
                 <img src="@/assets/img-8.png" />
               </div>
-              <div class="business-button"></div>
+              <div class="business-button">
+                <button id="beBusiness">
+                  <a href="http://localhost:8080/#/businesscard1">Business </a>
+                </button>
+              </div>
             </div>
             <!-- Business Card -->
             <div class="business-profile-card">
@@ -557,7 +561,7 @@ export default {
     takingValue: function () {
       $(document).ready(function () {
         if ((this.isRolee = true)) {
-          $("#inners").css("display", "none");
+          $("#container-settings").css("display", "none");
         }
       });
       console.log(this.inSession[0].userObj.name);

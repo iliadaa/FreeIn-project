@@ -12,7 +12,7 @@ export default new Vuex.Store({
       {
         "userObj":
         {
-          "id": "0",
+          "id": "1",
           "email": "test@gmail.com",
           "password": "test",
           "change": true,
@@ -38,7 +38,7 @@ export default new Vuex.Store({
         {
           "id": "1",
           "email": "test-business@gmail.com",
-          "password": "test",
+          "password": "TEST",
           "change": true,
           "name": "Business",
           "surname": "Test",
@@ -112,9 +112,67 @@ export default new Vuex.Store({
         });
         return trovato = false;
       }
-    }
+    },
+    isValidate(state, user) {
+      var trovato;
+      var i;
+      var userObj = {
+        userObj: {
+          id: user.id,
+          email: user.email,
+          password: user.password,
+          name: user.name,
+          surname: user.surname,
+          testDone: user.testDone,
+        },
+        profileTest: {
+          name: "",
+          description: "lorem ipsum",
+          arte: undefined,
+          mare: undefined,
+          cibo: undefined,
+          relax: undefined,
+          party: undefined,
+          nature: undefined,
+        }
+      }
+      console.log(userObj, " Verifico che i dati inseriti siano validati correttamente")
+      console.log(state.registrations[1].userObj)
+      console.log(userObj)
+      for (i = 0; i < state.registrations.length; i++) {
+        if (state.registrations[i].userObj.email == userObj.email && state.registrations[i].userObj.password == userObj.password) {
+          console.log("Ci sto")
+          alert("Email già registrata, esegui il login!")
+          router.push({
+            name: "FirstPage",
+          });
+          trovato = true;
+          break;
+        } else {
+          trovato = false;
+        }
+      }
+      if (trovato == false) {
+        state.registrations.push(userObj);
+        alert("Nuovo utente registrato con successo")
+        console.log(state.registrations)
+        router.push({
+          name: "FirstPage",
+        });
+      }
+    },
+
   },
   actions: {
+    /* 
+    isValidateAsync({ commit }) {
+      if (commit == false) {
+        state.registrations.push(user)
+      }else{
+        console.log("Sono qui")
+      }
+    },
+    */
   },
   modules: {
   }

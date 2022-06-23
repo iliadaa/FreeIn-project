@@ -4,7 +4,7 @@
       <div class="container">
         <div class="wrap">
           <div class="left-section">
-            <div class="text-color">
+            <div class="text-color" id="texts">
               <div class="iconNameEmail">
                 <b-button type="button" class="btn-close" @click="close()">
                 </b-button>
@@ -102,6 +102,8 @@ export default {
       $(document).ready(function () {
         if ((this.isRolee = false)) {
           $("#inners").css("display", "none");
+        } else {
+          $("#texts").css("height", "52 0px");
         }
       });
       //return because without it i won't be able to get a singular data.

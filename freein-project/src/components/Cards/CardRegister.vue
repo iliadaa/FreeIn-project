@@ -51,7 +51,7 @@
             <b-button
               class="sign-up-btn"
               type="submit"
-              @click="registerUser(user, registrations, total)"
+              @click="correctData(user.email, user)"
               >SIGN UP</b-button
             >
           </b-form>
@@ -90,6 +90,7 @@ export default {
         name: "",
         surname: "",
         testDone: false,
+        roles: ["private"],
       },
       hide: false,
       show: true,
@@ -105,10 +106,11 @@ export default {
       }
     },
 
-    correctData(email, password, name, surname) {
+    correctData(email, user) {
       //console.log(email + password);
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
         this.changePage(true);
+        this.validation(user);
         console.log("L'email è scritta correttamente!");
         if (name.length > 2) {
           alert("ciao " + name.length);
@@ -123,7 +125,6 @@ export default {
     },
     onSubmit(event) {
       event.preventDefault();
-      registerUser(user, registrations, total);
     },
     onReset(event) {
       event.preventDefault();
@@ -150,22 +151,17 @@ export default {
       }
     },
 
-    registerUser(user, registrations, total) {
-      //io mi sto registrando come utente nuovo 
-      var i;
-      var userObj = {
-        id: user.id,
-        email: user.email,
-        password: user.password,
-        name: user.name,
-        surname: user.surname,
-        testDone: user.testDone,
-      }
-      //devo validare se la email che ho usato è corretta e se non è gia presente nelle registrazioni
-      
-      //chiamo metodo per verifica mail di user.email
-      //nome_metodo : Validate true o false
-      /*
+    validation(user) {
+      this.$store.commit("isValidate", user);
+    },
+
+    //io mi sto registrando come utente nuovo
+
+    //devo validare se la email che ho usato è corretta e se non è gia presente nelle registrazioni
+
+    //chiamo metodo per verifica mail di user.email
+    //nome_metodo : Validate true o false
+    /*
       if (validate && find_inregistration of email) {
           //allert mail presente 
       } else {
@@ -180,7 +176,6 @@ export default {
           });
       }
       */
-    },
     unregister(registrations) {
       const user = this.$store.registrations.find((user) => {
         return user.email == registrations.email;
