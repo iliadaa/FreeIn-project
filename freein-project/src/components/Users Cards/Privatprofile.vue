@@ -14,12 +14,12 @@
           <img class="party" src="@/assets/Party.png" />
         </div>
         <div class="personal-attitude-percentage">
-          <label>50%</label>
-          <label>70%</label>
-          <label>50%</label>
-          <label>70%</label>
-          <label>30%</label>
-          <label>30%</label>
+          <label>{{ takingValue.profileTest.arte }}%</label>
+          <label>{{ takingValue.profileTest.mare }}%</label>
+          <label>{{ takingValue.profileTest.cibo }}%</label>
+          <label>{{ takingValue.profileTest.relax }}%</label>
+          <label>{{ takingValue.profileTest.party }}%</label>
+          <label>{{ takingValue.profileTest.nature }}%</label>
         </div>
       </div>
       <!-- Profile -->
@@ -43,10 +43,13 @@
           <button class="button-area" @click="showDialogPage">
             <img class="settings" src="@/assets/settings.png" />
           </button>
-          <DialogPage v-show="isDialogPageVisible" @close="closeDialogPage"></DialogPage>
+          <DialogPage
+            v-show="isDialogPageVisible"
+            @close="closeDialogPage"
+          ></DialogPage>
         </div>
         <div id="container-avatar">
-          <button class="button-area" @click="showTopRightVisible">
+          <button class="button-area hide-btn" @click="showTopRightVisible">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
           <!-- modal here -->
@@ -98,11 +101,18 @@
               <div class="wrap">
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
                   <div class="image-card1">
-                    <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                    <img
+                      src="@/assets/business-photo/business-image-1.jpg"
+                      alt=""
+                    />
                   </div>
                   <div class="cards2body">
                     <p>Peschici</p>
@@ -119,10 +129,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -138,10 +155,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -159,10 +183,17 @@
               <div class="wrap">
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -178,10 +209,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -197,10 +235,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -218,10 +263,17 @@
               <div class="wrap">
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -237,10 +289,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -256,10 +315,17 @@
                 </div>
                 <div class="cards2">
                   <div class="cards2i">
-                    <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="usericon"><i class="fas fa-user-circle"></i></div>
+                    <div class="mapicon">
+                      <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="usericon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
                   </div>
-                  <img src="@/assets/business-photo/business-image-1.jpg" alt="" />
+                  <img
+                    src="@/assets/business-photo/business-image-1.jpg"
+                    alt=""
+                  />
                   <div class="cards2body">
                     <p>Peschici</p>
                     <div class="cards2icons">
@@ -352,7 +418,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
                 <VueSlideBar
@@ -361,7 +430,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
                 <VueSlideBar
@@ -370,7 +442,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
                 <VueSlideBar
@@ -379,7 +454,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
                 <VueSlideBar
@@ -388,7 +466,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
                 <VueSlideBar
@@ -397,7 +478,10 @@
                   :max="100"
                   :processStyle="slider.processStyle"
                   :lineHeight="slider.lineHeight"
-                  :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                  :tooltipStyles="{
+                    backgroundColor: 'grey',
+                    borderColor: 'grey',
+                  }"
                 >
                 </VueSlideBar>
               </div>
@@ -463,6 +547,21 @@ export default {
     },
     closeTopRightVisible() {
       this.isTopRightVisible = false;
+    },
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+
+    takingValue: function () {
+      $(document).ready(function () {
+        if ((this.isRolee = true)) {
+          $("#inners").css("display", "none");
+        }
+      });
+      console.log(this.inSession[0].userObj.name);
+      return this.inSession[0].userObj;
     },
   },
   components: {
@@ -776,7 +875,8 @@ input {
   font-size: 15px;
   border: solid white 2px;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   background-color: transparent;
 }
 .search {

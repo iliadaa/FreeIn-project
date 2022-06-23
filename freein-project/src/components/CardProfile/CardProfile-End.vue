@@ -1,5 +1,4 @@
 <template>
-
   <div class="container">
     <h1>Il Tuo profilo &egrave;</h1>
 
@@ -133,9 +132,7 @@
     </div>
 
     <div class="button1">
-      <a class="button" @click="testCompleted(inSession)"
-        >portami alla mia hall</a
-      >
+      <a class="button" @click="isRolee()">portami alla mia hall</a>
     </div>
   </div>
 </template>
@@ -144,8 +141,11 @@
 export default {
   methods: {
     testCompleted(inSession) {
-        inSession.testDone == true;
-        console.log(inSession);
+      inSession.testDone == true;
+      console.log(inSession);
+    },
+    isRolee() {
+      this.$store.commit("isRole");
     },
   },
 
@@ -192,7 +192,8 @@ h1 {
   margin-left: 100px;
   margin-bottom: 75px;
 }
-.circle1, .circle2 {
+.circle1,
+.circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
@@ -351,91 +352,92 @@ img {
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-h1 {
-  font-size: 25px;
-}
-.circles {
-  margin-bottom: 50px;
-}
-.circle1, .circle2 {
-  height: 200px;
-  width: 200px;
-}
-.img1 {
-  margin-right: 60px;
-  margin-top: 10px;
-}
-.img2 {
-  width: 141px;
-  height: 130px;
-  margin-right: 25px;
-}
-.cards {
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  margin-right: 5px;
-}
-img {
-  width: 51px;
-  height: 70px;
-}
-.arte {
-  width: 70px;
-  height: 100px;
-  margin-right: inherit;
-  margin-bottom: 50px;
-}
-.mare {
-  width: 70px;
-  height: 100px;
-  margin-right: inherit;
-  margin-bottom: 50px;
-}
-.gourmet {
-  width: 70px;
-  height: 100px;
-  margin-right: inherit;
-  margin-bottom: 50px;
-}
-.relax {
-  width: 70px;
-  height: 100px;
-  margin-right: inherit;
-}
-.party {
-  width: 70px;
-  height: 100px;
-  margin-right: inherit;
-}
-.natura {
-  width: 70px;
-  height: 100px;
-}
-.cardcontainer1 {
-  top: 75px;
-}
-.cardcontainer2 {
-  top: 85px;
-  left: 17px;
-}
-.text {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .circles {
+    margin-bottom: 50px;
+  }
+  .circle1,
+  .circle2 {
+    height: 200px;
+    width: 200px;
+  }
+  .img1 {
+    margin-right: 60px;
+    margin-top: 10px;
+  }
+  .img2 {
+    width: 141px;
+    height: 130px;
+    margin-right: 25px;
+  }
+  .cards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-right: 5px;
+  }
+  img {
+    width: 51px;
+    height: 70px;
+  }
+  .arte {
+    width: 70px;
+    height: 100px;
+    margin-right: inherit;
+    margin-bottom: 50px;
+  }
+  .mare {
+    width: 70px;
+    height: 100px;
+    margin-right: inherit;
+    margin-bottom: 50px;
+  }
+  .gourmet {
+    width: 70px;
+    height: 100px;
+    margin-right: inherit;
+    margin-bottom: 50px;
+  }
+  .relax {
+    width: 70px;
+    height: 100px;
+    margin-right: inherit;
+  }
+  .party {
+    width: 70px;
+    height: 100px;
+    margin-right: inherit;
+  }
+  .natura {
+    width: 70px;
+    height: 100px;
+  }
+  .cardcontainer1 {
+    top: 75px;
+  }
+  .cardcontainer2 {
+    top: 85px;
+    left: 17px;
+  }
+  .text {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.button1 {
-  margin-top: 50px;
-}
-.button {
-  padding: 10px 22px;
-  font-size: 17px;
-}
+  .button1 {
+    margin-top: 50px;
+  }
+  .button {
+    padding: 10px 22px;
+    font-size: 17px;
+  }
 }
 </style>

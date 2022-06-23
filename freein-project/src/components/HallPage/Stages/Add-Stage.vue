@@ -3,7 +3,7 @@
     <div class="form-group">
       <div class="ph-layout">
         <h3>Foto tappa (obbligatorio)</h3>
-        <div  
+        <div
           class="wrapper px-2 stage-ph"
           v-cloak
           @drop.prevent="addFile"
@@ -14,7 +14,7 @@
           <p style="margin-top: -40px">
             Dimensioni minime di "808 x 632 pixel"
           </p>
-          
+
           <ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
               {{ file.name }} ({{ file.size | kb }} kb)
@@ -29,7 +29,7 @@
         </div>
       </div>
 
- <!--     
+      <!--     
 <ul>
   <li v-for="element of stageInfo" :key="element.id">
       {{element.description}}
@@ -127,62 +127,65 @@
         </div>
       </div>
 
-      <b-form @submit="allerta" style="width: auto" >
-      <div class="stage-details">
-        <h2>
-          Titolo tappa
-          <p>(obbligatorio)</p>
-        </h2>
-        <div v-text="(maxTitle - textTitle.length)" style="color: red"></div>
-        
-        <input
-         required=""
-          type="text"
-          :maxlength="maxTitle"
-          v-model="textTitle"
-          style="padding-left: 10px"
-          placeholder="Assegna un titolo alla tappa massimo 40 caratteri"
-          @keyup.enter="addInfo"
-        />
-        <h2>
-          Location
-          <p>(obbligatorio)</p>
-        </h2>
-        <div v-text="(maxLocation - textLocation.length)" style="color: red"></div>
-        <input
-          type="text"
-          :maxlength="maxLocation"
-          v-model="textLocation"
-          style="padding-left: 10px"
-          placeholder="Inserisci il nome del luogo massimo 40 caratteri"
-          required=""
-        />
+      <b-form @submit="allerta" style="width: auto">
+        <div class="stage-details">
+          <h2>
+            Titolo tappa
+            <p>(obbligatorio)</p>
+          </h2>
+          <div v-text="maxTitle - textTitle.length" style="color: red"></div>
 
-        <h2>
-          Testo
-          <p>(obbligatorio)</p>
-        </h2>
-        <div v-text="(maxText - textText.length)" style="color: red"></div>
-        <input
-          required=""
-          type="text"
-          style="height: 150px; padding-bottom: 50%; padding-left: 10px"
-          placeholder="Inserisci descrizione massimo 37 caratteri"
-          :maxlength="maxText"
-          v-model="textText"
-          @keyup.enter="addInfo"
-        />
-        
-      </div>
-      
-      <div class="end-adding-buttons">
-        <a class="cancel" href="#/privatprofile">Annulla</a>
-        <a class="save-as" href="#">Salva come bozza</a>
-        <a @click="allerta" class="publishy" type="submit" >Pubblica</a>
-        href="#/summarystage"
-      </div>
+          <input
+            required=""
+            type="text"
+            :maxlength="maxTitle"
+            v-model="textTitle"
+            style="padding-left: 10px"
+            placeholder="Assegna un titolo alla tappa massimo 40 caratteri"
+            @keyup.enter="addInfo"
+          />
+          <h2>
+            Location
+            <p>(obbligatorio)</p>
+          </h2>
+          <div
+            v-text="maxLocation - textLocation.length"
+            style="color: red"
+          ></div>
+          <input
+            type="text"
+            :maxlength="maxLocation"
+            v-model="textLocation"
+            style="padding-left: 10px"
+            placeholder="Inserisci il nome del luogo massimo 40 caratteri"
+            required=""
+          />
+
+          <h2>
+            Testo
+            <p>(obbligatorio)</p>
+          </h2>
+          <div v-text="maxText - textText.length" style="color: red"></div>
+          <input
+            required=""
+            type="text"
+            style="height: 150px; padding-bottom: 50%; padding-left: 10px"
+            placeholder="Inserisci descrizione massimo 37 caratteri"
+            :maxlength="maxText"
+            v-model="textText"
+            @keyup.enter="addInfo"
+          />
+        </div>
+
+        <div class="end-adding-buttons">
+          <a class="cancel" href="#/privatprofile">Annulla</a>
+          <a class="save-as" href="#">Salva come bozza</a>
+          <a href="href=#/summarystage" class="publishy" type="submit"
+            >Pubblica</a
+          >
+        </div>
       </b-form>
-      
+
       <div style="margin-left: -110px; margin-top: -650px; width: 90%">
         <hr style="transform: rotate(90deg)" />
       </div>
@@ -192,8 +195,8 @@
 
 <script>
 import VueSlideBar from "vue-slide-bar";
-import axios from 'axios'
-const baseURL = "http://localhost:3000/jsonarray"
+import axios from "axios";
+const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
@@ -220,7 +223,7 @@ export default {
     };
   },
 
-/* 
+  /* 
   async created(){
     try {
       const res = await axios.get(baseURL);
@@ -254,12 +257,12 @@ export default {
         return f != file;
       });
     },
-   selectFile(){
+    selectFile() {
       let fileInputElement = this.$refs.file;
       fileInputElement.click();
       // ...
     },
-    allerta(){
+    allerta() {
       alert("Funziono");
     },
 
@@ -271,7 +274,6 @@ export default {
     }
     */
   },
-  
 };
 </script>
 

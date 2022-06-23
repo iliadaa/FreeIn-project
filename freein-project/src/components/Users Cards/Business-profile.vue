@@ -36,16 +36,19 @@
           <button class="button-area" @click="showTopRightVisible">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
-         <!-- modal here -->
-          <TopRightListHall v-show="isTopRightVisible" @close="closeTopRightVisible"></TopRightListHall>
+          <!-- modal here -->
+          <TopRightListHall
+            v-show="isTopRightVisible"
+            @close="closeTopRightVisible"
+          ></TopRightListHall>
         </div>
       </div>
 
       <div class="map-profile">
         <div class="plus-icon">
-          <a class="fas fa-plus" href="#"> </a>
+          <a class="fas fa-plus" href="/#/stagecreation"> </a>
           <span class="text">Crea tappa</span>
-          <a class="fas fa-plus" href="#"></a>
+          <a class="fas fa-plus" href="/#/itinerarycreation"></a>
           <span class="text">Crea Itinerario</span>
         </div>
         <img src="@/assets/map.jpg" />
@@ -77,7 +80,9 @@
         <img src="@/assets/img-7.png" />
         <img src="@/assets/img-8.png" style="margin: 30px" />
         <div class="button button-console">
-          <button><a href="http://localhost:8080/#/businesscard1">Business >></a></button>
+          <button>
+            <a href="http://localhost:8080/#/businesscard1">Business >></a>
+          </button>
         </div>
       </div>
       <div class="image-group">
@@ -144,7 +149,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
               <VueSlideBar
@@ -153,7 +161,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
               <VueSlideBar
@@ -162,7 +173,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
               <VueSlideBar
@@ -171,7 +185,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
               <VueSlideBar
@@ -180,7 +197,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
               <VueSlideBar
@@ -189,7 +209,10 @@
                 :max="100"
                 :processStyle="slider.processStyle"
                 :lineHeight="slider.lineHeight"
-                :tooltipStyles="{ backgroundColor: 'grey', borderColor: 'grey' }"
+                :tooltipStyles="{
+                  backgroundColor: 'grey',
+                  borderColor: 'grey',
+                }"
               >
               </VueSlideBar>
             </div>
@@ -203,7 +226,7 @@
 <script>
 import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
-import TopRightListHall from "../Users Cards/TopRightListHall.vue"
+import TopRightListHall from "../Users Cards/TopRightListHall.vue";
 import VueSlideBar from "vue-slide-bar";
 export default {
   name: "Business-profile",
@@ -240,14 +263,15 @@ export default {
     closeModalDashBoard(data) {
       console.log(data);
       this.isModalDashBoardVisible = false;
-    }, 
-    showTopRightVisible(){
-      this.isTopRightVisible=true;
     },
-    closeTopRightVisible(){
-      this.isTopRightVisible=false; 
-    }
+    showTopRightVisible() {
+      this.isTopRightVisible = true;
+    },
+    closeTopRightVisible() {
+      this.isTopRightVisible = false;
+    },
   },
+
   components: {
     Modal,
     Dashboard,
@@ -485,7 +509,8 @@ input {
   font-size: 15px;
   border: solid white 2px;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   background-color: transparent;
 }
 .search {

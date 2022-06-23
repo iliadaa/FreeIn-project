@@ -7,13 +7,14 @@
             <div class="text-color">
               <div class="iconNameEmail">
                 <b-button type="button" class="btn-close" @click="close()">
-                  
                 </b-button>
                 <div class="flexID">
                   <img class="avatar" src="@/assets/avatar.png" />
-                  <h2>Paolo Rossi</h2>
-                  <p>admin@yoursite.com</p>
-                  <button class="edit-profile">Modifica profilo</button>
+                  <h2>{{ takingValue.name }}</h2>
+                  <p>{{ takingValue.email }}</p>
+                  <button @click="changePage" class="edit-profile">
+                    Modifica profilo
+                  </button>
                 </div>
               </div>
               <button style="margin-top: -60px" @click="alert">
@@ -34,7 +35,7 @@
                   <span class="section-text">Shop territoriale</span>
                 </div>
               </button>
-              <button @click="alert">
+              <button id="inners" @click="alert">
                 <div class="space-margin-left">
                   <span class="fa-regular fa-user"></span>
                   <span class="section-text">Inners</span>
@@ -64,15 +65,17 @@ export default {
     close() {
       this.$emit("close");
     },
+
+    isRolee() {
+      this.$store.commit("isRole");
+    },
     //need a new method that is going to let chanePage if all the forms are compiled
     //correctly :)
 
-    changePage(change) {
-      if (change == true) {
-        this.$router.push({
-          name: "Privatprofile",
-        });
-      }
+    changePage() {
+      this.$router.push({
+        name: "EditProfilePage",
+      });
     },
     alert(event) {
       event.preventDefault();
@@ -87,6 +90,23 @@ export default {
       } else if (checkBox2.checked == true) {
         checkBox1.checked = false;
       }
+    },
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+
+    takingValue: function () {
+      //jquery in this function is working because the function is dinamic it's like a continious method (idea of computed)
+      $(document).ready(function () {
+        if ((this.isRolee = false)) {
+          $("#inners").css("display", "none");
+        }
+      });
+      //return because without it i won't be able to get a singular data.
+      //this return also give me the possibility to write just takingValue.name exc because i get the data of the userObj
+      return this.inSession[0].userObj;
     },
   },
 };
@@ -114,7 +134,7 @@ export default {
   display: flex;
   color: grey;
   flex-direction: column;
-  height: 515px;
+  height: 450px;
 }
 
 .iconNameEmail {
@@ -124,20 +144,20 @@ export default {
   padding-left: 45px;
 }
 
-.btn-close{
-    position: absolute;
-    right: 2px;
-    top: 10px;
-    border-color: transparent;
-    background-color: whitesmoke;
-    height: 10px;
-    width: 10px;
-    font-size: 10px;
+.btn-close {
+  position: absolute;
+  right: 2px;
+  top: 10px;
+  border-color: transparent;
+  background-color: whitesmoke;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
 }
 
-.btn-close:hover{
-    background-color: #ea5b0c;
-    border-color: transparent;
+.btn-close:hover {
+  background-color: #ea5b0c;
+  border-color: transparent;
 }
 
 .flexID p,

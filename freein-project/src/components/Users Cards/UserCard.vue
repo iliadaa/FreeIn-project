@@ -4,10 +4,12 @@
       <h1>Sei un’azienda o un privato?</h1>
       <div class="button-group">
         <b-button class="button business-button"
-          ><a href="http://localhost:8080/#/businesscard1">AZIENDA</a></b-button
+          ><a href="http://localhost:8080/#/businessprofile"
+            >AZIENDA</a
+          ></b-button
         >
         <b-button class="button privat-button"
-          ><a href="http://localhost:8080/#/businessprofile">PRIVATO</a></b-button
+          ><a href="http://localhost:8080/#/businesscard1">PRIVATO</a></b-button
         >
       </div>
     </div>
