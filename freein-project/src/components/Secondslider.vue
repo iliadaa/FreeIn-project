@@ -44,12 +44,37 @@
                 <div class="heading">
                     <p>Freein il primo vero Social travel che ti premia.</p>
                 </div>
-                <div class="function">
+                <!--<div class="function">
+                    <div><a href="#">Scopri come funziona</a></div>
+                    <div><a href="#"><i class="fas fa-angle-double-right"></i></a></div>
+                </div>-->
+        </div>
+    </div>
+                <div class="text5">
+                    <p>Freein ti premia</p>
+                </div>
+        
+        
+                <div class="text6">
+                    <p>Crea e condividi il tuo itinerario e</p>
+                    <p>guadagnerai ogni volta che i tuoi amici lo</p>
+                    <p>salveranno</p>
+                </div>
+        
+                <div class="text7">
+                    <p>Potrai spendere i tuoi crediti scegliendo</p>
+                    <p>le tappe che ti ispirano di piu'</p>
+                </div>
+        
+                <div class="text8">
+                    <p>Se sei un'azienda turistica potrai utilizzare</p>
+                    <p>i tuoi crediti sponsorizzando la tua attivita'</p>
+                </div>
+
+                <div class="function2">
                     <div><a href="#">Scopri come funziona</a></div>
                     <div><a href="#"><i class="fas fa-angle-double-right"></i></a></div>
                 </div>
-        </div>
-    </div>
 </div>
 </template>
 
@@ -114,8 +139,69 @@
   padding-left: 10px;
 }
 
+.text5, .text6, .text7, .text8  {
+  display: none;
+}
+.function2 {
+    display: none;
+}
+
 @media (max-width: 575.98px) {
 .second-slider-imagetext {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+
+.second-slider-image img {
+    width: 100%;
+    height: auto;
+    margin-top: -170px;
+}
+
+.second-slider-text {
+    display: none;
+}
+.second-slider-text2 {
+    display: block;
+}
+.second-slider-text2 p {
+    text-align: right;
+    color: #ea5b0c;
+}
+.second-slider-text2 .heading {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.second-slider-text .text1 {
+    display: none;
+}
+
+.second-slider-text .text2, .text3, .text4 {
+    display: none;
+}
+.function {
+    display: none;
+}
+
+.function a {
+    display: none;
+}
+.function i {
+    display: none;
+}
+
+.text5, .text6, .text7, .text8  {
+  display: block;
+}
+.function2 {
+    display: block;
+}
+
+
+/*.second-slider-imagetext {
     display: flex;
     justify-content: space-evenly;
     margin-top: 80px;
@@ -161,7 +247,7 @@
   font-size: 14px;
   padding-top: 8px;
   padding-left: 2px;
-}
+}*/
 }
 </style>
 
