@@ -1,11 +1,8 @@
 <!-- PADRE -->
 <template>
   <div class="container1">
-    <div class="first-travel" v-for="data in datas" :key="data.id">
-      <b-card
-        @click="alert(data.id, datas[data.id - 1])"
-        class="overflow-hidden"
-      >
+    <!--<div class="first-travel" v-for="data in datas" :key="data.id">
+      <b-card @click="alert(data.id, datas[data.id - 1])" class="overflow-hidden">
         <b-row no-gutters>
           <b-col cols="4">
             <div class="cards">
@@ -29,9 +26,33 @@
           </b-col>
         </b-row>
       </b-card>
-    </div>
-    <DialogCardList :messagge="filteredDialog"/>
+    </div> -->
+    <!--  <DialogCardList :messagge="filteredDialog"/>-->
     <!-- <DialogCardList :messagge="arrayVuoto" /> -->
+
+    <div class="first-travel" v-for="data in datas" :key="data.id">
+      <b-card
+        :img-src="data.image"
+        no-body
+        class="overflow-hidden"
+        img-left
+        img-width="300px"
+      >
+        <b-card-body style="width: 500px" align="left">
+          <b-card-title :title="data.stage"></b-card-title>
+          <b-card-sub-title :sub-title="data.inlineDate"></b-card-sub-title>
+          <b-card-text>
+            <p>{{ data.description }}</p>
+          </b-card-text>
+          <template>
+            <div class="location">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>{{ data.location }}</p>
+            </div>
+          </template>
+        </b-card-body>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -53,8 +74,7 @@ export default {
   methods: {
     alert(id, datas) {
       alert("Sto copiando " + id);
-      this.$emit('choosed',datas);
-    
+      this.$emit("choosed", datas);
 
       /* 
       alert(id, datas,){
@@ -82,31 +102,11 @@ export default {
   height: 200px;
   margin-bottom: 40px;
 }
-
-.flex {
+.location {
   display: flex;
   align-items: baseline;
 }
-
-.flex i {
-  margin-top: 5px;
-  margin-right: 3px;
-}
-
-.text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-layout p {
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-
-.text img {
-  width: 250px;
-  height: 200px;
-  margin-top: -16px;
+.location i {
+  margin-right: 7px;
 }
 </style>

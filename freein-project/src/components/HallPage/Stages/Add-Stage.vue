@@ -11,17 +11,12 @@
         >
           <p href="#">Carica immagine</p>
           <br />
-          <p style="margin-top: -40px">
-            Dimensioni minime di "808 x 632 pixel"
-          </p>
+          <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
 
           <ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
               {{ file.name }} ({{ file.size | kb }} kb)
-              <button
-                class="btn btn-danger btn-sm float-right"
-                @click="removeFile(file)"
-              >
+              <button class="btn btn-danger btn-sm float-right" @click="removeFile(file)">
                 Close
               </button>
             </li>
@@ -148,10 +143,7 @@
             Location
             <p>(obbligatorio)</p>
           </h2>
-          <div
-            v-text="maxLocation - textLocation.length"
-            style="color: red"
-          ></div>
+          <div v-text="maxLocation - textLocation.length" style="color: red"></div>
           <input
             type="text"
             :maxlength="maxLocation"
@@ -180,15 +172,20 @@
         <div class="end-adding-buttons">
           <a class="cancel" href="#/privatprofile">Annulla</a>
           <a class="save-as" href="#">Salva come bozza</a>
-          <a href="href=#/summarystage" class="publishy" type="submit"
-            >Pubblica</a
-          >
+          <a class="publishy" type="submit" @click="SubmitTappa">Pubblica</a>
+          href="#/summarystage"
         </div>
       </b-form>
 
       <div style="margin-left: -110px; margin-top: -650px; width: 90%">
         <hr style="transform: rotate(90deg)" />
       </div>
+    </div>
+    <div id="editor">
+      <p>
+        <input type="file" accept="image/jpeg/*" @change="uploadImage()" />
+      </p>
+      <img :src="imageSrc" class="image" />
     </div>
   </div>
 </template>
@@ -200,6 +197,8 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
+      imageSrc: [],
+      rawImg: "",
       //stageInfo: [],
       slider: {
         lineHeight: 2,
@@ -223,7 +222,7 @@ export default {
     };
   },
 
-  /* 
+  /*
   async created(){
     try {
       const res = await axios.get(baseURL);
@@ -244,6 +243,39 @@ export default {
   },
 
   methods: {
+    uploadImage() {
+      const file = document.querySelector("input[type=file]").files[0];
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        this.rawImg = reader.result;
+        console.log(this.rawImg, "hello");
+      };
+      reader.readAsDataURL(file);
+      console.log(file, "hello2");
+    },
+    SubmitTappa() {
+      const options = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          image: this.rawImg,
+          stage: this.textTitle,
+          location: this.textLocation,
+          description: this.textText,
+        }),
+      };
+      fetch(baseURL, options)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+        })
+        .catch((err) => console.log("Request Failed", err));
+    },
+
     addFile(e) {
       let files = e.dataTransfer.files;
       [...files].forEach((file) => {
@@ -266,13 +298,14 @@ export default {
       alert("Funziono");
     },
 
-    /* 
-    async addInfo(){
-      const res = await axios.post(baseURL, {stage: this.textTitle, description: this.textText});
-       this.stageInfo = [...this.stageInfo, res.data];
-       this.textTitle = '';
-    }
-    */
+    async addInfo() {
+      const res = await axios.post(baseURL, {
+        stage: this.textTitle,
+        description: this.textText,
+      });
+      this.stageInfo = [...this.stageInfo, res.data];
+      this.textTitle = "";
+    },
   },
 };
 </script>
