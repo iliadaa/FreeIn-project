@@ -24,6 +24,9 @@
                 <div class="heading">
                     <p>Freein ti porta alla scoperta di nuovi itinerari di viaggio</p>
                 </div>
+                <div class="text1">
+                    <p>Conoscerai nuovi itinerari di viaggio attraverso l'esperienza dei tuoi nuovi amici.</p>
+                </div>
         </div>
 
     </div>
@@ -217,6 +220,130 @@
 
 @media (max-width: 575.98px) {
 .third-slider-imagetext {
+    margin-top: 80px;
+}
+
+.third-slider-image img {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+}
+.third-slider-text {
+    display: none;
+}
+
+.third-slider-text2 {
+    display: block;
+}
+
+.third-slider-text2 p {
+    text-align: right;
+    color: #2B3081;
+}
+.third-slider-text2 .heading {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.third-slider-text2 .text1 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+.circles {
+    display: block;
+    margin-top: 30px;
+}
+
+.circle01 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.circle02 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle03 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle04 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.circletext1 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext2 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+.circletext3 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext4 {
+    text-align: center;
+    line-height: 4px;
+    color: #2B3081;
+}
+
+.circletext1 h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+.circletext2 h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.circletext3 h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.circletext4 h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+/*.third-slider-imagetext {
     display: flex;
     justify-content: space-evenly;
     margin-top: 80px;
@@ -246,7 +373,7 @@
 }
 .circles {
     display: none;
-}
+}*/
 }
 </style>
 
