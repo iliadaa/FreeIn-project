@@ -14,7 +14,6 @@
           <img class="party" src="@/assets/Party.png" />
         </div>
         <div class="personal-attitude-percentage">
-          <label>{{ takingValue.profileTest.arte }}%</label>
           <label>{{ takingValue.profileTest.mare }}%</label>
           <label>{{ takingValue.profileTest.cibo }}%</label>
           <label>{{ takingValue.profileTest.relax }}%</label>
@@ -119,7 +118,7 @@
                     />
                   </div>
                   <div class="cards2body">
-                    <p>{{ takingValue.stage.stage }}</p>
+                    <p>Peschici</p>
                     <div class="cards2icons">
                       <div class="button1">
                         <a href="#" class="button">Go</a>
@@ -131,32 +130,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cards2">
-                  <div class="cards2i">
-                    <div class="mapicon">
-                      <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <div class="usericon">
-                      <i class="fas fa-user-circle"></i>
-                    </div>
-                  </div>
-                  <img
-                    src="@/assets/business-photo/business-image-1.jpg"
-                    alt=""
-                  />
-                  <div class="cards2body">
-                    <p>Peschici</p>
-                    <div class="cards2icons">
-                      <div class="button1">
-                        <a href="#" class="button">Go</a>
-                      </div>
-                      <div>
-                        <a href=""><i class="{fas fa-star}"></i></a>
-                        <a href=""><i class="far fa-bookmark"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <itineraryHallCard />
                 <div class="cards2">
                   <div class="cards2i">
                     <div class="mapicon">
@@ -503,6 +477,7 @@ import Dashboard from "../DashBoard/ModalDashBoard.vue";
 import TopRightListHall from "../Users Cards/TopRightListHall.vue";
 import VueSlideBar from "vue-slide-bar";
 import DialogPage from "../Users Cards/DialogPage-Card.vue";
+import itineraryHallCard from "../HallPage/Itineraries/ItineraryHallCard.vue";
 
 export default {
   data() {
@@ -575,6 +550,7 @@ export default {
     Dashboard,
     TopRightListHall,
     VueSlideBar,
+    itineraryHallCard,
   },
 };
 </script>

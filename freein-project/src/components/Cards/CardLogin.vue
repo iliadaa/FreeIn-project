@@ -34,7 +34,7 @@
           <p class="forgot-password">Forgot password?</p>
           <b-button
             class="login-btn"
-            @click="wrongLoginData(form.email, total, inSession)"
+            @click="wrongLoginData(form.email, total, inSession), isEmpty()"
             type="submit"
             >LOG IN</b-button
           >
@@ -90,6 +90,10 @@ export default {
     },
     isRolee() {
       this.$store.commit("isRole");
+    },
+
+    isEmpty() {
+      this.$store.commit("clearInSession");
     },
 
     /* 

@@ -46,248 +46,256 @@ import DialogPage from "../views/DialogPage.vue"
 import PrivacyPolicy from "../views/Privacy-policy.vue"
 import CookiePolicy from "../views/Cookie-policy.vue"
 import TermsAndConditons from "../views/Terms-and-conditions.vue"
+import StageItineraryCard from "../views/Stage&ItineraryCard.vue"
 
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
-        name: 'FirstPage',
-        component: FirstPage
-    },
-    {
-        path: '/about',
-        name: 'AboutView',
-        component: AboutView
-    },
-    {
-        path: '/signUp',
-        name: 'SignUp',
-        component: SignUp
-    },
-    {
-        path: '/test',
-        name: 'Test',
-        component: Test
-    },
-    {
-        path: '/testend',
-        name: 'TestEnd',
-        component: TestEnd
-    },
-    {
-        path: '/dashboard1',
-        name: 'Dashboard1',
-        component: Dashboard1
-    },
-    {
-        path: '/testend2',
-        name: 'TestEnd2',
-        component: TestEnd2
-    },
-    {
-        path: '/businesspage',
-        name: 'BusinessPage',
-        component: BusinessPage
-    },
-    {
-        path: '/card0',
-        name: 'Card0',
-        component: Card0
-    },
-    {
-        path: '/card1',
-        name: 'Card1',
-        component: Card1
-    },
-    {
-        path: '/card2',
-        name: 'Card2',
-        component: Card2
-    },
-    {
-        path: '/card3',
-        name: 'Card3',
-        component: Card3
-    },
+    path: '/',
+    name: 'FirstPage',
+    component: FirstPage
+},
+{
+    path: '/about',
+    name: 'AboutView',
+    component: AboutView
+},
+{
+    path: '/signUp',
+    name: 'SignUp',
+    component: SignUp
+},
+{
+    path: '/test',
+    name: 'Test',
+    component: Test
+},
+{
+    path: '/testend',
+    name: 'TestEnd',
+    component: TestEnd
+},
+{
+    path: '/dashboard1',
+    name: 'Dashboard1',
+    component: Dashboard1
+},
+{
+    path: '/testend2',
+    name: 'TestEnd2',
+    component: TestEnd2
+},
+{
+    path: '/businesspage',
+    name: 'BusinessPage',
+    component: BusinessPage
+},
+{
+    path: '/card0',
+    name: 'Card0',
+    component: Card0
+},
+{
+    path: '/card1',
+    name: 'Card1',
+    component: Card1
+},
+{
+    path: '/card2',
+    name: 'Card2',
+    component: Card2
+},
+{
+    path: '/card3',
+    name: 'Card3',
+    component: Card3
+},
 
-    {
-        path: '/cardProfile',
-        name: 'Cardprofile ',
-        component: Cardprofile
-    },
-    {
-        path: '/stagecreation',
-        name: 'StageCreation ',
-        component: StageCreation
-    },
-    {
-        path: '/itinerarycreation',
-        name: 'ItineraryCreation ',
-        component: ItineraryCreation
-    },
-    {
-        path: '/stagelist',
-        name: 'SelectionStageList ',
-        component: SelectionStageList
-    },
-    {
-        path: '/editProfile',
-        name: 'EditProfilePage',
-        component: EditProfilePage
-    },
-    {
-        path: '/card4',
-        name: 'Card4',
-        component: Card4
-    },
-    {
-        path: '/card5',
-        name: 'Card5',
-        component: Card5
-    },
-    {
-        path: '/card6',
-        name: 'Card6',
-        component: Card6
-    },
-    {
-        path: '/card7',
-        name: 'Card7',
-        component: Card7
-    },
-    {
-        path: '/card8',
-        name: 'Card8',
-        component: Card8
-    },
-    {
-        path: '/card9',
-        name: 'Card9',
-        component: Card9
-    },
-    {
-        path: '/card10',
-        name: 'Card10',
-        component: Card10
-    },
-    {
-        path: '/card11',
-        name: 'Card11',
-        component: Card11
-    },
-    {
-        path: '/card12',
-        name: 'Card12',
-        component: Card12
-    },
-    {
-        path: '/card13',
-        name: 'Card13',
-        component: Card13
-    },
-    {
-        path: '/card14',
-        name: 'Card14',
-        component: Card14
-    },
-    {
-        path: '/card15',
-        name: 'Card15',
-        component: Card15
-    },
-    {
-        path: '/card16',
-        name: 'Card16',
-        component: Card16
-    },
-    {
-        path: '/businesscard2',
-        name: 'BusinessCard2',
-        component: BusinessCard2
-    },
-    {
-        path: '/businesscard1',
-        name: 'BusinessCard1',
-        component: BusinessCard1
-    },
-    {
-        path: '/businesscard3',
-        name: 'BusinessCard3',
-        component: BusinessCard3
-    },
-    {
-        path: '/businesscard4',
-        name: 'BusinessCard4',
-        component: BusinessCard4
-    },
+{
+    path: '/cardProfile',
+    name: 'Cardprofile ',
+    component: Cardprofile
+},
+{
+    path: '/stagecreation',
+    name: 'StageCreation ',
+    component: StageCreation
+},
+{
+    path: '/itinerarycreation',
+    name: 'ItineraryCreation ',
+    component: ItineraryCreation
+},
+{
+    path: '/stagelist',
+    name: 'SelectionStageList ',
+    component: SelectionStageList
+},
+{
+    path: '/editProfile',
+    name: 'EditProfilePage',
+    component: EditProfilePage
+},
+{
+    path: '/card4',
+    name: 'Card4',
+    component: Card4
+},
+{
+    path: '/card5',
+    name: 'Card5',
+    component: Card5
+},
+{
+    path: '/card6',
+    name: 'Card6',
+    component: Card6
+},
+{
+    path: '/card7',
+    name: 'Card7',
+    component: Card7
+},
+{
+    path: '/card8',
+    name: 'Card8',
+    component: Card8
+},
+{
+    path: '/card9',
+    name: 'Card9',
+    component: Card9
+},
+{
+    path: '/card10',
+    name: 'Card10',
+    component: Card10
+},
+{
+    path: '/card11',
+    name: 'Card11',
+    component: Card11
+},
+{
+    path: '/card12',
+    name: 'Card12',
+    component: Card12
+},
+{
+    path: '/card13',
+    name: 'Card13',
+    component: Card13
+},
+{
+    path: '/card14',
+    name: 'Card14',
+    component: Card14
+},
+{
+    path: '/card15',
+    name: 'Card15',
+    component: Card15
+},
+{
+    path: '/card16',
+    name: 'Card16',
+    component: Card16
+},
+{
+    path: '/businesscard2',
+    name: 'BusinessCard2',
+    component: BusinessCard2
+},
+{
+    path: '/businesscard1',
+    name: 'BusinessCard1',
+    component: BusinessCard1
+},
+{
+    path: '/businesscard3',
+    name: 'BusinessCard3',
+    component: BusinessCard3
+},
+{
+    path: '/businesscard4',
+    name: 'BusinessCard4',
+    component: BusinessCard4
+},
 
-    {
-        path: '/businessprofile1',
-        name: "BusinessProfile1",
-        component: BusinessProfile1
-    },
-    {
-        path: '/businessprofile',
-        name: "BusinessProfile",
-        component: BusinessProfile
-    },
-    {
-        path: '/summaryItinerary',
-        name: 'SummaryItinerary',
-        component: SummaryItinerary
-    },
-    {
-        path: '/summaryStage',
-        name: 'SummaryStage',
-        component: SummaryStage
-    },
-    {
-        path:'/privatprofile',
-        name:'Privatprofile',
-        component:Privatprofile
+{
+    path: '/businessprofile1',
+    name: "BusinessProfile1",
+    component: BusinessProfile1
+},
+{
+    path: '/businessprofile',
+    name: "BusinessProfile",
+    component: BusinessProfile
+},
+{
+    path: '/summaryItinerary',
+    name: 'SummaryItinerary',
+    component: SummaryItinerary
+},
+{
+    path: '/summaryStage',
+    name: 'SummaryStage',
+    component: SummaryStage
+},
+{
+    path: '/privatprofile',
+    name: 'Privatprofile',
+    component: Privatprofile
 
-    },
-    {
-        path:'/switchtest',
-        name:'TestSwitchPage',
-        component:TestSwitchPage
-    },
-    { 
-        path:'/businessprofiletest2',
-        name:'Businessprofiletest2',
-        component:  Businessprofiletest2
-    }
+},
+{
+    path: '/switchtest',
+    name: 'TestSwitchPage',
+    component: TestSwitchPage
+},
+{
+    path: '/businessprofiletest2',
+    name: 'Businessprofiletest2',
+    component: Businessprofiletest2
+}
     ,
-    { 
-        path:'/secondsliderpage',
-        name:'secondsliderpage',
-        component:secondsliderpage
-    }
+{
+    path: '/secondsliderpage',
+    name: 'secondsliderpage',
+    component: secondsliderpage
+}
     ,
-    { 
-        path:'/dialogpage',
-        name:'DialogPage',
-        component: DialogPage
-    },
-    {
-        path:'/privacy-policy',
-        name:'PrivacyPolicy',
-        component:PrivacyPolicy,
-    },
-    {
-        path:'/cookie-policy',
-        name:'CookiePolicy',
-        component:CookiePolicy,
-    },
-    {
-        path:'/terms-and-conditions',
-        name:'TermsAndConditons ',
-        component:TermsAndConditons,
-    }
+{
+    path: '/dialogpage',
+    name: 'DialogPage',
+    component: DialogPage
+},
+{
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy,
+},
+{
+    path: '/cookie-policy',
+    name: 'CookiePolicy',
+    component: CookiePolicy,
+},
+{
+    path: '/terms-and-conditions',
+    name: 'TermsAndConditons ',
+    component: TermsAndConditons,
+    StageItineraryCard
+},
+{
+    path: '/stageItineraryCards',
+    name: 'StageItineraryCard ',
+    component: StageItineraryCard,
 
-    
-   
-   
+}
+
+
+
+
 
 
 ]

@@ -30,17 +30,6 @@ export default new Vuex.Store({
             "relax": 60,
             "party": 50,
             "nature": 30,
-          },
-          "stage":
-          {
-
-            "id": "1",
-            "image": "https://7wallpapers.net/wp-content/uploads/16_Firewatch.png",
-            "inlineDate": "August 28, 2022",
-            "description": "Mountain climbing. Pack your climbing shoes, backpack and get there!",
-            "stage": "Matterhorn",
-            "location": "Matterhorn, Switzerland/Italy ",
-            "icon": "fas fa-star"
           }
         }
       },
@@ -173,6 +162,14 @@ export default new Vuex.Store({
         });
       }
     },
+    clearInSession(state) {
+      if (state.inSession.length == 1) {
+        console.log("Non dovrò sostituire nulla!")
+      } else {
+        console.log("Devo sostituire il valore in arrivo!", state.inSession[1])
+        state.inSession[0] = state.inSession[1];
+      }
+    }
 
   },
   actions: {
