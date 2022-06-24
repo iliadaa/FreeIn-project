@@ -106,4 +106,31 @@ export default {
   padding-top: 5px;
   padding-left: 10px;
 }
+
+@media (max-width: 575.98px) {
+.first-slider-caption {
+  top: 40%;
+  left: 10%;
+}
+
+.first-slider-caption p {
+  font-size: 20px;
+  line-height: 10px;
+}
+
+.discoverhow {
+  margin-left: 50px;
+  margin-top: 8px;
+}
+
+.first-slider-caption a {
+  font-size: 14px;
+}
+
+.first-slider-caption i {
+  font-size: 15px;
+  padding-top: 1px;
+  padding-left: 5px;
+}
+}
 </style>
