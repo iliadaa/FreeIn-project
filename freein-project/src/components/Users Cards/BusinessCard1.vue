@@ -79,6 +79,7 @@ export default {
   justify-content: center;
 }
 .card {
+  width: 841px;
   margin-top: 40px;
   margin-bottom: 100px;
   height: 660px;
