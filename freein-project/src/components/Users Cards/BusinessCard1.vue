@@ -9,7 +9,7 @@
 
       <div class="business-list">
         <!--Added-->
-        <div><img src="@/assets/business-icon.png" /></div>
+        <div class="businessimage"><img src="@/assets/business-icon.png" /></div>
 
         <div>
           <div class="businesstext1">
@@ -77,11 +77,9 @@ export default {
 .container-business-user {
   display: flex;
   justify-content: center;
-  font-family: "Roboto";
 }
 .card {
-  width: 841px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   height: 660px;
   border-radius: 40px;
@@ -92,7 +90,7 @@ export default {
   padding: 3%;
   background-color: #ea5b0c;
   color: white;
-  font-size: x-large;
+  font-size: 30px;
   text-align: center;
 }
 .card-header:first-child {
@@ -104,12 +102,17 @@ export default {
 }
 .card-sub-title > h2 {
   color: black;
+  font-size: 30px;
   text-transform: uppercase;
+}
+
+.card-sub-title > h6 {
+  font-size: 18px;
 }
 .business-1-button {
   background-color: #ea5b0c !important;
   border-color: transparent;
-  font-style: normal;
+  font-size: 18px;
   line-height: 28px;
 }
 .business-1-button:hover {
@@ -141,7 +144,6 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #ea5b0c;
-
   border-radius: 50%;
   display: inline-block;
 }
@@ -184,10 +186,15 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
 .businesstext1 {
   display: flex;
   margin-left: 5%;
-  margin-top: 60px;
+  margin-top: 3%;
 }
 
 .businesstext2 {
@@ -213,8 +220,96 @@ a:hover {
 }
 
 .first p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: black;
+}
+
+@media (max-width: 575.98px) {
+.card {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.card-header {
+  padding: 4%;
+  font-size: 20px;
+}
+.card-sub-title {
+  padding-top: 5%;
+}
+.card-sub-title > h2 {
+  font-size: 18px;
+}
+.card-sub-title > h6 {
+  font-size: 16px;
+}
+.business-1-button {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 2%;
+  margin-right: 2%;
+}
+.dot-1 {
+  height: 15px;
+  width: 15px;
+}
+.dot-2 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px 0px 10px;
+}
+.dot-3 {
+  height: 15px;
+  width: 15px;
+}
+.dot-4 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+}
+
+.dots {
+  padding-left: 10%;
+  padding-top: 3%;
+}
+.business-list {
+  display: block;
+}
+
+img {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.businesstext1 {
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2px;
+}
+
+.businesstext2 {
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2px;
+}
+
+.businesstext3 {
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2px;
+}
+.number {
+  font-size: 35px;
+}
+.text1 {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.first p {
+  font-size: 16px;
+}
 }
 </style>
