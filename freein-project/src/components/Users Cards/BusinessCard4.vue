@@ -6,7 +6,7 @@
       <div class="business-list-2">
         <img src="@/assets/business-icon.png" />
         <div class="card-sub-title">
-          <h3>Riepilogo</h3>
+          <h4>Riepilogo</h4>
           <div class="payment-method">
             <h4>Metodo di acquisto</h4>
             <div class="modification">
@@ -62,11 +62,10 @@ export default {
 .container-business-user {
   display: flex;
   justify-content: center;
-  font-family: "Roboto";
 }
 .card {
   width: 841px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   height: 660px;
   border-radius: 40px;
@@ -77,17 +76,27 @@ export default {
   padding: 3%;
   background-color: #ea5b0c;
   color: white;
-  font-size: x-large;
+  font-size: 30px;
   text-align: center;
 }
 .card-header:first-child {
   border-radius: calc(2.25rem) calc(2.25rem) 0 0;
 }
 
+.card-sub-title {
+    padding-top: 8%;
+    padding-left: 6%; 
+}
+
+h4 {
+  font-weight: bold;
+}
+
 .business-1-button {
   background-color: #ea5b0c !important;
   border-color: transparent;
-  font-style: normal;
+  font-size: 18px;
+  font-style: italic;
   line-height: 28px;
   width: 150px;
 }
@@ -121,7 +130,6 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #ea5b0c;
-
   border-radius: 50%;
   display: inline-block;
 }
@@ -144,7 +152,6 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #ea5b0c;
-
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px;
@@ -154,13 +161,6 @@ export default {
 }
 .business-list-2 {
   display: flex;
-}
-.card-sub-title {
-  padding: 80px 0 0 65px;
-}
-ul {
-  font-weight: bold;
-  font-size: large;
 }
 .privacy {
   text-align: center;
@@ -196,5 +196,97 @@ a:hover {
 }
 .business-1-button > a:hover {
   color: #ffffff;
+}
+
+@media (max-width: 575.98px) {
+.card {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.card-header {
+  padding: 4%;
+  font-size: 20px;
+}
+.card-sub-title {
+    padding-top: 2%;
+    padding-left: 0%; 
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.business-1-button {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 2%;
+  margin-right: 2%;
+  width: 70px;
+}
+
+.button-dots {
+  padding-bottom: 10px;
+}
+.dot-1 {
+  height: 15px;
+  width: 15px;
+}
+.dot-2 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px 0px 10px;
+}
+.dot-3 {
+  height: 15px;
+  width: 15px;
+}
+.dot-4 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+}
+.dots {
+  padding-left: 10%;
+  padding-top: 3%;
+}
+.business-list-2 {
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.privacy {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #b9b9b94e;
+}
+
+img {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px;
+}
+
+.payment-method {
+  padding-top: 30px;
+}
+.business-name {
+  padding-top: 15px;
+}
+.e-mail {
+  padding-top: 15px;
+  padding-bottom: 90px;
+}
+.modification {
+  padding-left: 50px;
+}
+
+a {
+  font-size: 14px;
+}
 }
 </style>
