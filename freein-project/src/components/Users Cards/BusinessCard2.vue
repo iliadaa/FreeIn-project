@@ -63,11 +63,10 @@ export default {
   padding-top: 2%;
   text-align: center;
 }
-/*.card-sub-title > h3 {
-  color: black;
-  font-size: 30px;
-  
-}*/
+
+h3 {
+  font-weight: bold;
+}
 .business-1-button {
   background-color: #ea5b0c !important;
   border-color: transparent;

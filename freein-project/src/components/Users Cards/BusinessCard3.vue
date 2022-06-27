@@ -49,11 +49,10 @@ export default {
 .container-business-user {
   display: flex;
   justify-content: center;
-  font-family: "Roboto";
 }
 .card {
   width: 841px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   height: 660px;
   border-radius: 40px;
@@ -64,17 +63,30 @@ export default {
   padding: 3%;
   background-color: #ea5b0c;
   color: white;
-  font-size: x-large;
+  font-size: 30px;
   text-align: center;
 }
 .card-header:first-child {
   border-radius: calc(2.25rem) calc(2.25rem) 0 0;
 }
 
+.card-sub-title {
+  padding: 80px 0 0 65px;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  margin-right: 30px;
+}
+
 .business-1-button {
   background-color: #ea5b0c !important;
   border-color: transparent;
-  font-style: normal;
+  font-size: 18px;
   line-height: 28px;
 }
 .business-1-button:hover {
@@ -128,19 +140,12 @@ export default {
   height: 50px;
   width: 50px;
   background-color: #bbb;
-
   border-radius: 50%;
   display: inline-block;
   margin: 0 30px;
 }
 .dots {
   padding-left: 25%;
-}
-.business-list-2 {
-  display: flex;
-}
-.card-sub-title {
-  padding: 80px 0 0 65px;
 }
 
 a {
@@ -149,6 +154,9 @@ a {
 }
 a:hover {
   color: white;
+}
+.business-list-2 {
+  display: flex;
 }
 
 /*Added*/
@@ -163,6 +171,7 @@ a:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-weight: bold;
 }
 .container input {
   position: absolute;
@@ -199,5 +208,84 @@ a:hover {
   height: 8px;
   border-radius: 50%;
   background: black;
+}
+
+@media (max-width: 575.98px) {
+.card {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.card-header {
+  padding: 4%;
+  font-size: 20px;
+}
+
+.card-sub-title {
+  padding-top: 5%;
+}
+
+.card-sub-title {
+  padding: 2%;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; 
+}
+
+p {
+  font-size: 16px; 
+  margin-left: 30px; 
+  text-align: justify;
+}
+
+.business-1-button {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 9%;
+  margin-right: 2%;
+}
+
+.dot-1 {
+  height: 15px;
+  width: 15px;
+}
+.dot-2 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px 0px 10px;
+}
+.dot-3 {
+  height: 15px;
+  width: 15px;
+}
+.dot-4 {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+}
+.dots {
+  padding-left: 10%;
+  padding-top: 10%;
+}
+.business-list-2 {
+  display: block;
+}
+
+img {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Added*/
+.container {
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
 }
 </style>
