@@ -2,6 +2,7 @@
   <div class="container">
     <div class="form-group">
       <div class="ph-layout">
+        <div id="editor"></div>
         <h3>Foto tappa (obbligatorio)</h3>
         <div
           class="wrapper px-2 stage-ph"
@@ -9,6 +10,14 @@
           @drop.prevent="addFile"
           @dragover.prevent
         >
+          <template>
+            <button class="add-image-button" @click="onPickFile">
+              <i class="fas fa-plus"></i>
+            </button>
+            <input type="file" ref="fileInput" accept="image/*" @change="uploadImage()" />
+            <div></div>
+          </template>
+
           <p href="#">Carica immagine</p>
           <br />
           <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
@@ -181,12 +190,6 @@
         <hr style="transform: rotate(90deg)" />
       </div>
     </div>
-    <div id="editor">
-      <p>
-        <input type="file" accept="image/jpeg/*" @change="uploadImage()" />
-      </p>
-      <img :src="imageSrc" class="image" />
-    </div>
   </div>
 </template>
 
@@ -243,6 +246,9 @@ export default {
   },
 
   methods: {
+    onPickFile() {
+      this.$refs.fileInput.click();
+    },
     uploadImage() {
       const file = document.querySelector("input[type=file]").files[0];
       const reader = new FileReader();
@@ -389,7 +395,7 @@ export default {
 
 .wrapper p {
   color: #939393;
-  margin-top: 180px;
+  margin-top: 50px;
 }
 
 .stage-ph {
@@ -496,5 +502,28 @@ export default {
 
 .end-adding-buttons .publishy {
   background-color: #2d2e83;
+}
+
+.add-image-button {
+  background: transparent;
+  border: none;
+  margin-top: 30px;
+}
+.add-image-button > i {
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #939393b0;
+  display: flex;
+  border-radius: 50%;
+  text-decoration: none;
+  border: 2px solid #939393b0;
+  margin-top: 20px;
+}
+.fas {
+  font-weight: 100;
+  font-size: 87px;
 }
 </style>
