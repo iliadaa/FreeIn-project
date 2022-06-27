@@ -56,19 +56,15 @@
         
         
                 <div class="text6">
-                    <p>Crea e condividi il tuo itinerario e</p>
-                    <p>guadagnerai ogni volta che i tuoi amici lo</p>
-                    <p>salveranno</p>
+                    <p>Crea e condividi il tuo itinerario e guadagnerai ogni volta che i tuoi amici lo salveranno</p>
                 </div>
         
                 <div class="text7">
-                    <p>Potrai spendere i tuoi crediti scegliendo</p>
-                    <p>le tappe che ti ispirano di piu'</p>
+                    <p>Potrai spendere i tuoi crediti scegliendo le tappe che ti ispirano di piu'</p>
                 </div>
         
                 <div class="text8">
-                    <p>Se sei un'azienda turistica potrai utilizzare</p>
-                    <p>i tuoi crediti sponsorizzando la tua attivita'</p>
+                    <p>Se sei un'azienda turistica potrai utilizzare i tuoi crediti sponsorizzando la tua attivita'</p>
                 </div>
 
                 <div class="function2">
@@ -195,9 +191,28 @@
 
 .text5, .text6, .text7, .text8  {
   display: block;
+  text-align: center;
+  color: #ea5b0c;
+  font-size: 16px;
+  line-height: 20px;
 }
 .function2 {
     display: block;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.function2 a {
+  text-decoration: none;
+  color: #ea5b0c;
+  font-size: 14px;
+}
+.function2 i {
+  color: #ea5b0c;
+  font-size: 15px;
+  padding-top: 1px;
+  padding-left: 5px;
 }
 
 
