@@ -9,7 +9,7 @@
 
       <div class="business-list">
         <!--Added-->
-        <div class="businessimage"><img src="@/assets/business-icon.png" /></div>
+        <div><img src="@/assets/business-icon.png" /></div>
 
         <div>
           <div class="businesstext1">
