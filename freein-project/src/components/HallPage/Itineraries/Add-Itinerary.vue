@@ -36,7 +36,7 @@
       <div class="classify-stage">
         <h2>
           Come classificheresti questo itinierario
-          <p style="font-size: 12px">(obbligatorio)</p>
+          <p style="font-size: 16px">(obbligatorio)</p>
         </h2>
       </div>
       <div class="flex">
@@ -109,7 +109,7 @@
       <div class="Reccomend-orNot">
         <h2>
           A chi consiglieresti questa tappa?
-          <p style="font-size: 10px">(obbligatorio)</p>
+          <p style="font-size: 16px">(obbligatorio)</p>
         </h2>
         <div class="btns-group1">
           <b-button class="btn" type="submit">Famiglia</b-button>
@@ -158,7 +158,7 @@
         <div v-text="maxText - textText.length" style="color: red"></div>
         <input
           type="text"
-          style="height: 150px; padding-bottom: 50%; padding-left: 10px"
+          style="height: 150px; padding-bottom: 50%; padding-top:10px; padding-left: 10px"
           placeholder="Inserisci descrizione massimo 37 caratteri"
           :maxlength="maxText"
           v-model="textText"
@@ -380,11 +380,11 @@ export default {
 }
 
 .container {
-  max-width: 1920px;
+  /*max-width: 1920px;*/
   background-color: #e6e6e6;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
+  /*height: auto;*/
   align-content: center;
   justify-content: center;
   display: flex;
@@ -394,10 +394,11 @@ export default {
   height: 1400px;
   margin-top: 80px;
   background-color: #f2f2f2;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 40px;
+  margin-right: 40px;
   border-radius: 2%;
   color: #939393;
+  margin-bottom: 80px;
 }
 
 .vl {
@@ -568,5 +569,220 @@ export default {
   z-index: 2;
   left: 42%;
   top: 105%;
+}
+
+@media (max-width: 575.98px) {
+/*non ancora*/
+.box {
+  height: 0px;
+  overflow: auto;
+  width: 0px;
+  position: static;
+  left: 0%;
+  top: 0%;
+}
+.flex-Dialog {
+  display: flex;
+  flex-direction: column;
+}
+.first-travel {
+  left: 44%;
+}
+.container1 {
+  max-width: 700px;
+}
+.overflow-hidden {
+  max-width: 700px;
+  height: 200px;
+  margin-bottom: 40px;
+}
+.flex {
+  display: flex;
+}
+.flexCard {
+  display: flex;
+  align-items: baseline;
+}
+.flexCard i {
+  margin-top: 5px;
+  margin-right: 3px;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-layout p {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.text img {
+  width: 250px;
+  height: 200px;
+  margin-top: -16px;
+}
+.value-range {
+  margin-left: 130px;
+}
+.value {
+  margin-left: 150px;
+}
+
+
+
+
+#wrap {
+  margin-left: 35px;
+  margin-bottom: 0px;
+}
+
+.percentages {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+.percentages p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.form-group {
+  width: 320px;
+  height: 1500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vl {
+  border-right: 2px solid #e6e6e6;
+  height: 1250px;
+  margin-top: -1200px;
+  margin-right: 820px;
+}
+
+
+
+
+
+
+.ph-layout {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ph-layout h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.wrapper p {
+  font-size: 16px;
+  margin-top: 150px;
+}
+.stage-ph {
+  height: 300px;
+  width: 100%;
+}
+.classify-stage {
+  margin-top: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.classify-stage h2 {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.Reccomend-orNot {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.Reccomend-orNot h2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+.sliders {
+  margin-top: 0px;
+}
+.btn {
+  margin-right: 7px;
+  font-size: 65%;
+}
+.btns-group2 {
+  margin-top: 15px;
+  margin-left: 75px;
+}
+.stage-details {
+  top: 0%;
+  margin-top: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: static;
+}
+.stage-details h2 {
+  font-size: 18px;
+}
+.stage-details p {
+  font-size: 16px;
+  margin-top: 0px;
+}
+.stage-details input {
+  width: 300px;
+  height: 40px;
+}
+.end-adding-buttons {
+  justify-content: space-evenly;
+}
+.end-adding-buttons a {
+  width: 200px;
+  height: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  border-radius: 10px;
+  padding-top: 3px;
+}
+.add-new-stage-btn {
+  margin-top: 10px;
+  margin-left: 0px;
+  position: static;
+  bottom: 0%;
+}
+.add-new-stage-btn a {
+  margin-left: 270px;
+  width: 25px;
+  height: 25px;
+}
+.fas {
+  font-size: 15px;
+}
+.add-new-stage-btn h2 {
+  font-size: 18px;
+  margin-left: 115px;
+  margin-bottom: 40px;
+}
+
+/*non ancora*/
+.card-position {
+  width: 700px;
+  height: 453px;
+  position: absolute;
+  z-index: 2;
+  left: 42%;
+  top: 105%;
+}
+
+
+
+
+
+
+hr {
+  display: none;
+}
+::placeholder {
+  font-size: 12px;
+}
 }
 </style>
