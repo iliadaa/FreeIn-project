@@ -24,16 +24,15 @@ export default {
 .container-user {
   display: flex;
   justify-content: center;
-  font-family: "Roboto";
 }
 .card {
   width: 841px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   height: 660px;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 40px;
   box-shadow: 0px 4px 4px rgbaa(0, 0, 0, 0.25);
 }
 
@@ -45,7 +44,6 @@ export default {
   background-color: #ea5b0c;
   border-radius: 10px;
   border-color: transparent;
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -53,7 +51,6 @@ export default {
 }
 .card > h1 {
   margin-bottom: 100px;
-  color: #000000;
 }
 
 .button:hover {
@@ -84,5 +81,34 @@ a {
 }
 a:hover {
   color: white;
+}
+
+@media (max-width: 575.98px) {
+.card {
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.button {
+  width: 160px;
+  height: 60px;
+  margin-left: 0;
+  top: 0px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+}
+.card > h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 50px;  
+}
+
+.button-group > .button:not(:last-child) {
+  display: block;
+  margin-right: 0px;
+  margin-bottom: 50px;
+}
 }
 </style>
