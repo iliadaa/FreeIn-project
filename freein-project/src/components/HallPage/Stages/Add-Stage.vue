@@ -15,7 +15,7 @@
               <i class="fas fa-plus"></i>
             </button>
             <input type="file" ref="fileInput" accept="image/*" @change="uploadImage()" />
-            <div></div>
+            <div v-for="file in files" :key="file">{{ file.name }}</div>
           </template>
 
           <p href="#">Carica immagine</p>
@@ -255,10 +255,10 @@ export default {
 
       reader.onloadend = () => {
         this.rawImg = reader.result;
-        console.log(this.rawImg, "hello");
+        console.log(this.rawImg);
       };
       reader.readAsDataURL(file);
-      console.log(file, "hello2");
+      console.log(file);
     },
     SubmitTappa() {
       const options = {
