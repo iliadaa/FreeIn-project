@@ -36,28 +36,7 @@
             </li>
           </ul>-->
         </div>
-
-        <!--   <div class="wrapper stage-ph">
-          <div
-            class="image-input"
-            :style="{ 'background-image': `url(${rawImg})` }"
-            @click="onPickFile"
-          >
-            <span v-if="!rawImg" class="placeholder">
-              <i class="fas fa-plus"></i>
-            </span>
-            <input class="file-input" ref="fileInput" type="file" @input="onSelectFile" />
-          </div>
-        </div>-->
       </div>
-
-      <!--     
-<ul>
-  <li v-for="element of stageInfo" :key="element.id">
-      {{element.description}}
-  </li>
-</ul>
--->
 
       <div class="classify-stage">
         <h2>
@@ -143,7 +122,13 @@
           <b-button class="btn" type="submit">Struttura per animali</b-button>
         </div>
         <div class="btns-group2">
-          <b-button class="btn" type="submit">Bambini</b-button>
+          <b-button
+            @click="toggle = !toggle"
+            :class="{ clicked: !toggle }"
+            class="btn"
+            type="submit"
+            >Bambini</b-button
+          >
           <b-button class="btn" type="submit">Comitiva</b-button>
           <b-button class="btn" type="submit">Coppia</b-button>
         </div>
@@ -200,7 +185,6 @@
           <a class="cancel" href="#/privatprofile">Annulla</a>
           <a class="save-as" href="#">Salva come bozza</a>
           <a class="publishy" type="submit" @click="SubmitTappa">Pubblica</a>
-          href="#/summarystage"
         </div>
       </b-form>
 
@@ -218,6 +202,7 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
+      toggle: false,
       rawImg: "",
       //stageInfo: [],
       slider: {
@@ -301,6 +286,12 @@ export default {
           stage: this.textTitle,
           location: this.textLocation,
           description: this.textText,
+          arte: this.valueArt,
+          relax: this.valueRelax,
+          mare: this.valueMare,
+          natura: this.valueNatura,
+          gourmet: this.valueGourmetExplorer,
+          party: this.valueParty,
         }),
       };
       fetch(baseURL, options)
@@ -308,6 +299,7 @@ export default {
         .then((json) => {
           console.log(json);
         })
+        .then(() => this.$router.push("/summarystage"))
         .catch((err) => console.log("Request Failed", err));
     },
 
@@ -550,5 +542,8 @@ export default {
 .fas {
   font-weight: 100;
   font-size: 87px;
+}
+.clicked {
+  background-color: grey;
 }
 </style>
