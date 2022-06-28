@@ -5,32 +5,50 @@
         <div id="editor"></div>
         <h3>Foto tappa (obbligatorio)</h3>
         <div
-          class="wrapper px-2 stage-ph"
+          class="wrapper stage-ph"
+          :style="{ 'background-image': `url(${rawImg})` }"
           v-cloak
           @drop.prevent="addFile"
           @dragover.prevent
         >
-          <template>
+          <span v-if="!rawImg">
             <button class="add-image-button" @click="onPickFile">
               <i class="fas fa-plus"></i>
             </button>
-            <input type="file" ref="fileInput" accept="image/*" @change="uploadImage()" />
-            <div></div>
-          </template>
+            <input
+              type="file"
+              ref="fileInput"
+              accept="image/*"
+              style="display: none"
+              @input="onSelectFile"
+            />
+            <p href="#">Carica immagine</p>
+            <br />
+            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+          </span>
 
-          <p href="#">Carica immagine</p>
-          <br />
-          <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
-
-          <ul class="list-group">
+          <!--<ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
               {{ file.name }} ({{ file.size | kb }} kb)
               <button class="btn btn-danger btn-sm float-right" @click="removeFile(file)">
                 Close
               </button>
             </li>
-          </ul>
+          </ul>-->
         </div>
+
+        <!--   <div class="wrapper stage-ph">
+          <div
+            class="image-input"
+            :style="{ 'background-image': `url(${rawImg})` }"
+            @click="onPickFile"
+          >
+            <span v-if="!rawImg" class="placeholder">
+              <i class="fas fa-plus"></i>
+            </span>
+            <input class="file-input" ref="fileInput" type="file" @input="onSelectFile" />
+          </div>
+        </div>-->
       </div>
 
       <!--     
@@ -200,7 +218,6 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
-      imageSrc: [],
       rawImg: "",
       //stageInfo: [],
       slider: {
@@ -246,6 +263,19 @@ export default {
   },
 
   methods: {
+    onSelectFile() {
+      const input = this.$refs.fileInput;
+      const files = input.files;
+      if (files && files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.rawImg = e.target.result;
+        };
+        reader.readAsDataURL(files[0]);
+        this.$emit("input", files[0]);
+      }
+    },
+
     onPickFile() {
       this.$refs.fileInput.click();
     },
@@ -255,10 +285,9 @@ export default {
 
       reader.onloadend = () => {
         this.rawImg = reader.result;
-        console.log(this.rawImg, "hello");
+        console.log(this.rawImg);
       };
       reader.readAsDataURL(file);
-      console.log(file, "hello2");
     },
     SubmitTappa() {
       const options = {
@@ -386,13 +415,6 @@ export default {
   margin-bottom: 20px;
 }
 
-.wrapper {
-  width: 350px;
-  height: 350px;
-  border: 2px dotted gray;
-  text-align: center;
-}
-
 .wrapper p {
   color: #939393;
   margin-top: 50px;
@@ -407,6 +429,9 @@ export default {
   border-color: lightgray;
   justify-content: center;
   align-items: center;
+  background-size: auto;
+  background-position: center center;
+  text-align: center;
 }
 
 .classify-stage {
