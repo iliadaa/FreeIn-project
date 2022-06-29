@@ -16,9 +16,13 @@
         >
           <p href="#">Carica immagine</p>
           <br />
-          <p style="margin-top: -40px">
-            Dimensioni minime di "808 x 632 pixel"
-          </p>
+         
+            <div class="wrapper-p">
+              <p >
+                Dimensioni minime di "808 x 632 pixel"
+              </p>
+            </div>
+         
 
           <ul class="list-group">
             <li class="list-group-item" v-for="(file, id) in files" :key="id">
@@ -36,7 +40,7 @@
       <div class="classify-stage">
         <h2>
           Come classificheresti questo itinierario
-          <p style="font-size: 16px">(obbligatorio)</p>
+          <p>(obbligatorio)</p>
         </h2>
       </div>
       <div class="flex">
@@ -105,11 +109,11 @@
           </VueSlideBar>
         </div>
       </div>
-      <hr style="width: 390px; margin-left: 80px" />
+      <hr class="hr1"/>
       <div class="Reccomend-orNot">
         <h2>
           A chi consiglieresti questa tappa?
-          <p style="font-size: 16px">(obbligatorio)</p>
+          <p>(obbligatorio)</p>
         </h2>
         <div class="btns-group1">
           <b-button class="btn" type="submit">Famiglia</b-button>
@@ -132,7 +136,6 @@
           type="text"
           :maxlength="maxTitle"
           v-model="textTitle"
-          style="padding-left: 10px"
           placeholder="Assegna un titolo alla tappa massimo 40 caratteri"
         />
         <h2>
@@ -147,7 +150,6 @@
           type="text"
           :maxlength="maxLocation"
           v-model="textLocation"
-          style="padding-left: 10px"
           placeholder="Inserisci il nome del luogo massimo 40 caratteri"
         />
 
@@ -156,9 +158,8 @@
           <p>(obbligatorio)</p>
         </h2>
         <div v-text="maxText - textText.length" style="color: red"></div>
-        <input
+        <input class="inputclass"
           type="text"
-          style="height: 150px; padding-bottom: 50%; padding-top:10px; padding-left: 10px"
           placeholder="Inserisci descrizione massimo 37 caratteri"
           :maxlength="maxText"
           v-model="textText"
@@ -190,9 +191,9 @@
                     <b-card-body class="text-layout">
                       <h2>{{ card.stage }}</h2>
                       <p>{{ card.inlineDate }}</p>
-                      <b-card-text style="font-size: 15px">
+                      <b-card-text>
                         <p>{{ card.description }}</p>
-                        <div class="flexCard" style="margin-top: -20px">
+                        <div class="flexCard">
                           <i class="fa-solid fa-location-dot"></i>
                           <p>{{ card.location }}</p>
                         </div>
@@ -210,8 +211,8 @@
         <a class="save-as" href="#">Salva come bozza</a>
         <a class="publishy" href="#/summaryitinerary">Pubblica</a>
       </div>
-      <div style="margin-left: -110px; margin-top: -650px; width: 90%">
-        <hr style="transform: rotate(90deg)" />
+      <div class="hr2">
+        <hr class="hr02"/>
       </div>
     </div>
   </div>
@@ -450,7 +451,14 @@ export default {
   font-size: 20px;
   margin-bottom: 20px;
 }
+.classify-stage p {
+  font-size: 16px;
+}
 
+.hr1 {
+  width: 340px; 
+  margin-left: 80px;
+}
 .Reccomend-orNot {
   margin-left: 70px;
 }
@@ -459,6 +467,9 @@ export default {
   font-size: 20px;
 }
 
+.Reccomend-orNot p {
+  font-size: 16px;
+}
 .sliders {
   margin-top: 5px;
   z-index: 0;
@@ -506,6 +517,14 @@ export default {
   border: 0px, 0px, 0px;
   border-style: ridge;
   border-color: rgba(211, 211, 211, 0.236);
+  padding-left: 10px
+}
+
+.inputclass {
+  height: 150px; 
+  padding-bottom: 50%; 
+  padding-top: 15px; 
+  padding-left: 10px;
 }
 
 .end-adding-buttons {
@@ -570,7 +589,18 @@ export default {
   left: 42%;
   top: 105%;
 }
+.wrapper-p {
+  margin-top: -220px;
+}
 
+.hr2 {
+  margin-left: -110px; 
+  margin-top: -650px; 
+  width: 90%;
+}
+.hr02 {
+  transform: rotate(90deg);
+}
 @media (max-width: 575.98px) {
 /**/
 .box {
@@ -782,10 +812,22 @@ export default {
   top: 105%;
 }
 
+.wrapper-p {
+  margin-top: -190px;
+}
 
 
 
 
+.hr1 {
+  display: none;
+}
+.hr2 {
+  display: none;
+}
+.hr02 {
+  display: none;
+}
 hr {
   display: none;
 }
