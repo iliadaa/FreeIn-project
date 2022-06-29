@@ -24,9 +24,7 @@
             />
             <p href="#">Carica immagine</p>
             <br />
-            <p style="margin-top: -40px">
-              Dimensioni minime di "808 x 632 pixel"
-            </p>
+            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
           </span>
 
           <!--<ul class="list-group">
@@ -124,7 +122,8 @@
             class="btn"
             type="submit"
             v-on:click="
-              recommendStore(family), removeRecommend(family);
+              recommendStore(family);
+              removeRecommend(family);
               selectedFamily = !selectedFamily;
             "
             :class="{ clicked: !selectedFamily }"
@@ -135,11 +134,11 @@
             class="btn"
             type="submit"
             v-on:click="
-              recommendStore(single), removeRecommend(single);
+              recommendStore(single);
+              removeRecommend(single);
               selectedSingle = !selectedSingle;
             "
             :class="{ clicked: !selectedSingle }"
-            :disabled="!selectedSingle"
           >
             Single
           </button>
@@ -148,10 +147,10 @@
             type="submit"
             @click="
               recommendStore(placeForAnimals);
+              removeRecommend(placeForAnimals);
               selectedStructura = !selectedStructura;
             "
             :class="{ clicked: !selectedStructura }"
-            :disabled="!selectedStructura"
           >
             Struttura per animali
           </button>
@@ -162,10 +161,10 @@
             type="submit"
             v-on:click="
               recommendStore(children);
+              removeRecommend(children);
               selectedChildren = !selectedChildren;
             "
             :class="{ clicked: !selectedChildren }"
-            :disabled="!selectedChildren"
           >
             Bambini
           </button>
@@ -174,10 +173,10 @@
             type="submit"
             v-on:click="
               recommendStore(friends);
+              removeRecommend(friends);
               selectedFriends = !selectedFriends;
             "
             :class="{ clicked: !selectedFriends }"
-            :disabled="!selectedFriends"
           >
             Comitiva
           </button>
@@ -186,10 +185,10 @@
             type="submit"
             v-on:click="
               recommendStore(couple);
+              removeRecommend(couple);
               selectedCouple = !selectedCouple;
             "
             :class="{ clicked: !selectedCouple }"
-            :disabled="!selectedCouple"
           >
             Coppia
           </button>
@@ -217,10 +216,7 @@
             Location
             <p>(obbligatorio)</p>
           </h2>
-          <div
-            v-text="maxLocation - textLocation.length"
-            style="color: red"
-          ></div>
+          <div v-text="maxLocation - textLocation.length" style="color: red"></div>
           <input
             type="text"
             :maxlength="maxLocation"
@@ -327,21 +323,6 @@ export default {
   },
 
   methods: {
-    //add& remove value
-    removeRecommend(value) {
-      if (this.checked == false) {
-        this.removed = true;
-        this.checked = true;
-        console.log(this.recommend, "if");
-      } else if (this.checked == true) {
-        this.removed = true;
-        this.checked = false;
-        this.recommend.splice(value);
-        console.log(this.recommend, "else");
-      } else {
-        console.log("I'm out");
-      }
-    },
     //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;
@@ -372,8 +353,33 @@ export default {
     },
     //collect recommend from tappa
     recommendStore(value) {
-      this.recommend.push(value);
-      console.log(value, "I am going into the array");
+      //if there is not ????
+      /*
+      var filterRecommend=this.recommend.filter(value)
+      console.log(filterRecommend.length, "before");
+      if (filterRecommend.length!=0) {
+        this.recommend.push(value);
+        console.log(this.recommend, "if");
+      } else  {
+        this.recommend.pop(value);
+        console.log(this.recommend, "else");
+      }
+      */
+    },
+    //add& remove value
+    removeRecommend(value) {
+      /*
+      if (this.checked == false) {
+        this.removed = true;
+        this.checked = true;
+        console.log(this.recommend, "if");
+      } else if (this.checked == true) {
+        this.removed = true;
+        this.checked = false;
+        this.recommend.splice(value);
+        console.log(this.recommend, "else");
+      }
+      */
     },
     //collect all the data in body json file
     SubmitTappa() {
