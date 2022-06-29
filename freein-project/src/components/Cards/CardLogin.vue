@@ -34,7 +34,7 @@
           <p class="forgot-password">Forgot password?</p>
           <b-button
             class="login-btn"
-            @click="wrongLoginData(form.email, total, inSession), isEmpty()"
+            @click="wrongLoginData(form.email, total, inSession, form.password)"
             type="submit"
             >LOG IN</b-button
           >
@@ -119,7 +119,7 @@ export default {
 
     onSubmit(event) {
       event.preventDefault();
-      wrongLoginData(this.email, this.total, this.inSession);
+      wrongLoginData(this.email, this.total, this.inSession, this.password);
     },
     onReset(event) {
       event.preventDefault();
@@ -144,13 +144,16 @@ export default {
       }
     },
 
-    wrongLoginData(email, total, inSession) {
+    wrongLoginData(email, total, inSession, password) {
       const users = [...this.$store.state.registrations];
       var i;
       var boolean;
       for (i = 0; i < total; i++) {
         console.log("sono nel for " + i + " di " + total);
-        if (users[i].userObj.email == email) {
+        if (
+          users[i].userObj.email == email &&
+          users[i].userObj.password == password
+        ) {
           console.log("Siamo uguali");
           inSession.push(users[i]);
           boolean = true;
@@ -160,10 +163,11 @@ export default {
         }
       }
       if (boolean == true) {
-        alert("Dati inseriti correttamente!");
+        this.isEmpty();
         this.isRolee();
       } else {
         alert("Dati incorretti o inesistenti!");
+        return;
       }
 
       /* 

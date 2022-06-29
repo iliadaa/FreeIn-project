@@ -24,7 +24,9 @@
             />
             <p href="#">Carica immagine</p>
             <br />
-            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+            <p style="margin-top: -40px">
+              Dimensioni minime di "808 x 632 pixel"
+            </p>
           </span>
 
           <!--<ul class="list-group">
@@ -117,20 +119,80 @@
           <p style="font-size: 10px">(obbligatorio)</p>
         </h2>
         <div class="btns-group1">
-          <b-button class="btn" type="submit">Famiglia</b-button>
-          <b-button class="btn" type="submit">Single</b-button>
-          <b-button class="btn" type="submit">Struttura per animali</b-button>
-        </div>
-        <div class="btns-group2">
-          <b-button
-            @click="toggle = !toggle"
-            :class="{ clicked: !toggle }"
+          <button
+            id="button-tappa"
             class="btn"
             type="submit"
-            >Bambini</b-button
+            v-on:click="
+              recommendStore(family), removeRecommend(family);
+              selectedFamily = !selectedFamily;
+            "
+            :class="{ clicked: !selectedFamily }"
           >
-          <b-button class="btn" type="submit">Comitiva</b-button>
-          <b-button class="btn" type="submit">Coppia</b-button>
+            Famiglia
+          </button>
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(single), removeRecommend(single);
+              selectedSingle = !selectedSingle;
+            "
+            :class="{ clicked: !selectedSingle }"
+            :disabled="!selectedSingle"
+          >
+            Single
+          </button>
+          <button
+            class="btn 2"
+            type="submit"
+            @click="
+              recommendStore(placeForAnimals);
+              selectedStructura = !selectedStructura;
+            "
+            :class="{ clicked: !selectedStructura }"
+            :disabled="!selectedStructura"
+          >
+            Struttura per animali
+          </button>
+        </div>
+        <div class="btns-group2">
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(children);
+              selectedChildren = !selectedChildren;
+            "
+            :class="{ clicked: !selectedChildren }"
+            :disabled="!selectedChildren"
+          >
+            Bambini
+          </button>
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(friends);
+              selectedFriends = !selectedFriends;
+            "
+            :class="{ clicked: !selectedFriends }"
+            :disabled="!selectedFriends"
+          >
+            Comitiva
+          </button>
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(couple);
+              selectedCouple = !selectedCouple;
+            "
+            :class="{ clicked: !selectedCouple }"
+            :disabled="!selectedCouple"
+          >
+            Coppia
+          </button>
         </div>
       </div>
 
@@ -155,7 +217,10 @@
             Location
             <p>(obbligatorio)</p>
           </h2>
-          <div v-text="maxLocation - textLocation.length" style="color: red"></div>
+          <div
+            v-text="maxLocation - textLocation.length"
+            style="color: red"
+          ></div>
           <input
             type="text"
             :maxlength="maxLocation"
@@ -202,7 +267,6 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
-      toggle: false,
       rawImg: "",
       //stageInfo: [],
       slider: {
@@ -224,6 +288,21 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
+      recommend: [],
+      checked: false,
+      removed: false,
+      family: "Famiglia",
+      single: "Single",
+      placeForAnimals: "Struttura Per Animali",
+      children: "Bambini",
+      friends: "Comitiva",
+      couple: "Coppia",
+      selectedSingle: true,
+      selectedStructura: true,
+      selectedChildren: true,
+      selectedFriends: true,
+      selectedCouple: true,
+      selectedFamily: true,
     };
   },
 
@@ -248,6 +327,22 @@ export default {
   },
 
   methods: {
+    //add& remove value
+    removeRecommend(value) {
+      if (this.checked == false) {
+        this.removed = true;
+        this.checked = true;
+        console.log(this.recommend, "if");
+      } else if (this.checked == true) {
+        this.removed = true;
+        this.checked = false;
+        this.recommend.splice(value);
+        console.log(this.recommend, "else");
+      } else {
+        console.log("I'm out");
+      }
+    },
+    //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;
       const files = input.files;
@@ -264,6 +359,7 @@ export default {
     onPickFile() {
       this.$refs.fileInput.click();
     },
+
     uploadImage() {
       const file = document.querySelector("input[type=file]").files[0];
       const reader = new FileReader();
@@ -274,6 +370,12 @@ export default {
       };
       reader.readAsDataURL(file);
     },
+    //collect recommend from tappa
+    recommendStore(value) {
+      this.recommend.push(value);
+      console.log(value, "I am going into the array");
+    },
+    //collect all the data in body json file
     SubmitTappa() {
       const options = {
         method: "POST",
@@ -292,8 +394,11 @@ export default {
           natura: this.valueNatura,
           gourmet: this.valueGourmetExplorer,
           party: this.valueParty,
+          recommend: this.recommend,
         }),
       };
+
+      //fetch all the data into json file and then go to summary stage page
       fetch(baseURL, options)
         .then((response) => response.json())
         .then((json) => {
@@ -303,6 +408,7 @@ export default {
         .catch((err) => console.log("Request Failed", err));
     },
 
+    //Jacopo methods
     addFile(e) {
       let files = e.dataTransfer.files;
       [...files].forEach((file) => {
@@ -324,7 +430,6 @@ export default {
     allerta() {
       alert("Funziono");
     },
-
     async addInfo() {
       const res = await axios.post(baseURL, {
         stage: this.textTitle,
@@ -460,7 +565,9 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
+.btn:hover {
+  color: white;
+}
 .btns-group2 {
   margin-top: 20px;
   margin-left: 100px;
@@ -544,6 +651,12 @@ export default {
   font-size: 87px;
 }
 .clicked {
-  background-color: #ea5b0c;
+  background-color: #939393b0;
+}
+.is-orange {
+  background: #ea5b0c;
+}
+.is-grey {
+  background: #939393b0;
 }
 </style>

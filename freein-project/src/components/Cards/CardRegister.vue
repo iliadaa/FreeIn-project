@@ -111,7 +111,8 @@ export default {
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
         this.changePage(true);
         this.validation(user);
-        console.log("L'email è scritta correttamente!");
+
+        console.log("L'email è scritta correttamente!", user);
         if (name.length > 2) {
           alert("ciao " + name.length);
           console.log("Il name è lungo più di 2 chr");
