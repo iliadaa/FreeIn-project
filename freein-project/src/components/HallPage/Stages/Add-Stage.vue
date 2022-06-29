@@ -544,6 +544,6 @@ export default {
   font-size: 87px;
 }
 .clicked {
-  background-color: grey;
+  background-color: #ea5b0c;
 }
 </style>
