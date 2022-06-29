@@ -323,6 +323,7 @@ export default {
 
   methods: {
     //add& remove value
+
     //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;
