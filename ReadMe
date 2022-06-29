@@ -1,3 +1,6 @@
 # Install json-server globally
 $ npm install json-server -g 
+Get-ExecutionPolicy
+#if is AllSigned
+$ Set-ExecutionPolicy unrestricted
 $ json-server data-stages-list.json
