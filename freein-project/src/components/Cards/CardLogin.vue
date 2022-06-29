@@ -34,7 +34,7 @@
           <p class="forgot-password">Forgot password?</p>
           <b-button
             class="login-btn"
-            @click="wrongLoginData(form.email, total, inSession), isEmpty()"
+            @click="wrongLoginData(form.email, total, inSession)"
             type="submit"
             >LOG IN</b-button
           >
@@ -161,6 +161,7 @@ export default {
       }
       if (boolean == true) {
         alert("Dati inseriti correttamente!");
+        this.isEmpty();
         this.isRolee();
       } else {
         alert("Dati incorretti o inesistenti!");

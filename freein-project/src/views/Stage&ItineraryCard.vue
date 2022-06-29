@@ -1,17 +1,17 @@
 <template>
   <div>
-    <showItineraryDetails />
+    <StageHallCard />
   </div>
 </template>
 
 
 <script>
-import showItineraryDetails from "../components/HallPage/Itineraries/showItineraryDetails.vue";
+import StageHallCard from "../components/HallPage/Stages/StageHallCard.vue";
 
 export default {
   data() {},
   components: {
-    showItineraryDetails,
+    StageHallCard,
   },
 };
 </script>
