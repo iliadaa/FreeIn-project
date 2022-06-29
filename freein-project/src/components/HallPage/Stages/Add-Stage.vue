@@ -123,9 +123,10 @@
             type="submit"
             v-on:click="
               recommendStore(family);
-              toggle = !toggle;
+              selectedFamily = !selectedFamily;
             "
-            :class="{ clicked: !toggle }"
+            :class="{ clicked: !selectedFamily }"
+            :disabled="!selectedFamily"
           >
             Famiglia
           </button>
@@ -134,30 +135,61 @@
             type="submit"
             v-on:click="
               recommendStore(single);
-              changeColor;
+              selectedSingle = !selectedSingle;
             "
+            :class="{ clicked: !selectedSingle }"
+            :disabled="!selectedSingle"
           >
             Single
           </button>
           <button
-            class="btn"
+            class="btn 2"
             type="submit"
-            v-on:click="
+            @click="
               recommendStore(placeForAnimals);
-              changeColor;
+              selectedStructura = !selectedStructura;
             "
+            :class="{ clicked: !selectedStructura }"
+            :disabled="!selectedStructura"
           >
             Struttura per animali
           </button>
         </div>
         <div class="btns-group2">
-          <button class="btn" type="submit" v-on:click="recommendStore(children)">
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(children);
+              selectedChildren = !selectedChildren;
+            "
+            :class="{ clicked: !selectedChildren }"
+            :disabled="!selectedChildren"
+          >
             Bambini
           </button>
-          <button class="btn" type="submit" v-on:click="recommendStore(friends)">
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(friends);
+              selectedFriends = !selectedFriends;
+            "
+            :class="{ clicked: !selectedFriends }"
+            :disabled="!selectedFriends"
+          >
             Comitiva
           </button>
-          <button class="btn" type="submit" v-on:click="recommendStore(couple)">
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(couple);
+              selectedCouple = !selectedCouple;
+            "
+            :class="{ clicked: !selectedCouple }"
+            :disabled="!selectedCouple"
+          >
             Coppia
           </button>
         </div>
@@ -231,8 +263,6 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
-      className: "is-blue",
-      toggle: true,
       rawImg: "",
       //stageInfo: [],
       slider: {
@@ -262,6 +292,12 @@ export default {
       children: "Bambini",
       friends: "Comitiva",
       couple: "Coppia",
+      selectedSingle: true,
+      selectedStructura: true,
+      selectedChildren: true,
+      selectedFriends: true,
+      selectedCouple: true,
+      selectedFamily: true,
     };
   },
 
@@ -286,12 +322,7 @@ export default {
   },
 
   methods: {
-    changeColor() {
-      if ((this.className = "is-blue")) {
-        this.className = "is-red";
-      } else this.className = "is-blue";
-    },
-
+    //add& remove value
     //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;
@@ -601,12 +632,12 @@ export default {
   font-size: 87px;
 }
 .clicked {
-  background-color: #6c757d;
+  background-color: #939393b0;
 }
-.is-red {
-  background: red;
+.is-orange {
+  background: #ea5b0c;
 }
-.is-blue {
-  background: blue;
+.is-grey {
+  background: #939393b0;
 }
 </style>
