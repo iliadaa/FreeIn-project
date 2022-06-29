@@ -147,7 +147,7 @@ export default {
     wrongLoginData(email, total, inSession, password) {
       const users = [...this.$store.state.registrations];
       var i;
-      var boolean;
+      var boolean = false;
       for (i = 0; i < total; i++) {
         console.log("sono nel for " + i + " di " + total);
         if (

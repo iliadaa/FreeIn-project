@@ -100,23 +100,27 @@ export default new Vuex.Store({
     isRole(state) {
       var trovato = false;
       console.log(state.inSession[0].userObj.roles, "awee")
-      if (state.inSession[0].userObj.roles.includes("business" || "Business" || "admin" || "Admin")) {
-        alert("Bentornato: " + state.inSession[0].userObj.name)
-        router.push({
-          name: "BusinessProfile",
-        });
-        return trovato = true;
-      } else if (state.inSession[0].userObj.testDone == false) {
+      //verifichiamo se test done 
+      if (state.inSession[0].userObj.testDone == false) {
         alert("Dati corretti, esegua il test..")
         router.push({
           name: "Test"
         })
-      } else {
-        alert("Bentornato: " + state.inSession[0].userObj.name)
-        router.push({
-          name: "Privatprofile",
-        });
         return trovato = false;
+      } else if (state.inSession[0].userObj.testDone == true) {
+        alert("Bentornato: " + state.inSession[0].userObj.name)
+        //test done controllo profilo e ridireziono su profilo 
+        if (state.inSession[0].userObj.roles.includes("business" || "admin")) {
+          router.push({
+            name: "BusinessProfile",
+          });
+          return trovato = true;
+        } else {
+          router.push({
+            name: "Privatprofile",
+          });
+          return trovato = false;
+        }
       }
     },
     isValidate(state, user) {
