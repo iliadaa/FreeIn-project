@@ -1,1 +1,3 @@
-test
+# Install json-server globally
+$ npm install json-server -g 
+$ json-server data-stages-list.json
