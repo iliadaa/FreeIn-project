@@ -117,20 +117,49 @@
           <p style="font-size: 10px">(obbligatorio)</p>
         </h2>
         <div class="btns-group1">
-          <b-button class="btn" type="submit">Famiglia</b-button>
-          <b-button class="btn" type="submit">Single</b-button>
-          <b-button class="btn" type="submit">Struttura per animali</b-button>
-        </div>
-        <div class="btns-group2">
-          <b-button
-            @click="toggle = !toggle"
-            :class="{ clicked: !toggle }"
+          <button
+            id="button-tappa"
             class="btn"
             type="submit"
-            >Bambini</b-button
+            v-on:click="
+              recommendStore(family);
+              toggle = !toggle;
+            "
+            :class="{ clicked: !toggle }"
           >
-          <b-button class="btn" type="submit">Comitiva</b-button>
-          <b-button class="btn" type="submit">Coppia</b-button>
+            Famiglia
+          </button>
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(single);
+              changeColor;
+            "
+          >
+            Single
+          </button>
+          <button
+            class="btn"
+            type="submit"
+            v-on:click="
+              recommendStore(placeForAnimals);
+              changeColor;
+            "
+          >
+            Struttura per animali
+          </button>
+        </div>
+        <div class="btns-group2">
+          <button class="btn" type="submit" v-on:click="recommendStore(children)">
+            Bambini
+          </button>
+          <button class="btn" type="submit" v-on:click="recommendStore(friends)">
+            Comitiva
+          </button>
+          <button class="btn" type="submit" v-on:click="recommendStore(couple)">
+            Coppia
+          </button>
         </div>
       </div>
 
@@ -202,7 +231,8 @@ const baseURL = "http://localhost:3000/jsonarray";
 export default {
   data() {
     return {
-      toggle: false,
+      className: "is-blue",
+      toggle: true,
       rawImg: "",
       //stageInfo: [],
       slider: {
@@ -224,6 +254,14 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
+
+      recommend: [],
+      family: "Famiglia",
+      single: "Single",
+      placeForAnimals: "Struttura Per Animali",
+      children: "Bambini",
+      friends: "Comitiva",
+      couple: "Coppia",
     };
   },
 
@@ -248,6 +286,13 @@ export default {
   },
 
   methods: {
+    changeColor() {
+      if ((this.className = "is-blue")) {
+        this.className = "is-red";
+      } else this.className = "is-blue";
+    },
+
+    //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;
       const files = input.files;
@@ -264,6 +309,7 @@ export default {
     onPickFile() {
       this.$refs.fileInput.click();
     },
+
     uploadImage() {
       const file = document.querySelector("input[type=file]").files[0];
       const reader = new FileReader();
@@ -274,6 +320,12 @@ export default {
       };
       reader.readAsDataURL(file);
     },
+    //collect recommend from tappa
+    recommendStore(value) {
+      this.recommend.push(value);
+      console.log(value, "I am going into the array");
+    },
+    //collect all the data in body json file
     SubmitTappa() {
       const options = {
         method: "POST",
@@ -292,8 +344,11 @@ export default {
           natura: this.valueNatura,
           gourmet: this.valueGourmetExplorer,
           party: this.valueParty,
+          recommend: this.recommend,
         }),
       };
+
+      //fetch all the data into json file and then go to summary stage page
       fetch(baseURL, options)
         .then((response) => response.json())
         .then((json) => {
@@ -303,6 +358,7 @@ export default {
         .catch((err) => console.log("Request Failed", err));
     },
 
+    //Jacopo methods
     addFile(e) {
       let files = e.dataTransfer.files;
       [...files].forEach((file) => {
@@ -324,7 +380,6 @@ export default {
     allerta() {
       alert("Funziono");
     },
-
     async addInfo() {
       const res = await axios.post(baseURL, {
         stage: this.textTitle,
@@ -460,7 +515,9 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
+.btn:hover {
+  color: white;
+}
 .btns-group2 {
   margin-top: 20px;
   margin-left: 100px;
@@ -544,6 +601,12 @@ export default {
   font-size: 87px;
 }
 .clicked {
-  background-color: #ea5b0c;
+  background-color: #6c757d;
+}
+.is-red {
+  background: red;
+}
+.is-blue {
+  background: blue;
 }
 </style>
