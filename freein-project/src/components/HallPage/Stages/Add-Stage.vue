@@ -24,7 +24,9 @@
             />
             <p href="#">Carica immagine</p>
             <br />
-            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+            <p style="margin-top: -40px">
+              Dimensioni minime di "808 x 632 pixel"
+            </p>
           </span>
 
           <!--<ul class="list-group">
@@ -122,11 +124,10 @@
             class="btn"
             type="submit"
             v-on:click="
-              recommendStore(family);
+              recommendStore(family), removeRecommend(family);
               selectedFamily = !selectedFamily;
             "
             :class="{ clicked: !selectedFamily }"
-            :disabled="!selectedFamily"
           >
             Famiglia
           </button>
@@ -134,7 +135,7 @@
             class="btn"
             type="submit"
             v-on:click="
-              recommendStore(single);
+              recommendStore(single), removeRecommend(single);
               selectedSingle = !selectedSingle;
             "
             :class="{ clicked: !selectedSingle }"
@@ -216,7 +217,10 @@
             Location
             <p>(obbligatorio)</p>
           </h2>
-          <div v-text="maxLocation - textLocation.length" style="color: red"></div>
+          <div
+            v-text="maxLocation - textLocation.length"
+            style="color: red"
+          ></div>
           <input
             type="text"
             :maxlength="maxLocation"
@@ -284,8 +288,9 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
-
       recommend: [],
+      checked: false,
+      removed: false,
       family: "Famiglia",
       single: "Single",
       placeForAnimals: "Struttura Per Animali",
@@ -323,7 +328,20 @@ export default {
 
   methods: {
     //add& remove value
-
+    removeRecommend(value) {
+      if (this.checked == false) {
+        this.removed = true;
+        this.checked = true;
+        console.log(this.recommend, "if");
+      } else if (this.checked == true) {
+        this.removed = true;
+        this.checked = false;
+        this.recommend.splice(value);
+        console.log(this.recommend, "else");
+      } else {
+        console.log("I'm out");
+      }
+    },
     //show the image in preview & read
     onSelectFile() {
       const input = this.$refs.fileInput;

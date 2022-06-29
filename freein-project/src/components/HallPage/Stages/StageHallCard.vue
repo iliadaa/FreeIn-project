@@ -32,7 +32,7 @@
     <!-- itinerari -->
     <div class="itineraries">
       <div
-        class="cards2"
+        class="cardsItinerary"
         v-for="itinerary in itineraries"
         :key="itinerary.itinerary.id"
       >
@@ -117,6 +117,12 @@ export default {
 
 .cards2 {
   margin-left: 10px;
+  margin-top: 100px;
+  flex: 0 1 32%;
+}
+.cardsItinerary {
+  margin-left: 10px;
+  margin-top: -10px;
   flex: 0 1 32%;
 }
 .cards2i {

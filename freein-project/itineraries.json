@@ -8,8 +8,21 @@
             "name": "Puglia e Matera",
             "type": "itinerary",
             "description": "Città di mare, con grandi centri storici da visitare",
-            "stages": [
-
+            "stages": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
             ]
         }
     },
