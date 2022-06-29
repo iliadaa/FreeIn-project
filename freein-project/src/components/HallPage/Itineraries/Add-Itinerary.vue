@@ -572,7 +572,7 @@ export default {
 }
 
 @media (max-width: 575.98px) {
-/*non ancora*/
+/**/
 .box {
   height: 0px;
   overflow: auto;
@@ -631,6 +631,7 @@ export default {
 
 
 
+
 #wrap {
   margin-left: 35px;
   margin-bottom: 0px;
@@ -654,13 +655,16 @@ export default {
   margin-right: auto;
 }
 
+
+
+
+/**/ 
 .vl {
   border-right: 2px solid #e6e6e6;
   height: 1250px;
   margin-top: -1200px;
   margin-right: 820px;
 }
-
 
 
 
@@ -763,7 +767,12 @@ export default {
   margin-bottom: 40px;
 }
 
-/*non ancora*/
+
+
+
+
+
+/**/
 .card-position {
   width: 700px;
   height: 453px;
@@ -772,7 +781,6 @@ export default {
   left: 42%;
   top: 105%;
 }
-
 
 
 
