@@ -1,40 +1,32 @@
 <template>
   <div class="container">
     <div class="form-group">
-      <ModalStages
-        v-show="isModalStagesVisible"
-        @close="choosed($event, disabled)"
-      >
+      <ModalStages v-show="isModalStagesVisible" @close="choosed($event, disabled)">
       </ModalStages>
       <div class="ph-layout">
         <h3>Foto itinerario (obbligatorio)</h3>
         <div
-          class="wrapper px-2 stage-ph"
+          class="wrapper stage-ph"
+          :style="{ 'background-image': `url(${rawImg})` }"
           v-cloak
           @drop.prevent="addFile"
           @dragover.prevent
         >
-          <p href="#">Carica immagine</p>
-          <br />
-         
-            <div class="wrapper-p">
-              <p >
-                Dimensioni minime di "808 x 632 pixel"
-              </p>
-            </div>
-         
-
-          <ul class="list-group">
-            <li class="list-group-item" v-for="(file, id) in files" :key="id">
-              {{ file.name }} ({{ file.size | kb }} kb)
-              <button
-                class="btn btn-danger btn-sm float-right"
-                @click="removeFile(file)"
-              >
-                Close
-              </button>
-            </li>
-          </ul>
+          <span v-if="!rawImg">
+            <button class="add-image-button" @click="onPickFile">
+              <i class="fas fa-plus"></i>
+            </button>
+            <input
+              type="file"
+              ref="fileInput"
+              accept="image/*"
+              style="display: none"
+              @input="onSelectFile"
+            />
+            <p href="#">Carica immagine</p>
+            <br />
+            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+          </span>
         </div>
       </div>
       <div class="classify-stage">
@@ -109,21 +101,44 @@
           </VueSlideBar>
         </div>
       </div>
-      <hr class="hr1"/>
+      <hr class="hr1" />
       <div class="Reccomend-orNot">
         <h2>
           A chi consiglieresti questa tappa?
           <p>(obbligatorio)</p>
         </h2>
         <div class="btns-group1">
-          <b-button class="btn" type="submit">Famiglia</b-button>
-          <b-button class="btn" type="submit">Single</b-button>
-          <b-button class="btn" type="submit">Struttura per animali</b-button>
+          <label class="control" for="family">
+            <input type="checkbox" value="Famiglia" id="family" v-model="checkedNames" />
+            <span class="control__content"> Famiglia </span>
+          </label>
+          <label class="control" for="single">
+            <input type="checkbox" value="Single" id="single" v-model="checkedNames" />
+            <span class="control__content"> Single </span>
+          </label>
+          <label class="control" name="placeForAnimals">
+            <input
+              type="checkbox"
+              value="Struttura per animali"
+              id="placeForAnimals"
+              v-model="checkedNames"
+            />
+            <span class="control__content"> Struttura per animali </span>
+          </label>
         </div>
         <div class="btns-group2">
-          <b-button class="btn" type="submit">Bambini</b-button>
-          <b-button class="btn" type="submit">Comitiva</b-button>
-          <b-button class="btn" type="submit">Coppia</b-button>
+          <label class="control" for="children">
+            <input type="checkbox" value="Bambini" id="children" v-model="checkedNames" />
+            <span class="control__content"> Bambini </span>
+          </label>
+          <label class="control" for="friends">
+            <input type="checkbox" value="Comitiva" id="friends" v-model="checkedNames" />
+            <span class="control__content"> Comitiva </span>
+          </label>
+          <label class="control" name="couple">
+            <input type="checkbox" value="Coppia" id="couple" v-model="checkedNames" />
+            <span class="control__content"> Coppia</span>
+          </label>
         </div>
       </div>
       <div class="stage-details">
@@ -142,10 +157,7 @@
           Location
           <p>(obbligatorio)</p>
         </h2>
-        <div
-          v-text="maxLocation - textLocation.length"
-          style="color: red"
-        ></div>
+        <div v-text="maxLocation - textLocation.length" style="color: red"></div>
         <input
           type="text"
           :maxlength="maxLocation"
@@ -158,7 +170,8 @@
           <p>(obbligatorio)</p>
         </h2>
         <div v-text="maxText - textText.length" style="color: red"></div>
-        <input class="inputclass"
+        <input
+          class="inputclass"
           type="text"
           placeholder="Inserisci descrizione massimo 37 caratteri"
           :maxlength="maxText"
@@ -176,7 +189,12 @@
 
       <div class="box">
         <div class="flex-Dialog">
-          <div class="container1" v-for="card in cardList" :key="card.id" :disabled="card.disabled">
+          <div
+            class="container1"
+            v-for="card in cardList"
+            :key="card.id"
+            :disabled="card.disabled"
+          >
             <div class="first-travel" id="travel-card">
               <b-card class="overflow-hidden">
                 <b-row no-gutters>
@@ -209,10 +227,10 @@
       <div class="end-adding-buttons">
         <a class="cancel" href="#">Annulla</a>
         <a class="save-as" href="#">Salva come bozza</a>
-        <a class="publishy" href="#/summaryitinerary">Pubblica</a>
+        <a class="publishy" type="submit" @click="SubmitTappa">Pubblica</a>
       </div>
       <div class="hr2">
-        <hr class="hr02"/>
+        <hr class="hr02" />
       </div>
     </div>
   </div>
@@ -222,13 +240,14 @@
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
 import dataStagesList from "/data-stages-list.json";
-
-
+const baseURL = "http://localhost:3000/itineraries";
 
 export default {
-
   data() {
     return {
+      rawImg: "",
+      recommend: [],
+      checkedNames: [],
       slider: {
         lineHeight: 2,
         processStyle: {
@@ -266,6 +285,69 @@ export default {
   },
 
   methods: {
+    //show the image in preview & read
+    onSelectFile() {
+      const input = this.$refs.fileInput;
+      const files = input.files;
+      if (files && files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.rawImg = e.target.result;
+        };
+        reader.readAsDataURL(files[0]);
+        this.$emit("input", files[0]);
+      }
+    },
+
+    onPickFile() {
+      this.$refs.fileInput.click();
+    },
+
+    uploadImage() {
+      const file = document.querySelector("input[type=file]").files[0];
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        this.rawImg = reader.result;
+        console.log(this.rawImg);
+      };
+      reader.readAsDataURL(file);
+    },
+
+    //collect all the data in body json file
+    SubmitTappa() {
+      const options = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          img: this.rawImg,
+          stages: this.textTitle,
+          location: this.textLocation,
+          description: this.textText,
+          arte: this.valueArt,
+          relax: this.valueRelax,
+          mare: this.valueMare,
+          natura: this.valueNatura,
+          gourmet: this.valueGourmetExplorer,
+          party: this.valueParty,
+          recommend: this.checkedNames,
+        }),
+      };
+
+      //fetch all the data into json file and then go to summary stage page
+      fetch(baseURL, options)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+        })
+        .then(() => this.$router.push("/"))
+        .catch((error) => console.log("Request Failed", error));
+    },
+
+    //jacopo code
     addFile(e) {
       let files = e.dataTransfer.files;
       [...files].forEach((file) => {
@@ -302,7 +384,7 @@ export default {
   overflow: auto;
   width: 700px;
   position: absolute;
-  left: 40%;
+  left: 45%;
   top: 101%;
 }
 
@@ -428,7 +510,7 @@ export default {
 
 .wrapper p {
   color: #939393;
-  margin-top: 180px;
+  margin-top: 50px;
 }
 
 .stage-ph {
@@ -456,7 +538,7 @@ export default {
 }
 
 .hr1 {
-  width: 340px; 
+  width: 340px;
   margin-left: 80px;
 }
 .Reccomend-orNot {
@@ -517,13 +599,13 @@ export default {
   border: 0px, 0px, 0px;
   border-style: ridge;
   border-color: rgba(211, 211, 211, 0.236);
-  padding-left: 10px
+  padding-left: 10px;
 }
 
 .inputclass {
-  height: 150px; 
-  padding-bottom: 50%; 
-  padding-top: 15px; 
+  height: 150px;
+  padding-bottom: 50%;
+  padding-top: 15px;
   padding-left: 10px;
 }
 
@@ -594,245 +676,276 @@ export default {
 }
 
 .hr2 {
-  margin-left: -110px; 
-  margin-top: -650px; 
+  margin-left: -110px;
+  margin-top: -650px;
   width: 90%;
 }
 .hr02 {
   transform: rotate(90deg);
 }
 @media (max-width: 575.98px) {
-/**/
-.box {
-  height: 0px;
-  overflow: auto;
-  width: 0px;
-  position: static;
-  left: 0%;
-  top: 0%;
+  /**/
+  .box {
+    height: 0px;
+    overflow: auto;
+    width: 0px;
+    position: static;
+    left: 0%;
+    top: 0%;
+  }
+  .flex-Dialog {
+    display: flex;
+    flex-direction: column;
+  }
+  .first-travel {
+    left: 44%;
+  }
+  .container1 {
+    max-width: 700px;
+  }
+  .overflow-hidden {
+    max-width: 700px;
+    height: 200px;
+    margin-bottom: 40px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flexCard {
+    display: flex;
+    align-items: baseline;
+  }
+  .flexCard i {
+    margin-top: 5px;
+    margin-right: 3px;
+  }
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-layout p {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  .text img {
+    width: 250px;
+    height: 200px;
+    margin-top: -16px;
+  }
+  .value-range {
+    margin-left: 130px;
+  }
+  .value {
+    margin-left: 150px;
+  }
+
+  #wrap {
+    margin-left: 35px;
+    margin-bottom: 0px;
+  }
+
+  .percentages {
+    margin-left: 20px;
+    margin-right: 15px;
+  }
+  .percentages p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .form-group {
+    width: 320px;
+    height: 1500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /**/
+  .vl {
+    border-right: 2px solid #e6e6e6;
+    height: 1250px;
+    margin-top: -1200px;
+    margin-right: 820px;
+  }
+
+  .ph-layout {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .ph-layout h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .wrapper p {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+  .stage-ph {
+    height: 300px;
+    width: 100%;
+  }
+  .classify-stage {
+    margin-top: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .classify-stage h2 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  .Reccomend-orNot {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .Reccomend-orNot h2 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .sliders {
+    margin-top: 0px;
+  }
+  .btn {
+    margin-right: 7px;
+    font-size: 65%;
+  }
+  .btns-group2 {
+    margin-top: 15px;
+    margin-left: 75px;
+  }
+  .stage-details {
+    top: 0%;
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: static;
+  }
+  .stage-details h2 {
+    font-size: 18px;
+  }
+  .stage-details p {
+    font-size: 16px;
+    margin-top: 0px;
+  }
+  .stage-details input {
+    width: 300px;
+    height: 40px;
+  }
+  .end-adding-buttons {
+    justify-content: space-evenly;
+  }
+  .end-adding-buttons a {
+    width: 200px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    border-radius: 10px;
+    padding-top: 3px;
+  }
+  .add-new-stage-btn {
+    margin-top: 10px;
+    margin-left: 0px;
+    position: static;
+    bottom: 0%;
+  }
+  .add-new-stage-btn a {
+    margin-left: 270px;
+    width: 25px;
+    height: 25px;
+  }
+  .fas {
+    font-size: 15px;
+  }
+  .add-new-stage-btn h2 {
+    font-size: 18px;
+    margin-left: 115px;
+    margin-bottom: 40px;
+  }
+
+  /**/
+  .card-position {
+    width: 700px;
+    height: 453px;
+    position: absolute;
+    z-index: 2;
+    left: 42%;
+    top: 105%;
+  }
+
+  .wrapper-p {
+    margin-top: -190px;
+  }
+
+  .hr1 {
+    display: none;
+  }
+  .hr2 {
+    display: none;
+  }
+  .hr02 {
+    display: none;
+  }
+  hr {
+    display: none;
+  }
+  ::placeholder {
+    font-size: 12px;
+  }
 }
-.flex-Dialog {
-  display: flex;
-  flex-direction: column;
+
+/** */
+.add-image-button {
+  background: transparent;
+  border: none;
+  margin-top: 30px;
 }
-.first-travel {
-  left: 44%;
-}
-.container1 {
-  max-width: 700px;
-}
-.overflow-hidden {
-  max-width: 700px;
-  height: 200px;
-  margin-bottom: 40px;
-}
-.flex {
-  display: flex;
-}
-.flexCard {
-  display: flex;
-  align-items: baseline;
-}
-.flexCard i {
-  margin-top: 5px;
-  margin-right: 3px;
-}
-.text {
-  display: flex;
-  justify-content: center;
+.add-image-button > i {
+  width: 100px;
+  height: 100px;
   align-items: center;
-}
-.text-layout p {
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-.text img {
-  width: 250px;
-  height: 200px;
-  margin-top: -16px;
-}
-.value-range {
-  margin-left: 130px;
-}
-.value {
-  margin-left: 150px;
-}
-
-
-
-
-
-#wrap {
-  margin-left: 35px;
-  margin-bottom: 0px;
-}
-
-.percentages {
-  margin-left: 20px;
-  margin-right: 15px;
-}
-.percentages p {
-  font-size: 16px;
-  margin-bottom: 20px;
+  justify-content: center;
+  background-color: white;
+  color: #939393b0;
+  display: flex;
+  border-radius: 50%;
+  text-decoration: none;
+  border: 2px solid #939393b0;
   margin-top: 20px;
-}
-.form-group {
-  width: 320px;
-  height: 1500px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-
-/**/ 
-.vl {
-  border-right: 2px solid #e6e6e6;
-  height: 1250px;
-  margin-top: -1200px;
-  margin-right: 820px;
-}
-
-
-
-
-
-.ph-layout {
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.ph-layout h3 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.wrapper p {
-  font-size: 16px;
-  margin-top: 150px;
-}
-.stage-ph {
-  height: 300px;
-  width: 100%;
-}
-.classify-stage {
-  margin-top: 20px;
-  margin-left: 2px;
-  margin-right: 2px;
-}
-.classify-stage h2 {
-  font-size: 18px;
-  margin-bottom: 0px;
-}
-.Reccomend-orNot {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.Reccomend-orNot h2 {
-  font-size: 18px;
-  margin-top: 20px;
-}
-.sliders {
-  margin-top: 0px;
-}
-.btn {
-  margin-right: 7px;
-  font-size: 65%;
-}
-.btns-group2 {
-  margin-top: 15px;
-  margin-left: 75px;
-}
-.stage-details {
-  top: 0%;
-  margin-top: 40px;
-  margin-left: 5px;
-  margin-right: 5px;
-  position: static;
-}
-.stage-details h2 {
-  font-size: 18px;
-}
-.stage-details p {
-  font-size: 16px;
-  margin-top: 0px;
-}
-.stage-details input {
-  width: 300px;
-  height: 40px;
-}
-.end-adding-buttons {
-  justify-content: space-evenly;
-}
-.end-adding-buttons a {
-  width: 200px;
-  height: auto;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  border-radius: 10px;
-  padding-top: 3px;
-}
-.add-new-stage-btn {
-  margin-top: 10px;
-  margin-left: 0px;
-  position: static;
-  bottom: 0%;
-}
-.add-new-stage-btn a {
-  margin-left: 270px;
-  width: 25px;
-  height: 25px;
 }
 .fas {
-  font-size: 15px;
+  font-weight: 100;
+  font-size: 87px;
 }
-.add-new-stage-btn h2 {
-  font-size: 18px;
-  margin-left: 115px;
-  margin-bottom: 40px;
+.control__content {
+  display: inline-flex;
+  padding: 6px 12px;
+  font-size: 70%;
+  line-height: 25px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-color: white;
+  background-color: #ea5b0c;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
-
-
-
-
-
-
-/**/
-.card-position {
-  width: 700px;
-  height: 453px;
+.control > input {
   position: absolute;
-  z-index: 2;
-  left: 42%;
-  top: 105%;
+  opacity: 0;
+  z-index: -1;
 }
 
-.wrapper-p {
-  margin-top: -190px;
+.control input:checked ~ .control__content {
+  background-color: #939393b0;
 }
-
-
-
-
-.hr1 {
-  display: none;
-}
-.hr2 {
-  display: none;
-}
-.hr02 {
-  display: none;
-}
-hr {
-  display: none;
-}
-::placeholder {
-  font-size: 12px;
-}
+a.button-area.fas.fa-plus {
+  font-size: 35px;
 }
 </style>
