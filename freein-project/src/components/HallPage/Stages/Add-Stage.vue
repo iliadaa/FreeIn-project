@@ -116,82 +116,39 @@
           A chi consiglieresti questa tappa?
           <p style="font-size: 10px">(obbligatorio)</p>
         </h2>
+
         <div class="btns-group1">
-          <button
-            id="button-tappa"
-            class="btn"
-            type="submit"
-            v-on:click="
-              recommendStore(family);
-              removeRecommend(family);
-              selectedFamily = !selectedFamily;
-            "
-            :class="{ clicked: !selectedFamily }"
-          >
-            Famiglia
-          </button>
-          <button
-            class="btn"
-            type="submit"
-            v-on:click="
-              recommendStore(single);
-              removeRecommend(single);
-              selectedSingle = !selectedSingle;
-            "
-            :class="{ clicked: !selectedSingle }"
-          >
-            Single
-          </button>
-          <button
-            class="btn 2"
-            type="submit"
-            @click="
-              recommendStore(placeForAnimals);
-              removeRecommend(placeForAnimals);
-              selectedStructura = !selectedStructura;
-            "
-            :class="{ clicked: !selectedStructura }"
-          >
-            Struttura per animali
-          </button>
+          <label class="control" for="family">
+            <input type="checkbox" value="Famiglia" id="family" v-model="checkedNames" />
+            <span class="control__content"> Famiglia </span>
+          </label>
+          <label class="control" for="single">
+            <input type="checkbox" value="Single" id="single" v-model="checkedNames" />
+            <span class="control__content"> Single </span>
+          </label>
+          <label class="control" name="placeForAnimals">
+            <input
+              type="checkbox"
+              value="Struttura per animali"
+              id="placeForAnimals"
+              v-model="checkedNames"
+            />
+            <span class="control__content"> Struttura per animali </span>
+          </label>
         </div>
         <div class="btns-group2">
-          <button
-            class="btn"
-            type="submit"
-            v-on:click="
-              recommendStore(children);
-              removeRecommend(children);
-              selectedChildren = !selectedChildren;
-            "
-            :class="{ clicked: !selectedChildren }"
-          >
-            Bambini
-          </button>
-          <button
-            class="btn"
-            type="submit"
-            v-on:click="
-              recommendStore(friends);
-              removeRecommend(friends);
-              selectedFriends = !selectedFriends;
-            "
-            :class="{ clicked: !selectedFriends }"
-          >
-            Comitiva
-          </button>
-          <button
-            class="btn"
-            type="submit"
-            v-on:click="
-              recommendStore(couple);
-              removeRecommend(couple);
-              selectedCouple = !selectedCouple;
-            "
-            :class="{ clicked: !selectedCouple }"
-          >
-            Coppia
-          </button>
+          <label class="control" for="children">
+            <input type="checkbox" value="Bambini" id="children" v-model="checkedNames" />
+            <span class="control__content"> Bambini </span>
+          </label>
+          <label class="control" for="friends">
+            <input type="checkbox" value="Comitiva" id="friends" v-model="checkedNames" />
+            <span class="control__content"> Comitiva </span>
+          </label>
+          <label class="control" name="couple">
+            <input type="checkbox" value="Coppia" id="couple" v-model="checkedNames" />
+            <span class="control__content"> Coppia</span>
+          </label>
         </div>
       </div>
 
@@ -264,7 +221,6 @@ export default {
   data() {
     return {
       rawImg: "",
-      //stageInfo: [],
       slider: {
         lineHeight: 2,
         processStyle: {
@@ -285,20 +241,7 @@ export default {
       textLocation: "",
       textText: "",
       recommend: [],
-      checked: false,
-      removed: false,
-      family: "Famiglia",
-      single: "Single",
-      placeForAnimals: "Struttura Per Animali",
-      children: "Bambini",
-      friends: "Comitiva",
-      couple: "Coppia",
-      selectedSingle: true,
-      selectedStructura: true,
-      selectedChildren: true,
-      selectedFriends: true,
-      selectedCouple: true,
-      selectedFamily: true,
+      checkedNames: [],
     };
   },
 
@@ -351,36 +294,7 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    //collect recommend from tappa
-    recommendStore(value) {
-      //if there is not ????
-      /*
-      var filterRecommend=this.recommend.filter(value)
-      console.log(filterRecommend.length, "before");
-      if (filterRecommend.length!=0) {
-        this.recommend.push(value);
-        console.log(this.recommend, "if");
-      } else  {
-        this.recommend.pop(value);
-        console.log(this.recommend, "else");
-      }
-      */
-    },
-    //add& remove value
-    removeRecommend(value) {
-      /*
-      if (this.checked == false) {
-        this.removed = true;
-        this.checked = true;
-        console.log(this.recommend, "if");
-      } else if (this.checked == true) {
-        this.removed = true;
-        this.checked = false;
-        this.recommend.splice(value);
-        console.log(this.recommend, "else");
-      }
-      */
-    },
+
     //collect all the data in body json file
     SubmitTappa() {
       const options = {
@@ -400,7 +314,7 @@ export default {
           natura: this.valueNatura,
           gourmet: this.valueGourmetExplorer,
           party: this.valueParty,
-          recommend: this.recommend,
+          recommend: this.checkedNames,
         }),
       };
 
@@ -664,5 +578,32 @@ export default {
 }
 .is-grey {
   background: #939393b0;
+}
+
+.control__content {
+  display: inline-flex;
+  padding: 6px 12px;
+  font-size: 70%;
+  line-height: 25px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-color: white;
+  background-color: #ea5b0c;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.control > input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.control input:focus ~ .control__content {
+  box-shadow: 0 0 0 0.25rem #939393b0;
+}
+
+.control input:checked ~ .control__content {
+  background-color: #939393b0;
 }
 </style>
