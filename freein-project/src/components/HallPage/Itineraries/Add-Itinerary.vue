@@ -240,7 +240,7 @@
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
 import dataStagesList from "/data-stages-list.json";
-const baseURL = "http://localhost:3000/itineraries";
+const baseURL = "http://localhost:3001/itineraries";
 
 export default {
   data() {
@@ -323,17 +323,19 @@ export default {
           "Content-Type": "application/json;charset=UTF-8",
         },
         body: JSON.stringify({
-          img: this.rawImg,
-          stages: this.textTitle,
-          location: this.textLocation,
-          description: this.textText,
-          arte: this.valueArt,
-          relax: this.valueRelax,
-          mare: this.valueMare,
-          natura: this.valueNatura,
-          gourmet: this.valueGourmetExplorer,
-          party: this.valueParty,
-          recommend: this.checkedNames,
+          itinerary: {
+            img: this.rawImg,
+            stages: this.textTitle,
+            location: this.textLocation,
+            description: this.textText,
+            arte: this.valueArt,
+            relax: this.valueRelax,
+            mare: this.valueMare,
+            natura: this.valueNatura,
+            gourmet: this.valueGourmetExplorer,
+            party: this.valueParty,
+            recommend: this.checkedNames,
+          },
         }),
       };
 
