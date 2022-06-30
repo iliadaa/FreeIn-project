@@ -599,9 +599,6 @@ export default {
   opacity: 0;
   z-index: -1;
 }
-.control input:focus ~ .control__content {
-  box-shadow: 0 0 0 0.25rem #939393b0;
-}
 
 .control input:checked ~ .control__content {
   background-color: #939393b0;
