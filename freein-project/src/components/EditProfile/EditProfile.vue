@@ -44,15 +44,15 @@
               <h2>My account -</h2>
               <p>user info</p>
             </div>
-            <p style="margin-top: -15px">Your personal datas</p>
+            <div class="right-p">
+              <p>Your personal datas</p>
+            </div>
 
             <b-form>
               <b-input-group class="input-gender">
-                <i
-                  style="color: grey; margin-left: -10px; margin-top: -5px"
-                  class="fa-regular fa-user"
-                ></i>
-                <label style="color: grey; margin-left: 15px">Gender</label>
+                <i class="fa-regular fa-user"></i>
+                  <label>Gender</label>
+               
                 <div class="flex-checkbox">
                   <input @click="switchBox()" type="checkbox" id="ck1" />
                   <label for="ck1">
@@ -60,7 +60,6 @@
                   </label>
                   <input
                     @click="switchBox()"
-                    style="margin-left: 45px"
                     type="checkbox"
                     id="ck2"
                   />
@@ -96,14 +95,13 @@
                   <label>e mail</label>
                 </div>
               </b-input-group>
-              <hr style="color: #ea5b0c; opacity: 100%; height: 2px" />
+              <hr class="hr1"/>
               <div class="company-details">
                 <h2>Company Details</h2>
                 <b-input-group class="input-group-email" style="">
-                  <div class="right-labelIcon" style="width: 122px">
+                  <div class="right-labelIcon">
                     <i class="fa-regular fa-rectangle-list"></i>
                     <input
-                      style="width: 84%; margin-left: 20px"
                       type="text"
                       class="rightSectionInputs"
                     />
@@ -111,7 +109,9 @@
                   </div>
                 </b-input-group>
               </div>
-              <hr style="color: #ea5b0c; opacity: 100%; height: 2px" />
+
+              <hr class="hr1"/>
+
               <div class="option">
                 <h2>Options</h2>
                 <div class="check">
@@ -123,10 +123,15 @@
               </div>
               <div class="disclaimer-bottom-left">
                 <p>Don't worry, you can change your username later</p>
-                <input type="checkbox" value="1" id="flexCheckDefault2" />
-                <label class="form-check-label" for="flexCheckDefault2">
-                  I agree to the Terms of Service & Privacy Policy
-                </label>
+
+
+                <div class="div1">
+                  <input type="checkbox" value="1" id="flexCheckDefault2" />
+                  <label class="form-check-label" for="flexCheckDefault2">
+                    I agree to the Terms of Service & Privacy Policy
+                  </label>
+                </div>
+
                 <br />
                 <button @click="changePage(true)" class="save">
                   <p>Save</p>
@@ -179,13 +184,11 @@ export default {
 .container2 {
   width: auto;
 }
-
 .wrap {
   padding-top: 12%;
   display: flex;
   justify-content: center;
 }
-
 .edit-sections {
   position: relative;
   color: white;
@@ -193,13 +196,11 @@ export default {
   background-size: cover;
   min-height: 100vh;
 }
-
 .text-color {
   display: flex;
   color: grey;
   flex-direction: column;
 }
-
 button {
   width: auto;
   height: 67px;
@@ -214,11 +215,9 @@ button {
   text-decoration: none;
   border-bottom: 1px solid grey;
 }
-
 button:hover {
   background-color: whitesmoke;
 }
-
 .far {
   background-color: #ea5b0c;
   color: white;
@@ -230,16 +229,13 @@ button:hover {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-
 .space-margin-left {
   margin-left: 20px;
   font-size: 20px;
 }
-
 .section-text {
   margin-left: 10px;
 }
-
 .right-section i {
   position: absolute;
   z-index: 1;
@@ -247,7 +243,6 @@ button:hover {
   padding-top: 10px;
   padding-left: 10px;
 }
-
 .input-gender {
   background-color: white;
   margin-left: -1px;
@@ -258,19 +253,22 @@ button:hover {
   padding-top: 6px;
   padding-left: 10px;
 }
-
+.input-gender i {
+  color: grey; 
+  margin-left: -10px; 
+  margin-top: -5px;
+}
 .input-gender label {
   position: relative;
   bottom: 4px;
-  left: 10px;
+  left: 15px;
   font-size: 10px;
+  color: grey;
 }
-
 .input-gender input {
   position: relative;
   left: 20px;
 }
-
 .rightSectionInputs {
   position: absolute;
   left: 100px;
@@ -278,18 +276,15 @@ button:hover {
   width: 86.8%;
   color: grey;
 }
-
 .rightSectionInputs:focus {
   outline: none;
   background-color: whitesmoke;
   border-left: 1px solid #ea5b0c;
 }
-
 .rightSectionInputs:hover {
   background-color: whitesmoke;
   border-left: 1px solid #ea5b0c;
 }
-
 .right-labelIcon {
   background-color: white;
   margin-left: -1px;
@@ -297,53 +292,47 @@ button:hover {
   height: 40px;
   width: 102px;
 }
-
 .right-labelIcon label {
   margin-left: 35px;
   margin-top: -5px;
   font-size: 10px;
   color: grey;
 }
-
 .left-section {
   flex: 0 0 300px;
 }
-
 .right-section-text {
   display: flex;
   align-items: baseline;
 }
-
 .right-section-text p {
   font-size: 30px;
   margin-left: 10px;
   display: flex;
   align-items: baseline;
 }
-
+.right-p {
+  margin-top: -15px;
+}
 .right-section {
   flex: 0 0 auto;
   min-width: 60%;
   padding-left: 20px;
 }
-
 .right-section input {
   border: transparent;
   border-radius: 0px;
   margin-bottom: 10px;
 }
-
 .flex-checkbox {
   display: flex;
   color: grey;
   align-items: baseline;
 }
-
 .flex-checkbox p {
   margin-left: 20px;
   margin-top: 0px;
 }
-
 .flex-checkbox label {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -355,61 +344,58 @@ button:hover {
   top: 5px;
   left: 10px;
 }
-
+.flex-checkbox input {
+  margin-right: 25px;
+}
 .flex-checkbox input[type="checkbox"] {
   visibility: hidden;
 }
-
 .flex-checkbox input[type="checkbox"]:checked + label {
   background-color: #ea5b0c;
   border-color: grey;
 }
-
 .flex-checkbox input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
-
 ::placeholder {
   font-size: 10px;
   padding-left: 25px;
 }
-
 .check-box {
   background-color: white;
   display: flex;
   margin-bottom: 10px;
 }
-
 .input-group-email {
   margin-bottom: -15px;
 }
-
 .company-details h2 {
   font-size: 15px;
   margin-top: -10px;
 }
-
+.company-details .right-labelIcon {
+  width: 122px
+}
+.company-details input {
+  width: 84%; 
+  margin-left: 20px;
+}
 .option h2 {
   font-size: 15px;
 }
-
 .option input {
   margin-right: 5px;
 }
-
 .check {
   margin-left: 58px;
 }
-
 .disclaimer-bottom-left {
   position: relative;
   text-align: right;
 }
-
 .disclaimer-bottom-left input {
   margin-right: 5px;
 }
-
 .save {
   background-color: #ea5b0c;
   color: white;
@@ -419,14 +405,66 @@ button:hover {
   border-color: transparent;
   margin-top: 30px;
 }
-
 .save:hover {
   border-color: black;
   background-color: #ea5b0c;
 }
-
 .save p {
   padding-left: 25px;
   padding-top: 15px;
+}
+.hr1 {
+  color: #ea5b0c; 
+  opacity: 100%; 
+  height: 2px;
+}
+@media (max-width: 575.98px) {
+.wrap {
+  display: block;
+}
+.far {
+  height: 67px;
+}
+.input-gender {
+  width: 79%;
+}
+.rightSectionInputs {
+  width: 60%;
+}
+::placeholder {
+  padding-left: 10px;
+}
+.company-details .right-labelIcon {
+  width: 106px
+}
+.company-details input {
+  width: 59%; 
+  margin-left: 4px;
+}
+.option input {
+  margin-right: 2px;
+}
+.check {
+  margin-left: 58px;
+  margin-bottom: 30px;
+}
+.disclaimer-bottom-left {
+  text-align: left;
+}
+.disclaimer-bottom-left input {
+  margin-right: 2px; 
+  margin-top: 6px;
+}
+.save {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-left: 60%;
+}
+.hr1 {
+  width: 79%;
+}
+.div1 {
+  display: flex;
+}
 }
 </style>
