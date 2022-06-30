@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="stages">
-      <div class="cards2" v-for="stage in stages" :key="stage.stage.id">
+  <div class="contenitore">
+    <div v-if="this.typeStage.length != 0" class="stages">
+      <div class="cards2" v-for="stage in typeStage" :key="stage.id">
         <div class="cards2i">
           <div class="flagicon">
             <i class="fa-regular fa-font-awesome"></i>
@@ -10,13 +10,13 @@
             <i class="fas fa-user-circle"></i>
           </div>
         </div>
-        <img :src="stage.stage.img" alt="" />
+        <img :src="stage.img" alt="" />
         <div class="cards2body">
           <!--questi devono essere cambiati, p e tutto il resto sarà sostituito
         dall'itinerary.stage.location exc exc; //era una prova per vedere se lo
         stage viene preso correttamente
         -->
-          <p>{{ stage.stage.stageTitle }}</p>
+          <p>{{ stage.stageTitle }}</p>
           <div class="cards2icons">
             <div class="button1">
               <a href="?#/stageItineraryCards" class="button">Go</a>
@@ -30,11 +30,11 @@
       </div>
     </div>
     <!-- itinerari -->
-    <div class="itineraries">
+    <div class="itineraries" v-if="this.typeItinerary.length != 0">
       <div
         class="cardsItinerary"
-        v-for="itinerary in itineraries"
-        :key="itinerary.itinerary.id"
+        v-for="itinerary in typeItinerary"
+        :key="itinerary.id"
       >
         <div class="cards2i">
           <div class="flagicon">
@@ -44,14 +44,41 @@
             <i class="fas fa-user-circle"></i>
           </div>
         </div>
-        <img :src="itinerary.itinerary.img" alt="" />
+        <img :src="itinerary.img" alt="" />
         <div class="cardsItineraryBody">
-          <p>{{ itinerary.itinerary.description }}</p>
+          <p>{{ itinerary.description }}</p>
           <div class="cards2icons">
             <div class="button1">
               <a href="?#/stageItineraryCards" class="buttonItinerary"
                 >Itinerario</a
               >
+            </div>
+            <div>
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href=""><i class="far fa-bookmark"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Friends -->
+    <div class="friends">
+      <div
+        class="cardsFriends"
+        v-for="friend in friends"
+        :key="friend.friend.id"
+      >
+        <div class="cards2i">
+          <div class="usericonFriends">
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+        <img class="friendsImg" :src="friend.friend.img" alt="" />
+        <div class="cardsFriendsBody">
+          <p>{{ friend.friend.name }}</p>
+          <div class="cardsFriendsicons">
+            <div class="button1">
+              <a href="?#/stageItineraryCards" class="buttonFriends">Go</a>
             </div>
             <div>
               <a href="#"><i class="fas fa-star"></i></a>
@@ -67,12 +94,15 @@
 <script>
 import stagesJson from "/stages.json";
 import itinerariesJson from "/itineraries.json";
+import friendsJson from "/friends.json";
 
 export default {
   data() {
     return {
       stages: stagesJson.stages,
       itineraries: itinerariesJson.itineraries,
+      friends: friendsJson.friends,
+      type: this.typeStage,
     };
   },
   methods: {
@@ -88,10 +118,19 @@ export default {
 
       console.log(this.stages[0]);
     },
+    isCardType() {
+      this.$store.commit("isCardType");
+    },
+  },
+  created() {
+    this.isCardType();
   },
   computed: {
-    read() {
-      console.log(stageJson);
+    typeStage() {
+      return this.$store.state.typeStage;
+    },
+    typeItinerary() {
+      return this.$store.state.typeItinerary;
     },
   },
 };
@@ -100,7 +139,7 @@ export default {
 <style scoped>
 .wrap img {
   width: 100%;
-  height: 60%;
+  height: 70%;
   border-radius: 0% 10% 0% 0%;
   position: relative;
 }
@@ -115,16 +154,38 @@ export default {
   display: flex;
 }
 
+.friends {
+  margin-top: 100px;
+  display: flex;
+}
+
 .cards2 {
   margin-left: 10px;
-  margin-top: 100px;
+  margin-top: 135px;
   flex: 0 1 32%;
 }
 .cardsItinerary {
   margin-left: 10px;
-  margin-top: -10px;
+  margin-top: 20px;
   flex: 0 1 32%;
 }
+
+.cardsFriends {
+  margin-left: 10px;
+  margin-top: 10px;
+  flex: 0 1 32%;
+  border-radius: 10%;
+  background-color: purple;
+}
+
+.cardsFriends img {
+  border-radius: 50%;
+  height: 70%;
+  width: 70%;
+  left: 18%;
+  top: 10%;
+}
+
 .cards2i {
   display: flex;
   color: white;
@@ -141,6 +202,16 @@ export default {
   padding-left: 150px;
   padding-top: 5px;
   color: white;
+}
+.usericonFriends {
+  padding-left: 300px;
+  padding-top: 50px;
+  font-size: 50px;
+  /* 
+  Per il macbook questi padding andrebbero bene per le cards Friends
+  padding-left: 160px;
+  padding-top: 20px;
+  */
 }
 .cards2body {
   background: #009fe3;
@@ -164,7 +235,24 @@ export default {
   color: white;
   padding-top: 15px;
   padding-left: 15px;
+  width: 100%;
 }
+
+.cardsFriendsBody {
+  background: purple;
+  border-radius: 10%;
+  height: 60%;
+}
+
+.cardsFriendsBody p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+  position: relative;
+  top: 30%;
+}
+
 .button {
   background-color: white;
   border: none;
@@ -192,6 +280,20 @@ export default {
   margin-bottom: 15px;
 }
 
+.buttonFriends {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  color: #009fe3;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
 .cards2icons {
   display: flex;
   justify-content: space-between;
@@ -199,6 +301,20 @@ export default {
   padding-right: 17px;
 }
 .cards2icons i {
+  padding-left: 34px;
+  color: white;
+}
+
+.cardsFriendsicons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 17px;
+  padding-right: 17px;
+  position: relative;
+  top: 30%;
+}
+
+.cardsFriendsicons i {
   padding-left: 34px;
   color: white;
 }

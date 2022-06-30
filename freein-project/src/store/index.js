@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import router from '../router/index'
 import dataStageList from '../../data-stages-list'
+import stagesJson from "/stages.json";
+import itinerariesJson from "/itineraries.json";
+import friendsJson from "/friends.json";
 import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons'
 
 Vue.use(Vuex)
@@ -86,6 +89,10 @@ export default new Vuex.Store({
     testToDo: [],
     testAnswers: [],
     itineraries: [],
+    typeStage: [],
+    typeItinerary: [],
+    typeFriends: "",
+    typeFood: "",
   },
   getters: {
   },
@@ -181,7 +188,21 @@ export default new Vuex.Store({
         state.inSession[0] = state.inSession[1];
       }
     },
+    isCardType(state) {
+      //prova solo con stage
+      var i;
+      console.log(stagesJson);
+      for (i = 0; i < stagesJson.stages.length; i++) {
+        if (stagesJson.stages[i].stage.type == "stage") {
+          console.log("Stage +1");
+          state.typeStage.push(stagesJson.stages[i].stage);
+        } else if (stagesJson.stages[i].stage.type == "itinerary") {
+          console.log("Itinerary +1");
+          state.typeItinerary.push(stagesJson.stages[i].stage);
+        }
 
+      }
+    }
 
   },
   actions: {

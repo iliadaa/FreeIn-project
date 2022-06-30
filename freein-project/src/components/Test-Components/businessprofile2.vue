@@ -543,6 +543,7 @@ a:hover {
 /**Business card */
 .wrap {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 30px;

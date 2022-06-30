@@ -1,0 +1,173 @@
+{
+    "friends": [
+        {
+        
+        "friend": {
+            "id": 1,
+            "img": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/96be2232163929.567197ac6fb64.png",
+            "name": "Luigi",
+            "type": "itinerary",
+            "stages": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "itineraries": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "otherFriends": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ]
+        }
+    },
+    {
+        "friend": {
+            "id": 2,
+            "img": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png",
+            "name": "Marco",
+            "type": "itinerary",
+            "stages": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "itineraries": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "otherFriends": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ]
+        }
+    },
+    {
+        "friend": {
+            "id": 3,
+            "img": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/96be2232163929.567197ac6fb64.png",
+            "name": "Giovanni",
+            "type": "itinerary",
+            "stages": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "itineraries": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ],
+            "otherFriends": [{
+                "id":1
+            },
+            {
+                "id":2
+            },
+            {
+                "id":3
+            },
+            {
+                "id":4
+            },
+            {
+                "id":5
+            }
+            ]
+        }
+    }]
+}
+    
