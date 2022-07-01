@@ -1,53 +1,53 @@
 {
-    "itineraries": [
-        {
-        
-        "itinerary": {
-            "id": 1,
-            "img": "https://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg",
-            "name": "Puglia e Matera",
-            "type": "itinerary",
-            "description": "Città di mare, con grandi centri storici da visitare",
-            "stages": [{
-                "id":1
-            },
-            {
-                "id":2
-            },
-            {
-                "id":3
-            },
-            {
-                "id":4
-            },
-            {
-                "id":5
-            }
-            ]
-        }
+  "itineraries": [
+    {
+      "itinerary": {
+        "id": 1,
+        "img": "https://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg",
+        "name": "Puglia e Matera",
+        "type": "itinerary",
+        "description": "Città di mare, con grandi centri storici da visitare",
+        "stages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          },
+          {
+            "id": 3
+          },
+          {
+            "id": 4
+          },
+          {
+            "id": 5
+          }
+        ]
+      },
+      "id": 1
     },
     {
-        "itinerary": {
-            "id": 2,
-            "img":"https://m.media-amazon.com/images/M/MV5BYmZjYTZjMDktZmJhNi00NGEwLWIyNzAtYjhmNTI1YzAwNjEyXkEyXkFqcGdeQXVyMjY5MTE2MzE@._V1_.jpg",
-            "name": "ITRIA World",
-            "type": "itinerary",
-            "description": "lorem ipsum",
-            "stages": [
-
-            ]
-        }
+      "itinerary": {
+        "id": 2,
+        "img": "https://m.media-amazon.com/images/M/MV5BYmZjYTZjMDktZmJhNi00NGEwLWIyNzAtYjhmNTI1YzAwNjEyXkEyXkFqcGdeQXVyMjY5MTE2MzE@._V1_.jpg",
+        "name": "ITRIA World",
+        "type": "itinerary",
+        "description": "lorem ipsum",
+        "stages": []
+      },
+      "id": 2
     },
     {
-        "itinerary": {
-            "id": 3,
-            "img": "https://i0.wp.com/news.xbox.com/en-us/wp-content/uploads/sites/2/2022/03/Wire_SoT_SeasonSix_SeaFort_1920.jpg?resize=1920%2C1080&ssl=1",
-            "name": "SalentoLand",
-            "type": "itinerary",
-            "description": "orem ipsum",
-            "stages": [
-
-            ]
-        }
+      "itinerary": {
+        "id": 3,
+        "img": "https://i0.wp.com/news.xbox.com/en-us/wp-content/uploads/sites/2/2022/03/Wire_SoT_SeasonSix_SeaFort_1920.jpg?resize=1920%2C1080&ssl=1",
+        "name": "SalentoLand",
+        "type": "itinerary",
+        "description": "orem ipsum",
+        "stages": []
+      },
+      "id": 3
     }
-]}
+  ]
+}
