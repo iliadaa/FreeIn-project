@@ -1,63 +1,62 @@
 <template>
-  <div class="card-group card-absolute">
-    <div class="card card-b">
-      <h2>Returning User</h2>
-      <div class="card-login">
-        <!-- vedi vecchio codice login ed usalo qui -->
-        <b-form v-if="show">
-          <b-input-group>
-            <input class="email" placeholder="Email" v-model="form.email" />
-          </b-input-group>
-          <b-input-group>
-            <input
-              class="password"
-              placeholder="Password"
-              v-model="form.password"
-              type="password"
-              required=""
-              id="myInput"
-            />
-            <i
-              v-if="!hide"
-              class="far fa-solid fa-eye-slash"
-              @click="showPass"
-              style="margin-left: -30px; margin-top: 13px"
-            ></i>
-            <i
-              v-else
-              class="far fa-eye"
-              @click="showPass"
-              style="margin-left: -30px; margin-top: 13px"
-            ></i>
-          </b-input-group>
-          <!-- questo p class deve essere un a con style: text-decoration: none -->
-          <p class="forgot-password">Forgot password?</p>
-          <b-button
-            class="login-btn"
-            @click="wrongLoginData(form.email, total, inSession, form.password)"
-            type="submit"
-            >LOG IN</b-button
-          >
-        </b-form>
-      </div>
-      <div class="login-with-btn-hrefs">
-        <p>- or -</p>
-        <div class="href-buttons-rounded">
-          <a class="fab fa-facebook-f" href="#"></a>
-          <a class="fab fa-twitter"></a>
-          <a class="fab fa-google-plus-g"></a>
-          <a class="fab fa-microsoft"></a>
-          <a class="fab fa-linkedin" style="margin-right: 20px"></a>
+        <div class="card-group card-absolute">
+          <div class="card card-b">
+            <h2>Returning User</h2>
+            <div class="card-login">
+              <!-- vedi vecchio codice login ed usalo qui -->
+              <b-form v-if="show">
+                <b-input-group>
+                  <input class="email" placeholder="Email" v-model="form.email" />
+                </b-input-group>
+                <b-input-group>
+                  <input
+                    class="password"
+                    placeholder="Password"
+                    v-model="form.password"
+                    type="password"
+                    required=""
+                    id="myInput"
+                  />
+                  <i
+                    v-if="!hide"
+                    class="far fa-solid fa-eye-slash"
+                    @click="showPass"
+                    style="margin-left: -30px; margin-top: 13px"
+                  ></i>
+                  <i
+                    v-else
+                    class="far fa-eye"
+                    @click="showPass"
+                    style="margin-left: -30px; margin-top: 13px"
+                  ></i>
+                </b-input-group>
+                <!-- questo p class deve essere un a con style: text-decoration: none -->
+                <p class="forgot-password">Forgot password?</p>
+                <b-button
+                  class="login-btn"
+                  @click="wrongLoginData(form.email, total, inSession, form.password)"
+                  type="submit"
+                  >LOG IN</b-button
+                >
+              </b-form>
+            </div>
+            <div class="login-with-btn-hrefs">
+              <p>- or -</p>
+              <div class="href-buttons-rounded">
+                <a class="fab fa-facebook-f" href="#" style="margin-left: 10px"></a>
+                <a class="fab fa-twitter"></a>
+                <a class="fab fa-google-plus-g"></a>
+                <a class="fab fa-microsoft"></a>
+                <a class="fab fa-linkedin" style="margin-right: 10px"></a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-r">
+            <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
+            <p>If you are not registered click the button below!!</p>
+            <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="card card-r">
-      <h2>Hello, Friend!<b-icon class="bar-chart-line-fill"></b-icon></h2>
-      <p>If you are not registered click the</p>
-      <p style="margin-bottom: 20px">button below!!</p>
-      <b-button class="sign-up" @click="changePage(true)">SIGN UP</b-button>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -216,32 +215,6 @@ export default {
 </script>
 
 <style scoped>
-.container1 {
-  margin-bottom: 100px;
-  margin-top: 40px;
-  margin-left: 455px;
-  align-content: center;
-  justify-content: center;
-  display: flex;
-  width: 288%;
-  opacity: 100%;
-}
-
-.card {
-  height: 600px;
-  width: 0%;
-  background-color: white;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-}
-
-.card-r {
-  background-color: #ea5b0c;
-  justify-content: center;
-  align-items: center;
-}
-
 .card-group {
   z-index: 1;
   align-content: center;
@@ -251,41 +224,46 @@ export default {
   height: 100%;
   box-shadow: 0px 0px 0px transparent;
 }
-
-.card-group h2 {
+.card {
+  height: 600px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card-b h2 {
   color: gray;
 }
-
-.card-r p {
-  color: white;
-  font-size: 20px;
-  margin-bottom: -10px;
+.card-r {
+  background-color: #ea5b0c;
+  justify-content: center;
+  align-items: center;
 }
-
 .card-r h2 {
   color: white;
   margin-bottom: -5px;
   margin-left: 25px;
 }
-
+.card-r p {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
 .sign-up {
   border-radius: 20px;
   border-color: white;
   background-color: #ea5b0c;
   color: white;
 }
-
 .sign-up:hover {
   border-color: white;
   background-color: #ea5b0c;
 }
-
 .card-login {
   width: 75%;
   height: 60%;
   background-color: rgba(0, 0, 0, 0.014);
 }
-
 .email {
   margin-bottom: 20px;
   margin-top: 40px;
@@ -296,7 +274,6 @@ export default {
   background-color: lightgrey;
   border-color: transparent;
 }
-
 .password {
   margin-left: 20px;
   width: 90%;
@@ -305,13 +282,11 @@ export default {
   background-color: lightgrey;
   border-color: transparent;
 }
-
 .forgot-password {
   margin-left: 100px;
   margin-top: 50px;
   font-size: 20px;
 }
-
 .login-btn {
   margin-top: 20px;
   margin-left: 128px;
@@ -322,12 +297,10 @@ export default {
   color: white;
   align-items: center;
 }
-
 .login-btn:hover {
   background-color: #ea5b0c;
   border-color: #ea5b0c;
 }
-
 .href-buttons-rounded a {
   margin-left: 20px;
   width: 60px;
@@ -342,12 +315,76 @@ export default {
   text-decoration: none;
   border: grey;
 }
-
 .href-buttons-rounded a:hover {
   box-shadow: 0px 0px 10px lightgrey;
 }
-
 .login-with-btn-hrefs p {
   text-align: center;
+}
+
+@media (max-width: 575.98px) {
+.card-group {
+  display: block;
+  box-shadow: none;
+}
+.card {
+  box-shadow: 5px 5px 20px;
+  min-height: 250px;
+  height: auto;
+}
+.card-b h2 {
+  color: gray;
+  font-size: 20px;
+  padding-top: 20px;
+}
+.card-r h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.card-r p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.sign-up {
+  font-size: 14px;
+}
+.card-login {
+  width: 90%;
+  height: 60%;
+}
+.email {
+  margin-left: 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 10px;
+}
+.password {
+  margin-left: 12px;
+  font-size: 16px;
+  padding: 10px;
+}
+.forgot-password {
+  margin-left: auto;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px; 
+}
+.login-btn {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+}
+.href-buttons-rounded a {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 35px;
+  height: 35px;
+}
 }
 </style>
