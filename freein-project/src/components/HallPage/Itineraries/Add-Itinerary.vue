@@ -195,7 +195,29 @@
             :key="card.id"
             :disabled="card.disabled"
           >
-            <div class="first-travel" id="travel-card">
+            <b-card
+              :img-src="card.image"
+              no-body
+              class="overflow-hidden"
+              img-left
+              img-width="300px"
+              id="travel-card"
+            >
+              <b-card-body style="width: 500px" align="left">
+                <b-card-title :title="card.stage"></b-card-title>
+                <b-card-sub-title :sub-title="card.inlineDate"></b-card-sub-title>
+                <b-card-text>
+                  <p>{{ card.description }}</p>
+                </b-card-text>
+                <template>
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>{{ card.location }}</p>
+                  </div>
+                </template>
+              </b-card-body>
+            </b-card>
+            <!-- <div class="first-travel" id="travel-card">
               <b-card class="overflow-hidden">
                 <b-row no-gutters>
                   <b-col cols="4">
@@ -220,7 +242,7 @@
                   </b-col>
                 </b-row>
               </b-card>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -949,5 +971,12 @@ export default {
 }
 a.button-area.fas.fa-plus {
   font-size: 35px;
+}
+.location {
+  display: flex;
+  align-items: baseline;
+}
+.location i {
+  margin-right: 7px;
 }
 </style>
