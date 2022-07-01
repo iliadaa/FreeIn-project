@@ -89,10 +89,11 @@ export default new Vuex.Store({
     testToDo: [],
     testAnswers: [],
     itineraries: [],
-    typeStage: [],
-    typeItinerary: [],
+    typeStage: false,
+    typeItinerary: false,
     typeFriends: "",
     typeFood: "",
+    available: false,
   },
   getters: {
   },
@@ -184,9 +185,11 @@ export default new Vuex.Store({
       if (state.inSession.length == 1) {
         console.log("Non dovrò sostituire nulla!")
       } else {
-        console.log("Devo sostituire il valore in arrivo!", state.inSession[1])
-        state.inSession[0] = state.inSession[1];
+        console.log("Devo sostituire il valore in arrivo!", state.inSession[1].userObj, state.inSession[0].userObj)
+        state.inSession[0] = state.inSession[1]
+        //capire come usare .splice 
       }
+      console.log(state.inSession[0], "sono cambiato")
     },
     isCardType(state) {
       //prova solo con stage
@@ -195,10 +198,11 @@ export default new Vuex.Store({
       for (i = 0; i < stagesJson.stages.length; i++) {
         if (stagesJson.stages[i].stage.type == "stage") {
           console.log("Stage +1");
-          state.typeStage.push(stagesJson.stages[i].stage);
-        } else if (stagesJson.stages[i].stage.type == "itinerary") {
+          state.typeStage = true;
+          console.log(state.typeStage)
+        } else {
           console.log("Itinerary +1");
-          state.typeItinerary.push(stagesJson.stages[i].stage);
+          state.typeItinerary = true;
         }
 
       }

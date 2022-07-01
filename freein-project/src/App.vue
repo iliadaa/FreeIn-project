@@ -4,7 +4,8 @@
   </div>
 </template>
 
-
+<script>
+</script>
 <style lang="scss">
 @import "~@/../mdb/scss/index.free.scss";
 

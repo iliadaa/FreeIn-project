@@ -1,7 +1,7 @@
 <template>
   <div class="contenitore">
-    <div v-if="this.typeStage.length != 0" class="stages">
-      <div class="cards2" v-for="stage in typeStage" :key="stage.id">
+    <div class="stages">
+      <div class="cards2" v-for="stage in stages" :key="stage.stage.id">
         <div class="cards2i">
           <div class="flagicon">
             <i class="fa-regular fa-font-awesome"></i>
@@ -10,75 +10,31 @@
             <i class="fas fa-user-circle"></i>
           </div>
         </div>
-        <img :src="stage.img" alt="" />
-        <div class="cards2body">
+        <img :src="stage.stage.img" alt="" />
+        <div :class="loadCssClasses(stage.stage.type)">
           <!--questi devono essere cambiati, p e tutto il resto sarà sostituito
         dall'itinerary.stage.location exc exc; //era una prova per vedere se lo
         stage viene preso correttamente
         -->
-          <p>{{ stage.stageTitle }}</p>
+          <p>{{ stage.stage.stageTitle }}</p>
+
           <div class="cards2icons">
-            <div class="button1">
+            <div
+              class="button1"
+              v-show="
+                loadCssClasses(stage.stage.type) == 'blue-background' ||
+                loadCssClasses(stage.stage.type) == 'purple-background'
+              "
+            >
               <a href="?#/stageItineraryCards" class="button">Go</a>
             </div>
-            <div>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href=""><i class="far fa-bookmark"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- itinerari -->
-    <div class="itineraries" v-if="this.typeItinerary.length != 0">
-      <div
-        class="cardsItinerary"
-        v-for="itinerary in typeItinerary"
-        :key="itinerary.id"
-      >
-        <div class="cards2i">
-          <div class="flagicon">
-            <i class="fa-regular fa-font-awesome"></i>
-          </div>
-          <div class="usericon">
-            <i class="fas fa-user-circle"></i>
-          </div>
-        </div>
-        <img :src="itinerary.img" alt="" />
-        <div class="cardsItineraryBody">
-          <p>{{ itinerary.description }}</p>
-          <div class="cards2icons">
-            <div class="button1">
+            <div
+              class="button2"
+              v-show="loadCssClasses(stage.stage.type) == ['orange-background']"
+            >
               <a href="?#/stageItineraryCards" class="buttonItinerary"
                 >Itinerario</a
               >
-            </div>
-            <div>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href=""><i class="far fa-bookmark"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Friends -->
-    <div class="friends">
-      <div
-        class="cardsFriends"
-        v-for="friend in friends"
-        :key="friend.friend.id"
-      >
-        <div class="cards2i">
-          <div class="usericonFriends">
-            <i class="fas fa-user-circle"></i>
-          </div>
-        </div>
-        <img class="friendsImg" :src="friend.friend.img" alt="" />
-        <div class="cardsFriendsBody">
-          <p>{{ friend.friend.name }}</p>
-          <div class="cardsFriendsicons">
-            <div class="button1">
-              <a href="?#/stageItineraryCards" class="buttonFriends">Go</a>
             </div>
             <div>
               <a href="#"><i class="fas fa-star"></i></a>
@@ -102,7 +58,6 @@ export default {
       stages: stagesJson.stages,
       itineraries: itinerariesJson.itineraries,
       friends: friendsJson.friends,
-      type: this.typeStage,
     };
   },
   methods: {
@@ -120,6 +75,22 @@ export default {
     },
     isCardType() {
       this.$store.commit("isCardType");
+    },
+    loadCssClasses(type) {
+      if (type == "stage") {
+        console.log("Stage +1");
+        console.log(type);
+        return "blue-background";
+      } else if (type == "itinerary") {
+        console.log("Itinerary +1");
+        console.log(type);
+
+        return "orange-background";
+      } else if (type == "friend") {
+        return "purple-background";
+      } else if (type == "food") {
+        return "yellow-background";
+      }
     },
   },
   created() {
@@ -213,8 +184,68 @@ export default {
   padding-top: 20px;
   */
 }
+/*
 .cards2body {
   background: #009fe3;
+  border-radius: 0% 0% 10% 10%;
+  height: 60%;
+}
+*/
+
+.blue-background {
+  background-color: #009fe3;
+  border-radius: 0% 0% 10% 10%;
+  height: 60%;
+}
+
+.blue-background p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.purple-background .cards2icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 17px;
+  padding-right: 17px;
+  position: relative;
+  top: 30%;
+}
+
+.orange-background {
+  background-color: #ea5b0c;
+  border-radius: 0% 0% 10% 10%;
+  height: 60%;
+}
+
+.orange-background p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.purple-background {
+  background-color: purple;
+  border-radius: 0% 0% 10% 10%;
+  height: 60%;
+}
+
+.purple-background p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+  position: relative;
+  top: 30%;
+}
+
+.yellow-background {
+  background-color: yellow;
   border-radius: 0% 0% 10% 10%;
   height: 60%;
 }

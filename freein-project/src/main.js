@@ -29,7 +29,7 @@ Vue.component('p-radio', PrettyRadio);
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
-    // Optionally install the BootstrapVue icon components plugin
+// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
 Vue.component('VueSlideBar', VueSlideBar)

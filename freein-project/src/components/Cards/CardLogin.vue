@@ -167,7 +167,6 @@ export default {
         this.isRolee();
       } else {
         alert("Dati incorretti o inesistenti!");
-        return;
       }
 
       /* 
