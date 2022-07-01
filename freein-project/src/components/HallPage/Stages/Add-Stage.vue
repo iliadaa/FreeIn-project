@@ -216,7 +216,7 @@
 <script>
 import VueSlideBar from "vue-slide-bar";
 import axios from "axios";
-const baseURL = "http://localhost:3000/jsonarray";
+const baseURL = "http://localhost:3002/stages";
 export default {
   data() {
     return {
@@ -240,7 +240,7 @@ export default {
       textTitle: "",
       textLocation: "",
       textText: "",
-      recommend: [],
+      suggestTo: [],
       checkedNames: [],
     };
   },
@@ -309,13 +309,15 @@ export default {
             stage: this.textTitle,
             location: this.textLocation,
             description: this.textText,
-            arte: this.valueArt,
-            relax: this.valueRelax,
-            mare: this.valueMare,
-            natura: this.valueNatura,
-            gourmet: this.valueGourmetExplorer,
-            party: this.valueParty,
-            recommend: this.checkedNames,
+            profileEval: {
+              arte: this.valueArt,
+              relax: this.valueRelax,
+              mare: this.valueMare,
+              natura: this.valueNatura,
+              gourmet: this.valueGourmetExplorer,
+              party: this.valueParty,
+            },
+            suggestTo: this.checkedNames,
           },
         }),
       };
