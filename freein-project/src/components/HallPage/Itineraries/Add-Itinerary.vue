@@ -195,7 +195,29 @@
             :key="card.id"
             :disabled="card.disabled"
           >
-            <div class="first-travel" id="travel-card">
+            <b-card
+              :img-src="card.image"
+              no-body
+              class="overflow-hidden"
+              img-left
+              img-width="300px"
+              id="travel-card"
+            >
+              <b-card-body style="width: 500px" align="left">
+                <b-card-title :title="card.stage"></b-card-title>
+                <b-card-sub-title :sub-title="card.inlineDate"></b-card-sub-title>
+                <b-card-text>
+                  <p>{{ card.description }}</p>
+                </b-card-text>
+                <template>
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>{{ card.location }}</p>
+                  </div>
+                </template>
+              </b-card-body>
+            </b-card>
+            <!-- <div class="first-travel" id="travel-card">
               <b-card class="overflow-hidden">
                 <b-row no-gutters>
                   <b-col cols="4">
@@ -220,7 +242,7 @@
                   </b-col>
                 </b-row>
               </b-card>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -240,7 +262,7 @@
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
 import dataStagesList from "/data-stages-list.json";
-const baseURL = "http://localhost:3000/itineraries";
+const baseURL = "http://localhost:3001/itineraries";
 
 export default {
   data() {
@@ -323,17 +345,19 @@ export default {
           "Content-Type": "application/json;charset=UTF-8",
         },
         body: JSON.stringify({
-          img: this.rawImg,
-          stages: this.textTitle,
-          location: this.textLocation,
-          description: this.textText,
-          arte: this.valueArt,
-          relax: this.valueRelax,
-          mare: this.valueMare,
-          natura: this.valueNatura,
-          gourmet: this.valueGourmetExplorer,
-          party: this.valueParty,
-          recommend: this.checkedNames,
+          itinerary: {
+            img: this.rawImg,
+            stages: this.textTitle,
+            location: this.textLocation,
+            description: this.textText,
+            arte: this.valueArt,
+            relax: this.valueRelax,
+            mare: this.valueMare,
+            natura: this.valueNatura,
+            gourmet: this.valueGourmetExplorer,
+            party: this.valueParty,
+            recommend: this.checkedNames,
+          },
         }),
       };
 
@@ -947,5 +971,12 @@ export default {
 }
 a.button-area.fas.fa-plus {
   font-size: 35px;
+}
+.location {
+  display: flex;
+  align-items: baseline;
+}
+.location i {
+  margin-right: 7px;
 }
 </style>

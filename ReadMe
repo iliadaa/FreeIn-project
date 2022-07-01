@@ -4,3 +4,13 @@ Get-ExecutionPolicy
 #if is AllSigned
 $ Set-ExecutionPolicy unrestricted
 $ json-server data-stages-list.json
+
+# to run json server for data-stages-list
+  json-server -p 3000 data-stages-list.json
+
+# to run json server for itineraries 
+ json-serve -p 3001 itineraries.json
+
+
+ #to run json server for stages 
+ json-serve -p 3002 stages.json

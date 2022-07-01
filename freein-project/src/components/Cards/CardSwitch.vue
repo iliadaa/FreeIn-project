@@ -30,14 +30,6 @@ export default {
 </script>
 
 <style scoped>
-
-.card-absolute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .container {
   margin-top: 40px;
   align-content: center;
@@ -46,47 +38,7 @@ export default {
   position: relative;
   height: 600px;
   margin-bottom: 100px;
-  
 }
-
-.card {
-  height: 600px;
-  background-color: #442a63;
-  justify-content: center;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.card-r {
-  background-color: #eb6349;
-}
-
-.illustrations2 {
-  margin-right: -25px;
-  margin-bottom: 10px;
-}
-
-.card-b p {
-  color: #eb6349;
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-.illustrations1 {
-  margin-right: -10px;
-  margin-bottom: 8px;
-}
-
-.card-r p {
-  color: #442a63;
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-
-
 .card-group {
   align-content: center;
   justify-content: center;
@@ -94,9 +46,75 @@ export default {
   width: 80%;
   height: 100%;
   border-radius: 20px;
-  
+}
+.card {
+  height: 600px;
+  background-color: #442a63;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+}
+.card-b p {
+  color: #eb6349;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 30px;
+}
+.card-r {
+  background-color: #eb6349;
+}
+.card-r p {
+  color: #442a63;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 30px;
+}
+.illustrations1 {
+  margin-right: -10px;
+  margin-bottom: 8px;
+}
+.illustrations2 {
+  margin-right: -25px;
+  margin-bottom: 10px;
+}
+.card-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+@media (max-width: 575.98px) {
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.card-group {
+  box-shadow: none;
+}
+.card {
+  box-shadow: 5px 5px 20px;
+  min-height: 250px;
+  height: auto;
+}
+.card-b p {
+  font-size: 30px;
+  line-height: 20px;
+}
+.card-r {
+  background-color: #eb6349;
+}
+.card-r p {
+  font-size: 30px;
+  line-height: 20px;
+}
+.illustrations1 {
+  margin-left: 30px;
+}
+.illustrations2 {
+  margin-right: 20px;
+}
+}
 </style>
 
 
