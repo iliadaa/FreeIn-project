@@ -43,11 +43,11 @@
             <div class="login-with-btn-hrefs">
               <p>- or -</p>
               <div class="href-buttons-rounded">
-                <a class="fab fa-facebook-f" href="#" style="margin-left: 10px"></a>
+                <a class="fab fa-facebook-f" href="#" style="margin-left: 5px"></a>
                 <a class="fab fa-twitter"></a>
                 <a class="fab fa-google-plus-g"></a>
                 <a class="fab fa-microsoft"></a>
-                <a class="fab fa-linkedin" style="margin-right: 10px"></a>
+                <a class="fab fa-linkedin" style="margin-right: 5px"></a>
               </div>
             </div>
           </div>
@@ -352,7 +352,6 @@ export default {
 }
 .card-login {
   width: 90%;
-  height: 60%;
 }
 .email {
   margin-left: 12px;

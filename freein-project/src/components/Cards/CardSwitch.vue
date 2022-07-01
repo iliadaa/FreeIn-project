@@ -84,13 +84,6 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-
-
-
-
-
-
-
 @media (max-width: 575.98px) {
 .container {
   margin-top: 20px;
