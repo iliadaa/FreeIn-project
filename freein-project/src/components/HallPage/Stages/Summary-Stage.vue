@@ -987,8 +987,8 @@ hr {
   margin-bottom: 50px;
 }
 .gourmet {
-  width: 65px;
-  height: 65px;
+  margin-right: 10px;
+  margin-bottom: 50px;
 }
 .relax {
   margin-right: 10px;
