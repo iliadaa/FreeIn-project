@@ -1,13 +1,153 @@
 <template>
   <div id="ModalStages" class="modal-container">
-    
     <div class="modal-container-child">
-      
       <div class="container">
         <div class="search-bar">
-        <input type="text" v-model="search" placeholder="Search tappa..." />
-      </div>
-        <div class="first-travel" v-for="data in filteredTappe" :key="data.id">
+          <input type="text" v-model="search" placeholder="Search tappa..." />
+        </div>
+
+
+<!--Added-->     
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+  
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+  
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+  
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+  
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+  
+  <div class="mycards">
+    <b-card no-body class="overflow-hidden mx-auto" style="max-width: 540px;">
+      <b-row no-gutters>
+        <b-col md="6">
+          <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        </b-col>
+        <b-col md="6">
+          <b-card-body title="Horizontal Card">
+            <b-card-text>
+            <h1>Matterhorn</h1>
+            <p>August 28, 2022</p>
+            <p>Mountain climbing. Pack your climbing shoes, backpack and get there!</p>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Matterhorn, Switzerland/Italy</p>
+            </div>
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+  </div>
+
+
+        <!--<div class="first-travel" v-for="data in filteredTappe" :key="data.id">
           <b-card
             id="disable"
             @click="close(data.id, datas[data.id - 1])"
@@ -25,9 +165,9 @@
                 <b-card-body class="text-layout">
                   <h2>{{ data.stage }}</h2>
                   <p>{{ data.inlineDate }}</p>
-                  <b-card-text style="font-size: 15px">
+                  <b-card-text>
                     <p>{{ data.description }}</p>
-                    <div class="flex" style="margin-top: -20px">
+                    <div class="flex">
                       <i class="fa-solid fa-location-dot"></i>
                       <p>{{ data.location }}</p>
                     </div>
@@ -36,7 +176,10 @@
               </b-col>
             </b-row>
           </b-card>
-        </div>
+        </div>-->
+
+
+
       </div>
     </div>
   </div>
@@ -101,7 +244,66 @@ export default {
 };
 </script>
 <style scoped>
+/*Added*/
 .modal-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  overflow: scroll;
+}
+.modal-container-child {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.search-bar{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 100px;
+}
+.search-bar input{
+  width: 50%;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px lightgrey;
+}
+input::placeholder{
+  text-align: center;
+}
+.mycards {
+  margin-bottom: 20px;
+}
+
+.icon {
+  display: flex;
+}
+
+i {
+  margin-right: 5px;
+}
+
+@media (max-width: 575.98px) {
+.search-bar{
+  margin-top: 40px;
+}
+.search-bar input{
+  width: 80%;
+}
+input::placeholder{
+  font-size: 14px;
+}
+}
+
+
+/*.modal-container {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -138,7 +340,7 @@ export default {
 
 input::placeholder{
   text-align: center;
-  }
+}
 
 .container {
   height: 100%;
@@ -156,6 +358,7 @@ input::placeholder{
 .flex {
   display: flex;
   align-items: baseline;
+  margin-top: -20px
 }
 
 .flex i {
@@ -172,11 +375,12 @@ input::placeholder{
 .text-layout p {
   margin-top: -10px;
   margin-bottom: 20px;
+  font-size: 15px
 }
 
 .text img {
   width: 250px;
   height: 200px;
   margin-top: -16px;
-}
+}*/
 </style>
