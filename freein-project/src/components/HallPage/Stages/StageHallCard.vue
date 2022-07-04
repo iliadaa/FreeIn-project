@@ -3,8 +3,17 @@
     <div class="stages">
       <div class="cards2" v-for="stage in stages" :key="stage.stage.id">
         <div class="cards2i">
-          <div class="flagicon">
+          <div
+            v-show="loadCssClasses(stage.stage.type) == 'blue-background'"
+            class="flagicon"
+          >
             <i class="fa-regular fa-font-awesome"></i>
+          </div>
+          <div
+            v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
+            class="itineraryIcon"
+          >
+            <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <div class="usericon">
             <i class="fas fa-user-circle"></i>
@@ -29,6 +38,11 @@
               <a href="?#/stageItineraryCards" class="button">Go</a>
             </div>
             <div
+              v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
+            >
+              <a href="?#/stageItineraryCards" class="buttonAdd">Aggiungi</a>
+            </div>
+            <div
               class="button2"
               v-show="loadCssClasses(stage.stage.type) == ['orange-background']"
             >
@@ -36,9 +50,28 @@
                 >Itinerario</a
               >
             </div>
-            <div>
+            <div
+              v-show="
+                loadCssClasses(stage.stage.type) == 'blue-background' ||
+                loadCssClasses(stage.stage.type) == 'orange-background'
+              "
+            >
               <a href="#"><i class="fas fa-star"></i></a>
               <a href=""><i class="far fa-bookmark"></i></a>
+            </div>
+            <div
+              class="yellow-card-icons"
+              v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
+            >
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href=""><i class="fa-regular fa-heart"></i></a>
+            </div>
+            <div
+              v-show="loadCssClasses(stage.stage.type) == ['purple-background']"
+            >
+              <a href="#"><i class="fa-regular fa-font-awesome"></i></a>
+              <a href=""><i class="fa-solid fa-map-location-dot"></i></a>
+              <a href=""><i class="fas fa-user-circle"></i></a>
             </div>
           </div>
         </div>
@@ -169,6 +202,12 @@ export default {
   width: 50px;
   padding-left: 10px;
 }
+
+.itineraryIcon {
+  background-color: #ea5b0c;
+  width: 50px;
+  padding-left: 7px;
+}
 .usericon {
   padding-left: 150px;
   padding-top: 5px;
@@ -245,9 +284,41 @@ export default {
 }
 
 .yellow-background {
-  background-color: yellow;
+  background-color: rgb(229, 195, 0);
   border-radius: 0% 0% 10% 10%;
   height: 60%;
+}
+
+.yellow-background p {
+  font-size: 16px;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+  position: relative;
+  top: 30%;
+}
+
+.yellow-background .cards2icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 17px;
+  padding-right: 17px;
+  position: relative;
+  top: 30%;
+}
+
+.buttonAdd {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  color: rgb(229, 195, 0);
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .cards2body p {
