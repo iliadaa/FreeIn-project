@@ -5,7 +5,7 @@ import dataStageList from '../../data-stages-list'
 import stagesJson from "/stages.json";
 import itinerariesJson from "/itineraries.json";
 import friendsJson from "/friends.json";
-import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons'
+import { faLessThanEqual, faUnderline } from '@fortawesome/free-solid-svg-icons'
 
 Vue.use(Vuex)
 
@@ -39,7 +39,7 @@ export default new Vuex.Store({
       {
         "userObj":
         {
-          "id": "1",
+          "id": "2",
           "email": "test-business@gmail.com",
           "password": "TEST",
           "change": true,
@@ -63,8 +63,8 @@ export default new Vuex.Store({
       {
         "userObj":
         {
-          "id": "2",
-          "email": "test-testDone@gmail.com",
+          "id": "3",
+          "email": "test-private@gmail.com",
           "password": "test",
           "change": true,
           "name": "Tester",
@@ -94,16 +94,26 @@ export default new Vuex.Store({
     typeFriends: "",
     typeFood: "",
     available: false,
+    countStarStage: 0,
+    countStarItinerary: 0,
+    countStarFood: 0,
+    countTot: 0,
   },
   getters: {
   },
   mutations: {
     asksStore(state, answer) {
-      state.testAnswers.push(answer)
-      console.log(answer, " sono nel mutations")
+      if (state.inSession.length != undefined) {
+        state.inSession[0].userObj.testAnswers.push(answer);
+        console.log(answer, " sono nel mutations");
+        console.log(state.inSession[0].userObj.testAnswers, " sono l'array");
+      } else {
+        console.log("Non riesco ad accedere all'inSession")
+      }
+
       //se metto un ciclo for e dentro solo lo state.testAnswers[index] posso verificare tutte 
       //le risposte salvate
-      console.log(state.testAnswers, " sono l'array")
+
     },
     isRole(state) {
       var trovato = false;
@@ -152,7 +162,8 @@ export default new Vuex.Store({
             relax: undefined,
             party: undefined,
             nature: undefined,
-          }
+          },
+          testAnswers: []
         },
       }
       console.log(userData, " Verifico che i dati inseriti siano validati correttamente")
@@ -181,44 +192,98 @@ export default new Vuex.Store({
         });
       }
     },
+
     clearInSession(state) {
       if (state.inSession.length == 1) {
         console.log("Non dovrò sostituire nulla!")
       } else {
         console.log("Devo sostituire il valore in arrivo!", state.inSession[1].userObj, state.inSession[0].userObj)
-        state.inSession[0] = state.inSession[1]
+        state.inSession.splice(0, 1);
         //capire come usare .splice 
       }
       console.log(state.inSession[0], "sono cambiato")
     },
-    isCardType(state) {
-      //prova solo con stage
-      var i;
-      console.log(stagesJson);
-      for (i = 0; i < stagesJson.stages.length; i++) {
-        if (stagesJson.stages[i].stage.type == "stage") {
-          console.log("Stage +1");
-          state.typeStage = true;
-          console.log(state.typeStage)
-        } else {
-          console.log("Itinerary +1");
-          state.typeItinerary = true;
-        }
+    /*
+        isCardType(state) {
+          //prova solo con stage
+          var i;
+          console.log(stagesJson);
+          for (i = 0; i < stagesJson.stages.length; i++) {
+            if (stagesJson.stages[i].stage.type == "stage") {
+              console.log("Stage +1");
+              state.typeStage = true;
+              console.log(state.typeStage)
+            } else {
+              console.log("Itinerary +1");
+              state.typeItinerary = true;
+            }
+    
+          }
+        },
+        */
 
+    isUserType(state) {
+      console.log(state.inSession, "isUserType");
+      var inAccultured = false; // it means in Acculturato
+      var inFoodie = false; //it means in Buongustaio
+      if (state.inSession[0].userObj.testAnswers.includes("Hamburger" && "Street Food")) {
+        inFoodie = true;
+        console.log(inFoodie, "inFoodie e", inAccultured, " inAccultured");
+        router.push({
+          name: "TestEnd2"
+        })
+      } else if (state.inSession[0].userObj.testAnswers.includes("13-22" && "Gourmet")) {
+        inAccultured = true;
+        console.log(inAccultured, "inAccultured e ", inFoodie, " inFoodie");
+        router.push({
+          name: "TestEnd"
+        })
+      } else {
+        console.log("Devo decidere dove mandarlo!");
       }
-    }
 
-  },
-  actions: {
-    /* 
-    isValidateAsync({ commit }) {
-      if (commit == false) {
-        state.registrations.push(user)
-      }else{
-        console.log("Sono qui")
+    },
+
+    increment(state, type) {
+      if (type == "stage") {
+        state.countStarStage++
+        console.log(state.countStarStage);
+        state.countTot++;
+      } else if (type == "itinerary") {
+        state.countStarItinerary++
+        console.log(state.countStarItinerary);
+        state.countTot++;
+      } else if (type == "food") {
+        state.countStarFood++
+        console.log(state.countStarFood);
+        state.countTot++;
       }
     },
-    */
+
+    decrement(state, type) {
+      if (type == "stage") {
+        state.countStarStage--
+        console.log(state.countStarStage);
+        state.countTot--;
+      } else if (type == "itinerary") {
+        state.countStarItinerary--;
+        console.log(state.countStarItinerary);
+        state.countTot--;
+      } else if (type == "food") {
+        state.countStarFood--;
+        console.log(state.countStarFood);
+        state.countTot--;
+      }
+
+    }
+  },
+  actions: {
+    incrementAsync({ commit }) {
+      setTimeout(() => {
+        commit('increment')
+      }, 1000)
+    }
+
   },
   modules: {
   }

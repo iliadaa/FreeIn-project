@@ -4,21 +4,21 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/illustration.png" alt="">
+          <img src="@/assets/illustration.png" alt="" />
         </div>
         <p>"Zaino in spalla o Valigia con le ruote?"</p>
       </div>
       <div class="card card-b">
-          <div class="answer1">
-              <a href="#/testend" @click="asks(answer.value1)">
-                <p>{{answer.value1}}</p>
-              </a>
-              <a href="#/testend" @click="asks(answer.value2)">
-                <p>{{answer.value2}}</p>
-              </a>
-          </div>
+        <div class="answer1">
+          <a @click="asks(answer.value1), isUserType()">
+            <p>{{ answer.value1 }}</p>
+          </a>
+          <a @click="asks(answer.value2), isUserType()">
+            <p>{{ answer.value2 }}</p>
+          </a>
+        </div>
         <div class="arrow">
-          <a href="http://localhost:8080/#/testend" class="fas fa-angle-right"></a>
+          <a @click="isUserType()" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -26,22 +26,25 @@
 </template>
 
 <script>
-  export default {
-    data() {
+export default {
+  data() {
     return {
-    answer: {
-      value1: "Zaino",
-      value2: "Valigia",
-    }
-  };
-},
+      answer: {
+        value1: "Zaino",
+        value2: "Valigia",
+      },
+    };
+  },
   methods: {
-    asks(value){
-      this.$store.commit('asksStore', value)
+    asks(value) {
+      this.$store.commit("asksStore", value);
       return value;
-    }
-  }
-}
+    },
+    isUserType() {
+      this.$store.commit("isUserType");
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -64,9 +67,9 @@
   justify-content: center;
   text-align: center;
   height: 600px;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
-.card-a{
+.card-a {
   background-color: #ea5b0c;
 }
 
@@ -102,7 +105,7 @@ img {
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.arrow a  {
+.arrow a {
   justify-content: center;
   align-items: center;
   display: inline-flex;
@@ -112,42 +115,41 @@ img {
   font-size: 25px;
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px;
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-a p {
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .answer1 {
+    display: block;
+  }
+  .card-b p {
+    font-size: 17px;
+  }
+  .arrow {
+    padding-right: 15px;
+    padding-bottom: 10px;
+  }
+  .arrow a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
-.card-group {
-  box-shadow: none;
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-a p {
-  font-size: 25px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-.answer1 {
-  display: block;
-}
-.card-b p {
-  font-size: 17px;
-}
-.arrow {
-  padding-right: 15px;
-  padding-bottom: 10px;
-}
-.arrow a  {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-}
-}
-
 </style>

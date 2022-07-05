@@ -20,6 +20,7 @@
           </div>
         </div>
         <img :src="stage.stage.img" alt="" />
+
         <div :class="loadCssClasses(stage.stage.type)">
           <!--questi devono essere cambiati, p e tutto il resto sarà sostituito
         dall'itinerary.stage.location exc exc; //era una prova per vedere se lo
@@ -50,13 +51,35 @@
                 >Itinerario</a
               >
             </div>
+            <div v-show="loadCssClasses(stage.stage.type) == 'blue-background'">
+              <a
+                v-show="
+                  countStarStage != 1 &&
+                  loadCssClasses(stage.stage.type) == 'blue-background'
+                "
+                href="http://localhost:8080/#/businessprofile"
+                ><i class="fa-regular fa-star" @click="increment()"></i
+              ></a>
+              <a
+                v-show="countStarStage != 0"
+                href="http://localhost:8080/#/businessprofile"
+                ><i class="fas fa-star" @click="decrement()"></i
+              ></a>
+              <a href=""><i class="far fa-bookmark"></i></a>
+            </div>
             <div
-              v-show="
-                loadCssClasses(stage.stage.type) == 'blue-background' ||
-                loadCssClasses(stage.stage.type) == 'orange-background'
-              "
+              v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
             >
-              <a href="#"><i class="fas fa-star"></i></a>
+              <a
+                v-show="countStarItinerary != 1"
+                href="http://localhost:8080/#/businessprofile"
+                ><i class="fa-regular fa-star" @click="increment()"></i
+              ></a>
+              <a
+                v-show="countStarItinerary != 0"
+                href="http://localhost:8080/#/businessprofile"
+                ><i class="fas fa-star" @click="decrement()"></i
+              ></a>
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
             <div
@@ -111,13 +134,8 @@ export default {
     },
     loadCssClasses(type) {
       if (type == "stage") {
-        console.log("Stage +1");
-        console.log(type);
         return "blue-background";
       } else if (type == "itinerary") {
-        console.log("Itinerary +1");
-        console.log(type);
-
         return "orange-background";
       } else if (type == "friend") {
         return "purple-background";
@@ -125,11 +143,30 @@ export default {
         return "yellow-background";
       }
     },
+    increment() {
+      this.$store.dispatch("incrementAsync");
+    },
+    decrement() {
+      this.$store.commit("decrement");
+    },
   },
   created() {
     this.isCardType();
   },
   computed: {
+    countStarStage() {
+      return this.$store.state.countStarStage;
+    },
+
+    countStarItinerary() {
+      return this.$store.state.countStarItinerary;
+    },
+
+    takingValue: function () {
+      return this.count;
+    },
+  },
+  mounted: {
     typeStage() {
       return this.$store.state.typeStage;
     },
@@ -168,6 +205,7 @@ export default {
   margin-top: 135px;
   flex: 0 1 32%;
 }
+
 .cardsItinerary {
   margin-left: 10px;
   margin-top: 20px;
@@ -197,6 +235,7 @@ export default {
   position: absolute;
   z-index: 1;
 }
+
 .flagicon {
   background-color: #009fe3;
   width: 50px;
@@ -208,11 +247,13 @@ export default {
   width: 50px;
   padding-left: 7px;
 }
+
 .usericon {
   padding-left: 150px;
   padding-top: 5px;
   color: white;
 }
+
 .usericonFriends {
   padding-left: 300px;
   padding-top: 50px;
@@ -245,15 +286,6 @@ export default {
   width: 100%;
 }
 
-.purple-background .cards2icons {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 17px;
-  padding-right: 17px;
-  position: relative;
-  top: 30%;
-}
-
 .orange-background {
   background-color: #ea5b0c;
   border-radius: 0% 0% 10% 10%;
@@ -274,6 +306,12 @@ export default {
   height: 60%;
 }
 
+.purple-background .cards2icons {
+  display: flex;
+  position: relative;
+  top: 30%;
+}
+
 .purple-background p {
   font-size: 16px;
   color: white;
@@ -282,6 +320,15 @@ export default {
   position: relative;
   top: 30%;
 }
+/*
+.purple-img {
+  border-radius: 50px;
+  height: 70%;
+  width: 70%;
+  left: 18%;
+  top: 10%;
+}
+*/
 
 .yellow-background {
   background-color: rgb(229, 195, 0);
@@ -294,17 +341,6 @@ export default {
   color: white;
   padding-top: 15px;
   padding-left: 15px;
-  position: relative;
-  top: 30%;
-}
-
-.yellow-background .cards2icons {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 17px;
-  padding-right: 17px;
-  position: relative;
-  top: 30%;
 }
 
 .buttonAdd {

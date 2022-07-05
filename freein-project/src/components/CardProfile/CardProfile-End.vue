@@ -26,7 +26,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="89"
+            :percent="arte"
           ></VueProgressBar>
         </div>
       </div>
@@ -44,7 +44,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="50"
+            :percent="mare"
           ></VueProgressBar>
         </div>
       </div>
@@ -62,7 +62,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="10"
+            :percent="gourmet"
           ></VueProgressBar>
         </div>
       </div>
@@ -80,7 +80,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="40"
+            :percent="relax"
           ></VueProgressBar>
         </div>
       </div>
@@ -98,7 +98,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="55"
+            :percent="party"
           ></VueProgressBar>
         </div>
       </div>
@@ -116,7 +116,7 @@
             :line-height="4"
             :cut-color="'#40a9ff'"
             :color="['#2d2e83', '#ea5b0c']"
-            :percent="20"
+            :percent="natura"
           ></VueProgressBar>
         </div>
       </div>
@@ -132,20 +132,51 @@
     </div>
 
     <div class="button1">
-      <a class="button" @click="isRolee()">portami alla mia hall</a>
+      <a href="#" class="button" @click="testCompletedAccultured()"
+        >portami alla mia hall</a
+      >
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      arte: 89,
+      mare: 50,
+      gourmet: 10,
+      relax: 40,
+      party: 55,
+      natura: 19,
+    };
+  },
   methods: {
-    testCompleted(inSession) {
-      inSession.testDone == true;
-      console.log(inSession);
-    },
-    isRolee() {
-      this.$store.commit("isRole");
+    testCompletedAccultured() {
+      var i;
+      this.inSession[0].userObj.testDone = true;
+      this.inSession[0].userObj.profileTest.name = "Acculturato";
+      this.inSession[0].userObj.profileTest.arte = this.arte;
+      this.inSession[0].userObj.profileTest.mare = this.mare;
+      this.inSession[0].userObj.profileTest.cibo = this.gourmet;
+      this.inSession[0].userObj.profileTest.relax = this.relax;
+      this.inSession[0].userObj.profileTest.party = this.party;
+      this.inSession[0].userObj.profileTest.nature = this.natura;
+      console.log(this.registrations);
+      for (i = 0; i < this.registrations.length; i++) {
+        console.log("sono nel for");
+        if (
+          this.registrations[i].userObj.email == this.inSession[0].userObj.email
+        ) {
+          this.registrations[i].userObj = this.inSession[0].userObj;
+          console.log("Ci sonooo", this.registrations);
+
+          break;
+        } else {
+          console.log("Non sta!");
+        }
+      }
+      this.isRolee();
     },
   },
 
@@ -160,6 +191,10 @@ export default {
 
     registrations() {
       return this.$store.state.registrations;
+    },
+
+    isRolee() {
+      this.$store.commit("isRole");
     },
   },
 };

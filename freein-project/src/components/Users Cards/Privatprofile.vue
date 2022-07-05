@@ -15,11 +15,11 @@
         </div>
         <div class="personal-attitude-percentage">
           <label>{{ takingValue.profileTest.arte }}%</label>
-          <label>{{ takingValue.profileTest.mare }}%</label>
-          <label>{{ takingValue.profileTest.cibo }}%</label>
           <label>{{ takingValue.profileTest.relax }}%</label>
-          <label>{{ takingValue.profileTest.party }}%</label>
+          <label>{{ takingValue.profileTest.mare }}%</label>
           <label>{{ takingValue.profileTest.nature }}%</label>
+          <label>{{ takingValue.profileTest.cibo }}%</label>
+          <label>{{ takingValue.profileTest.party }}%</label>
         </div>
       </div>
       <!-- Profile -->

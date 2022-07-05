@@ -1,13 +1,15 @@
 <template>
   <div id="ModalStages" class="modal-container">
-    
     <div class="modal-container-child">
-      
       <div class="container">
         <div class="search-bar">
-        <input type="text" v-model="search" placeholder="Search tappa..." />
-      </div>
-        <div class="first-travel" v-for="data in filteredTappe" :key="data.id">
+          <input type="text" v-model="search" placeholder="Search tappa..." />
+        </div>
+        <div
+          class="first-travel"
+          v-for="data in filteredTappe"
+          :key="data.stage.id"
+        >
           <b-card
             id="disable"
             @click="close(data.id, datas[data.id - 1])"
@@ -17,19 +19,19 @@
               <b-col cols="4">
                 <div class="cards">
                   <div class="text">
-                    <img :src="data.image" alt="" class="rounded-0" />
+                    <img :src="data.stage.img" alt="" class="rounded-0" />
                   </div>
                 </div>
               </b-col>
               <b-col cols="8">
                 <b-card-body class="text-layout">
-                  <h2>{{ data.stage }}</h2>
-                  <p>{{ data.inlineDate }}</p>
+                  <h2>{{ data.stage.stageTitle }}</h2>
+                  <p></p>
                   <b-card-text style="font-size: 15px">
-                    <p>{{ data.description }}</p>
+                    <p>{{ data.stage.description }}</p>
                     <div class="flex" style="margin-top: -20px">
                       <i class="fa-solid fa-location-dot"></i>
-                      <p>{{ data.location }}</p>
+                      <p>missing location</p>
                     </div>
                   </b-card-text>
                 </b-card-body>
@@ -45,6 +47,7 @@
 <script>
 import DialogCardList from "./DialogCardList.vue";
 import dataStagesList from "/data-stages-list.json";
+import stagesJson from "/stages.json";
 
 /* 
 
@@ -62,11 +65,11 @@ $(document).ready(function () {
   });
 });
 
-
 export default {
   data() {
     return {
-      datas: dataStagesList.jsonarray,
+      //datas: dataStagesList.jsonarray,
+      datas: stagesJson.stages,
       search: "",
     };
   },
@@ -76,13 +79,12 @@ export default {
   name: "ModalStages",
   methods: {
     close(id, datas) {
-      this.search = ""
+      this.search = "";
       this.$emit("close", datas);
     },
   },
 
-
-/* 
+  /* 
 
   La computed fa in modo che durante la ricerca tramite l'input venga caricata la tappa X.
 
@@ -94,8 +96,13 @@ export default {
   computed: {
     filteredTappe: function () {
       return this.datas.filter((data) => {
-        return data.location.match(this.search);
+        return data.stage.stageTitle.match(this.search);
       });
+    },
+  },
+  created: {
+    console() {
+      console.log(this.datas);
     },
   },
 };
@@ -120,14 +127,14 @@ export default {
   width: 100%;
 }
 
-.search-bar{
+.search-bar {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
   margin-top: 100px;
 }
 
-.search-bar input{
+.search-bar input {
   border: 0;
   border-radius: 20px;
   box-shadow: 0px 3px 6px lightgrey;
@@ -136,9 +143,9 @@ export default {
   padding-left: 20px;
 }
 
-input::placeholder{
+input::placeholder {
   text-align: center;
-  }
+}
 
 .container {
   height: 100%;
