@@ -18,4 +18,18 @@ export default {
   background-color: white;
   box-shadow: none;
 }
+
+@media (max-width: 575.98px) {
+.navbar {
+  width: 25%;
+  height: auto;
+}
+img {
+  width: 100%;
+}
+.navbar-brand {
+  padding-left: 17%;
+  padding-bottom: 0rem;
+}
+}
 </style>
