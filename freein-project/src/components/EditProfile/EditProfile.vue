@@ -128,7 +128,7 @@
                 <div class="div1">
                   <input type="checkbox" value="1" id="flexCheckDefault2" />
                   <label class="form-check-label" for="flexCheckDefault2">
-                    I agree to the Terms of Service & Privacy Policy
+                    <p>I agree to the Terms of Service & Privacy Policy</p>
                   </label>
                 </div>
 
@@ -453,7 +453,7 @@ button:hover {
 }
 .disclaimer-bottom-left input {
   margin-right: 2px; 
-  margin-top: 6px;
+  margin-top: -5px;
 }
 .save {
   margin-top: 15px;
@@ -466,5 +466,10 @@ button:hover {
 .div1 {
   display: flex;
 }
+.div1 p {
+font-size: 12px;
+}
+
+
 }
 </style>

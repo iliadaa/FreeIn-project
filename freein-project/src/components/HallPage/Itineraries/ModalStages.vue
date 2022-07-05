@@ -39,6 +39,39 @@
             </b-row>
           </b-card>
         </div>
+        -->
+        <div
+          class="first-travel"
+          :class="{ disabled: disabled }"
+          :id="`id-${data.id}`"
+          v-for="data in filteredTappe"
+          v-bind:key="data.id"
+          :ref="`id-${data.id}`"
+        >
+          <b-card
+            v-model="datas.id"
+            @click="close(data.id, datas[data.id - 1])"
+            :img-src="data.image"
+            no-body
+            class="overflow-hidden"
+            img-left
+            img-width="300px"
+          >
+            <b-card-body style="width: 500px" align="left">
+              <b-card-title :title="data.stage"></b-card-title>
+              <b-card-sub-title :sub-title="data.inlineDate"></b-card-sub-title>
+              <b-card-text>
+                <p>{{ data.description }}</p>
+              </b-card-text>
+              <template>
+                <div class="location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>{{ data.location }}</p>
+                </div>
+              </template>
+            </b-card-body>
+          </b-card>
+        </div>
       </div>
     </div>
   </div>
@@ -58,12 +91,12 @@ import stagesJson from "/stages.json";
 
 */
 
-$(document).ready(function () {
-  $(".first-travel").click(function () {
-    $("#disable").css("pointer-events", "none");
-    $("#disable").css("opacity", "0.5");
-  });
-});
+//$(document).ready(function () {
+// $("#el").click(function () {
+//   $("#el").css("pointer-events", "none");
+////  $("#el").css("opacity", "0.5");
+// });
+//});
 
 export default {
   data() {
@@ -71,6 +104,8 @@ export default {
       //datas: dataStagesList.jsonarray,
       datas: stagesJson.stages,
       search: "",
+      cards: [],
+      disabled: false,
     };
   },
   components: {
@@ -81,7 +116,15 @@ export default {
     close(id, datas) {
       this.search = "";
       this.$emit("close", datas);
+      this.cards = datas.id;
+      console.log("card id:", this.cards);
+      this.disabled = true;
     },
+  },
+
+  mounted() {
+    this.$refs["id-1"];
+    console.log(this.$refs, "helllll");
   },
 
   /* 
@@ -185,5 +228,17 @@ input::placeholder {
   width: 250px;
   height: 200px;
   margin-top: -16px;
+}
+.location {
+  display: flex;
+  align-items: baseline;
+}
+.location i {
+  margin-right: 7px;
+}
+.disabled {
+  color: grey;
+  text-decoration: none;
+  cursor: default;
 }
 </style>
