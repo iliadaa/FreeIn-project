@@ -94,10 +94,7 @@ export default new Vuex.Store({
     typeFriends: "",
     typeFood: "",
     available: false,
-    countStarStage: 0,
-    countStarItinerary: 0,
-    countStarFood: 0,
-    countTot: 0,
+    count: 0,
   },
   getters: {
   },
@@ -244,37 +241,13 @@ export default new Vuex.Store({
 
     },
 
-    increment(state, type) {
-      if (type == "stage") {
-        state.countStarStage++
-        console.log(state.countStarStage);
-        state.countTot++;
-      } else if (type == "itinerary") {
-        state.countStarItinerary++
-        console.log(state.countStarItinerary);
-        state.countTot++;
-      } else if (type == "food") {
-        state.countStarFood++
-        console.log(state.countStarFood);
-        state.countTot++;
-      }
+    increment(state) {
+      state.count++
+      console.log(state.count)
     },
-
-    decrement(state, type) {
-      if (type == "stage") {
-        state.countStarStage--
-        console.log(state.countStarStage);
-        state.countTot--;
-      } else if (type == "itinerary") {
-        state.countStarItinerary--;
-        console.log(state.countStarItinerary);
-        state.countTot--;
-      } else if (type == "food") {
-        state.countStarFood--;
-        console.log(state.countStarFood);
-        state.countTot--;
-      }
-
+    decrement(state) {
+      state.count--
+      console.log(state.count)
     }
   },
   actions: {

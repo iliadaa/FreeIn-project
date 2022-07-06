@@ -18,7 +18,8 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "countStar": 0
       },
       "id": 1
     },
@@ -40,7 +41,9 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "countStar": 0
+        
       },
       "id": 2
     },
@@ -62,7 +65,8 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "countStar": 0
       },
       "id": 3
     },
@@ -84,7 +88,8 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "countStar": 0
       },
       "id": 4
     },
@@ -106,7 +111,8 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "countStar": 0
       },
       "id": 5
     }

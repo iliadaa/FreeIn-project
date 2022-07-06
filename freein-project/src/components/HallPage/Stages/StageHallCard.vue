@@ -22,11 +22,7 @@
         <img :src="stage.stage.img" alt="" />
 
         <div :class="loadCssClasses(stage.stage.type)">
-          <!--questi devono essere cambiati, p e tutto il resto sarà sostituito
-        dall'itinerary.stage.location exc exc; //era una prova per vedere se lo
-        stage viene preso correttamente
-        -->
-          <p>{{ stage.stage.stageTitle }}</p>
+          <p>{{ stage.stage.stageTitle }} {{ stage.stage.countStar }}</p>
 
           <div class="cards2icons">
             <div
@@ -53,32 +49,47 @@
             </div>
             <div v-show="loadCssClasses(stage.stage.type) == 'blue-background'">
               <a
-                v-show="
-                  countStarStage != 1 &&
-                  loadCssClasses(stage.stage.type) == 'blue-background'
-                "
+                v-show="count != 1"
                 href="http://localhost:8080/#/businessprofile"
-                ><i class="fa-regular fa-star" @click="increment()"></i
+                ><i
+                  class="fa-regular fa-star"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
+                ></i
               ></a>
               <a
-                v-show="countStarStage != 0"
+                v-show="count != 0"
                 href="http://localhost:8080/#/businessprofile"
-                ><i class="fas fa-star" @click="decrement()"></i
+                ><i
+                  class="fa-solid fa-star"
+                  @click="decrementStar(stage.stage.id, stage.stage.countStar)"
+                ></i
               ></a>
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
             <div
               v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
             >
+              //Se cambio le variabili e ne metto alcune singole funzionerà.
+              Prova così
               <a
-                v-show="countStarItinerary != 1"
+                v-show="count != 1"
                 href="http://localhost:8080/#/businessprofile"
-                ><i class="fa-regular fa-star" @click="increment()"></i
+                ><i
+                  class="fa-regular fa-star"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
+                ></i
               ></a>
               <a
-                v-show="countStarItinerary != 0"
+                v-show="count != 0"
                 href="http://localhost:8080/#/businessprofile"
-                ><i class="fas fa-star" @click="decrement()"></i
+                ><i
+                  class="fas fa-star"
+                  @click="decrementStar(stage.stage.id, stage.stage.countStar)"
+                ></i
               ></a>
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
@@ -129,9 +140,11 @@ export default {
 
       console.log(this.stages[0]);
     },
+
     isCardType() {
       this.$store.commit("isCardType");
     },
+
     loadCssClasses(type) {
       if (type == "stage") {
         return "blue-background";
@@ -143,27 +156,28 @@ export default {
         return "yellow-background";
       }
     },
-    increment() {
-      this.$store.dispatch("incrementAsync");
+
+    incrementStar(id, countStar) {
+      console.log(id, this.stages);
+      console.log("countStar dello stage sta aumentando", countStar);
+      this.stages[id].stage.countStar++;
+      this.count++;
+      console.log(this.stages[id].stage.countStar, " count", this.count);
     },
-    decrement() {
-      this.$store.commit("decrement");
+
+    decrementStar(id, countStar) {
+      console.log(id, this.stages);
+      console.log("countStar dello stage sta aumentando", countStar);
+      this.stages[id].stage.countStar++;
+      console.log(this.stages[id].stage.countStar, " count", this.count);
     },
   },
   created() {
     this.isCardType();
   },
   computed: {
-    countStarStage() {
-      return this.$store.state.countStarStage;
-    },
-
-    countStarItinerary() {
-      return this.$store.state.countStarItinerary;
-    },
-
-    takingValue: function () {
-      return this.count;
+    count() {
+      return this.$store.state.count;
     },
   },
   mounted: {
