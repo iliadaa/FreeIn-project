@@ -49,7 +49,7 @@
             </div>
             <div v-show="loadCssClasses(stage.stage.type) == 'blue-background'">
               <a
-                v-show="count != 1"
+                v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
@@ -59,11 +59,13 @@
                 ></i
               ></a>
               <a
-                v-show="count != 0"
+                v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-solid fa-star"
-                  @click="decrementStar(stage.stage.id, stage.stage.countStar)"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
               ></a>
               <a href=""><i class="far fa-bookmark"></i></a>
@@ -71,10 +73,8 @@
             <div
               v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
             >
-              //Se cambio le variabili e ne metto alcune singole funzionerà.
-              Prova così
               <a
-                v-show="count != 1"
+                v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
@@ -84,11 +84,13 @@
                 ></i
               ></a>
               <a
-                v-show="count != 0"
+                v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fas fa-star"
-                  @click="decrementStar(stage.stage.id, stage.stage.countStar)"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
               ></a>
               <a href=""><i class="far fa-bookmark"></i></a>
@@ -97,7 +99,26 @@
               class="yellow-card-icons"
               v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
             >
-              <a href="#"><i class="fas fa-star"></i></a>
+              <a
+                v-show="stage.stage.countStar != 1"
+                href="http://localhost:8080/#/businessprofile"
+                ><i
+                  class="fa-regular fa-star"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
+                ></i
+              ></a>
+              <a
+                v-show="stage.stage.countStar"
+                href="http://localhost:8080/#/businessprofile"
+                ><i
+                  class="fas fa-star"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
+                ></i
+              ></a>
               <a href=""><i class="fa-regular fa-heart"></i></a>
             </div>
             <div
@@ -158,18 +179,27 @@ export default {
     },
 
     incrementStar(id, countStar) {
-      console.log(id, this.stages);
+      console.log(id, this.stages[id].stage);
+      countStar++;
       console.log("countStar dello stage sta aumentando", countStar);
-      this.stages[id].stage.countStar++;
-      this.count++;
-      console.log(this.stages[id].stage.countStar, " count", this.count);
+      this.stages[id].stage.countStar = countStar;
+      console.log(
+        this.stages[id].stage,
+        " prendo correttamente il dato della card: ",
+        id
+      );
     },
 
     decrementStar(id, countStar) {
-      console.log(id, this.stages);
-      console.log("countStar dello stage sta aumentando", countStar);
-      this.stages[id].stage.countStar++;
-      console.log(this.stages[id].stage.countStar, " count", this.count);
+      console.log(id, this.stages[id].stage);
+      countStar--;
+      console.log("countStar dello stage sta diminuendo", countStar);
+      this.stages[id].stage.countStar = countStar;
+      console.log(
+        this.stages[id].stage,
+        " prendo correttamente il dato della card: ",
+        id
+      );
     },
   },
   created() {
