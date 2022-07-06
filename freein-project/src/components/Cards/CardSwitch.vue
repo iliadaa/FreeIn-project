@@ -87,7 +87,7 @@ export default {
 @media (max-width: 575.98px) {
 .container {
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 .card-group {
   box-shadow: none;
