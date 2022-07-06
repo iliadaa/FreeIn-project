@@ -23,13 +23,13 @@
       </div>
 
       <div class="dialogpage-iframe">
-        <iframe
+        <iframe class="responsive-iframe"
           seamless="seamless"
-          scrolling="no"
+          scrolling="yes"
           src="_blank"
           name="iframe_a"
-          height="600px"
-          width="950px"
+          height="100%"
+          width="100%"
           title="Iframe"
         ></iframe>
       </div>
@@ -56,7 +56,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .container {
   position: absolute;
   right: 60px;
@@ -76,8 +75,8 @@ export default {
 .dialogpage-links {
   background-color: #ea5b0c;
   border-radius: 25px 0px 0px 25px;
-  height: 600px;
-  width: 170px;
+  height: 500px;
+  width: 135px;
 }
 
 .dialogpage-links p {
@@ -92,7 +91,48 @@ export default {
 }
 
 .dialogpage-links img {
-  padding-top: 253px;
-  padding-left: 5px;
+  padding-top: 150px;
+  padding-left: 1px;
+}
+@media (max-width: 575.98px) {
+.dialogpage1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.dialogpage-links {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px 10px 0px 0px;
+  height: auto;
+  width: 100%;
+}
+.dialogpage-links p {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-left: 0;
+}
+.dialogpage-links img {
+  display: none;
+}
+.dialogpage-iframe {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /*width: 100%;
+  height: 100%;*/
+  border: none;
+}
 }
 </style>

@@ -6,6 +6,14 @@
   </VueSlickCarousel>
 </template>
 
+<style>
+.slick-slide {
+  height: 0px!important;
+ }
+.slick-slide.slick-active {
+  height: 100% !important;  
+ }
+</style>
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";

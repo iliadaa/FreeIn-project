@@ -5,11 +5,7 @@
         <div class="search-bar">
           <input type="text" v-model="search" placeholder="Search tappa..." />
         </div>
-        <div
-          class="first-travel"
-          v-for="data in filteredTappe"
-          :key="data.stage.id"
-        >
+        <!-- <div class="first-travel" v-for="data in filteredTappe" :key="data.stage.id">
           <b-card
             id="disable"
             @click="close(data.id, datas[data.id - 1])"
@@ -38,35 +34,34 @@
               </b-col>
             </b-row>
           </b-card>
-        </div>
-        -->
+        </div>-->
+
         <div
           class="first-travel"
-          :class="{ disabled: disabled }"
-          :id="`id-${data.id}`"
+          :id="`id-${data.stage.id}`"
           v-for="data in filteredTappe"
-          v-bind:key="data.id"
-          :ref="`id-${data.id}`"
+          v-bind:key="data.stage.id"
+          :ref="`id-${data.stage.id}`"
         >
           <b-card
             v-model="datas.id"
             @click="close(data.id, datas[data.id - 1])"
-            :img-src="data.image"
+            :img-src="data.stage.img"
             no-body
             class="overflow-hidden"
             img-left
             img-width="300px"
           >
             <b-card-body style="width: 500px" align="left">
-              <b-card-title :title="data.stage"></b-card-title>
-              <b-card-sub-title :sub-title="data.inlineDate"></b-card-sub-title>
+              <b-card-title :title="data.stage.stageTitle"></b-card-title>
+              <b-card-sub-title :sub-title="data.inlineDate">22 ,March</b-card-sub-title>
               <b-card-text>
-                <p>{{ data.description }}</p>
+                <p>{{ data.stage.description }}</p>
               </b-card-text>
               <template>
                 <div class="location">
                   <i class="fa-solid fa-location-dot"></i>
-                  <p>{{ data.location }}</p>
+                  <p>Missing</p>
                 </div>
               </template>
             </b-card-body>
@@ -116,15 +111,12 @@ export default {
     close(id, datas) {
       this.search = "";
       this.$emit("close", datas);
-      this.cards = datas.id;
-      console.log("card id:", this.cards);
-      this.disabled = true;
+      this.cards = datas.stage;
     },
   },
 
   mounted() {
     this.$refs["id-1"];
-    console.log(this.$refs, "helllll");
   },
 
   /* 
@@ -141,11 +133,6 @@ export default {
       return this.datas.filter((data) => {
         return data.stage.stageTitle.match(this.search);
       });
-    },
-  },
-  created: {
-    console() {
-      console.log(this.datas);
     },
   },
 };
