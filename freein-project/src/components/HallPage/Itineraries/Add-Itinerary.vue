@@ -192,11 +192,13 @@
           <div
             class="container1"
             v-for="card in cardList"
-            :key="card.id"
+            :key="card.stage.id"
             :disabled="card.disabled"
+            :id="`id-${card.stage.id}`"
+            :ref="`id-${card.stage.id}`"
           >
             <b-card
-              :img-src="card.image"
+              :img-src="card.stage.img"
               no-body
               class="overflow-hidden"
               img-left
@@ -204,15 +206,15 @@
               id="travel-card"
             >
               <b-card-body style="width: 500px" align="left">
-                <b-card-title :title="card.stage"></b-card-title>
-                <b-card-sub-title :sub-title="card.inlineDate"></b-card-sub-title>
+                <b-card-title :title="card.stage.stageTitle"></b-card-title>
+                <b-card-sub-title :sub-title="card.inlineDate">22,March</b-card-sub-title>
                 <b-card-text>
-                  <p>{{ card.description }}</p>
+                  <p>{{ card.stage.description }}</p>
                 </b-card-text>
                 <template>
                   <div class="location">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>{{ card.location }}</p>
+                    <p>Missing</p>
                   </div>
                 </template>
               </b-card-body>
@@ -261,7 +263,7 @@
 <script>
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
-import dataStagesList from "/data-stages-list.json";
+import dataStagesList from "/stages.json";
 const baseURL = "http://localhost:3001/itineraries";
 
 export default {
@@ -279,7 +281,7 @@ export default {
       disabled: false,
       cardList: [],
       cardList2: [],
-      json: dataStagesList,
+      json: dataStagesList.stage,
       files: [],
       valueArt: "0",
       valueRelax: "0",
@@ -294,6 +296,7 @@ export default {
       textLocation: "",
       textText: "",
       isModalStagesVisible: false,
+      stages: [],
     };
   },
   components: {
@@ -346,8 +349,7 @@ export default {
         },
         body: JSON.stringify({
           itinerary: {
-            img: this.rawImg,
-            stages: this.textTitle,
+            name: this.textTitle,
             location: this.textLocation,
             description: this.textText,
             arte: this.valueArt,
@@ -357,6 +359,8 @@ export default {
             gourmet: this.valueGourmetExplorer,
             party: this.valueParty,
             recommend: this.checkedNames,
+            stages: this.cardList,
+            img: this.rawImg,
           },
         }),
       };
@@ -393,11 +397,15 @@ export default {
     choosed(data, disabled) {
       this.isModalStagesVisible = false;
       this.cardList.push(data);
+
       this.disabled = true;
     },
     showModalStages() {
       this.isModalStagesVisible = true;
     },
+  },
+  mounted() {
+    this.$refs["id-1"];
   },
 };
 </script>
