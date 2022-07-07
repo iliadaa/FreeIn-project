@@ -104,6 +104,7 @@ export default new Vuex.Store({
   mutations: {
     asksStore(state, answer) {
       if (state.inSession.length != undefined) {
+        console.log(state.inSession)
         state.inSession[0].userObj.testAnswers.push(answer);
         console.log(answer, " sono nel mutations");
         console.log(state.inSession[0].userObj.testAnswers, " sono l'array");
@@ -154,7 +155,7 @@ export default new Vuex.Store({
           testDone: user.testDone,
           roles: "private",
           profileTest: {
-            name: "cc",
+            name: "",
             description: "lorem ipsum",
             arte: undefined,
             mare: undefined,
@@ -174,7 +175,7 @@ export default new Vuex.Store({
         console.log(userData.userObj.email, "Sono l'user email")
         console.log(UsersJson)
         if (UsersJson.registrations[i].userObj.email.includes(userData.userObj.email)) {
-          console.log("Ci sto", state)
+          console.log("Ci sto", UsersJson.registrations[i].userObj.email)
           alert("Email già registrata, esegui il login!")
           router.push({
             name: "FirstPage",
@@ -186,7 +187,8 @@ export default new Vuex.Store({
         }
       }
       if (trovato == false) {
-        //UsersJson.registrations.push(userData);
+        UsersJson.registrations.push(userData);
+        /*
         const options = {
           method: "POST",
           headers: {
@@ -222,7 +224,7 @@ export default new Vuex.Store({
             console.log(json);
           })
           .catch((error) => console.log("Request Failed", error));
-
+*/
         alert("Nuovo utente registrato con successo")
         console.log(userData, "USER")
         router.push({

@@ -139,6 +139,8 @@
 </template>
 
 <script>
+import UsersJson from "/Users.json";
+const usersURL = "http://localhost:3000/registrations";
 export default {
   data() {
     return {
@@ -148,9 +150,13 @@ export default {
       relax: 60,
       party: 50,
       natura: 30,
+      users: UsersJson.registrations,
     };
   },
   methods: {
+    isRolee() {
+      this.$store.commit("isRole");
+    },
     testCompletedFoodie() {
       var i;
       this.inSession[0].userObj.testDone = true;
@@ -162,20 +168,53 @@ export default {
       this.inSession[0].userObj.profileTest.party = this.party;
       this.inSession[0].userObj.profileTest.nature = this.natura;
       console.log(this.registrations);
-      for (i = 0; i < this.registrations.length; i++) {
+      for (i = 0; i < this.users.length; i++) {
         console.log("sono nel for");
-        if (
-          this.registrations[i].userObj.email == this.inSession[0].userObj.email
-        ) {
-          this.registrations[i].userObj = this.inSession[0].userObj;
-          console.log("Ci sonooo", this.registrations);
 
+        if (this.users[i].userObj.email == this.inSession[0].userObj.email) {
+          const options = {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json;charset=UTF-8",
+            },
+            body: JSON.stringify({
+              userObj: {
+                id: this.inSession[0].userObj.id,
+                email: this.inSession[0].userObj.email,
+                password: this.inSession[0].userObj.password,
+                name: this.inSession[0].userObj.name,
+                surname: this.inSession[0].userObj.surname,
+                testDone: this.inSession[0].userObj.testDone,
+                roles: "private",
+                profileTest: {
+                  name: this.inSession[0].userObj.profileTest.name,
+                  arte: this.inSession[0].userObj.profileTest.arte,
+                  mare: this.inSession[0].userObj.profileTest.mare,
+                  cibo: this.inSession[0].userObj.profileTest.cibo,
+                  relax: this.inSession[0].userObj.profileTest.relax,
+                  party: this.inSession[0].userObj.profileTest.party,
+                  nature: this.inSession[0].userObj.profileTest.nature,
+                },
+                testAnswers: [this.inSession[0].userObj.testAnswers],
+              },
+            }),
+          };
+          fetch(usersURL, options)
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+            })
+            .catch((error) => console.log("Request Failed", error));
+
+          this.users[i].userObj = this.inSession[0].userObj;
+          alert("Ci sonooo " + this.inSession[0].userObj.email);
+          this.isRolee();
           break;
         } else {
           console.log("Non sta!");
         }
       }
-      this.isRolee();
     },
   },
   computed: {
@@ -189,10 +228,6 @@ export default {
 
     registrations() {
       return this.$store.state.registrations;
-    },
-
-    isRolee() {
-      this.$store.commit("isRole");
     },
   },
 };

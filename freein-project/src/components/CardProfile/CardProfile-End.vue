@@ -140,6 +140,7 @@
 </template>
 
 <script>
+import UsersJson from "/Users.json";
 export default {
   data() {
     return {
@@ -149,9 +150,14 @@ export default {
       relax: 40,
       party: 55,
       natura: 19,
+      users: UsersJson.registrations,
     };
   },
   methods: {
+    isRolee() {
+      this.$store.commit("isRole");
+    },
+
     testCompletedAccultured() {
       var i;
       this.inSession[0].userObj.testDone = true;
@@ -163,20 +169,17 @@ export default {
       this.inSession[0].userObj.profileTest.party = this.party;
       this.inSession[0].userObj.profileTest.nature = this.natura;
       console.log(this.registrations);
-      for (i = 0; i < this.registrations.length; i++) {
+      for (i = 0; i < this.users.length; i++) {
         console.log("sono nel for");
-        if (
-          this.registrations[i].userObj.email == this.inSession[0].userObj.email
-        ) {
-          this.registrations[i].userObj = this.inSession[0].userObj;
-          console.log("Ci sonooo", this.registrations);
-
+        if (this.users[i].userObj.email == this.inSession[0].userObj.email) {
+          this.users[i].userObj = this.inSession[0].userObj;
+          console.log("Ci sonooo", this.users);
+          this.isRolee();
           break;
         } else {
           console.log("Non sta!");
         }
       }
-      this.isRolee();
     },
   },
 
@@ -191,10 +194,6 @@ export default {
 
     registrations() {
       return this.$store.state.registrations;
-    },
-
-    isRolee() {
-      this.$store.commit("isRole");
     },
   },
 };

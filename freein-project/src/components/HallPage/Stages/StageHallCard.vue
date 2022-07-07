@@ -49,6 +49,7 @@
             </div>
             <div v-show="loadCssClasses(stage.stage.type) == 'blue-background'">
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -60,6 +61,7 @@
                 ><span class="counter">{{ stage.stage.countStar }}</span>
               </a>
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -77,6 +79,7 @@
               v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
             >
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -85,8 +88,10 @@
                     incrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
                 ></i
-              ></a>
+                ><span class="counter">{{ stage.stage.countStar }}</span></a
+              >
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -95,7 +100,8 @@
                     decrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
                 ></i
-              ></a>
+                ><span class="counter">{{ stage.stage.countStar }}</span></a
+              >
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
             <div
@@ -103,6 +109,7 @@
               v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
             >
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -111,8 +118,10 @@
                     incrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
                 ></i
-              ></a>
+                ><span class="counter">{{ stage.stage.countStar }}</span></a
+              >
               <a
+                style="text-decoration: none"
                 v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
@@ -121,7 +130,8 @@
                     decrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
                 ></i
-              ></a>
+                ><span class="counter">{{ stage.stage.countStar }}</span></a
+              >
               <a href=""><i class="fa-regular fa-heart"></i></a>
             </div>
             <div
@@ -502,6 +512,5 @@ export default {
 .counter {
   margin-left: 10px;
   color: white;
-  border-color: none;
 }
 </style>

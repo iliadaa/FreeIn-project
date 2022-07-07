@@ -34,7 +34,9 @@
           <p class="forgot-password">Forgot password?</p>
           <b-button
             class="login-btn"
-            @click="wrongLoginData(form.email, total, inSession, form.password)"
+            @click="
+              wrongLoginData(form.email, users.length, inSession, form.password)
+            "
             type="submit"
             >LOG IN</b-button
           >
@@ -78,7 +80,7 @@ export default {
       hide: false,
       show: true,
       goInTest: false,
-      users: UsersJson,
+      users: UsersJson.registrations,
     };
   },
   methods: {
@@ -150,13 +152,13 @@ export default {
       }
     },
 
-    wrongLoginData(email, total, inSession, password) {
-      const getUser = [...this.users.registrations];
-      console.log(total);
+    wrongLoginData(email, usersJsonLength, inSession, password) {
+      const getUser = [...this.users];
+      console.log(usersJsonLength);
       var i;
       var boolean = false;
-      for (i = 0; i < total; i++) {
-        console.log("sono nel for " + i + " di " + total);
+      for (i = 0; i < usersJsonLength; i++) {
+        console.log("sono nel for " + i + " di " + usersJsonLength);
         if (
           getUser[i].userObj.email == email &&
           getUser[i].userObj.password == password
@@ -185,9 +187,6 @@ export default {
     },
     inSession() {
       return this.$store.state.inSession;
-    },
-    total() {
-      return this.$store.state.registrations.length;
     },
     testToDo() {
       return this.$store.state.testToDo;

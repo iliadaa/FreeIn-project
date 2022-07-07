@@ -557,6 +557,9 @@ export default {
     inSession() {
       return this.$store.state.inSession;
     },
+    isRolee() {
+      this.$store.commit("isRole");
+    },
 
     takingValue: function () {
       $(document).ready(function () {
