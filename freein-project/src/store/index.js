@@ -154,7 +154,7 @@ export default new Vuex.Store({
           testDone: user.testDone,
           roles: "private",
           profileTest: {
-            name: "",
+            name: "cc",
             description: "lorem ipsum",
             arte: undefined,
             mare: undefined,
