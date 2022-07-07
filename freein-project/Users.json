@@ -1,0 +1,77 @@
+{
+  "registrations": [
+    {
+      "userObj": {
+        "id": "1",
+        "email": "test@gmail.com",
+        "password": "test",
+        "change": true,
+        "name": "Admin",
+        "surname": "Test",
+        "testDone": true,
+        "roles": [
+          "admin",
+          "business"
+        ],
+        "profileTest": {
+          "name": "Buongustaio",
+          "description": "lorem ipsum",
+          "arte": 40,
+          "mare": 45,
+          "cibo": 90,
+          "relax": 60,
+          "party": 50,
+          "nature": 30
+        }
+      }
+    },
+    {
+      "userObj": {
+        "id": "2",
+        "email": "test-business@gmail.com",
+        "password": "TEST",
+        "change": true,
+        "name": "Business",
+        "surname": "Test",
+        "testDone": true,
+        "roles": [
+          "business"
+        ],
+        "profileTest": {
+          "name": "Acculturato",
+          "description": "lorem ipsum",
+          "arte": 89,
+          "mare": 50,
+          "cibo": 10,
+          "relax": 40,
+          "party": 55,
+          "nature": 20
+        }
+      }
+    },
+    {
+      "userObj": {
+        "id": "3",
+        "email": "test-private@gmail.com",
+        "password": "test",
+        "change": true,
+        "name": "Tester",
+        "surname": "Test",
+        "testDone": true,
+        "roles": [
+          "private"
+        ],
+        "profileTest": {
+          "name": "Acculturato",
+          "description": "lorem ipsum",
+          "arte": 89,
+          "mare": 50,
+          "cibo": 10,
+          "relax": 40,
+          "party": 55,
+          "nature": 20
+        }
+      }
+    }
+  ]
+}

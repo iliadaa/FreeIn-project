@@ -61,6 +61,7 @@
 
 <script>
 import CardRegister from "../Cards/CardRegister.vue";
+import UsersJson from "/Users.json";
 export default {
   components: {
     register: CardRegister,
@@ -77,6 +78,7 @@ export default {
       hide: false,
       show: true,
       goInTest: false,
+      users: UsersJson,
     };
   },
   methods: {
@@ -118,7 +120,12 @@ export default {
 
     onSubmit(event) {
       event.preventDefault();
-      wrongLoginData(this.email, this.total, this.inSession, this.password);
+      wrongLoginData(
+        this.email,
+        this.users.length,
+        this.inSession,
+        this.password
+      );
     },
     onReset(event) {
       event.preventDefault();
@@ -144,17 +151,18 @@ export default {
     },
 
     wrongLoginData(email, total, inSession, password) {
-      const users = [...this.$store.state.registrations];
+      const getUser = [...this.users.registrations];
+      console.log(total);
       var i;
       var boolean = false;
       for (i = 0; i < total; i++) {
         console.log("sono nel for " + i + " di " + total);
         if (
-          users[i].userObj.email == email &&
-          users[i].userObj.password == password
+          getUser[i].userObj.email == email &&
+          getUser[i].userObj.password == password
         ) {
           console.log("Siamo uguali");
-          inSession.push(users[i]);
+          inSession.push(getUser[i]);
           console.log(inSession);
           boolean = true;
           break;
@@ -168,32 +176,6 @@ export default {
       } else {
         alert("Dati incorretti o inesistenti!");
       }
-
-      /* 
-          users[i].userObj.name;
-          inSession.push(users[i]);
-          alert("Dati inseriti correttamente");
-          this.isRolee();
-          break;
-          //this.form.registered = true;
-        } else if (
-          users[i].userObj.email == email &&
-          users[i].userObj.testDone == false
-        ) {
-          alert(
-            "Dati inseriti correttamente " +
-              "procediamo con il test: " +
-              users[i].userObj.name
-          );
-          inSession.push(users[i].userObj);
-          this.$router.push({
-            name: "Test",
-          });
-          break;
-          //this.form.registered;
-        } else {
-        }
-        */
     },
   },
 

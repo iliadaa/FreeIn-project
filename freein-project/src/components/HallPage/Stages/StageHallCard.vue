@@ -22,7 +22,7 @@
         <img :src="stage.stage.img" alt="" />
 
         <div :class="loadCssClasses(stage.stage.type)">
-          <p>{{ stage.stage.stageTitle }} {{ stage.stage.countStar }}</p>
+          <p>{{ stage.stage.stageTitle }}</p>
 
           <div class="cards2icons">
             <div
@@ -57,7 +57,8 @@
                     incrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
                 ></i
-              ></a>
+                ><span class="counter">{{ stage.stage.countStar }}</span>
+              </a>
               <a
                 v-show="stage.stage.countStar"
                 href="http://localhost:8080/#/businessprofile"
@@ -66,8 +67,10 @@
                   @click="
                     decrementStar(stage.stage.id - 1, stage.stage.countStar)
                   "
-                ></i
-              ></a>
+                ></i>
+                <span class="counter">{{ stage.stage.countStar }}</span></a
+              >
+
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
             <div
@@ -204,11 +207,6 @@ export default {
   },
   created() {
     this.isCardType();
-  },
-  computed: {
-    count() {
-      return this.$store.state.count;
-    },
   },
   mounted: {
     typeStage() {
@@ -499,5 +497,11 @@ export default {
 .cardsFriendsicons i {
   padding-left: 34px;
   color: white;
+}
+
+.counter {
+  margin-left: 10px;
+  color: white;
+  border-color: none;
 }
 </style>

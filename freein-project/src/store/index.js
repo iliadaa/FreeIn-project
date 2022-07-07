@@ -4,6 +4,8 @@ import router from '../router/index'
 import dataStageList from '../../data-stages-list'
 import stagesJson from "/stages.json";
 import itinerariesJson from "/itineraries.json";
+import UsersJson from "/Users.json";
+const usersURL = "http://localhost:3000/registrations"
 import friendsJson from "/friends.json";
 import { faLessThanEqual, faUnderline } from '@fortawesome/free-solid-svg-icons'
 
@@ -95,6 +97,7 @@ export default new Vuex.Store({
     typeFood: "",
     available: false,
     count: 0,
+
   },
   getters: {
   },
@@ -165,10 +168,12 @@ export default new Vuex.Store({
       }
       console.log(userData, " Verifico che i dati inseriti siano validati correttamente")
 
-      console.log(userData)
-      for (i = 0; i < state.registrations.length; i++) {
+      console.log(UsersJson)
+
+      for (i = 0; i < UsersJson.registrations.length; i++) {
         console.log(userData.userObj.email, "Sono l'user email")
-        if (state.registrations[i].userObj.email.includes(userData.userObj.email)) {
+        console.log(UsersJson)
+        if (UsersJson.registrations[i].userObj.email.includes(userData.userObj.email)) {
           console.log("Ci sto", state)
           alert("Email già registrata, esegui il login!")
           router.push({
@@ -181,7 +186,43 @@ export default new Vuex.Store({
         }
       }
       if (trovato == false) {
-        state.registrations.push(userData);
+        //UsersJson.registrations.push(userData);
+        const options = {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=UTF-8",
+          },
+          body: JSON.stringify({
+            userObj: {
+              id: user.id,
+              email: user.email,
+              password: user.password,
+              name: user.name,
+              surname: user.surname,
+              testDone: user.testDone,
+              roles: "private",
+              profileTest: {
+                name: "",
+                description: "lorem ipsum",
+                arte: undefined,
+                mare: undefined,
+                cibo: undefined,
+                relax: undefined,
+                party: undefined,
+                nature: undefined,
+              },
+              testAnswers: []
+            },
+          }),
+        };
+        fetch(usersURL, options)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+          })
+          .catch((error) => console.log("Request Failed", error));
+
         alert("Nuovo utente registrato con successo")
         console.log(userData, "USER")
         router.push({
@@ -248,7 +289,9 @@ export default new Vuex.Store({
     decrement(state) {
       state.count--
       console.log(state.count)
-    }
+    },
+
+
   },
   actions: {
     incrementAsync({ commit }) {

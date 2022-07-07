@@ -78,6 +78,8 @@
 </template>
 
 <script>
+import UsersJson from "/Users.json";
+
 export default {
   data() {
     return {
@@ -137,6 +139,7 @@ export default {
         this.show = true;
       });
     },
+
     showPass(hide) {
       //mai usare gli stessi id input perché il sistema non riuscirà a capire quale dei due stiamo triggerando
       //quindi in uno dei due non eseguirà l'azione in modo corretto
@@ -335,77 +338,77 @@ export default {
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px; 
-}
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 
-.card-group {
-  box-shadow: none; 
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-b h2 {
-  color: gray;
-  font-size: 20px;
-  padding-top: 20px;
-}
-.card-r h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.card-r p {
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.log-in {
-  font-size: 14px;
-}
-.card-login {
-  width: 90%;
-}
-.email {
-  margin-left: 12px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 16px;
-  padding: 10px;
-}
-.password {
-  margin-left: 12px;
-  font-size: 16px;
-  padding: 10px;
-}
-.name {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 12px;
-  font-size: 16px;
-  padding: 10px;
-}
-.surname {
-  margin-left: 12px;
-  font-size: 16px;
-  padding: 10px;
-}
-.sign-up-btn {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;
-}
-.href-buttons-rounded a {
-  margin-left: 10px;
-  margin-bottom: 20px;
-  width: 35px;
-  height: 35px;
-}
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-b h2 {
+    color: gray;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .card-r h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .card-r p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .log-in {
+    font-size: 14px;
+  }
+  .card-login {
+    width: 90%;
+  }
+  .email {
+    margin-left: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .password {
+    margin-left: 12px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .name {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 12px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .surname {
+    margin-left: 12px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .sign-up-btn {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+  }
+  .href-buttons-rounded a {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 35px;
+    height: 35px;
+  }
 }
 </style>
