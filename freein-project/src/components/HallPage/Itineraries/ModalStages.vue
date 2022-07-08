@@ -155,11 +155,13 @@ export default {
   z-index: 2;
   overflow: scroll;
 }
+
 .modal-container-child {
   top: 0;
   bottom: 0;
   width: 100%;
 }
+
 .search-bar {
   display: flex;
   justify-content: center;
@@ -172,6 +174,7 @@ export default {
   border: 0;
   border-radius: 20px;
   box-shadow: 0px 3px 6px lightgrey;
+  padding-left: 20px;
 }
 input::placeholder {
   text-align: center;
