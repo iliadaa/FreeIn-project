@@ -225,13 +225,21 @@
           <div
             class="container1"
             v-for="card in cardList"
-            :key="card.stage.id"
+            :key="card.id - 1"
             :disabled="card.disabled"
             :id="`id-${card.stage.id}`"
             :ref="`id-${card.stage.id}`"
           >
+            <button class="remove-stage-icon">
+              <i
+                class="fa-regular fa-circle-xmark"
+                @click="removeCard(card.id - 1, datas)"
+                v-show="card.stage.stageClicked == true"
+              ></i>
+            </button>
+            <div v-show="card.stage.stageClicked == false"></div>
             <b-card
-              @click="stageUnLoaded(card.stage.id, card.stage.stageClicked)"
+              v-show="card.stage.stageClicked == true"
               :img-src="card.stage.img"
               no-body
               class="overflow-hidden"
@@ -250,7 +258,7 @@
                 <template>
                   <div class="location">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>{{ card.stage.stageTitle }}</p>
+                    <p>Missing</p>
                   </div>
                 </template>
               </b-card-body>
@@ -318,7 +326,7 @@ export default {
       disabled: false,
       cardList: [],
       cardList2: [],
-      json: dataStagesList.stage,
+      datas: dataStagesList.stages,
       files: [],
       valueArt: "0",
       valueRelax: "0",
@@ -374,6 +382,20 @@ export default {
         console.log(this.rawImg);
       };
       reader.readAsDataURL(file);
+    },
+
+    removeCard(id, dataList) {
+      /*
+      dataList[id].stage.stageClicked = false;
+      console.log(dataList[id].stage.stageClicked);
+      cardList[id].stage.stageClicked = false;
+      console.log(cardList);
+      */
+
+      console.log(id);
+      this.cardList.splice(id, 1);
+      dataList[id].stage.stageClicked = false;
+      console.log(this.cardList);
     },
 
     //collect all the data in body json file
@@ -434,17 +456,21 @@ export default {
     choosed(data, disabled) {
       this.isModalStagesVisible = false;
       this.cardList.push(data);
+      console.log(this.cardList);
       this.disabled = true;
     },
     showModalStages() {
       this.isModalStagesVisible = true;
     },
 
-    stageUnLoaded(id, stageClicked) {
+    /*
+    stageUnLoaded(id, stageClicked, cardList) {
       console.log(id, stageClicked);
-      stageClicked = false;
-      console.log(stageClicked);
+      console.log(cardList[id].stage.stageClicked, " Prima");
+      cardList[id].stage.stageClicked = true;
+      console.log(cardList[id].stage.stageClicked, " Dopo");
     },
+    */
   },
   mounted() {
     this.$refs["id-1"];
@@ -681,6 +707,12 @@ export default {
   padding-bottom: 50%;
   padding-top: 15px;
   padding-left: 10px;
+}
+
+.remove-stage-icon {
+  border: none;
+  position: relative;
+  right: -96%;
 }
 
 .end-adding-buttons {

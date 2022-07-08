@@ -15,7 +15,11 @@
           :id="`id-${data.stage.id}`"
         >
           <b-card
-            @click="close(data.stage.id, datas[data.id - 1])"
+            @click="
+              close(data.stage.id, datas[data.id - 1]),
+                stageLoaded(data.stage.id - 1, data.stage.stageClicked, datas)
+            "
+            v-show="data.stage.stageClicked == false"
             no-body
             class="overflow-hidden mx-auto"
             style="max-width: 700px"
@@ -117,6 +121,16 @@ export default {
       this.$emit("close", datas);
       this.cards = datas.stage;
     },
+
+    stageLoaded(id, stageClicked, dataList) {
+      console.log(id, dataList[id]);
+      dataList[id].stage.stageClicked = true;
+      console.log(
+        dataList[id].stage.stageClicked,
+        dataList[id].stage.stageClicked
+      );
+      return (dataList[id].stage.stageClicked = true);
+    },
   },
 
   mounted() {
@@ -209,18 +223,18 @@ p {
     font-size: 14px;
   }
   h1 {
-  font-size: 18px;
-  padding-top: 10px;
-  padding-left: 5px;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-left: 5px;
   }
   p {
-  font-size: 16px;
-  padding-right: 5px;
-  padding-left: 5px;
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
   i {
-  margin-right: 5px;
-  padding-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
   }
 }
 </style>
