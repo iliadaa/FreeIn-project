@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="form-group">
-      <ModalStages v-show="isModalStagesVisible" @close="choosed($event, disabled)">
+      <ModalStages
+        v-show="isModalStagesVisible"
+        @close="choosed($event, disabled)"
+      >
       </ModalStages>
       <div class="ph-layout">
         <h3>Foto itinerario (obbligatorio)</h3>
@@ -25,7 +28,9 @@
             />
             <p href="#">Carica immagine</p>
             <br />
-            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+            <p style="margin-top: -40px">
+              Dimensioni minime di "808 x 632 pixel"
+            </p>
           </span>
         </div>
       </div>
@@ -109,11 +114,21 @@
         </h2>
         <div class="btns-group1">
           <label class="control" for="family">
-            <input type="checkbox" value="Famiglia" id="family" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Famiglia"
+              id="family"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Famiglia </span>
           </label>
           <label class="control" for="single">
-            <input type="checkbox" value="Single" id="single" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Single"
+              id="single"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Single </span>
           </label>
           <label class="control" name="placeForAnimals">
@@ -128,15 +143,30 @@
         </div>
         <div class="btns-group2">
           <label class="control" for="children">
-            <input type="checkbox" value="Bambini" id="children" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Bambini"
+              id="children"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Bambini </span>
           </label>
           <label class="control" for="friends">
-            <input type="checkbox" value="Comitiva" id="friends" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Comitiva"
+              id="friends"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Comitiva </span>
           </label>
           <label class="control" name="couple">
-            <input type="checkbox" value="Coppia" id="couple" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Coppia"
+              id="couple"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Coppia</span>
           </label>
         </div>
@@ -157,7 +187,10 @@
           Location
           <p>(obbligatorio)</p>
         </h2>
-        <div v-text="maxLocation - textLocation.length" style="color: red"></div>
+        <div
+          v-text="maxLocation - textLocation.length"
+          style="color: red"
+        ></div>
         <input
           type="text"
           :maxlength="maxLocation"
@@ -198,6 +231,7 @@
             :ref="`id-${card.stage.id}`"
           >
             <b-card
+              @click="stageUnLoaded(card.stage.id, card.stage.stageClicked)"
               :img-src="card.stage.img"
               no-body
               class="overflow-hidden"
@@ -207,14 +241,16 @@
             >
               <b-card-body style="width: 500px" align="left">
                 <b-card-title :title="card.stage.stageTitle"></b-card-title>
-                <b-card-sub-title :sub-title="card.inlineDate">22,March</b-card-sub-title>
+                <b-card-sub-title :sub-title="card.inlineDate"
+                  >22,March</b-card-sub-title
+                >
                 <b-card-text>
                   <p>{{ card.stage.description }}</p>
                 </b-card-text>
                 <template>
                   <div class="location">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>Missing</p>
+                    <p>{{ card.stage.stageTitle }}</p>
                   </div>
                 </template>
               </b-card-body>
@@ -270,6 +306,7 @@ export default {
   data() {
     return {
       rawImg: "",
+      stageCliked: false,
       recommend: [],
       checkedNames: [],
       slider: {
@@ -397,11 +434,16 @@ export default {
     choosed(data, disabled) {
       this.isModalStagesVisible = false;
       this.cardList.push(data);
-
       this.disabled = true;
     },
     showModalStages() {
       this.isModalStagesVisible = true;
+    },
+
+    stageUnLoaded(id, stageClicked) {
+      console.log(id, stageClicked);
+      stageClicked = false;
+      console.log(stageClicked);
     },
   },
   mounted() {
