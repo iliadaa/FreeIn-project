@@ -5,6 +5,11 @@
       <div class="card card-a">
         <div class="illustrations">
           <img src="@/assets/illustration.png" alt="" />
+        
+        
+        <img class="scorpione" src="@/assets/New.svg" alt="" />
+
+        
         </div>
         <p>"Sei ...?"</p>
       </div>
@@ -54,6 +59,9 @@ export default {
 </script>
 
 <style scoped>
+.scorpione {
+  font-size: 12px;
+}
 .container {
   display: flex;
   justify-content: center;
