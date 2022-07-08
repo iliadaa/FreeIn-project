@@ -29,7 +29,7 @@
                 ></b-card-img>
               </b-col>
               <b-col md="6">
-                <b-card-text style="font-size: 15px">
+                <b-card-text>
                   <h1>{{ data.stage.stageTitle }}</h1>
                   <p>{{ data.stage.description }}</p>
                   <div class="icon">
@@ -155,13 +155,11 @@ export default {
   z-index: 2;
   overflow: scroll;
 }
-
 .modal-container-child {
   top: 0;
   bottom: 0;
   width: 100%;
 }
-
 .search-bar {
   display: flex;
   justify-content: center;
@@ -182,14 +180,22 @@ input::placeholder {
 .mycards {
   margin-bottom: 20px;
 }
-
 .icon {
   display: flex;
   align-items: baseline;
 }
-
 i {
   margin-right: 5px;
+}
+h1 {
+  font-size: 22px;
+  padding-top: 10px;
+}
+p {
+  font-size: 18px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
 }
 
 @media (max-width: 575.98px) {
@@ -202,86 +208,19 @@ i {
   input::placeholder {
     font-size: 14px;
   }
+  h1 {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-left: 5px;
+  }
+  p {
+  font-size: 16px;
+  padding-right: 5px;
+  padding-left: 5px;
+  }
+  i {
+  margin-right: 5px;
+  padding-left: 5px;
+  }
 }
-
-/*.modal-container {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: scroll;
-}
-.modal-container-child {
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.search-bar{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  margin-top: 100px;
-}
-
-.search-bar input{
-  border: 0;
-  border-radius: 20px;
-  box-shadow: 0px 3px 6px lightgrey;
-  width: 48%;
-  height: 38px;
-  padding-left: 20px;
-}
-
-input::placeholder{
-  text-align: center;
-}
-
-.container {
-  height: 100%;
-  max-height: 100vh;
-  max-width: 100%;
-}
-
-.overflow-hidden {
-  margin: 0 auto;
-  max-width: 700px;
-  height: 200px;
-  margin-bottom: 40px;
-}
-
-.flex {
-  display: flex;
-  align-items: baseline;
-  margin-top: -20px
-}
-
-.flex i {
-  margin-top: 5px;
-  margin-right: 3px;
-}
-
-.text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-layout p {
-  margin-top: -10px;
-  margin-bottom: 20px;
-  font-size: 15px
-}
-
-.text img {
-  width: 250px;
-  height: 200px;
-  margin-top: -16px;
-}*/
 </style>
