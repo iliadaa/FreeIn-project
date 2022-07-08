@@ -29,16 +29,14 @@
                 ></b-card-img>
               </b-col>
               <b-col md="6">
-                <b-card-body title="Horizontal Card">
-                  <b-card-text style="font-size: 15px">
-                    <h1>{{ data.stage.stageTitle }}</h1>
-                    <p>{{ data.stage.description }}</p>
-                    <div class="icon">
-                      <i class="fa-solid fa-location-dot"></i>
-                      <p>{{ data.stage.stageTitle }}</p>
-                    </div>
-                  </b-card-text>
-                </b-card-body>
+                <b-card-text style="font-size: 15px">
+                  <h1>{{ data.stage.stageTitle }}</h1>
+                  <p>{{ data.stage.description }}</p>
+                  <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>{{ data.stage.stageTitle }}</p>
+                  </div>
+                </b-card-text>
               </b-col>
             </b-row>
           </b-card>
