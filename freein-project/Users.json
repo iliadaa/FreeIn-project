@@ -157,6 +157,47 @@
         ]
       },
       "id": 7
+    },
+    {
+      "userObj": {
+        "id": "",
+        "email": "cipollino@gmail.com",
+        "password": "1",
+        "name": "2",
+        "surname": "3",
+        "testDone": true,
+        "roles": "private",
+        "profileTest": {
+          "name": "Buongustaio",
+          "arte": 40,
+          "mare": 45,
+          "cibo": 90,
+          "relax": 60,
+          "party": 50,
+          "nature": 30
+        },
+        "testAnswers": [
+          [
+            "Uomo",
+            "In gruppo",
+            "Famiglia",
+            "Hamburger",
+            "56-90",
+            "13-22",
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            "Street Food",
+            "Valigia"
+          ]
+        ]
+      },
+      "id": 8
     }
   ]
 }
