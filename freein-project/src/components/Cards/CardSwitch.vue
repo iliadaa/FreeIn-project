@@ -4,14 +4,14 @@
     <div class="card-group card-absolute" v-on:click="component = 'login'">
       <div class="card card-b">
         <div class="illustrations1">
-          <img src="@/assets/dots-orange.png" alt="">
+          <img src="@/assets/dots-orange.svg" alt="">
         </div>
         <p>ispira</p>
       </div>
 
       <div class="card card-r">
         <div class="illustrations2">
-          <img src="@/assets/dots-blue.png" alt="">
+          <img src="@/assets/dots-blue.svg" alt="">
         </div>
         <p>lasciati</p>
         <p style="margin-left: 14px; margin-bottom: 15px">ispirare</p>
@@ -70,12 +70,18 @@ export default {
   line-height: 30px;
 }
 .illustrations1 {
-  margin-right: -10px;
+  display: block;
+  margin-left: 205px;
   margin-bottom: 8px;
+  width: 140px;
+  height: auto;
 }
 .illustrations2 {
-  margin-right: -25px;
-  margin-bottom: 10px;
+  display: block;
+  margin-left: 200px;
+  margin-bottom: 8px;
+  width: 140px;
+  height: auto;
 }
 .card-absolute {
   position: absolute;
@@ -109,10 +115,14 @@ export default {
   line-height: 20px;
 }
 .illustrations1 {
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90px;
 }
 .illustrations2 {
-  margin-right: 20px;
+  width: 90px;
+  margin-left: auto;
+  margin-right: auto;
 }
 }
 </style>
