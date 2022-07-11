@@ -71,16 +71,14 @@ export default {
 }
 .illustrations1 {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 205px;
   margin-bottom: 8px;
   width: 140px;
   height: auto;
 }
 .illustrations2 {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 200px;
   margin-bottom: 8px;
   width: 140px;
   height: auto;
@@ -117,10 +115,14 @@ export default {
   line-height: 20px;
 }
 .illustrations1 {
+  margin-left: auto;
+  margin-right: auto;
   width: 90px;
 }
 .illustrations2 {
   width: 90px;
+  margin-left: auto;
+  margin-right: auto;
 }
 }
 </style>

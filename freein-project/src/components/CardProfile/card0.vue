@@ -3,7 +3,7 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/dots.png" alt="">
+          <img src="@/assets/dots.svg" alt="">
         </div>
         <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
@@ -42,8 +42,11 @@
 .card-a{
   background-color: #ea5b0c;
 }
-.img {
-  width: 100%;
+.illustrations {
+  display: block;
+  margin-right: 150px;
+  margin-bottom: 8px;
+  width: 140px;
   height: auto;
 }
 .card-a p {
@@ -83,6 +86,11 @@
   font-size: 25px;
   margin-left: 120px;
   margin-right: 120px;
+}
+.illustrations {
+ margin-left: auto;
+ margin-right: auto;
+ width: 90px;
 }
 .arrow a {
   width: 40px;
