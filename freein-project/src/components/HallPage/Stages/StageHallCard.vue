@@ -49,7 +49,9 @@
               v-show="loadCssClasses(stage.stage.type) == ['orange-background']"
             >
               <a
-                v-on:click="itinerariesClick(stage.stage.id - 1, stages, itinerariestore)"
+                v-on:click="
+                  itinerariesClick(stage.stage.id, itineraries, itinerariestore)
+                "
                 class="buttonItinerary"
                 >Itinerario</a
               >
@@ -150,7 +152,7 @@ export default {
       stages: stagesJson.stages,
       itineraries: itinerariesJson.itineraries,
       friends: friendsJson.friends,
-      stageData: [],
+      stageInItineraries: itinerariesJson.itineraries.stages,
     };
   },
   methods: {
@@ -172,20 +174,20 @@ export default {
         name: "SummaryStage",
       });
     },
-    itinerariesClick(id, stages, itinerariestore) {
-      console.log(id, this.stages[id].stage);
+    itinerariesClick(id, itineraries, itinerariestore) {
+      console.log(id, this.itineraries[id].itinerary.stages);
       console.log(itinerariestore, "hello");
-      itinerariestore.push(stages[id].stage);
-      if (itinerariestore.length > 0) {
-        if (this.itinerariestore.length == 1) {
-        } else {
-          this.itinerariestore.splice(0, 1);
-          //capire come usare .splice
-        }
-      }
-      this.$router.push({
-        name: "SummaryItinerary",
-      });
+      itinerariestore.push(itineraries[id].itinerary);
+      //  if (itinerariestore.length > 0) {
+      //  if (this.itinerariestore.length == 1) {
+      //  } else {
+      //    this.itinerariestore.splice(0, 1);
+      //capire come usare .splice
+      //  }
+      //  }
+      //  this.$router.push({
+      ///    name: "SummaryItinerary",
+      //  });
     },
     push(id, data) {
       this.stages.push(data[id - 1]);

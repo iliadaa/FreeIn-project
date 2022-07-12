@@ -94,7 +94,12 @@
             </div>
             <div class="container2">
               <a href="#"><i class="fas fa-tag"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"
+                ><i class="fas fa-star"></i
+                ><span class="counter">{{
+                  $store.state.stagestore[0].countStar
+                }}</span></a
+              >
               <a href="#"><i class="far fa-bookmark"></i></a>
             </div>
           </div>
@@ -374,6 +379,12 @@ export default {
 .container {
   margin-left: 30px;
   margin-right: 30px;
+}
+.counter {
+  margin-top: -10px;
+  color: black;
+  position: absolute;
+  font-weight: 700;
 }
 .heading {
   background: #009ee2;

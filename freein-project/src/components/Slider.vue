@@ -1,18 +1,18 @@
 <template>
   <VueSlickCarousel v-bind="settings">
-    <img src="@/assets/pasta.jpg" />
-    <img src="@/assets/olive.jpg" />
-    <img src="@/assets/focaccia.jpg" />
+    <img :src="$store.state.itinerariestore[0].img" />
+    <img :src="$store.state.stagestore[0].img" />
+    <img :src="$store.state.stagestore[0].img" />
   </VueSlickCarousel>
 </template>
 
 <style>
 .slick-slide {
-  height: 0px!important;
- }
+  height: 0px !important;
+}
 .slick-slide.slick-active {
-  height: 100% !important;  
- }
+  height: 100% !important;
+}
 </style>
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
@@ -33,6 +33,14 @@ export default {
         cssEase: "linear",
       },
     };
+  },
+  computed: {
+    stagestore() {
+      return this.$store.state.stagestore;
+    },
+    itinerariestore() {
+      return this.$store.state.itinerariestore;
+    },
   },
 };
 </script>
