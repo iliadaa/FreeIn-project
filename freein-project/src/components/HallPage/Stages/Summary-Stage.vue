@@ -1,90 +1,91 @@
 <template>
   <div>
-      <div class="heading">
-        <p><i class="far fa-flag"></i>Tappa</p>
-      </div>
+    <div class="heading">
+      <p><i class="far fa-flag"></i>Tappa</p>
+    </div>
 
     <div class="container">
       <div class="cards">
         <div class="arte">
           <div class="image1">
-            <img src="@/assets/art.png" alt="">
+            <img src="@/assets/art.png" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>50%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.arte }}%</p>
           </div>
         </div>
         <div class="relax">
           <div class="image3">
-            <img src="@/assets/relax.png" alt="">
+            <img src="@/assets/relax.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>20%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.cibo }}%</p>
           </div>
         </div>
         <div class="mare">
           <div class="image1">
-            <img src="@/assets/Mare.png" alt="">
+            <img src="@/assets/Mare.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>50%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.mare }}%</p>
           </div>
         </div>
         <div class="natura">
           <div class="image5">
-            <img src="@/assets/Natura_Avventura.png" alt="">
+            <img src="@/assets/Natura_Avventura.png" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>70%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.nature }}%</p>
           </div>
         </div>
         <div class="gourmet">
           <div class="image2">
-            <img src="@/assets/yellowgourmet.png" alt="">
+            <img src="@/assets/yellowgourmet.png" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>30%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.party }}%</p>
           </div>
         </div>
         <div class="party">
           <div class="image4">
-            <img src="@/assets/Party.png" alt="">
+            <img src="@/assets/Party.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>30%</p>
+            <p>{{ $store.state.stagestore[0].profileEval.relax }}%</p>
           </div>
         </div>
       </div>
 
       <div class="text">
-
         <div class="h1icon">
           <div class="h1i">
             <h1>Un week and d’avventura</h1>
           </div>
-          
+
           <div class="c-share">
-            <input class="c-share__input" type="checkbox" id="checkbox">
+            <input class="c-share__input" type="checkbox" id="checkbox" />
             <label class="c-share__toggler" for="checkbox">
               <span class="c-share__icon"></span>
             </label>
-          <ul class="c-share_options" data-title="Share">
-            <li><i class="fab fa-facebook"></i> Facebook</li>
-            <li><i class="fab fa-twitter"></i> Twitter</li>
-            <li><i class="fab fa-instagram"></i> Instagram</li>
-            <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
-            <li><i class="fab fa-telegram-plane"></i> Telegram</li>
-          </ul>
+            <ul class="c-share_options" data-title="Share">
+              <li><i class="fab fa-facebook"></i> Facebook</li>
+              <li><i class="fab fa-twitter"></i> Twitter</li>
+              <li><i class="fab fa-instagram"></i> Instagram</li>
+              <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
+              <li><i class="fab fa-telegram-plane"></i> Telegram</li>
+            </ul>
           </div>
         </div>
-        
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores delectus id expedita! Nemo tempore architecto eum modi accusantium atque quis cupiditate pariatur beatae praesentium possimus soluta in dignissimos ducimus dolores, libero provident impedit magnam nam sint. Maxime ex, hic totam unde similique eius veritatis doloremque. Saepe tempora iusto illum incidunt, maxime perspiciatis quae itaque fuga maiores, eos sit. Dolorum delectus magni deleniti harum nam provident. Sapiente provident, debitis alias, quia quisquam cupiditate necessitatibus molestias aperiam corporis quos magni harum.</p>
+
+        <p>
+          {{ $store.state.stagestore[0].description }}
+        </p>
       </div>
-      
+
       <div class="cards1">
         <div>
           <div class="cardimage">
-            <img src="@/assets/italy.jpg" alt="">
+            <img :src="$store.state.stagestore[0].img" alt="" />
           </div>
           <div class="parentcontainer">
             <div class="container1">
@@ -92,15 +93,15 @@
               <p>Crea itinerario</p>
             </div>
             <div class="container2">
-                <a href="#"><i class="fas fa-tag"></i></a>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href="#"><i class="far fa-bookmark"></i></a>
+              <a href="#"><i class="fas fa-tag"></i></a>
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"><i class="far fa-bookmark"></i></a>
             </div>
           </div>
         </div>
       </div>
-      
-      <hr class="hr1">
+
+      <hr class="hr1" />
 
       <div class="search-container2">
         <form action="">
@@ -112,18 +113,18 @@
 
       <div class="wrap">
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
+
               <div>
                 <a href="#"><i class="fas fa-star"></i></a>
                 <a href="#"><i class="far fa-bookmark"></i></a>
@@ -131,20 +132,20 @@
             </div>
           </div>
         </div>
-      
+
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
+
               <div>
                 <a href=""><i class="fas fa-star"></i></a>
                 <a href=""><i class="far fa-bookmark"></i></a>
@@ -152,87 +153,20 @@
             </div>
           </div>
         </div>
-      
-      
+
         <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-      
-              <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
-              </div>
-            </div>
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
-        </div>
-      </div>
-      
-      <div class="wrap">
-        <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
+          <img src="@/assets/italy.jpg" alt="" />
           <div class="cards2body">
             <p>Peschici</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
               </div>
-      
-              <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href="#"><i class="far fa-bookmark"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-      
-              <div>
-                <a href=""><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      
-        <div class="cards2">
-            <div class="cards2i">
-              <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="usericon"><i class="fas fa-user-circle"></i></div>
-            </div>
-          <img src="@/assets/italy.jpg" alt="">
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-      
+
               <div>
                 <a href="#"><i class="fas fa-star"></i></a>
                 <a href=""><i class="far fa-bookmark"></i></a>
@@ -242,7 +176,70 @@
         </div>
       </div>
 
-      
+      <div class="wrap">
+        <div class="cards2">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
+          <div class="cards2body">
+            <p>Peschici</p>
+            <div class="cards2icons">
+              <div class="button1">
+                <a href="#" class="button">Go</a>
+              </div>
+
+              <div>
+                <a href="#"><i class="fas fa-star"></i></a>
+                <a href="#"><i class="far fa-bookmark"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards2">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
+          <div class="cards2body">
+            <p>Peschici</p>
+            <div class="cards2icons">
+              <div class="button1">
+                <a href="#" class="button">Go</a>
+              </div>
+
+              <div>
+                <a href=""><i class="fas fa-star"></i></a>
+                <a href=""><i class="far fa-bookmark"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards2">
+          <div class="cards2i">
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="usericon"><i class="fas fa-user-circle"></i></div>
+          </div>
+          <img src="@/assets/italy.jpg" alt="" />
+          <div class="cards2body">
+            <p>Peschici</p>
+            <div class="cards2icons">
+              <div class="button1">
+                <a href="#" class="button">Go</a>
+              </div>
+
+              <div>
+                <a href="#"><i class="fas fa-star"></i></a>
+                <a href=""><i class="far fa-bookmark"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="box1">
         <div>
@@ -253,7 +250,7 @@
             <p>Alex</p>
           </div>
         </div>
-      
+
         <div>
           <div>
             <i class="fas fa-user-plus"></i>
@@ -295,29 +292,29 @@
         <p class="title">Sponsorizzato</p>
       </div>
 
-<div class="box3">
-  <img src="@/assets/pasta.jpg" alt="">
-  <div class="boxcontainer3">
-    <h1>Ostaria del moro</h1> 
-    <p>ostariadelmoro.com</p> 
-  </div>
-</div>
+      <div class="box3">
+        <img src="@/assets/pasta.jpg" alt="" />
+        <div class="boxcontainer3">
+          <h1>Ostaria del moro</h1>
+          <p>ostariadelmoro.com</p>
+        </div>
+      </div>
 
-<div class="box4">
-  <img src="@/assets/olive.jpg" alt="">
-  <div class="boxcontainer4">
-    <h1>Oleificio di Puglia</h1> 
-    <p>oleificiodipuglia.com</p> 
-  </div>
-</div>
+      <div class="box4">
+        <img src="@/assets/olive.jpg" alt="" />
+        <div class="boxcontainer4">
+          <h1>Oleificio di Puglia</h1>
+          <p>oleificiodipuglia.com</p>
+        </div>
+      </div>
 
-<div class="box5">
-  <img src="@/assets/focaccia.jpg" alt="">
-  <div class="boxcontainer5">
-    <h1>La Focaccia</h1> 
-    <p>lafocaccia.com</p> 
-  </div>
-</div>
+      <div class="box5">
+        <img src="@/assets/focaccia.jpg" alt="" />
+        <div class="boxcontainer5">
+          <h1>La Focaccia</h1>
+          <p>lafocaccia.com</p>
+        </div>
+      </div>
 
       <div class="search-container">
         <form action="">
@@ -325,45 +322,53 @@
         </form>
       </div>
 
-  <!--<div class="search-container">
+      <!--<div class="search-container">
       <form action="">
         <button type="submit"><i class="fas fa-search"></i></button>
         <input type="text" placeholder="Cerca itinerario..." name="search">
       </form>
   </div>-->
 
+      <div class="box6">
+        <p class="title1">Sponsorizzato</p>
+      </div>
 
-<div class="box6">
-  <p class="title1">Sponsorizzato</p>    
-</div>
+      <div class="box7">
+        <img src="@/assets/pasta.jpg" alt="" />
+        <div class="boxcontainer7">
+          <h1>Ostaria del moro</h1>
+          <p>ostariadelmoro.com</p>
+        </div>
+      </div>
 
-<div class="box7">
-  <img src="@/assets/pasta.jpg" alt="">
-  <div class="boxcontainer7">
-    <h1>Ostaria del moro</h1> 
-    <p>ostariadelmoro.com</p> 
-  </div>
-</div>
+      <div class="box8">
+        <img src="@/assets/olive.jpg" alt="" />
+        <div class="boxcontainer8">
+          <h1>Oleificio di Puglia</h1>
+          <p>oleificiodipuglia.com</p>
+        </div>
+      </div>
 
-<div class="box8">
-  <img src="@/assets/olive.jpg" alt="">
-  <div class="boxcontainer8">
-    <h1>Oleificio di Puglia</h1> 
-    <p>oleificiodipuglia.com</p> 
-  </div>
-</div>
-
-<div class="box9">
-  <img src="@/assets/focaccia.jpg" alt="">
-  <div class="boxcontainer9">
-    <h1>La Focaccia</h1> 
-    <p>lafocaccia.com</p> 
-  </div>
-</div>
+      <div class="box9">
+        <img src="@/assets/focaccia.jpg" alt="" />
+        <div class="boxcontainer9">
+          <h1>La Focaccia</h1>
+          <p>lafocaccia.com</p>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    stagestore() {
+      return this.$store.state.stagestore;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .container {
@@ -371,7 +376,7 @@
   margin-right: 30px;
 }
 .heading {
-  background: #009EE2;
+  background: #009ee2;
   width: 100%;
   margin-bottom: 60px;
 }
@@ -497,8 +502,8 @@ img {
   display: flex;
 }
 .cardimage img {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   margin-bottom: 35px;
 }
 .parentcontainer {
@@ -509,7 +514,7 @@ img {
   font-size: 25px;
 }
 .container2 i {
-  padding-left: 15px; 
+  padding-left: 15px;
 }
 .fa-plus-circle:before {
   color: black;
@@ -553,7 +558,7 @@ hr {
   margin-left: 10px;
 }
 .cards2i {
-  display: flex; 
+  display: flex;
   color: white;
   font-size: 30px;
   position: absolute;
@@ -561,7 +566,7 @@ hr {
 }
 
 .mapicon {
-  background-color: #009EE2;
+  background-color: #009ee2;
   width: 40px;
   height: 45px;
 }
@@ -579,20 +584,20 @@ hr {
 }
 .cards2body {
   width: 100%;
-  background: #009EE2;
+  background: #009ee2;
   border-radius: 0% 0% 8% 8%;
- }
- .cards2body p {
+}
+.cards2body p {
   font-size: 16px;
   color: white;
   padding-top: 15px;
   padding-left: 15px;
- }
+}
 .button {
   background-color: white;
   border: none;
   border-radius: 50%;
-  color: #009EE2;
+  color: #009ee2;
   padding: 2px 5px;
   text-align: center;
   text-decoration: none;
@@ -618,7 +623,7 @@ hr {
   position: absolute;
   left: 64%;
   top: 50%;
-  background-color: rgb(245, 238, 238); 
+  background-color: rgb(245, 238, 238);
 }
 
 .box1 i {
@@ -648,7 +653,7 @@ hr {
   line-height: 4px;
 }
 .box3 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -672,7 +677,7 @@ hr {
   line-height: 4px;
 }
 .box4 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -696,7 +701,7 @@ hr {
   line-height: 4px;
 }
 .box5 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -718,7 +723,7 @@ hr {
   left: 66%;
   top: 131%;
 }
-.search-container input[type=text] {
+.search-container input[type="text"] {
   padding: 6px 45px;
   font-size: 17px;
   border: 1px solid rgb(238, 238, 238);
@@ -779,7 +784,7 @@ hr {
   line-height: 4px;
 }
 .box7 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -803,7 +808,7 @@ hr {
   line-height: 4px;
 }
 .box8 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -827,7 +832,7 @@ hr {
   line-height: 4px;
 }
 .box9 img {
-  width: 35%; 
+  width: 35%;
   height: auto;
   float: left;
   margin-right: 15px;
@@ -841,511 +846,6 @@ hr {
 
 .box9 p {
   font-size: 12px;
-}
-
-.c-share {
-  position: relative;
-  height: 40px;
-  width: 40px;
-}
-.c-share__input {
-  display: none;
-}
-.c-share__input:checked ~ .c-share__toggler .c-share__icon {
-  transition: 0s;
-  width: 0;
-  height: 0;
-}
-
-.c-share__input:checked ~ .c-share__toggler .c-share__icon::before {
-  transform: rotate(-45deg);
-}
-.c-share__input:checked ~ .c-share__toggler .c-share__icon::after {
-  transform: rotate(45deg);
-}
-.c-share__input:checked ~ .c-share_options {
-  width: 160px;
-  height: 240px;
-  border-radius: 7px;
-}
-.c-share__input:checked ~ .c-share_options::before, 
-.c-share__input:checked ~ .c-share_options li {
-  transition: 0.3s 0.15s;
-  opacity: 1;
-  transform: translateY(0);
-}
-.c-share__toggler,
-.c-share_options {
-  position: absolute;
-  right: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  background-color: rgb(245, 238, 238);
-}
-.c-share_options {
-  background-color: white;
-  border: 2px solid #ea5b0c;
-}
-.c-share__toggler {
-  cursor: pointer;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.c-share__icon {
-  position: relative;
-  left: -5px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  color: black;
-  background-color: currentColor;
-  box-shadow: 10px -10px, 10px 10px;
-  transition: 0.1s 0.05s;
-}
-.c-share__icon::before, .c-share__icon::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 2px;
-  background-color: currentColor;
-  transition: 0.1s;
-}
-.c-share__icon::before {
-  top: 3px;
-  left: 3px;
-  transform-origin: bottom left;
-  transform: rotate(45deg);
-}
-.c-share__icon::after {
-  top: -2px;
-  left: 0.5px;
-  transform-origin: center;
-  transform: rotate(-45deg);
-}
-
-.c-share_options {
-  list-style: none;
-  margin: 0;
-  padding: 14px 17px;
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: 0.2s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-}
-.c-share_options::before {
-  content: attr(data-title);
-  display: block;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-.c-share_options li {
-  font-size: 14px;
-  cursor: pointer;
-}
-.c-share_options li:not(:last-child) {
-  margin-bottom: 12px;
-}
-.c-share_options::before,
-.c-share_options li {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 0s;
-}
-
-@media (max-width: 575.98px) {
-.container {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.heading {
-  margin-bottom: 30px;
-}
-.heading i {
-  font-size: 25px;
-  padding: 20px 16px;
-}
-.heading p {
-  font-size: 25px;
-}
-.cards {
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 70px;
-}
-.arte {
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-.mare {
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-.gourmet {
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-.relax {
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-.party {
-  margin-right: 10px;
-}
-.natura {
-  margin-right: 10px;
-}
-.cardcontainer1 {
-  font-size: 17px;
-  top: 65px;
-  margin-left: 19px;
-}
-.cardcontainer2 {
-  font-size: 17px;
-  top: 65px;
-  left: 19px;
-}
-.text {
-  width: 100%;
-  text-align: left;
-}
-.h1icon {
-  display: flex;
-}
-.text h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.h1i {
-  padding-right: 20px;
-}
-.cards1 {
-  width: 100%;
-}
-
-.cardimage img {
-  margin-bottom: 15px;
-}
-
-hr {
-  width: 100%;
-}
-.hr1 {
-  margin-top: 10px;
-}
-
-.search-container2 {
-  display: block;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-
-
-.search-container2 input[type=text] {
-  padding: 6px 45px;
-  font-size: 17px;
-  border: 1px solid rgb(238, 238, 238);
-  width: 270px;
-  background: white url("@/assets/search.png") no-repeat 10px center;
-  border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  cursor: pointer;
-}
-
-::placeholder {
-  font-size: 14px;
-  font-style: italic;
-}
-.title {
-  font-size: 17px;
-}
-.section {
-  width: 100%;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-bottom: -11%;
-}
-.icontext i {
-  font-size: 25px;
-  padding: 10px 5px;
-}
-.icontext p {
-  font-size: 17px;
-}
-.arte1 {
-  /*margin-left: 40px;*/
-  margin-left: 0px;
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.mare1 {
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.gourmet1 {
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.relax1 {
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.party1 {
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.natura1 {
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
-.cardcontainer01 {
-  font-size: 13px;
-  top: 40px;
-  margin-left: 10px;
-}
-.cardcontainer02 {
-  font-size: 13px;
-  top: 40px;
-  left: 11px;
-}
-/*.hr4 {
-  margin-top: 2px;
-}*/
-
-.wrap {
-  width: 100%;
-  flex-direction: column;
-}
-.cards2 {
-  margin-left: 0px;
-  margin-bottom: 15px;
-}
-.cards2i {
-  display: flex;
-  font-size: 25px;
-}
-.mapicon {
-  width: 35px;
-  height: 40px;
-}
-
-.usericon {
-  padding-left: 205px;
-  padding-top: 6px;
-}
-
-.wrap img {
-  border-radius: 0% 16% 0% 0%;
-}
-.cards2body {
-  border-radius: 0% 0% 20% 20%;
-}
-.cards2body p {
-  font-size: 17px;
-}
-.button {
-  font-size: 17px;
-}
-.box1 {
-  width: 80%;
-  position: static;
-  float: right;
-  margin-right: 10px;
-  margin-bottom: 50px;
-  left: 0%;
-  top: 0%;
-}
-
-.box1 i {
-  font-size: 25px;
-  padding-top: 10px;
-}
-
-.boxcontainer1 {
-  font-size: 11px;
-  margin-left: 1px;
-}
-
-.box2 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  top: 0%;
-  margin-top: 16px;
-}
-
-.box3 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  top: 0%;
-  line-height: 4px;
-}
-.box3 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box3 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box3 p {
-  font-size: 13px;
-}
-
-.box4 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  margin-top: 20%;
-  line-height: 4px;
-}
-.box4 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box4 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box4 p {
-  font-size: 13px;
-}
-
-.box5 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  margin-top: 20%;
-  line-height: 4px;
-}
-.box5 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box5 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box5 p {
-  font-size: 13px;
-}
-
-.search-container {
-  display: none;
-}
-
-/*.search-container {
-  width: 25%;
-  position: absolute;
-  left: 66%;
-  top: 131%;
-}
-
-.search-container input[type="text"] {
-  padding: 6px;
-  font-size: 17px;
-  border: 1px solid rgb(238, 238, 238);
-  width: 250px;
-}
-.search-container button {
-  padding: 7px 10px;
-  background: #ea5b0c;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-::placeholder {
-  font-size: 14px;
-  font-style: italic;
-}*/
-
-.box6 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  top: 0%;
-  line-height: 4px;
-}
-.title1 {
-  display: none;
-}
-.box7 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  margin-top: 20%;
-  line-height: 4px;
-}
-.box7 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box7 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box7 p {
-  font-size: 13px;
-}
-
-.box8 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  margin-top: 20%;
-  line-height: 4px;
-}
-.box8 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box8 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box8 p {
-  font-size: 13px;
-}
-
-.box9 {
-  width: 100%;
-  position: static;
-  left: 0%;
-  margin-top: 20%;
-  margin-bottom: 16%;
-  line-height: 4px;
-}
-.box9 img {
-  width: 40%;
-  margin-right: 8px;
-}
-
-.box9 h1 {
-  font-size: 16px;
-  padding-top: 23px;
-}
-
-.box9 p {
-  font-size: 13px;
 }
 
 .c-share {
@@ -1461,8 +961,510 @@ hr {
   transform: translateY(10px);
   transition: 0s;
 }
+
+@media (max-width: 575.98px) {
+  .container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .heading {
+    margin-bottom: 30px;
+  }
+  .heading i {
+    font-size: 25px;
+    padding: 20px 16px;
+  }
+  .heading p {
+    font-size: 25px;
+  }
+  .cards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 70px;
+  }
+  .arte {
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+  .mare {
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+  .gourmet {
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+  .relax {
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+  .party {
+    margin-right: 10px;
+  }
+  .natura {
+    margin-right: 10px;
+  }
+  .cardcontainer1 {
+    font-size: 17px;
+    top: 65px;
+    margin-left: 19px;
+  }
+  .cardcontainer2 {
+    font-size: 17px;
+    top: 65px;
+    left: 19px;
+  }
+  .text {
+    width: 100%;
+    text-align: left;
+  }
+  .h1icon {
+    display: flex;
+  }
+  .text h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .h1i {
+    padding-right: 20px;
+  }
+  .cards1 {
+    width: 100%;
+  }
+
+  .cardimage img {
+    margin-bottom: 15px;
+  }
+
+  hr {
+    width: 100%;
+  }
+  .hr1 {
+    margin-top: 10px;
+  }
+
+  .search-container2 {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .search-container2 input[type="text"] {
+    padding: 6px 45px;
+    font-size: 17px;
+    border: 1px solid rgb(238, 238, 238);
+    width: 270px;
+    background: white url("@/assets/search.png") no-repeat 10px center;
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: pointer;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+    font-style: italic;
+  }
+  .title {
+    font-size: 17px;
+  }
+  .section {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: -11%;
+  }
+  .icontext i {
+    font-size: 25px;
+    padding: 10px 5px;
+  }
+  .icontext p {
+    font-size: 17px;
+  }
+  .arte1 {
+    /*margin-left: 40px;*/
+    margin-left: 0px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .mare1 {
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .gourmet1 {
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .relax1 {
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .party1 {
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .natura1 {
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  .cardcontainer01 {
+    font-size: 13px;
+    top: 40px;
+    margin-left: 10px;
+  }
+  .cardcontainer02 {
+    font-size: 13px;
+    top: 40px;
+    left: 11px;
+  }
+  /*.hr4 {
+  margin-top: 2px;
+}*/
+
+  .wrap {
+    width: 100%;
+    flex-direction: column;
+  }
+  .cards2 {
+    margin-left: 0px;
+    margin-bottom: 15px;
+  }
+  .cards2i {
+    display: flex;
+    font-size: 25px;
+  }
+  .mapicon {
+    width: 35px;
+    height: 40px;
+  }
+
+  .usericon {
+    padding-left: 205px;
+    padding-top: 6px;
+  }
+
+  .wrap img {
+    border-radius: 0% 16% 0% 0%;
+  }
+  .cards2body {
+    border-radius: 0% 0% 20% 20%;
+  }
+  .cards2body p {
+    font-size: 17px;
+  }
+  .button {
+    font-size: 17px;
+  }
+  .box1 {
+    width: 80%;
+    position: static;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    left: 0%;
+    top: 0%;
+  }
+
+  .box1 i {
+    font-size: 25px;
+    padding-top: 10px;
+  }
+
+  .boxcontainer1 {
+    font-size: 11px;
+    margin-left: 1px;
+  }
+
+  .box2 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    top: 0%;
+    margin-top: 16px;
+  }
+
+  .box3 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    top: 0%;
+    line-height: 4px;
+  }
+  .box3 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box3 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box3 p {
+    font-size: 13px;
+  }
+
+  .box4 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    margin-top: 20%;
+    line-height: 4px;
+  }
+  .box4 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box4 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box4 p {
+    font-size: 13px;
+  }
+
+  .box5 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    margin-top: 20%;
+    line-height: 4px;
+  }
+  .box5 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box5 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box5 p {
+    font-size: 13px;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  /*.search-container {
+  width: 25%;
+  position: absolute;
+  left: 66%;
+  top: 131%;
 }
 
+.search-container input[type="text"] {
+  padding: 6px;
+  font-size: 17px;
+  border: 1px solid rgb(238, 238, 238);
+  width: 250px;
+}
+.search-container button {
+  padding: 7px 10px;
+  background: #ea5b0c;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
 
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}*/
+
+  .box6 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    top: 0%;
+    line-height: 4px;
+  }
+  .title1 {
+    display: none;
+  }
+  .box7 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    margin-top: 20%;
+    line-height: 4px;
+  }
+  .box7 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box7 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box7 p {
+    font-size: 13px;
+  }
+
+  .box8 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    margin-top: 20%;
+    line-height: 4px;
+  }
+  .box8 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box8 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box8 p {
+    font-size: 13px;
+  }
+
+  .box9 {
+    width: 100%;
+    position: static;
+    left: 0%;
+    margin-top: 20%;
+    margin-bottom: 16%;
+    line-height: 4px;
+  }
+  .box9 img {
+    width: 40%;
+    margin-right: 8px;
+  }
+
+  .box9 h1 {
+    font-size: 16px;
+    padding-top: 23px;
+  }
+
+  .box9 p {
+    font-size: 13px;
+  }
+
+  .c-share {
+    position: relative;
+    height: 40px;
+    width: 40px;
+  }
+  .c-share__input {
+    display: none;
+  }
+  .c-share__input:checked ~ .c-share__toggler .c-share__icon {
+    transition: 0s;
+    width: 0;
+    height: 0;
+  }
+
+  .c-share__input:checked ~ .c-share__toggler .c-share__icon::before {
+    transform: rotate(-45deg);
+  }
+  .c-share__input:checked ~ .c-share__toggler .c-share__icon::after {
+    transform: rotate(45deg);
+  }
+  .c-share__input:checked ~ .c-share_options {
+    width: 160px;
+    height: 240px;
+    border-radius: 7px;
+  }
+  .c-share__input:checked ~ .c-share_options::before,
+  .c-share__input:checked ~ .c-share_options li {
+    transition: 0.3s 0.15s;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .c-share__toggler,
+  .c-share_options {
+    position: absolute;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: rgb(245, 238, 238);
+  }
+  .c-share_options {
+    background-color: white;
+    border: 2px solid #ea5b0c;
+  }
+  .c-share__toggler {
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-share__icon {
+    position: relative;
+    left: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    color: black;
+    background-color: currentColor;
+    box-shadow: 10px -10px, 10px 10px;
+    transition: 0.1s 0.05s;
+  }
+  .c-share__icon::before,
+  .c-share__icon::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    transition: 0.1s;
+  }
+  .c-share__icon::before {
+    top: 3px;
+    left: 3px;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+  }
+  .c-share__icon::after {
+    top: -2px;
+    left: 0.5px;
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+
+  .c-share_options {
+    list-style: none;
+    margin: 0;
+    padding: 14px 17px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 0.2s;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  .c-share_options::before {
+    content: attr(data-title);
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .c-share_options li {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .c-share_options li:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .c-share_options::before,
+  .c-share_options li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0s;
+  }
+}
 </style>
-
