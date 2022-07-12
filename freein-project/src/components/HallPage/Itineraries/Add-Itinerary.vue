@@ -487,71 +487,57 @@ export default {
   left: 45%;
   top: 101%;
 }
-
 .flex-Dialog {
   display: flex;
   flex-direction: column;
 }
-
 .first-travel {
   left: 44%;
 }
-
 .container1 {
   max-width: 700px;
 }
-
 .overflow-hidden {
   max-width: 700px;
   height: 200px;
   margin-bottom: 40px;
 }
-
 .flex {
   display: flex;
 }
-
 .flexCard {
   display: flex;
   align-items: baseline;
 }
-
 .flexCard i {
   margin-top: 5px;
   margin-right: 3px;
 }
-
 .text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .text-layout p {
   margin-top: -10px;
   margin-bottom: 20px;
 }
-
 .text img {
   width: 250px;
   height: 200px;
   margin-top: -16px;
 }
-
 .value-range {
   margin-left: 130px;
 }
-
 .value {
   margin-left: 150px;
 }
-
 #wrap {
   width: 100px;
   margin-left: 20px;
   margin-bottom: 30px;
 }
-
 .percentages {
   margin-left: 80px;
   align-items: center;
@@ -561,7 +547,6 @@ export default {
   margin-top: 22px;
   text-align: left;
 }
-
 .container {
   /*max-width: 1920px;*/
   background-color: #e6e6e6;
@@ -583,36 +568,30 @@ export default {
   color: #939393;
   margin-bottom: 80px;
 }
-
 .vl {
   border-right: 2px solid #e6e6e6;
   height: 1250px;
   margin-top: -1200px;
   margin-right: 820px;
 }
-
 .ph-layout {
   margin-top: 100px;
   margin-left: 80px;
 }
-
 .ph-layout h3 {
   font-size: 20px;
   margin-bottom: 20px;
 }
-
 .wrapper {
   width: 350px;
   height: 350px;
   border: 2px dotted gray;
   text-align: center;
 }
-
 .wrapper p {
   color: #939393;
   margin-top: 50px;
 }
-
 .stage-ph {
   height: 350px;
   border-radius: 5%;
@@ -623,12 +602,10 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .classify-stage {
   margin-top: 80px;
   margin-left: 70px;
 }
-
 .classify-stage h2 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -636,7 +613,6 @@ export default {
 .classify-stage p {
   font-size: 16px;
 }
-
 .hr1 {
   width: 340px;
   margin-left: 80px;
@@ -644,11 +620,9 @@ export default {
 .Reccomend-orNot {
   margin-left: 70px;
 }
-
 .Reccomend-orNot h2 {
   font-size: 20px;
 }
-
 .Reccomend-orNot p {
   font-size: 16px;
 }
@@ -656,7 +630,6 @@ export default {
   margin-top: 5px;
   z-index: 0;
 }
-
 .btn {
   margin-right: 20px;
   height: auto;
@@ -669,29 +642,24 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
 .btns-group2 {
   margin-top: 20px;
   margin-left: 100px;
 }
-
 .stage-details {
   margin-top: 5px;
   margin-left: 550px;
   position: absolute;
   top: 32%;
 }
-
 .stage-details h2 {
   font-size: 20px;
 }
-
 .stage-details p {
   font-size: 10px;
   margin-top: -15px;
   display: contents;
 }
-
 .stage-details input {
   width: 300%;
   height: 50px;
@@ -701,25 +669,21 @@ export default {
   border-color: rgba(211, 211, 211, 0.236);
   padding-left: 10px;
 }
-
 .inputclass {
   height: 150px;
   padding-bottom: 50%;
   padding-top: 15px;
   padding-left: 10px;
 }
-
 .remove-stage-icon {
   border: none;
   position: relative;
   right: -96%;
 }
-
 .end-adding-buttons {
   display: flex;
   justify-content: end;
 }
-
 .end-adding-buttons a {
   text-align: center;
   width: 180px;
@@ -734,23 +698,19 @@ export default {
   border-color: black;
   text-decoration: none;
 }
-
 .end-adding-buttons .cancel {
   color: black;
   background-color: transparent;
 }
-
 .end-adding-buttons .publishy {
   background-color: #2d2e83;
 }
-
 .add-new-stage-btn {
   margin-top: 5px;
   margin-left: 850px;
   position: absolute;
   bottom: 0%;
 }
-
 .add-new-stage-btn a {
   margin-left: 280px;
   width: 40px;
@@ -764,11 +724,9 @@ export default {
   text-decoration: none;
   border: 2px solid grey;
 }
-
 .fas {
   font-size: 20px;
 }
-
 .card-position {
   width: 700px;
   height: 453px;
@@ -780,7 +738,6 @@ export default {
 .wrapper-p {
   margin-top: -220px;
 }
-
 .hr2 {
   margin-left: -110px;
   margin-top: -650px;
@@ -788,6 +745,61 @@ export default {
 }
 .hr02 {
   transform: rotate(90deg);
+}
+
+/** */
+.add-image-button {
+  background: transparent;
+  border: none;
+  margin-top: 60px;
+}
+.add-image-button > i {
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #939393b0;
+  display: inline-flex;
+  border-radius: 50%;
+  text-decoration: none;
+  border: 2px solid #939393b0;
+}
+.fas {
+  font-weight: 100;
+  font-size: 60px;
+}
+.control__content {
+  display: inline-flex;
+  padding: 6px 12px;
+  font-size: 70%;
+  line-height: 25px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-color: white;
+  background-color: #ea5b0c;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.control > input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.control input:checked ~ .control__content {
+  background-color: #939393b0;
+}
+a.button-area.fas.fa-plus {
+  font-size: 35px;
+}
+.location {
+  display: flex;
+  align-items: baseline;
+}
+.location i {
+  margin-right: 7px;
 }
 @media (max-width: 575.98px) {
   /**/
@@ -847,8 +859,9 @@ export default {
   }
 
   #wrap {
-    margin-left: 35px;
-    margin-bottom: 0px;
+    width: 100px;
+    margin-left: 20px;
+    margin-bottom: 30px;
   }
 
   .percentages {
@@ -856,13 +869,13 @@ export default {
     margin-right: 15px;
   }
   .percentages p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-top: 18px;
+    text-align: left;
   }
   .form-group {
     width: 320px;
-    height: 1500px;
+    height: 1750px;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: auto;
@@ -876,7 +889,6 @@ export default {
     margin-top: -1200px;
     margin-right: 820px;
   }
-
   .ph-layout {
     margin-top: 20px;
     margin-left: 10px;
@@ -983,11 +995,9 @@ export default {
     left: 42%;
     top: 105%;
   }
-
   .wrapper-p {
     margin-top: -190px;
   }
-
   .hr1 {
     display: none;
   }
@@ -1003,62 +1013,27 @@ export default {
   ::placeholder {
     font-size: 12px;
   }
-}
 
-/** */
+  /** */
 .add-image-button {
-  background: transparent;
-  border: none;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 .add-image-button > i {
-  width: 100px;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  color: #939393b0;
-  display: flex;
-  border-radius: 50%;
-  text-decoration: none;
-  border: 2px solid #939393b0;
-  margin-top: 20px;
+  width: 60px;
+  height: 60px;
 }
 .fas {
   font-weight: 100;
-  font-size: 87px;
+  font-size: 40px;
 }
 .control__content {
-  display: inline-flex;
-  padding: 6px 12px;
-  font-size: 70%;
-  line-height: 25px;
-  margin-right: 20px;
-  border-radius: 30px;
-  border-color: white;
-  background-color: #ea5b0c;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-}
-.control > input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.control input:checked ~ .control__content {
-  background-color: #939393b0;
+  margin-right: 5px;
 }
 a.button-area.fas.fa-plus {
-  font-size: 35px;
-}
-.location {
-  display: flex;
-  align-items: baseline;
+  font-size: 30px;
 }
 .location i {
   margin-right: 7px;
+}
 }
 </style>

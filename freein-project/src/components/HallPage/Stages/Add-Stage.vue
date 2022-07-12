@@ -43,7 +43,7 @@
       <div class="classify-stage">
         <h2>
           Come classificheresti questa Tappa?
-          <p style="font-size: 12px">(obbligatorio)</p>
+          <p>(obbligatorio)</p>
         </h2>
       </div>
       <div class="flex">
@@ -112,11 +112,11 @@
           </VueSlideBar>
         </div>
       </div>
-      <hr style="width: 390px; margin-left: 80px" />
+      <hr class="hr1" />
       <div class="Reccomend-orNot">
         <h2>
           A chi consiglieresti questa tappa?
-          <p style="font-size: 10px">(obbligatorio)</p>
+          <p>(obbligatorio)</p>
         </h2>
 
         <div class="btns-group1">
@@ -221,7 +221,7 @@
           <input
             required=""
             type="text"
-            style="height: 150px; padding-bottom: 50%; padding-left: 10px"
+            style="height: 130px; padding-bottom: 85px; padding-left: 10px"
             placeholder="Inserisci descrizione massimo 37 caratteri"
             :maxlength="maxText"
             v-model="textText"
@@ -236,8 +236,8 @@
         </div>
       </b-form>
 
-      <div style="margin-left: -110px; margin-top: -650px; width: 90%">
-        <hr style="transform: rotate(90deg)" />
+      <div class="hr2">
+        <hr class="hr02" />
       </div>
     </div>
   </div>
@@ -397,27 +397,20 @@ export default {
 </script>
 
 <style scoped>
-.input[type="text"]::placeholder {
-  padding-bottom: 50%;
-}
-
 .flex {
   display: flex;
 }
 .value-range {
   margin-left: 130px;
 }
-
 .value {
   margin-left: 150px;
 }
-
 #wrap {
   width: 100px;
   margin-left: 20px;
   margin-bottom: 30px;
 }
-
 .percentages {
   margin-left: 80px;
   align-items: center;
@@ -427,13 +420,12 @@ export default {
   margin-top: 22px;
   text-align: left;
 }
-
 .container {
-  max-width: 1920px;
+  /*max-width: 1920px;*/
   background-color: #e6e6e6;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
+  /*height: auto;*/
   align-content: center;
   justify-content: center;
   display: flex;
@@ -443,34 +435,36 @@ export default {
   height: 1400px;
   margin-top: 80px;
   background-color: #f2f2f2;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 40px;
+  margin-right: 40px;
   border-radius: 2%;
   color: #939393;
+  margin-bottom: 80px;
 }
-
 .vl {
   border-right: 2px solid #e6e6e6;
   height: 1250px;
   margin-top: -1200px;
   margin-right: 820px;
 }
-
 .ph-layout {
   margin-top: 100px;
   margin-left: 80px;
 }
-
 .ph-layout h3 {
   font-size: 20px;
   margin-bottom: 20px;
 }
-
+.wrapper {
+  width: 350px;
+  height: 350px;
+  border: 2px dotted gray;
+  text-align: center;
+}
 .wrapper p {
   color: #939393;
   margin-top: 50px;
 }
-
 .stage-ph {
   height: 350px;
   border-radius: 5%;
@@ -480,33 +474,38 @@ export default {
   border-color: lightgray;
   justify-content: center;
   align-items: center;
-  background-size: auto;
+  /*background-size: auto;
   background-position: center center;
-  text-align: center;
+  text-align: center;*/
 }
-
 .classify-stage {
   margin-top: 80px;
   margin-left: 70px;
 }
-
 .classify-stage h2 {
   font-size: 20px;
   margin-bottom: 20px;
 }
-
+.classify-stage p {
+  font-size: 16px;
+}
+.hr1 {
+  width: 340px;
+  margin-left: 80px;
+}
 .Reccomend-orNot {
   margin-left: 70px;
 }
-
 .Reccomend-orNot h2 {
   font-size: 20px;
 }
-
+.Reccomend-orNot p {
+  font-size: 16px;
+}
 .sliders {
   margin-top: 5px;
+  z-index: 0;
 }
-
 .btn {
   margin-right: 20px;
   height: auto;
@@ -519,31 +518,24 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.btn:hover {
-  color: white;
-}
 .btns-group2 {
   margin-top: 20px;
   margin-left: 100px;
 }
-
 .stage-details {
   margin-top: 5px;
   margin-left: 550px;
   position: absolute;
   top: 32%;
 }
-
 .stage-details h2 {
   font-size: 20px;
 }
-
 .stage-details p {
   font-size: 10px;
   margin-top: -15px;
   display: contents;
 }
-
 .stage-details input {
   width: 300%;
   height: 50px;
@@ -551,13 +543,12 @@ export default {
   border: 0px, 0px, 0px;
   border-style: ridge;
   border-color: rgba(211, 211, 211, 0.236);
+  padding-left: 10px;
 }
-
 .end-adding-buttons {
   display: flex;
   justify-content: end;
 }
-
 .end-adding-buttons a {
   text-align: center;
   width: 180px;
@@ -572,37 +563,50 @@ export default {
   border-color: black;
   text-decoration: none;
 }
-
 .end-adding-buttons .cancel {
   color: black;
   background-color: transparent;
 }
-
 .end-adding-buttons .publishy {
   background-color: #2d2e83;
 }
-
+.wrapper-p {
+  margin-top: -220px;
+}
+.hr2 {
+  margin-left: -110px;
+  margin-top: -650px;
+  width: 90%;
+}
+.hr02 {
+  transform: rotate(90deg);
+}
+.input[type="text"]::placeholder {
+  padding-bottom: 50%;
+}
+.btn:hover {
+  color: white;
+}
 .add-image-button {
   background: transparent;
   border: none;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 .add-image-button > i {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   align-items: center;
   justify-content: center;
   background-color: white;
   color: #939393b0;
-  display: flex;
+  display: inline-flex;
   border-radius: 50%;
   text-decoration: none;
   border: 2px solid #939393b0;
-  margin-top: 20px;
 }
 .fas {
   font-weight: 100;
-  font-size: 87px;
+  font-size: 60px;
 }
 .clicked {
   background-color: #939393b0;
@@ -613,7 +617,6 @@ export default {
 .is-grey {
   background: #939393b0;
 }
-
 .control__content {
   display: inline-flex;
   padding: 6px 12px;
@@ -633,8 +636,156 @@ export default {
   opacity: 0;
   z-index: -1;
 }
-
 .control input:checked ~ .control__content {
   background-color: #939393b0;
+}
+
+@media (max-width: 575.98px) {
+.flex {
+  display: flex;
+}
+.value-range {
+  margin-left: 130px;
+}
+.value {
+  margin-left: 150px;
+}
+#wrap {
+  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+.percentages {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+.percentages p {
+  margin-bottom: 50px;
+  margin-top: 18px;
+  text-align: left;
+}
+.form-group {
+  width: 320px;
+  height: 1600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.vl {
+  border-right: 2px solid #e6e6e6;
+  height: 1250px;
+  margin-top: -1200px;
+  margin-right: 820px;
+}
+.ph-layout {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ph-layout h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.wrapper p {
+  font-size: 16px;
+  margin-top: 50px;
+}
+.stage-ph {
+  height: 300px;
+  width: 100%;
+}
+.classify-stage {
+  margin-top: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.classify-stage h2 {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.Reccomend-orNot {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.Reccomend-orNot h2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+.sliders {
+  margin-top: 0px;
+}
+.btn {
+  margin-right: 7px;
+  font-size: 65%;
+}
+.btns-group2 {
+  margin-top: 15px;
+  margin-left: 75px;
+}
+.stage-details {
+  top: 0%;
+  margin-top: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: static;
+}
+.stage-details h2 {
+  font-size: 18px;
+}
+.stage-details p {
+  font-size: 16px;
+  margin-top: 0px;
+}
+.stage-details input {
+  width: 300px;
+  height: 40px;
+}
+.end-adding-buttons {
+  justify-content: space-evenly;
+}
+.end-adding-buttons a {
+  width: 200px;
+  height: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  border-radius: 10px;
+  padding-top: 3px;
+}
+.wrapper-p {
+  margin-top: -190px;
+}
+.hr1 {
+  display: none;
+}
+.hr2 {
+  display: none;
+}
+.hr02 {
+  display: none;
+}
+hr {
+  display: none;
+}
+::placeholder {
+  font-size: 12px;
+}
+.add-image-button {
+  margin-top: 60px;
+}
+.add-image-button > i {
+  width: 60px;
+  height: 60px;
+}
+.fas {
+  font-weight: 100;
+  font-size: 40px;
+}
+.control__content {
+  margin-right: 5px;
+}
 }
 </style>
