@@ -39,7 +39,9 @@
                 Go
               </button>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == 'yellow-background'">
+            <div
+              v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
+            >
               <a v-on:click="stageClick(stage.stage.id - 1)" class="buttonAdd"
                 >Aggiungi</a
               >
@@ -49,7 +51,9 @@
               v-show="loadCssClasses(stage.stage.type) == ['orange-background']"
             >
               <a
-                v-on:click="itinerariesClick(stage.stage.id - 1, stages, itinerariestore)"
+                v-on:click="
+                  itinerariesClick(stage.stage.id - 1, stages, itinerariestore)
+                "
                 class="buttonItinerary"
                 >Itinerario</a
               >
@@ -61,7 +65,9 @@
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
                 ><span class="counter">{{ stage.stage.countStar }}</span>
               </a>
@@ -71,21 +77,27 @@
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-solid fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i>
                 <span class="counter">{{ stage.stage.countStar }}</span></a
               >
 
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == 'orange-background'">
+            <div
+              v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
+            >
               <a
                 style="text-decoration: none"
                 v-show="stage.stage.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
                 ><span class="counter">{{ stage.stage.countStar }}</span></a
               >
@@ -95,7 +107,9 @@
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fas fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
                 ><span class="counter">{{ stage.stage.countStar }}</span></a
               >
@@ -111,7 +125,9 @@
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
                 ><span class="counter">{{ stage.stage.countStar }}</span></a
               >
@@ -121,13 +137,17 @@
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fas fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(stage.stage.id - 1, stage.stage.countStar)
+                  "
                 ></i
                 ><span class="counter">{{ stage.stage.countStar }}</span></a
               >
               <a href=""><i class="fa-regular fa-heart"></i></a>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == ['purple-background']">
+            <div
+              v-show="loadCssClasses(stage.stage.type) == ['purple-background']"
+            >
               <a href="#"><i class="fa-regular fa-font-awesome"></i></a>
               <a href=""><i class="fa-solid fa-map-location-dot"></i></a>
               <a href=""><i class="fas fa-user-circle"></i></a>
@@ -158,7 +178,16 @@ export default {
       console.log(id, this.stages[id].stage);
       console.log(stagestore, "hello");
       stagestore.push(stages[id].stage);
-
+      if (stagestore.length > 0) {
+        if (this.stagestore.length == 1) {
+          console.log("Don't change");
+        } else {
+          console.log("Change", this.stagestore[0], this.stagestore[1]);
+          this.stagestore.splice(0, 1);
+          //capire come usare .splice
+        }
+        console.log(this.stagestore[0], "i'm the new value");
+      }
       this.$router.push({
         name: "SummaryStage",
       });
