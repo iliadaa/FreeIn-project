@@ -181,7 +181,7 @@ h1 {
   font-size: 40px;
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+  /*background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);*/ 
   margin-bottom: 10px;
 }
 .target_test a {   
