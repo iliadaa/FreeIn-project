@@ -24,7 +24,9 @@
             />
             <p href="#">Carica immagine</p>
             <br />
-            <p style="margin-top: -40px">Dimensioni minime di "808 x 632 pixel"</p>
+            <p style="margin-top: -40px">
+              Dimensioni minime di "808 x 632 pixel"
+            </p>
           </span>
 
           <!--<ul class="list-group">
@@ -119,11 +121,21 @@
 
         <div class="btns-group1">
           <label class="control" for="family">
-            <input type="checkbox" value="Famiglia" id="family" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Famiglia"
+              id="family"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Famiglia </span>
           </label>
           <label class="control" for="single">
-            <input type="checkbox" value="Single" id="single" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Single"
+              id="single"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Single </span>
           </label>
           <label class="control" name="placeForAnimals">
@@ -138,15 +150,30 @@
         </div>
         <div class="btns-group2">
           <label class="control" for="children">
-            <input type="checkbox" value="Bambini" id="children" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Bambini"
+              id="children"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Bambini </span>
           </label>
           <label class="control" for="friends">
-            <input type="checkbox" value="Comitiva" id="friends" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Comitiva"
+              id="friends"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Comitiva </span>
           </label>
           <label class="control" name="couple">
-            <input type="checkbox" value="Coppia" id="couple" v-model="checkedNames" />
+            <input
+              type="checkbox"
+              value="Coppia"
+              id="couple"
+              v-model="checkedNames"
+            />
             <span class="control__content"> Coppia</span>
           </label>
         </div>
@@ -173,7 +200,10 @@
             Location
             <p>(obbligatorio)</p>
           </h2>
-          <div v-text="maxLocation - textLocation.length" style="color: red"></div>
+          <div
+            v-text="maxLocation - textLocation.length"
+            style="color: red"
+          ></div>
           <input
             type="text"
             :maxlength="maxLocation"
@@ -216,7 +246,7 @@
 <script>
 import VueSlideBar from "vue-slide-bar";
 import axios from "axios";
-const baseURL = "http://localhost:3002/stages";
+const baseURL = "http://localhost:3001/stages";
 export default {
   data() {
     return {

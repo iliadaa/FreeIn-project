@@ -8,7 +8,7 @@
       <div class="cards">
         <div class="arte">
           <div class="image1">
-            <img src="@/assets/art.png" alt="" />
+            <img src="@/assets/art.svg" alt="" />
           </div>
           <div class="cardcontainer1">
             <p>{{ $store.state.itinerariestore[0].profileEval.arte }}%</p>
@@ -32,7 +32,7 @@
         </div>
         <div class="natura">
           <div class="image5">
-            <img src="@/assets/Natura_Avventura.png" alt="" />
+            <img src="@/assets/natura.svg" alt="" />
           </div>
           <div class="cardcontainer1">
             <p>{{ $store.state.itinerariestore[0].profileEval.nature }}%</p>
@@ -40,7 +40,7 @@
         </div>
         <div class="party">
           <div class="image4">
-            <img src="@/assets/Party.png" alt="" />
+            <img src="@/assets/party.svg" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>{{ $store.state.itinerariestore[0].profileEval.party }}%</p>
@@ -121,7 +121,7 @@
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="" />
+              <img class="imgsmall" src="@/assets/art.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -145,7 +145,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
+              <img class="imgsmall" src="@/assets/natura.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -153,7 +153,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="" />
+              <img class="imgsmall" src="@/assets/party.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>
@@ -177,7 +177,7 @@
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="" />
+              <img class="imgsmall" src="@/assets/art.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -201,7 +201,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
+              <img class="imgsmall" src="@/assets/natura.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -209,7 +209,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="" />
+              <img class="imgsmall" src="@/assets/party.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>
@@ -233,7 +233,7 @@
         <div class="cards">
           <div class="arte1">
             <div class="image01">
-              <img class="imgsmall" src="@/assets/art.png" alt="" />
+              <img class="imgsmall" src="@/assets/art.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>50%</p>
@@ -257,7 +257,7 @@
           </div>
           <div class="natura1">
             <div class="image05">
-              <img class="imgsmall" src="@/assets/Natura_Avventura.png" alt="" />
+              <img class="imgsmall" src="@/assets/natura.svg" alt="" />
             </div>
             <div class="cardcontainer01">
               <p>30%</p>
@@ -265,7 +265,7 @@
           </div>
           <div class="party1">
             <div class="image04">
-              <img class="imgsmall" src="@/assets/Party.png" alt="" />
+              <img class="imgsmall" src="@/assets/party.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>30%</p>

@@ -4,12 +4,7 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/illustration.png" alt="" />
-        
-        
-        <img class="scorpione" src="@/assets/New.svg" alt="" />
-
-        
+          <img src="@/assets/illustration.png" alt="" />   
         </div>
         <p>"Sei ...?"</p>
       </div>

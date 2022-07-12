@@ -5,7 +5,7 @@
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/art.png" alt="">
+          <img src="@/assets/art.svg" alt="">
         </div>
         <div class="cardcontainer1">
           <p>Arte &AMP; Cultura</p> 
@@ -37,7 +37,7 @@
       </div>
       <div class="party">
         <div class="image4">
-          <img src="@/assets/Party.png" alt="">
+          <img src="@/assets/party.svg" alt="">
         </div>
         <div class="cardcontainer2">
           <p>Party</p> 
@@ -45,7 +45,7 @@
       </div>
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura_Avventura.png" alt="">
+          <img src="@/assets/natura.svg" alt="">
         </div>
         <div class="cardcontainer1">
           <p>Natura &AMP; Avventura</p> 
@@ -145,11 +145,6 @@ h1 {
 .image4 {
   padding-left: 20px;
 }
-
-.image5 {
-  padding-left: 10px;
-}
-
 .cardcontainer1 {
   font-size: 30px;
   font-weight: bold;
@@ -260,9 +255,7 @@ h1 {
   padding-left: 20px;
 }
 
-.image5 {
-  padding-left: 20px;
-}
+
 
 .cardcontainer1 {
   top: 180px;

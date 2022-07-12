@@ -308,7 +308,7 @@
 import VueSlideBar from "vue-slide-bar";
 import ModalStages from "./ModalStages.vue";
 import dataStagesList from "/stages.json";
-const baseURL = "http://localhost:3001/itineraries";
+const baseURL = "http://localhost:3002/itineraries";
 
 export default {
   data() {

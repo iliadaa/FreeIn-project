@@ -4,17 +4,17 @@
 
     <div class="circles">
       <div class="circle1">
-        <img class="img1" src="@/assets/gourmet.png" alt="" />
+        <img class="img1" src="@/assets/gourmet.svg" alt="" />
       </div>
       <div class="circle2">
-        <img class="img2" src="@/assets/donna.png" alt="" />
+        <img class="img2" src="@/assets/donna.svg" alt="" />
       </div>
     </div>
     <h1>L'Acculturato</h1>
     <div class="cards">
       <div class="arte">
         <div class="image1">
-          <img src="@/assets/art.png" alt="" />
+          <img src="@/assets/art.svg" alt="" />
         </div>
         <div class="cardcontainer1">
           <p>Arte &AMP; Cultura</p>
@@ -86,7 +86,7 @@
       </div>
       <div class="party">
         <div class="image4">
-          <img src="@/assets/Party.png" alt="" />
+          <img src="@/assets/party.svg" alt="" />
         </div>
         <div class="cardcontainer2">
           <p>Party</p>
@@ -104,7 +104,7 @@
       </div>
       <div class="natura">
         <div class="image5">
-          <img src="@/assets/Natura_Avventura.png" alt="" />
+          <img src="@/assets/natura.svg" alt="" />
         </div>
         <div class="cardcontainer1">
           <p>Natura &AMP; Avventura</p>
@@ -226,8 +226,7 @@ h1 {
   margin-left: 100px;
   margin-bottom: 75px;
 }
-.circle1,
-.circle2 {
+.circle1, .circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
@@ -396,19 +395,23 @@ img {
   .circles {
     margin-bottom: 50px;
   }
-  .circle1,
-  .circle2 {
-    height: 200px;
-    width: 200px;
+  .circle1, .circle2 {
+    height: 160px;
+    width: 160px;
   }
   .img1 {
-    margin-right: 60px;
-    margin-top: 10px;
+    width: 111px;
+    height: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
   }
   .img2 {
-    width: 141px;
-    height: 130px;
-    margin-right: 25px;
+    width: 121px;
+    height: 110px;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: 20px;
   }
   .cards {
     flex-wrap: wrap;
