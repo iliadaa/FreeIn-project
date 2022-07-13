@@ -55,7 +55,9 @@
 
     <div class="target target_test">
       <!--<a href="http://localhost:8080/#/card0" class="fas fa-bullseye"></a>-->
-      <a href="#/card0"><img src="@/assets/target.svg" alt="" /></a>
+      <a href="http://localhost:8080/#/card0"
+        ><img src="@/assets/target2.svg" alt=""
+      /></a>
       <div><p>Vai al TEST</p></div>
     </div>
   </div>
