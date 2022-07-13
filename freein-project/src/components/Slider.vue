@@ -1,8 +1,12 @@
 <template>
   <VueSlickCarousel v-bind="settings">
-    <img :src="$store.state.itinerariestore[0].img" />
-    <img :src="$store.state.stagestore[0].img" />
-    <img :src="$store.state.stagestore[0].img" />
+    <div>
+      <img :src="$store.state.itinerariestore[0].img" />
+    </div>
+    <!-- <div v-for="stages in itinerariestore" :key="stages.stages.id">
+      <img :src="stages.stage.img" />
+    </div>
+     <img :src="$store.state.stagestore[0].img" />-->
   </VueSlickCarousel>
 </template>
 
