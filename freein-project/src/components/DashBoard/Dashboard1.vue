@@ -9,7 +9,8 @@
   
   <div class="profile">
     <div class="user">
-      <i class="fas fa-user-circle"></i>
+      <!--<i class="fas fa-user-circle"></i>-->
+      <img src="@/assets/user1.svg" alt="">
     </div>
   
     <div class="info">
