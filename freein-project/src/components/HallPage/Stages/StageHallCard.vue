@@ -50,7 +50,7 @@
             >
               <a
                 v-on:click="
-                  itinerariesClick(stage.stage.id, itineraries, itinerariestore)
+                  itinerariesClick(stage.stage.id + 1, itineraries, itinerariestore)
                 "
                 class="buttonItinerary"
                 >Itinerario</a
@@ -175,7 +175,7 @@ export default {
       });
     },
     itinerariesClick(id, itineraries, itinerariestore) {
-      console.log(id, this.itineraries[id].itinerary.stages);
+      console.log(id, this.itineraries[id].itinerary);
       console.log(itinerariestore, "hello");
       itinerariestore.push(itineraries[id].itinerary);
       //  if (itinerariestore.length > 0) {
@@ -185,9 +185,9 @@ export default {
       //capire come usare .splice
       //  }
       //  }
-      //  this.$router.push({
-      ///    name: "SummaryItinerary",
-      //  });
+      this.$router.push({
+        name: "SummaryItinerary",
+      });
     },
     push(id, data) {
       this.stages.push(data[id - 1]);

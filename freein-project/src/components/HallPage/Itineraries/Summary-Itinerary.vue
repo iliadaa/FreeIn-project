@@ -11,7 +11,7 @@
             <img src="@/assets/art.svg" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>{{ $store.state.itinerariestore[0].profileEval.arte }}%</p>
+            <p>50%</p>
           </div>
         </div>
         <div class="relax">
@@ -19,7 +19,7 @@
             <img src="@/assets/relax.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>{{ $store.state.itinerariestore[0].profileEval.cibo }}%</p>
+            <p>40%</p>
           </div>
         </div>
         <div class="mare">
@@ -27,7 +27,7 @@
             <img src="@/assets/Mare.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>{{ $store.state.itinerariestore[0].profileEval.mare }}%</p>
+            <p>50%</p>
           </div>
         </div>
         <div class="natura">
@@ -35,7 +35,7 @@
             <img src="@/assets/natura.svg" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>{{ $store.state.itinerariestore[0].profileEval.nature }}%</p>
+            <p>60%</p>
           </div>
         </div>
         <div class="party">
@@ -43,7 +43,7 @@
             <img src="@/assets/party.svg" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>{{ $store.state.itinerariestore[0].profileEval.party }}%</p>
+            <p>70%</p>
           </div>
         </div>
         <div class="gourmet">
@@ -51,7 +51,7 @@
             <img src="@/assets/yellowgourmet.png" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>{{ $store.state.itinerariestore[0].profileEval.relax }}%</p>
+            <p>30%</p>
           </div>
         </div>
       </div>
