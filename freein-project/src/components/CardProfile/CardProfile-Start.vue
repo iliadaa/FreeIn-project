@@ -55,8 +55,8 @@
 
         <div class="target target_test">
             <!--<a href="http://localhost:8080/#/card0" class="fas fa-bullseye"></a>-->
-            <a href="http://localhost:8080/#/card0"><img src="@/assets/target.svg" alt=""></a>
-            <div><p >Vai al TEST</p></div> 
+            <a href="http://localhost:8080/#/card0"><img src="@/assets/target2.svg" alt=""></a>
+            <div><p>Vai al TEST</p></div> 
         </div>
 </div>
 </template>
@@ -180,12 +180,12 @@ h1 {
   border-radius: 50%;
   font-size: 40px;
   text-decoration: none;
-  color: white;
-  /*background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);*/ 
+  /*color: white;
+  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);*/ 
   margin-bottom: 10px;
 }
 .target_test a {   
-  margin-right: 11px;
+  margin-right: 9px;
 }
 
 @media (max-width: 575.98px) {
