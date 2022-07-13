@@ -9,7 +9,7 @@
   
   <div class="profile">
     <div class="user">
-      <i class="fas fa-user-circle"></i>
+      <img src="@/assets/user1.svg" alt="">
     </div>
   
     <div class="info">
@@ -39,7 +39,7 @@
           </tr>
   
           <tr>
-            <td class="icons"><i class="fas fa-map-marked-alt"></i>Itinerario</td>
+            <td class="icons"><img src="@/assets/location.svg" alt="">Itinerario</td>
             <td>6</td>
             <td>6</td>
             <td>6 Passcoin</td>
@@ -48,7 +48,7 @@
           </tr>
   
           <tr>
-            <td class="icons"><i class="far fa-flag"></i>Tappa</td>
+            <td class="icons"><img src="@/assets/flag1.svg" alt="">Tappa</td>
             <td>12</td>
             <td>12</td>
             <td>12 Passcoin</td>
@@ -57,7 +57,7 @@
           </tr>
   
           <tr>
-            <td class="icons"><i class="far fa-comment-alt"></i>Recensioni</td>
+            <td class="icons"><img src="@/assets/review.svg" alt="">Recensioni</td>
             <td>1</td>
             <td>1</td>
             <td>1 Passcoin</td>
@@ -143,9 +143,9 @@ hr {
   margin-left: 10%;
   margin-top: 50px;
 }
-.user {
-  font-size: 45px;
-  color: grey;
+.user img {
+  height: 45px;
+  margin-top: 15px;
 }
 .info {
   margin-left: 30px;
@@ -226,7 +226,12 @@ th, td {
   padding-left: 15px;
 }
 
-td i {
+/*td i {
+  padding-right: 30px;
+}*/
+
+td img {
+  height: 45px;
   padding-right: 30px;
 }
 .hrtag2 {
@@ -326,8 +331,13 @@ th, td {
   padding-left: 3px;
 }
 
-td i {
+/*td i {
   padding-right: 3px;
+}*/
+
+td img {
+  height: 13px;
+  padding-right: 2px;
 }
 .hrtag2 {
   width: 100%;

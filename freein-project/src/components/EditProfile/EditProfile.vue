@@ -5,7 +5,8 @@
         <div class="wrap">
           <div class="left-section">
             <div class="text-color">
-              <i class="far fa-user-circle"></i>
+              <img class="img1" src="@/assets/user2.svg" alt="">
+              <!--<i class="far fa-user-circle"></i>-->
               <button @click="alert">
                 <div class="space-margin-left">
                   <span class="fas fa-user"></span>
@@ -50,7 +51,9 @@
 
             <b-form>
               <b-input-group class="input-gender">
-                <i class="fa-regular fa-user"></i>
+                <!--<i class="fa-regular fa-user"></i>-->
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                   <label>Gender</label>
                
                 <div class="flex-checkbox">
@@ -100,7 +103,7 @@
                 <h2>Company Details</h2>
                 <b-input-group class="input-group-email" style="">
                   <div class="right-labelIcon">
-                    <i class="fa-regular fa-rectangle-list"></i>
+                    <i class="fa-solid fa-sign-hanging"></i>
                     <input
                       type="text"
                       class="rightSectionInputs"
@@ -218,7 +221,7 @@ button {
 button:hover {
   background-color: whitesmoke;
 }
-.far {
+/*.far {
   background-color: #ea5b0c;
   color: white;
   height: 85px;
@@ -226,6 +229,16 @@ button:hover {
   align-items: center;
   font-size: 40px;
   padding-left: 10px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}*/
+
+.img1 {
+  background-color: #ea5b0c;
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 70%;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
@@ -255,13 +268,13 @@ button:hover {
 }
 .input-gender i {
   color: grey; 
-  margin-left: -10px; 
+  margin-left: -15px; 
   margin-top: -5px;
 }
 .input-gender label {
   position: relative;
   bottom: 4px;
-  left: 15px;
+  left: 25px;
   font-size: 10px;
   color: grey;
 }
@@ -422,9 +435,9 @@ button:hover {
 .wrap {
   display: block;
 }
-.far {
+/*.far {
   height: 67px;
-}
+}*/
 .input-gender {
   width: 79%;
 }
