@@ -19,7 +19,7 @@
         <p>
           <a href="https://app.tanaza.com/signin" target="iframe_a">Wi-Fi</a>
         </p>
-        <img src="@/assets/dots.png" alt="" />
+        <img src="@/assets/dots.svg" alt="" />
       </div>
 
       <div class="dialogpage-iframe">
@@ -92,7 +92,7 @@ export default {
 
 .dialogpage-links img {
   padding-top: 150px;
-  padding-left: 1px;
+  padding-left: 3px;
 }
 @media (max-width: 575.98px) {
 .dialogpage1 {
