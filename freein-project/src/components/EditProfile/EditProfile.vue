@@ -5,7 +5,7 @@
         <div class="wrap">
           <div class="left-section">
             <div class="text-color">
-              <img class="img1" src="@/assets/user2.svg" alt="">
+              <img class="img1" src="@/assets/user2.svg" alt="" />
               <!--<i class="far fa-user-circle"></i>-->
               <button @click="alert">
                 <div class="space-margin-left">
@@ -54,18 +54,14 @@
                 <!--<i class="fa-regular fa-user"></i>-->
                 <i class="fa-solid fa-user"></i>
                 <i class="fa-solid fa-user"></i>
-                  <label>Gender</label>
-               
+                <label>Gender</label>
+
                 <div class="flex-checkbox">
                   <input @click="switchBox()" type="checkbox" id="ck1" />
                   <label for="ck1">
                     <p>Male</p>
                   </label>
-                  <input
-                    @click="switchBox()"
-                    type="checkbox"
-                    id="ck2"
-                  />
+                  <input @click="switchBox()" type="checkbox" id="ck2" />
                   <label for="ck2">
                     <p>Female</p>
                   </label>
@@ -77,7 +73,8 @@
                   <input
                     type="text"
                     class="rightSectionInputs"
-                    placeholder="Dati"
+                    v-model="name"
+                    :placeholder="takingValue.name"
                   />
                   <label>First Name</label>
                 </div>
@@ -86,7 +83,12 @@
               <b-input-group>
                 <div class="right-labelIcon">
                   <i class="fa-solid fa-user-group"></i>
-                  <input type="text" class="rightSectionInputs" />
+                  <input
+                    type="text"
+                    class="rightSectionInputs"
+                    v-model="surname"
+                    :placeholder="takingValue.surname"
+                  />
                   <label>Last Name</label>
                 </div>
               </b-input-group>
@@ -94,11 +96,16 @@
               <b-input-group class="input-group-email">
                 <div class="right-labelIcon">
                   <i class="fa-regular fa-envelope"></i>
-                  <input type="text" class="rightSectionInputs" />
+                  <input
+                    type="text"
+                    class="rightSectionInputs"
+                    v-model="email"
+                    :placeholder="takingValue.email"
+                  />
                   <label>e mail</label>
                 </div>
               </b-input-group>
-              <hr class="hr1"/>
+              <hr class="hr1" />
               <div class="company-details">
                 <h2>Company Details</h2>
                 <b-input-group class="input-group-email" style="">
@@ -107,13 +114,14 @@
                     <input
                       type="text"
                       class="rightSectionInputs"
+                      :placeholder="null"
                     />
                     <label>Company name</label>
                   </div>
                 </b-input-group>
               </div>
 
-              <hr class="hr1"/>
+              <hr class="hr1" />
 
               <div class="option">
                 <h2>Options</h2>
@@ -127,7 +135,6 @@
               <div class="disclaimer-bottom-left">
                 <p>Don't worry, you can change your username later</p>
 
-
                 <div class="div1">
                   <input type="checkbox" value="1" id="flexCheckDefault2" />
                   <label class="form-check-label" for="flexCheckDefault2">
@@ -136,7 +143,7 @@
                 </div>
 
                 <br />
-                <button @click="changePage(true)" class="save">
+                <button @click="saveChanges(inSession)" class="save">
                   <p>Save</p>
                 </button>
               </div>
@@ -149,22 +156,22 @@
 </template>
 
 <script>
+import usersJson from "/Users.json";
+
 export default {
   data() {
-    return {};
+    return {
+      users: usersJson.registrations,
+      name: "",
+      surname: "",
+      email: "",
+    };
   },
 
   methods: {
     //need a new method that is going to let chanePage if all the forms are compiled
     //correctly :)
 
-    changePage(change) {
-      if (change == true) {
-        this.$router.push({
-          name: "Privatprofile",
-        });
-      }
-    },
     alert(event) {
       event.preventDefault();
       alert("!!");
@@ -172,12 +179,43 @@ export default {
     switchBox() {
       var checkBox1 = document.getElementById("ck1");
       var checkBox2 = document.getElementById("ck2");
-
       if (checkBox1.checked == true) {
         checkBox2.checked = false;
       } else if (checkBox2.checked == true) {
         checkBox1.checked = false;
       }
+    },
+    saveChanges(inSession) {
+      var i;
+      //console.log(this.name, this.surname, this.email);
+      console.log(inSession[0].userObj, " Prima");
+      console.log(inSession[0].userObj, " Dopo");
+      console.log(this.users);
+      for (i = 0; i < this.users.length; i++) {
+        if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
+          inSession[0].userObj.name = this.name;
+          inSession[0].userObj.surname = this.surname;
+          inSession[0].userObj.email = this.email;
+          this.users[i].userObj.name = this.name;
+          console.log(this.users.registrations[i]);
+        } else {
+          console.log("Nada");
+        }
+      }
+      /*
+      this.$router.push({
+        name: "Privatprofile",
+      });
+      */
+    },
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+    takingValue: function () {
+      console.log(this.inSession[0].userObj.name);
+      return this.inSession[0].userObj;
     },
   },
 };
@@ -267,8 +305,8 @@ button:hover {
   padding-left: 10px;
 }
 .input-gender i {
-  color: grey; 
-  margin-left: -15px; 
+  color: grey;
+  margin-left: -15px;
   margin-top: -5px;
 }
 .input-gender label {
@@ -387,10 +425,10 @@ button:hover {
   margin-top: -10px;
 }
 .company-details .right-labelIcon {
-  width: 122px
+  width: 122px;
 }
 .company-details input {
-  width: 84%; 
+  width: 84%;
   margin-left: 20px;
 }
 .option h2 {
@@ -427,62 +465,60 @@ button:hover {
   padding-top: 15px;
 }
 .hr1 {
-  color: #ea5b0c; 
-  opacity: 100%; 
+  color: #ea5b0c;
+  opacity: 100%;
   height: 2px;
 }
 @media (max-width: 575.98px) {
-.wrap {
-  display: block;
-}
-/*.far {
+  .wrap {
+    display: block;
+  }
+  /*.far {
   height: 67px;
 }*/
-.input-gender {
-  width: 79%;
-}
-.rightSectionInputs {
-  width: 60%;
-}
-::placeholder {
-  padding-left: 10px;
-}
-.company-details .right-labelIcon {
-  width: 106px
-}
-.company-details input {
-  width: 59%; 
-  margin-left: 4px;
-}
-.option input {
-  margin-right: 2px;
-}
-.check {
-  margin-left: 58px;
-  margin-bottom: 30px;
-}
-.disclaimer-bottom-left {
-  text-align: left;
-}
-.disclaimer-bottom-left input {
-  margin-right: 2px; 
-  margin-top: -5px;
-}
-.save {
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-left: 60%;
-}
-.hr1 {
-  width: 79%;
-}
-.div1 {
-  display: flex;
-}
-.div1 p {
-font-size: 12px;
-}
-
-
+  .input-gender {
+    width: 79%;
+  }
+  .rightSectionInputs {
+    width: 60%;
+  }
+  ::placeholder {
+    padding-left: 10px;
+  }
+  .company-details .right-labelIcon {
+    width: 106px;
+  }
+  .company-details input {
+    width: 59%;
+    margin-left: 4px;
+  }
+  .option input {
+    margin-right: 2px;
+  }
+  .check {
+    margin-left: 58px;
+    margin-bottom: 30px;
+  }
+  .disclaimer-bottom-left {
+    text-align: left;
+  }
+  .disclaimer-bottom-left input {
+    margin-right: 2px;
+    margin-top: -5px;
+  }
+  .save {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 60%;
+  }
+  .hr1 {
+    width: 79%;
+  }
+  .div1 {
+    display: flex;
+  }
+  .div1 p {
+    font-size: 12px;
+  }
 }
 </style>

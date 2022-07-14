@@ -3,12 +3,15 @@
     <div class="stages">
       <div class="cards2" v-for="obj in suggested" :key="obj.suggest.id">
         <div class="cards2i">
+          <!-- Div below is used to load the correct top left icon for the stage card (blue-background)  -->
           <div
             v-show="loadCssClasses(obj.suggest.type) == 'blue-background'"
             class="flagicon"
           >
             <i class="fa-regular fa-font-awesome"></i>
           </div>
+
+          <!-- Div below is used to load the correct top left icon for the itinerary card (orange-background)  -->
           <div
             v-show="loadCssClasses(obj.suggest.type) == 'orange-background'"
             class="itineraryIcon"
@@ -21,50 +24,70 @@
         </div>
         <img :src="obj.suggest.img" alt="" />
 
+        <!-- The :class below is used to change his css based on the type of the suggest that is coming from the json;  -->
         <div :class="loadCssClasses(obj.suggest.type)">
           <p>{{ obj.suggest.suggestTitle }}</p>
 
-          <div class="cards2icons">
+          <div class="cardsicons">
+            <!-- The class below load just for the cards with type stage (blue-background) and friend (purple-background)
+                  the button GO;
+              -->
             <div
               class="button1"
-              v-show="
-                loadCssClasses(obj.suggest.type) == 'blue-background' ||
-                loadCssClasses(obj.suggest.type) == 'purple-background'
-              "
+              v-show="loadCssClasses(obj.suggest.type) == 'blue-background'"
             >
-              <!-- stageClick to redifine with the suggested JSON but to do later-->
               <button
-                v-on:click="stageClick(obj.suggest.id - 1, stages, stagestore)"
+                v-on:click="
+                  stageClick(
+                    obj.suggest.id - 1,
+                    stages,
+                    stagestore,
+                    obj.suggest
+                  )
+                "
                 class="button"
               >
                 Go
               </button>
             </div>
             <div
+              class="button1"
+              v-show="loadCssClasses(obj.suggest.type) == 'purple-background'"
+            >
+              <button style="pointer-events: none; opacity: 40%" class="button">
+                Go
+              </button>
+            </div>
+            <!-- Div below is used to load the Aggiungimi button just for the Food card (yellow-background) -->
+            <div
               v-show="loadCssClasses(obj.suggest.type) == 'yellow-background'"
             >
-              <!-- stageClick to redifine with the suggested JSON but to do later-->
-              <a v-on:click="stageClick(stage.stage.id - 1)" class="buttonAdd"
+              <a style="pointer-events: none; opacity: 40%" class="buttonAdd"
                 >Aggiungi</a
               >
             </div>
+
+            <!-- Div below is used to load the Itinerario button just for the Itinerary card (orange-background) -->
             <div
               class="button2"
               v-show="loadCssClasses(obj.suggest.type) == ['orange-background']"
             >
-              <!-- itinerariesClick to redifine with the suggested JSON but to do later-->
               <a
                 v-on:click="
                   itinerariesClick(
-                    obj.suggest.id - 1,
+                    obj.suggest.id - 3,
                     itineraries,
-                    itinerariestore
+                    stages,
+                    itinerariestore,
+                    obj.suggest
                   )
                 "
                 class="buttonItinerary"
                 >Itinerario</a
               >
             </div>
+
+            <!-- Div below is used to load the star and the other icons just for the Stage card (blue-background) -->
             <div v-show="loadCssClasses(obj.suggest.type) == 'blue-background'">
               <a
                 style="text-decoration: none"
@@ -93,6 +116,8 @@
 
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
+
+            <!-- Div below is used to load the star and the other icons just for the Itinerary card (orange-background) -->
             <div
               v-show="loadCssClasses(obj.suggest.type) == 'orange-background'"
             >
@@ -122,6 +147,8 @@
               >
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
+
+            <!-- Div below is used to load the star and the other icons just for the Food card (yellow-background) -->
             <div
               class="yellow-card-icons"
               v-show="loadCssClasses(obj.suggest.type) == 'yellow-background'"
@@ -152,6 +179,8 @@
               >
               <a href=""><i class="fa-regular fa-heart"></i></a>
             </div>
+
+            <!-- Div below is used to load the icons just for the Friend card (purple-background) -->
             <div
               v-show="loadCssClasses(obj.suggest.type) == ['purple-background']"
             >
@@ -180,13 +209,17 @@ export default {
       itineraries: itinerariesJson.itineraries,
       friends: friendsJson.friends,
       stageInItineraries: itinerariesJson.itineraries.stages,
+      isDisabled: true,
     };
   },
   methods: {
-    stageClick(id, stages, stagestore) {
+    stageClick(id, stages, stagestore, obj) {
+      /*
       console.log(id, this.stages[id].stage);
       console.log(stagestore, "hello");
       stagestore.push(stages[id].stage);
+
+      
       if (stagestore.length > 0) {
         if (this.stagestore.length == 1) {
           console.log("Don't change");
@@ -197,25 +230,74 @@ export default {
         }
         console.log(this.stagestore[0], "i'm the new value");
       }
+      */
+      console.log(stages, " + obj ", obj);
+      var i;
+      for (i = 0; i < stages.length; i++) {
+        if (stages[i].stage.stageTitle == obj.suggestTitle) {
+          stagestore.push(stages[i].stage);
+          console.log("Pusho ", i);
+        } else {
+          console.log("Non pusho, sono diverso");
+        }
+      }
+
+      if (this.stagestore.length == 1) {
+        console.log("Don't change");
+      } else {
+        console.log("Change", this.stagestore[0], this.stagestore[1]);
+        this.stagestore.splice(0, 1);
+        //capire come usare .splice
+      }
+      console.log(this.stagestore[0], "i'm the new value");
       this.$router.push({
         name: "SummaryStage",
       });
     },
-    itinerariesClick(id, itineraries, itinerariestore) {
+    itinerariesClick(id, itineraries, stages, itinerariestore, obj) {
+      console.log(
+        itineraries,
+        " + itineraries ",
+        obj,
+        " obj ",
+        stages,
+        "stages"
+      );
+      var i;
+      for (i = 0; i < itineraries.length; i++) {
+        if (itineraries[i].itinerary.name == obj.suggestTitle) {
+          itinerariestore.push(itineraries[i].itinerary);
+          itineraries[i].itinerary.stages = stages;
+          console.log("Pusho ", i, ", ", itinerariestore);
+          console.log(itineraries[i].itinerary.stages);
+        } else {
+          console.log("Non pusho, sono diverso");
+        }
+      }
+      if (this.itinerariestore.length == 1) {
+        console.log("Don't change");
+      } else {
+        this.itinerariestore.splice(0, 1);
+      }
+      this.$router.push({
+        name: "SummaryItinerary",
+      });
+      /*
       console.log(itineraries, "Id", id);
       console.log(itinerariestore, "hello");
       itinerariestore.push(itineraries[id].itinerary);
       console.log(itinerariestore, "here");
-      //  if (itinerariestore.length > 0) {
-      //  if (this.itinerariestore.length == 1) {
-      //  } else {
-      //    this.itinerariestore.splice(0, 1);
-      //capire come usare .splice
-      //  }
-      //  }
-      //  this.$router.push({
-      ///    name: "SummaryItinerary",
-      //  });
+       if (itinerariestore.length > 0) {
+       if (this.itinerariestore.length == 1) {
+       } else {
+         this.itinerariestore.splice(0, 1);
+      capire come usare .splice
+        }
+        }
+        this.$router.push({
+        name: "SummaryItinerary",
+        });
+      */
     },
     push(id, data) {
       this.stages.push(data[id - 1]);
@@ -416,7 +498,7 @@ export default {
   height: 60%;
 }
 
-.purple-background .cards2icons {
+.purple-background .cardsicons {
   display: flex;
   position: relative;
   top: 30%;
@@ -486,11 +568,13 @@ export default {
   width: 100%;
 }
 
+/*
 .cardsFriendsBody {
   background: purple;
   border-radius: 10%;
-  height: 60%;
+  height: 50%;
 }
+
 
 .cardsFriendsBody p {
   font-size: 16px;
@@ -500,6 +584,7 @@ export default {
   position: relative;
   top: 30%;
 }
+*/
 
 .button {
   background-color: white;
@@ -514,6 +599,7 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
+
 .buttonItinerary {
   background-color: white;
   border: none;
@@ -542,13 +628,13 @@ export default {
   margin-bottom: 15px;
 }
 
-.cards2icons {
+.cardsicons {
   display: flex;
   justify-content: space-between;
   padding-left: 17px;
   padding-right: 17px;
 }
-.cards2icons i {
+.cardsicons i {
   padding-left: 34px;
   color: white;
 }
