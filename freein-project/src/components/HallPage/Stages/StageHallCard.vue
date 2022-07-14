@@ -28,7 +28,7 @@
         <div :class="loadCssClasses(obj.suggest.type)">
           <p>{{ obj.suggest.suggestTitle }}</p>
 
-          <div class="cards2icons">
+          <div class="cardsicons">
             <!-- The class below load just for the cards with type stage (blue-background) and friend (purple-background)
                   the button GO;
               -->
@@ -498,7 +498,7 @@ export default {
   height: 60%;
 }
 
-.purple-background .cards2icons {
+.purple-background .cardsicons {
   display: flex;
   position: relative;
   top: 30%;
@@ -568,11 +568,13 @@ export default {
   width: 100%;
 }
 
+/*
 .cardsFriendsBody {
   background: purple;
   border-radius: 10%;
-  height: 60%;
+  height: 50%;
 }
+
 
 .cardsFriendsBody p {
   font-size: 16px;
@@ -582,6 +584,7 @@ export default {
   position: relative;
   top: 30%;
 }
+*/
 
 .button {
   background-color: white;
@@ -596,6 +599,7 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
+
 .buttonItinerary {
   background-color: white;
   border: none;
@@ -624,13 +628,13 @@ export default {
   margin-bottom: 15px;
 }
 
-.cards2icons {
+.cardsicons {
   display: flex;
   justify-content: space-between;
   padding-left: 17px;
   padding-right: 17px;
 }
-.cards2icons i {
+.cardsicons i {
   padding-left: 34px;
   color: white;
 }
