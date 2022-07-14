@@ -5,7 +5,7 @@
           "id": 1,
           "suggestTitle": "Bari",
           "type": "stage",
-          "img":"",
+          "img":"https://www.artribune.com/wp-content/uploads/2021/08/BiArch-Bari-International-Archifestival-2021-2-1.jpg",
           "description": "Scoperta del borgo antico sul mare e della Basilica di San Nicola.",
           "suggestTo": [
             "Single",
@@ -29,7 +29,8 @@
           "id": 2,
           "suggestTitle": "Trani",
           "type": "stage",
-          "img":"",          "description": "Cena libera nel vivace e bellissimo centro storico.",
+          "img":"https://www.marmomac.com/wp-content/uploads/2022/04/Pietra-Trani-copertina.jpg",          
+          "description": "Cena libera nel vivace e bellissimo centro storico.",
           "suggestTo": [
             "Single",
             "Family"
@@ -52,7 +53,8 @@
           "id": 3,
           "suggestTitle": "Castel del Monte",
           "type": "stage",
-          "img":"",          "description": "Per una visita allo splendido maniero medievale di Federico II di Svevia, sito Patrimonio Unesco",
+          "img":"https://turismo.puglia.it/wp-content/uploads/sites/124/castel-del-monte-hd.jpg",          
+          "description": "Per una visita allo splendido maniero medievale di Federico II di Svevia, sito Patrimonio Unesco",
           "suggestTo": [
             "Single",
             "Family"
@@ -75,7 +77,8 @@
           "id": 4,
           "suggestTitle": "Matera Palazzo Gattini ",
           "type": "friend",
-          "img":"",          "description": "Deluxe, dimora storica nel cuore del centro.",
+          "img":"https://content.r9cdn.net/rimg/himg/31/ab/6a/leonardo-1157785-FACCIATA_R-588938.jpg?width=500&height=350&xhint=339&yhint=569&crop=true",          
+          "description": "Deluxe, dimora storica nel cuore del centro.",
           "suggestTo": [
             "Single",
             "Family"
@@ -98,7 +101,8 @@
           "id": 5,
           "suggestTitle": "Matera",
           "type": "food",
-          "img":"",          "description": "Meraviglioso viaggio tra i Sassi di Matera, uno degli agglomerati urbani più antichi al mondo, dove l’uomo ha saputo convivere, nel corso dei millenni, in armonia, con la natura circostante, scavando la pietra e abitandola (ancora oggi), nello scenario dell’Habitat Rupestre locale. Ammireremo i due Rioni Sassi e il bellissimo Centro Storico, potremo visitare Case Grotta tipiche e alcune tra le più belle Chiese Rupestri. Al pomeriggio eventuale visita sul belvedere di Murgia Timone o alla Cripta del Peccato Originale, definita la “Cappella Sistina del Rupestre”.Cena libera e pernottamento.",
+          "img":"https://ca-times.brightspotcdn.com/dims4/default/fdc247d/2147483647/strip/true/crop/5616x3744+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6f%2F04%2F836fc72a4b37bc7803183534509c%2Fla-tr-travel-matera-24.jpg",          
+          "description": "Meraviglioso viaggio tra i Sassi di Matera, uno degli agglomerati urbani più antichi al mondo, dove l’uomo ha saputo convivere, nel corso dei millenni, in armonia, con la natura circostante, scavando la pietra e abitandola (ancora oggi), nello scenario dell’Habitat Rupestre locale. Ammireremo i due Rioni Sassi e il bellissimo Centro Storico, potremo visitare Case Grotta tipiche e alcune tra le più belle Chiese Rupestri. Al pomeriggio eventuale visita sul belvedere di Murgia Timone o alla Cripta del Peccato Originale, definita la “Cappella Sistina del Rupestre”.Cena libera e pernottamento.",
           "suggestTo": [
             "Single",
             "Family"
@@ -126,124 +130,23 @@
             "countStar": 0,
             "stageClicked": false,
             "stages": [
-                
-                {
-                    "stage": {
-                      "id": 1,
-                      "stageTitle": "Bari",
-                      "type": "stage",
-                      "img":"",                      "description": "Scoperta del borgo antico sul mare e della Basilica di San Nicola.",
-                      "suggestTo": [
-                        "Single",
-                        "Family"
-                      ],
-                      "profileEval": {
-                        "arte": 89,
-                        "mare": 50,
-                        "cibo": 10,
-                        "relax": 40,
-                        "party": 55,
-                        "nature": 20
-                      },
-                      "countStar": 0,
-                      "stageClicked": false
-                    },
-                    "id": 1
-                  },
-                  {
-                    "stage": {
-                      "id": 2,
-                      "stageTitle": "Trani",
-                      "type": "itinerary",
-                      "img":"",                      "description": "Cena libera nel vivace e bellissimo centro storico.",
-                      "suggestTo": [
-                        "Single",
-                        "Family"
-                      ],
-                      "profileEval": {
-                        "arte": 89,
-                        "mare": 50,
-                        "cibo": 10,
-                        "relax": 40,
-                        "party": 55,
-                        "nature": 20
-                      },
-                      "countStar": 0,
-                      "stageClicked": false
-                    },
-                    "id": 2
-                  },
-                  {
-                    "stage": {
-                      "id": 3,
-                      "stageTitle": "Castel del Monte",
-                      "type": "stage",
-                      "img":"",                      "description": "Per una visita allo splendido maniero medievale di Federico II di Svevia, sito Patrimonio Unesco",
-                      "suggestTo": [
-                        "Single",
-                        "Family"
-                      ],
-                      "profileEval": {
-                        "arte": 89,
-                        "mare": 50,
-                        "cibo": 10,
-                        "relax": 40,
-                        "party": 55,
-                        "nature": 20
-                      },
-                      "countStar": 0,
-                      "stageClicked": false
-                    },
-                    "id": 3
-                  },
-                  {
-                    "stage": {
-                      "id": 4,
-                      "stageTitle": "Matera Palazzo Gattini ",
-                      "type": "friend",
-                      "img":"",                      "description": "Deluxe, dimora storica nel cuore del centro.",
-                      "suggestTo": [
-                        "Single",
-                        "Family"
-                      ],
-                      "profileEval": {
-                        "arte": 89,
-                        "mare": 50,
-                        "cibo": 10,
-                        "relax": 40,
-                        "party": 55,
-                        "nature": 20
-                      },
-                      "countStar": 0,
-                      "stageClicked": false
-                    },
-                    "id": 4
-                  },
-                  {
-                    "stage": {
-                      "id": 5,
-                      "stageTitle": "Matera",
-                      "type": "food",
-                      "img":"",                      "description": "Meraviglioso viaggio tra i Sassi di Matera, uno degli agglomerati urbani più antichi al mondo, dove l’uomo ha saputo convivere, nel corso dei millenni, in armonia, con la natura circostante, scavando la pietra e abitandola (ancora oggi), nello scenario dell’Habitat Rupestre locale. Ammireremo i due Rioni Sassi e il bellissimo Centro Storico, potremo visitare Case Grotta tipiche e alcune tra le più belle Chiese Rupestri. Al pomeriggio eventuale visita sul belvedere di Murgia Timone o alla Cripta del Peccato Originale, definita la “Cappella Sistina del Rupestre”.Cena libera e pernottamento.",
-                      "suggestTo": [
-                        "Single",
-                        "Family"
-                      ],
-                      "profileEval": {
-                        "arte": 89,
-                        "mare": 50,
-                        "cibo": 10,
-                        "relax": 40,
-                        "party": 55,
-                        "nature": 20
-                      },
-                      "countStar": 0,
-                      "stageClicked": false
-                    },
-                    "id": 5
-                  }
-            ]
+          {
+            "id": 1
           },
+          {
+            "id": 2
+          },
+          {
+            "id": 3
+          },
+          {
+            "id": 4
+          },
+          {
+            "id": 5
+          }
+        ]
+      },
           "id": 6
       }
     ]
