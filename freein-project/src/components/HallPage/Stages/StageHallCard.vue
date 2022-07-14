@@ -1,16 +1,16 @@
 <template>
   <div class="contenitore">
     <div class="stages">
-      <div class="cards2" v-for="stage in stages" :key="stage.stage.id">
+      <div class="cards2" v-for="obj in suggested" :key="obj.suggest.id">
         <div class="cards2i">
           <div
-            v-show="loadCssClasses(stage.stage.type) == 'blue-background'"
+            v-show="loadCssClasses(obj.suggest.type) == 'blue-background'"
             class="flagicon"
           >
             <i class="fa-regular fa-font-awesome"></i>
           </div>
           <div
-            v-show="loadCssClasses(stage.stage.type) == 'orange-background'"
+            v-show="loadCssClasses(obj.suggest.type) == 'orange-background'"
             class="itineraryIcon"
           >
             <i class="fa-solid fa-map-location-dot"></i>
@@ -19,19 +19,20 @@
             <i class="fas fa-user-circle"></i>
           </div>
         </div>
-        <img :src="stage.stage.img" alt="" />
+        <img :src="obj.suggest.img" alt="" />
 
-        <div :class="loadCssClasses(stage.stage.type)">
-          <p>{{ stage.stage.stageTitle }}</p>
+        <div :class="loadCssClasses(obj.suggest.type)">
+          <p>{{ obj.suggest.suggestTitle }}</p>
 
           <div class="cards2icons">
             <div
               class="button1"
               v-show="
-                loadCssClasses(stage.stage.type) == 'blue-background' ||
-                loadCssClasses(stage.stage.type) == 'purple-background'
+                loadCssClasses(obj.suggest.type) == 'blue-background' ||
+                loadCssClasses(obj.suggest.type) == 'purple-background'
               "
             >
+              <!-- stageClick to redifine with the suggested JSON but to do later-->
               <button
                 v-on:click="stageClick(stage.stage.id - 1, stages, stagestore)"
                 class="button"
@@ -39,97 +40,121 @@
                 Go
               </button>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == 'yellow-background'">
+            <div
+              v-show="loadCssClasses(obj.suggest.type) == 'yellow-background'"
+            >
+              <!-- stageClick to redifine with the suggested JSON but to do later-->
               <a v-on:click="stageClick(stage.stage.id - 1)" class="buttonAdd"
                 >Aggiungi</a
               >
             </div>
             <div
               class="button2"
-              v-show="loadCssClasses(stage.stage.type) == ['orange-background']"
+              v-show="loadCssClasses(obj.suggest.type) == ['orange-background']"
             >
+              <!-- itinerariesClick to redifine with the suggested JSON but to do later-->
               <a
                 v-on:click="
-                  itinerariesClick(stage.stage.id + 1, itineraries, itinerariestore)
+                  itinerariesClick(
+                    obj.suggest.id - 1,
+                    suggested,
+                    itinerariestore
+                  )
                 "
                 class="buttonItinerary"
                 >Itinerario</a
               >
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == 'blue-background'">
+            <div v-show="loadCssClasses(obj.suggest.type) == 'blue-background'">
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar != 1"
-                href="http://localhost:8080/#/businessprofile"
+                v-show="obj.suggest.countStar != 1"
+                href="#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i
-                ><span class="counter">{{ stage.stage.countStar }}</span>
+                ><span class="counter">{{ obj.suggest.countStar }}</span>
               </a>
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar"
-                href="http://localhost:8080/#/businessprofile"
+                v-show="obj.suggest.countStar"
+                href="#/businessprofile"
                 ><i
                   class="fa-solid fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i>
-                <span class="counter">{{ stage.stage.countStar }}</span></a
+                <span class="counter">{{ obj.suggest.countStar }}</span></a
               >
 
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == 'orange-background'">
+            <div
+              v-show="loadCssClasses(obj.suggest.type) == 'orange-background'"
+            >
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar != 1"
+                v-show="obj.suggest.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i
-                ><span class="counter">{{ stage.stage.countStar }}</span></a
+                ><span class="counter">{{ obj.suggest.countStar }}</span></a
               >
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar"
+                v-show="obj.suggest.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fas fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i
-                ><span class="counter">{{ stage.stage.countStar }}</span></a
+                ><span class="counter">{{ obj.suggest.countStar }}</span></a
               >
               <a href=""><i class="far fa-bookmark"></i></a>
             </div>
             <div
               class="yellow-card-icons"
-              v-show="loadCssClasses(stage.stage.type) == 'yellow-background'"
+              v-show="loadCssClasses(obj.suggest.type) == 'yellow-background'"
             >
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar != 1"
+                v-show="obj.suggest.countStar != 1"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fa-regular fa-star"
-                  @click="incrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    incrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i
-                ><span class="counter">{{ stage.stage.countStar }}</span></a
+                ><span class="counter">{{ obj.suggest.countStar }}</span></a
               >
               <a
                 style="text-decoration: none"
-                v-show="stage.stage.countStar"
+                v-show="obj.suggest.countStar"
                 href="http://localhost:8080/#/businessprofile"
                 ><i
                   class="fas fa-star"
-                  @click="decrementStar(stage.stage.id - 1, stage.stage.countStar)"
+                  @click="
+                    decrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                  "
                 ></i
-                ><span class="counter">{{ stage.stage.countStar }}</span></a
+                ><span class="counter">{{ obj.suggest.countStar }}</span></a
               >
               <a href=""><i class="fa-regular fa-heart"></i></a>
             </div>
-            <div v-show="loadCssClasses(stage.stage.type) == ['purple-background']">
+            <div
+              v-show="loadCssClasses(obj.suggest.type) == ['purple-background']"
+            >
               <a href="#"><i class="fa-regular fa-font-awesome"></i></a>
               <a href=""><i class="fa-solid fa-map-location-dot"></i></a>
               <a href=""><i class="fas fa-user-circle"></i></a>
@@ -143,6 +168,7 @@
 
 <script>
 import stagesJson from "/stages.json";
+import suggestedJson from "/suggested.json";
 import itinerariesJson from "/itineraries.json";
 import friendsJson from "/friends.json";
 
@@ -150,6 +176,7 @@ export default {
   data() {
     return {
       stages: stagesJson.stages,
+      suggested: suggestedJson.suggested,
       itineraries: itinerariesJson.itineraries,
       friends: friendsJson.friends,
       stageInItineraries: itinerariesJson.itineraries.stages,
@@ -175,16 +202,16 @@ export default {
       });
     },
     itinerariesClick(id, itineraries, itinerariestore) {
-      console.log(id, this.itineraries[id].itinerary);
       console.log(itinerariestore, "hello");
-      itinerariestore.push(itineraries[id].itinerary);
-      //  if (itinerariestore.length > 0) {
-      //  if (this.itinerariestore.length == 1) {
-      //  } else {
-      //    this.itinerariestore.splice(0, 1);
-      //capire come usare .splice
-      //  }
-      //  }
+      console.log(itineraries[id].suggest);
+      itinerariestore.push(itineraries[id].suggest);
+      console.log(itinerariestore, "here");
+      if (itinerariestore.length > 0) {
+        if (this.itinerariestore.length == 1) {
+        } else {
+          this.itinerariestore.splice(0, 1);
+        }
+      }
       this.$router.push({
         name: "SummaryItinerary",
       });
@@ -216,24 +243,22 @@ export default {
     },
 
     incrementStar(id, countStar) {
-      console.log(id, this.stages[id].stage);
       countStar++;
       console.log("countStar dello stage sta aumentando", countStar);
-      this.stages[id].stage.countStar = countStar;
+      this.suggested[id].suggest.countStar = countStar;
       console.log(
-        this.stages[id].stage,
+        this.suggested[id].suggest,
         " prendo correttamente il dato della card: ",
         id
       );
     },
 
     decrementStar(id, countStar) {
-      console.log(id, this.stages[id].stage);
       countStar--;
       console.log("countStar dello stage sta diminuendo", countStar);
-      this.stages[id].stage.countStar = countStar;
+      this.suggested[id].suggest.countStar = countStar;
       console.log(
-        this.stages[id].stage,
+        this.suggested[id].suggest,
         " prendo correttamente il dato della card: ",
         id
       );

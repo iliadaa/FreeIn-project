@@ -233,11 +233,10 @@
             <button class="remove-stage-icon">
               <i
                 class="fa-regular fa-circle-xmark"
-                @click="removeCard(card.id - 1, datas)"
+                @click="removeCard(card.stage.id - 1, datas)"
                 v-show="card.stage.stageClicked == true"
               ></i>
             </button>
-            <div v-show="card.stage.stageClicked == false"></div>
             <b-card
               v-show="card.stage.stageClicked == true"
               :img-src="card.stage.img"
@@ -390,9 +389,18 @@ export default {
       console.log(dataList[id].stage.stageClicked);
       cardList[id].stage.stageClicked = false;
       console.log(cardList);
+
+      for (i = 0; i < this.cardList.length; i++) {
+        console.log(this.cardList)
+        if (this.cardList[i] == this.cardList[id - 1]) {
+          this.cardList.splice(i, 1);
+          console.log("Appartiene all'indice corretto;");
+          console.log(this.cardList[id]);
+        }
+      }
       */
 
-      console.log(id);
+      console.log(id, "da dove parto per annullare");
       this.cardList.splice(id, 1);
       dataList[id].stage.stageClicked = false;
       console.log(this.cardList);
@@ -1015,25 +1023,25 @@ a.button-area.fas.fa-plus {
   }
 
   /** */
-.add-image-button {
-  margin-top: 60px;
-}
-.add-image-button > i {
-  width: 60px;
-  height: 60px;
-}
-.fas {
-  font-weight: 100;
-  font-size: 40px;
-}
-.control__content {
-  margin-right: 5px;
-}
-a.button-area.fas.fa-plus {
-  font-size: 30px;
-}
-.location i {
-  margin-right: 7px;
-}
+  .add-image-button {
+    margin-top: 60px;
+  }
+  .add-image-button > i {
+    width: 60px;
+    height: 60px;
+  }
+  .fas {
+    font-weight: 100;
+    font-size: 40px;
+  }
+  .control__content {
+    margin-right: 5px;
+  }
+  a.button-area.fas.fa-plus {
+    font-size: 30px;
+  }
+  .location i {
+    margin-right: 7px;
+  }
 }
 </style>
