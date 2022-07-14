@@ -34,7 +34,7 @@
             >
               <!-- stageClick to redifine with the suggested JSON but to do later-->
               <button
-                v-on:click="stageClick(stage.stage.id - 1, stages, stagestore)"
+                v-on:click="stageClick(obj.suggest.id - 1, stages, stagestore)"
                 class="button"
               >
                 Go
@@ -57,7 +57,7 @@
                 v-on:click="
                   itinerariesClick(
                     obj.suggest.id - 1,
-                    suggested,
+                    itineraries,
                     itinerariestore
                   )
                 "
@@ -202,19 +202,20 @@ export default {
       });
     },
     itinerariesClick(id, itineraries, itinerariestore) {
+      console.log(itineraries, "Id", id);
       console.log(itinerariestore, "hello");
-      console.log(itineraries[id].suggest);
-      itinerariestore.push(itineraries[id].suggest);
+      itinerariestore.push(itineraries[id].itinerary);
       console.log(itinerariestore, "here");
-      if (itinerariestore.length > 0) {
-        if (this.itinerariestore.length == 1) {
-        } else {
-          this.itinerariestore.splice(0, 1);
-        }
-      }
-      this.$router.push({
-        name: "SummaryItinerary",
-      });
+      //  if (itinerariestore.length > 0) {
+      //  if (this.itinerariestore.length == 1) {
+      //  } else {
+      //    this.itinerariestore.splice(0, 1);
+      //capire come usare .splice
+      //  }
+      //  }
+      //  this.$router.push({
+      ///    name: "SummaryItinerary",
+      //  });
     },
     push(id, data) {
       this.stages.push(data[id - 1]);
