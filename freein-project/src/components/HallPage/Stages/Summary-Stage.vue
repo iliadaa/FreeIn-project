@@ -93,12 +93,12 @@
               <p>Crea itinerario</p>
             </div>
             <div class="container2">
-              <a href="#"><img src="@/assets/tag.svg" alt=""/></a>
-              <a href="#" class="notification"><img src="@/assets/star1.svg" alt=""/>
+              <a href="#"><span class="dot"><img src="@/assets/tag.svg" alt=""/></span></a>
+              <a href="#" class="notification"><span class="dot"><img src="@/assets/star1.svg" alt=""/></span>
                 <span class="counter">{{
                   $store.state.stagestore[0].countStar
                 }}</span></a>
-              <a href="#"><img src="@/assets/bmark.svg" alt=""/></a>
+              <a href="#"><span class="dot"><img src="@/assets/bmark.svg" alt=""/></span></a>
             </div>
           </div>
         </div>
@@ -537,9 +537,10 @@ img {
 }*/
 
 .container2 img{
-  height: 20px;
-  width: 20px;
-  margin-left: 15px;
+  height: 15px;
+  width: 15px;
+  margin-left: 7px;
+  
 }
 .fa-plus-circle:before {
   color: black;
@@ -988,7 +989,6 @@ hr {
   transition: 0s;
 }
 .notification {
-  margin-top: 4px;
   padding: 5px 20px;
   position: relative;
   display: inline-block;
@@ -996,12 +996,19 @@ hr {
 }
 .notification .counter {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  padding: 2px 10px;
+  top: 2px;
+  right: 11px;
+  padding: 0px 7px;
   border-radius: 50%;
   background-color: #F6A314;
   color: white;
+}
+.dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
 }
 @media (max-width: 575.98px) {
   .container {
