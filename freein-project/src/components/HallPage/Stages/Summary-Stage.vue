@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading">
-      <p><i class="far fa-flag"></i>Tappa</p>
+      <p><img src="@/assets/flag2.svg" alt="">Tappa</p>
     </div>
 
     <div class="container">
@@ -16,7 +16,7 @@
         </div>
         <div class="relax">
           <div class="image3">
-            <img src="@/assets/relax.png" alt="" />
+            <img src="@/assets/donna2.svg" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>{{ $store.state.stagestore[0].profileEval.cibo }}%</p>
@@ -89,18 +89,16 @@
           </div>
           <div class="parentcontainer">
             <div class="container1">
-              <a href="#/stagecreation"><i class="fas fa-plus-circle"></i></a>
+              <a href="#/stagecreation"><img src="@/assets/plus.svg" alt=""></a>
               <p>Crea itinerario</p>
             </div>
             <div class="container2">
-              <a href="#"><i class="fas fa-tag"></i></a>
-              <a href="#"
-                ><i class="fas fa-star"></i
-                ><span class="counter">{{
+              <a href="#"><img src="@/assets/tag.svg" alt=""/></a>
+              <a href="#" class="notification"><img src="@/assets/star1.svg" alt=""/>
+                <span class="counter">{{
                   $store.state.stagestore[0].countStar
-                }}</span></a
-              >
-              <a href="#"><i class="far fa-bookmark"></i></a>
+                }}</span></a>
+              <a href="#"><img src="@/assets/bmark.svg" alt=""/></a>
             </div>
           </div>
         </div>
@@ -119,7 +117,7 @@
       <div class="wrap">
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -140,7 +138,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -161,7 +159,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -184,7 +182,7 @@
       <div class="wrap">
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -205,7 +203,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -226,7 +224,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -249,7 +247,8 @@
       <div class="box1">
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
+            <!--<i class="fas fa-user-plus"></i>-->
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -258,7 +257,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -267,7 +266,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -276,7 +275,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -285,7 +284,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -391,10 +390,14 @@ export default {
   width: 100%;
   margin-bottom: 60px;
 }
-.heading i {
+/*.heading i {
   display: inline-block;
   font-size: 38px;
   padding: 25px 27px;
+}*/
+
+.heading img {
+  margin: 25px 27px;
 }
 .heading p {
   font-size: 24px;
@@ -521,23 +524,34 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.container1 .container2 i {
+/*.container1 .container2 i {
   font-size: 25px;
+}*/
+
+.container1 img{
+  height: 35px;
+  width: 35px;
 }
-.container2 i {
+/*.container2 i {
   padding-left: 15px;
+}*/
+
+.container2 img{
+  height: 20px;
+  width: 20px;
+  margin-left: 15px;
 }
 .fa-plus-circle:before {
   color: black;
 }
-.fa-bookmark:before {
+/*.fa-bookmark:before {
   color: black;
-}
+}*/
 .fa-star:before {
-  color: black;
+  color: white;
 }
 .fa-tag:before {
-  color: black;
+  color: white;
 }
 .container1 p {
   font-size: 14px;
@@ -570,23 +584,21 @@ hr {
 }
 .cards2i {
   display: flex;
-  color: white;
-  font-size: 30px;
+  /*color: white;
+  font-size: 30px;*/
   position: absolute;
   z-index: 1;
 }
-
 .mapicon {
   background-color: #009ee2;
   width: 40px;
   height: 45px;
 }
 .usericon {
-  padding-left: 150px;
-  padding-top: 5px;
+  padding-left: 145px;
   color: white;
+  font-size: 30px;
 }
-
 .wrap img {
   width: 100%;
   height: auto;
@@ -637,16 +649,19 @@ hr {
   background-color: rgb(245, 238, 238);
 }
 
-.box1 i {
+/*.box1 i {
   font-size: 30px;
   padding-top: 20px;
-}
+}*/
 
+.box1 img {
+  margin-top: 20px;
+}
 .boxcontainer1 {
   font-size: 12px;
   color: black;
   top: 70px;
-  margin-left: 3px;
+  margin-left: 7px;
 }
 
 .box2 {
@@ -972,7 +987,22 @@ hr {
   transform: translateY(10px);
   transition: 0s;
 }
-
+.notification {
+  margin-top: 4px;
+  padding: 5px 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification .counter {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 2px 10px;
+  border-radius: 50%;
+  background-color: #F6A314;
+  color: white;
+}
 @media (max-width: 575.98px) {
   .container {
     margin-left: 0px;
@@ -1170,23 +1200,25 @@ hr {
     font-size: 17px;
   }
   .box1 {
-    width: 80%;
+    width: 100%;
     position: static;
-    float: right;
+    /*float: right;*/
     margin-right: 10px;
     margin-bottom: 50px;
     left: 0%;
     top: 0%;
   }
 
-  .box1 i {
+  /*.box1 i {
     font-size: 25px;
     padding-top: 10px;
+  }*/
+  .box1 img {
+    margin-top: 10px;
   }
-
   .boxcontainer1 {
     font-size: 11px;
-    margin-left: 1px;
+    margin-left: 7px;
   }
 
   .box2 {
