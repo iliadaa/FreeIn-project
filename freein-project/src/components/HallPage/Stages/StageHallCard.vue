@@ -274,7 +274,7 @@ export default {
           console.log("Non pusho, sono diverso");
         }
       }
-      if (this.itinerariestore.length == 0) {
+      if (this.itinerariestore.length == 1) {
         console.log("Don't change");
       } else {
         this.itinerariestore.splice(0, 1);
