@@ -1,34 +1,18 @@
 <template>
-  <VueSlickCarousel v-bind="settings" v-if="itinerariestore.length > 0">
-    <div v-for="(item, i) in itinerariestore" :key="i">
-      <div v-for="(stages, index) in item.stages" :key="index">
-        <img :src="stages.stage.img" />
-      </div>
+  <VueSlickCarousel v-bind="settings">
+    <div v-for="(item, index) in itinerariestore" :key="index">
+      <img :src="item.stages[index].stage.img" />
     </div>
   </VueSlickCarousel>
 </template>
 
-<script>
-export default {
-  data() {},
-  methods: {},
+<!-- <div v-for="(item, i) in itinerariestore" :key="i">
+      <div v-for="(stages, index) in item.stages" :key="index">
+        <img :src="stages.stage.img" />
+      </div>
+    </div>
+-->
 
-  computed: {
-    itinerariestore() {
-      return this.$store.state.itinerariestore;
-    },
-  },
-};
-</script>
-
-<style>
-.slick-slide {
-  height: 0px !important;
-}
-.slick-slide.slick-active {
-  height: 100% !important;
-}
-</style>
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
@@ -59,3 +43,13 @@ export default {
   },
 };
 </script>
+
+
+<style>
+.slick-slide {
+  height: 0px !important;
+}
+.slick-slide.slick-active {
+  height: 100% !important;
+}
+</style>
