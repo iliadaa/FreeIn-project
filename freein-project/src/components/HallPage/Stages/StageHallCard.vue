@@ -54,13 +54,17 @@
               class="button1"
               v-show="loadCssClasses(obj.suggest.type) == 'purple-background'"
             >
-              <button :disabled="isDisabled" class="button">Go</button>
+              <button style="pointer-events: none; opacity: 40%" class="button">
+                Go
+              </button>
             </div>
             <!-- Div below is used to load the Aggiungimi button just for the Food card (yellow-background) -->
             <div
               v-show="loadCssClasses(obj.suggest.type) == 'yellow-background'"
             >
-              <a style="pointer-events: none" class="buttonAdd">Aggiungi</a>
+              <a style="pointer-events: none; opacity: 40%" class="buttonAdd"
+                >Aggiungi</a
+              >
             </div>
 
             <!-- Div below is used to load the Itinerario button just for the Itinerary card (orange-background) -->
@@ -238,7 +242,7 @@ export default {
         }
       }
 
-      if (this.stagestore.length > 0) {
+      if (this.stagestore.length == 1) {
         console.log("Don't change");
       } else {
         console.log("Change", this.stagestore[0], this.stagestore[1]);
@@ -270,7 +274,7 @@ export default {
           console.log("Non pusho, sono diverso");
         }
       }
-      if (this.itinerariestore.length > 0) {
+      if (this.itinerariestore.length == 0) {
         console.log("Don't change");
       } else {
         this.itinerariestore.splice(0, 1);
