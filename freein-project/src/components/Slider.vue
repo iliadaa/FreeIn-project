@@ -1,17 +1,17 @@
 <template>
-  <VueSlickCarousel v-bind="settings">
-    <div v-for="(item, index) in itinerariestore" :key="index">
-      <img :src="item.stages[index].stage.img" />
+  <div>
+    <div>
+      <VueSlickCarousel v-bind="settings">
+        <div v-for="(itineraries, id) in itinerariestore" :key="id">
+          <img :src="itineraries.img" />
+        </div>
+        <div v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages" :key="id">
+          <img :src="stagesInItinerary.stage.img" />
+        </div>
+      </VueSlickCarousel>
     </div>
-  </VueSlickCarousel>
+  </div>
 </template>
-
-<!-- <div v-for="(item, i) in itinerariestore" :key="i">
-      <div v-for="(stages, index) in item.stages" :key="index">
-        <img :src="stages.stage.img" />
-      </div>
-    </div>
--->
 
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
@@ -44,12 +44,14 @@ export default {
 };
 </script>
 
-
 <style>
 .slick-slide {
   height: 0px !important;
 }
 .slick-slide.slick-active {
   height: 100% !important;
+}
+.slick-slide img {
+  width: inherit;
 }
 </style>
