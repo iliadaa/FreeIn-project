@@ -97,9 +97,10 @@
                 <div class="right-labelIcon">
                   <i class="fa-regular fa-envelope"></i>
                   <input
-                    type="text"
+                    type="email"
                     class="rightSectionInputs"
                     v-model="email"
+                    required
                     :placeholder="takingValue.email"
                   />
                   <label>e mail</label>
@@ -143,7 +144,11 @@
                 </div>
 
                 <br />
-                <button @click="saveChanges(inSession)" class="save">
+                <button
+                  @click="saveChanges(inSession)"
+                  class="save"
+                  type="submit"
+                >
                   <p>Save</p>
                 </button>
               </div>
@@ -187,26 +192,76 @@ export default {
     },
     saveChanges(inSession) {
       var i;
+      var correctEmail = false;
       //console.log(this.name, this.surname, this.email);
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
       console.log(this.users);
       for (i = 0; i < this.users.length; i++) {
-        if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
+        if (
+          this.users[i].userObj.name.includes(inSession[0].userObj.name) &&
+          this.email.includes("@gmail" || "@outlook" || "@yahoo")
+        ) {
           inSession[0].userObj.name = this.name;
           inSession[0].userObj.surname = this.surname;
           inSession[0].userObj.email = this.email;
-          this.users[i].userObj.name = this.name;
-          console.log(this.users.registrations[i]);
+          this.users[i].userObj.name == null;
+          console.log(i, "cane");
+          return (correctEmail = true);
         } else {
-          console.log("Nada");
+          alert("L'email deve contenere una @ seguita da: gmail, outlook..");
+          return (correctEmail = false);
         }
       }
-      /*
-      this.$router.push({
-        name: "Privatprofile",
-      });
-      */
+      const options = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          userObj: {
+            id: this.users[i].userObj.id,
+            email: this.email,
+            password: this.users[i].userObj.password,
+            change: this.users[i].userObj.change,
+            name: this.name,
+            surname: this.surname,
+            testDone: this.users[i].userObj.testDone,
+            roles: [this.users[i].userObj.roles],
+            profileTest: {
+              name: this.users[i].userObj.profileTest.name,
+              description: this.users[i].userObj.profileTest.description,
+              arte: this.users[i].userObj.profileTest.arte,
+              mare: this.users[i].userObj.profileTest.mare,
+              cibo: this.users[i].userObj.profileTest.cibo,
+              relax: this.users[i].userObj.profileTest.relax,
+              party: this.users[i].userObj.profileTest.party,
+              nature: this.users[i].userObj.profileTest.nature,
+            },
+          },
+        }),
+      };
+      if (correctEmail == true) {
+        fetch("http://localhost:3000/registrations/" + (i + 1), options)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            if (inSession[0].userObj.roles.includes("business" || "admin")) {
+              this.$router.push({
+                name: "BusinessProfile",
+              });
+
+              return (trovato = true);
+            } else {
+              this.$router.push({
+                name: "Privatprofile",
+              });
+              return (trovato = false);
+            }
+          })
+          .catch((error) => console.log("Request Failed", error));
+      }
     },
   },
   computed: {
