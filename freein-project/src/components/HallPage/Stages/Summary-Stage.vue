@@ -129,8 +129,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href="#"><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -150,8 +150,8 @@
               </div>
 
               <div>
-                <a href=""><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -171,8 +171,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -194,8 +194,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href="#"><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -215,8 +215,8 @@
               </div>
 
               <div>
-                <a href=""><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -236,8 +236,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -637,7 +637,7 @@ hr {
   padding-right: 17px;
 }
 .cards2icons i {
-  padding-left: 34px;
+  padding-left: 5px;
   color: white;
 }
 .box1 {
@@ -1010,6 +1010,25 @@ hr {
   border: 1px solid black;
   display: inline-block;
 }
+
+.dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 2px 0px;
+  margin-right: 7px;
+}
+
+.dots {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 2px 3px;
+}
 @media (max-width: 575.98px) {
   .container {
     margin-left: 0px;
@@ -1170,7 +1189,7 @@ hr {
   }
   /*.hr4 {
   margin-top: 2px;
-}*/
+  }*/
 
   .wrap {
     width: 100%;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading">
-      <p><i class="fas fa-map-marked-alt"></i>Itinerario</p>
+      <p><img src="@/assets/location2.svg" alt="">Itinerario</p>
     </div>
 
     <div class="container">
@@ -16,7 +16,7 @@
         </div>
         <div class="relax">
           <div class="image3">
-            <img src="@/assets/relax.png" alt="" />
+            <img src="@/assets/donna2.svg" alt="" />
           </div>
           <div class="cardcontainer2">
             <p>40%</p>
@@ -116,7 +116,7 @@
       <p class="title">Itinerario</p>
       <div class="section">
         <div class="icontext">
-          <p><i class="far fa-flag"></i>Peschini</p>
+          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Peschini</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -129,7 +129,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="" />
+              <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -172,7 +172,7 @@
       <hr class="hr2" />
       <div class="section">
         <div class="icontext">
-          <p><i class="far fa-flag"></i>Matinata</p>
+          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Matinata</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -185,7 +185,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="" />
+              <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -228,7 +228,7 @@
       <hr class="hr3" />
       <div class="section">
         <div class="icontext">
-          <p><i class="far fa-flag"></i>Vieste</p>
+          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Vieste</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -241,7 +241,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/relax.png" alt="" />
+              <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -289,7 +289,7 @@
       <div class="wrap">
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -301,8 +301,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href="#"><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -310,7 +310,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -322,8 +322,8 @@
               </div>
 
               <div>
-                <a href=""><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -331,7 +331,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -343,8 +343,8 @@
               </div>
 
               <div>
-                <a href="#"><i class="fas fa-star"></i></a>
-                <a href=""><i class="far fa-bookmark"></i></a>
+                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
+                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
               </div>
             </div>
           </div>
@@ -354,7 +354,8 @@
       <div class="box1">
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
+            <!--<i class="fas fa-user-plus"></i>-->
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -363,7 +364,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -372,7 +373,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -381,7 +382,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -390,7 +391,7 @@
 
         <div>
           <div>
-            <i class="fas fa-user-plus"></i>
+            <img src="@/assets/user1.svg" alt="">
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -492,10 +493,13 @@ export default {
   width: 100%;
   margin-bottom: 60px;
 }
-.heading i {
+/*.heading i {
   display: inline-block;
   font-size: 38px;
   padding: 25px 27px;
+}*/
+.heading img {
+  margin: 25px 27px;
 }
 .heading p {
   font-size: 24px;
@@ -605,7 +609,6 @@ img {
   font-size: 28px;
   font-weight: bold;
 }
-
 .h1i {
   padding-right: 20px;
 }
@@ -663,10 +666,10 @@ hr {
   justify-content: space-between;
   margin-bottom: -3%;
 }
-.icontext i {
+.icontext img {
   display: inline-block;
-  font-size: 38px;
-  padding: 20px 22px;
+  margin: 0px 22px;
+  padding: 5px; 
 }
 .icontext p {
   font-size: 18px;
@@ -774,8 +777,8 @@ hr {
 }
 .cards2i {
   display: flex;
-  color: white;
-  font-size: 30px;
+  /*color: white;
+  font-size: 30px;*/
   position: absolute;
   z-index: 1;
 }
@@ -787,8 +790,7 @@ hr {
 }
 
 .usericon {
-  padding-left: 150px;
-  padding-top: 5px;
+  padding-left: 145px;
   color: white;
 }
 
@@ -829,7 +831,7 @@ hr {
   padding-right: 17px;
 }
 .cards2icons i {
-  padding-left: 34px;
+  padding-left: 5px;
   color: white;
 }
 .box1 {
@@ -842,9 +844,13 @@ hr {
   background-color: rgb(245, 238, 238);
 }
 
-.box1 i {
+/*.box1 i {
   font-size: 30px;
   padding-top: 20px;
+}*/
+
+.box1 img {
+  margin-top: 20px;
 }
 
 .boxcontainer1 {
@@ -1180,6 +1186,30 @@ hr {
   transform: translateY(10px);
   transition: 0s;
 }
+.flag2 {
+  background-color: #ea5b0c;
+  width: 75px;
+  height: 45px;
+  border-radius: 12px;
+}
+.dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 2px 0px;
+  margin-right: 7px;
+}
+
+.dots {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 2px 3px;
+}
 
 @media (max-width: 575.98px) {
   .container {
@@ -1292,10 +1322,10 @@ hr {
     flex-direction: row;
     margin-bottom: -11%;
   }
-  .icontext i {
-    font-size: 25px;
-    padding: 10px 5px;
+  .icontext img {
+    margin: 0px 22px;
   }
+
   .icontext p {
     font-size: 17px;
   }
@@ -1373,18 +1403,21 @@ hr {
     font-size: 17px;
   }
   .box1 {
-    width: 80%;
+    width: 100%;
     position: static;
-    float: right;
+    /*float: right;*/
     margin-right: 10px;
     margin-bottom: 50px;
     left: 0%;
     top: 0%;
   }
 
-  .box1 i {
+  /*.box1 i {
     font-size: 25px;
     padding-top: 10px;
+  }*/
+  .box1 img {
+    margin-top: 10px;
   }
 
   .boxcontainer1 {
