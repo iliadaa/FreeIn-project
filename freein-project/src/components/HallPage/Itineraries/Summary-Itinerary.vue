@@ -114,9 +114,13 @@
       </div>
 
       <p class="title">Itinerario</p>
-      <div class="section">
+      <div
+        class="section"
+        v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
+        :key="id"
+      >
         <div class="icontext">
-          <p><i class="far fa-flag"></i>Peschini</p>
+          <p><i class="far fa-flag"></i>{{ stagesInItinerary.stage.stageTitle }}</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -124,7 +128,7 @@
               <img class="imgsmall" src="@/assets/art.svg" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>50%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.arte }}%</p>
             </div>
           </div>
           <div class="relax1">
@@ -132,7 +136,7 @@
               <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>70%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.cibo }}%</p>
             </div>
           </div>
           <div class="mare1">
@@ -140,7 +144,7 @@
               <img class="imgsmall" src="@/assets/Mare.png" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>20%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.mare }}%</p>
             </div>
           </div>
           <div class="natura1">
@@ -148,7 +152,7 @@
               <img class="imgsmall" src="@/assets/natura.svg" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>30%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.nature }}%</p>
             </div>
           </div>
           <div class="party1">
@@ -156,7 +160,7 @@
               <img class="imgsmall" src="@/assets/party.svg" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>30%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.party }}%</p>
             </div>
           </div>
           <div class="gourmet1">
@@ -164,13 +168,13 @@
               <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>50%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.relax }}%</p>
             </div>
           </div>
         </div>
       </div>
       <hr class="hr2" />
-      <div class="section">
+      <!--        <div class="section">
         <div class="icontext">
           <p><i class="far fa-flag"></i>Matinata</p>
         </div>
@@ -224,7 +228,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> 
       <hr class="hr3" />
       <div class="section">
         <div class="icontext">
@@ -282,19 +286,23 @@
         </div>
       </div>
 
-      <hr class="hr4" />
+      <hr class="hr4" /> -->
 
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
-        <div class="cards2">
+        <div
+          class="cards2"
+          v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
+          :key="id"
+        >
           <div class="cards2i">
             <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
-          <img src="@/assets/italy.jpg" alt="" />
+          <img :src="stagesInItinerary.stage.img" />
           <div class="cards2body">
-            <p>Peschici</p>
+            <p>{{ stagesInItinerary.stage.stageTitle }}</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
@@ -308,7 +316,7 @@
           </div>
         </div>
 
-        <div class="cards2">
+        <!-- <div class="cards2">
           <div class="cards2i">
             <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
@@ -348,7 +356,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
 
       <div class="box1">
