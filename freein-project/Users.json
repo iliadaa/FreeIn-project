@@ -78,7 +78,7 @@
     },
     {
       "userObj": {
-        "id": "",
+        "id": "4",
         "email": "mariabellini@gmail.com",
         "password": "cane",
         "name": "Maria",
@@ -119,7 +119,7 @@
     },
     {
       "userObj": {
-        "id": "",
+        "id": "5",
         "email": "jacopo@gmail.com",
         "password": "vivaglianimali123",
         "name": "Jacopo",
@@ -160,7 +160,7 @@
     },
     {
       "userObj": {
-        "id": "",
+        "id": "6",
         "email": "cipollino@gmail.com",
         "password": "1",
         "name": "2",
@@ -198,6 +198,33 @@
         ]
       },
       "id": 6
+    },
+    {
+      "userObj": {
+        "id": "2",
+        "email": "c@gmail.com",
+        "password": "TEST",
+        "change": true,
+        "name": "c",
+        "surname": "c",
+        "testDone": true,
+        "roles": [
+          [
+            "business"
+          ]
+        ],
+        "profileTest": {
+          "name": "Acculturato",
+          "description": "lorem ipsum",
+          "arte": 89,
+          "mare": 50,
+          "cibo": 10,
+          "relax": 40,
+          "party": 55,
+          "nature": 20
+        }
+      },
+      "id": 7
     }
   ]
 }

@@ -20,3 +20,27 @@ json-serve -p 3002 stages.json
 #to install a command that is going to make a parallel call to different package.json scripts
 npm i concurrently --save-dev
 example to use it in package.json --> "server": "concurrently \"json-server --watch Users.json\" \"npm run serve\""
+
+#to install the reload prevent page component
+npm install vue-prevent-unload --save
+
+how to use:
+
+<template>
+<PreventUnload :when="load == false" />
+</template>
+
+<script>
+import PreventUnload from "vue-prevent-unload";
+
+export default {
+  data() {
+    return {
+      load: false,
+    };
+  },
+  components: {
+    PreventUnload,
+  },
+}
+</script>

@@ -143,8 +143,27 @@
                 </div>
 
                 <br />
-                <button @click="saveChanges(inSession)" class="save">
+                <button v-b-modal.modal-1 type="submit" class="save">
                   <p>Save</p>
+                  <b-modal id="modal-1" title="FREE-IN" v-model="show">
+                    <p class="my-4">
+                      Salve se vuole salvare correttamente i cambiamenti dovrà
+                      eseguire nuovamente il log-in!
+                    </p>
+                    <template #modal-footer>
+                      <div class="alert-buttons">
+                        <button
+                          class="alert-button"
+                          @click="(show = false), saveChanges(inSession)"
+                        >
+                          Si
+                        </button>
+                        <button class="alert-button" @click="show = false">
+                          No
+                        </button>
+                      </div>
+                    </template>
+                  </b-modal>
                 </button>
               </div>
             </b-form>
@@ -157,14 +176,18 @@
 
 <script>
 import usersJson from "/Users.json";
+import axios from "axios";
 
 export default {
   data() {
     return {
+      show: false,
       users: usersJson.registrations,
       name: "",
       surname: "",
       email: "",
+      load: false,
+      correctEmail: false,
     };
   },
 
@@ -187,26 +210,66 @@ export default {
     },
     saveChanges(inSession) {
       var i;
+      var correctEmail = false;
       //console.log(this.name, this.surname, this.email);
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
-      console.log(this.users);
+      console.log(this.users[0].userObj.profileTest);
       for (i = 0; i < this.users.length; i++) {
         if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
+          console.log(i);
+          console.log(this.users);
           inSession[0].userObj.name = this.name;
           inSession[0].userObj.surname = this.surname;
           inSession[0].userObj.email = this.email;
-          this.users[i].userObj.name = this.name;
-          console.log(this.users.registrations[i]);
+          this.replaceItem(this.users[i].userObj.id, this.users[i].userObj);
+          break;
         } else {
-          console.log("Nada");
+          continue;
         }
       }
+      console.log("Sto uscendo dal for dopo il return");
+
       /*
       this.$router.push({
         name: "Privatprofile",
       });
       */
+    },
+    async replaceItem(userId, userToReplace) {
+      const res = await axios.patch(
+        `http://localhost:3000/registrations/` + userId,
+        {
+          userObj: {
+            id: userToReplace.id,
+            email: this.email,
+            password: userToReplace.password,
+            change: userToReplace.change,
+            name: this.name,
+            surname: this.surname,
+            testDone: userToReplace.testDone,
+            roles: [userToReplace.roles],
+            profileTest: {
+              name: userToReplace.profileTest.name,
+              description: userToReplace.profileTest.description,
+              arte: userToReplace.profileTest.arte,
+              mare: userToReplace.profileTest.mare,
+              cibo: userToReplace.profileTest.cibo,
+              relax: userToReplace.profileTest.relax,
+              party: userToReplace.profileTest.party,
+              nature: userToReplace.profileTest.nature,
+            },
+          },
+        }
+      );
+
+      userToReplace = [res.data];
+      console.log("Andato!");
+      console.log(userToReplace);
+
+      this.$router.push({
+        name: "FirstPage",
+      });
     },
   },
   computed: {
@@ -463,6 +526,15 @@ button:hover {
 .save p {
   padding-left: 25px;
   padding-top: 15px;
+}
+
+.alert-buttons button {
+  background-color: orange;
+  color: white;
+  margin-left: 20px;
+  width: 30px;
+  height: auto;
+  border-radius: 5px;
 }
 .hr1 {
   color: #ea5b0c;
