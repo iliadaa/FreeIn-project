@@ -165,6 +165,7 @@ export default {
       name: "",
       surname: "",
       email: "",
+      correctEmail: false,
     };
   },
 
@@ -187,21 +188,56 @@ export default {
     },
     saveChanges(inSession) {
       var i;
+      var correctEmail = false;
       //console.log(this.name, this.surname, this.email);
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
       console.log(this.users);
       for (i = 0; i < this.users.length; i++) {
         if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
-          inSession[0].userObj.name = this.name;
-          inSession[0].userObj.surname = this.surname;
-          inSession[0].userObj.email = this.email;
-          this.users[i].userObj.name = this.name;
-          console.log(this.users.registrations[i]);
+          console.log(i);
+          console.log(this.users);
+          break;
         } else {
-          console.log("Nada");
+          continue;
         }
       }
+      console.log("Sto uscendo dal for dopo il return");
+      const options = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          userObj: {
+            id: this.users[i].userObj.id,
+            email: this.email,
+            password: this.users[i].userObj.password,
+            change: this.users[i].userObj.change,
+            name: this.name,
+            surname: this.surname,
+            testDone: this.users[i].userObj.testDone,
+            roles: [this.users[i].userObj.roles],
+            profileTest: {
+              name: this.users[i].userObj.profileTest.name,
+              description: this.users[i].userObj.profileTest.description,
+              arte: this.users[i].userObj.profileTest.arte,
+              mare: this.users[i].userObj.profileTest.mare,
+              cibo: this.users[i].userObj.profileTest.cibo,
+              relax: this.users[i].userObj.profileTest.relax,
+              party: this.users[i].userObj.profileTest.party,
+              nature: this.users[i].userObj.profileTest.nature,
+            },
+          },
+        }),
+      };
+      fetch("http://localhost:3000/registrations/", options)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+        });
+
       /*
       this.$router.push({
         name: "Privatprofile",
