@@ -555,12 +555,12 @@ h5 {
 }
 .button-area i {
   margin-top: 10px;
-  margin-right: 5px;
-  font-size: 25px;
+  margin-right: 10px;
+  font-size: 35px;
   color: #483D8B;
 }
 img.avatar1 {
-  width: 45px;
+  width: 55px;
   margin-left: 40px;
 }
 
