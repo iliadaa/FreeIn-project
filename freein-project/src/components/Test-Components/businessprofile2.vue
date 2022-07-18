@@ -847,6 +847,285 @@ input {
   justify-content: space-around;
   background-color: transparent;
 }
+
+@media (max-width: 575.98px) {
+.attitude-profile {
+  display: block;
+}
+
+/* Personal Attitude */
+.personal-attitude {
+  padding-left: 0%;
+}
+.personal-attitude-icons {
+  margin-top: 30px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.art {
+  margin-right: 7px;
+  margin-bottom: 50px;
+}
+.sea{
+  margin-right: 7px;
+  margin-bottom: 50px;
+}
+.gourmet-explorer {
+  margin-right: 7px;
+  margin-bottom: 50px;
+}
+.relax {
+  margin-right: 7px;
+  margin-bottom: 50px;
+}
+.party {
+  margin-right: 7px;
+}
+.nature-adventure {
+  margin-right: 7px;
+}
+.iconscontainer1 {
+  font-size: 17px;
+  top: 65px;
+  margin-left: 19px;
+}
+.iconscontainer2 {
+  font-size: 17px;
+  top: 65px;
+  left: 19px;
+}
+
+/** Profile  */
+.profile {
+  display: none;
+  padding-right: 6%;
+  margin-top: 35px;
+}
+.button-area {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: transparent;
+}
+.button-area i {
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 35px;
+  color: #483D8B;
+}
+img.avatar1 {
+  width: 55px;
+  margin-left: 40px;
+}
+
+/** Map Filter Search  */
+.map {
+  margin-right: 0%;
+  margin-left: 4%;
+  width: 90%;
+  height: auto;
+}
+.map-filter-search {
+  display: block;
+  padding-top: 0%;
+}
+
+/* Map Tappa Itinerario */
+.map-tappa-itinerario {
+  display: flex;
+}
+.tappa-itinerario {
+  margin-left: 0%;
+}
+.tappa-itinerario .text1 {
+  position: static;
+  margin-left: -10px;
+}
+.tappa-itinerario .text2 {
+  position: static;
+  margin-left: -10px;
+}
+.tappa-itinerario a {
+  width: 30px;
+  height: 30px;
+  margin-top: 50px;
+  margin-left: -10px;
+}
+
+/**Filter*/
+.icons {
+  display: inline-flex;
+}
+.icons img {
+  height: 40px;
+  width: 80px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.arrow {
+  background-color: #ec624c;
+  width: 50px;
+  height: 50px;
+  margin-right: 10%;
+}
+.flag {
+  background-color: #009ee2;
+  width: 50px;
+  height: 50px;
+  margin-right: 5%;
+}
+.location {
+  background-color: #ea5b0c;
+  width: 50px;
+  height: 50px;
+  margin-right: 5%;
+}
+.basket {
+  background-color: #f6a314;
+  width: 50px;
+  height: 50px;
+}
+
+/*?*/
+.business-button > button {
+  background: #f26522;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
+}
+.business-button {
+  padding: 10px 30px;
+  margin: 50px;
+  border-radius: 35px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  border-radius: 10%;
+}
+a:hover {
+  color: white;
+}
+
+/* Avatar Sponsor Search*/
+/* Avatar */
+.avatar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(245, 238, 238);
+}
+.avatar img {
+  width: 40px;
+  margin-top: 20px;
+}
+.avatarcontainer1 {
+  font-size: 12px;
+  color: black;
+  top: 70px;
+  margin-left: 6px;
+}
+.follower-following {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+.dot {
+  height: 30px;
+  width: 30px;
+  background-color: #ea5b0c;
+  color: white;
+  border-radius: 50%;
+  margin-top: 12px;
+  margin-right: 5px;
+  padding: 5px 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.follower-following label {
+  margin-top: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/**sponsor */
+/**Card*/
+.sponsor > .card-body {
+  display: flex;
+  align-items: center;
+}
+.sponsor > .card-body > img {
+  max-width: 200px;
+  height: 160px;
+}
+.sponsor-card-text {
+  margin-left: 5%;
+  font-size: 16px;
+  line-height: 8px;
+}
+
+/**Filter Business-Card */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/**Search filter */
+.filter-attitude {
+  background-color: gainsboro;
+  border-radius: 45px;
+  margin-top: 50px;
+}
+.filter-attitude h5 {
+  color: gray;
+  font-style: italic;
+  border-bottom: 1px solid grey;
+  margin: 35px;
+}
+input {
+  display: block;
+  width: 350px;
+  margin: 20px auto;
+  padding: 10px 45px;
+  background: white url("../../assets/search.png") no-repeat 15px center;
+  background-size: 30px 30px;
+  font-size: 15px;
+  border: solid white 2px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: transparent;
+}
+.search {
+  background-color: white;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  border-radius: 37px;
+}
+.percentages {
+  align-items: center;
+}
+.percentages p {
+  margin-bottom: 19px;
+  margin-top: 19px;
+  text-align: left;
+  color: gray;
+  font-style: italic;
+}
+.sliders {
+  margin-top: 5px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+}
 </style>
 
 

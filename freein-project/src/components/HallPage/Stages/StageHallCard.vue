@@ -380,7 +380,7 @@ export default {
 .stages {
   display: flex;
   flex-wrap: wrap;
-  margin-top: -30px;
+  margin-top: -40px;
   margin-bottom: 100px;
 }
 /*.itineraries {
