@@ -145,7 +145,13 @@
                 <br />
                 <button v-b-modal.modal-1 type="submit" class="save">
                   <p>Save</p>
-                  <b-modal id="modal-1" title="FREE-IN" v-model="show">
+                  <b-modal
+                    no-close-on-backdrop
+                    id="modal-1"
+                    title="FREE-IN"
+                    v-model="show"
+                    class="b-modal"
+                  >
                     <p class="my-4">
                       Salve se vuole salvare correttamente i cambiamenti dovrà
                       eseguire nuovamente il log-in!
@@ -186,8 +192,7 @@ export default {
       name: "",
       surname: "",
       email: "",
-      load: false,
-      correctEmail: false,
+      timer: false,
     };
   },
 
@@ -210,7 +215,6 @@ export default {
     },
     saveChanges(inSession) {
       var i;
-      var correctEmail = false;
       //console.log(this.name, this.surname, this.email);
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
@@ -262,14 +266,7 @@ export default {
           },
         }
       );
-
-      userToReplace = [res.data];
-      console.log("Andato!");
-      console.log(userToReplace);
-
-      this.$router.push({
-        name: "FirstPage",
-      });
+      setTimeout(() => this.$router.push({ name: "FirstPage" }), 390);
     },
   },
   computed: {
@@ -529,7 +526,7 @@ button:hover {
 }
 
 .alert-buttons button {
-  background-color: orange;
+  background-color: #ea5b0c;
   color: white;
   margin-left: 20px;
   width: 30px;

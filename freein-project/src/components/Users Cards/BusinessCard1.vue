@@ -31,8 +31,8 @@
               <div class="first">
                 <p>
                   Fornisci i dettagli relativi alla tua azienda <br />
-                  Inserisci il nome e l'indirizzo e-mail della tua azienda o collega un
-                  account aziendale se ne hai gia' uno.
+                  Inserisci il nome e l'indirizzo e-mail della tua azienda o
+                  collega un account aziendale se ne hai gia' uno.
                 </p>
               </div>
             </div>
@@ -59,8 +59,8 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button"
-          ><a href="http://localhost:8080/#/businesscard3">Avanti >></a></b-button
+        <b-button class="business-1-button" @click="changePage()"
+          >Avanti >></b-button
         >
       </div>
     </div>
@@ -70,6 +70,17 @@
 <script>
 export default {
   name: "BusinessCard1",
+  data() {
+    return {};
+  },
+
+  methods: {
+    changePage() {
+      this.$router.push({
+        path: "/businesscard3",
+      });
+    },
+  },
 };
 </script>
 
@@ -227,90 +238,90 @@ img {
 }
 
 @media (max-width: 575.98px) {
-.card {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+  .card {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 
-.card-header {
-  padding: 4%;
-  font-size: 20px;
-}
-.card-sub-title {
-  padding-top: 5%;
-}
-.card-sub-title > h2 {
-  font-size: 18px;
-}
-.card-sub-title > h6 {
-  font-size: 16px;
-}
-.business-1-button {
-  font-size: 18px;
-  line-height: 18px;
-  margin-top: 2%;
-  margin-right: 2%;
-}
-.dot-1 {
-  height: 15px;
-  width: 15px;
-}
-.dot-2 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px 0px 10px;
-}
-.dot-3 {
-  height: 15px;
-  width: 15px;
-}
-.dot-4 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px;
-}
+  .card-header {
+    padding: 4%;
+    font-size: 20px;
+  }
+  .card-sub-title {
+    padding-top: 5%;
+  }
+  .card-sub-title > h2 {
+    font-size: 18px;
+  }
+  .card-sub-title > h6 {
+    font-size: 16px;
+  }
+  .business-1-button {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 2%;
+    margin-right: 2%;
+  }
+  .dot-1 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-2 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px 0px 10px;
+  }
+  .dot-3 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-4 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+  }
 
-.dots {
-  padding-left: 10%;
-  padding-top: 3%;
-}
-.business-list {
-  display: block;
-}
+  .dots {
+    padding-left: 10%;
+    padding-top: 3%;
+  }
+  .business-list {
+    display: block;
+  }
 
-img {
-  display: block;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.businesstext1 {
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2px;
-}
+  img {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .businesstext1 {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2px;
+  }
 
-.businesstext2 {
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2px;
-}
+  .businesstext2 {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2px;
+  }
 
-.businesstext3 {
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2px;
-}
-.number {
-  font-size: 35px;
-}
-.text1 {
-  margin-left: 10px;
-  margin-top: 3px;
-}
+  .businesstext3 {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2px;
+  }
+  .number {
+    font-size: 35px;
+  }
+  .text1 {
+    margin-left: 10px;
+    margin-top: 3px;
+  }
 
-.first p {
-  font-size: 16px;
-}
+  .first p {
+    font-size: 16px;
+  }
 }
 </style>
