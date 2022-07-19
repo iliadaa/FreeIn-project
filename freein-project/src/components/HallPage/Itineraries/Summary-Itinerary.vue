@@ -11,7 +11,7 @@
             <img src="@/assets/art.svg" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>50%</p>
+            <p>{{ $store.state.itinerariestore[0].arte }}%</p>
           </div>
         </div>
         <div class="relax">
@@ -19,7 +19,7 @@
             <img src="@/assets/donna2.svg" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>40%</p>
+            <p>{{ $store.state.itinerariestore[0].relax }}%</p>
           </div>
         </div>
         <div class="mare">
@@ -27,7 +27,7 @@
             <img src="@/assets/Mare.png" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>50%</p>
+            <p>{{ $store.state.itinerariestore[0].mare }}%</p>
           </div>
         </div>
         <div class="natura">
@@ -35,7 +35,7 @@
             <img src="@/assets/natura.svg" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>60%</p>
+            <p>{{ $store.state.itinerariestore[0].natura }}%</p>
           </div>
         </div>
         <div class="party">
@@ -43,7 +43,7 @@
             <img src="@/assets/party.svg" alt="" />
           </div>
           <div class="cardcontainer2">
-            <p>70%</p>
+            <p>{{ $store.state.itinerariestore[0].party }}%</p>
           </div>
         </div>
         <div class="gourmet">
@@ -51,7 +51,7 @@
             <img src="@/assets/yellowgourmet.png" alt="" />
           </div>
           <div class="cardcontainer1">
-            <p>30%</p>
+            <p>{{ $store.state.itinerariestore[0].gourmet }}%</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
       <div class="text">
         <div class="h1icon">
           <div class="h1i">
-            <h1>Un week and d’avventura</h1>
+            <h1>{{ $store.state.itinerariestore[0].name }}</h1>
           </div>
 
           <div class="c-share">
@@ -114,9 +114,13 @@
       </div>
 
       <p class="title">Itinerario</p>
-      <div class="section">
+            <div
+        class="section"
+        v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
+        :key="id"
+      >
         <div class="icontext">
-          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Peschini</p>
+          <p><img class="flag2" src="@/assets/flag2.svg" alt="">{{ stagesInItinerary.stage.stageTitle }}</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -124,7 +128,7 @@
               <img class="imgsmall" src="@/assets/art.svg" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>50%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.arte }}%</p>
             </div>
           </div>
           <div class="relax1">
@@ -132,7 +136,7 @@
               <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>70%</p>
+                            <p>{{ stagesInItinerary.stage.profileEval.cibo }}%</p>
             </div>
           </div>
           <div class="mare1">
@@ -140,7 +144,7 @@
               <img class="imgsmall" src="@/assets/Mare.png" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>20%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.mare }}%</p>
             </div>
           </div>
           <div class="natura1">
@@ -148,7 +152,7 @@
               <img class="imgsmall" src="@/assets/natura.svg" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>30%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.nature }}%</p>
             </div>
           </div>
           <div class="party1">
@@ -156,7 +160,7 @@
               <img class="imgsmall" src="@/assets/party.svg" alt="" />
             </div>
             <div class="cardcontainer02">
-              <p>30%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.party }}%</p>
             </div>
           </div>
           <div class="gourmet1">
@@ -164,15 +168,15 @@
               <img class="imgsmall" src="@/assets/yellowgourmet.png" alt="" />
             </div>
             <div class="cardcontainer01">
-              <p>50%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.relax }}%</p>
             </div>
           </div>
         </div>
       </div>
       <hr class="hr2" />
-      <div class="section">
+      <!--        <div class="section">
         <div class="icontext">
-          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Matinata</p>
+          <p><i class="far fa-flag"></i>Matinata</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -185,7 +189,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
+              <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -224,11 +228,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> 
       <hr class="hr3" />
       <div class="section">
         <div class="icontext">
-          <p><img class="flag2" src="@/assets/flag2.svg" alt="">Vieste</p>
+          <p><i class="far fa-flag"></i>Vieste</p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -241,7 +245,7 @@
           </div>
           <div class="relax1">
             <div class="image03">
-              <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
+              <img class="imgsmall" src="@/assets/relax.png" alt="" />
             </div>
             <div class="cardcontainer02">
               <p>70%</p>
@@ -282,19 +286,24 @@
         </div>
       </div>
 
-      <hr class="hr4" />
+      <hr class="hr4" /> -->
+      
 
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
-        <div class="cards2">
+        <div
+          class="cards2"
+          v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
+          :key="id"
+        >
           <div class="cards2i">
             <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
-          <img src="@/assets/italy.jpg" alt="" />
+          <img :src="stagesInItinerary.stage.img" />
           <div class="cards2body">
-            <p>Peschici</p>
+            <p>{{ stagesInItinerary.stage.stageTitle }}</p>
             <div class="cards2icons">
               <div class="button1">
                 <a href="#" class="button">Go</a>
@@ -308,9 +317,9 @@
           </div>
         </div>
 
-        <div class="cards2">
+        <!-- <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -322,8 +331,8 @@
               </div>
 
               <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
+                <a href=""><i class="fas fa-star"></i></a>
+                <a href=""><i class="far fa-bookmark"></i></a>
               </div>
             </div>
           </div>
@@ -331,7 +340,7 @@
 
         <div class="cards2">
           <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
+            <div class="mapicon"><i class="fas fa-map-marked-alt"></i></div>
             <div class="usericon"><i class="fas fa-user-circle"></i></div>
           </div>
           <img src="@/assets/italy.jpg" alt="" />
@@ -343,12 +352,12 @@
               </div>
 
               <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
+                <a href="#"><i class="fas fa-star"></i></a>
+                <a href=""><i class="far fa-bookmark"></i></a>
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
 
       <div class="box1">
