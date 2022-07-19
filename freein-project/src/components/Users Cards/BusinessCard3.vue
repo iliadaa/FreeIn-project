@@ -8,20 +8,43 @@
         <div class="card-sub-title">
           <h3>Scegli il metodo di acquisto</h3>
           <p>
-            Il tuo metodo di acquisto determina dove eseguono la conversione i tuoi
-            clienti quando desiderano acquistare un articolo dal tuo shop. La
-            configurazione della procedura di acquisto &egrave; gratuita.
+            Il tuo metodo di acquisto determina dove eseguono la conversione i
+            tuoi clienti quando desiderano acquistare un articolo dal tuo shop.
+            La configurazione della procedura di acquisto &egrave; gratuita.
           </p>
 
           <!--Added-->
-          <label class="container"
+          <label class="container" v-show="takingValue.paymentMethod != value1"
             >Paypal
-            <input type="radio" checked="checked" name="radio" />
+            <input type="radio" name="radio" @click="isUserBusiness(value1)" />
             <span class="checkmark"></span>
           </label>
-          <label class="container"
+
+          <label class="container" v-show="takingValue.paymentMethod == value1"
+            >Paypal
+            <input
+              type="radio"
+              checked="checked"
+              name="radio"
+              @click="isUserBusiness(value1)"
+            />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container" v-show="takingValue.paymentMethod != value2"
             >Bonifico
-            <input type="radio" name="radio" />
+            <input type="radio" name="radio" @click="isUserBusiness(value2)" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container" v-show="takingValue.paymentMethod == value2"
+            >Bonifico
+            <input
+              type="radio"
+              name="radio"
+              checked="checked"
+              @click="isUserBusiness(value2)"
+            />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -33,8 +56,8 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button class="business-1-button"
-          ><a href="http://localhost:8080/#/businesscard2">Avanti >></a></b-button
+        <b-button class="business-1-button" @click="changePage()"
+          >Avanti >></b-button
         >
       </div>
     </div>
@@ -43,6 +66,33 @@
 <script>
 export default {
   name: "BusinessCard3",
+  data() {
+    return {
+      value1: "Paypal",
+      value2: "Bonifico",
+    };
+  },
+
+  methods: {
+    isUserBusiness(value) {
+      this.$store.commit("isUserBusiness", value);
+    },
+    changePage() {
+      this.$router.push({
+        path: "/businesscard2",
+      });
+    },
+  },
+
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+    takingValue: function () {
+      console.log(this.inSession[0].userObj);
+      return this.inSession[0].userObj;
+    },
+  },
 };
 </script>
 <style scoped>
@@ -211,81 +261,81 @@ a:hover {
 }
 
 @media (max-width: 575.98px) {
-.card {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+  .card {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 
-.card-header {
-  padding: 4%;
-  font-size: 20px;
-}
+  .card-header {
+    padding: 4%;
+    font-size: 20px;
+  }
 
-.card-sub-title {
-  padding-top: 5%;
-}
+  .card-sub-title {
+    padding-top: 5%;
+  }
 
-.card-sub-title {
-  padding: 2%;
-}
+  .card-sub-title {
+    padding: 2%;
+  }
 
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center; 
-}
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
 
-p {
-  font-size: 16px; 
-  margin-left: 30px; 
-  text-align: justify;
-}
+  p {
+    font-size: 16px;
+    margin-left: 30px;
+    text-align: justify;
+  }
 
-.business-1-button {
-  font-size: 18px;
-  line-height: 18px;
-  margin-top: 9%;
-  margin-right: 2%;
-}
+  .business-1-button {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 9%;
+    margin-right: 2%;
+  }
 
-.dot-1 {
-  height: 15px;
-  width: 15px;
-}
-.dot-2 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px 0px 10px;
-}
-.dot-3 {
-  height: 15px;
-  width: 15px;
-}
-.dot-4 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px;
-}
-.dots {
-  padding-left: 10%;
-  padding-top: 10%;
-}
-.business-list-2 {
-  display: block;
-}
+  .dot-1 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-2 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px 0px 10px;
+  }
+  .dot-3 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-4 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+  }
+  .dots {
+    padding-left: 10%;
+    padding-top: 10%;
+  }
+  .business-list-2 {
+    display: block;
+  }
 
-img {
-  display: block;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-}
+  img {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-/*Added*/
-.container {
-  margin-left: 30px;
-  font-size: 16px;
-  font-weight: bold;
-}
+  /*Added*/
+  .container {
+    margin-left: 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 </style>

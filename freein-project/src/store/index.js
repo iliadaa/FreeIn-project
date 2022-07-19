@@ -166,7 +166,13 @@ export default new Vuex.Store({
             party: undefined,
             nature: undefined,
           },
-          testAnswers: []
+          testAnswers: [],
+          paymentMethod: "",
+          agency: {
+            ragioneSociale: "",
+            indirizzoMailAziendale: "",
+            espositore: ""
+          }
         },
       }
       console.log(userData, " Verifico che i dati inseriti siano validati correttamente")
@@ -190,43 +196,6 @@ export default new Vuex.Store({
       }
       if (trovato == false) {
         UsersJson.registrations.push(userData);
-        /*
-        const options = {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json;charset=UTF-8",
-          },
-          body: JSON.stringify({
-            userObj: {
-              id: user.id,
-              email: user.email,
-              password: user.password,
-              name: user.name,
-              surname: user.surname,
-              testDone: user.testDone,
-              roles: "private",
-              profileTest: {
-                name: "",
-                description: "lorem ipsum",
-                arte: undefined,
-                mare: undefined,
-                cibo: undefined,
-                relax: undefined,
-                party: undefined,
-                nature: undefined,
-              },
-              testAnswers: []
-            },
-          }),
-        };
-        fetch(usersURL, options)
-          .then((response) => response.json())
-          .then((json) => {
-            console.log(json);
-          })
-          .catch((error) => console.log("Request Failed", error));
-*/
         alert("Nuovo utente registrato con successo")
         console.log(userData, "USER")
         router.push({
@@ -245,24 +214,6 @@ export default new Vuex.Store({
       }
       console.log(state.inSession[0], "sono cambiato")
     },
-    /*
-        isCardType(state) {
-          //prova solo con stage
-          var i;
-          console.log(stagesJson);
-          for (i = 0; i < stagesJson.stages.length; i++) {
-            if (stagesJson.stages[i].stage.type == "stage") {
-              console.log("Stage +1");
-              state.typeStage = true;
-              console.log(state.typeStage)
-            } else {
-              console.log("Itinerary +1");
-              state.typeItinerary = true;
-            }
-    
-          }
-        },
-        */
 
     isUserType(state) {
       console.log(state.inSession, "isUserType");
@@ -284,6 +235,12 @@ export default new Vuex.Store({
         console.log("Devo decidere dove mandarlo!");
       }
 
+    },
+
+    isUserBusiness(state, value) {
+      console.log(state.inSession[0].userObj, " + value: ", value);
+      state.inSession[0].userObj.paymentMethod = value;
+      console.log("Post push ", state.inSession)
     },
 
     increment(state) {

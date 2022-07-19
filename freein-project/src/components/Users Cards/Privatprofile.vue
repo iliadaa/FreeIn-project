@@ -96,7 +96,7 @@
               </div>
               <div class="business-button">
                 <button id="beBusiness">
-                  <a href="http://localhost:8080/#/businesscard1">Business </a>
+                  <a href="#/businesscard1">Business </a>
                 </button>
               </div>
             </div>

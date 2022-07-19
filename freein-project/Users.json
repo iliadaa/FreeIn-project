@@ -22,7 +22,14 @@
           "relax": 60,
           "party": 50,
           "nature": 30
-        }
+        },
+        "paymentMethod": "",
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 1
     },
@@ -47,7 +54,14 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "paymentMethod": "",
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 2
     },
@@ -72,7 +86,14 @@
           "relax": 40,
           "party": 55,
           "nature": 20
-        }
+        },
+        "paymentMethod": "",
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 3
     },
@@ -113,7 +134,14 @@
             "Street Food",
             "Zaino"
           ]
-        ]
+        ],
+        "paymentMethod": "",
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 4
     },
@@ -154,7 +182,14 @@
             "Street Food",
             "Zaino"
           ]
-        ]
+        ],
+        "paymentMethod": null,
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 5
     },
@@ -195,36 +230,16 @@
             "Street Food",
             "Valigia"
           ]
-        ]
+        ],
+        "paymentMethod": "",
+        "agency":{
+          "ragioneSociale": "",
+          "indirizzoMailAziendale": "",
+          "espositore": ""
+        },
+        "placeHolderEmpty": false
       },
       "id": 6
-    },
-    {
-      "userObj": {
-        "id": "2",
-        "email": "c@gmail.com",
-        "password": "TEST",
-        "change": true,
-        "name": "c",
-        "surname": "c",
-        "testDone": true,
-        "roles": [
-          [
-            "business"
-          ]
-        ],
-        "profileTest": {
-          "name": "Acculturato",
-          "description": "lorem ipsum",
-          "arte": 89,
-          "mare": 50,
-          "cibo": 10,
-          "relax": 40,
-          "party": 55,
-          "nature": 20
-        }
-      },
-      "id": 7
     }
   ]
 }

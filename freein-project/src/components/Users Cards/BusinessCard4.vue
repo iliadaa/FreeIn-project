@@ -10,19 +10,19 @@
           <div class="payment-method">
             <h4>Metodo di acquisto</h4>
             <div class="modification">
-              <a href="http://localhost:8080/#/businesscard3">Modifica</a>
+              <a href="#/businesscard3">Modifica</a>
             </div>
           </div>
           <div class="business-name">
             <h4>Ragione Sociale</h4>
             <div class="modification">
-              <a href="http://localhost:8080/#/businesscard2">Modifica</a>
+              <a href="#/businesscard2">Modifica</a>
             </div>
           </div>
           <div class="e-mail">
             <h4>Indirizzo e-mail aziendale</h4>
             <div class="modification">
-              <a href="http://localhost:8080/#/businesscard2">Modifica</a>
+              <a href="#/businesscard2">Modifica</a>
             </div>
           </div>
         </div>
@@ -84,8 +84,8 @@ export default {
 }
 
 .card-sub-title {
-    padding-top: 8%;
-    padding-left: 6%; 
+  padding-top: 8%;
+  padding-left: 6%;
 }
 
 h4 {
@@ -199,94 +199,94 @@ a:hover {
 }
 
 @media (max-width: 575.98px) {
-.card {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+  .card {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 
-.card-header {
-  padding: 4%;
-  font-size: 20px;
-}
-.card-sub-title {
+  .card-header {
+    padding: 4%;
+    font-size: 20px;
+  }
+  .card-sub-title {
     padding-top: 2%;
-    padding-left: 0%; 
-}
+    padding-left: 0%;
+  }
 
-h4 {
-  font-size: 16px;
-  font-weight: bold;
-}
+  h4 {
+    font-size: 16px;
+    font-weight: bold;
+  }
 
-.business-1-button {
-  font-size: 18px;
-  line-height: 18px;
-  margin-top: 2%;
-  margin-right: 2%;
-  width: 70px;
-}
+  .business-1-button {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 2%;
+    margin-right: 2%;
+    width: 70px;
+  }
 
-.button-dots {
-  padding-bottom: 10px;
-}
-.dot-1 {
-  height: 15px;
-  width: 15px;
-}
-.dot-2 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px 0px 10px;
-}
-.dot-3 {
-  height: 15px;
-  width: 15px;
-}
-.dot-4 {
-  height: 15px;
-  width: 15px;
-  margin: 0 10px;
-}
-.dots {
-  padding-left: 10%;
-  padding-top: 3%;
-}
-.business-list-2 {
-  display: block;
-  margin-left: 30px;
-  margin-right: 30px;
-}
+  .button-dots {
+    padding-bottom: 10px;
+  }
+  .dot-1 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-2 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px 0px 10px;
+  }
+  .dot-3 {
+    height: 15px;
+    width: 15px;
+  }
+  .dot-4 {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+  }
+  .dots {
+    padding-left: 10%;
+    padding-top: 3%;
+  }
+  .business-list-2 {
+    display: block;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 
-.privacy {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 2px solid #b9b9b94e;
-}
+  .privacy {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #b9b9b94e;
+  }
 
-img {
-  display: block;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 15px;
-}
+  img {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
+  }
 
-.payment-method {
-  padding-top: 30px;
-}
-.business-name {
-  padding-top: 15px;
-}
-.e-mail {
-  padding-top: 15px;
-  padding-bottom: 90px;
-}
-.modification {
-  padding-left: 50px;
-}
+  .payment-method {
+    padding-top: 30px;
+  }
+  .business-name {
+    padding-top: 15px;
+  }
+  .e-mail {
+    padding-top: 15px;
+    padding-bottom: 90px;
+  }
+  .modification {
+    padding-left: 50px;
+  }
 
-a {
-  font-size: 14px;
-}
+  a {
+    font-size: 14px;
+  }
 }
 </style>
