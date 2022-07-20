@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading">
-      <p><img src="@/assets/flag2.svg" alt="">Tappa</p>
+      <p><img src="@/assets/flag2.svg" alt="" />Tappa</p>
     </div>
 
     <div class="container">
@@ -89,16 +89,26 @@
           </div>
           <div class="parentcontainer">
             <div class="container1">
-              <a href="#/stagecreation"><img src="@/assets/plus.svg" alt=""></a>
+              <a href="#/stagecreation"
+                ><img src="@/assets/plus.svg" alt=""
+              /></a>
               <p>Crea itinerario</p>
             </div>
             <div class="container2">
-              <a href="#"><span class="dot"><img src="@/assets/tag.svg" alt=""/></span></a>
-              <a href="#" class="notification"><span class="dot"><img src="@/assets/star1.svg" alt=""/></span>
+              <a href="#"
+                ><span class="dot"><img src="@/assets/tag.svg" alt="" /></span
+              ></a>
+              <a href="#" class="notification"
+                ><span class="dot"
+                  ><img src="@/assets/star1.svg" alt=""
+                /></span>
                 <span class="counter">{{
                   $store.state.stagestore[0].countStar
-                }}</span></a>
-              <a href="#"><span class="dot"><img src="@/assets/bmark.svg" alt=""/></span></a>
+                }}</span></a
+              >
+              <a href="#"
+                ><span class="dot"><img src="@/assets/bmark.svg" alt="" /></span
+              ></a>
             </div>
           </div>
         </div>
@@ -115,139 +125,13 @@
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="wrap">
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards2">
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/flag2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img src="@/assets/italy.jpg" alt="" />
-          <div class="cards2body">
-            <p>Peschici</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <stageHallCard />
       </div>
 
       <div class="box1">
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
             <!--<i class="fas fa-user-plus"></i>-->
           </div>
           <div class="boxcontainer1">
@@ -257,7 +141,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -266,7 +150,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -275,7 +159,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -284,7 +168,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -365,7 +249,9 @@
 </template>
 
 <script>
+import stageHallCard from "../Stages/StageHallCard.vue";
 export default {
+  components: { stageHallCard },
   computed: {
     stagestore() {
       return this.$store.state.stagestore;
@@ -528,7 +414,7 @@ img {
   font-size: 25px;
 }*/
 
-.container1 img{
+.container1 img {
   height: 35px;
   width: 35px;
 }
@@ -536,11 +422,10 @@ img {
   padding-left: 15px;
 }*/
 
-.container2 img{
+.container2 img {
   height: 15px;
   width: 15px;
   margin-left: 7px;
-  
 }
 .fa-plus-circle:before {
   color: black;
@@ -757,7 +642,8 @@ hr {
   width: 300px;
   background: white url("@/assets/search.png") no-repeat 10px center;
   border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   cursor: pointer;
 }
 
@@ -1000,7 +886,7 @@ hr {
   right: 11px;
   padding: 0px 7px;
   border-radius: 50%;
-  background-color: #F6A314;
+  background-color: #f6a314;
   color: white;
 }
 .dot {
