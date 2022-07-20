@@ -603,7 +603,7 @@ img {
   padding-right: 20px;
 }
 .cards1 {
-  width: 55%;
+  width: 60%;
 }
 /*.cardimage img {
   width: 100%;
@@ -637,7 +637,7 @@ img {
 }*/
 
 hr {
-  width: 55%;
+  width: 60%;
 }
 .hr1 {
   margin-top: 40px;
@@ -756,7 +756,7 @@ hr {
   margin-top: 60px;
 }
 .wrap {
-  width: 55%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;

@@ -403,39 +403,11 @@ export default {
   margin-top: -40px;
   margin-bottom: 100px;
 }
-/*.itineraries {
-  margin-top: 100px;
-  display: flex;
-}*/
-
-/*.friends {
-  margin-top: 100px;
-  display: flex;
-}*/
 .cards2 {
   margin-left: 10px;
   margin-top: 50px;
   flex: 0 1 30%;
 }
-/*.cardsItinerary {
-  margin-left: 10px;
-  margin-top: 20px;
-  flex: 0 1 32%;
-}*/
-/*.cardsFriends {
-  margin-left: 10px;
-  margin-top: 10px;
-  flex: 0 1 32%;
-  border-radius: 10%;
-  background-color: purple;
-}*/
-/*.cardsFriends img {
-  border-radius: 50%;
-  height: 70%;
-  width: 70%;
-  left: 18%;
-  top: 10%;
-}*/
 .cards2i {
   display: flex;
   color: white;
@@ -443,7 +415,6 @@ export default {
   position: absolute;
   z-index: 1;
 }
-
 .dot {
   height: 30px;
   width: 30px;
@@ -453,7 +424,6 @@ export default {
   padding: 2px 0px;
   margin-right: 7px;
 }
-
 .dots {
   height: 30px;
   width: 30px;
@@ -462,17 +432,14 @@ export default {
   display: inline-block;
   padding: 2px 3px;
 }
-
 .flagicon {
   background-color: #009fe3;
   width: 50px;
 }
-
 .flagicon img {
   width: 50px;
   height: auto;
 }
-
 .itineraryIcon {
   background-color: #ea5b0c;
   width: 50px;
@@ -483,24 +450,16 @@ export default {
   padding-top: 1px;
   color: white;
 }
-
 .usericonFriends {
   padding-left: 300px;
   padding-top: 50px;
   font-size: 50px;
+}
   /* 
   Per il macbook questi padding andrebbero bene per le cards Friends
   padding-left: 160px;
   padding-top: 20px;
   */
-}
-/*
-.cards2body {
-  background: #009fe3;
-  border-radius: 0% 0% 10% 10%;
-  height: 60%;
-}
-*/
 .blue-background {
   background-color: #009fe3;
   border-radius: 0% 0% 10% 10%;
@@ -529,24 +488,12 @@ export default {
   border-radius: 0% 0% 10% 10%;
   height: 35%;
 }
-/*.purple-background .cardsicons {
-  display: flex;
-  position: relative;
-  top: 30%;
-}*/
 .purple-background p {
   font-size: 16px;
   color: white;
   padding-top: 10px;
   padding-left: 15px;
 }
-/*.purple-img {
-  border-radius: 50px;
-  height: 70%;
-  width: 70%;
-  left: 18%;
-  top: 10%;
-}*/
 .yellow-background {
   background-color: #f6a314;
   border-radius: 0% 0% 10% 10%;
@@ -571,37 +518,6 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
-/*.cards2body p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-}
-.cardsItineraryBody {
-  background: #ea5b0c;
-  border-radius: 0% 0% 10% 10%;
-  height: 60%;
-}
-.cardsItineraryBody p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  width: 100%;
-}
-.cardsFriendsBody {
-  background: purple;
-  border-radius: 10%;
-  height: 50%;
-}
-.cardsFriendsBody p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  position: relative;
-  top: 30%;
-}*/
 .button {
   background-color: white;
   border: none;
@@ -628,19 +544,6 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
-/*.buttonFriends {
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  color: #009fe3;
-  padding: 2px 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}*/
 .cardsicons {
   display: flex;
   justify-content: space-between;
@@ -648,21 +551,9 @@ export default {
   padding-right: 17px;
 }
 .cardsicons i {
-  padding-left: 18px;
+  padding-left: 5px;
   color: white;
 }
-/*.cardsFriendsicons {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 17px;
-  padding-right: 17px;
-  position: relative;
-  top: 30%;
-}
-.cardsFriendsicons i {
-  padding-left: 34px;
-  color: white;
-}*/
 .counter {
   padding-left: 4px;
   color: white;
@@ -680,46 +571,16 @@ export default {
   margin: 5px;
   margin-bottom: 20px;
 }
-/*.itineraries {
-  margin-top: 100px;
-  display: flex;
-}*/
-
-/*.friends {
-  margin-top: 100px;
-  display: flex;
-}*/
 .cards2 {
   margin-left: 0px;
   margin-top: 25px;
   flex: none;
 }
-/*.cardsItinerary {
-  margin-left: 10px;
-  margin-top: 20px;
-  flex: 0 1 32%;
-}*/
-/*.cardsFriends {
-  margin-left: 10px;
-  margin-top: 10px;
-  flex: 0 1 32%;
-  border-radius: 10%;
-  background-color: purple;
-}*/
-/*.cardsFriends img {
-  border-radius: 50%;
-  height: 70%;
-  width: 70%;
-  left: 18%;
-  top: 10%;
-}*/
-
 .usericon {
   padding-left: 215px;
   padding-top: 5px;
   color: white;
 }
-
 .usericonFriends {
   padding-left: 300px;
   padding-top: 50px;
@@ -730,26 +591,6 @@ export default {
   padding-left: 160px;
   padding-top: 20px;
   */
-
-/*
-.cards2body {
-  background: #009fe3;
-  border-radius: 0% 0% 10% 10%;
-  height: 60%;
-}
-*/
-/*.purple-background .cardsicons {
-  display: flex;
-  position: relative;
-  top: 30%;
-}*/
-/*.purple-img {
-  border-radius: 50px;
-  height: 70%;
-  width: 70%;
-  left: 18%;
-  top: 10%;
-}*/
 .buttonAdd {
   background-color: white;
   border: none;
@@ -763,37 +604,6 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
-/*.cards2body p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-}
-.cardsItineraryBody {
-  background: #ea5b0c;
-  border-radius: 0% 0% 10% 10%;
-  height: 60%;
-}
-.cardsItineraryBody p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  width: 100%;
-}
-.cardsFriendsBody {
-  background: purple;
-  border-radius: 10%;
-  height: 50%;
-}
-.cardsFriendsBody p {
-  font-size: 16px;
-  color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  position: relative;
-  top: 30%;
-}*/
 .button {
   background-color: white;
   border: none;
@@ -820,19 +630,6 @@ export default {
   cursor: pointer;
   margin-bottom: 15px;
 }
-/*.buttonFriends {
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  color: #009fe3;
-  padding: 2px 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}*/
 .cardsicons {
   display: flex;
   justify-content: space-between;
@@ -840,24 +637,20 @@ export default {
   padding-right: 17px;
 }
 .cardsicons i {
-  padding-left: 18px;
+  padding-left: 5px;
   color: white;
 }
-/*.cardsFriendsicons {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 17px;
-  padding-right: 17px;
-  position: relative;
-  top: 30%;
-}
-.cardsFriendsicons i {
-  padding-left: 34px;
-  color: white;
-}*/
 .counter {
   padding-left: 4px;
   color: white;
+}
+.flagicon {
+  background-color: #009fe3;
+  width: 50px;
+}
+.flagicon img {
+  width: 50px;
+  height: auto;
 }
 }
 </style>
