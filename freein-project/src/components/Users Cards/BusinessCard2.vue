@@ -67,30 +67,55 @@ export default {
   data() {
     return {
       ragioneSociale: "",
+      ragioneSoc: [],
       emailAzienda: "",
+      emailAzi: [],
       espositore: "",
+      esposi: [],
+      notEmpty: false,
     };
   },
 
   methods: {
     agencyDetails(ragioneSociale, emailAzienda, espositore) {
-      console.log(ragioneSociale);
-      console.log(emailAzienda);
-      console.log(espositore);
-      this.inSession[0].userObj.agency.ragioneSociale = ragioneSociale;
-      this.inSession[0].userObj.agency.indirizzoMailAziendale = emailAzienda;
-      this.inSession[0].userObj.agency.espositore = espositore;
-      this.inSession[0].userObj.placeHolderEmpty = true;
-      console.log(this.inSession);
-      this.$router.push({
-        path: "/businesscard4",
-      });
+      var i;
+      this.ragioneSoc.push(ragioneSociale);
+      this.emailAzi.push(emailAzienda);
+      this.esposi.push(espositore);
 
+      for (i = 0; i < this.ragioneSoc.length; i++) {
+        if (ragioneSociale != "" || emailAzienda != "" || espositore != "") {
+          this.inSession[0].userObj.agency.ragioneSociale = ragioneSociale;
+
+          this.inSession[0].userObj.agency.indirizzoMailAziendale =
+            emailAzienda;
+
+          this.inSession[0].userObj.agency.espositore = espositore;
+
+          this.inSession[0].userObj.placeHolderEmpty = true;
+          console.log(this.inSession);
+          console.log("cambio");
+          console.log(this.ragioneSoc);
+          this.$router.push({
+            path: "/businesscard4",
+          });
+        } else {
+          console.log("Non cambio nulla!!");
+          this.$router.push({
+            path: "/businesscard4",
+          });
+        }
+      }
       /* 
       state.inSession[0].userObj.agency.ragioneSociale = ragioneSociale;
       state.inSession[0].userObj.agency.indirizzoMailAziendale = emailAzienda;
       state.inSession[0].userObj.agency.espositore = espositore;
       */
+    },
+    nextNoChanges() {
+      this.$router.push({
+        path: "/businesscard4",
+      });
     },
   },
 

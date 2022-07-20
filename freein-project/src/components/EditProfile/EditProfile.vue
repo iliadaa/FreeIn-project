@@ -143,7 +143,7 @@
                 </div>
 
                 <br />
-                <button v-b-modal.modal-1 type="submit" class="save">
+                <button v-b-modal.modal-1 type="button" class="save">
                   <p>Save</p>
                   <b-modal
                     no-close-on-backdrop
@@ -263,10 +263,17 @@ export default {
               party: userToReplace.profileTest.party,
               nature: userToReplace.profileTest.nature,
             },
+            testAnswers: userToReplace.testAnswers,
+            paymentMethod: userToReplace.paymentMethod,
+            agency: {
+              ragioneSociale: userToReplace.agency.ragioneSociale,
+              indirizzoMailAziendale:
+                userToReplace.agency.indirizzoMailAziendale,
+              espositore: userToReplace.agency.espositore,
+            },
           },
         }
       );
-      setTimeout(() => this.$router.push({ name: "FirstPage" }), 390);
     },
   },
   computed: {

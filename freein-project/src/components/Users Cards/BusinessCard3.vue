@@ -14,13 +14,13 @@
           </p>
 
           <!--Added-->
-          <label class="container" v-show="takingValue.paymentMethod != value1"
+          <label class="container" v-if="takingValue.paymentMethod != value1"
             >Paypal
             <input type="radio" name="radio" @click="isUserBusiness(value1)" />
             <span class="checkmark"></span>
           </label>
 
-          <label class="container" v-show="takingValue.paymentMethod == value1"
+          <label class="container" v-else
             >Paypal
             <input
               type="radio"
@@ -31,13 +31,13 @@
             <span class="checkmark"></span>
           </label>
 
-          <label class="container" v-show="takingValue.paymentMethod != value2"
+          <label class="container" v-if="takingValue.paymentMethod != value2"
             >Bonifico
             <input type="radio" name="radio" @click="isUserBusiness(value2)" />
             <span class="checkmark"></span>
           </label>
 
-          <label class="container" v-show="takingValue.paymentMethod == value2"
+          <label class="container" v-else
             >Bonifico
             <input
               type="radio"

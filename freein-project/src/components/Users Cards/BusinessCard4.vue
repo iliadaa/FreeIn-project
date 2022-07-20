@@ -35,7 +35,7 @@
           <span class="dot-4"></span>
         </div>
 
-        <b-button class="business-1-button">
+        <b-button class="business-1-button" @click="replaceItem()">
           <a href="http://localhost:8080/#/privatprofile"> Fine</a></b-button
         >
       </div>
@@ -54,8 +54,57 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "BusinessCard4",
+  data() {
+    return {};
+  },
+  methods: {
+    async replaceItem() {
+      const res = await axios.patch(
+        `http://localhost:3000/registrations/` + this.inSession[0].userObj.id,
+        {
+          userObj: {
+            id: this.inSession[0].userObj.id,
+            email: this.inSession[0].userObj.email,
+            password: this.inSession[0].userObj.password,
+            change: this.inSession[0].userObj.change,
+            name: this.inSession[0].userObj.name,
+            surname: this.inSession[0].userObj.surname,
+            testDone: this.inSession[0].userObj.testDone,
+            roles: ["business"],
+            profileTest: {
+              name: this.inSession[0].userObj.profileTest.name,
+              description: this.inSession[0].userObj.profileTest.description,
+              arte: this.inSession[0].userObj.profileTest.arte,
+              mare: this.inSession[0].userObj.profileTest.mare,
+              cibo: this.inSession[0].userObj.profileTest.cibo,
+              relax: this.inSession[0].userObj.profileTest.relax,
+              party: this.inSession[0].userObj.profileTest.party,
+              nature: this.inSession[0].userObj.profileTest.nature,
+            },
+            testAnswers: this.inSession[0].userObj.testAnswers,
+            paymentMethod: this.inSession[0].userObj.paymentMethod,
+            agency: {
+              ragioneSociale: this.inSession[0].userObj.agency.ragioneSociale,
+              indirizzoMailAziendale:
+                this.inSession[0].userObj.agency.indirizzoMailAziendale,
+              espositore: this.inSession[0].userObj.agency.espositore,
+            },
+          },
+        }
+      );
+      this.$router.push({
+        name: "BusinessProfile",
+      });
+    },
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
+  },
 };
 </script>
 <style scoped>
