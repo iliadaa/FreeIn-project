@@ -398,7 +398,7 @@ img {
 }
 
 .cards1 {
-  width: 55%;
+  width: 60%;
   display: flex;
 }
 .cardimage img {
@@ -445,7 +445,7 @@ img {
 }
 
 hr {
-  width: 55%;
+  width: 60%;
 }
 .search-container2 {
   display: none;
@@ -459,7 +459,7 @@ hr {
   margin-top: 60px;
 }*/
 .wrap {
-  width: 55%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;

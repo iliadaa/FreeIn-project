@@ -648,7 +648,7 @@ export default {
   padding-right: 17px;
 }
 .cardsicons i {
-  padding-left: 18px;
+  padding-left: 5px;
   color: white;
 }
 /*.cardsFriendsicons {
