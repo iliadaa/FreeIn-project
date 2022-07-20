@@ -395,7 +395,7 @@ export default {
 .cards2 {
   margin-left: 10px;
   margin-top: 50px;
-  flex: 0 1 32%;
+  flex: 0 1 30%;
 }
 /*.cardsItinerary {
   margin-left: 10px;
@@ -503,7 +503,7 @@ export default {
   top: 10%;
 }*/
 .yellow-background {
-  background-color: #F6A314;
+  background-color: #f6a314;
   border-radius: 0% 0% 10% 10%;
   height: 35%;
 }
@@ -517,7 +517,7 @@ export default {
   background-color: white;
   border: none;
   border-radius: 10px;
-  color: #F6A314;
+  color: #f6a314;
   padding: 5px 6px;
   text-align: center;
   text-decoration: none;

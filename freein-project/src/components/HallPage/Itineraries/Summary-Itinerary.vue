@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading">
-      <p><img src="@/assets/location2.svg" alt="">Itinerario</p>
+      <p><img src="@/assets/location2.svg" alt="" />Itinerario</p>
     </div>
 
     <div class="container">
@@ -114,13 +114,17 @@
       </div>
 
       <p class="title">Itinerario</p>
-            <div
+      <div
         class="section"
         v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
         :key="id"
       >
         <div class="icontext">
-          <p><img class="flag2" src="@/assets/flag2.svg" alt="">{{ stagesInItinerary.stage.stageTitle }}</p>
+          <p>
+            <img class="flag2" src="@/assets/flag2.svg" alt="" />{{
+              stagesInItinerary.stage.stageTitle
+            }}
+          </p>
         </div>
         <div class="cards">
           <div class="arte1">
@@ -136,7 +140,7 @@
               <img class="imgsmall" src="@/assets/donna2.svg" alt="" />
             </div>
             <div class="cardcontainer02">
-                            <p>{{ stagesInItinerary.stage.profileEval.cibo }}%</p>
+              <p>{{ stagesInItinerary.stage.profileEval.cibo }}%</p>
             </div>
           </div>
           <div class="mare1">
@@ -287,35 +291,11 @@
       </div>
 
       <hr class="hr4" /> -->
-      
 
       <p class="title">Ti potrebbe anche interessare</p>
 
       <div class="wrap">
-        <div
-          class="cards2"
-          v-for="(stagesInItinerary, id) in this.itinerariestore[0].stages"
-          :key="id"
-        >
-          <div class="cards2i">
-            <div class="mapicon"><img src="@/assets/location2.svg" alt=""></div>
-            <div class="usericon"><i class="fas fa-user-circle"></i></div>
-          </div>
-          <img :src="stagesInItinerary.stage.img" />
-          <div class="cards2body">
-            <p>{{ stagesInItinerary.stage.stageTitle }}</p>
-            <div class="cards2icons">
-              <div class="button1">
-                <a href="#" class="button">Go</a>
-              </div>
-
-              <div>
-                <a href="#"><span class="dot"><i class="fas fa-star"></i></span></a>
-                <a href="#"><span class="dots"><i class="far fa-bookmark"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <stageHallCard />
 
         <!-- <div class="cards2">
           <div class="cards2i">
@@ -363,7 +343,7 @@
       <div class="box1">
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
             <!--<i class="fas fa-user-plus"></i>-->
           </div>
           <div class="boxcontainer1">
@@ -373,7 +353,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -382,7 +362,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -391,7 +371,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -400,7 +380,7 @@
 
         <div>
           <div>
-            <img src="@/assets/user1.svg" alt="">
+            <img src="@/assets/user1.svg" alt="" />
           </div>
           <div class="boxcontainer1">
             <p>Alex</p>
@@ -481,9 +461,10 @@
 </template>
 <script>
 import slider from "@/components/Slider.vue";
+import stageHallCard from "../Stages/StageHallCard.vue";
 export default {
   name: "Summary-Itinerary",
-  components: { slider },
+  components: { slider, stageHallCard },
   computed: {
     itinerariestore() {
       return this.$store.state.itinerariestore;
@@ -678,7 +659,7 @@ hr {
 .icontext img {
   display: inline-block;
   margin: 0px 22px;
-  padding: 5px; 
+  padding: 5px;
 }
 .icontext p {
   font-size: 18px;
@@ -962,7 +943,8 @@ hr {
   width: 300px;
   background: white url("@/assets/search.png") no-repeat 10px center;
   border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   cursor: pointer;
 }
 
