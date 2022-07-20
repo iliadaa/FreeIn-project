@@ -102,7 +102,7 @@
             </div>
             <!-- Business Card -->
             <div class="wrap">
-              <StageHallCard />
+              <HallCardPrivate />
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@ import Dashboard from "../DashBoard/ModalDashBoard.vue";
 import TopRightListHall from "../Users Cards/TopRightListHall.vue";
 import VueSlideBar from "vue-slide-bar";
 import DialogPage from "../Users Cards/DialogPage-Card.vue";
-import StageHallCard from "../HallPage/Stages/StageHallCard.vue";
+import HallCardPrivate from "../HallPage/Stages/HallCardPrivate.vue";
 
 export default {
   data() {
@@ -338,7 +338,7 @@ export default {
     Dashboard,
     TopRightListHall,
     VueSlideBar,
-    StageHallCard,
+    HallCardPrivate,
   },
 };
 </script>
