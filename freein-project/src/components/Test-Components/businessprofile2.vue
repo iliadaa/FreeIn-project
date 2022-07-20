@@ -644,22 +644,19 @@ img.avatar1 {
 
 /*?*/
 .business-button > button {
-  background: #f26522;
+  background: #ec624c;
   font-size: 18px;
-  color: white;
   border: none;
-  border-radius: 20px;
-  padding: 10px 40px;
+  border-radius: 8px;
+  padding: 4px 12px;
+  height: 38px;
 }
 .business-button {
-  padding: 10px 30px;
-  margin: 50px;
-  border-radius: 35px;
+  margin: 40px;
 }
 a {
   text-decoration: none;
   color: white;
-  border-radius: 10%;
 }
 a:hover {
   color: white;
@@ -957,37 +954,37 @@ input {
 
 /**Filter*/
 .icons img {
-  width: 70px;
-
+  width: 54px;
 }
 .arrow {
-  margin-right: 20%;
+  margin-right: 4%;
 }
 .flag {
-  margin-right: 6%;
+  margin-right: 4%;
 }
 .location {
-  margin-right: 6%;
+  margin-right: 4%;
 }
+.basket {
+  margin-right: 4%;
+}
+
 
 /*?*/
 .business-button > button {
-  background: #f26522;
-  font-size: 18px;
-  color: white;
+  background: #ec624c;
+  font-size: 16px;
   border: none;
-  border-radius: 20px;
-  padding: 10px 40px;
+  border-radius: 4px;
+  padding: 4px 7px;
+  height: 39px;
 }
 .business-button {
-  padding: 10px 30px;
-  margin: 50px;
-  border-radius: 35px;
+  margin: 40px 0px;
 }
 a {
   text-decoration: none;
   color: white;
-  border-radius: 10%;
 }
 a:hover {
   color: white;
