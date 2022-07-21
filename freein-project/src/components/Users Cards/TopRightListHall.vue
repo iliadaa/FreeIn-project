@@ -5,11 +5,12 @@
         <div class="wrap">
           <div class="left-section">
             <div class="text-color" id="texts">
+
               <div class="iconNameEmail">
                 <b-button type="button" class="btn-close" @click="close()">
                 </b-button>
                 <div class="flexID">
-                  <img class="avatar" src="@/assets/avatar.png" />
+                  <img class="avatar" src="@/assets/user1.svg" />
                   <h2>{{ takingValue.name }}</h2>
                   <p>{{ takingValue.email }}</p>
                   <button @click="changePage" class="edit-profile">
@@ -17,36 +18,42 @@
                   </button>
                 </div>
               </div>
-              <button style="margin-top: -60px" @click="alert">
+
+              <button style="margin-top: -50px" @click="alert">
                 <div class="space-margin-left">
-                  <span class="fa-regular fa-flag"></span>
+                  <img src="@/assets/flag1.svg" alt="">
                   <span class="section-text">Tappa</span>
                 </div>
               </button>
+
               <button @click="alert">
                 <div class="space-margin-left">
-                  <span class="fa-solid fa-signs-post"></span>
+                  <img src="@/assets/location.svg" alt="">
                   <span class="section-text">Itinerario</span>
                 </div>
               </button>
+
               <button @click="alert">
                 <div class="space-margin-left">
-                  <span class="fa-solid fa-cart-shopping"></span>
+                  <img src="@/assets/basket1.svg" alt="">
                   <span class="section-text">Shop territoriale</span>
                 </div>
               </button>
+
               <button id="inners" @click="alert">
                 <div class="space-margin-left">
                   <span class="fa-regular fa-user"></span>
                   <span class="section-text">Inners</span>
                 </div>
               </button>
+
               <button @click="alert">
                 <div class="space-margin-left">
                   <span class="fas fa-piggy-bank"></span>
                   <span class="section-text">Cashback</span>
                 </div>
               </button>
+
             </div>
           </div>
         </div>
@@ -118,34 +125,50 @@ export default {
 .container2 {
   width: auto;
 }
-
 .wrap {
-  min-width: 300px;
-  margin-top: 20px;
-  padding-top: 3%;
+  /*min-width: 300px;*/
+  margin-top: 10px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   background-color: whitesmoke;
   z-index: 1;
   position: absolute;
-  right: 60px;
+  right: 50px;
 }
-
+/*.left-section {
+  flex: 0 0 400px;
+}*/
 .text-color {
-  min-width: 450px;
+  min-width: 400px;
   display: flex;
   color: grey;
   flex-direction: column;
-  height: 450px;
+  height: 500px;
 }
-
 .iconNameEmail {
   display: flex;
   align-items: baseline;
   flex-direction: column;
-  padding-left: 45px;
+  padding-left: 60px;
 }
-
+button {
+  width: auto;
+  height: 67px;
+  align-items: center;
+  border-color: none;
+  color: grey;
+  background-color: whitesmoke;
+  display: inline-flex;
+  border: transparent;
+  text-decoration: none;
+  border-bottom: 1px solid grey;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+button:hover {
+  background-color: white;
+}
 .btn-close {
   position: absolute;
   right: 2px;
@@ -156,74 +179,79 @@ export default {
   width: 10px;
   font-size: 10px;
 }
-
 .btn-close:hover {
   background-color: #ea5b0c;
   border-color: transparent;
 }
-
-.flexID p,
-h2 {
+.flexID p, h2 {
   position: relative;
-  left: 50%;
-  bottom: 40%;
+  left: 60%;
+  bottom: 43%;
 }
-
 .flexID h2 {
-  margin-bottom: -5px;
+  margin-bottom: -4px;
   font-size: 20px;
 }
-
+.flexID p {
+  font-style: italic;
+}
 .edit-profile {
   background-color: #ea5b0c;
   border-bottom: none;
   color: white;
-  width: 73%;
-  height: 30px;
+  width: 72%;
+  height: 28px;
   position: relative;
-  left: 105px;
+  left: 90px;
   bottom: 75px;
 }
-
-button {
-  width: auto;
-  height: 67px;
-  align-items: center;
-  /* justify-content: center; */
-  border-color: none;
-  color: grey;
-  background-color: whitesmoke;
-  display: inline-flex;
-  border: transparent;
-  /* border-radius: 50%; */
-  text-decoration: none;
-  border-bottom: 1px solid grey;
-  margin-left: 40px;
-  margin-right: 10px;
-}
-
-button:hover {
-  background-color: white;
-}
-
 .avatar {
-  height: 85px;
-  display: flex;
+  height: 65px;
+  /*display: flex;
   align-items: center;
   font-size: 50px;
-  margin-left: -11px;
+  margin-left: -11px;*/
+}
+.space-margin-left {
+  font-size: 35px;
+  margin-left: 15px;
 }
 
+.space-margin-left img {
+  height: 45px;
+  padding-right: 45px;
+}
+.section-text {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+.fa-user {
+  padding-right: 50px;
+  margin-left: 10px;
+}
+.fa-piggy-bank {
+  padding-right: 45px;
+  margin-left: 5px;
+}
+
+@media (max-width: 575.98px) {
+.wrap {
+  right: 2px;
+}
+.text-color {
+  min-width: 370px;
+  height: 505px;
+}
 .space-margin-left {
-  margin-left: 15px;
   font-size: 30px;
 }
 
+.space-margin-left img {
+  height: 40px;
+}
 .section-text {
-  margin-left: 10px;
+  font-size: 18px;
+}
 }
 
-.left-section {
-  flex: 0 0 400px;
-}
 </style>
