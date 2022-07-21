@@ -125,10 +125,7 @@ export default {
     stageLoaded(id, stageClicked, dataList) {
       console.log(id, dataList[id]);
       dataList[id].stage.stageClicked = true;
-      console.log(
-        dataList[id].stage.stageClicked,
-        dataList[id].stage.stageClicked
-      );
+      console.log(dataList[id].stage.stageClicked);
       return (dataList[id].stage.stageClicked = true);
     },
   },
@@ -156,6 +153,13 @@ export default {
 };
 </script>
 <style scoped>
+/*
+img {
+  width: 100%;
+  height: 15vw;
+}
+*/
+
 /*Added*/
 .modal-container {
   display: flex;
@@ -213,6 +217,13 @@ p {
 }
 
 @media (max-width: 575.98px) {
+  /*
+  img {
+    width: 100%;
+    height: 60vw;
+  }
+  */
+
   .search-bar {
     margin-top: 40px;
   }

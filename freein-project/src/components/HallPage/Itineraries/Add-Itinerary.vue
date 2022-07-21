@@ -233,7 +233,7 @@
             <button class="remove-stage-icon">
               <i
                 class="fa-regular fa-circle-xmark"
-                @click="removeCard(card.stage.id - 1, datas)"
+                @click="removeCard(card.id - 1, datas)"
                 v-show="card.stage.stageClicked == true"
               ></i>
             </button>
@@ -384,25 +384,18 @@ export default {
     },
 
     removeCard(id, dataList) {
-      /*
-      dataList[id].stage.stageClicked = false;
-      console.log(dataList[id].stage.stageClicked);
-      cardList[id].stage.stageClicked = false;
-      console.log(cardList);
-
+      var i;
+      console.log(this.cardList, " Prima del for");
+      console.log(dataList[id]);
       for (i = 0; i < this.cardList.length; i++) {
-        console.log(this.cardList)
-        if (this.cardList[i] == this.cardList[id - 1]) {
+        if (dataList[id].id == this.cardList[i].id) {
+          dataList[id].stage.stageClicked = false;
           this.cardList.splice(i, 1);
-          console.log("Appartiene all'indice corretto;");
-          console.log(this.cardList[id]);
+          console.log(id);
+          console.log("Id uguali");
+        } else {
         }
       }
-      */
-
-      console.log(id, "da dove parto per annullare");
-      this.cardList.splice(id, 1);
-      dataList[id].stage.stageClicked = false;
       console.log(this.cardList);
     },
 
@@ -505,11 +498,13 @@ export default {
 .container1 {
   max-width: 700px;
 }
+
 .overflow-hidden {
   max-width: 700px;
   height: 200px;
   margin-bottom: 40px;
 }
+
 .flex {
   display: flex;
 }

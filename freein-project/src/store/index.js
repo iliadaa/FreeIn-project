@@ -154,6 +154,7 @@ export default new Vuex.Store({
           password: user.password,
           name: user.name,
           surname: user.surname,
+          gender: "",
           testDone: user.testDone,
           roles: "private",
           profileTest: {

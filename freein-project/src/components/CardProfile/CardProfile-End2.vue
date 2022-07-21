@@ -185,6 +185,8 @@ export default {
                 password: this.inSession[0].userObj.password,
                 name: this.inSession[0].userObj.name,
                 surname: this.inSession[0].userObj.surname,
+                //gender: this.inSession[0].userObj.testAnswers[0] viene dal testAnswers ma manca un metodo per verificare il gender
+                //inserito dall'utente durante il test!!
                 testDone: this.inSession[0].userObj.testDone,
                 roles: "private",
                 profileTest: {
@@ -208,7 +210,6 @@ export default {
             .catch((error) => console.log("Request Failed", error));
 
           this.users[i].userObj = this.inSession[0].userObj;
-          alert("Ci sonooo " + this.inSession[0].userObj.email);
           this.isRolee();
           break;
         } else {
@@ -261,7 +262,8 @@ h1 {
   margin-left: 100px;
   margin-bottom: 75px;
 }
-.circle1, .circle2 {
+.circle1,
+.circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
@@ -430,7 +432,8 @@ img {
   .circles {
     margin-bottom: 50px;
   }
-  .circle1, .circle2 {
+  .circle1,
+  .circle2 {
     height: 160px;
     width: 160px;
   }

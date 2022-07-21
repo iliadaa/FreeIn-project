@@ -3,7 +3,7 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/illustration.png" alt="">
+          <img src="@/assets/illustration.png" alt="" />
         </div>
         <p>"Quanto conta il cibo in un viaggio?"</p>
       </div>
@@ -12,80 +12,87 @@
 
         <div class="slidecontainer">
           <VueSlideBar
-                  v-model="value1"
-                  :min="1"
-                  :max="10"
-                  :processStyle="slider.processStyle"
-                  :lineHeight="slider.lineHeight"
-                  :range="slider.range"
-                  @callbackRange="callbackRange"
-                  :tooltipStyles="{ backgroundColor: '#ea5b0c', borderColor: '#ea5b0c' }">
-                </VueSlideBar>
+            v-model="value1"
+            :min="1"
+            :max="10"
+            :processStyle="slider.processStyle"
+            :lineHeight="slider.lineHeight"
+            :range="slider.range"
+            @callbackRange="callbackRange"
+            :tooltipStyles="{
+              backgroundColor: '#ea5b0c',
+              borderColor: '#ea5b0c',
+            }"
+          >
+          </VueSlideBar>
         </div>
 
         <div class="arrow">
-          <a href="http://localhost:8080/#/card15" class="fas fa-angle-right" @click="asks(value1)"></a>
+          <a
+            href="#/card15"
+            class="fas fa-angle-right"
+            @click="asks(value1)"
+          ></a>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-
 export default {
-  data () {
+  data() {
     return {
       value1: 8,
       slider: {
         lineHeight: 10,
         processStyle: {
-          backgroundColor: '#ea5b0c'
+          backgroundColor: "#ea5b0c",
         },
         range: [
           {
-            label: '1'
+            label: "1",
           },
           {
-            label: '2'
+            label: "2",
           },
           {
-            label: '3'
+            label: "3",
           },
           {
-            label: '4'
+            label: "4",
           },
           {
-            label: '5'
+            label: "5",
           },
           {
-            label: '6'
+            label: "6",
           },
           {
-            label: '7'
+            label: "7",
           },
           {
-            label: '8'
+            label: "8",
           },
           {
-            label: '9'
+            label: "9",
           },
           {
-            label: '10'
-          }
-        ]
-      }
-    }
+            label: "10",
+          },
+        ],
+      },
+    };
   },
   methods: {
-    callbackRange (val) {
-      this.rangeValue = val
+    callbackRange(val) {
+      this.rangeValue = val;
     },
     asks(value) {
       this.$store.commit("asksStore", value);
       return value;
-    }
-  }
-}
+    },
+  },
+};
 </script> 
 <style scoped>
 .container {
@@ -174,38 +181,38 @@ img {
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-.card-group {
-  box-shadow: none;
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-a p {
-  font-size: 25px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-.card-b p {
-  font-size: 17px;
-}
-.slidecontainer {
-  width: 80%;
-}
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-a p {
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .card-b p {
+    font-size: 17px;
+  }
+  .slidecontainer {
+    width: 80%;
+  }
 
-.arrow {
-  padding-right: 15px;
-  padding-bottom: 10px;
-}
-.arrow a {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-}
+  .arrow {
+    padding-right: 15px;
+    padding-bottom: 10px;
+  }
+  .arrow a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
 </style>

@@ -111,9 +111,9 @@
       <div class="map-tappa-itinerario">
         <!-- Tappa and Itinerario -->
         <div class="tappa-itinerario">
-          <div><a class="fas fa-plus" href="/#/stagecreation"></a></div>
+          <div><a class="fas fa-plus" href="#/stagecreation"></a></div>
           <div class="text1"><p>Crea tappa</p></div>
-          <div><a class="fas fa-plus" href="/#/itinerarycreation"></a></div>
+          <div><a class="fas fa-plus" href="#/itinerarycreation"></a></div>
           <div class="text2"><p>Crea Itinerario</p></div>
         </div>
 

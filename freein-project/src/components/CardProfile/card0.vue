@@ -3,13 +3,13 @@
     <div class="card-group">
       <div class="card card-a">
         <div class="illustrations">
-          <img src="@/assets/dots.svg" alt="">
+          <img src="@/assets/dots.svg" alt="" />
         </div>
         <p>Scopri che viaggiatore sei in pochi passi</p>
       </div>
       <div class="card card-b">
         <div class="arrow">
-          <a href="http://localhost:8080/#/card1" class="fas fa-angle-right"></a>
+          <a href="#/card1" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
   justify-content: center;
   align-content: center;
   margin-top: 40px;
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
 }
 .card-group {
   justify-content: center;
@@ -37,9 +37,9 @@
   align-items: center;
   text-align: center;
   height: 600px;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
-.card-a{
+.card-a {
   background-color: #ea5b0c;
 }
 .illustrations {
@@ -66,37 +66,36 @@
   font-size: 25px;
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83); 
+  background-image: linear-gradient(to bottom right, #ea5b0c, #2d2e83);
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px; 
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-a p {
+    font-size: 25px;
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+  .illustrations {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+  }
+  .arrow a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
-.card-group {
-  box-shadow: none;
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-a p {
-  font-size: 25px;
-  margin-left: 120px;
-  margin-right: 120px;
-}
-.illustrations {
- margin-left: auto;
- margin-right: auto;
- width: 90px;
-}
-.arrow a {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-}
-}
-
 </style>

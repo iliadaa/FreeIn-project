@@ -154,31 +154,12 @@ export default {
       }
     },
 
+    //validation is coming from the vuex store and it's used to register a new user
+
     validation(user) {
       this.$store.commit("isValidate", user);
     },
 
-    //io mi sto registrando come utente nuovo
-
-    //devo validare se la email che ho usato è corretta e se non è gia presente nelle registrazioni
-
-    //chiamo metodo per verifica mail di user.email
-    //nome_metodo : Validate true o false
-    /*
-      if (validate && find_inregistration of email) {
-          //allert mail presente 
-      } else {
-        // se email non gia presente : metodo in mutation che data una email 
-        //risponde true o false se email presente in registration e validate vera 
-        //registo il nuovo user
-        registrations.push({ userObj });
-          registrations[i].id = i;
-          console.log(userObj, "sono l'userObj");
-          this.$router.push({
-            name: "FirstPage",
-          });
-      }
-      */
     unregister(registrations) {
       const user = this.$store.registrations.find((user) => {
         return user.email == registrations.email;
@@ -189,10 +170,6 @@ export default {
         1
       );
     },
-
-    //register(state, user, registrations){
-    //this.$store.commit('register', state, user, registrations)
-    //}
   },
 
   computed: {

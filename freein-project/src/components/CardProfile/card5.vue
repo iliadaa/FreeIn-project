@@ -28,10 +28,7 @@
           </a>
         </div>
         <div class="arrow">
-          <a
-            href="http://localhost:8080/#/card6"
-            class="fas fa-angle-right"
-          ></a>
+          <a href="#/card6" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
@@ -141,41 +138,41 @@ img {
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-.card-group {
-  box-shadow: none;
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-a p {
-  font-size: 25px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-.answer1 {
-  display: block;
-}
-.answer2 {
-  display: block;
-}
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-a p {
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .answer1 {
+    display: block;
+  }
+  .answer2 {
+    display: block;
+  }
 
-.card-b p {
-  font-size: 17px;
-}
-.arrow {
-  padding-right: 15px;
-  padding-bottom: 10px;
-}
-.arrow a {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-}
+  .card-b p {
+    font-size: 17px;
+  }
+  .arrow {
+    padding-right: 15px;
+    padding-bottom: 10px;
+  }
+  .arrow a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
 </style>

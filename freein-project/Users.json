@@ -8,6 +8,7 @@
         "change": true,
         "name": "Admin",
         "surname": "Test",
+        "gender": "male",
         "testDone": true,
         "roles": [
           "admin",
@@ -24,7 +25,7 @@
           "nature": 30
         },
         "paymentMethod": "",
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
@@ -41,6 +42,7 @@
         "change": true,
         "name": "Business",
         "surname": "Test",
+        "gender": "male",
         "testDone": true,
         "roles": [
           "business"
@@ -56,7 +58,7 @@
           "nature": 20
         },
         "paymentMethod": "",
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
@@ -73,6 +75,7 @@
         "change": true,
         "name": "Tester",
         "surname": "Test",
+        "gender": "male",
         "testDone": true,
         "roles": [
           "private"
@@ -88,7 +91,7 @@
           "nature": 20
         },
         "paymentMethod": "",
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
@@ -101,11 +104,14 @@
       "userObj": {
         "id": "4",
         "email": "mariabellini@gmail.com",
-        "password": "cane",
-        "name": "Maria",
-        "surname": "Bellini",
+        "password": "mare",
+        "name": "maria",
+        "surname": "bella",
+        "gender": "female",
         "testDone": true,
-        "roles": "private",
+        "roles": [
+          "private"
+        ],
         "profileTest": {
           "name": "Buongustaio",
           "arte": 40,
@@ -136,12 +142,11 @@
           ]
         ],
         "paymentMethod": "",
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
-        },
-        "placeHolderEmpty": false
+        }
       },
       "id": 4
     },
@@ -149,9 +154,10 @@
       "userObj": {
         "id": "5",
         "email": "jacopo@gmail.com",
-        "password": "vivaglianimali123",
+        "password": "pizza",
         "name": "Jacopo",
         "surname": "Capiato",
+        "gender": "male",
         "testDone": true,
         "roles": "private",
         "profileTest": {
@@ -184,7 +190,7 @@
           ]
         ],
         "paymentMethod": null,
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
@@ -232,7 +238,7 @@
           ]
         ],
         "paymentMethod": "",
-        "agency":{
+        "agency": {
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
@@ -240,6 +246,48 @@
         "placeHolderEmpty": false
       },
       "id": 6
+    },
+    {
+      "userObj": {
+        "id": "",
+        "email": "marco@gmail.com",
+        "password": "1",
+        "name": "",
+        "surname": "",
+        "gender": "Buongustaio",
+        "testDone": true,
+        "roles": "private",
+        "profileTest": {
+          "name": "Buongustaio",
+          "arte": 40,
+          "mare": 45,
+          "cibo": 90,
+          "relax": 60,
+          "party": 50,
+          "nature": 30
+        },
+        "testAnswers": [
+          [
+            "Uomo",
+            "In gruppo",
+            "Single",
+            "Hamburger",
+            "28-37",
+            "13-22",
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            "Street Food",
+            "Zaino"
+          ]
+        ]
+      },
+      "id": 7
     }
   ]
 }

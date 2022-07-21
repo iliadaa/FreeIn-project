@@ -56,16 +56,40 @@
                 <i class="fa-solid fa-user"></i>
                 <label>Gender</label>
 
-                <div class="flex-checkbox">
-                  <input @click="switchBox()" type="checkbox" id="ck1" />
-                  <label for="ck1">
-                    <p>Male</p>
-                  </label>
-                  <input @click="switchBox()" type="checkbox" id="ck2" />
-                  <label for="ck2">
-                    <p>Female</p>
-                  </label>
-                </div>
+                <label class="radio-checkBox"
+                  >Male
+                  <input
+                    v-if="takingValue.profileTest[0].name == 'Uomo'"
+                    type="radio"
+                    checked="checked"
+                    name="radio"
+                    @click="switchGender(inSession, genderX)"
+                  />
+                  <input
+                    v-else
+                    type="radio"
+                    name="radio"
+                    @click="switchGender(inSession, genderX)"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-checkBox"
+                  >Female
+                  <input
+                    v-if="takingValue.profileTest.name == 'Donna'"
+                    type="radio"
+                    checked="checked"
+                    name="radio"
+                    @click="switchGender(inSession, genderY)"
+                  />
+                  <input
+                    v-else
+                    type="radio"
+                    name="radio"
+                    @click="switchGender(inSession, genderY)"
+                  />
+                  <span class="checkmark"></span>
+                </label>
               </b-input-group>
               <b-input-group>
                 <div class="right-labelIcon">
@@ -192,6 +216,8 @@ export default {
       name: "",
       surname: "",
       email: "",
+      genderX: "male",
+      genderY: "female",
       timer: false,
     };
   },
@@ -204,14 +230,9 @@ export default {
       event.preventDefault();
       alert("!!");
     },
-    switchBox() {
-      var checkBox1 = document.getElementById("ck1");
-      var checkBox2 = document.getElementById("ck2");
-      if (checkBox1.checked == true) {
-        checkBox2.checked = false;
-      } else if (checkBox2.checked == true) {
-        checkBox1.checked = false;
-      }
+    switchGender(inSession, gender) {
+      inSession[0].userObj.gender = gender;
+      console.log(inSession[0].userObj);
     },
     saveChanges(inSession) {
       var i;
@@ -226,7 +247,11 @@ export default {
           inSession[0].userObj.name = this.name;
           inSession[0].userObj.surname = this.surname;
           inSession[0].userObj.email = this.email;
-          this.replaceItem(this.users[i].userObj.id, this.users[i].userObj);
+          this.replaceItem(
+            this.users[i].userObj.id,
+            this.users[i].userObj,
+            inSession
+          );
           break;
         } else {
           continue;
@@ -240,7 +265,7 @@ export default {
       });
       */
     },
-    async replaceItem(userId, userToReplace) {
+    async replaceItem(userId, userToReplace, inSession) {
       const res = await axios.patch(
         `http://localhost:3000/registrations/` + userId,
         {
@@ -251,6 +276,7 @@ export default {
             change: userToReplace.change,
             name: this.name,
             surname: this.surname,
+            gender: inSession[0].userObj.gender,
             testDone: userToReplace.testDone,
             roles: [userToReplace.roles],
             profileTest: {
@@ -289,6 +315,71 @@ export default {
 </script>
 
 <style scoped>
+.radio-checkBox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-checkBox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-checkBox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-checkBox input:checked ~ .checkmark {
+  background-color: #ea5b0c;
+  width: 12px;
+  height: 12px;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-checkBox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-checkBox .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+}
+
 .container2 {
   width: auto;
 }
@@ -378,14 +469,14 @@ button:hover {
 }
 .input-gender label {
   position: relative;
-  bottom: 4px;
   left: 25px;
   font-size: 10px;
   color: grey;
 }
 .input-gender input {
   position: relative;
-  left: 20px;
+  left: 10px;
+  top: 3px;
 }
 .rightSectionInputs {
   position: absolute;
@@ -442,17 +533,18 @@ button:hover {
   border-radius: 0px;
   margin-bottom: 10px;
 }
+/*
 .flex-checkbox {
   display: flex;
   color: grey;
   align-items: baseline;
+  margin-right: -10px;
 }
 .flex-checkbox p {
   margin-left: 20px;
   margin-top: 0px;
 }
 .flex-checkbox label {
-  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
@@ -460,7 +552,7 @@ button:hover {
   width: 15px;
   position: relative;
   top: 5px;
-  left: 10px;
+  left: 1px;
 }
 .flex-checkbox input {
   margin-right: 25px;
@@ -475,15 +567,18 @@ button:hover {
 .flex-checkbox input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
+*/
 ::placeholder {
   font-size: 10px;
   padding-left: 25px;
 }
+/*
 .check-box {
   background-color: white;
   display: flex;
   margin-bottom: 10px;
 }
+*/
 .input-group-email {
   margin-bottom: -15px;
 }

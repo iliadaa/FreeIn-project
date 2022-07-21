@@ -132,7 +132,7 @@
     </div>
 
     <div class="button1">
-      <a href="#" class="button" @click="testCompletedAccultured()"
+      <a class="button" @click="testCompletedAccultured()"
         >portami alla mia hall</a
       >
     </div>
@@ -141,6 +141,7 @@
 
 <script>
 import UsersJson from "/Users.json";
+const usersURL = "http://localhost:3000/registrations";
 export default {
   data() {
     return {
@@ -172,8 +173,43 @@ export default {
       for (i = 0; i < this.users.length; i++) {
         console.log("sono nel for");
         if (this.users[i].userObj.email == this.inSession[0].userObj.email) {
+          const options = {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json;charset=UTF-8",
+            },
+            body: JSON.stringify({
+              userObj: {
+                id: this.inSession[0].userObj.id,
+                email: this.inSession[0].userObj.email,
+                password: this.inSession[0].userObj.password,
+                name: this.inSession[0].userObj.name,
+                surname: this.inSession[0].userObj.surname,
+                gender: this.inSession[0].userObj.profileTest.name,
+                testDone: this.inSession[0].userObj.testDone,
+                roles: "private",
+                profileTest: {
+                  name: this.inSession[0].userObj.profileTest.name,
+                  arte: this.inSession[0].userObj.profileTest.arte,
+                  mare: this.inSession[0].userObj.profileTest.mare,
+                  cibo: this.inSession[0].userObj.profileTest.cibo,
+                  relax: this.inSession[0].userObj.profileTest.relax,
+                  party: this.inSession[0].userObj.profileTest.party,
+                  nature: this.inSession[0].userObj.profileTest.nature,
+                },
+                testAnswers: [this.inSession[0].userObj.testAnswers],
+              },
+            }),
+          };
+          fetch(usersURL, options)
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+            })
+            .catch((error) => console.log("Request Failed", error));
+
           this.users[i].userObj = this.inSession[0].userObj;
-          console.log("Ci sonooo", this.users);
           this.isRolee();
           break;
         } else {
@@ -226,7 +262,8 @@ h1 {
   margin-left: 100px;
   margin-bottom: 75px;
 }
-.circle1, .circle2 {
+.circle1,
+.circle2 {
   height: 225px;
   width: 225px;
   border-radius: 50%;
@@ -395,7 +432,8 @@ img {
   .circles {
     margin-bottom: 50px;
   }
-  .circle1, .circle2 {
+  .circle1,
+  .circle2 {
     height: 160px;
     width: 160px;
   }
