@@ -166,9 +166,6 @@ button {
   margin-left: 40px;
   margin-right: 10px;
 }
-button:hover {
-  background-color: white;
-}
 .btn-close {
   position: absolute;
   right: 2px;
