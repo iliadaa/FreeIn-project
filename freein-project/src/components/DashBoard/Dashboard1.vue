@@ -278,7 +278,104 @@ td img {
 .p3 {
   font-size: 20px;
   color: white;
+} 
+
+
+
+@media (max-width: 991.98px) {
+.piggybank {
+  font-size: 60px;
+  padding-top: 25px;
+  padding-left: 20px;
 }
+.profile {
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.info {
+  margin-left: 25px;
+}
+.name p {
+  font-size: 20px;
+}
+.email p {
+  font-size: 16px;
+}
+.button {
+  font-size: 14px;
+  margin-left: 25px; 
+}
+
+h1 {
+  font-size: 24px;
+  padding-left: 60px;
+}
+
+.table1, .table2 {
+  margin-left: 10%;
+}
+
+.table2 {
+  margin-bottom: 50px;
+}
+
+.numbers {
+  font-size: 25px;
+}
+
+th, td {
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 3px;
+  
+}
+.icons {
+  padding-left: 10px;
+}
+
+/*td i {
+  padding-right: 3px;
+}*/
+
+td img {
+  height: 35px;
+  padding-right: 15px;
+}
+.hrtag2 {
+  width: 81%;
+  margin-left: 10%;
+}
+.hrtag2 i {
+  font-size: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.p1 {
+  font-size: 20px;
+}
+.p2 {
+  font-size: 20px;
+}
+.hr2 {
+  width: 81%;
+  margin-left: 10%;
+}
+.piggybank2 {
+  width: 81%;
+  margin-left: 10%;
+  margin-bottom: 50px;
+}
+.piggybank2 i {
+  font-size: 38px;
+  padding: 9px 18px;
+}
+.p3 {
+  font-size: 20px;
+}
+}
+
+
 
 @media (max-width: 575.98px) {
 .piggybank {
@@ -314,7 +411,7 @@ h1 {
 }
 
 .table2 {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .numbers {
