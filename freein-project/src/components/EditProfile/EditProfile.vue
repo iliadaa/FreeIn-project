@@ -59,7 +59,7 @@
                 <label class="radio-checkBox"
                   >Male
                   <input
-                    v-if="takingValue.profileTest[0].name == 'Uomo'"
+                    v-if="takingValue.gender == 'male'"
                     type="radio"
                     checked="checked"
                     name="radio"
@@ -76,7 +76,7 @@
                 <label class="radio-checkBox"
                   >Female
                   <input
-                    v-if="takingValue.profileTest.name == 'Donna'"
+                    v-if="takingValue.gender == 'female'"
                     type="radio"
                     checked="checked"
                     name="radio"
