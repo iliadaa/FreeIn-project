@@ -89,12 +89,12 @@
 
             <!-- Div below is used to load the star and the other icons just for the Stage card (blue-background) -->
             <div v-show="loadCssClasses(obj.suggest.type) == 'blue-background'">
-              <a 
+              <a
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar != 1"
                 href="#/businessprofile"
               >
-                <a href="#" class="notification">
+                <a href="#/businessprofile" class="notification">
                   <span class="dot"
                     ><i
                       class="fa-regular fa-star"
@@ -135,7 +135,7 @@
               <a
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar != 1"
-                href="http://localhost:8080/#/businessprofile"
+                href="#/businessprofile"
               >
                 <span class="dot"
                   ><i
@@ -149,7 +149,7 @@
               <a
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar"
-                href="http://localhost:8080/#/businessprofile"
+                href="#/businessprofile"
               >
                 <span class="dot"
                   ><i
@@ -174,7 +174,7 @@
               <a
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar != 1"
-                href="http://localhost:8080/#/businessprofile"
+                href="#/businessprofile"
               >
                 <span class="dot">
                   <i
@@ -188,7 +188,7 @@
               <a
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar"
-                href="http://localhost:8080/#/businessprofile"
+                href="#/businessprofile"
               >
                 <span class="dot"
                   ><i
@@ -457,7 +457,7 @@ export default {
   padding-top: 50px;
   font-size: 50px;
 }
-  /* 
+/* 
   Per il macbook questi padding andrebbero bene per le cards Friends
   padding-left: 160px;
   padding-top: 20px;
@@ -577,36 +577,36 @@ export default {
   color: white;
 }
 @media (max-width: 575.98px) {
-.wrap img {
-  width: 100%;
-  height: 60vh;
-  border-radius: 0% 16% 0% 0%;
-}
-.stages {
-  width: 100%;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  margin: 5px;
-  margin-bottom: 20px;
-}
-.cards2 {
-  margin-left: 0px;
-  margin-top: 25px;
-  flex: none;
-}
-/*.cardsItinerary {
+  .wrap img {
+    width: 100%;
+    height: 60vh;
+    border-radius: 0% 16% 0% 0%;
+  }
+  .stages {
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 5px;
+    margin-bottom: 20px;
+  }
+  .cards2 {
+    margin-left: 0px;
+    margin-top: 25px;
+    flex: none;
+  }
+  /*.cardsItinerary {
   margin-left: 10px;
   margin-top: 20px;
   flex: 0 1 32%;
 }*/
-/*.cardsFriends {
+  /*.cardsFriends {
   margin-left: 10px;
   margin-top: 10px;
   flex: 0 1 32%;
   border-radius: 10%;
   background-color: purple;
 }*/
-/*.cardsFriends img {
+  /*.cardsFriends img {
   border-radius: 50%;
   height: 70%;
   width: 70%;
@@ -614,82 +614,82 @@ export default {
   top: 10%;
 }*/
 
-.usericon {
-  padding-left: 215px;
-  padding-top: 5px;
-  color: white;
-}
+  .usericon {
+    padding-left: 215px;
+    padding-top: 5px;
+    color: white;
+  }
 
-.usericonFriends {
-  padding-left: 300px;
-  padding-top: 50px;
-  font-size: 50px;
-}
-/* 
+  .usericonFriends {
+    padding-left: 300px;
+    padding-top: 50px;
+    font-size: 50px;
+  }
+  /* 
   Per il macbook questi padding andrebbero bene per le cards Friends
   padding-left: 160px;
   padding-top: 20px;
   */
-.buttonAdd {
-  background-color: white;
-  border: none;
-  border-radius: 10px;
-  color: #F6A314;
-  padding: 5px 6px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-.button {
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  color: #009fe3;
-  padding: 2px 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-.buttonItinerary {
-  background-color: white;
-  border: none;
-  border-radius: 10px;
-  color: #ea5b0c;
-  padding: 5px 6px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-.cardsicons {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 17px;
-  padding-right: 17px;
-}
-.cardsicons i {
-  padding-left: 5px;
-  color: white;
-}
-.counter {
-  padding-left: 4px;
-  color: white;
-}
-.flagicon {
-  background-color: #009fe3;
-  width: 50px;
-}
-.flagicon img {
-  width: 50px;
-  height: auto;
-}
+  .buttonAdd {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #f6a314;
+    padding: 5px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    color: #009fe3;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .buttonItinerary {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #ea5b0c;
+    padding: 5px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .cardsicons {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  .cardsicons i {
+    padding-left: 5px;
+    color: white;
+  }
+  .counter {
+    padding-left: 4px;
+    color: white;
+  }
+  .flagicon {
+    background-color: #009fe3;
+    width: 50px;
+  }
+  .flagicon img {
+    width: 50px;
+    height: auto;
+  }
 }
 </style>

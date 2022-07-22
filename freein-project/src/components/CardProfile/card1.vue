@@ -32,10 +32,7 @@
           </a>
         </div>
         <div class="arrow">
-          <a
-            href="http://localhost:8080/#/card2"
-            class="fas fa-angle-right"
-          ></a>
+          <a href="#/card2" class="fas fa-angle-right"></a>
         </div>
       </div>
     </div>
