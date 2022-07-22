@@ -186,7 +186,7 @@ export default {
                 password: this.inSession[0].userObj.password,
                 name: this.inSession[0].userObj.name,
                 surname: this.inSession[0].userObj.surname,
-                gender: this.inSession[0].userObj.profileTest.name,
+                gender: this.inSession[0].userObj.gender,
                 testDone: this.inSession[0].userObj.testDone,
                 roles: "private",
                 profileTest: {
