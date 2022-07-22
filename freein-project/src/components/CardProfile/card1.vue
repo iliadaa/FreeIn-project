@@ -10,15 +10,24 @@
       </div>
       <div class="card card-b">
         <div class="answer1">
-          <a href="#/card2" @click="asks(answer.value3)">
+          <a
+            href="#/card2"
+            @click="asks(answer.value3), genderAsk(answer.value3)"
+          >
             <p>{{ answer.value3 }}</p>
           </a>
         </div>
         <div class="answer2">
-          <a href="#/card2" @click="asks(answer.value1)">
+          <a
+            href="#/card2"
+            @click="asks(answer.value1), genderAsk(answer.value1)"
+          >
             <p>{{ answer.value1 }}</p>
           </a>
-          <a href="#/card2" @click="asks(answer.value2)">
+          <a
+            href="#/card2"
+            @click="asks(answer.value2), genderAsk(answer.value2)"
+          >
             <p>{{ answer.value2 }}</p>
           </a>
         </div>
@@ -48,6 +57,9 @@ export default {
     asks(value) {
       this.$store.commit("asksStore", value);
       return value;
+    },
+    genderAsk(value) {
+      this.$store.commit("genderAsk", value);
     },
   },
 };

@@ -185,8 +185,7 @@ export default {
                 password: this.inSession[0].userObj.password,
                 name: this.inSession[0].userObj.name,
                 surname: this.inSession[0].userObj.surname,
-                //gender: this.inSession[0].userObj.testAnswers[0] viene dal testAnswers ma manca un metodo per verificare il gender
-                //inserito dall'utente durante il test!!
+                gender: this.inSession[0].userObj.gender,
                 testDone: this.inSession[0].userObj.testDone,
                 roles: "private",
                 profileTest: {

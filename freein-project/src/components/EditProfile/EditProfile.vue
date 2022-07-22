@@ -59,7 +59,7 @@
                 <label class="radio-checkBox"
                   >Male
                   <input
-                    v-if="takingValue.gender == 'male'"
+                    v-if="takingValue.gender == 'Uomo'"
                     type="radio"
                     checked="checked"
                     name="radio"
@@ -76,7 +76,7 @@
                 <label class="radio-checkBox"
                   >Female
                   <input
-                    v-if="takingValue.gender == 'female'"
+                    v-if="takingValue.gender == 'Femmina'"
                     type="radio"
                     checked="checked"
                     name="radio"
@@ -216,8 +216,8 @@ export default {
       name: "",
       surname: "",
       email: "",
-      genderX: "male",
-      genderY: "female",
+      genderX: "Uomo",
+      genderY: "Femmina",
       timer: false,
     };
   },

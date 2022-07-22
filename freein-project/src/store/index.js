@@ -118,6 +118,11 @@ export default new Vuex.Store({
       //le risposte salvate
 
     },
+
+    genderAsk(state, answer) {
+      state.inSession[0].userObj.gender = answer;
+    },
+
     isRole(state) {
       var trovato = false;
       console.log(state.inSession[0].userObj.roles, "awee")
