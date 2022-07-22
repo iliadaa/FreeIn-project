@@ -89,20 +89,22 @@
 
             <!-- Div below is used to load the star and the other icons just for the Stage card (blue-background) -->
             <div v-show="loadCssClasses(obj.suggest.type) == 'blue-background'">
-              <a
+              <a 
                 style="text-decoration: none"
                 v-show="obj.suggest.countStar != 1"
                 href="#/businessprofile"
               >
-                <span class="dot"
-                  ><i
-                    class="fa-regular fa-star"
-                    @click="
-                      incrementStar(obj.suggest.id - 1, obj.suggest.countStar)
-                    "
-                  ></i
-                ></span>
-                <span class="counter">{{ obj.suggest.countStar }}</span>
+                <a href="#" class="notification">
+                  <span class="dot"
+                    ><i
+                      class="fa-regular fa-star"
+                      @click="
+                        incrementStar(obj.suggest.id - 1, obj.suggest.countStar)
+                      "
+                    ></i
+                  ></span>
+                  <span class="counter">{{ obj.suggest.countStar }}</span>
+                </a>
               </a>
 
               <a
@@ -559,6 +561,21 @@ export default {
   color: white;
 }
 
+.notification {
+  padding: 5px 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification .counter {
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  padding: 0px 7px;
+  border-radius: 50%;
+  background-color: #f6a314;
+  color: white;
+}
 @media (max-width: 575.98px) {
 .wrap img {
   width: 100%;
