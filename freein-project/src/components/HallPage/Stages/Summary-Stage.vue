@@ -1347,6 +1347,7 @@ hr {
     height: inherit;
     border-radius: 50%;
     background-color: rgb(245, 238, 238);
+    z-index: 1;
   }
   .c-share_options {
     background-color: white;
