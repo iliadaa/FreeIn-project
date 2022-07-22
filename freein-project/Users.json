@@ -8,7 +8,7 @@
         "change": true,
         "name": "Admin",
         "surname": "Test",
-        "gender": "male",
+        "gender": "Uomo",
         "testDone": true,
         "roles": [
           "admin",
@@ -42,7 +42,7 @@
         "change": true,
         "name": "Business",
         "surname": "Test",
-        "gender": "male",
+        "gender": "Uomo",
         "testDone": true,
         "roles": [
           "business"
@@ -75,7 +75,7 @@
         "change": true,
         "name": "Tester",
         "surname": "Test",
-        "gender": "male",
+        "gender": "Uomo",
         "testDone": true,
         "roles": [
           "private"
@@ -107,7 +107,7 @@
         "password": "mare",
         "name": "maria",
         "surname": "bella",
-        "gender": "female",
+        "gender": "Femmina",
         "testDone": true,
         "roles": [
           "private"
@@ -157,7 +157,7 @@
         "password": "pizza",
         "name": "Jacopo",
         "surname": "Capiato",
-        "gender": "male",
+        "gender": "Uomo",
         "testDone": true,
         "roles": "private",
         "profileTest": {
@@ -206,6 +206,7 @@
         "password": "1",
         "name": "2",
         "surname": "3",
+        "gender": "Uomo",
         "testDone": true,
         "roles": "private",
         "profileTest": {
@@ -246,48 +247,6 @@
         "placeHolderEmpty": false
       },
       "id": 6
-    },
-    {
-      "userObj": {
-        "id": "",
-        "email": "marco@gmail.com",
-        "password": "1",
-        "name": "",
-        "surname": "",
-        "gender": "Buongustaio",
-        "testDone": true,
-        "roles": "private",
-        "profileTest": {
-          "name": "Buongustaio",
-          "arte": 40,
-          "mare": 45,
-          "cibo": 90,
-          "relax": 60,
-          "party": 50,
-          "nature": 30
-        },
-        "testAnswers": [
-          [
-            "Uomo",
-            "In gruppo",
-            "Single",
-            "Hamburger",
-            "28-37",
-            "13-22",
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            "Street Food",
-            "Zaino"
-          ]
-        ]
-      },
-      "id": 7
     }
   ]
 }

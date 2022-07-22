@@ -240,22 +240,26 @@ export default {
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
       console.log(this.users[0].userObj.profileTest);
-      for (i = 0; i < this.users.length; i++) {
-        if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
-          console.log(i);
-          console.log(this.users);
-          inSession[0].userObj.name = this.name;
-          inSession[0].userObj.surname = this.surname;
-          inSession[0].userObj.email = this.email;
-          this.replaceItem(
-            this.users[i].userObj.id,
-            this.users[i].userObj,
-            inSession
-          );
-          break;
-        } else {
-          continue;
+      if (this.email.includes("@gmail" || "@outlook" || "@yahoo")) {
+        for (i = 0; i < this.users.length; i++) {
+          if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
+            console.log(i);
+            console.log(this.users);
+            inSession[0].userObj.name = this.name;
+            inSession[0].userObj.surname = this.surname;
+            inSession[0].userObj.email = this.email;
+            this.replaceItem(
+              this.users[i].userObj.id,
+              this.users[i].userObj,
+              inSession
+            );
+            break;
+          } else {
+            continue;
+          }
         }
+      } else {
+        alert("L'email deve contenere una @ seguita da: gmail, outlook..");
       }
       console.log("Sto uscendo dal for dopo il return");
 
