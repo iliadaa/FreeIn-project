@@ -41,11 +41,13 @@
         "password": "TEST",
         "change": true,
         "name": "Business",
-        "surname": "Test",
+        "surname": "User",
         "gender": "Uomo",
         "testDone": true,
         "roles": [
-          "business"
+          [
+            "business"
+          ]
         ],
         "profileTest": {
           "name": "Acculturato",
@@ -62,8 +64,7 @@
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
-        },
-        "placeHolderEmpty": false
+        }
       },
       "id": 2
     },

@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "start": "vue-cli-service serve --open  json-server --watch Users.json --port=8000",
     "servers": "concurrently \"json-server --watch Users.json --port=3000\" \"json-server --watch stages.json --port=3001\" \"json-server --watch itineraries.json --port=3002\" \"npm run serve\"",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "updater": "vite build --watch"
   },
   "dependencies": {
     "@fontsource/exo-2": "^4.5.8",
@@ -35,11 +36,14 @@
     "@vue/cli-plugin-babel": "^5.0.4",
     "@vue/cli-plugin-router": "^5.0.4",
     "@vue/cli-plugin-vuex": "^5.0.4",
-    "@vue/cli-service": "^5.0.4",
+    "@vue/cli-service": "^5.0.8",
     "concurrently": "^7.2.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-mdb5": "~1.2.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "browser": {
+    "child_process": false
   }
 }
