@@ -144,7 +144,7 @@ export default {
           boolean = true;
           break;
         } else {
-          alert("Dati incorretti");
+          console.log("Dati incorretti");
         }
       }
       if (boolean == true) {
