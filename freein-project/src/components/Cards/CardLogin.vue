@@ -99,27 +99,6 @@ export default {
       this.$store.commit("clearInSession");
     },
 
-    /* 
-    correctData(email, password, change, goInTest) {
-      console.log(email + password);
-      if (email == "ciccio@gmail.com" && password == "01234") {
-        //change == true;
-        goInTest == true;
-        alert("Login avvenuto con successo! + ");
-        this.goIntoTest(goInTest);
-      } else if (email == "CICCIO.@GMAIL.COM" && password == " 01234 ") {
-        alert("Login avvenuto con successo!");
-        //change == true;
-        goInTest == true;
-        this.changePage(change);
-      } else {
-        console.log(email + "Password:" + password);
-        alert("La password e/o la email è errata!");
-        change == false;
-      }
-    },
-    */
-
     onSubmit(event) {
       event.preventDefault();
       wrongLoginData(
@@ -154,22 +133,18 @@ export default {
 
     wrongLoginData(email, usersJsonLength, inSession, password) {
       const getUser = [...this.users];
-      console.log(usersJsonLength);
       var i;
       var boolean = false;
       for (i = 0; i < usersJsonLength; i++) {
-        console.log("sono nel for " + i + " di " + usersJsonLength);
         if (
           getUser[i].userObj.email == email &&
           getUser[i].userObj.password == password
         ) {
-          console.log("Siamo uguali");
           inSession.push(getUser[i]);
-          console.log(inSession);
           boolean = true;
           break;
         } else {
-          console.log("Dati incorretti");
+          alert("Dati incorretti");
         }
       }
       if (boolean == true) {

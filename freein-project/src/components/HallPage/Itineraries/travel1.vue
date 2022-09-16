@@ -75,13 +75,6 @@ export default {
     alert(id, datas) {
       alert("Sto copiando " + id);
       this.$emit("choosed", datas);
-
-      /* 
-      alert(id, datas,){
-      alert("Sto copiando " + id)
-      this.filteredDialog = datas
-      console.log(this.filteredDialog)
-      */
     },
   },
 };

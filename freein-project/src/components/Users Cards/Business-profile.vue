@@ -261,7 +261,6 @@ export default {
       this.isModalDashBoardVisible = true;
     },
     closeModalDashBoard(data) {
-      console.log(data);
       this.isModalDashBoardVisible = false;
     },
     showTopRightVisible() {

@@ -4,14 +4,14 @@
     <div class="card-group card-absolute" v-on:click="component = 'login'">
       <div class="card card-b">
         <div class="illustrations1">
-          <img src="@/assets/dots-orange.svg" alt="">
+          <img src="@/assets/dots-orange.svg" alt="" />
         </div>
         <p>ispira</p>
       </div>
 
       <div class="card card-r">
         <div class="illustrations2">
-          <img src="@/assets/dots-blue.svg" alt="">
+          <img src="@/assets/dots-blue.svg" alt="" />
         </div>
         <p>lasciati</p>
         <p style="margin-left: 14px; margin-bottom: 15px">ispirare</p>
@@ -91,39 +91,39 @@ export default {
 }
 
 @media (max-width: 575.98px) {
-.container {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-.card-group {
-  box-shadow: none;
-}
-.card {
-  box-shadow: 5px 5px 20px;
-  min-height: 250px;
-  height: auto;
-}
-.card-b p {
-  font-size: 30px;
-  line-height: 20px;
-}
-.card-r {
-  background-color: #eb6349;
-}
-.card-r p {
-  font-size: 30px;
-  line-height: 20px;
-}
-.illustrations1 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90px;
-}
-.illustrations2 {
-  width: 90px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .container {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .card-group {
+    box-shadow: none;
+  }
+  .card {
+    box-shadow: 5px 5px 20px;
+    min-height: 250px;
+    height: auto;
+  }
+  .card-b p {
+    font-size: 30px;
+    line-height: 20px;
+  }
+  .card-r {
+    background-color: #eb6349;
+  }
+  .card-r p {
+    font-size: 30px;
+    line-height: 20px;
+  }
+  .illustrations1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+  }
+  .illustrations2 {
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>
 

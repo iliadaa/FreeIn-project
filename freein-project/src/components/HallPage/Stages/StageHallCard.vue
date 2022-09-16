@@ -236,90 +236,42 @@ export default {
   },
   methods: {
     stageClick(id, stages, stagestore, obj) {
-      /*
-      console.log(id, this.stages[id].stage);
-      console.log(stagestore, "hello");
-      stagestore.push(stages[id].stage);
-
-      
-      if (stagestore.length > 0) {
-        if (this.stagestore.length == 1) {
-          console.log("Don't change");
-        } else {
-          console.log("Change", this.stagestore[0], this.stagestore[1]);
-          this.stagestore.splice(0, 1);
-          //capire come usare .splice
-        }
-        console.log(this.stagestore[0], "i'm the new value");
-      }
-      */
-      console.log(stages, " + obj ", obj);
       var i;
       for (i = 0; i < stages.length; i++) {
         if (stages[i].stage.stageTitle == obj.suggestTitle) {
           stagestore.push(stages[i].stage);
-          console.log("Pusho ", i);
         } else {
-          console.log("Non pusho, sono diverso");
+          //console.log("Non pusho, sono diverso");
         }
       }
 
       if (this.stagestore.length == 1) {
-        console.log("Don't change");
+        //console.log("Don't change");
       } else {
-        console.log("Change", this.stagestore[0], this.stagestore[1]);
         this.stagestore.splice(0, 1);
         //capire come usare .splice
       }
-      console.log(this.stagestore[0], "i'm the new value");
       this.$router.push({
         name: "SummaryStage",
       });
     },
     itinerariesClick(id, itineraries, stages, itinerariestore, obj) {
-      console.log(
-        itineraries,
-        " + itineraries ",
-        obj,
-        " obj ",
-        stages,
-        "stages"
-      );
       var i;
       for (i = 0; i < itineraries.length; i++) {
         if (itineraries[i].itinerary.name == obj.suggestTitle) {
           itinerariestore.push(itineraries[i].itinerary);
           itineraries[i].itinerary.stages = stages;
-          console.log("Pusho ", i, ", ", itinerariestore);
-          console.log(itineraries[i].itinerary.stages);
         } else {
-          console.log("Non pusho, sono diverso");
+          //console.log("Non pusho, sono diverso");
         }
       }
       if (this.itinerariestore.length == 1) {
-        console.log("Don't change");
       } else {
         this.itinerariestore.splice(0, 1);
       }
       this.$router.push({
         name: "SummaryItinerary",
       });
-      /*
-      console.log(itineraries, "Id", id);
-      console.log(itinerariestore, "hello");
-      itinerariestore.push(itineraries[id].itinerary);
-      console.log(itinerariestore, "here");
-       if (itinerariestore.length > 0) {
-       if (this.itinerariestore.length == 1) {
-       } else {
-         this.itinerariestore.splice(0, 1);
-      capire come usare .splice
-        }
-        }
-        this.$router.push({
-        name: "SummaryItinerary",
-        });
-      */
     },
     push(id, data) {
       this.stages.push(data[id - 1]);
@@ -327,8 +279,6 @@ export default {
       } else {
         this.stages[0] = this.stages[1];
       }
-
-      console.log(this.stages[0]);
     },
 
     isCardType() {
@@ -349,24 +299,12 @@ export default {
 
     incrementStar(id, countStar) {
       countStar++;
-      console.log("countStar dello stage sta aumentando", countStar);
       this.suggested[id].suggest.countStar = countStar;
-      console.log(
-        this.suggested[id].suggest,
-        " prendo correttamente il dato della card: ",
-        id
-      );
     },
 
     decrementStar(id, countStar) {
       countStar--;
-      console.log("countStar dello stage sta diminuendo", countStar);
       this.suggested[id].suggest.countStar = countStar;
-      console.log(
-        this.suggested[id].suggest,
-        " prendo correttamente il dato della card: ",
-        id
-      );
     },
   },
   created() {

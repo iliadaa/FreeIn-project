@@ -14,10 +14,15 @@
           <span class="dot-3"></span>
           <span class="dot-4"></span>
         </div>
-        <b-button v-on:click="toggle" class="business-1-button">Avanti >></b-button>
+        <b-button v-on:click="toggle" class="business-1-button"
+          >Avanti >></b-button
+        >
       </div>
     </div>
-    <div v-on:click="available = !available" v-bind:class="{ available: available }">
+    <div
+      v-on:click="available = !available"
+      v-bind:class="{ available: available }"
+    >
       <span>Hello</span>
     </div>
   </div>

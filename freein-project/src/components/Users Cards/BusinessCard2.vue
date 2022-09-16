@@ -93,14 +93,11 @@ export default {
           this.inSession[0].userObj.agency.espositore = espositore;
 
           this.inSession[0].userObj.placeHolderEmpty = true;
-          console.log(this.inSession);
-          console.log("cambio");
-          console.log(this.ragioneSoc);
+
           this.$router.push({
             path: "/businesscard4",
           });
         } else {
-          console.log("Non cambio nulla!!");
           this.$router.push({
             path: "/businesscard4",
           });
@@ -124,7 +121,6 @@ export default {
       return this.$store.state.inSession;
     },
     takingValue: function () {
-      console.log(this.inSession[0].userObj.agency);
       return this.inSession[0].userObj;
     },
   },

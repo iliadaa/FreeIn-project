@@ -123,9 +123,7 @@ export default {
     },
 
     stageLoaded(id, stageClicked, dataList) {
-      console.log(id, dataList[id]);
       dataList[id].stage.stageClicked = true;
-      console.log(dataList[id].stage.stageClicked);
       return (dataList[id].stage.stageClicked = true);
     },
   },

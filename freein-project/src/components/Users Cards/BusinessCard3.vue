@@ -89,7 +89,6 @@ export default {
       return this.$store.state.inSession;
     },
     takingValue: function () {
-      console.log(this.inSession[0].userObj);
       return this.inSession[0].userObj;
     },
   },

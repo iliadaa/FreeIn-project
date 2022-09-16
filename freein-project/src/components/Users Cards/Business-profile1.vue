@@ -9,14 +9,13 @@
         <img class="nature-adventure" src="@/assets/Natura_Avventura.png" />
         <img class="gourmet-explorer" src="@/assets/Gourmet-Explorer.png" />
         <img class="party" src="@/assets/Party.png" />
-
       </div>
       <div class="profile">
         <div id="container-pig">
           <button class="button-area" @click="showModalDashBoard">
             <img class="pig" src="@/assets/pig.png" />
           </button>
-          <Dashboard 
+          <Dashboard
             v-show="isModalDashBoardVisible"
             @close="closeModalDashBoard($event)"
           ></Dashboard>
@@ -25,28 +24,19 @@
           <button class="button-area" @click="showModal">
             <img class="ringbell" src="@/assets/active.png" />
           </button>
-          <Modal 
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
         <div id="container-settings">
           <button class="button-area" @click="showModal">
             <img class="settings" src="@/assets/settings.png" />
           </button>
-          <Modal 
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
         <div id="container-avatar">
           <button class="button-area" @click="showModal">
             <img class="avatar" src="@/assets/avatar.png" />
           </button>
-          <Modal
-            v-show="isModalVisible"
-            @close="closeModal"
-          ></Modal>
+          <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
       </div>
     </div>
@@ -58,24 +48,21 @@
 import Modal from "../Modal.vue";
 import Dashboard from "../DashBoard/ModalDashBoard.vue";
 
-
 export default {
-
-  name: 'Business-profile',  
-  pig:'#container-pig',
-  bell:'#container-bell',
-  settings:'#container-settings',
-  avatar:'#container-avatar',
+  name: "Business-profile",
+  pig: "#container-pig",
+  bell: "#container-bell",
+  settings: "#container-settings",
+  avatar: "#container-avatar",
   components: {
     Modal,
-    Dashboard,    
+    Dashboard,
   },
   data() {
-      return {
-        isModalVisible: false,
-        isModalDashBoardVisible:false,
-
-      };
+    return {
+      isModalVisible: false,
+      isModalDashBoardVisible: false,
+    };
   },
   methods: {
     showModal() {
@@ -88,10 +75,9 @@ export default {
       this.isModalDashBoardVisible = true;
     },
     closeModalDashBoard(data) {
-      console.log(data);
       this.isModalDashBoardVisible = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -147,17 +133,16 @@ img.avatar {
   width: 120px;
   height: auto;
 }
-.btn-info:hover{
+.btn-info:hover {
   background-color: transparent;
   border-color: transparent;
 }
-.button-area{
+.button-area {
   background-color: transparent;
   border-color: transparent;
-  box-shadow: transparent ;
+  box-shadow: transparent;
 }
 .modal-container {
   opacity: 1;
 }
-
 </style>

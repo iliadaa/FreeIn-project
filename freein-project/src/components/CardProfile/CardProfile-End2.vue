@@ -167,10 +167,7 @@ export default {
       this.inSession[0].userObj.profileTest.relax = this.relax;
       this.inSession[0].userObj.profileTest.party = this.party;
       this.inSession[0].userObj.profileTest.nature = this.natura;
-      console.log(this.registrations);
       for (i = 0; i < this.users.length; i++) {
-        console.log("sono nel for");
-
         if (this.users[i].userObj.email == this.inSession[0].userObj.email) {
           const options = {
             method: "POST",
@@ -204,7 +201,7 @@ export default {
           fetch(usersURL, options)
             .then((response) => response.json())
             .then((json) => {
-              console.log(json);
+              //console.log(json);
             })
             .catch((error) => console.log("Request Failed", error));
 
@@ -212,7 +209,7 @@ export default {
           this.isRolee();
           break;
         } else {
-          console.log("Non sta!");
+          //console.log("Non sta!");
         }
       }
     },

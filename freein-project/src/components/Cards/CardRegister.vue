@@ -112,16 +112,8 @@ export default {
       if (email.includes("@gmail" || "@outlook" || "@yahoo")) {
         this.changePage(true);
         this.validation(user);
-
-        console.log("L'email è scritta correttamente!", user);
-        if (name.length > 2) {
-          alert("ciao " + name.length);
-          console.log("Il name è lungo più di 2 chr");
-          return true;
-        }
       } else {
         alert("L'email deve contenere una @ seguita da: gmail, outlook..");
-        console.log("Non è presente la @");
         return false;
       }
     },

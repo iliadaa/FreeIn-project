@@ -385,7 +385,6 @@ export default {
       this.isModalDashBoardVisible = true;
     },
     closeModalDashBoard(data) {
-      console.log(data);
       this.isModalDashBoardVisible = false;
     },
     showTopRightVisible() {
@@ -410,7 +409,6 @@ export default {
           $("#inners").css("display", "none");
         }
       });
-      console.log(this.inSession[0].userObj.name);
       return this.inSession[0].userObj;
     },
   },

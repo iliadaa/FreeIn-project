@@ -378,25 +378,19 @@ export default {
 
       reader.onloadend = () => {
         this.rawImg = reader.result;
-        console.log(this.rawImg);
       };
       reader.readAsDataURL(file);
     },
 
     removeCard(id, dataList) {
       var i;
-      console.log(this.cardList, " Prima del for");
-      console.log(dataList[id]);
       for (i = 0; i < this.cardList.length; i++) {
         if (dataList[id].id == this.cardList[i].id) {
           dataList[id].stage.stageClicked = false;
           this.cardList.splice(i, 1);
-          console.log(id);
-          console.log("Id uguali");
         } else {
         }
       }
-      console.log(this.cardList);
     },
 
     //collect all the data in body json file
@@ -429,7 +423,7 @@ export default {
       fetch(baseURL, options)
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
+          //console.log(json);
         })
         .then(() => this.$router.push("/"))
         .catch((error) => console.log("Request Failed", error));
@@ -441,7 +435,6 @@ export default {
       [...files].forEach((file) => {
         this.files.push(file);
         kb(val);
-        console.log(this.files);
       });
     },
     removeFile(file) {
@@ -457,21 +450,11 @@ export default {
     choosed(data, disabled) {
       this.isModalStagesVisible = false;
       this.cardList.push(data);
-      console.log(this.cardList);
       this.disabled = true;
     },
     showModalStages() {
       this.isModalStagesVisible = true;
     },
-
-    /*
-    stageUnLoaded(id, stageClicked, cardList) {
-      console.log(id, stageClicked);
-      console.log(cardList[id].stage.stageClicked, " Prima");
-      cardList[id].stage.stageClicked = true;
-      console.log(cardList[id].stage.stageClicked, " Dopo");
-    },
-    */
   },
   mounted() {
     this.$refs["id-1"];

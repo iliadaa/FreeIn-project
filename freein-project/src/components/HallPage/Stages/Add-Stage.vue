@@ -320,7 +320,6 @@ export default {
 
       reader.onloadend = () => {
         this.rawImg = reader.result;
-        console.log(this.rawImg);
       };
       reader.readAsDataURL(file);
     },
@@ -368,7 +367,6 @@ export default {
       [...files].forEach((file) => {
         this.files.push(file);
         kb(val);
-        console.log(this.files);
       });
     },
     removeFile(file) {

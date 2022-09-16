@@ -12,7 +12,9 @@
         <a href="https://www.contattipower.it/" target="iframe_a">Marketing</a>
       </p>
       <p>
-        <a href="https://signin.travelappeal.com/#/login?redirect=)" target="iframe_a"
+        <a
+          href="https://signin.travelappeal.com/#/login?redirect=)"
+          target="iframe_a"
           >Benchmark</a
         >
       </p>
