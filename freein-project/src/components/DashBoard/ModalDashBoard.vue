@@ -179,6 +179,7 @@ export default {
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
+  z-index: 999;
 }
 .modal-container-child {
   position: absolute;

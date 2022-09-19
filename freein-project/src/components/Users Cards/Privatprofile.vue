@@ -74,14 +74,15 @@
             @close="closeModalDashBoard($event)"
           ></Dashboard>
         </div>
-
+        <!--
+  BELL CONTAINER
         <div id="container-bell">
           <button class="button-area" @click="showModal">
             <i class="fa-solid fa-bell"></i>
           </button>
           <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
-
+-->
         <div id="container-settings">
           <button class="button-area" @click="showDialogPage">
             <i class="fa-solid fa-gear"></i>

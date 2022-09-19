@@ -1068,6 +1068,7 @@ hr {
   position: relative;
   height: 40px;
   width: 40px;
+  z-index: 999;
 }
 .c-share__input {
   display: none;

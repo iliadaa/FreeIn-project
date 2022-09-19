@@ -1,68 +1,65 @@
 <template>
   <div class="box">
-
     <!-- Attitude & Profile -->
     <div class="attitude-profile">
-
-    <!-- Attitude -->
+      <!-- Attitude -->
       <div class="personal-attitude">
         <h5>My personal attitude</h5>
 
         <div class="personal-attitude-icons">
-            <div class="art">
-              <div class="image1">
-                <img src="@/assets/art.svg" alt="" />
-              </div>
-              <div class="iconscontainer1">
-                <label>{{ takingValue.profileTest.arte }}%</label>
-              </div>
+          <div class="art">
+            <div class="image1">
+              <img src="@/assets/art.svg" alt="" />
             </div>
+            <div class="iconscontainer1">
+              <label>{{ takingValue.profileTest.arte }}%</label>
+            </div>
+          </div>
 
-            <div class="relax">
-              <div class="image3">
-                <img src="@/assets/donna2.svg" alt="" />
-              </div>
-              <div class="iconscontainer2">
-                <label>{{ takingValue.profileTest.relax }}%</label>
-              </div>
+          <div class="relax">
+            <div class="image3">
+              <img src="@/assets/donna2.svg" alt="" />
             </div>
+            <div class="iconscontainer2">
+              <label>{{ takingValue.profileTest.relax }}%</label>
+            </div>
+          </div>
 
-            <div class="sea">
-              <div class="image1">
-                <img src="@/assets/Mare.png" alt="" />
-              </div>
-              <div class="iconscontainer2">
-                <label>{{ takingValue.profileTest.mare }}%</label>
-              </div>
+          <div class="sea">
+            <div class="image1">
+              <img src="@/assets/Mare.png" alt="" />
             </div>
+            <div class="iconscontainer2">
+              <label>{{ takingValue.profileTest.mare }}%</label>
+            </div>
+          </div>
 
-            <div class="nature-adventure">
-              <div class="image5">
-                <img src="@/assets/natura.svg" alt="" />
-              </div>
-              <div class="iconscontainer1">
-                <label>{{ takingValue.profileTest.nature }}%</label>
-              </div>
+          <div class="nature-adventure">
+            <div class="image5">
+              <img src="@/assets/natura.svg" alt="" />
             </div>
+            <div class="iconscontainer1">
+              <label>{{ takingValue.profileTest.nature }}%</label>
+            </div>
+          </div>
 
-            
-            <div class="gourmet-explorer">
-              <div class="image2">
-                <img src="@/assets/yellowgourmet.png" alt="" />
-              </div>
-              <div class="iconscontainer1">
-                <label>{{ takingValue.profileTest.cibo }}%</label>
-              </div>
+          <div class="gourmet-explorer">
+            <div class="image2">
+              <img src="@/assets/yellowgourmet.png" alt="" />
             </div>
+            <div class="iconscontainer1">
+              <label>{{ takingValue.profileTest.cibo }}%</label>
+            </div>
+          </div>
 
-            <div class="party">
-              <div class="image4">
-                <img src="@/assets/party.svg" alt="" />
-              </div>
-              <div class="iconscontainer2">
-                <label>{{ takingValue.profileTest.party }}%</label>
-              </div>
+          <div class="party">
+            <div class="image4">
+              <img src="@/assets/party.svg" alt="" />
             </div>
+            <div class="iconscontainer2">
+              <label>{{ takingValue.profileTest.party }}%</label>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -77,17 +74,17 @@
             @close="closeModalDashBoard($event)"
           ></Dashboard>
         </div>
-
+        <!--
         <div id="container-bell">
           <button class="button-area" @click="showModal">
              <i class="fa-solid fa-bell"></i>
           </button>
           <Modal v-show="isModalVisible" @close="closeModal"></Modal>
         </div>
-
+-->
         <div id="container-settings">
           <button class="button-area" @click="showDialogPage">
-             <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-gear"></i>
           </button>
           <DialogPage
             v-show="isDialogPageVisible"
@@ -97,7 +94,7 @@
 
         <div id="container-avatar">
           <button class="button-area" @click="showTopRightVisible">
-             <img class="avatar1" src="@/assets/user1.svg" alt=""> 
+            <img class="avatar1" src="@/assets/user1.svg" alt="" />
           </button>
           <!-- modal here -->
           <TopRightListHall
@@ -109,20 +106,18 @@
     </div>
 
     <!-- Map  Search Filter -->
-      <div class="map-filter-search">
-
-    <!-- Map Tappa Intinerario -->
+    <div class="map-filter-search">
+      <!-- Map Tappa Intinerario -->
       <div class="map-tappa-itinerario">
-
-    <!-- Tappa and Itinerario -->
-      <div class="tappa-itinerario">
+        <!-- Tappa and Itinerario -->
+        <div class="tappa-itinerario">
           <div><a class="fas fa-plus" href="/#/stagecreation"></a></div>
-            <div class="text1"><p> Crea tappa </p></div>
+          <div class="text1"><p>Crea tappa</p></div>
           <div><a class="fas fa-plus" href="/#/itinerarycreation"></a></div>
-            <div class="text2"><p> Crea Itinerario </p></div>
-      </div>
+          <div class="text2"><p>Crea Itinerario</p></div>
+        </div>
 
-    <!-- Map -->
+        <!-- Map -->
         <div class="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072469.3549467237!2d16.067811961168818!3d41.23357271616032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e846099e537b%3A0x5f08efb1b04f362f!2sCaff%C3%A8%20Vergnano%201882!5e0!3m2!1ssq!2s!4v1655289552962!5m2!1ssq!2s"
@@ -133,8 +128,8 @@
             loading="fast"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
-          
-    <!--Filter Card-->
+
+          <!--Filter Card-->
           <div class="filter-card">
             <!--Filter -->
             <div class="filter">
@@ -151,7 +146,7 @@
               </div>
             </div>
 
-    <!-- Business Card -->
+            <!-- Business Card -->
             <div class="business-profile-card">
               <div class="wrap">
                 <StageHallCard />
@@ -161,67 +156,65 @@
         </div>
       </div>
 
-    <!-- Avatar Sponsor Search -->
+      <!-- Avatar Sponsor Search -->
       <div class="avatar-sponsor-search">
-        
         <!-- Avatar Sponsor  -->
         <div class="avatar-sponsor">
-          
           <!-- Avatar -->
-        <div class="avatar">
-        <div>
-          <div>
-            <img src="@/assets/user1.svg" alt="">
-          </div>
-          <div class="avatarcontainer1">
-            <p>Alex</p>
-          </div>
-        </div>
+          <div class="avatar">
+            <div>
+              <div>
+                <img src="@/assets/user1.svg" alt="" />
+              </div>
+              <div class="avatarcontainer1">
+                <p>Alex</p>
+              </div>
+            </div>
 
-        <div>
-          <div>
-            <img src="@/assets/user1.svg" alt="">
-          </div>
-          <div class="avatarcontainer1">
-            <p>Alex</p>
-          </div>
-        </div>
+            <div>
+              <div>
+                <img src="@/assets/user1.svg" alt="" />
+              </div>
+              <div class="avatarcontainer1">
+                <p>Alex</p>
+              </div>
+            </div>
 
-        <div>
-          <div>
-            <img src="@/assets/user1.svg" alt="">
-          </div>
-          <div class="avatarcontainer1">
-            <p>Alex</p>
-          </div>
-        </div>
+            <div>
+              <div>
+                <img src="@/assets/user1.svg" alt="" />
+              </div>
+              <div class="avatarcontainer1">
+                <p>Alex</p>
+              </div>
+            </div>
 
-        <div>
-          <div>
-            <img src="@/assets/user1.svg" alt="">
-          </div>
-          <div class="avatarcontainer1">
-            <p>Alex</p>
-          </div>
-        </div>
+            <div>
+              <div>
+                <img src="@/assets/user1.svg" alt="" />
+              </div>
+              <div class="avatarcontainer1">
+                <p>Alex</p>
+              </div>
+            </div>
 
-        <div>
-          <div>
-            <img src="@/assets/user1.svg" alt="">
+            <div>
+              <div>
+                <img src="@/assets/user1.svg" alt="" />
+              </div>
+              <div class="avatarcontainer1">
+                <p>Alex</p>
+              </div>
+            </div>
           </div>
-          <div class="avatarcontainer1">
-            <p>Alex</p>
-          </div>
-        </div>
-        </div>
 
-        <div class="follower-following">
+          <div class="follower-following">
             <span class="dot">27</span>
-              <label>Seguiti</label>
+            <label>Seguiti</label>
             <span class="dot">57</span>
-              <label>Follower</label>
-        </div>
-          
+            <label>Follower</label>
+          </div>
+
           <!-- Sponsor -->
           <div class="sponsor">
             <h5>Sponsorizzato</h5>
@@ -468,7 +461,7 @@ h5 {
   border-radius: 50%;
   margin-right: 20px;
 }
-.sea{
+.sea {
   background-color: #2c307f;
   width: 65px;
   height: 65px;
@@ -557,7 +550,7 @@ h5 {
   margin-top: 10px;
   margin-right: 10px;
   font-size: 35px;
-  color: #483D8B;
+  color: #483d8b;
 }
 img.avatar1 {
   width: 55px;
@@ -846,178 +839,177 @@ input {
 }
 
 @media (max-width: 575.98px) {
-.box {
-  margin: 5px;
-}
-.attitude-profile {
-  display: block;
-}
+  .box {
+    margin: 5px;
+  }
+  .attitude-profile {
+    display: block;
+  }
 
-/* Personal Attitude */
-.personal-attitude {
-  padding-left: 0%;
-}
-.personal-attitude h5 {
-  margin-top: 20px;
-  text-align: center;
-}
-.personal-attitude-icons {
-  margin-top: 20px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-.art {
-  margin-right: 7px;
-  margin-bottom: 50px;
-}
-.sea{
-  margin-right: 7px;
-  margin-bottom: 50px;
-}
-.gourmet-explorer {
-  margin-right: 7px;
-  margin-bottom: 50px;
-}
-.relax {
-  margin-right: 7px;
-  margin-bottom: 50px;
-}
-.party {
-  margin-right: 7px;
-}
-.nature-adventure {
-  margin-right: 7px;
-}
-.iconscontainer1 {
-  font-size: 17px;
-  top: 65px;
-  margin-left: 19px;
-}
-.iconscontainer2 {
-  font-size: 17px;
-  top: 65px;
-  left: 19px;
-}
+  /* Personal Attitude */
+  .personal-attitude {
+    padding-left: 0%;
+  }
+  .personal-attitude h5 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .personal-attitude-icons {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .art {
+    margin-right: 7px;
+    margin-bottom: 50px;
+  }
+  .sea {
+    margin-right: 7px;
+    margin-bottom: 50px;
+  }
+  .gourmet-explorer {
+    margin-right: 7px;
+    margin-bottom: 50px;
+  }
+  .relax {
+    margin-right: 7px;
+    margin-bottom: 50px;
+  }
+  .party {
+    margin-right: 7px;
+  }
+  .nature-adventure {
+    margin-right: 7px;
+  }
+  .iconscontainer1 {
+    font-size: 17px;
+    top: 65px;
+    margin-left: 19px;
+  }
+  .iconscontainer2 {
+    font-size: 17px;
+    top: 65px;
+    left: 19px;
+  }
 
-/** Profile  */
-.profile {
-  display: flex;
-  float: right;
-  padding-right: 0%;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
+  /** Profile  */
+  .profile {
+    display: flex;
+    float: right;
+    padding-right: 0%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
 
-/** Map Filter Search  */
-.map {
-  margin-right: 0%;
-  margin-left: 0%;
-  width: 100%;
-  height: auto;
-}
-.map-filter-search {
-  display: block;
-  padding-top: 0%;
-}
-.map iframe {
-  height: 70vh;
-}
+  /** Map Filter Search  */
+  .map {
+    margin-right: 0%;
+    margin-left: 0%;
+    width: 100%;
+    height: auto;
+  }
+  .map-filter-search {
+    display: block;
+    padding-top: 0%;
+  }
+  .map iframe {
+    height: 70vh;
+  }
 
-/* Map Tappa Itinerario */
-.map-tappa-itinerario {
-  display: block;
-}
-.tappa-itinerario {
-  display: block;
-  margin-left: 0%;
-  margin-bottom: 30px;
-}
-.tappa-itinerario .text1 {
-  position: absolute;
-  margin-left: 0px;
-}
-.tappa-itinerario .text2 {
-  position: absolute;
-  margin-left: 0px;
-}
-.tappa-itinerario a {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  margin-top: 30px;
-  margin-left: 0px;
-}
+  /* Map Tappa Itinerario */
+  .map-tappa-itinerario {
+    display: block;
+  }
+  .tappa-itinerario {
+    display: block;
+    margin-left: 0%;
+    margin-bottom: 30px;
+  }
+  .tappa-itinerario .text1 {
+    position: absolute;
+    margin-left: 0px;
+  }
+  .tappa-itinerario .text2 {
+    position: absolute;
+    margin-left: 0px;
+  }
+  .tappa-itinerario a {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 0px;
+  }
 
-/**Filter*/
-.icons img {
-  width: 54px;
-}
-.arrow {
-  margin-right: 4%;
-}
-.flag {
-  margin-right: 4%;
-}
-.location {
-  margin-right: 4%;
-}
-.basket {
-  margin-right: 4%;
-}
+  /**Filter*/
+  .icons img {
+    width: 54px;
+  }
+  .arrow {
+    margin-right: 4%;
+  }
+  .flag {
+    margin-right: 4%;
+  }
+  .location {
+    margin-right: 4%;
+  }
+  .basket {
+    margin-right: 4%;
+  }
 
+  /*?*/
+  .business-button > button {
+    background: #ec624c;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 7px;
+    height: 39px;
+  }
+  .business-button {
+    margin: 40px 0px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    color: white;
+  }
 
-/*?*/
-.business-button > button {
-  background: #ec624c;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 7px;
-  height: 39px;
-}
-.business-button {
-  margin: 40px 0px;
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-a:hover {
-  color: white;
-}
+  /* Avatar Sponsor Search*/
+  /* Avatar */
+  .follower-following {
+    margin-bottom: 20px;
+  }
 
-/* Avatar Sponsor Search*/
-/* Avatar */
-.follower-following {
-  margin-bottom: 20px;
-}
+  /**sponsor */
+  /**Card*/
+  .sponsor > .card-body > img {
+    max-width: 130px;
+    height: 100px;
+  }
+  .sponsor-card-text {
+    margin-left: 2%;
+    font-size: 14px;
+    line-height: 6px;
+  }
 
-/**sponsor */
-/**Card*/
-.sponsor > .card-body > img {
-  max-width: 130px;
-  height: 100px;
-}
-.sponsor-card-text {
-  margin-left: 2%;
-  font-size: 14px;
-  line-height: 6px;
-}
+  /**Search filter */
+  .filter-attitude {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-/**Search filter */
-.filter-attitude {
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-input {
-  width: 240px;
-}
+  input {
+    width: 240px;
+  }
 }
 </style>
 
