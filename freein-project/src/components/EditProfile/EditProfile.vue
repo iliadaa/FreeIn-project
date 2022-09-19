@@ -297,6 +297,10 @@ export default {
           },
         }
       );
+      this.$router.push({
+        name: "Login",
+      });
+      console.log(res);
     },
   },
   computed: {
