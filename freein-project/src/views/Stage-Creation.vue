@@ -1,19 +1,19 @@
 <template>
   <div>
-      <Header/>
-    <AddStage/>  
+    <HeaderForHall />
+    <AddStage />
   </div>
 </template>
 
 <script>
-import AddStage from '../components/HallPage/Stages/Add-Stage.vue';
-import Header from '../components/Header.vue'
+import AddStage from "../components/HallPage/Stages/Add-Stage.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
 
 export default {
   name: "HomeView",
-  components: { 
+  components: {
     AddStage,
-    Header
+    HeaderForHall,
   },
 };
 </script>

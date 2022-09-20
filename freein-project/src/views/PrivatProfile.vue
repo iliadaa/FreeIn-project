@@ -1,14 +1,18 @@
 <template>
-  <div><Privatprofile /></div>
-  
+  <div>
+    <HeaderForHall />
+    <Privatprofile />
+  </div>
 </template>
 
 <script>
-import Privatprofile from "@/components/Users Cards/Privatprofile.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
+import Privatprofile from "../components/Users Cards/Privatprofile.vue";
 export default {
   name: "PrivatProfile",
   components: {
     Privatprofile,
+    HeaderForHall,
   },
 };
 </script>

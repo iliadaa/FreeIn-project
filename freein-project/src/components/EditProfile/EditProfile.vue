@@ -168,8 +168,14 @@
                 </div>
 
                 <br />
-                <button v-b-modal.modal-1 type="button" class="save">
+                <button
+                  v-b-modal.modal-1
+                  type="button"
+                  class="save"
+                  @click="saveChanges(inSession)"
+                >
                   <p>Save</p>
+                  <!--
                   <b-modal
                     no-close-on-backdrop
                     id="modal-1"
@@ -195,6 +201,7 @@
                       </div>
                     </template>
                   </b-modal>
+                  -->
                 </button>
               </div>
             </b-form>
@@ -241,27 +248,41 @@ export default {
       console.log(inSession[0].userObj, " Prima");
       console.log(inSession[0].userObj, " Dopo");
       console.log(this.users[0].userObj.profileTest);
-      if (this.email.includes("@gmail" || "@outlook" || "@yahoo")) {
-        for (i = 0; i < this.users.length; i++) {
-          if (this.users[i].userObj.name.includes(inSession[0].userObj.name)) {
-            console.log(i);
-            console.log(this.users);
-            inSession[0].userObj.name = this.name;
-            inSession[0].userObj.surname = this.surname;
-            inSession[0].userObj.email = this.email;
-            this.replaceItem(
-              this.users[i].userObj.id,
-              this.users[i].userObj,
-              inSession
-            );
-            break;
+      for (i = 0; i < this.users.length; i++) {
+        if (
+          this.users[i].userObj.name.includes(inSession[0].userObj.name) &&
+          this.name.length != 0 &&
+          this.surname.lenght != 0
+        ) {
+          console.log(i);
+          console.log(this.users);
+          inSession[0].userObj.name = this.name;
+          inSession[0].userObj.surname = this.surname;
+          //inSession[0].userObj.email = this.email;
+          this.replaceItem(
+            this.users[i].userObj.id,
+            this.users[i].userObj,
+            inSession
+          );
+          if (inSession[0].userObj.roles.includes("business" || "admin")) {
+            this.$router.push({
+              name: "BusinessProfile",
+            });
+            return true;
           } else {
-            continue;
+            this.$router.push({
+              name: "Privatprofile",
+            });
+            return false;
           }
+        } else {
+          alert(
+            "Deve riempire correttamente i campi del first name e last name!"
+          );
+          break;
         }
-      } else {
-        alert("L'email deve contenere una @ seguita da: gmail, outlook..");
       }
+
       console.log("Sto uscendo dal for dopo il return");
 
       /*

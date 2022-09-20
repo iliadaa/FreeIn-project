@@ -1,21 +1,19 @@
 <template>
   <div>
-    <Header />
-
+    <HeaderForHall />
     <BusinessCard1 />
-
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
 import Footer from "../components/Footer.vue";
 import BusinessCard1 from "../components/Users Cards/BusinessCard1.vue";
 export default {
   name: "BusinessPage",
   components: {
-    Header,
+    HeaderForHall,
 
     BusinessCard1,
 

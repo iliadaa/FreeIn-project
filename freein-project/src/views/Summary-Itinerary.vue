@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <HeaderForHall />
     <div class="container">
       <summaryItinerary />
     </div>
@@ -10,10 +10,10 @@
 
 <script>
 import summaryItinerary from "../components/HallPage/Itineraries/Summary-Itinerary.vue";
-import Header from "../components/Header.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
 import Footer from "../components/Footer.vue";
 export default {
   name: "SummaryItinerary",
-  components: { summaryItinerary, Header, Footer },
+  components: { summaryItinerary, HeaderForHall, Footer },
 };
 </script>

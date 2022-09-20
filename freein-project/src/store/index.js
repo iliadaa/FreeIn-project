@@ -134,7 +134,7 @@ export default new Vuex.Store({
         })
         return trovato = false;
       } else if (state.inSession[0].userObj.testDone == true) {
-        alert("Bentornato: " + state.inSession[0].userObj.name)
+
         //test done controllo profilo e ridireziono su profilo 
         if (state.inSession[0].userObj.roles.includes("business" || "admin")) {
           router.push({

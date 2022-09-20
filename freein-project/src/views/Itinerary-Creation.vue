@@ -1,19 +1,19 @@
 <template>
   <div>
-      <Header/>
-    <AddItinerary/>
+    <HeaderForHall />
+    <AddItinerary />
   </div>
 </template>
 
 <script>
-import AddItinerary from '../components/HallPage/Itineraries/Add-Itinerary.vue';
-import Header from '../components/Header.vue'
+import AddItinerary from "../components/HallPage/Itineraries/Add-Itinerary.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
 
 export default {
   name: "HomeView",
-  components: { 
+  components: {
     AddItinerary,
-    Header,
+    HeaderForHall,
   },
 };
 </script>

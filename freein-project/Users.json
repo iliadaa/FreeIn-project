@@ -7,12 +7,14 @@
         "password": "test",
         "change": true,
         "name": "Admin",
-        "surname": "Test",
+        "surname": "example",
         "gender": "Uomo",
         "testDone": true,
         "roles": [
-          "admin",
-          "business"
+          [
+            "admin",
+            "business"
+          ]
         ],
         "profileTest": {
           "name": "Buongustaio",
@@ -29,8 +31,7 @@
           "ragioneSociale": "",
           "indirizzoMailAziendale": "",
           "espositore": ""
-        },
-        "placeHolderEmpty": false
+        }
       },
       "id": 1
     },

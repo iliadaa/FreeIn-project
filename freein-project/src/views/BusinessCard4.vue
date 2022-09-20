@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <HeaderForHall />
 
     <BusinessCard4 />
 
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import HeaderForHall from "../components/HeaderForHall.vue";
 import Footer from "../components/Footer.vue";
 import BusinessCard4 from "../components/Users Cards/BusinessCard4.vue";
 export default {
   name: "BusinessPage",
   components: {
-    Header,
+    HeaderForHall,
 
     BusinessCard4,
 

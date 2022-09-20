@@ -1,25 +1,24 @@
 <template>
   <div>
-    <Header style="z-index: 1"/>
-    <EditProfile/>
+    <HeaderForHall style="z-index: 1" />
+    <EditProfile />
   </div>
 </template>
 
 <script>
-
-import Header from "../components/Header.vue";
-import EditProfile from "../components/EditProfile/EditProfile.vue"
+import HeaderForHall from "../components/HeaderForHall.vue";
+import EditProfile from "../components/EditProfile/EditProfile.vue";
 
 export default {
   name: "Homeview",
-  components:{
-    Header,
-    EditProfile
+  components: {
+    HeaderForHall,
+    EditProfile,
   },
-  methods:{
-    changeData(data){
-      console.log(data)
-    }
-  }
+  methods: {
+    changeData(data) {
+      console.log(data);
+    },
+  },
 };
 </script>
