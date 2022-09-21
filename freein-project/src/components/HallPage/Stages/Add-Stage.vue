@@ -230,8 +230,8 @@
         </div>
 
         <div class="end-adding-buttons">
-          <a class="cancel" href="#/privatprofile">Annulla</a>
-          <a class="save-as" href="#">Salva come bozza</a>
+          <a class="cancel" @click="returnToHall">Annulla</a>
+          <a class="save-as" href="#" @click="returnToHall">Salva come bozza</a>
           <a class="publishy" type="submit" @click="SubmitTappa">Pubblica</a>
         </div>
       </b-form>
@@ -357,8 +357,18 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
+          if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+            this.$router.push({
+              name: "BusinessProfile",
+            });
+            return true;
+          } else {
+            this.$router.push({
+              name: "Privatprofile",
+            });
+            return false;
+          }
         })
-        .then(() => this.$router.push("/summarystage"))
         .catch((err) => console.log("Request Failed", err));
     },
 
@@ -391,6 +401,24 @@ export default {
       });
       this.stageInfo = [...this.stageInfo, res.data];
       this.textTitle = "";
+    },
+    returnToHall() {
+      if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+        this.$router.push({
+          name: "BusinessProfile",
+        });
+        return true;
+      } else {
+        this.$router.push({
+          name: "Privatprofile",
+        });
+        return false;
+      }
+    },
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
     },
   },
 };

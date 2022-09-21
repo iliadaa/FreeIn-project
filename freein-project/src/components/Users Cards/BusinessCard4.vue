@@ -35,6 +35,9 @@
           <span class="dot-4"></span>
         </div>
 
+        <b-button class="business-1-button-exit" @click="returnToHall">
+          <a> Esci </a></b-button
+        >
         <b-button class="business-1-button" @click="replaceItem()">
           <a href="http://localhost:8080/#/privatprofile"> Fine</a></b-button
         >
@@ -62,42 +65,72 @@ export default {
   },
   methods: {
     async replaceItem() {
-      const res = await axios.patch(
-        `http://localhost:3000/registrations/` + this.inSession[0].userObj.id,
-        {
-          userObj: {
-            id: this.inSession[0].userObj.id,
-            email: this.inSession[0].userObj.email,
-            password: this.inSession[0].userObj.password,
-            change: this.inSession[0].userObj.change,
-            name: this.inSession[0].userObj.name,
-            surname: this.inSession[0].userObj.surname,
-            testDone: this.inSession[0].userObj.testDone,
-            roles: ["business"],
-            profileTest: {
-              name: this.inSession[0].userObj.profileTest.name,
-              description: this.inSession[0].userObj.profileTest.description,
-              arte: this.inSession[0].userObj.profileTest.arte,
-              mare: this.inSession[0].userObj.profileTest.mare,
-              cibo: this.inSession[0].userObj.profileTest.cibo,
-              relax: this.inSession[0].userObj.profileTest.relax,
-              party: this.inSession[0].userObj.profileTest.party,
-              nature: this.inSession[0].userObj.profileTest.nature,
+      if (
+        this.inSession[0].userObj.agency.ragioneSociale.lenght === 0 ||
+        this.inSession[0].userObj.agency.indirizzoMailAziendale.lenght === 0 ||
+        this.inSession[0].userObj.agency.espositore.lenght === 0
+      ) {
+        const res = await axios.patch(
+          `http://localhost:3000/registrations/` + this.inSession[0].userObj.id,
+          {
+            userObj: {
+              id: this.inSession[0].userObj.id,
+              email: this.inSession[0].userObj.email,
+              password: this.inSession[0].userObj.password,
+              change: this.inSession[0].userObj.change,
+              name: this.inSession[0].userObj.name,
+              surname: this.inSession[0].userObj.surname,
+              testDone: this.inSession[0].userObj.testDone,
+              roles: ["business"],
+              profileTest: {
+                name: this.inSession[0].userObj.profileTest.name,
+                description: this.inSession[0].userObj.profileTest.description,
+                arte: this.inSession[0].userObj.profileTest.arte,
+                mare: this.inSession[0].userObj.profileTest.mare,
+                cibo: this.inSession[0].userObj.profileTest.cibo,
+                relax: this.inSession[0].userObj.profileTest.relax,
+                party: this.inSession[0].userObj.profileTest.party,
+                nature: this.inSession[0].userObj.profileTest.nature,
+              },
+              testAnswers: this.inSession[0].userObj.testAnswers,
+              paymentMethod: this.inSession[0].userObj.paymentMethod,
+              agency: {
+                ragioneSociale: this.inSession[0].userObj.agency.ragioneSociale,
+                indirizzoMailAziendale:
+                  this.inSession[0].userObj.agency.indirizzoMailAziendale,
+                espositore: this.inSession[0].userObj.agency.espositore,
+              },
             },
-            testAnswers: this.inSession[0].userObj.testAnswers,
-            paymentMethod: this.inSession[0].userObj.paymentMethod,
-            agency: {
-              ragioneSociale: this.inSession[0].userObj.agency.ragioneSociale,
-              indirizzoMailAziendale:
-                this.inSession[0].userObj.agency.indirizzoMailAziendale,
-              espositore: this.inSession[0].userObj.agency.espositore,
-            },
-          },
+          }
+        );
+        if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+          this.$router.push({
+            name: "BusinessProfile",
+          });
+          return true;
+        } else {
+          this.$router.push({
+            name: "Privatprofile",
+          });
+          return false;
         }
-      );
-      this.$router.push({
-        name: "BusinessProfile",
-      });
+      } else {
+        alert("Compila correttamente tutti i campi!");
+      }
+    },
+
+    returnToHall() {
+      if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+        this.$router.push({
+          name: "BusinessProfile",
+        });
+        return true;
+      } else {
+        this.$router.push({
+          name: "Privatprofile",
+        });
+        return false;
+      }
     },
   },
   computed: {
@@ -141,6 +174,39 @@ h4 {
   font-weight: bold;
 }
 
+.business-1-button-exit {
+  background-color: #2d2e83;
+  border-color: transparent;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 28px;
+  width: 150px;
+}
+
+.business-1-button-exit:hover {
+  background-color: #2d2e83;
+  border-color: transparent;
+  outline-color: none;
+}
+
+.business-1-button-exit:active {
+  background-color: #2d2e83;
+  border-color: transparent;
+}
+
+.business-1-button-exit:focus {
+  outline-color: transparent;
+  background-color: #2d2e83;
+  outline-style: none;
+  border-color: none;
+}
+
+.business-1-button-exit:focus {
+  box-shadow: none;
+  outline-style: none;
+  border-color: transparent;
+}
+
 .business-1-button {
   background-color: #ea5b0c !important;
   border-color: transparent;
@@ -149,15 +215,18 @@ h4 {
   line-height: 28px;
   width: 150px;
 }
+
 .business-1-button:hover {
   background-color: #ea5b0c;
   border-color: transparent;
   outline-color: none;
 }
+
 .business-1-button:active {
   background-color: #ea5b0c;
   border-color: transparent;
 }
+
 .business-1-button:focus {
   outline-color: transparent;
   background-color: #ea5b0c;

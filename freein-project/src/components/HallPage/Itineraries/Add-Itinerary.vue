@@ -292,8 +292,8 @@
         </div>
       </div>
       <div class="end-adding-buttons">
-        <a class="cancel" href="#">Annulla</a>
-        <a class="save-as" href="#">Salva come bozza</a>
+        <a class="cancel" @click="returnToHall">Annulla</a>
+        <a class="save-as" href="#" @click="returnToHall">Salva come bozza</a>
         <a class="publishy" type="submit" @click="SubmitTappa">Pubblica</a>
       </div>
       <div class="hr2">
@@ -430,8 +430,18 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
+          if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+            this.$router.push({
+              name: "BusinessProfile",
+            });
+            return true;
+          } else {
+            this.$router.push({
+              name: "Privatprofile",
+            });
+            return false;
+          }
         })
-        .then(() => this.$router.push("/"))
         .catch((error) => console.log("Request Failed", error));
     },
 
@@ -463,6 +473,19 @@ export default {
     showModalStages() {
       this.isModalStagesVisible = true;
     },
+    returnToHall() {
+      if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+        this.$router.push({
+          name: "BusinessProfile",
+        });
+        return true;
+      } else {
+        this.$router.push({
+          name: "Privatprofile",
+        });
+        return false;
+      }
+    },
 
     /*
     stageUnLoaded(id, stageClicked, cardList) {
@@ -472,6 +495,11 @@ export default {
       console.log(cardList[id].stage.stageClicked, " Dopo");
     },
     */
+  },
+  computed: {
+    inSession() {
+      return this.$store.state.inSession;
+    },
   },
   mounted() {
     this.$refs["id-1"];

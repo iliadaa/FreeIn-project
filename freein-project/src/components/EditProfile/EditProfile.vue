@@ -171,6 +171,14 @@
                 <button
                   v-b-modal.modal-1
                   type="button"
+                  class="goBack"
+                  @click="returnToHall"
+                >
+                  <p>Go back</p>
+                </button>
+                <button
+                  v-b-modal.modal-1
+                  type="button"
                   class="save"
                   @click="saveChanges(inSession)"
                 >
@@ -326,6 +334,20 @@ export default {
           },
         }
       );
+    },
+
+    returnToHall() {
+      if (this.inSession[0].userObj.roles.includes("business" || "admin")) {
+        this.$router.push({
+          name: "BusinessProfile",
+        });
+        return true;
+      } else {
+        this.$router.push({
+          name: "Privatprofile",
+        });
+        return false;
+      }
     },
   },
   computed: {
@@ -650,6 +672,27 @@ button:hover {
 }
 .save p {
   padding-left: 25px;
+  padding-top: 15px;
+}
+
+.goBack {
+  background-color: #2d2e83;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.goBack:hover {
+  border-color: black;
+  background-color: #2d2e83;
+}
+
+.goBack p {
+  padding-left: 15px;
   padding-top: 15px;
 }
 
