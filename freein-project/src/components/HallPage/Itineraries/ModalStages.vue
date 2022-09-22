@@ -146,6 +146,7 @@ export default {
   computed: {
     filteredTappe: function () {
       return this.datas.filter((data) => {
+        console.log(data);
         return data.stage.stageTitle.match(this.search);
       });
     },
